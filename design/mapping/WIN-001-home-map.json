@@ -1,0 +1,7266 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-001",
+  "reference_version": "proposal-v2",
+  "status": "measured_reference_layout",
+  "canvas": {
+    "width": 853,
+    "height": 1844,
+    "unit": "source_pixel",
+    "origin": "top_left",
+    "x_direction": "right",
+    "y_direction": "down",
+    "bounds_convention": "x/y inclusive start; x+width/y+height exclusive end"
+  },
+  "sources": {
+    "en": {
+      "file": "design/renders/WIN-001-system-home-en-proposal-v2.png",
+      "sha256": "a08c31f246a041acad0704361c2404c5e7cea5bab7cc25b571a2b1ff2d8ccde8"
+    },
+    "es": {
+      "file": "design/renders/WIN-001-system-home-es-proposal-v2.png",
+      "sha256": "58dc7ac147b93ced4e254cb01e89a7903ce4cd7609b7c5e3428947c9625f9d32"
+    }
+  },
+  "measurement": {
+    "method": "Visual inspection of both original-resolution reference renders; rectangles manually bounded around visible elements. Centers, corners and edge anchors calculated from rectangles.",
+    "accuracy": "Approximate visible boxes, generally within several source pixels; no claim of exact segmentation, baseline recovery, font identification or alpha extraction.",
+    "shared_geometry": "Unspecified Spanish rectangles inherit English. A locale override records a meaningful observed text/reflow difference; it does not establish pixel-identical artwork across separately generated locale images.",
+    "text_box_note": "Text bounds include a small margin around observed glyphs. Use a single shared font system with measured baselines at implementation; these boxes are positioning references, not independently rendered text/button assets."
+  },
+  "placement": {
+    "scale": "s = min(available_width / 853, available_height / 1844)",
+    "offset": "offset_x = (available_width - 853*s)/2; offset_y = (available_height - 1844*s)/2",
+    "point_transform": "screen_x = offset_x + source_x*s; screen_y = offset_y + source_y*s",
+    "preserve_aspect_ratio": true,
+    "do_not": "Do not stretch X and Y independently. Do not present the full composite as a clean background or extracted sprite set.",
+    "safe_area": "Reference excludes operating-system chrome. Fit app content inside safe areas; report additional letterboxing at different aspect ratios.",
+    "touch_regions": "Interactive rectangles follow current visible layout. Actual accessibility hit areas may extend beyond them without moving artwork; resolve competing targets explicitly."
+  },
+  "render_strategy": {
+    "verification": "Build the complete screen, then capture the complete 853×1844 fixture once per locale and compare full-screen overlays/difference. Only recapture after material corrections.",
+    "asset_reuse": "Use a shared background/art layer, shared slot/chrome components and editable locale text. Do not generate/render isolated screen instances for each button or small element.",
+    "baked_source_constraint": "The approved PNGs are opaque complete composites. Cropping an icon/character rectangle preserves its surrounding baked background. These bounds alone cannot produce transparent reusable icons, an equippable avatar, clean empty panels or editable labels.",
+    "exact_fixture": "Displaying the immutable full composite reproduces the exact raster fixture, but by itself is not a dynamic production UI or customizable character. Treat any such display as a reference mode and label it honestly.",
+    "dynamic_xp": "Runtime XP must be 1240/2000 = 0.62, independent of the reference glow extent."
+  },
+  "elements": [
+    {
+      "id": "reference_composite",
+      "kind": "artwork",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 853,
+        "height": 1844,
+        "corners": {
+          "top_left": [
+            0,
+            0
+          ],
+          "top_right": [
+            853,
+            0
+          ],
+          "bottom_left": [
+            0,
+            1844
+          ],
+          "bottom_right": [
+            853,
+            1844
+          ]
+        },
+        "center": [
+          426.5,
+          922.0
+        ],
+        "anchors": {
+          "top_center": [
+            426.5,
+            0
+          ],
+          "right_center": [
+            853,
+            922.0
+          ],
+          "bottom_center": [
+            426.5,
+            1844
+          ],
+          "left_center": [
+            0,
+            922.0
+          ]
+        }
+      },
+      "notes": "Complete approved fixture raster. This is not a clean reusable background and contains baked labels, figures, frames and character."
+    },
+    {
+      "id": "header.wordmark",
+      "kind": "artwork",
+      "rect": {
+        "x": 48,
+        "y": 21,
+        "width": 360,
+        "height": 66,
+        "corners": {
+          "top_left": [
+            48,
+            21
+          ],
+          "top_right": [
+            408,
+            21
+          ],
+          "bottom_left": [
+            48,
+            87
+          ],
+          "bottom_right": [
+            408,
+            87
+          ]
+        },
+        "center": [
+          228.0,
+          54.0
+        ],
+        "anchors": {
+          "top_center": [
+            228.0,
+            21
+          ],
+          "right_center": [
+            408,
+            54.0
+          ],
+          "bottom_center": [
+            228.0,
+            87
+          ],
+          "left_center": [
+            48,
+            54.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "header.language.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 657,
+        "y": 25,
+        "width": 88,
+        "height": 59,
+        "corners": {
+          "top_left": [
+            657,
+            25
+          ],
+          "top_right": [
+            745,
+            25
+          ],
+          "bottom_left": [
+            657,
+            84
+          ],
+          "bottom_right": [
+            745,
+            84
+          ]
+        },
+        "center": [
+          701.0,
+          54.5
+        ],
+        "anchors": {
+          "top_center": [
+            701.0,
+            25
+          ],
+          "right_center": [
+            745,
+            54.5
+          ],
+          "bottom_center": [
+            701.0,
+            84
+          ],
+          "left_center": [
+            657,
+            54.5
+          ]
+        }
+      },
+      "target_window": "WIN-003"
+    },
+    {
+      "id": "header.language.globe",
+      "kind": "artwork",
+      "rect": {
+        "x": 666,
+        "y": 37,
+        "width": 31,
+        "height": 31,
+        "corners": {
+          "top_left": [
+            666,
+            37
+          ],
+          "top_right": [
+            697,
+            37
+          ],
+          "bottom_left": [
+            666,
+            68
+          ],
+          "bottom_right": [
+            697,
+            68
+          ]
+        },
+        "center": [
+          681.5,
+          52.5
+        ],
+        "anchors": {
+          "top_center": [
+            681.5,
+            37
+          ],
+          "right_center": [
+            697,
+            52.5
+          ],
+          "bottom_center": [
+            681.5,
+            68
+          ],
+          "left_center": [
+            666,
+            52.5
+          ]
+        }
+      },
+      "parent": "header.language.control"
+    },
+    {
+      "id": "header.language.label",
+      "kind": "text",
+      "rect": {
+        "x": 706,
+        "y": 44,
+        "width": 30,
+        "height": 23,
+        "corners": {
+          "top_left": [
+            706,
+            44
+          ],
+          "top_right": [
+            736,
+            44
+          ],
+          "bottom_left": [
+            706,
+            67
+          ],
+          "bottom_right": [
+            736,
+            67
+          ]
+        },
+        "center": [
+          721.0,
+          55.5
+        ],
+        "anchors": {
+          "top_center": [
+            721.0,
+            44
+          ],
+          "right_center": [
+            736,
+            55.5
+          ],
+          "bottom_center": [
+            721.0,
+            67
+          ],
+          "left_center": [
+            706,
+            55.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "EN",
+        "es": "ES"
+      },
+      "parent": "header.language.control"
+    },
+    {
+      "id": "header.language.divider",
+      "kind": "artwork",
+      "rect": {
+        "x": 756,
+        "y": 36,
+        "width": 4,
+        "height": 37,
+        "corners": {
+          "top_left": [
+            756,
+            36
+          ],
+          "top_right": [
+            760,
+            36
+          ],
+          "bottom_left": [
+            756,
+            73
+          ],
+          "bottom_right": [
+            760,
+            73
+          ]
+        },
+        "center": [
+          758.0,
+          54.5
+        ],
+        "anchors": {
+          "top_center": [
+            758.0,
+            36
+          ],
+          "right_center": [
+            760,
+            54.5
+          ],
+          "bottom_center": [
+            758.0,
+            73
+          ],
+          "left_center": [
+            756,
+            54.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "header.settings",
+      "kind": "interactive",
+      "rect": {
+        "x": 777,
+        "y": 26,
+        "width": 49,
+        "height": 51,
+        "corners": {
+          "top_left": [
+            777,
+            26
+          ],
+          "top_right": [
+            826,
+            26
+          ],
+          "bottom_left": [
+            777,
+            77
+          ],
+          "bottom_right": [
+            826,
+            77
+          ]
+        },
+        "center": [
+          801.5,
+          51.5
+        ],
+        "anchors": {
+          "top_center": [
+            801.5,
+            26
+          ],
+          "right_center": [
+            826,
+            51.5
+          ],
+          "bottom_center": [
+            801.5,
+            77
+          ],
+          "left_center": [
+            777,
+            51.5
+          ]
+        }
+      },
+      "notes": "Visible gear icon box. Extend the touch target in runtime without altering visible art; inspect overlap with the language control.",
+      "target_window": "WIN-055"
+    },
+    {
+      "id": "header.title",
+      "kind": "text",
+      "rect": {
+        "x": 340,
+        "y": 106,
+        "width": 182,
+        "height": 39,
+        "corners": {
+          "top_left": [
+            340,
+            106
+          ],
+          "top_right": [
+            522,
+            106
+          ],
+          "bottom_left": [
+            340,
+            145
+          ],
+          "bottom_right": [
+            522,
+            145
+          ]
+        },
+        "center": [
+          431.0,
+          125.5
+        ],
+        "anchors": {
+          "top_center": [
+            431.0,
+            106
+          ],
+          "right_center": [
+            522,
+            125.5
+          ],
+          "bottom_center": [
+            431.0,
+            145
+          ],
+          "left_center": [
+            340,
+            125.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "SYSTEM",
+        "es": "SISTEMA"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 341,
+            "y": 107,
+            "width": 195,
+            "height": 38,
+            "corners": {
+              "top_left": [
+                341,
+                107
+              ],
+              "top_right": [
+                536,
+                107
+              ],
+              "bottom_left": [
+                341,
+                145
+              ],
+              "bottom_right": [
+                536,
+                145
+              ]
+            },
+            "center": [
+              438.5,
+              126.0
+            ],
+            "anchors": {
+              "top_center": [
+                438.5,
+                107
+              ],
+              "right_center": [
+                536,
+                126.0
+              ],
+              "bottom_center": [
+                438.5,
+                145
+              ],
+              "left_center": [
+                341,
+                126.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "header.title_rule",
+      "kind": "artwork",
+      "rect": {
+        "x": 115,
+        "y": 142,
+        "width": 409,
+        "height": 16,
+        "corners": {
+          "top_left": [
+            115,
+            142
+          ],
+          "top_right": [
+            524,
+            142
+          ],
+          "bottom_left": [
+            115,
+            158
+          ],
+          "bottom_right": [
+            524,
+            158
+          ]
+        },
+        "center": [
+          319.5,
+          150.0
+        ],
+        "anchors": {
+          "top_center": [
+            319.5,
+            142
+          ],
+          "right_center": [
+            524,
+            150.0
+          ],
+          "bottom_center": [
+            319.5,
+            158
+          ],
+          "left_center": [
+            115,
+            150.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "identity_and_character.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 91,
+        "y": 162,
+        "width": 673,
+        "height": 934,
+        "corners": {
+          "top_left": [
+            91,
+            162
+          ],
+          "top_right": [
+            764,
+            162
+          ],
+          "bottom_left": [
+            91,
+            1096
+          ],
+          "bottom_right": [
+            764,
+            1096
+          ]
+        },
+        "center": [
+          427.5,
+          629.0
+        ],
+        "anchors": {
+          "top_center": [
+            427.5,
+            162
+          ],
+          "right_center": [
+            764,
+            629.0
+          ],
+          "bottom_center": [
+            427.5,
+            1096
+          ],
+          "left_center": [
+            91,
+            629.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "identity.interaction",
+      "kind": "interactive",
+      "rect": {
+        "x": 121,
+        "y": 189,
+        "width": 451,
+        "height": 111,
+        "corners": {
+          "top_left": [
+            121,
+            189
+          ],
+          "top_right": [
+            572,
+            189
+          ],
+          "bottom_left": [
+            121,
+            300
+          ],
+          "bottom_right": [
+            572,
+            300
+          ]
+        },
+        "center": [
+          346.5,
+          244.5
+        ],
+        "anchors": {
+          "top_center": [
+            346.5,
+            189
+          ],
+          "right_center": [
+            572,
+            244.5
+          ],
+          "bottom_center": [
+            346.5,
+            300
+          ],
+          "left_center": [
+            121,
+            244.5
+          ]
+        }
+      },
+      "target_window": "WIN-014"
+    },
+    {
+      "id": "identity.class_emblem",
+      "kind": "artwork",
+      "rect": {
+        "x": 129,
+        "y": 190,
+        "width": 57,
+        "height": 97,
+        "corners": {
+          "top_left": [
+            129,
+            190
+          ],
+          "top_right": [
+            186,
+            190
+          ],
+          "bottom_left": [
+            129,
+            287
+          ],
+          "bottom_right": [
+            186,
+            287
+          ]
+        },
+        "center": [
+          157.5,
+          238.5
+        ],
+        "anchors": {
+          "top_center": [
+            157.5,
+            190
+          ],
+          "right_center": [
+            186,
+            238.5
+          ],
+          "bottom_center": [
+            157.5,
+            287
+          ],
+          "left_center": [
+            129,
+            238.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "identity.username",
+      "kind": "text",
+      "rect": {
+        "x": 199,
+        "y": 190,
+        "width": 104,
+        "height": 39,
+        "corners": {
+          "top_left": [
+            199,
+            190
+          ],
+          "top_right": [
+            303,
+            190
+          ],
+          "bottom_left": [
+            199,
+            229
+          ],
+          "bottom_right": [
+            303,
+            229
+          ]
+        },
+        "center": [
+          251.0,
+          209.5
+        ],
+        "anchors": {
+          "top_center": [
+            251.0,
+            190
+          ],
+          "right_center": [
+            303,
+            209.5
+          ],
+          "bottom_center": [
+            251.0,
+            229
+          ],
+          "left_center": [
+            199,
+            209.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "KAI",
+        "es": "KAI"
+      }
+    },
+    {
+      "id": "identity.class",
+      "kind": "text",
+      "rect": {
+        "x": 200,
+        "y": 235,
+        "width": 120,
+        "height": 21,
+        "corners": {
+          "top_left": [
+            200,
+            235
+          ],
+          "top_right": [
+            320,
+            235
+          ],
+          "bottom_left": [
+            200,
+            256
+          ],
+          "bottom_right": [
+            320,
+            256
+          ]
+        },
+        "center": [
+          260.0,
+          245.5
+        ],
+        "anchors": {
+          "top_center": [
+            260.0,
+            235
+          ],
+          "right_center": [
+            320,
+            245.5
+          ],
+          "bottom_center": [
+            260.0,
+            256
+          ],
+          "left_center": [
+            200,
+            245.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "BOXER",
+        "es": "BOXEADOR"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 200,
+            "y": 235,
+            "width": 152,
+            "height": 22,
+            "corners": {
+              "top_left": [
+                200,
+                235
+              ],
+              "top_right": [
+                352,
+                235
+              ],
+              "bottom_left": [
+                200,
+                257
+              ],
+              "bottom_right": [
+                352,
+                257
+              ]
+            },
+            "center": [
+              276.0,
+              246.0
+            ],
+            "anchors": {
+              "top_center": [
+                276.0,
+                235
+              ],
+              "right_center": [
+                352,
+                246.0
+              ],
+              "bottom_center": [
+                276.0,
+                257
+              ],
+              "left_center": [
+                200,
+                246.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "identity.level_label",
+      "kind": "text",
+      "rect": {
+        "x": 200,
+        "y": 270,
+        "width": 122,
+        "height": 23,
+        "corners": {
+          "top_left": [
+            200,
+            270
+          ],
+          "top_right": [
+            322,
+            270
+          ],
+          "bottom_left": [
+            200,
+            293
+          ],
+          "bottom_right": [
+            322,
+            293
+          ]
+        },
+        "center": [
+          261.0,
+          281.5
+        ],
+        "anchors": {
+          "top_center": [
+            261.0,
+            270
+          ],
+          "right_center": [
+            322,
+            281.5
+          ],
+          "bottom_center": [
+            261.0,
+            293
+          ],
+          "left_center": [
+            200,
+            281.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Fitness level",
+        "es": "Nivel de\nentrenamiento"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 200,
+            "y": 262,
+            "width": 145,
+            "height": 38,
+            "corners": {
+              "top_left": [
+                200,
+                262
+              ],
+              "top_right": [
+                345,
+                262
+              ],
+              "bottom_left": [
+                200,
+                300
+              ],
+              "bottom_right": [
+                345,
+                300
+              ]
+            },
+            "center": [
+              272.5,
+              281.0
+            ],
+            "anchors": {
+              "top_center": [
+                272.5,
+                262
+              ],
+              "right_center": [
+                345,
+                281.0
+              ],
+              "bottom_center": [
+                272.5,
+                300
+              ],
+              "left_center": [
+                200,
+                281.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "identity.level_value",
+      "kind": "text",
+      "rect": {
+        "x": 323,
+        "y": 257,
+        "width": 47,
+        "height": 38,
+        "corners": {
+          "top_left": [
+            323,
+            257
+          ],
+          "top_right": [
+            370,
+            257
+          ],
+          "bottom_left": [
+            323,
+            295
+          ],
+          "bottom_right": [
+            370,
+            295
+          ]
+        },
+        "center": [
+          346.5,
+          276.0
+        ],
+        "anchors": {
+          "top_center": [
+            346.5,
+            257
+          ],
+          "right_center": [
+            370,
+            276.0
+          ],
+          "bottom_center": [
+            346.5,
+            295
+          ],
+          "left_center": [
+            323,
+            276.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "12",
+        "es": "12"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 350,
+            "y": 265,
+            "width": 47,
+            "height": 35,
+            "corners": {
+              "top_left": [
+                350,
+                265
+              ],
+              "top_right": [
+                397,
+                265
+              ],
+              "bottom_left": [
+                350,
+                300
+              ],
+              "bottom_right": [
+                397,
+                300
+              ]
+            },
+            "center": [
+              373.5,
+              282.5
+            ],
+            "anchors": {
+              "top_center": [
+                373.5,
+                265
+              ],
+              "right_center": [
+                397,
+                282.5
+              ],
+              "bottom_center": [
+                373.5,
+                300
+              ],
+              "left_center": [
+                350,
+                282.5
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "wallet.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 591,
+        "y": 196,
+        "width": 145,
+        "height": 50,
+        "corners": {
+          "top_left": [
+            591,
+            196
+          ],
+          "top_right": [
+            736,
+            196
+          ],
+          "bottom_left": [
+            591,
+            246
+          ],
+          "bottom_right": [
+            736,
+            246
+          ]
+        },
+        "center": [
+          663.5,
+          221.0
+        ],
+        "anchors": {
+          "top_center": [
+            663.5,
+            196
+          ],
+          "right_center": [
+            736,
+            221.0
+          ],
+          "bottom_center": [
+            663.5,
+            246
+          ],
+          "left_center": [
+            591,
+            221.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "wallet.coin",
+      "kind": "artwork",
+      "rect": {
+        "x": 594,
+        "y": 197,
+        "width": 46,
+        "height": 46,
+        "corners": {
+          "top_left": [
+            594,
+            197
+          ],
+          "top_right": [
+            640,
+            197
+          ],
+          "bottom_left": [
+            594,
+            243
+          ],
+          "bottom_right": [
+            640,
+            243
+          ]
+        },
+        "center": [
+          617.0,
+          220.0
+        ],
+        "anchors": {
+          "top_center": [
+            617.0,
+            197
+          ],
+          "right_center": [
+            640,
+            220.0
+          ],
+          "bottom_center": [
+            617.0,
+            243
+          ],
+          "left_center": [
+            594,
+            220.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "wallet.value",
+      "kind": "text",
+      "rect": {
+        "x": 650,
+        "y": 206,
+        "width": 58,
+        "height": 31,
+        "corners": {
+          "top_left": [
+            650,
+            206
+          ],
+          "top_right": [
+            708,
+            206
+          ],
+          "bottom_left": [
+            650,
+            237
+          ],
+          "bottom_right": [
+            708,
+            237
+          ]
+        },
+        "center": [
+          679.0,
+          221.5
+        ],
+        "anchors": {
+          "top_center": [
+            679.0,
+            206
+          ],
+          "right_center": [
+            708,
+            221.5
+          ],
+          "bottom_center": [
+            679.0,
+            237
+          ],
+          "left_center": [
+            650,
+            221.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "840",
+        "es": "840"
+      }
+    },
+    {
+      "id": "fitness_xp.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 120,
+        "y": 306,
+        "width": 616,
+        "height": 33,
+        "corners": {
+          "top_left": [
+            120,
+            306
+          ],
+          "top_right": [
+            736,
+            306
+          ],
+          "bottom_left": [
+            120,
+            339
+          ],
+          "bottom_right": [
+            736,
+            339
+          ]
+        },
+        "center": [
+          428.0,
+          322.5
+        ],
+        "anchors": {
+          "top_center": [
+            428.0,
+            306
+          ],
+          "right_center": [
+            736,
+            322.5
+          ],
+          "bottom_center": [
+            428.0,
+            339
+          ],
+          "left_center": [
+            120,
+            322.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "fitness_xp.label",
+      "kind": "text",
+      "rect": {
+        "x": 130,
+        "y": 313,
+        "width": 99,
+        "height": 22,
+        "corners": {
+          "top_left": [
+            130,
+            313
+          ],
+          "top_right": [
+            229,
+            313
+          ],
+          "bottom_left": [
+            130,
+            335
+          ],
+          "bottom_right": [
+            229,
+            335
+          ]
+        },
+        "center": [
+          179.5,
+          324.0
+        ],
+        "anchors": {
+          "top_center": [
+            179.5,
+            313
+          ],
+          "right_center": [
+            229,
+            324.0
+          ],
+          "bottom_center": [
+            179.5,
+            335
+          ],
+          "left_center": [
+            130,
+            324.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Fitness XP",
+        "es": "XP de\nentrenamiento"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 129,
+            "y": 306,
+            "width": 111,
+            "height": 34,
+            "corners": {
+              "top_left": [
+                129,
+                306
+              ],
+              "top_right": [
+                240,
+                306
+              ],
+              "bottom_left": [
+                129,
+                340
+              ],
+              "bottom_right": [
+                240,
+                340
+              ]
+            },
+            "center": [
+              184.5,
+              323.0
+            ],
+            "anchors": {
+              "top_center": [
+                184.5,
+                306
+              ],
+              "right_center": [
+                240,
+                323.0
+              ],
+              "bottom_center": [
+                184.5,
+                340
+              ],
+              "left_center": [
+                129,
+                323.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fitness_xp.track",
+      "kind": "artwork",
+      "rect": {
+        "x": 241,
+        "y": 311,
+        "width": 333,
+        "height": 23,
+        "corners": {
+          "top_left": [
+            241,
+            311
+          ],
+          "top_right": [
+            574,
+            311
+          ],
+          "bottom_left": [
+            241,
+            334
+          ],
+          "bottom_right": [
+            574,
+            334
+          ]
+        },
+        "center": [
+          407.5,
+          322.5
+        ],
+        "anchors": {
+          "top_center": [
+            407.5,
+            311
+          ],
+          "right_center": [
+            574,
+            322.5
+          ],
+          "bottom_center": [
+            407.5,
+            334
+          ],
+          "left_center": [
+            241,
+            322.5
+          ]
+        }
+      },
+      "notes": "Outer visible rail, not the mathematical inner fill range."
+    },
+    {
+      "id": "fitness_xp.inner_track",
+      "kind": "artwork",
+      "rect": {
+        "x": 248,
+        "y": 318,
+        "width": 319,
+        "height": 11,
+        "corners": {
+          "top_left": [
+            248,
+            318
+          ],
+          "top_right": [
+            567,
+            318
+          ],
+          "bottom_left": [
+            248,
+            329
+          ],
+          "bottom_right": [
+            567,
+            329
+          ]
+        },
+        "center": [
+          407.5,
+          323.5
+        ],
+        "anchors": {
+          "top_center": [
+            407.5,
+            318
+          ],
+          "right_center": [
+            567,
+            323.5
+          ],
+          "bottom_center": [
+            407.5,
+            329
+          ],
+          "left_center": [
+            248,
+            323.5
+          ]
+        }
+      },
+      "notes": "Approximate interior usable rail; 62% semantic fill spans 197.78 source pixels. The reference decorative fill includes glow and rounded edges, so its visible extent is different."
+    },
+    {
+      "id": "fitness_xp.reference_fill",
+      "kind": "artwork",
+      "rect": {
+        "x": 245,
+        "y": 314,
+        "width": 210,
+        "height": 18,
+        "corners": {
+          "top_left": [
+            245,
+            314
+          ],
+          "top_right": [
+            455,
+            314
+          ],
+          "bottom_left": [
+            245,
+            332
+          ],
+          "bottom_right": [
+            455,
+            332
+          ]
+        },
+        "center": [
+          350.0,
+          323.0
+        ],
+        "anchors": {
+          "top_center": [
+            350.0,
+            314
+          ],
+          "right_center": [
+            455,
+            323.0
+          ],
+          "bottom_center": [
+            350.0,
+            332
+          ],
+          "left_center": [
+            245,
+            323.0
+          ]
+        }
+      },
+      "notes": "Observed cyan and glow extent in the approved raster. Do not use this measured luminous extent as an XP formula."
+    },
+    {
+      "id": "fitness_xp.value",
+      "kind": "text",
+      "rect": {
+        "x": 582,
+        "y": 312,
+        "width": 142,
+        "height": 23,
+        "corners": {
+          "top_left": [
+            582,
+            312
+          ],
+          "top_right": [
+            724,
+            312
+          ],
+          "bottom_left": [
+            582,
+            335
+          ],
+          "bottom_right": [
+            724,
+            335
+          ]
+        },
+        "center": [
+          653.0,
+          323.5
+        ],
+        "anchors": {
+          "top_center": [
+            653.0,
+            312
+          ],
+          "right_center": [
+            724,
+            323.5
+          ],
+          "bottom_center": [
+            653.0,
+            335
+          ],
+          "left_center": [
+            582,
+            323.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "1,240 / 2,000 XP",
+        "es": "1,240 / 2,000 XP"
+      }
+    },
+    {
+      "id": "character.stage",
+      "kind": "artwork",
+      "rect": {
+        "x": 247,
+        "y": 348,
+        "width": 357,
+        "height": 746,
+        "corners": {
+          "top_left": [
+            247,
+            348
+          ],
+          "top_right": [
+            604,
+            348
+          ],
+          "bottom_left": [
+            247,
+            1094
+          ],
+          "bottom_right": [
+            604,
+            1094
+          ]
+        },
+        "center": [
+          425.5,
+          721.0
+        ],
+        "anchors": {
+          "top_center": [
+            425.5,
+            348
+          ],
+          "right_center": [
+            604,
+            721.0
+          ],
+          "bottom_center": [
+            425.5,
+            1094
+          ],
+          "left_center": [
+            247,
+            721.0
+          ]
+        }
+      },
+      "notes": "Reserved character region; contains temple art, light, shadows and figure, not an isolated sprite."
+    },
+    {
+      "id": "character.figure_bounds",
+      "kind": "artwork",
+      "rect": {
+        "x": 251,
+        "y": 386,
+        "width": 335,
+        "height": 708,
+        "corners": {
+          "top_left": [
+            251,
+            386
+          ],
+          "top_right": [
+            586,
+            386
+          ],
+          "bottom_left": [
+            251,
+            1094
+          ],
+          "bottom_right": [
+            586,
+            1094
+          ]
+        },
+        "center": [
+          418.5,
+          740.0
+        ],
+        "anchors": {
+          "top_center": [
+            418.5,
+            386
+          ],
+          "right_center": [
+            586,
+            740.0
+          ],
+          "bottom_center": [
+            418.5,
+            1094
+          ],
+          "left_center": [
+            251,
+            740.0
+          ]
+        }
+      },
+      "notes": "Approximate silhouette bounding box including hair and both boots. Source alpha is opaque; these bounds are not a cutout mask."
+    },
+    {
+      "id": "character.interaction",
+      "kind": "interactive",
+      "rect": {
+        "x": 249,
+        "y": 362,
+        "width": 355,
+        "height": 732,
+        "corners": {
+          "top_left": [
+            249,
+            362
+          ],
+          "top_right": [
+            604,
+            362
+          ],
+          "bottom_left": [
+            249,
+            1094
+          ],
+          "bottom_right": [
+            604,
+            1094
+          ]
+        },
+        "center": [
+          426.5,
+          728.0
+        ],
+        "anchors": {
+          "top_center": [
+            426.5,
+            362
+          ],
+          "right_center": [
+            604,
+            728.0
+          ],
+          "bottom_center": [
+            426.5,
+            1094
+          ],
+          "left_center": [
+            249,
+            728.0
+          ]
+        }
+      },
+      "target_window": "WIN-014"
+    },
+    {
+      "id": "gear.head.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 110,
+        "y": 376,
+        "width": 135,
+        "height": 152,
+        "corners": {
+          "top_left": [
+            110,
+            376
+          ],
+          "top_right": [
+            245,
+            376
+          ],
+          "bottom_left": [
+            110,
+            528
+          ],
+          "bottom_right": [
+            245,
+            528
+          ]
+        },
+        "center": [
+          177.5,
+          452.0
+        ],
+        "anchors": {
+          "top_center": [
+            177.5,
+            376
+          ],
+          "right_center": [
+            245,
+            452.0
+          ],
+          "bottom_center": [
+            177.5,
+            528
+          ],
+          "left_center": [
+            110,
+            452.0
+          ]
+        }
+      },
+      "notes": "Opens inventory filtered by head. The visible frame is measured; interaction does not equip an item.",
+      "target_window": "WIN-032"
+    },
+    {
+      "id": "gear.head.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 110,
+        "y": 376,
+        "width": 135,
+        "height": 152,
+        "corners": {
+          "top_left": [
+            110,
+            376
+          ],
+          "top_right": [
+            245,
+            376
+          ],
+          "bottom_left": [
+            110,
+            528
+          ],
+          "bottom_right": [
+            245,
+            528
+          ]
+        },
+        "center": [
+          177.5,
+          452.0
+        ],
+        "anchors": {
+          "top_center": [
+            177.5,
+            376
+          ],
+          "right_center": [
+            245,
+            452.0
+          ],
+          "bottom_center": [
+            177.5,
+            528
+          ],
+          "left_center": [
+            110,
+            452.0
+          ]
+        }
+      },
+      "parent": "gear.head.control"
+    },
+    {
+      "id": "gear.head.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 135,
+        "y": 396,
+        "width": 84,
+        "height": 90,
+        "corners": {
+          "top_left": [
+            135,
+            396
+          ],
+          "top_right": [
+            219,
+            396
+          ],
+          "bottom_left": [
+            135,
+            486
+          ],
+          "bottom_right": [
+            219,
+            486
+          ]
+        },
+        "center": [
+          177.0,
+          441.0
+        ],
+        "anchors": {
+          "top_center": [
+            177.0,
+            396
+          ],
+          "right_center": [
+            219,
+            441.0
+          ],
+          "bottom_center": [
+            177.0,
+            486
+          ],
+          "left_center": [
+            135,
+            441.0
+          ]
+        }
+      },
+      "notes": "Baked raster illustration; extraction rectangle also contains opaque slot background. Hands is the equipped sample; other illustrations are category glyphs.",
+      "parent": "gear.head.control"
+    },
+    {
+      "id": "gear.head.label",
+      "kind": "text",
+      "rect": {
+        "x": 152,
+        "y": 496,
+        "width": 62,
+        "height": 23,
+        "corners": {
+          "top_left": [
+            152,
+            496
+          ],
+          "top_right": [
+            214,
+            496
+          ],
+          "bottom_left": [
+            152,
+            519
+          ],
+          "bottom_right": [
+            214,
+            519
+          ]
+        },
+        "center": [
+          183.0,
+          507.5
+        ],
+        "anchors": {
+          "top_center": [
+            183.0,
+            496
+          ],
+          "right_center": [
+            214,
+            507.5
+          ],
+          "bottom_center": [
+            183.0,
+            519
+          ],
+          "left_center": [
+            152,
+            507.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "HEAD",
+        "es": "CABEZA"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 140,
+            "y": 496,
+            "width": 81,
+            "height": 23,
+            "corners": {
+              "top_left": [
+                140,
+                496
+              ],
+              "top_right": [
+                221,
+                496
+              ],
+              "bottom_left": [
+                140,
+                519
+              ],
+              "bottom_right": [
+                221,
+                519
+              ]
+            },
+            "center": [
+              180.5,
+              507.5
+            ],
+            "anchors": {
+              "top_center": [
+                180.5,
+                496
+              ],
+              "right_center": [
+                221,
+                507.5
+              ],
+              "bottom_center": [
+                180.5,
+                519
+              ],
+              "left_center": [
+                140,
+                507.5
+              ]
+            }
+          }
+        }
+      },
+      "parent": "gear.head.control"
+    },
+    {
+      "id": "gear.torso.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 110,
+        "y": 549,
+        "width": 135,
+        "height": 154,
+        "corners": {
+          "top_left": [
+            110,
+            549
+          ],
+          "top_right": [
+            245,
+            549
+          ],
+          "bottom_left": [
+            110,
+            703
+          ],
+          "bottom_right": [
+            245,
+            703
+          ]
+        },
+        "center": [
+          177.5,
+          626.0
+        ],
+        "anchors": {
+          "top_center": [
+            177.5,
+            549
+          ],
+          "right_center": [
+            245,
+            626.0
+          ],
+          "bottom_center": [
+            177.5,
+            703
+          ],
+          "left_center": [
+            110,
+            626.0
+          ]
+        }
+      },
+      "notes": "Opens inventory filtered by torso. The visible frame is measured; interaction does not equip an item.",
+      "target_window": "WIN-032"
+    },
+    {
+      "id": "gear.torso.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 110,
+        "y": 549,
+        "width": 135,
+        "height": 154,
+        "corners": {
+          "top_left": [
+            110,
+            549
+          ],
+          "top_right": [
+            245,
+            549
+          ],
+          "bottom_left": [
+            110,
+            703
+          ],
+          "bottom_right": [
+            245,
+            703
+          ]
+        },
+        "center": [
+          177.5,
+          626.0
+        ],
+        "anchors": {
+          "top_center": [
+            177.5,
+            549
+          ],
+          "right_center": [
+            245,
+            626.0
+          ],
+          "bottom_center": [
+            177.5,
+            703
+          ],
+          "left_center": [
+            110,
+            626.0
+          ]
+        }
+      },
+      "parent": "gear.torso.control"
+    },
+    {
+      "id": "gear.torso.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 129,
+        "y": 570,
+        "width": 97,
+        "height": 97,
+        "corners": {
+          "top_left": [
+            129,
+            570
+          ],
+          "top_right": [
+            226,
+            570
+          ],
+          "bottom_left": [
+            129,
+            667
+          ],
+          "bottom_right": [
+            226,
+            667
+          ]
+        },
+        "center": [
+          177.5,
+          618.5
+        ],
+        "anchors": {
+          "top_center": [
+            177.5,
+            570
+          ],
+          "right_center": [
+            226,
+            618.5
+          ],
+          "bottom_center": [
+            177.5,
+            667
+          ],
+          "left_center": [
+            129,
+            618.5
+          ]
+        }
+      },
+      "notes": "Baked raster illustration; extraction rectangle also contains opaque slot background. Hands is the equipped sample; other illustrations are category glyphs.",
+      "parent": "gear.torso.control"
+    },
+    {
+      "id": "gear.torso.label",
+      "kind": "text",
+      "rect": {
+        "x": 145,
+        "y": 675,
+        "width": 68,
+        "height": 22,
+        "corners": {
+          "top_left": [
+            145,
+            675
+          ],
+          "top_right": [
+            213,
+            675
+          ],
+          "bottom_left": [
+            145,
+            697
+          ],
+          "bottom_right": [
+            213,
+            697
+          ]
+        },
+        "center": [
+          179.0,
+          686.0
+        ],
+        "anchors": {
+          "top_center": [
+            179.0,
+            675
+          ],
+          "right_center": [
+            213,
+            686.0
+          ],
+          "bottom_center": [
+            179.0,
+            697
+          ],
+          "left_center": [
+            145,
+            686.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "TORSO",
+        "es": "TORSO"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 145,
+            "y": 675,
+            "width": 68,
+            "height": 22,
+            "corners": {
+              "top_left": [
+                145,
+                675
+              ],
+              "top_right": [
+                213,
+                675
+              ],
+              "bottom_left": [
+                145,
+                697
+              ],
+              "bottom_right": [
+                213,
+                697
+              ]
+            },
+            "center": [
+              179.0,
+              686.0
+            ],
+            "anchors": {
+              "top_center": [
+                179.0,
+                675
+              ],
+              "right_center": [
+                213,
+                686.0
+              ],
+              "bottom_center": [
+                179.0,
+                697
+              ],
+              "left_center": [
+                145,
+                686.0
+              ]
+            }
+          }
+        }
+      },
+      "parent": "gear.torso.control"
+    },
+    {
+      "id": "gear.hands.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 109,
+        "y": 718,
+        "width": 137,
+        "height": 162,
+        "corners": {
+          "top_left": [
+            109,
+            718
+          ],
+          "top_right": [
+            246,
+            718
+          ],
+          "bottom_left": [
+            109,
+            880
+          ],
+          "bottom_right": [
+            246,
+            880
+          ]
+        },
+        "center": [
+          177.5,
+          799.0
+        ],
+        "anchors": {
+          "top_center": [
+            177.5,
+            718
+          ],
+          "right_center": [
+            246,
+            799.0
+          ],
+          "bottom_center": [
+            177.5,
+            880
+          ],
+          "left_center": [
+            109,
+            799.0
+          ]
+        }
+      },
+      "notes": "Opens inventory filtered by hands. The visible frame is measured; interaction does not equip an item.",
+      "target_window": "WIN-032"
+    },
+    {
+      "id": "gear.hands.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 109,
+        "y": 718,
+        "width": 137,
+        "height": 162,
+        "corners": {
+          "top_left": [
+            109,
+            718
+          ],
+          "top_right": [
+            246,
+            718
+          ],
+          "bottom_left": [
+            109,
+            880
+          ],
+          "bottom_right": [
+            246,
+            880
+          ]
+        },
+        "center": [
+          177.5,
+          799.0
+        ],
+        "anchors": {
+          "top_center": [
+            177.5,
+            718
+          ],
+          "right_center": [
+            246,
+            799.0
+          ],
+          "bottom_center": [
+            177.5,
+            880
+          ],
+          "left_center": [
+            109,
+            799.0
+          ]
+        }
+      },
+      "parent": "gear.hands.control"
+    },
+    {
+      "id": "gear.hands.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 124,
+        "y": 742,
+        "width": 109,
+        "height": 100,
+        "corners": {
+          "top_left": [
+            124,
+            742
+          ],
+          "top_right": [
+            233,
+            742
+          ],
+          "bottom_left": [
+            124,
+            842
+          ],
+          "bottom_right": [
+            233,
+            842
+          ]
+        },
+        "center": [
+          178.5,
+          792.0
+        ],
+        "anchors": {
+          "top_center": [
+            178.5,
+            742
+          ],
+          "right_center": [
+            233,
+            792.0
+          ],
+          "bottom_center": [
+            178.5,
+            842
+          ],
+          "left_center": [
+            124,
+            792.0
+          ]
+        }
+      },
+      "notes": "Baked raster illustration; extraction rectangle also contains opaque slot background. Hands is the equipped sample; other illustrations are category glyphs.",
+      "parent": "gear.hands.control"
+    },
+    {
+      "id": "gear.hands.label",
+      "kind": "text",
+      "rect": {
+        "x": 145,
+        "y": 851,
+        "width": 66,
+        "height": 23,
+        "corners": {
+          "top_left": [
+            145,
+            851
+          ],
+          "top_right": [
+            211,
+            851
+          ],
+          "bottom_left": [
+            145,
+            874
+          ],
+          "bottom_right": [
+            211,
+            874
+          ]
+        },
+        "center": [
+          178.0,
+          862.5
+        ],
+        "anchors": {
+          "top_center": [
+            178.0,
+            851
+          ],
+          "right_center": [
+            211,
+            862.5
+          ],
+          "bottom_center": [
+            178.0,
+            874
+          ],
+          "left_center": [
+            145,
+            862.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "HANDS",
+        "es": "MANOS"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 144,
+            "y": 851,
+            "width": 69,
+            "height": 23,
+            "corners": {
+              "top_left": [
+                144,
+                851
+              ],
+              "top_right": [
+                213,
+                851
+              ],
+              "bottom_left": [
+                144,
+                874
+              ],
+              "bottom_right": [
+                213,
+                874
+              ]
+            },
+            "center": [
+              178.5,
+              862.5
+            ],
+            "anchors": {
+              "top_center": [
+                178.5,
+                851
+              ],
+              "right_center": [
+                213,
+                862.5
+              ],
+              "bottom_center": [
+                178.5,
+                874
+              ],
+              "left_center": [
+                144,
+                862.5
+              ]
+            }
+          }
+        }
+      },
+      "parent": "gear.hands.control"
+    },
+    {
+      "id": "gear.legs.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 608,
+        "y": 376,
+        "width": 136,
+        "height": 155,
+        "corners": {
+          "top_left": [
+            608,
+            376
+          ],
+          "top_right": [
+            744,
+            376
+          ],
+          "bottom_left": [
+            608,
+            531
+          ],
+          "bottom_right": [
+            744,
+            531
+          ]
+        },
+        "center": [
+          676.0,
+          453.5
+        ],
+        "anchors": {
+          "top_center": [
+            676.0,
+            376
+          ],
+          "right_center": [
+            744,
+            453.5
+          ],
+          "bottom_center": [
+            676.0,
+            531
+          ],
+          "left_center": [
+            608,
+            453.5
+          ]
+        }
+      },
+      "notes": "Opens inventory filtered by legs. The visible frame is measured; interaction does not equip an item.",
+      "target_window": "WIN-032"
+    },
+    {
+      "id": "gear.legs.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 608,
+        "y": 376,
+        "width": 136,
+        "height": 155,
+        "corners": {
+          "top_left": [
+            608,
+            376
+          ],
+          "top_right": [
+            744,
+            376
+          ],
+          "bottom_left": [
+            608,
+            531
+          ],
+          "bottom_right": [
+            744,
+            531
+          ]
+        },
+        "center": [
+          676.0,
+          453.5
+        ],
+        "anchors": {
+          "top_center": [
+            676.0,
+            376
+          ],
+          "right_center": [
+            744,
+            453.5
+          ],
+          "bottom_center": [
+            676.0,
+            531
+          ],
+          "left_center": [
+            608,
+            453.5
+          ]
+        }
+      },
+      "parent": "gear.legs.control"
+    },
+    {
+      "id": "gear.legs.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 645,
+        "y": 402,
+        "width": 65,
+        "height": 96,
+        "corners": {
+          "top_left": [
+            645,
+            402
+          ],
+          "top_right": [
+            710,
+            402
+          ],
+          "bottom_left": [
+            645,
+            498
+          ],
+          "bottom_right": [
+            710,
+            498
+          ]
+        },
+        "center": [
+          677.5,
+          450.0
+        ],
+        "anchors": {
+          "top_center": [
+            677.5,
+            402
+          ],
+          "right_center": [
+            710,
+            450.0
+          ],
+          "bottom_center": [
+            677.5,
+            498
+          ],
+          "left_center": [
+            645,
+            450.0
+          ]
+        }
+      },
+      "notes": "Baked raster illustration; extraction rectangle also contains opaque slot background. Hands is the equipped sample; other illustrations are category glyphs.",
+      "parent": "gear.legs.control"
+    },
+    {
+      "id": "gear.legs.label",
+      "kind": "text",
+      "rect": {
+        "x": 654,
+        "y": 505,
+        "width": 48,
+        "height": 20,
+        "corners": {
+          "top_left": [
+            654,
+            505
+          ],
+          "top_right": [
+            702,
+            505
+          ],
+          "bottom_left": [
+            654,
+            525
+          ],
+          "bottom_right": [
+            702,
+            525
+          ]
+        },
+        "center": [
+          678.0,
+          515.0
+        ],
+        "anchors": {
+          "top_center": [
+            678.0,
+            505
+          ],
+          "right_center": [
+            702,
+            515.0
+          ],
+          "bottom_center": [
+            678.0,
+            525
+          ],
+          "left_center": [
+            654,
+            515.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "LEGS",
+        "es": "PIERNAS"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 636,
+            "y": 505,
+            "width": 79,
+            "height": 21,
+            "corners": {
+              "top_left": [
+                636,
+                505
+              ],
+              "top_right": [
+                715,
+                505
+              ],
+              "bottom_left": [
+                636,
+                526
+              ],
+              "bottom_right": [
+                715,
+                526
+              ]
+            },
+            "center": [
+              675.5,
+              515.5
+            ],
+            "anchors": {
+              "top_center": [
+                675.5,
+                505
+              ],
+              "right_center": [
+                715,
+                515.5
+              ],
+              "bottom_center": [
+                675.5,
+                526
+              ],
+              "left_center": [
+                636,
+                515.5
+              ]
+            }
+          }
+        }
+      },
+      "parent": "gear.legs.control"
+    },
+    {
+      "id": "gear.feet.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 608,
+        "y": 550,
+        "width": 137,
+        "height": 155,
+        "corners": {
+          "top_left": [
+            608,
+            550
+          ],
+          "top_right": [
+            745,
+            550
+          ],
+          "bottom_left": [
+            608,
+            705
+          ],
+          "bottom_right": [
+            745,
+            705
+          ]
+        },
+        "center": [
+          676.5,
+          627.5
+        ],
+        "anchors": {
+          "top_center": [
+            676.5,
+            550
+          ],
+          "right_center": [
+            745,
+            627.5
+          ],
+          "bottom_center": [
+            676.5,
+            705
+          ],
+          "left_center": [
+            608,
+            627.5
+          ]
+        }
+      },
+      "notes": "Opens inventory filtered by feet. The visible frame is measured; interaction does not equip an item.",
+      "target_window": "WIN-032"
+    },
+    {
+      "id": "gear.feet.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 608,
+        "y": 550,
+        "width": 137,
+        "height": 155,
+        "corners": {
+          "top_left": [
+            608,
+            550
+          ],
+          "top_right": [
+            745,
+            550
+          ],
+          "bottom_left": [
+            608,
+            705
+          ],
+          "bottom_right": [
+            745,
+            705
+          ]
+        },
+        "center": [
+          676.5,
+          627.5
+        ],
+        "anchors": {
+          "top_center": [
+            676.5,
+            550
+          ],
+          "right_center": [
+            745,
+            627.5
+          ],
+          "bottom_center": [
+            676.5,
+            705
+          ],
+          "left_center": [
+            608,
+            627.5
+          ]
+        }
+      },
+      "parent": "gear.feet.control"
+    },
+    {
+      "id": "gear.feet.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 633,
+        "y": 575,
+        "width": 80,
+        "height": 92,
+        "corners": {
+          "top_left": [
+            633,
+            575
+          ],
+          "top_right": [
+            713,
+            575
+          ],
+          "bottom_left": [
+            633,
+            667
+          ],
+          "bottom_right": [
+            713,
+            667
+          ]
+        },
+        "center": [
+          673.0,
+          621.0
+        ],
+        "anchors": {
+          "top_center": [
+            673.0,
+            575
+          ],
+          "right_center": [
+            713,
+            621.0
+          ],
+          "bottom_center": [
+            673.0,
+            667
+          ],
+          "left_center": [
+            633,
+            621.0
+          ]
+        }
+      },
+      "notes": "Baked raster illustration; extraction rectangle also contains opaque slot background. Hands is the equipped sample; other illustrations are category glyphs.",
+      "parent": "gear.feet.control"
+    },
+    {
+      "id": "gear.feet.label",
+      "kind": "text",
+      "rect": {
+        "x": 651,
+        "y": 675,
+        "width": 52,
+        "height": 22,
+        "corners": {
+          "top_left": [
+            651,
+            675
+          ],
+          "top_right": [
+            703,
+            675
+          ],
+          "bottom_left": [
+            651,
+            697
+          ],
+          "bottom_right": [
+            703,
+            697
+          ]
+        },
+        "center": [
+          677.0,
+          686.0
+        ],
+        "anchors": {
+          "top_center": [
+            677.0,
+            675
+          ],
+          "right_center": [
+            703,
+            686.0
+          ],
+          "bottom_center": [
+            677.0,
+            697
+          ],
+          "left_center": [
+            651,
+            686.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "FEET",
+        "es": "PIES"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 653,
+            "y": 675,
+            "width": 48,
+            "height": 22,
+            "corners": {
+              "top_left": [
+                653,
+                675
+              ],
+              "top_right": [
+                701,
+                675
+              ],
+              "bottom_left": [
+                653,
+                697
+              ],
+              "bottom_right": [
+                701,
+                697
+              ]
+            },
+            "center": [
+              677.0,
+              686.0
+            ],
+            "anchors": {
+              "top_center": [
+                677.0,
+                675
+              ],
+              "right_center": [
+                701,
+                686.0
+              ],
+              "bottom_center": [
+                677.0,
+                697
+              ],
+              "left_center": [
+                653,
+                686.0
+              ]
+            }
+          }
+        }
+      },
+      "parent": "gear.feet.control"
+    },
+    {
+      "id": "gear.back.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 608,
+        "y": 722,
+        "width": 137,
+        "height": 158,
+        "corners": {
+          "top_left": [
+            608,
+            722
+          ],
+          "top_right": [
+            745,
+            722
+          ],
+          "bottom_left": [
+            608,
+            880
+          ],
+          "bottom_right": [
+            745,
+            880
+          ]
+        },
+        "center": [
+          676.5,
+          801.0
+        ],
+        "anchors": {
+          "top_center": [
+            676.5,
+            722
+          ],
+          "right_center": [
+            745,
+            801.0
+          ],
+          "bottom_center": [
+            676.5,
+            880
+          ],
+          "left_center": [
+            608,
+            801.0
+          ]
+        }
+      },
+      "notes": "Opens inventory filtered by back. The visible frame is measured; interaction does not equip an item.",
+      "target_window": "WIN-032"
+    },
+    {
+      "id": "gear.back.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 608,
+        "y": 722,
+        "width": 137,
+        "height": 158,
+        "corners": {
+          "top_left": [
+            608,
+            722
+          ],
+          "top_right": [
+            745,
+            722
+          ],
+          "bottom_left": [
+            608,
+            880
+          ],
+          "bottom_right": [
+            745,
+            880
+          ]
+        },
+        "center": [
+          676.5,
+          801.0
+        ],
+        "anchors": {
+          "top_center": [
+            676.5,
+            722
+          ],
+          "right_center": [
+            745,
+            801.0
+          ],
+          "bottom_center": [
+            676.5,
+            880
+          ],
+          "left_center": [
+            608,
+            801.0
+          ]
+        }
+      },
+      "parent": "gear.back.control"
+    },
+    {
+      "id": "gear.back.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 634,
+        "y": 747,
+        "width": 83,
+        "height": 98,
+        "corners": {
+          "top_left": [
+            634,
+            747
+          ],
+          "top_right": [
+            717,
+            747
+          ],
+          "bottom_left": [
+            634,
+            845
+          ],
+          "bottom_right": [
+            717,
+            845
+          ]
+        },
+        "center": [
+          675.5,
+          796.0
+        ],
+        "anchors": {
+          "top_center": [
+            675.5,
+            747
+          ],
+          "right_center": [
+            717,
+            796.0
+          ],
+          "bottom_center": [
+            675.5,
+            845
+          ],
+          "left_center": [
+            634,
+            796.0
+          ]
+        }
+      },
+      "notes": "Baked raster illustration; extraction rectangle also contains opaque slot background. Hands is the equipped sample; other illustrations are category glyphs.",
+      "parent": "gear.back.control"
+    },
+    {
+      "id": "gear.back.label",
+      "kind": "text",
+      "rect": {
+        "x": 650,
+        "y": 851,
+        "width": 55,
+        "height": 23,
+        "corners": {
+          "top_left": [
+            650,
+            851
+          ],
+          "top_right": [
+            705,
+            851
+          ],
+          "bottom_left": [
+            650,
+            874
+          ],
+          "bottom_right": [
+            705,
+            874
+          ]
+        },
+        "center": [
+          677.5,
+          862.5
+        ],
+        "anchors": {
+          "top_center": [
+            677.5,
+            851
+          ],
+          "right_center": [
+            705,
+            862.5
+          ],
+          "bottom_center": [
+            677.5,
+            874
+          ],
+          "left_center": [
+            650,
+            862.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "BACK",
+        "es": "ESPALDA"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 637,
+            "y": 851,
+            "width": 80,
+            "height": 23,
+            "corners": {
+              "top_left": [
+                637,
+                851
+              ],
+              "top_right": [
+                717,
+                851
+              ],
+              "bottom_left": [
+                637,
+                874
+              ],
+              "bottom_right": [
+                717,
+                874
+              ]
+            },
+            "center": [
+              677.0,
+              862.5
+            ],
+            "anchors": {
+              "top_center": [
+                677.0,
+                851
+              ],
+              "right_center": [
+                717,
+                862.5
+              ],
+              "bottom_center": [
+                677.0,
+                874
+              ],
+              "left_center": [
+                637,
+                862.5
+              ]
+            }
+          }
+        }
+      },
+      "parent": "gear.back.control"
+    },
+    {
+      "id": "combat_stats.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 66,
+        "y": 1101,
+        "width": 722,
+        "height": 120,
+        "corners": {
+          "top_left": [
+            66,
+            1101
+          ],
+          "top_right": [
+            788,
+            1101
+          ],
+          "bottom_left": [
+            66,
+            1221
+          ],
+          "bottom_right": [
+            788,
+            1221
+          ]
+        },
+        "center": [
+          427.0,
+          1161.0
+        ],
+        "anchors": {
+          "top_center": [
+            427.0,
+            1101
+          ],
+          "right_center": [
+            788,
+            1161.0
+          ],
+          "bottom_center": [
+            427.0,
+            1221
+          ],
+          "left_center": [
+            66,
+            1161.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "combat_stats.heading",
+      "kind": "text",
+      "rect": {
+        "x": 317,
+        "y": 1100,
+        "width": 230,
+        "height": 28,
+        "corners": {
+          "top_left": [
+            317,
+            1100
+          ],
+          "top_right": [
+            547,
+            1100
+          ],
+          "bottom_left": [
+            317,
+            1128
+          ],
+          "bottom_right": [
+            547,
+            1128
+          ]
+        },
+        "center": [
+          432.0,
+          1114.0
+        ],
+        "anchors": {
+          "top_center": [
+            432.0,
+            1100
+          ],
+          "right_center": [
+            547,
+            1114.0
+          ],
+          "bottom_center": [
+            432.0,
+            1128
+          ],
+          "left_center": [
+            317,
+            1114.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "COMBAT STATS",
+        "es": "ESTADÍSTICAS DE COMBATE"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 285,
+            "y": 1100,
+            "width": 287,
+            "height": 27,
+            "corners": {
+              "top_left": [
+                285,
+                1100
+              ],
+              "top_right": [
+                572,
+                1100
+              ],
+              "bottom_left": [
+                285,
+                1127
+              ],
+              "bottom_right": [
+                572,
+                1127
+              ]
+            },
+            "center": [
+              428.5,
+              1113.5
+            ],
+            "anchors": {
+              "top_center": [
+                428.5,
+                1100
+              ],
+              "right_center": [
+                572,
+                1113.5
+              ],
+              "bottom_center": [
+                428.5,
+                1127
+              ],
+              "left_center": [
+                285,
+                1113.5
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "combat_stats.divider_1",
+      "kind": "artwork",
+      "rect": {
+        "x": 317,
+        "y": 1141,
+        "width": 4,
+        "height": 61,
+        "corners": {
+          "top_left": [
+            317,
+            1141
+          ],
+          "top_right": [
+            321,
+            1141
+          ],
+          "bottom_left": [
+            317,
+            1202
+          ],
+          "bottom_right": [
+            321,
+            1202
+          ]
+        },
+        "center": [
+          319.0,
+          1171.5
+        ],
+        "anchors": {
+          "top_center": [
+            319.0,
+            1141
+          ],
+          "right_center": [
+            321,
+            1171.5
+          ],
+          "bottom_center": [
+            319.0,
+            1202
+          ],
+          "left_center": [
+            317,
+            1171.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "combat_stats.divider_2",
+      "kind": "artwork",
+      "rect": {
+        "x": 539,
+        "y": 1141,
+        "width": 4,
+        "height": 61,
+        "corners": {
+          "top_left": [
+            539,
+            1141
+          ],
+          "top_right": [
+            543,
+            1141
+          ],
+          "bottom_left": [
+            539,
+            1202
+          ],
+          "bottom_right": [
+            543,
+            1202
+          ]
+        },
+        "center": [
+          541.0,
+          1171.5
+        ],
+        "anchors": {
+          "top_center": [
+            541.0,
+            1141
+          ],
+          "right_center": [
+            543,
+            1171.5
+          ],
+          "bottom_center": [
+            541.0,
+            1202
+          ],
+          "left_center": [
+            539,
+            1171.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "combat_stats.power.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 127,
+        "y": 1141,
+        "width": 50,
+        "height": 60,
+        "corners": {
+          "top_left": [
+            127,
+            1141
+          ],
+          "top_right": [
+            177,
+            1141
+          ],
+          "bottom_left": [
+            127,
+            1201
+          ],
+          "bottom_right": [
+            177,
+            1201
+          ]
+        },
+        "center": [
+          152.0,
+          1171.0
+        ],
+        "anchors": {
+          "top_center": [
+            152.0,
+            1141
+          ],
+          "right_center": [
+            177,
+            1171.0
+          ],
+          "bottom_center": [
+            152.0,
+            1201
+          ],
+          "left_center": [
+            127,
+            1171.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "combat_stats.power.label",
+      "kind": "text",
+      "rect": {
+        "x": 203,
+        "y": 1140,
+        "width": 79,
+        "height": 24,
+        "corners": {
+          "top_left": [
+            203,
+            1140
+          ],
+          "top_right": [
+            282,
+            1140
+          ],
+          "bottom_left": [
+            203,
+            1164
+          ],
+          "bottom_right": [
+            282,
+            1164
+          ]
+        },
+        "center": [
+          242.5,
+          1152.0
+        ],
+        "anchors": {
+          "top_center": [
+            242.5,
+            1140
+          ],
+          "right_center": [
+            282,
+            1152.0
+          ],
+          "bottom_center": [
+            242.5,
+            1164
+          ],
+          "left_center": [
+            203,
+            1152.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "POWER",
+        "es": "PODER"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 202,
+            "y": 1140,
+            "width": 70,
+            "height": 24,
+            "corners": {
+              "top_left": [
+                202,
+                1140
+              ],
+              "top_right": [
+                272,
+                1140
+              ],
+              "bottom_left": [
+                202,
+                1164
+              ],
+              "bottom_right": [
+                272,
+                1164
+              ]
+            },
+            "center": [
+              237.0,
+              1152.0
+            ],
+            "anchors": {
+              "top_center": [
+                237.0,
+                1140
+              ],
+              "right_center": [
+                272,
+                1152.0
+              ],
+              "bottom_center": [
+                237.0,
+                1164
+              ],
+              "left_center": [
+                202,
+                1152.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "combat_stats.power.value",
+      "kind": "text",
+      "rect": {
+        "x": 203,
+        "y": 1166,
+        "width": 52,
+        "height": 37,
+        "corners": {
+          "top_left": [
+            203,
+            1166
+          ],
+          "top_right": [
+            255,
+            1166
+          ],
+          "bottom_left": [
+            203,
+            1203
+          ],
+          "bottom_right": [
+            255,
+            1203
+          ]
+        },
+        "center": [
+          229.0,
+          1184.5
+        ],
+        "anchors": {
+          "top_center": [
+            229.0,
+            1166
+          ],
+          "right_center": [
+            255,
+            1184.5
+          ],
+          "bottom_center": [
+            229.0,
+            1203
+          ],
+          "left_center": [
+            203,
+            1184.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "24",
+        "es": "24"
+      }
+    },
+    {
+      "id": "combat_stats.guard.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 354,
+        "y": 1143,
+        "width": 49,
+        "height": 59,
+        "corners": {
+          "top_left": [
+            354,
+            1143
+          ],
+          "top_right": [
+            403,
+            1143
+          ],
+          "bottom_left": [
+            354,
+            1202
+          ],
+          "bottom_right": [
+            403,
+            1202
+          ]
+        },
+        "center": [
+          378.5,
+          1172.5
+        ],
+        "anchors": {
+          "top_center": [
+            378.5,
+            1143
+          ],
+          "right_center": [
+            403,
+            1172.5
+          ],
+          "bottom_center": [
+            378.5,
+            1202
+          ],
+          "left_center": [
+            354,
+            1172.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "combat_stats.guard.label",
+      "kind": "text",
+      "rect": {
+        "x": 425,
+        "y": 1140,
+        "width": 80,
+        "height": 24,
+        "corners": {
+          "top_left": [
+            425,
+            1140
+          ],
+          "top_right": [
+            505,
+            1140
+          ],
+          "bottom_left": [
+            425,
+            1164
+          ],
+          "bottom_right": [
+            505,
+            1164
+          ]
+        },
+        "center": [
+          465.0,
+          1152.0
+        ],
+        "anchors": {
+          "top_center": [
+            465.0,
+            1140
+          ],
+          "right_center": [
+            505,
+            1152.0
+          ],
+          "bottom_center": [
+            465.0,
+            1164
+          ],
+          "left_center": [
+            425,
+            1152.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "GUARD",
+        "es": "DEFENSA"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 425,
+            "y": 1140,
+            "width": 97,
+            "height": 24,
+            "corners": {
+              "top_left": [
+                425,
+                1140
+              ],
+              "top_right": [
+                522,
+                1140
+              ],
+              "bottom_left": [
+                425,
+                1164
+              ],
+              "bottom_right": [
+                522,
+                1164
+              ]
+            },
+            "center": [
+              473.5,
+              1152.0
+            ],
+            "anchors": {
+              "top_center": [
+                473.5,
+                1140
+              ],
+              "right_center": [
+                522,
+                1152.0
+              ],
+              "bottom_center": [
+                473.5,
+                1164
+              ],
+              "left_center": [
+                425,
+                1152.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "combat_stats.guard.value",
+      "kind": "text",
+      "rect": {
+        "x": 425,
+        "y": 1166,
+        "width": 51,
+        "height": 38,
+        "corners": {
+          "top_left": [
+            425,
+            1166
+          ],
+          "top_right": [
+            476,
+            1166
+          ],
+          "bottom_left": [
+            425,
+            1204
+          ],
+          "bottom_right": [
+            476,
+            1204
+          ]
+        },
+        "center": [
+          450.5,
+          1185.0
+        ],
+        "anchors": {
+          "top_center": [
+            450.5,
+            1166
+          ],
+          "right_center": [
+            476,
+            1185.0
+          ],
+          "bottom_center": [
+            450.5,
+            1204
+          ],
+          "left_center": [
+            425,
+            1185.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "18",
+        "es": "18"
+      }
+    },
+    {
+      "id": "combat_stats.focus.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 575,
+        "y": 1145,
+        "width": 58,
+        "height": 53,
+        "corners": {
+          "top_left": [
+            575,
+            1145
+          ],
+          "top_right": [
+            633,
+            1145
+          ],
+          "bottom_left": [
+            575,
+            1198
+          ],
+          "bottom_right": [
+            633,
+            1198
+          ]
+        },
+        "center": [
+          604.0,
+          1171.5
+        ],
+        "anchors": {
+          "top_center": [
+            604.0,
+            1145
+          ],
+          "right_center": [
+            633,
+            1171.5
+          ],
+          "bottom_center": [
+            604.0,
+            1198
+          ],
+          "left_center": [
+            575,
+            1171.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "combat_stats.focus.label",
+      "kind": "text",
+      "rect": {
+        "x": 660,
+        "y": 1140,
+        "width": 73,
+        "height": 24,
+        "corners": {
+          "top_left": [
+            660,
+            1140
+          ],
+          "top_right": [
+            733,
+            1140
+          ],
+          "bottom_left": [
+            660,
+            1164
+          ],
+          "bottom_right": [
+            733,
+            1164
+          ]
+        },
+        "center": [
+          696.5,
+          1152.0
+        ],
+        "anchors": {
+          "top_center": [
+            696.5,
+            1140
+          ],
+          "right_center": [
+            733,
+            1152.0
+          ],
+          "bottom_center": [
+            696.5,
+            1164
+          ],
+          "left_center": [
+            660,
+            1152.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "FOCUS",
+        "es": "CONCENTRACIÓN"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 637,
+            "y": 1140,
+            "width": 120,
+            "height": 24,
+            "corners": {
+              "top_left": [
+                637,
+                1140
+              ],
+              "top_right": [
+                757,
+                1140
+              ],
+              "bottom_left": [
+                637,
+                1164
+              ],
+              "bottom_right": [
+                757,
+                1164
+              ]
+            },
+            "center": [
+              697.0,
+              1152.0
+            ],
+            "anchors": {
+              "top_center": [
+                697.0,
+                1140
+              ],
+              "right_center": [
+                757,
+                1152.0
+              ],
+              "bottom_center": [
+                697.0,
+                1164
+              ],
+              "left_center": [
+                637,
+                1152.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "combat_stats.focus.value",
+      "kind": "text",
+      "rect": {
+        "x": 661,
+        "y": 1166,
+        "width": 49,
+        "height": 37,
+        "corners": {
+          "top_left": [
+            661,
+            1166
+          ],
+          "top_right": [
+            710,
+            1166
+          ],
+          "bottom_left": [
+            661,
+            1203
+          ],
+          "bottom_right": [
+            710,
+            1203
+          ]
+        },
+        "center": [
+          685.5,
+          1184.5
+        ],
+        "anchors": {
+          "top_center": [
+            685.5,
+            1166
+          ],
+          "right_center": [
+            710,
+            1184.5
+          ],
+          "bottom_center": [
+            685.5,
+            1203
+          ],
+          "left_center": [
+            661,
+            1184.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "21",
+        "es": "21"
+      }
+    },
+    {
+      "id": "today.frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 25,
+        "y": 1227,
+        "width": 804,
+        "height": 429,
+        "corners": {
+          "top_left": [
+            25,
+            1227
+          ],
+          "top_right": [
+            829,
+            1227
+          ],
+          "bottom_left": [
+            25,
+            1656
+          ],
+          "bottom_right": [
+            829,
+            1656
+          ]
+        },
+        "center": [
+          427.0,
+          1441.5
+        ],
+        "anchors": {
+          "top_center": [
+            427.0,
+            1227
+          ],
+          "right_center": [
+            829,
+            1441.5
+          ],
+          "bottom_center": [
+            427.0,
+            1656
+          ],
+          "left_center": [
+            25,
+            1441.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "today.heading_icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 69,
+        "y": 1243,
+        "width": 49,
+        "height": 61,
+        "corners": {
+          "top_left": [
+            69,
+            1243
+          ],
+          "top_right": [
+            118,
+            1243
+          ],
+          "bottom_left": [
+            69,
+            1304
+          ],
+          "bottom_right": [
+            118,
+            1304
+          ]
+        },
+        "center": [
+          93.5,
+          1273.5
+        ],
+        "anchors": {
+          "top_center": [
+            93.5,
+            1243
+          ],
+          "right_center": [
+            118,
+            1273.5
+          ],
+          "bottom_center": [
+            93.5,
+            1304
+          ],
+          "left_center": [
+            69,
+            1273.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "today.heading",
+      "kind": "text",
+      "rect": {
+        "x": 134,
+        "y": 1249,
+        "width": 350,
+        "height": 39,
+        "corners": {
+          "top_left": [
+            134,
+            1249
+          ],
+          "top_right": [
+            484,
+            1249
+          ],
+          "bottom_left": [
+            134,
+            1288
+          ],
+          "bottom_right": [
+            484,
+            1288
+          ]
+        },
+        "center": [
+          309.0,
+          1268.5
+        ],
+        "anchors": {
+          "top_center": [
+            309.0,
+            1249
+          ],
+          "right_center": [
+            484,
+            1268.5
+          ],
+          "bottom_center": [
+            309.0,
+            1288
+          ],
+          "left_center": [
+            134,
+            1268.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "TODAY’S TRAINING",
+        "es": "ENTRENAMIENTO DE HOY"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 134,
+            "y": 1249,
+            "width": 475,
+            "height": 39,
+            "corners": {
+              "top_left": [
+                134,
+                1249
+              ],
+              "top_right": [
+                609,
+                1249
+              ],
+              "bottom_left": [
+                134,
+                1288
+              ],
+              "bottom_right": [
+                609,
+                1288
+              ]
+            },
+            "center": [
+              371.5,
+              1268.5
+            ],
+            "anchors": {
+              "top_center": [
+                371.5,
+                1249
+              ],
+              "right_center": [
+                609,
+                1268.5
+              ],
+              "bottom_center": [
+                371.5,
+                1288
+              ],
+              "left_center": [
+                134,
+                1268.5
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "today.heading_rule",
+      "kind": "artwork",
+      "rect": {
+        "x": 85,
+        "y": 1289,
+        "width": 427,
+        "height": 11,
+        "corners": {
+          "top_left": [
+            85,
+            1289
+          ],
+          "top_right": [
+            512,
+            1289
+          ],
+          "bottom_left": [
+            85,
+            1300
+          ],
+          "bottom_right": [
+            512,
+            1300
+          ]
+        },
+        "center": [
+          298.5,
+          1294.5
+        ],
+        "anchors": {
+          "top_center": [
+            298.5,
+            1289
+          ],
+          "right_center": [
+            512,
+            1294.5
+          ],
+          "bottom_center": [
+            298.5,
+            1300
+          ],
+          "left_center": [
+            85,
+            1294.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "today.training_icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 72,
+        "y": 1317,
+        "width": 64,
+        "height": 42,
+        "corners": {
+          "top_left": [
+            72,
+            1317
+          ],
+          "top_right": [
+            136,
+            1317
+          ],
+          "bottom_left": [
+            72,
+            1359
+          ],
+          "bottom_right": [
+            136,
+            1359
+          ]
+        },
+        "center": [
+          104.0,
+          1338.0
+        ],
+        "anchors": {
+          "top_center": [
+            104.0,
+            1317
+          ],
+          "right_center": [
+            136,
+            1338.0
+          ],
+          "bottom_center": [
+            104.0,
+            1359
+          ],
+          "left_center": [
+            72,
+            1338.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "today.name",
+      "kind": "text",
+      "rect": {
+        "x": 159,
+        "y": 1309,
+        "width": 242,
+        "height": 46,
+        "corners": {
+          "top_left": [
+            159,
+            1309
+          ],
+          "top_right": [
+            401,
+            1309
+          ],
+          "bottom_left": [
+            159,
+            1355
+          ],
+          "bottom_right": [
+            401,
+            1355
+          ]
+        },
+        "center": [
+          280.0,
+          1332.0
+        ],
+        "anchors": {
+          "top_center": [
+            280.0,
+            1309
+          ],
+          "right_center": [
+            401,
+            1332.0
+          ],
+          "bottom_center": [
+            280.0,
+            1355
+          ],
+          "left_center": [
+            159,
+            1332.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Foundation A",
+        "es": "Base A"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 159,
+            "y": 1309,
+            "width": 128,
+            "height": 46,
+            "corners": {
+              "top_left": [
+                159,
+                1309
+              ],
+              "top_right": [
+                287,
+                1309
+              ],
+              "bottom_left": [
+                159,
+                1355
+              ],
+              "bottom_right": [
+                287,
+                1355
+              ]
+            },
+            "center": [
+              223.0,
+              1332.0
+            ],
+            "anchors": {
+              "top_center": [
+                223.0,
+                1309
+              ],
+              "right_center": [
+                287,
+                1332.0
+              ],
+              "bottom_center": [
+                223.0,
+                1355
+              ],
+              "left_center": [
+                159,
+                1332.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "today.clock_icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 159,
+        "y": 1360,
+        "width": 26,
+        "height": 28,
+        "corners": {
+          "top_left": [
+            159,
+            1360
+          ],
+          "top_right": [
+            185,
+            1360
+          ],
+          "bottom_left": [
+            159,
+            1388
+          ],
+          "bottom_right": [
+            185,
+            1388
+          ]
+        },
+        "center": [
+          172.0,
+          1374.0
+        ],
+        "anchors": {
+          "top_center": [
+            172.0,
+            1360
+          ],
+          "right_center": [
+            185,
+            1374.0
+          ],
+          "bottom_center": [
+            172.0,
+            1388
+          ],
+          "left_center": [
+            159,
+            1374.0
+          ]
+        }
+      }
+    },
+    {
+      "id": "today.duration",
+      "kind": "text",
+      "rect": {
+        "x": 198,
+        "y": 1360,
+        "width": 139,
+        "height": 28,
+        "corners": {
+          "top_left": [
+            198,
+            1360
+          ],
+          "top_right": [
+            337,
+            1360
+          ],
+          "bottom_left": [
+            198,
+            1388
+          ],
+          "bottom_right": [
+            337,
+            1388
+          ]
+        },
+        "center": [
+          267.5,
+          1374.0
+        ],
+        "anchors": {
+          "top_center": [
+            267.5,
+            1360
+          ],
+          "right_center": [
+            337,
+            1374.0
+          ],
+          "bottom_center": [
+            267.5,
+            1388
+          ],
+          "left_center": [
+            198,
+            1374.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "About 24 min",
+        "es": "Aprox. 24 min"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 196,
+            "y": 1360,
+            "width": 166,
+            "height": 28,
+            "corners": {
+              "top_left": [
+                196,
+                1360
+              ],
+              "top_right": [
+                362,
+                1360
+              ],
+              "bottom_left": [
+                196,
+                1388
+              ],
+              "bottom_right": [
+                362,
+                1388
+              ]
+            },
+            "center": [
+              279.0,
+              1374.0
+            ],
+            "anchors": {
+              "top_center": [
+                279.0,
+                1360
+              ],
+              "right_center": [
+                362,
+                1374.0
+              ],
+              "bottom_center": [
+                279.0,
+                1388
+              ],
+              "left_center": [
+                196,
+                1374.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "today.meta_separator",
+      "kind": "artwork",
+      "rect": {
+        "x": 357,
+        "y": 1370,
+        "width": 11,
+        "height": 13,
+        "corners": {
+          "top_left": [
+            357,
+            1370
+          ],
+          "top_right": [
+            368,
+            1370
+          ],
+          "bottom_left": [
+            357,
+            1383
+          ],
+          "bottom_right": [
+            368,
+            1383
+          ]
+        },
+        "center": [
+          362.5,
+          1376.5
+        ],
+        "anchors": {
+          "top_center": [
+            362.5,
+            1370
+          ],
+          "right_center": [
+            368,
+            1376.5
+          ],
+          "bottom_center": [
+            362.5,
+            1383
+          ],
+          "left_center": [
+            357,
+            1376.5
+          ]
+        }
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 376,
+            "y": 1370,
+            "width": 11,
+            "height": 13,
+            "corners": {
+              "top_left": [
+                376,
+                1370
+              ],
+              "top_right": [
+                387,
+                1370
+              ],
+              "bottom_left": [
+                376,
+                1383
+              ],
+              "bottom_right": [
+                387,
+                1383
+              ]
+            },
+            "center": [
+              381.5,
+              1376.5
+            ],
+            "anchors": {
+              "top_center": [
+                381.5,
+                1370
+              ],
+              "right_center": [
+                387,
+                1376.5
+              ],
+              "bottom_center": [
+                381.5,
+                1383
+              ],
+              "left_center": [
+                376,
+                1376.5
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "today.difficulty_icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 389,
+        "y": 1363,
+        "width": 24,
+        "height": 25,
+        "corners": {
+          "top_left": [
+            389,
+            1363
+          ],
+          "top_right": [
+            413,
+            1363
+          ],
+          "bottom_left": [
+            389,
+            1388
+          ],
+          "bottom_right": [
+            413,
+            1388
+          ]
+        },
+        "center": [
+          401.0,
+          1375.5
+        ],
+        "anchors": {
+          "top_center": [
+            401.0,
+            1363
+          ],
+          "right_center": [
+            413,
+            1375.5
+          ],
+          "bottom_center": [
+            401.0,
+            1388
+          ],
+          "left_center": [
+            389,
+            1375.5
+          ]
+        }
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 406,
+            "y": 1361,
+            "width": 26,
+            "height": 28,
+            "corners": {
+              "top_left": [
+                406,
+                1361
+              ],
+              "top_right": [
+                432,
+                1361
+              ],
+              "bottom_left": [
+                406,
+                1389
+              ],
+              "bottom_right": [
+                432,
+                1389
+              ]
+            },
+            "center": [
+              419.0,
+              1375.0
+            ],
+            "anchors": {
+              "top_center": [
+                419.0,
+                1361
+              ],
+              "right_center": [
+                432,
+                1375.0
+              ],
+              "bottom_center": [
+                419.0,
+                1389
+              ],
+              "left_center": [
+                406,
+                1375.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "today.difficulty",
+      "kind": "text",
+      "rect": {
+        "x": 417,
+        "y": 1360,
+        "width": 92,
+        "height": 29,
+        "corners": {
+          "top_left": [
+            417,
+            1360
+          ],
+          "top_right": [
+            509,
+            1360
+          ],
+          "bottom_left": [
+            417,
+            1389
+          ],
+          "bottom_right": [
+            509,
+            1389
+          ]
+        },
+        "center": [
+          463.0,
+          1374.5
+        ],
+        "anchors": {
+          "top_center": [
+            463.0,
+            1360
+          ],
+          "right_center": [
+            509,
+            1374.5
+          ],
+          "bottom_center": [
+            463.0,
+            1389
+          ],
+          "left_center": [
+            417,
+            1374.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Medium",
+        "es": "Medio"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 438,
+            "y": 1360,
+            "width": 70,
+            "height": 29,
+            "corners": {
+              "top_left": [
+                438,
+                1360
+              ],
+              "top_right": [
+                508,
+                1360
+              ],
+              "bottom_left": [
+                438,
+                1389
+              ],
+              "bottom_right": [
+                508,
+                1389
+              ]
+            },
+            "center": [
+              473.0,
+              1374.5
+            ],
+            "anchors": {
+              "top_center": [
+                473.0,
+                1360
+              ],
+              "right_center": [
+                508,
+                1374.5
+              ],
+              "bottom_center": [
+                473.0,
+                1389
+              ],
+              "left_center": [
+                438,
+                1374.5
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "today.body",
+      "kind": "text",
+      "rect": {
+        "x": 77,
+        "y": 1400,
+        "width": 505,
+        "height": 28,
+        "corners": {
+          "top_left": [
+            77,
+            1400
+          ],
+          "top_right": [
+            582,
+            1400
+          ],
+          "bottom_left": [
+            77,
+            1428
+          ],
+          "bottom_right": [
+            582,
+            1428
+          ]
+        },
+        "center": [
+          329.5,
+          1414.0
+        ],
+        "anchors": {
+          "top_center": [
+            329.5,
+            1400
+          ],
+          "right_center": [
+            582,
+            1414.0
+          ],
+          "bottom_center": [
+            329.5,
+            1428
+          ],
+          "left_center": [
+            77,
+            1414.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Check how you feel, then review your plan.",
+        "es": "Revisa cómo te sientes y luego tu rutina."
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 77,
+            "y": 1400,
+            "width": 501,
+            "height": 28,
+            "corners": {
+              "top_left": [
+                77,
+                1400
+              ],
+              "top_right": [
+                578,
+                1400
+              ],
+              "bottom_left": [
+                77,
+                1428
+              ],
+              "bottom_right": [
+                578,
+                1428
+              ]
+            },
+            "center": [
+              327.5,
+              1414.0
+            ],
+            "anchors": {
+              "top_center": [
+                327.5,
+                1400
+              ],
+              "right_center": [
+                578,
+                1414.0
+              ],
+              "bottom_center": [
+                327.5,
+                1428
+              ],
+              "left_center": [
+                77,
+                1414.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "today.gap_icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 76,
+        "y": 1438,
+        "width": 33,
+        "height": 31,
+        "corners": {
+          "top_left": [
+            76,
+            1438
+          ],
+          "top_right": [
+            109,
+            1438
+          ],
+          "bottom_left": [
+            76,
+            1469
+          ],
+          "bottom_right": [
+            109,
+            1469
+          ]
+        },
+        "center": [
+          92.5,
+          1453.5
+        ],
+        "anchors": {
+          "top_center": [
+            92.5,
+            1438
+          ],
+          "right_center": [
+            109,
+            1453.5
+          ],
+          "bottom_center": [
+            92.5,
+            1469
+          ],
+          "left_center": [
+            76,
+            1453.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "today.gap_text",
+      "kind": "text",
+      "rect": {
+        "x": 126,
+        "y": 1440,
+        "width": 495,
+        "height": 29,
+        "corners": {
+          "top_left": [
+            126,
+            1440
+          ],
+          "top_right": [
+            621,
+            1440
+          ],
+          "bottom_left": [
+            126,
+            1469
+          ],
+          "bottom_right": [
+            621,
+            1469
+          ]
+        },
+        "center": [
+          373.5,
+          1454.5
+        ],
+        "anchors": {
+          "top_center": [
+            373.5,
+            1440
+          ],
+          "right_center": [
+            621,
+            1454.5
+          ],
+          "bottom_center": [
+            373.5,
+            1469
+          ],
+          "left_center": [
+            126,
+            1454.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Pulling exercise missing. Review equipment.",
+        "es": "Falta un ejercicio de tracción. Revisa el equipo."
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 125,
+            "y": 1440,
+            "width": 511,
+            "height": 29,
+            "corners": {
+              "top_left": [
+                125,
+                1440
+              ],
+              "top_right": [
+                636,
+                1440
+              ],
+              "bottom_left": [
+                125,
+                1469
+              ],
+              "bottom_right": [
+                636,
+                1469
+              ]
+            },
+            "center": [
+              380.5,
+              1454.5
+            ],
+            "anchors": {
+              "top_center": [
+                380.5,
+                1440
+              ],
+              "right_center": [
+                636,
+                1454.5
+              ],
+              "bottom_center": [
+                380.5,
+                1469
+              ],
+              "left_center": [
+                125,
+                1454.5
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "today.cta",
+      "kind": "interactive",
+      "rect": {
+        "x": 42,
+        "y": 1483,
+        "width": 771,
+        "height": 105,
+        "corners": {
+          "top_left": [
+            42,
+            1483
+          ],
+          "top_right": [
+            813,
+            1483
+          ],
+          "bottom_left": [
+            42,
+            1588
+          ],
+          "bottom_right": [
+            813,
+            1588
+          ]
+        },
+        "center": [
+          427.5,
+          1535.5
+        ],
+        "anchors": {
+          "top_center": [
+            427.5,
+            1483
+          ],
+          "right_center": [
+            813,
+            1535.5
+          ],
+          "bottom_center": [
+            427.5,
+            1588
+          ],
+          "left_center": [
+            42,
+            1535.5
+          ]
+        }
+      },
+      "target_window": "WIN-016"
+    },
+    {
+      "id": "today.cta_frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 42,
+        "y": 1483,
+        "width": 771,
+        "height": 105,
+        "corners": {
+          "top_left": [
+            42,
+            1483
+          ],
+          "top_right": [
+            813,
+            1483
+          ],
+          "bottom_left": [
+            42,
+            1588
+          ],
+          "bottom_right": [
+            813,
+            1588
+          ]
+        },
+        "center": [
+          427.5,
+          1535.5
+        ],
+        "anchors": {
+          "top_center": [
+            427.5,
+            1483
+          ],
+          "right_center": [
+            813,
+            1535.5
+          ],
+          "bottom_center": [
+            427.5,
+            1588
+          ],
+          "left_center": [
+            42,
+            1535.5
+          ]
+        }
+      },
+      "parent": "today.cta"
+    },
+    {
+      "id": "today.cta_label",
+      "kind": "text",
+      "rect": {
+        "x": 255,
+        "y": 1507,
+        "width": 361,
+        "height": 49,
+        "corners": {
+          "top_left": [
+            255,
+            1507
+          ],
+          "top_right": [
+            616,
+            1507
+          ],
+          "bottom_left": [
+            255,
+            1556
+          ],
+          "bottom_right": [
+            616,
+            1556
+          ]
+        },
+        "center": [
+          435.5,
+          1531.5
+        ],
+        "anchors": {
+          "top_center": [
+            435.5,
+            1507
+          ],
+          "right_center": [
+            616,
+            1531.5
+          ],
+          "bottom_center": [
+            435.5,
+            1556
+          ],
+          "left_center": [
+            255,
+            1531.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "CHECK TODAY",
+        "es": "REVISAR MI ESTADO"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 210,
+            "y": 1507,
+            "width": 439,
+            "height": 49,
+            "corners": {
+              "top_left": [
+                210,
+                1507
+              ],
+              "top_right": [
+                649,
+                1507
+              ],
+              "bottom_left": [
+                210,
+                1556
+              ],
+              "bottom_right": [
+                649,
+                1556
+              ]
+            },
+            "center": [
+              429.5,
+              1531.5
+            ],
+            "anchors": {
+              "top_center": [
+                429.5,
+                1507
+              ],
+              "right_center": [
+                649,
+                1531.5
+              ],
+              "bottom_center": [
+                429.5,
+                1556
+              ],
+              "left_center": [
+                210,
+                1531.5
+              ]
+            }
+          }
+        }
+      },
+      "parent": "today.cta"
+    },
+    {
+      "id": "today.cta_chevron",
+      "kind": "artwork",
+      "rect": {
+        "x": 666,
+        "y": 1515,
+        "width": 26,
+        "height": 42,
+        "corners": {
+          "top_left": [
+            666,
+            1515
+          ],
+          "top_right": [
+            692,
+            1515
+          ],
+          "bottom_left": [
+            666,
+            1557
+          ],
+          "bottom_right": [
+            692,
+            1557
+          ]
+        },
+        "center": [
+          679.0,
+          1536.0
+        ],
+        "anchors": {
+          "top_center": [
+            679.0,
+            1515
+          ],
+          "right_center": [
+            692,
+            1536.0
+          ],
+          "bottom_center": [
+            679.0,
+            1557
+          ],
+          "left_center": [
+            666,
+            1536.0
+          ]
+        }
+      },
+      "parent": "today.cta"
+    },
+    {
+      "id": "consistency.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 254,
+        "y": 1590,
+        "width": 387,
+        "height": 60,
+        "corners": {
+          "top_left": [
+            254,
+            1590
+          ],
+          "top_right": [
+            641,
+            1590
+          ],
+          "bottom_left": [
+            254,
+            1650
+          ],
+          "bottom_right": [
+            641,
+            1650
+          ]
+        },
+        "center": [
+          447.5,
+          1620.0
+        ],
+        "anchors": {
+          "top_center": [
+            447.5,
+            1590
+          ],
+          "right_center": [
+            641,
+            1620.0
+          ],
+          "bottom_center": [
+            447.5,
+            1650
+          ],
+          "left_center": [
+            254,
+            1620.0
+          ]
+        }
+      },
+      "target_window": "WIN-031"
+    },
+    {
+      "id": "consistency.flame",
+      "kind": "artwork",
+      "rect": {
+        "x": 262,
+        "y": 1596,
+        "width": 32,
+        "height": 50,
+        "corners": {
+          "top_left": [
+            262,
+            1596
+          ],
+          "top_right": [
+            294,
+            1596
+          ],
+          "bottom_left": [
+            262,
+            1646
+          ],
+          "bottom_right": [
+            294,
+            1646
+          ]
+        },
+        "center": [
+          278.0,
+          1621.0
+        ],
+        "anchors": {
+          "top_center": [
+            278.0,
+            1596
+          ],
+          "right_center": [
+            294,
+            1621.0
+          ],
+          "bottom_center": [
+            278.0,
+            1646
+          ],
+          "left_center": [
+            262,
+            1621.0
+          ]
+        }
+      },
+      "parent": "consistency.control"
+    },
+    {
+      "id": "consistency.value",
+      "kind": "text",
+      "rect": {
+        "x": 313,
+        "y": 1596,
+        "width": 200,
+        "height": 28,
+        "corners": {
+          "top_left": [
+            313,
+            1596
+          ],
+          "top_right": [
+            513,
+            1596
+          ],
+          "bottom_left": [
+            313,
+            1624
+          ],
+          "bottom_right": [
+            513,
+            1624
+          ]
+        },
+        "center": [
+          413.0,
+          1610.0
+        ],
+        "anchors": {
+          "top_center": [
+            413.0,
+            1596
+          ],
+          "right_center": [
+            513,
+            1610.0
+          ],
+          "bottom_center": [
+            413.0,
+            1624
+          ],
+          "left_center": [
+            313,
+            1610.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Consistency: 7 days",
+        "es": "Constancia: 7 días"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 313,
+            "y": 1596,
+            "width": 202,
+            "height": 28,
+            "corners": {
+              "top_left": [
+                313,
+                1596
+              ],
+              "top_right": [
+                515,
+                1596
+              ],
+              "bottom_left": [
+                313,
+                1624
+              ],
+              "bottom_right": [
+                515,
+                1624
+              ]
+            },
+            "center": [
+              414.0,
+              1610.0
+            ],
+            "anchors": {
+              "top_center": [
+                414.0,
+                1596
+              ],
+              "right_center": [
+                515,
+                1610.0
+              ],
+              "bottom_center": [
+                414.0,
+                1624
+              ],
+              "left_center": [
+                313,
+                1610.0
+              ]
+            }
+          }
+        }
+      },
+      "parent": "consistency.control"
+    },
+    {
+      "id": "consistency.body",
+      "kind": "text",
+      "rect": {
+        "x": 313,
+        "y": 1627,
+        "width": 288,
+        "height": 21,
+        "corners": {
+          "top_left": [
+            313,
+            1627
+          ],
+          "top_right": [
+            601,
+            1627
+          ],
+          "bottom_left": [
+            313,
+            1648
+          ],
+          "bottom_right": [
+            601,
+            1648
+          ]
+        },
+        "center": [
+          457.0,
+          1637.5
+        ],
+        "anchors": {
+          "top_center": [
+            457.0,
+            1627
+          ],
+          "right_center": [
+            601,
+            1637.5
+          ],
+          "bottom_center": [
+            457.0,
+            1648
+          ],
+          "left_center": [
+            313,
+            1637.5
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Recovery counts toward consistency.",
+        "es": "La recuperación cuenta para tu constancia."
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 313,
+            "y": 1627,
+            "width": 329,
+            "height": 21,
+            "corners": {
+              "top_left": [
+                313,
+                1627
+              ],
+              "top_right": [
+                642,
+                1627
+              ],
+              "bottom_left": [
+                313,
+                1648
+              ],
+              "bottom_right": [
+                642,
+                1648
+              ]
+            },
+            "center": [
+              477.5,
+              1637.5
+            ],
+            "anchors": {
+              "top_center": [
+                477.5,
+                1627
+              ],
+              "right_center": [
+                642,
+                1637.5
+              ],
+              "bottom_center": [
+                477.5,
+                1648
+              ],
+              "left_center": [
+                313,
+                1637.5
+              ]
+            }
+          }
+        }
+      },
+      "parent": "consistency.control"
+    },
+    {
+      "id": "navigation.background",
+      "kind": "artwork",
+      "rect": {
+        "x": 0,
+        "y": 1673,
+        "width": 853,
+        "height": 171,
+        "corners": {
+          "top_left": [
+            0,
+            1673
+          ],
+          "top_right": [
+            853,
+            1673
+          ],
+          "bottom_left": [
+            0,
+            1844
+          ],
+          "bottom_right": [
+            853,
+            1844
+          ]
+        },
+        "center": [
+          426.5,
+          1758.5
+        ],
+        "anchors": {
+          "top_center": [
+            426.5,
+            1673
+          ],
+          "right_center": [
+            853,
+            1758.5
+          ],
+          "bottom_center": [
+            426.5,
+            1844
+          ],
+          "left_center": [
+            0,
+            1758.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "navigation.top_rule",
+      "kind": "artwork",
+      "rect": {
+        "x": 0,
+        "y": 1672,
+        "width": 853,
+        "height": 7,
+        "corners": {
+          "top_left": [
+            0,
+            1672
+          ],
+          "top_right": [
+            853,
+            1672
+          ],
+          "bottom_left": [
+            0,
+            1679
+          ],
+          "bottom_right": [
+            853,
+            1679
+          ]
+        },
+        "center": [
+          426.5,
+          1675.5
+        ],
+        "anchors": {
+          "top_center": [
+            426.5,
+            1672
+          ],
+          "right_center": [
+            853,
+            1675.5
+          ],
+          "bottom_center": [
+            426.5,
+            1679
+          ],
+          "left_center": [
+            0,
+            1675.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "navigation.system.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 26,
+        "y": 1675,
+        "width": 159,
+        "height": 141,
+        "corners": {
+          "top_left": [
+            26,
+            1675
+          ],
+          "top_right": [
+            185,
+            1675
+          ],
+          "bottom_left": [
+            26,
+            1816
+          ],
+          "bottom_right": [
+            185,
+            1816
+          ]
+        },
+        "center": [
+          105.5,
+          1745.5
+        ],
+        "anchors": {
+          "top_center": [
+            105.5,
+            1675
+          ],
+          "right_center": [
+            185,
+            1745.5
+          ],
+          "bottom_center": [
+            105.5,
+            1816
+          ],
+          "left_center": [
+            26,
+            1745.5
+          ]
+        }
+      },
+      "target_window": "WIN-001"
+    },
+    {
+      "id": "navigation.system.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 71,
+        "y": 1687,
+        "width": 70,
+        "height": 82,
+        "corners": {
+          "top_left": [
+            71,
+            1687
+          ],
+          "top_right": [
+            141,
+            1687
+          ],
+          "bottom_left": [
+            71,
+            1769
+          ],
+          "bottom_right": [
+            141,
+            1769
+          ]
+        },
+        "center": [
+          106.0,
+          1728.0
+        ],
+        "anchors": {
+          "top_center": [
+            106.0,
+            1687
+          ],
+          "right_center": [
+            141,
+            1728.0
+          ],
+          "bottom_center": [
+            106.0,
+            1769
+          ],
+          "left_center": [
+            71,
+            1728.0
+          ]
+        }
+      },
+      "parent": "navigation.system.control"
+    },
+    {
+      "id": "navigation.system.label",
+      "kind": "text",
+      "rect": {
+        "x": 69,
+        "y": 1768,
+        "width": 80,
+        "height": 28,
+        "corners": {
+          "top_left": [
+            69,
+            1768
+          ],
+          "top_right": [
+            149,
+            1768
+          ],
+          "bottom_left": [
+            69,
+            1796
+          ],
+          "bottom_right": [
+            149,
+            1796
+          ]
+        },
+        "center": [
+          109.0,
+          1782.0
+        ],
+        "anchors": {
+          "top_center": [
+            109.0,
+            1768
+          ],
+          "right_center": [
+            149,
+            1782.0
+          ],
+          "bottom_center": [
+            109.0,
+            1796
+          ],
+          "left_center": [
+            69,
+            1782.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "System",
+        "es": "Sistema"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 65,
+            "y": 1768,
+            "width": 80,
+            "height": 28,
+            "corners": {
+              "top_left": [
+                65,
+                1768
+              ],
+              "top_right": [
+                145,
+                1768
+              ],
+              "bottom_left": [
+                65,
+                1796
+              ],
+              "bottom_right": [
+                145,
+                1796
+              ]
+            },
+            "center": [
+              105.0,
+              1782.0
+            ],
+            "anchors": {
+              "top_center": [
+                105.0,
+                1768
+              ],
+              "right_center": [
+                145,
+                1782.0
+              ],
+              "bottom_center": [
+                105.0,
+                1796
+              ],
+              "left_center": [
+                65,
+                1782.0
+              ]
+            }
+          }
+        }
+      },
+      "parent": "navigation.system.control"
+    },
+    {
+      "id": "navigation.train.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 185,
+        "y": 1681,
+        "width": 163,
+        "height": 151,
+        "corners": {
+          "top_left": [
+            185,
+            1681
+          ],
+          "top_right": [
+            348,
+            1681
+          ],
+          "bottom_left": [
+            185,
+            1832
+          ],
+          "bottom_right": [
+            348,
+            1832
+          ]
+        },
+        "center": [
+          266.5,
+          1756.5
+        ],
+        "anchors": {
+          "top_center": [
+            266.5,
+            1681
+          ],
+          "right_center": [
+            348,
+            1756.5
+          ],
+          "bottom_center": [
+            266.5,
+            1832
+          ],
+          "left_center": [
+            185,
+            1756.5
+          ]
+        }
+      },
+      "target_window": "WIN-015"
+    },
+    {
+      "id": "navigation.train.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 231,
+        "y": 1706,
+        "width": 77,
+        "height": 54,
+        "corners": {
+          "top_left": [
+            231,
+            1706
+          ],
+          "top_right": [
+            308,
+            1706
+          ],
+          "bottom_left": [
+            231,
+            1760
+          ],
+          "bottom_right": [
+            308,
+            1760
+          ]
+        },
+        "center": [
+          269.5,
+          1733.0
+        ],
+        "anchors": {
+          "top_center": [
+            269.5,
+            1706
+          ],
+          "right_center": [
+            308,
+            1733.0
+          ],
+          "bottom_center": [
+            269.5,
+            1760
+          ],
+          "left_center": [
+            231,
+            1733.0
+          ]
+        }
+      },
+      "parent": "navigation.train.control"
+    },
+    {
+      "id": "navigation.train.label",
+      "kind": "text",
+      "rect": {
+        "x": 240,
+        "y": 1768,
+        "width": 60,
+        "height": 28,
+        "corners": {
+          "top_left": [
+            240,
+            1768
+          ],
+          "top_right": [
+            300,
+            1768
+          ],
+          "bottom_left": [
+            240,
+            1796
+          ],
+          "bottom_right": [
+            300,
+            1796
+          ]
+        },
+        "center": [
+          270.0,
+          1782.0
+        ],
+        "anchors": {
+          "top_center": [
+            270.0,
+            1768
+          ],
+          "right_center": [
+            300,
+            1782.0
+          ],
+          "bottom_center": [
+            270.0,
+            1796
+          ],
+          "left_center": [
+            240,
+            1782.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Train",
+        "es": "Entrenar"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 226,
+            "y": 1768,
+            "width": 93,
+            "height": 28,
+            "corners": {
+              "top_left": [
+                226,
+                1768
+              ],
+              "top_right": [
+                319,
+                1768
+              ],
+              "bottom_left": [
+                226,
+                1796
+              ],
+              "bottom_right": [
+                319,
+                1796
+              ]
+            },
+            "center": [
+              272.5,
+              1782.0
+            ],
+            "anchors": {
+              "top_center": [
+                272.5,
+                1768
+              ],
+              "right_center": [
+                319,
+                1782.0
+              ],
+              "bottom_center": [
+                272.5,
+                1796
+              ],
+              "left_center": [
+                226,
+                1782.0
+              ]
+            }
+          }
+        }
+      },
+      "parent": "navigation.train.control"
+    },
+    {
+      "id": "navigation.tower.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 349,
+        "y": 1681,
+        "width": 151,
+        "height": 151,
+        "corners": {
+          "top_left": [
+            349,
+            1681
+          ],
+          "top_right": [
+            500,
+            1681
+          ],
+          "bottom_left": [
+            349,
+            1832
+          ],
+          "bottom_right": [
+            500,
+            1832
+          ]
+        },
+        "center": [
+          424.5,
+          1756.5
+        ],
+        "anchors": {
+          "top_center": [
+            424.5,
+            1681
+          ],
+          "right_center": [
+            500,
+            1756.5
+          ],
+          "bottom_center": [
+            424.5,
+            1832
+          ],
+          "left_center": [
+            349,
+            1756.5
+          ]
+        }
+      },
+      "target_window": "WIN-037"
+    },
+    {
+      "id": "navigation.tower.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 393,
+        "y": 1693,
+        "width": 61,
+        "height": 72,
+        "corners": {
+          "top_left": [
+            393,
+            1693
+          ],
+          "top_right": [
+            454,
+            1693
+          ],
+          "bottom_left": [
+            393,
+            1765
+          ],
+          "bottom_right": [
+            454,
+            1765
+          ]
+        },
+        "center": [
+          423.5,
+          1729.0
+        ],
+        "anchors": {
+          "top_center": [
+            423.5,
+            1693
+          ],
+          "right_center": [
+            454,
+            1729.0
+          ],
+          "bottom_center": [
+            423.5,
+            1765
+          ],
+          "left_center": [
+            393,
+            1729.0
+          ]
+        }
+      },
+      "parent": "navigation.tower.control"
+    },
+    {
+      "id": "navigation.tower.label",
+      "kind": "text",
+      "rect": {
+        "x": 396,
+        "y": 1768,
+        "width": 67,
+        "height": 28,
+        "corners": {
+          "top_left": [
+            396,
+            1768
+          ],
+          "top_right": [
+            463,
+            1768
+          ],
+          "bottom_left": [
+            396,
+            1796
+          ],
+          "bottom_right": [
+            463,
+            1796
+          ]
+        },
+        "center": [
+          429.5,
+          1782.0
+        ],
+        "anchors": {
+          "top_center": [
+            429.5,
+            1768
+          ],
+          "right_center": [
+            463,
+            1782.0
+          ],
+          "bottom_center": [
+            429.5,
+            1796
+          ],
+          "left_center": [
+            396,
+            1782.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Tower",
+        "es": "Torre"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 397,
+            "y": 1768,
+            "width": 65,
+            "height": 28,
+            "corners": {
+              "top_left": [
+                397,
+                1768
+              ],
+              "top_right": [
+                462,
+                1768
+              ],
+              "bottom_left": [
+                397,
+                1796
+              ],
+              "bottom_right": [
+                462,
+                1796
+              ]
+            },
+            "center": [
+              429.5,
+              1782.0
+            ],
+            "anchors": {
+              "top_center": [
+                429.5,
+                1768
+              ],
+              "right_center": [
+                462,
+                1782.0
+              ],
+              "bottom_center": [
+                429.5,
+                1796
+              ],
+              "left_center": [
+                397,
+                1782.0
+              ]
+            }
+          }
+        }
+      },
+      "parent": "navigation.tower.control"
+    },
+    {
+      "id": "navigation.gear.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 502,
+        "y": 1681,
+        "width": 158,
+        "height": 151,
+        "corners": {
+          "top_left": [
+            502,
+            1681
+          ],
+          "top_right": [
+            660,
+            1681
+          ],
+          "bottom_left": [
+            502,
+            1832
+          ],
+          "bottom_right": [
+            660,
+            1832
+          ]
+        },
+        "center": [
+          581.0,
+          1756.5
+        ],
+        "anchors": {
+          "top_center": [
+            581.0,
+            1681
+          ],
+          "right_center": [
+            660,
+            1756.5
+          ],
+          "bottom_center": [
+            581.0,
+            1832
+          ],
+          "left_center": [
+            502,
+            1756.5
+          ]
+        }
+      },
+      "target_window": "WIN-032"
+    },
+    {
+      "id": "navigation.gear.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 552,
+        "y": 1698,
+        "width": 51,
+        "height": 70,
+        "corners": {
+          "top_left": [
+            552,
+            1698
+          ],
+          "top_right": [
+            603,
+            1698
+          ],
+          "bottom_left": [
+            552,
+            1768
+          ],
+          "bottom_right": [
+            603,
+            1768
+          ]
+        },
+        "center": [
+          577.5,
+          1733.0
+        ],
+        "anchors": {
+          "top_center": [
+            577.5,
+            1698
+          ],
+          "right_center": [
+            603,
+            1733.0
+          ],
+          "bottom_center": [
+            577.5,
+            1768
+          ],
+          "left_center": [
+            552,
+            1733.0
+          ]
+        }
+      },
+      "parent": "navigation.gear.control"
+    },
+    {
+      "id": "navigation.gear.label",
+      "kind": "text",
+      "rect": {
+        "x": 556,
+        "y": 1768,
+        "width": 50,
+        "height": 28,
+        "corners": {
+          "top_left": [
+            556,
+            1768
+          ],
+          "top_right": [
+            606,
+            1768
+          ],
+          "bottom_left": [
+            556,
+            1796
+          ],
+          "bottom_right": [
+            606,
+            1796
+          ]
+        },
+        "center": [
+          581.0,
+          1782.0
+        ],
+        "anchors": {
+          "top_center": [
+            581.0,
+            1768
+          ],
+          "right_center": [
+            606,
+            1782.0
+          ],
+          "bottom_center": [
+            581.0,
+            1796
+          ],
+          "left_center": [
+            556,
+            1782.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Gear",
+        "es": "Equipo"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 542,
+            "y": 1768,
+            "width": 76,
+            "height": 28,
+            "corners": {
+              "top_left": [
+                542,
+                1768
+              ],
+              "top_right": [
+                618,
+                1768
+              ],
+              "bottom_left": [
+                542,
+                1796
+              ],
+              "bottom_right": [
+                618,
+                1796
+              ]
+            },
+            "center": [
+              580.0,
+              1782.0
+            ],
+            "anchors": {
+              "top_center": [
+                580.0,
+                1768
+              ],
+              "right_center": [
+                618,
+                1782.0
+              ],
+              "bottom_center": [
+                580.0,
+                1796
+              ],
+              "left_center": [
+                542,
+                1782.0
+              ]
+            }
+          }
+        }
+      },
+      "parent": "navigation.gear.control"
+    },
+    {
+      "id": "navigation.gym.control",
+      "kind": "interactive",
+      "rect": {
+        "x": 662,
+        "y": 1681,
+        "width": 166,
+        "height": 151,
+        "corners": {
+          "top_left": [
+            662,
+            1681
+          ],
+          "top_right": [
+            828,
+            1681
+          ],
+          "bottom_left": [
+            662,
+            1832
+          ],
+          "bottom_right": [
+            828,
+            1832
+          ]
+        },
+        "center": [
+          745.0,
+          1756.5
+        ],
+        "anchors": {
+          "top_center": [
+            745.0,
+            1681
+          ],
+          "right_center": [
+            828,
+            1756.5
+          ],
+          "bottom_center": [
+            745.0,
+            1832
+          ],
+          "left_center": [
+            662,
+            1756.5
+          ]
+        }
+      },
+      "target_window": "WIN-043"
+    },
+    {
+      "id": "navigation.gym.icon",
+      "kind": "artwork",
+      "rect": {
+        "x": 710,
+        "y": 1705,
+        "width": 66,
+        "height": 54,
+        "corners": {
+          "top_left": [
+            710,
+            1705
+          ],
+          "top_right": [
+            776,
+            1705
+          ],
+          "bottom_left": [
+            710,
+            1759
+          ],
+          "bottom_right": [
+            776,
+            1759
+          ]
+        },
+        "center": [
+          743.0,
+          1732.0
+        ],
+        "anchors": {
+          "top_center": [
+            743.0,
+            1705
+          ],
+          "right_center": [
+            776,
+            1732.0
+          ],
+          "bottom_center": [
+            743.0,
+            1759
+          ],
+          "left_center": [
+            710,
+            1732.0
+          ]
+        }
+      },
+      "parent": "navigation.gym.control"
+    },
+    {
+      "id": "navigation.gym.label",
+      "kind": "text",
+      "rect": {
+        "x": 713,
+        "y": 1768,
+        "width": 50,
+        "height": 28,
+        "corners": {
+          "top_left": [
+            713,
+            1768
+          ],
+          "top_right": [
+            763,
+            1768
+          ],
+          "bottom_left": [
+            713,
+            1796
+          ],
+          "bottom_right": [
+            763,
+            1796
+          ]
+        },
+        "center": [
+          738.0,
+          1782.0
+        ],
+        "anchors": {
+          "top_center": [
+            738.0,
+            1768
+          ],
+          "right_center": [
+            763,
+            1782.0
+          ],
+          "bottom_center": [
+            738.0,
+            1796
+          ],
+          "left_center": [
+            713,
+            1782.0
+          ]
+        }
+      },
+      "reference_text": {
+        "en": "Gym",
+        "es": "Gimnasio"
+      },
+      "locale_overrides": {
+        "es": {
+          "rect": {
+            "x": 698,
+            "y": 1768,
+            "width": 91,
+            "height": 28,
+            "corners": {
+              "top_left": [
+                698,
+                1768
+              ],
+              "top_right": [
+                789,
+                1768
+              ],
+              "bottom_left": [
+                698,
+                1796
+              ],
+              "bottom_right": [
+                789,
+                1796
+              ]
+            },
+            "center": [
+              743.5,
+              1782.0
+            ],
+            "anchors": {
+              "top_center": [
+                743.5,
+                1768
+              ],
+              "right_center": [
+                789,
+                1782.0
+              ],
+              "bottom_center": [
+                743.5,
+                1796
+              ],
+              "left_center": [
+                698,
+                1782.0
+              ]
+            }
+          }
+        }
+      },
+      "parent": "navigation.gym.control"
+    },
+    {
+      "id": "navigation.system.active_frame",
+      "kind": "artwork",
+      "rect": {
+        "x": 26,
+        "y": 1675,
+        "width": 159,
+        "height": 141,
+        "corners": {
+          "top_left": [
+            26,
+            1675
+          ],
+          "top_right": [
+            185,
+            1675
+          ],
+          "bottom_left": [
+            26,
+            1816
+          ],
+          "bottom_right": [
+            185,
+            1816
+          ]
+        },
+        "center": [
+          105.5,
+          1745.5
+        ],
+        "anchors": {
+          "top_center": [
+            105.5,
+            1675
+          ],
+          "right_center": [
+            185,
+            1745.5
+          ],
+          "bottom_center": [
+            105.5,
+            1816
+          ],
+          "left_center": [
+            26,
+            1745.5
+          ]
+        }
+      },
+      "notes": "Includes cyan highlight and angular frame."
+    },
+    {
+      "id": "navigation.train.underline",
+      "kind": "artwork",
+      "rect": {
+        "x": 253,
+        "y": 1803,
+        "width": 28,
+        "height": 7,
+        "corners": {
+          "top_left": [
+            253,
+            1803
+          ],
+          "top_right": [
+            281,
+            1803
+          ],
+          "bottom_left": [
+            253,
+            1810
+          ],
+          "bottom_right": [
+            281,
+            1810
+          ]
+        },
+        "center": [
+          267.0,
+          1806.5
+        ],
+        "anchors": {
+          "top_center": [
+            267.0,
+            1803
+          ],
+          "right_center": [
+            281,
+            1806.5
+          ],
+          "bottom_center": [
+            267.0,
+            1810
+          ],
+          "left_center": [
+            253,
+            1806.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "navigation.tower.underline",
+      "kind": "artwork",
+      "rect": {
+        "x": 411,
+        "y": 1803,
+        "width": 28,
+        "height": 7,
+        "corners": {
+          "top_left": [
+            411,
+            1803
+          ],
+          "top_right": [
+            439,
+            1803
+          ],
+          "bottom_left": [
+            411,
+            1810
+          ],
+          "bottom_right": [
+            439,
+            1810
+          ]
+        },
+        "center": [
+          425.0,
+          1806.5
+        ],
+        "anchors": {
+          "top_center": [
+            425.0,
+            1803
+          ],
+          "right_center": [
+            439,
+            1806.5
+          ],
+          "bottom_center": [
+            425.0,
+            1810
+          ],
+          "left_center": [
+            411,
+            1806.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "navigation.gear.underline",
+      "kind": "artwork",
+      "rect": {
+        "x": 565,
+        "y": 1803,
+        "width": 28,
+        "height": 7,
+        "corners": {
+          "top_left": [
+            565,
+            1803
+          ],
+          "top_right": [
+            593,
+            1803
+          ],
+          "bottom_left": [
+            565,
+            1810
+          ],
+          "bottom_right": [
+            593,
+            1810
+          ]
+        },
+        "center": [
+          579.0,
+          1806.5
+        ],
+        "anchors": {
+          "top_center": [
+            579.0,
+            1803
+          ],
+          "right_center": [
+            593,
+            1806.5
+          ],
+          "bottom_center": [
+            579.0,
+            1810
+          ],
+          "left_center": [
+            565,
+            1806.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "navigation.gym.underline",
+      "kind": "artwork",
+      "rect": {
+        "x": 726,
+        "y": 1803,
+        "width": 28,
+        "height": 7,
+        "corners": {
+          "top_left": [
+            726,
+            1803
+          ],
+          "top_right": [
+            754,
+            1803
+          ],
+          "bottom_left": [
+            726,
+            1810
+          ],
+          "bottom_right": [
+            754,
+            1810
+          ]
+        },
+        "center": [
+          740.0,
+          1806.5
+        ],
+        "anchors": {
+          "top_center": [
+            740.0,
+            1803
+          ],
+          "right_center": [
+            754,
+            1806.5
+          ],
+          "bottom_center": [
+            740.0,
+            1810
+          ],
+          "left_center": [
+            726,
+            1806.5
+          ]
+        }
+      }
+    }
+  ]
+}

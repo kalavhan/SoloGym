@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "checked_on": "2026-09-25",
+  "sources": [
+    {"id":"who2020","title":"WHO guidelines on physical activity and sedentary behaviour","url":"https://www.who.int/publications/i/item/9789240015128","published":"2020-11-25","supports":"Age-specific population activity guidance; not a validation of this generator."},
+    {"id":"acsm2026","title":"ACSM resistance training guidelines update","url":"https://acsm.org/resistance-training-guidelines-update-2026/","published":"2026-03-17","supports":"Adult resistance-training principles, individualization and home/equipment options; not our exact dose defaults."},
+    {"id":"aap2020","title":"AAP resistance training guidance for children","url":"https://www.healthychildren.org/English/news/Pages/Guidance-on-Resistance-Training-for-Children.aspx","published":"2020-05-26","supports":"Youth technique, supervision, developmental appropriateness, warm-up and evaluation of illness/injury."},
+    {"id":"cdc_intensity2025","title":"CDC: How to measure physical activity intensity","url":"https://www.cdc.gov/physical-activity-basics/measuring/index.html","published":"2025-12-04","supports":"Relative aerobic effort and talk test; not resistance RPE/RIR."},
+    {"id":"aap_overtraining2024","title":"AAP: Burnout in young athletes","url":"https://www.healthychildren.org/English/health-issues/injuries-emergencies/sports-injuries/Pages/Too-Much-Too-Soon-Overtraining.aspx","published":"2024-07-26","supports":"Enjoyment, recovery and avoiding pressure to train through pain or exhaustion."}
+  ],
+  "interpretation": "Specific exercises, template choices, dose ranges, recovery scheduling heuristics and progression rules are original draft product choices pending professional review. Citations do not imply endorsement."
+}

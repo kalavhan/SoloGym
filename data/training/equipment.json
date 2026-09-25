@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0.0",
+  "equipment": [
+    {
+      "id": "wall",
+      "name": {
+        "en": "Clear wall",
+        "es": "Pared despejada"
+      },
+      "setup_note": "Stable surface with room to move."
+    },
+    {
+      "id": "chair",
+      "name": {
+        "en": "Stable chair",
+        "es": "Silla estable"
+      },
+      "setup_note": "Firm, non-wheeled, secured against sliding."
+    },
+    {
+      "id": "stable_surface",
+      "name": {
+        "en": "Stable support",
+        "es": "Apoyo estable"
+      },
+      "setup_note": "Load-bearing support that cannot slide or tip."
+    },
+    {
+      "id": "dumbbells",
+      "name": {
+        "en": "Dumbbells",
+        "es": "Mancuernas"
+      },
+      "setup_note": "Selectable manageable load; entered manually, never inferred."
+    },
+    {
+      "id": "resistance_band",
+      "name": {
+        "en": "Resistance band",
+        "es": "Banda de resistencia"
+      },
+      "setup_note": "Inspect condition before use."
+    },
+    {
+      "id": "band_anchor",
+      "name": {
+        "en": "Rated band anchor",
+        "es": "Anclaje adecuado para banda"
+      },
+      "setup_note": "Installed and used according to its load rating and instructions."
+    },
+    {
+      "id": "cable_machine",
+      "name": {
+        "en": "Cable machine",
+        "es": "Máquina de poleas"
+      },
+      "setup_note": "User understands setup and adjustment."
+    },
+    {
+      "id": "lat_pulldown_machine",
+      "name": {
+        "en": "Lat pulldown machine",
+        "es": "Máquina de jalón al pecho"
+      },
+      "setup_note": "User understands setup and adjustment."
+    },
+    {
+      "id": "leg_press_machine",
+      "name": {
+        "en": "Leg press",
+        "es": "Prensa de piernas"
+      },
+      "setup_note": "User understands setup and adjustment."
+    },
+    {
+      "id": "chest_press_machine",
+      "name": {
+        "en": "Chest press machine",
+        "es": "Máquina de press de pecho"
+      },
+      "setup_note": "User understands setup and adjustment."
+    },
+    {
+      "id": "shoulder_press_machine",
+      "name": {
+        "en": "Shoulder press machine",
+        "es": "Máquina de press de hombros"
+      },
+      "setup_note": "User understands setup and adjustment."
+    },
+    {
+      "id": "stationary_bike",
+      "name": {
+        "en": "Stationary bike",
+        "es": "Bicicleta fija"
+      },
+      "setup_note": "Adjust to fit the user."
+    },
+    {
+      "id": "elliptical_machine",
+      "name": {
+        "en": "Elliptical",
+        "es": "Elíptica"
+      },
+      "setup_note": "User understands mounting and stopping."
+    },
+    {
+      "id": "low_step",
+      "name": {
+        "en": "Stable low step",
+        "es": "Escalón bajo estable"
+      },
+      "setup_note": "Purpose-built stable step, not stacked objects."
+    },
+    {
+      "id": "stretch_strap",
+      "name": {
+        "en": "Stretch strap",
+        "es": "Correa de estiramiento"
+      },
+      "setup_note": "Suitable strap in good condition."
+    },
+    {
+      "id": "bench",
+      "name": {
+        "en": "Exercise bench",
+        "es": "Banco de ejercicio"
+      },
+      "setup_note": "Stable, suitable bench in good condition."
+    }
+  ]
+}

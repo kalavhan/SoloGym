@@ -1,0 +1,6 @@
+Use case: precise-object-edit
+Asset type: SoloGym System/Home English proposal, readability correction.
+Input image role: edit target. Keep every pixel's design, environment, text, panels, controls, six slots, labels, colors and layout as close to the input as possible. Do not redesign.
+Change only the central character's scale/placement enough that his head, hair and body do NOT overlap any part of the identity header or XP bar. In the 853 x 1844 canvas the identity/XP area ends near y=340; the top of his hair should begin near y=355, and boots should remain grounded near y=1080. Fit the same full-body male Boxer into this smaller central rectangle without changing his identity, pose, outfit, proportions, colors or equipment.
+The entire horizontal XP track must be visible in FRONT of all scene art, with its cyan fill at exactly 62% of the usable track width, consistent with 1,240 / 2,000. Keep all existing English text exactly unchanged, including "Fitness XP" and "1,240 / 2,000 XP". Do not add any text. Preserve the six equipment slots and their positions.
+Preserve all other screen regions exactly, including the 24-minute Foundation A panel, pulling-exercise gap note, CHECK TODAY action, recovery consistency row and five navigation items. Keep the original canvas dimensions.

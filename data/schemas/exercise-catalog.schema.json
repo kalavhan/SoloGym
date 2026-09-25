@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SoloGym exercise catalog v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "content_status",
+    "exercises"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "content_status": {
+      "const": "draft_requires_professional_review"
+    },
+    "exercises": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "category",
+          "movement_pattern",
+          "equipment_all",
+          "environments",
+          "min_experience",
+          "age_groups",
+          "supervision_required_for_teens",
+          "prescription_unit",
+          "unilateral",
+          "setup_seconds",
+          "cues",
+          "regressions",
+          "progressions",
+          "media",
+          "source_ids"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "name": {
+            "type": "object",
+            "required": [
+              "en",
+              "es"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "category": {
+            "enum": [
+              "strength",
+              "cardio",
+              "mobility"
+            ]
+          },
+          "movement_pattern": {
+            "enum": [
+              "squat",
+              "hinge",
+              "horizontal_push",
+              "horizontal_pull",
+              "vertical_push",
+              "vertical_pull",
+              "single_leg",
+              "core",
+              "cardio",
+              "mobility"
+            ]
+          },
+          "equipment_all": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "environments": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "home",
+                "gym",
+                "outdoor"
+              ]
+            }
+          },
+          "min_experience": {
+            "enum": [
+              "beginner",
+              "intermediate"
+            ]
+          },
+          "age_groups": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "teen",
+                "adult"
+              ]
+            }
+          },
+          "supervision_required_for_teens": {
+            "type": "boolean"
+          },
+          "prescription_unit": {
+            "enum": [
+              "reps",
+              "seconds",
+              "minutes"
+            ]
+          },
+          "unilateral": {
+            "type": "boolean"
+          },
+          "setup_seconds": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 300
+          },
+          "cues": {
+            "type": "object",
+            "required": [
+              "en",
+              "es"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "es": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "regressions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "progressions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "media": {
+            "type": "object",
+            "required": [
+              "status",
+              "asset_id",
+              "license_id"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "const": "unassigned"
+              },
+              "asset_id": {
+                "type": "null"
+              },
+              "license_id": {
+                "type": "null"
+              }
+            }
+          },
+          "source_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}

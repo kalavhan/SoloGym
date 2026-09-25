@@ -1,0 +1,503 @@
+{
+  "schema_version": "1.0.0",
+  "content_status": "draft_requires_professional_review",
+  "plan_id": "5fc526bcfc410518",
+  "profile_id": "adult_no_equipment",
+  "week_start": "2026-09-28",
+  "age_group": "adult",
+  "goal_requested": "general_fitness",
+  "goal_effective": "general_fitness",
+  "sessions": [
+    {
+      "date": "2026-09-28",
+      "template_id": "foundation_a",
+      "name": {
+        "en": "Foundation A",
+        "es": "Base A"
+      },
+      "profile_signature": "7312e2aa9f45628b",
+      "kind": "strength",
+      "status": "draft_ready",
+      "difficulty_requested": "medium",
+      "difficulty_effective": "medium",
+      "readiness_recheck_required": true,
+      "budget_seconds": 900,
+      "estimated_seconds": 810,
+      "blocks": [
+        {
+          "id": "warmup",
+          "role": "warmup",
+          "exercise_id": "marching_in_place",
+          "name": {
+            "en": "Marching in place",
+            "es": "Marcha en el sitio"
+          },
+          "category": "cardio",
+          "allowed_patterns": [
+            "cardio"
+          ],
+          "unit": "minutes",
+          "sets": 1,
+          "quantity_min": 3,
+          "quantity_max": 3,
+          "per_side": false,
+          "rest_seconds": 0,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": [
+            2,
+            3
+          ],
+          "boss_share": 0,
+          "estimated_seconds": 195
+        },
+        {
+          "id": "squat",
+          "role": "main",
+          "exercise_id": "bodyweight_squat",
+          "name": {
+            "en": "Bodyweight squat",
+            "es": "Sentadilla sin peso"
+          },
+          "category": "strength",
+          "allowed_patterns": [
+            "squat"
+          ],
+          "unit": "reps",
+          "sets": 1,
+          "quantity_min": 8,
+          "quantity_max": 12,
+          "per_side": false,
+          "rest_seconds": 90,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": null,
+          "boss_share": 250,
+          "estimated_seconds": 108
+        },
+        {
+          "id": "hinge",
+          "role": "main",
+          "exercise_id": "glute_bridge",
+          "name": {
+            "en": "Glute bridge",
+            "es": "Puente de glúteos"
+          },
+          "category": "strength",
+          "allowed_patterns": [
+            "hinge"
+          ],
+          "unit": "reps",
+          "sets": 1,
+          "quantity_min": 8,
+          "quantity_max": 12,
+          "per_side": false,
+          "rest_seconds": 90,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": null,
+          "boss_share": 250,
+          "estimated_seconds": 108
+        },
+        {
+          "id": "push",
+          "role": "main",
+          "exercise_id": "knee_pushup",
+          "name": {
+            "en": "Knee push-up",
+            "es": "Flexión con rodillas apoyadas"
+          },
+          "category": "strength",
+          "allowed_patterns": [
+            "horizontal_push"
+          ],
+          "unit": "reps",
+          "sets": 1,
+          "quantity_min": 8,
+          "quantity_max": 12,
+          "per_side": false,
+          "rest_seconds": 90,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": null,
+          "boss_share": 250,
+          "estimated_seconds": 108
+        },
+        {
+          "id": "core",
+          "role": "main",
+          "exercise_id": "dead_bug",
+          "name": {
+            "en": "Dead bug",
+            "es": "Extensión alternada en posición de insecto"
+          },
+          "category": "strength",
+          "allowed_patterns": [
+            "core"
+          ],
+          "unit": "reps",
+          "sets": 1,
+          "quantity_min": 8,
+          "quantity_max": 12,
+          "per_side": true,
+          "rest_seconds": 90,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": null,
+          "boss_share": 250,
+          "estimated_seconds": 156
+        },
+        {
+          "id": "cooldown",
+          "role": "cooldown",
+          "exercise_id": "easy_walk",
+          "name": {
+            "en": "Easy walk",
+            "es": "Caminata suave"
+          },
+          "category": "cardio",
+          "allowed_patterns": [
+            "cardio"
+          ],
+          "unit": "minutes",
+          "sets": 1,
+          "quantity_min": 2,
+          "quantity_max": 2,
+          "per_side": false,
+          "rest_seconds": 0,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": [
+            2,
+            3
+          ],
+          "boss_share": 0,
+          "estimated_seconds": 135
+        }
+      ],
+      "coverage_gaps": [
+        "pull"
+      ],
+      "messages": [
+        {
+          "code": "pull_coverage_gap",
+          "text": {
+            "en": "This setup lacks an eligible resisted pull. Add suitable equipment or review the plan; mobility is not a substitute.",
+            "es": "Este equipo no permite un tirón con resistencia adecuado. Añade equipo apropiado o revisa el plan; la movilidad no lo sustituye."
+          }
+        },
+        {
+          "code": "time_adjustment",
+          "text": {
+            "en": "Work was reduced to fit the time budget while retaining rest and session structure.",
+            "es": "Se redujo el trabajo para respetar el tiempo disponible y conservar las pausas y la estructura."
+          }
+        }
+      ],
+      "boss": {
+        "max_health": 1000,
+        "mapping": "manual_planned_set_completion",
+        "reward_budget": {
+          "fitness_xp": 100,
+          "coins": 60
+        },
+        "rewards_are_placeholders": true
+      },
+      "consistency_protected_on_rest_or_stop": true
+    },
+    {
+      "date": "2026-09-29",
+      "kind": "recovery",
+      "status": "recovery",
+      "blocks": [],
+      "estimated_seconds": 0,
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true,
+      "messages": [
+        {
+          "code": "scheduled_recovery",
+          "text": {
+            "en": "Rest day. Ordinary enjoyable movement is optional; there is no workout debt.",
+            "es": "Día de descanso. El movimiento cotidiano agradable es opcional; no debes recuperar entrenamientos."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "kind": "recovery",
+      "status": "recovery",
+      "blocks": [],
+      "estimated_seconds": 0,
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true,
+      "messages": [
+        {
+          "code": "scheduled_recovery",
+          "text": {
+            "en": "Rest day. Ordinary enjoyable movement is optional; there is no workout debt.",
+            "es": "Día de descanso. El movimiento cotidiano agradable es opcional; no debes recuperar entrenamientos."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "template_id": "foundation_b",
+      "name": {
+        "en": "Foundation B",
+        "es": "Base B"
+      },
+      "profile_signature": "7312e2aa9f45628b",
+      "kind": "strength",
+      "status": "draft_ready",
+      "difficulty_requested": "medium",
+      "difficulty_effective": "medium",
+      "readiness_recheck_required": true,
+      "budget_seconds": 900,
+      "estimated_seconds": 810,
+      "blocks": [
+        {
+          "id": "warmup",
+          "role": "warmup",
+          "exercise_id": "marching_in_place",
+          "name": {
+            "en": "Marching in place",
+            "es": "Marcha en el sitio"
+          },
+          "category": "cardio",
+          "allowed_patterns": [
+            "cardio"
+          ],
+          "unit": "minutes",
+          "sets": 1,
+          "quantity_min": 3,
+          "quantity_max": 3,
+          "per_side": false,
+          "rest_seconds": 0,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": [
+            2,
+            3
+          ],
+          "boss_share": 0,
+          "estimated_seconds": 195
+        },
+        {
+          "id": "squat",
+          "role": "main",
+          "exercise_id": "bodyweight_squat",
+          "name": {
+            "en": "Bodyweight squat",
+            "es": "Sentadilla sin peso"
+          },
+          "category": "strength",
+          "allowed_patterns": [
+            "squat"
+          ],
+          "unit": "reps",
+          "sets": 1,
+          "quantity_min": 8,
+          "quantity_max": 12,
+          "per_side": false,
+          "rest_seconds": 90,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": null,
+          "boss_share": 250,
+          "estimated_seconds": 108
+        },
+        {
+          "id": "hinge",
+          "role": "main",
+          "exercise_id": "glute_bridge",
+          "name": {
+            "en": "Glute bridge",
+            "es": "Puente de glúteos"
+          },
+          "category": "strength",
+          "allowed_patterns": [
+            "hinge"
+          ],
+          "unit": "reps",
+          "sets": 1,
+          "quantity_min": 8,
+          "quantity_max": 12,
+          "per_side": false,
+          "rest_seconds": 90,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": null,
+          "boss_share": 250,
+          "estimated_seconds": 108
+        },
+        {
+          "id": "push",
+          "role": "main",
+          "exercise_id": "knee_pushup",
+          "name": {
+            "en": "Knee push-up",
+            "es": "Flexión con rodillas apoyadas"
+          },
+          "category": "strength",
+          "allowed_patterns": [
+            "horizontal_push"
+          ],
+          "unit": "reps",
+          "sets": 1,
+          "quantity_min": 8,
+          "quantity_max": 12,
+          "per_side": false,
+          "rest_seconds": 90,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": null,
+          "boss_share": 250,
+          "estimated_seconds": 108
+        },
+        {
+          "id": "core",
+          "role": "main",
+          "exercise_id": "bird_dog",
+          "name": {
+            "en": "Bird dog",
+            "es": "Extensión alternada en cuadrupedia"
+          },
+          "category": "strength",
+          "allowed_patterns": [
+            "core"
+          ],
+          "unit": "reps",
+          "sets": 1,
+          "quantity_min": 8,
+          "quantity_max": 12,
+          "per_side": true,
+          "rest_seconds": 90,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": null,
+          "boss_share": 250,
+          "estimated_seconds": 156
+        },
+        {
+          "id": "cooldown",
+          "role": "cooldown",
+          "exercise_id": "easy_walk",
+          "name": {
+            "en": "Easy walk",
+            "es": "Caminata suave"
+          },
+          "category": "cardio",
+          "allowed_patterns": [
+            "cardio"
+          ],
+          "unit": "minutes",
+          "sets": 1,
+          "quantity_min": 2,
+          "quantity_max": 2,
+          "per_side": false,
+          "rest_seconds": 0,
+          "load_kg": null,
+          "load_entry": "user_selected_if_applicable",
+          "aerobic_effort_0_to_10": [
+            2,
+            3
+          ],
+          "boss_share": 0,
+          "estimated_seconds": 135
+        }
+      ],
+      "coverage_gaps": [
+        "pull"
+      ],
+      "messages": [
+        {
+          "code": "pull_coverage_gap",
+          "text": {
+            "en": "This setup lacks an eligible resisted pull. Add suitable equipment or review the plan; mobility is not a substitute.",
+            "es": "Este equipo no permite un tirón con resistencia adecuado. Añade equipo apropiado o revisa el plan; la movilidad no lo sustituye."
+          }
+        },
+        {
+          "code": "time_adjustment",
+          "text": {
+            "en": "Work was reduced to fit the time budget while retaining rest and session structure.",
+            "es": "Se redujo el trabajo para respetar el tiempo disponible y conservar las pausas y la estructura."
+          }
+        }
+      ],
+      "boss": {
+        "max_health": 1000,
+        "mapping": "manual_planned_set_completion",
+        "reward_budget": {
+          "fitness_xp": 100,
+          "coins": 60
+        },
+        "rewards_are_placeholders": true
+      },
+      "consistency_protected_on_rest_or_stop": true
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "recovery",
+      "status": "recovery",
+      "blocks": [],
+      "estimated_seconds": 0,
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true,
+      "messages": [
+        {
+          "code": "scheduled_recovery",
+          "text": {
+            "en": "Rest day. Ordinary enjoyable movement is optional; there is no workout debt.",
+            "es": "Día de descanso. El movimiento cotidiano agradable es opcional; no debes recuperar entrenamientos."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "recovery",
+      "status": "recovery",
+      "blocks": [],
+      "estimated_seconds": 0,
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true,
+      "messages": [
+        {
+          "code": "scheduled_recovery",
+          "text": {
+            "en": "Rest day. Ordinary enjoyable movement is optional; there is no workout debt.",
+            "es": "Día de descanso. El movimiento cotidiano agradable es opcional; no debes recuperar entrenamientos."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "kind": "recovery",
+      "status": "recovery",
+      "blocks": [],
+      "estimated_seconds": 0,
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true,
+      "messages": [
+        {
+          "code": "scheduled_recovery",
+          "text": {
+            "en": "Rest day. Ordinary enjoyable movement is optional; there is no workout debt.",
+            "es": "Día de descanso. El movimiento cotidiano agradable es opcional; no debes recuperar entrenamientos."
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Reference weekly template, not a complete measure of WHO activity targets or individual recovery.",
+    "Current readiness is applied to this draft; check readiness again on each actual training day.",
+    "Manual logging only. No rep detection, load inference, diagnosis, or verified technique.",
+    "Advanced, sport-specific and clinical programming need separate content and review.",
+    "Bodyweight plans can have a declared pulling gap; generic mobility is not counted as a pull."
+  ]
+}

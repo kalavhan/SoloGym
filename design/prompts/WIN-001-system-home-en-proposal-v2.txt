@@ -1,0 +1,21 @@
+Use case: ui-mockup
+Asset type: SoloGym WIN-001 System/Home, English proposal render v2, one full mobile game screen.
+Input image role: existing approved STYLE AND CHARACTER reference. Preserve its manhua rendering, indigo temple, cyan angular engraved-glass interface, silver serif headings, violet atmospheric light, premium hand-painted game art. Keep the SAME adult male KAI boxer, warm brown skin, short dark hair, sleeveless black high-neck armor, black trousers, blue gauntlets and boots. Preserve head-to-boot visibility and similar stance.
+Primary request: create a revised, more readable build-reference proposal from this screen, with the exact content and layout below. This is a complete static concept screen, not loose assets. Portrait, same tall proportions as reference (853 x 1844 if possible), edge-to-edge, no phone hardware, no presentation-board margin.
+Retain the dramatic temple background and the large character portrait framed in cyan, but remove ALL decorative slogans, all background writing, mascot/enemy portrait, and coin purchase plus button. Reduce the old TEN equipment slots to exactly SIX slots with three on each side. Do not add badges, neck, ring, trinket or mystery slots.
+Layout from top to bottom:
+1. Compact header: SOLOGYM wordmark on left, globe with "EN" and settings cog right. No tagline. Below header title "SYSTEM".
+2. Identity at top of character frame: "KAI", "BOXER", "Fitness level 12"; at upper right gold coin symbol and "840". A thin XP bar labeled "Fitness XP" and "1,240 / 2,000 XP". All must be readable, no extra pseudo-text.
+3. Central full-body hero in a generously sized dark-glass frame. Left rail exactly three square equipment slots labeled "HEAD", "TORSO", "HANDS". Right rail exactly three square slots labeled "LEGS", "FEET", "BACK". Use clear matching item silhouettes; hands slot shows matching blue gauntlets. Keep slots separated, balanced around the hero, with sufficient thumb-sized targets.
+4. Narrow angular "COMBAT STATS" strip: "POWER 24", "GUARD 18", "FOCUS 21", each with a small original game icon. Clearly separate these game stats from fitness XP.
+5. Lower Today panel, sufficient height for legible copy. Exact text in this order:
+"TODAY'S TRAINING"
+"Foundation A"
+"About 24 min  •  Medium"
+"Check how you feel, then review your plan."
+"Pulling exercise missing. Review equipment."
+Large angular luminous cyan button: "CHECK TODAY".
+No boss portrait in this panel; use the space for clear text. Keep the equipment-gap note in a subdued readable amber or silver line, not an alarming red warning.
+6. Compact consistency row beneath: "Consistency: 7 days" and smaller "Recovery counts toward consistency." Use a small non-flashing sigil.
+7. Fixed bottom navigation, exactly five evenly sized items with icons and labels: "System", "Train", "Tower", "Gear", "Gym". System selected in cyan.
+Style: beautifully authored manhua game HUD, controlled bloom, crisp text, flat readable dark text surfaces, precise angular frames, sharp inked character, richly detailed environmental edges. No generic web dashboard, white tiles, rounded pills, clinical app look, graphs, watermarks, slogans, microscopic filler, or extra labels. Preserve the style reference's character and environment while improving content legibility and matching all specified copy. Normal adult state only.

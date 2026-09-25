@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-001",
+  "reference_version": "proposal-v2",
+  "gate": "G0",
+  "status": "approved_visual_target",
+  "approved_by": "user",
+  "approval_evidence": "make this 1:1 ... build completely and then test visually for match 1:1 ... This sounds good. make sure to keep updating the github",
+  "requested_by_user": "in the proposal include the rendering so we can keep it and use it for the work and make sure it matches 1:1",
+  "generation_tool": "built-in image_gen.imagegen via imagegen skill",
+  "purpose": "Immutable rendered window proposal; future 1:1 visual target after approval. Separate production assets and working UI do not exist yet.",
+  "proposal_document": "docs/windows/WIN-001-system-home-g0.md",
+  "visual_contract": "docs/design/visual-reference-contract.md",
+  "fixture": {
+    "file": "data/windows/WIN-001-system-home.json",
+    "sha256": "4b6279faca69d31a438d91e7feab018d4cb529ae542646f5071b2bf13cff6bab",
+    "scenario": "adult_training",
+    "local_date": "2026-09-28",
+    "connection": "online",
+    "appearance_id": "WIN-001_kai_male_concept_v2",
+    "username": "KAI",
+    "fitness_level": 12,
+    "fitness_xp": 1240,
+    "next_level_xp": 2000,
+    "xp_fraction_required": 0.62,
+    "coins": 840,
+    "consistency_days": 7,
+    "combat_stats": {
+      "power": 24,
+      "guard": 18,
+      "focus": 21
+    },
+    "template_id": "foundation_a",
+    "estimated_seconds": 1410,
+    "display_minutes": 24,
+    "difficulty": "medium",
+    "coverage_gaps": [
+      "pull"
+    ]
+  },
+  "comparison_baseline": {
+    "scope": "entire app-content image, no phone hardware or operating-system status/navigation chrome",
+    "nominal_logical_canvas": [
+      390,
+      844
+    ],
+    "pixel_reference": "Use each PNG actual dimensions; nominal logical canvas is not permission to stretch the PNG. Final runtime safe-area and content-capture mapping require G5 agreement.",
+    "orientation": "portrait",
+    "animation_frame": "static idle illustration; actual rig frame not yet authored",
+    "production_assets": "pending individual G1-G4 approvals",
+    "runtime_match_verified": false
+  },
+  "renders": [
+    {
+      "locale": "en",
+      "format_locale": "en-US",
+      "file": "design/renders/WIN-001-system-home-en-proposal-v2.png",
+      "sha256": "a08c31f246a041acad0704361c2404c5e7cea5bab7cc25b571a2b1ff2d8ccde8",
+      "width_px": 853,
+      "height_px": 1844,
+      "mode": "RGB",
+      "role": "current_proposal_target",
+      "source_status": "approved_visual_target"
+    },
+    {
+      "locale": "es",
+      "format_locale": "es-MX",
+      "file": "design/renders/WIN-001-system-home-es-proposal-v2.png",
+      "sha256": "58dc7ac147b93ced4e254cb01e89a7903ce4cd7609b7c5e3428947c9625f9d32",
+      "width_px": 853,
+      "height_px": 1844,
+      "mode": "RGB",
+      "role": "current_proposal_target",
+      "source_status": "approved_visual_target"
+    }
+  ],
+  "generation_steps": [
+    {
+      "id": "initial_en",
+      "prompt": "design/prompts/WIN-001-system-home-en-proposal-v2.txt",
+      "prompt_sha256": "91013bf082e660c27f29df50323f9fdf85a91aea048b5aa7c84207c059d9d18c",
+      "source_file": "design/renders/01-system-status-en-v1.png",
+      "source_sha256": "def99cd9b952d4cd177604cd9015dcbb7a8dc5470968a3f414932ff1e959055b",
+      "output_file": "design/renders/WIN-001-system-home-en-proposal-v2-draft.png",
+      "output_sha256": "007494edb0570417a6e1f2507eeda2a00b7a3561a053dea44d608f61d93c6e47",
+      "output_role": "historical_intermediate"
+    },
+    {
+      "id": "en_header_clearance",
+      "prompt": "design/prompts/WIN-001-system-home-en-proposal-v2-correction.txt",
+      "prompt_sha256": "0b972e0f6fb28b65031e4d0d37c9f5cee58adaed1c1e93655f560beed4ac0d34",
+      "source_file": "design/renders/WIN-001-system-home-en-proposal-v2-draft.png",
+      "source_sha256": "007494edb0570417a6e1f2507eeda2a00b7a3561a053dea44d608f61d93c6e47",
+      "output_file": "design/renders/WIN-001-system-home-en-proposal-v2-layout.png",
+      "output_sha256": "553802ff0ff31abbf29517e7e311a6a04b5bc35d2a8cb9a6309e47de018c4227",
+      "output_role": "historical_intermediate"
+    },
+    {
+      "id": "en_xp_adjustment",
+      "prompt": "design/prompts/WIN-001-system-home-en-proposal-v2-xp.txt",
+      "prompt_sha256": "eb49fd08796ac2730b8985ddab331a5cf7e3f10d0119e8443ffb276a5a2ee204",
+      "source_file": "design/renders/WIN-001-system-home-en-proposal-v2-layout.png",
+      "source_sha256": "553802ff0ff31abbf29517e7e311a6a04b5bc35d2a8cb9a6309e47de018c4227",
+      "output_file": "design/renders/WIN-001-system-home-en-proposal-v2.png",
+      "output_sha256": "a08c31f246a041acad0704361c2404c5e7cea5bab7cc25b571a2b1ff2d8ccde8",
+      "output_role": "current_proposal_target"
+    },
+    {
+      "id": "es_localization",
+      "prompt": "design/prompts/WIN-001-system-home-es-proposal-v2.txt",
+      "prompt_sha256": "a9f5a08f3bf1fa3ca1471d2e986d665f8dad26d462defe2e14227e5b17268d17",
+      "source_file": "design/renders/WIN-001-system-home-en-proposal-v2.png",
+      "source_sha256": "a08c31f246a041acad0704361c2404c5e7cea5bab7cc25b571a2b1ff2d8ccde8",
+      "output_file": "design/renders/WIN-001-system-home-es-proposal-v2.png",
+      "output_sha256": "58dc7ac147b93ced4e254cb01e89a7903ce4cd7609b7c5e3428947c9625f9d32",
+      "output_role": "current_proposal_target"
+    }
+  ],
+  "production_checks_pending": [
+    "Approved source assets and licensed fonts; editable text and real controls.",
+    "Exact mathematical 62% XP fill, measured text metrics and layout anchors in G5.",
+    "Readable native-size EN/ES text and touch regions on the intended phones.",
+    "One shared production art set across locales; separate AI images are not proof of pixel-identical shared art.",
+    "Recovery, teen, setup, saved-session, loading and offline visual variants.",
+    "Native-size screenshot overlay/difference and functional checks after implementation."
+  ],
+  "version_policy": "Never overwrite reviewed or approved render files. Any replacement gets a new version, hash and approval record. G5 cannot silently replace an approved G0 visual target."
+}

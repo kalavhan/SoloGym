@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0.0",
+  "content_status": "draft_requires_professional_review",
+  "plan_id": "ca258ff72faab9b0",
+  "profile_id": "adult_ill",
+  "week_start": "2026-09-28",
+  "age_group": "adult",
+  "goal_requested": "general_fitness",
+  "goal_effective": "general_fitness",
+  "sessions": [
+    {
+      "date": "2026-09-28",
+      "template_id": "foundation_a",
+      "name": {
+        "en": "Foundation A",
+        "es": "Base A"
+      },
+      "profile_signature": "fd187bd01ff07a50",
+      "kind": "recovery",
+      "status": "recovery",
+      "difficulty_requested": "medium",
+      "difficulty_effective": "medium",
+      "readiness_recheck_required": true,
+      "budget_seconds": 1500,
+      "estimated_seconds": 0,
+      "blocks": [],
+      "coverage_gaps": [],
+      "messages": [
+        {
+          "code": "stop_for_readiness",
+          "text": {
+            "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+            "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+          }
+        }
+      ],
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true
+    },
+    {
+      "date": "2026-09-29",
+      "kind": "recovery",
+      "status": "recovery",
+      "blocks": [],
+      "estimated_seconds": 0,
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true,
+      "messages": [
+        {
+          "code": "scheduled_recovery",
+          "text": {
+            "en": "Rest day. Ordinary enjoyable movement is optional; there is no workout debt.",
+            "es": "Día de descanso. El movimiento cotidiano agradable es opcional; no debes recuperar entrenamientos."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "template_id": "aerobic_base",
+      "name": {
+        "en": "Aerobic base",
+        "es": "Base aeróbica"
+      },
+      "profile_signature": "fd187bd01ff07a50",
+      "kind": "recovery",
+      "status": "recovery",
+      "difficulty_requested": "medium",
+      "difficulty_effective": "medium",
+      "readiness_recheck_required": true,
+      "budget_seconds": 1500,
+      "estimated_seconds": 0,
+      "blocks": [],
+      "coverage_gaps": [],
+      "messages": [
+        {
+          "code": "stop_for_readiness",
+          "text": {
+            "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+            "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+          }
+        }
+      ],
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true
+    },
+    {
+      "date": "2026-10-01",
+      "kind": "recovery",
+      "status": "recovery",
+      "blocks": [],
+      "estimated_seconds": 0,
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true,
+      "messages": [
+        {
+          "code": "scheduled_recovery",
+          "text": {
+            "en": "Rest day. Ordinary enjoyable movement is optional; there is no workout debt.",
+            "es": "Día de descanso. El movimiento cotidiano agradable es opcional; no debes recuperar entrenamientos."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "template_id": "foundation_b",
+      "name": {
+        "en": "Foundation B",
+        "es": "Base B"
+      },
+      "profile_signature": "fd187bd01ff07a50",
+      "kind": "recovery",
+      "status": "recovery",
+      "difficulty_requested": "medium",
+      "difficulty_effective": "medium",
+      "readiness_recheck_required": true,
+      "budget_seconds": 1500,
+      "estimated_seconds": 0,
+      "blocks": [],
+      "coverage_gaps": [],
+      "messages": [
+        {
+          "code": "stop_for_readiness",
+          "text": {
+            "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+            "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+          }
+        }
+      ],
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "recovery",
+      "status": "recovery",
+      "blocks": [],
+      "estimated_seconds": 0,
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true,
+      "messages": [
+        {
+          "code": "scheduled_recovery",
+          "text": {
+            "en": "Rest day. Ordinary enjoyable movement is optional; there is no workout debt.",
+            "es": "Día de descanso. El movimiento cotidiano agradable es opcional; no debes recuperar entrenamientos."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "kind": "recovery",
+      "status": "recovery",
+      "blocks": [],
+      "estimated_seconds": 0,
+      "boss": null,
+      "consistency_protected_on_rest_or_stop": true,
+      "messages": [
+        {
+          "code": "scheduled_recovery",
+          "text": {
+            "en": "Rest day. Ordinary enjoyable movement is optional; there is no workout debt.",
+            "es": "Día de descanso. El movimiento cotidiano agradable es opcional; no debes recuperar entrenamientos."
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Reference weekly template, not a complete measure of WHO activity targets or individual recovery.",
+    "Current readiness is applied to this draft; check readiness again on each actual training day.",
+    "Manual logging only. No rep detection, load inference, diagnosis, or verified technique.",
+    "Advanced, sport-specific and clinical programming need separate content and review.",
+    "Bodyweight plans can have a declared pulling gap; generic mobility is not counted as a pull."
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0.0",
+  "note": "Fictional fixtures, not real user data. Equipment and supervision are explicitly declared; not inferred.",
+  "profiles": [
+    {
+      "id": "adult_home_beginner",
+      "age": 28,
+      "experience": "beginner",
+      "goal": "general_fitness",
+      "environment": "home",
+      "equipment": [
+        "wall",
+        "chair",
+        "stable_surface"
+      ],
+      "session_minutes": 25,
+      "sessions_per_week": 3,
+      "difficulty": "medium",
+      "readiness": "ready",
+      "teen_supervision_available": false,
+      "excluded_exercises": [],
+      "preferred_exercises": {},
+      "recent_strength_dates": [],
+      "professional_guidance_needed": false
+    },
+    {
+      "id": "adult_gym_intermediate",
+      "age": 35,
+      "experience": "intermediate",
+      "goal": "strength",
+      "environment": "gym",
+      "equipment": [
+        "dumbbells",
+        "bench",
+        "cable_machine",
+        "lat_pulldown_machine",
+        "leg_press_machine",
+        "stationary_bike",
+        "wall",
+        "stable_surface"
+      ],
+      "session_minutes": 40,
+      "sessions_per_week": 3,
+      "difficulty": "medium",
+      "readiness": "ready",
+      "teen_supervision_available": false,
+      "excluded_exercises": [],
+      "preferred_exercises": {},
+      "recent_strength_dates": [],
+      "professional_guidance_needed": false
+    },
+    {
+      "id": "teen_home_supervised",
+      "age": 16,
+      "experience": "beginner",
+      "goal": "general_fitness",
+      "environment": "home",
+      "equipment": [
+        "wall",
+        "chair",
+        "stable_surface",
+        "resistance_band",
+        "band_anchor"
+      ],
+      "session_minutes": 25,
+      "sessions_per_week": 3,
+      "difficulty": "medium",
+      "readiness": "ready",
+      "teen_supervision_available": true,
+      "excluded_exercises": [],
+      "preferred_exercises": {},
+      "recent_strength_dates": [],
+      "professional_guidance_needed": false
+    },
+    {
+      "id": "adult_home_low_energy",
+      "age": 31,
+      "experience": "intermediate",
+      "goal": "muscle_growth",
+      "environment": "home",
+      "equipment": [
+        "dumbbells",
+        "wall"
+      ],
+      "session_minutes": 20,
+      "sessions_per_week": 3,
+      "difficulty": "hard",
+      "readiness": "low_energy",
+      "teen_supervision_available": false,
+      "excluded_exercises": [],
+      "preferred_exercises": {},
+      "recent_strength_dates": [],
+      "professional_guidance_needed": false
+    },
+    {
+      "id": "teen_without_supervision",
+      "age": 15,
+      "experience": "beginner",
+      "goal": "strength",
+      "environment": "home",
+      "equipment": [
+        "wall",
+        "chair"
+      ],
+      "session_minutes": 25,
+      "sessions_per_week": 2,
+      "difficulty": "hard",
+      "readiness": "ready",
+      "teen_supervision_available": false,
+      "excluded_exercises": [],
+      "preferred_exercises": {},
+      "recent_strength_dates": [],
+      "professional_guidance_needed": false
+    },
+    {
+      "id": "adult_ill",
+      "age": 24,
+      "experience": "beginner",
+      "goal": "general_fitness",
+      "environment": "home",
+      "equipment": [
+        "wall"
+      ],
+      "session_minutes": 25,
+      "sessions_per_week": 3,
+      "difficulty": "medium",
+      "readiness": "ill",
+      "teen_supervision_available": false,
+      "excluded_exercises": [],
+      "preferred_exercises": {},
+      "recent_strength_dates": [],
+      "professional_guidance_needed": false
+    },
+    {
+      "id": "adult_no_equipment",
+      "age": 22,
+      "experience": "beginner",
+      "goal": "general_fitness",
+      "environment": "home",
+      "equipment": [],
+      "session_minutes": 15,
+      "sessions_per_week": 2,
+      "difficulty": "medium",
+      "readiness": "ready",
+      "teen_supervision_available": false,
+      "excluded_exercises": [],
+      "preferred_exercises": {},
+      "recent_strength_dates": [],
+      "professional_guidance_needed": false
+    }
+  ]
+}

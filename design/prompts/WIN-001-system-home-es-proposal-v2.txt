@@ -1,0 +1,35 @@
+Use case: text-localization
+Asset type: SoloGym WIN-001 System/Home Spanish proposal render v2.
+Input image role: exact English edit target. Produce the same full portrait mobile game screen in Spanish. Preserve the SAME male character face, brown skin, hair, full-body pose, outfit and gauntlets, exact temple background, equipment icons, panel boundaries, button shape, stats and values, all illustrations, six slots and five navigation items. Keep the image dimensions. Edit text only; do not redraw or reinterpret the art.
+Replace these English labels with these exact Spanish labels:
+"EN" -> "ES"
+"SYSTEM" -> "SISTEMA"
+"KAI" remains "KAI"
+"BOXER" -> "BOXEADOR"
+"Fitness level 12" -> "Nivel de entrenamiento 12" (may use two lines inside the same identity area; do not collide with XP row)
+"Fitness XP" -> "XP de entrenamiento" (wrap within its label area if needed; allow the adjacent XP track to shorten slightly to fit; keep the numeric value at the right)
+"1,240 / 2,000 XP" unchanged, with a 62% filled cyan track
+"840" unchanged
+"HEAD" -> "CABEZA"
+"TORSO" unchanged
+"HANDS" -> "MANOS"
+"LEGS" -> "PIERNAS"
+"FEET" -> "PIES"
+"BACK" -> "ESPALDA"
+"COMBAT STATS" -> "ESTADÍSTICAS DE COMBATE"
+"POWER" -> "PODER"
+"GUARD" -> "DEFENSA"
+"FOCUS" -> "CONCENTRACIÓN"
+Values 24, 18, 21 unchanged
+"TODAY'S TRAINING" -> "ENTRENAMIENTO DE HOY"
+"Foundation A" -> "Base A"
+"About 24 min" -> "Aprox. 24 min"
+"Medium" -> "Medio"
+"Check how you feel, then review your plan." -> "Revisa cómo te sientes y luego tu rutina."
+"Pulling exercise missing. Review equipment." -> "Falta un ejercicio de tracción. Revisa el equipo."
+"CHECK TODAY" -> "REVISAR MI ESTADO"
+"Consistency: 7 days" -> "Constancia: 7 días"
+"Recovery counts toward consistency." -> "La recuperación cuenta para tu constancia."
+Bottom labels "System", "Train", "Tower", "Gear", "Gym" -> "Sistema", "Entrenar", "Torre", "Equipo", "Gimnasio"
+SOLOGYM wordmark remains unchanged.
+Use proper accents, no English leftovers, no additional text. Same readable typography hierarchy and text contrast. Long Spanish text can wrap inside existing text areas but must not overlap art or other text. Do not change the character, environment, button dimensions or panel geometry for translation.

@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "content_status": "draft_requires_professional_review",
+  "warmup_exercise_ids": ["marching_in_place", "easy_walk"],
+  "cooldown_exercise_ids": ["easy_walk", "marching_in_place"],
+  "templates": [
+    {
+      "id":"foundation_a","name":{"en":"Foundation A","es":"Base A"},"kind":"strength",
+      "slots":[
+        {"id":"squat","category":"strength","patterns":["squat"],"optional":false,"exercise_ids":["dumbbell_goblet_squat","chair_squat","bodyweight_squat"]},
+        {"id":"hinge","category":"strength","patterns":["hinge"],"optional":false,"exercise_ids":["dumbbell_romanian_deadlift","glute_bridge"]},
+        {"id":"push","category":"strength","patterns":["horizontal_push"],"optional":false,"exercise_ids":["dumbbell_floor_press","wall_pushup","incline_pushup","knee_pushup","pushup"]},
+        {"id":"pull","category":"strength","patterns":["horizontal_pull"],"optional":true,"exercise_ids":["dumbbell_row","resistance_band_row","seated_cable_row"]},
+        {"id":"core","category":"strength","patterns":["core"],"optional":false,"exercise_ids":["dead_bug","bird_dog"]}
+      ]
+    },
+    {
+      "id":"foundation_b","name":{"en":"Foundation B","es":"Base B"},"kind":"strength",
+      "slots":[
+        {"id":"squat","category":"strength","patterns":["squat"],"optional":false,"exercise_ids":["chair_squat","bodyweight_squat","dumbbell_goblet_squat"]},
+        {"id":"hinge","category":"strength","patterns":["hinge"],"optional":false,"exercise_ids":["glute_bridge","dumbbell_romanian_deadlift"]},
+        {"id":"push","category":"strength","patterns":["horizontal_push"],"optional":false,"exercise_ids":["wall_pushup","incline_pushup","dumbbell_floor_press","knee_pushup","pushup"]},
+        {"id":"pull","category":"strength","patterns":["horizontal_pull"],"optional":true,"exercise_ids":["resistance_band_row","seated_cable_row","dumbbell_row"]},
+        {"id":"core","category":"strength","patterns":["core"],"optional":false,"exercise_ids":["bird_dog","dead_bug"]}
+      ]
+    },
+    {
+      "id":"machine_foundation","name":{"en":"Gym foundation","es":"Base en gimnasio"},"kind":"strength",
+      "slots":[
+        {"id":"squat","category":"strength","patterns":["squat"],"optional":false,"exercise_ids":["leg_press","dumbbell_goblet_squat","bodyweight_squat"]},
+        {"id":"hinge","category":"strength","patterns":["hinge"],"optional":false,"exercise_ids":["dumbbell_romanian_deadlift","glute_bridge"]},
+        {"id":"push","category":"strength","patterns":["horizontal_push"],"optional":false,"exercise_ids":["dumbbell_floor_press","wall_pushup","incline_pushup","knee_pushup","pushup"]},
+        {"id":"pull","category":"strength","patterns":["horizontal_pull","vertical_pull"],"optional":true,"exercise_ids":["seated_cable_row","lat_pulldown","dumbbell_row","resistance_band_row"]},
+        {"id":"core","category":"strength","patterns":["core"],"optional":false,"exercise_ids":["dead_bug","bird_dog"]}
+      ]
+    },
+    {
+      "id":"bodyweight_foundation","name":{"en":"Bodyweight foundation","es":"Base con peso corporal"},"kind":"strength",
+      "slots":[
+        {"id":"squat","category":"strength","patterns":["squat"],"optional":false,"exercise_ids":["bodyweight_squat","chair_squat"]},
+        {"id":"hinge","category":"strength","patterns":["hinge"],"optional":false,"exercise_ids":["glute_bridge"]},
+        {"id":"push","category":"strength","patterns":["horizontal_push"],"optional":false,"exercise_ids":["wall_pushup","incline_pushup","knee_pushup","pushup"]},
+        {"id":"pull","category":"strength","patterns":["horizontal_pull"],"optional":true,"exercise_ids":["resistance_band_row","dumbbell_row"]},
+        {"id":"core","category":"strength","patterns":["core"],"optional":false,"exercise_ids":["dead_bug","bird_dog"]}
+      ]
+    },
+    {
+      "id":"aerobic_base","name":{"en":"Aerobic base","es":"Base aeróbica"},"kind":"cardio",
+      "slots":[{"id":"cardio","category":"cardio","patterns":["cardio"],"optional":false,"exercise_ids":["stationary_cycling","brisk_walk","marching_in_place"]}]
+    },
+    {
+      "id":"mobility_reset","name":{"en":"Movement practice","es":"Práctica de movimiento"},"kind":"mobility",
+      "slots":[
+        {"id":"shoulders","category":"mobility","patterns":["mobility"],"optional":false,"exercise_ids":["shoulder_circles"]},
+        {"id":"hinge_practice","category":"mobility","patterns":["hinge"],"optional":false,"exercise_ids":["hip_hinge_drill"]},
+        {"id":"calves","category":"mobility","patterns":["mobility"],"optional":false,"exercise_ids":["standing_calf_stretch"]},
+        {"id":"balance","category":"mobility","patterns":["mobility"],"optional":true,"exercise_ids":["supported_tandem_stance"]}
+      ]
+    }
+  ]
+}

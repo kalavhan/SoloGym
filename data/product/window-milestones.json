@@ -1,0 +1,2595 @@
+{
+  "schema_version": "1.0.0",
+  "status": "milestone_plan_accepted_for_design; WIN-001_G0_with_EN_ES_renders_awaiting_approval; no_separate_production_assets_or_app_implementation",
+  "product": "SoloGym",
+  "constraints": {
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "minimum_age": 15,
+    "languages": [
+      "en",
+      "es"
+    ],
+    "language_selection": "device default with persistent manual override",
+    "training_automation": "plan_generation_only",
+    "exercise_logging": "manual",
+    "teen_profile": "private by default",
+    "chat": "localized preset phrases and emotes; private messages restricted to permitted friends",
+    "fasting": "optional 18+ neutral log; no buffs, XP, ranks or fasting streak rewards; supported plans up to 20 hours",
+    "monetization": "cosmetics only; no purchasable fitness XP or combat advantages",
+    "consistency": "scheduled recovery and permitted pauses protected"
+  },
+  "prerequisite_milestone": {
+    "id": "M0",
+    "name": "Reviewed training data and generation rules",
+    "status": "data_shape_accepted_for_design_content_review_pending",
+    "acceptance": [
+      "Stable exercise identifiers, bilingual names and cues, reviewed age applicability, movement patterns, equipment, dosage fields, substitution links and media provenance.",
+      "Reviewed starter templates and bounded generation/progression/recovery rules, with explicit rationale and provenance.",
+      "Example plans for adults and teens, bodyweight and equipment, Light/Medium/Hard and stop/recovery cases.",
+      "Clear separation of research evidence, product defaults, and exercise-professional review still required; a draft dataset is not clinical validation.",
+      "User approval of the data shape before deeper window work; no background or sprite generation during this planning task."
+    ]
+  },
+  "approval_workflow": [
+    {
+      "id": "G0",
+      "name": "Flow/data approval",
+      "requirement": "Approve the purpose, step-by-step flow, data, exact EN/ES copy, states and orientation together with retained versioned EN/ES rendered proposal previews. Record exact image hashes and sample fixture. This sets the visual target; subsequent production asset approvals remain separate."
+    },
+    {
+      "id": "G1",
+      "name": "Background alone approval",
+      "requirement": "Generate only the window background, without characters, UI, icons, or text. Stop and obtain approval. For an existing background, present the exact asset and obtain reuse approval."
+    },
+    {
+      "id": "G2",
+      "name": "Environment props/foreground approval",
+      "requirement": "Generate only the approved next props/foreground batch with placement/occlusion notes. Stop and obtain approval; explicitly approve reuse or record N/A when there are no such assets."
+    },
+    {
+      "id": "G3",
+      "name": "Character/enemy/gear sprites approved",
+      "requirement": "Complete G3a base → G3b customization → G3c wearable equipment → G3d motion/export as separate serial approvals. Generate only the smallest batch needed for each subgate, then stop. Approve exact reuse or record N/A explicitly; no combined sprite-batch approval bypasses these subgates.",
+      "subgates": [
+        {
+          "id": "G3a",
+          "name": "Base character or enemy",
+          "asset_document_stage": 3,
+          "avatar_contract_stage": "base",
+          "requirement": "Approve the base proportions, views, neutral clothing and reference sheet before customization. Record exact reuse approval or N/A when applicable."
+        },
+        {
+          "id": "G3b",
+          "name": "Customization",
+          "asset_document_stage": 4,
+          "avatar_contract_stage": "customization",
+          "requirement": "Approve skin treatment, hair, supported body/muscle variants and headgear compatibility before wearable equipment. Record exact reuse approval or N/A when applicable."
+        },
+        {
+          "id": "G3c",
+          "name": "Wearable equipment",
+          "asset_document_stage": 5,
+          "avatar_contract_stage": "equipment",
+          "requirement": "Approve item concepts, slots, fits, masks, attachments and equipped samples before animation/export. Record exact reuse approval or N/A when applicable."
+        },
+        {
+          "id": "G3d",
+          "name": "Motion and sprite/export proof",
+          "asset_document_stage": 6,
+          "avatar_contract_stage": "animation_export",
+          "requirement": "Approve the necessary motion, layering, fit and export proof before UI components. Record exact reuse approval or N/A when applicable."
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "name": "UI frame/icon/control assets approved",
+      "requirement": "Generate or design the required frame, icons and controls as separate assets. Keep functional EN/ES text editable in the eventual interface. Stop and obtain approval; explicitly approve shared-asset reuse or record N/A."
+    },
+    {
+      "id": "G5",
+      "name": "Composite bilingual screen approval",
+      "requirement": "Assemble the individually approved production assets and editable EN/ES text into complete window/state renders. Compare against the approved proposal at its recorded baseline. Correct differences or obtain explicit approval of a revised reference; never silently replace the proposal. Approve the exact final composite before implementation."
+    },
+    {
+      "id": "G6",
+      "name": "Implementation + visual verification",
+      "requirement": "Only after G5 approval, implement this window using its accepted data and assets, verify the user flow, and compare actual output with the accepted renders. Resolve discrepancies and obtain milestone acceptance before beginning the next window."
+    }
+  ],
+  "approval_rules": [
+    "The accepted overall style does not approve any individual background, sprite, prop, gear item, frame, or composed window.",
+    "Every window inherits G0 through G6 in that exact order. No later gate starts while the previous gate lacks user approval.",
+    "Reuse requires an explicit recorded approval of the exact asset; regeneration is not the default. Record N/A with a reason when a stage has no applicable asset.",
+    "An approval log must capture window ID, gate, asset IDs and versions, user decision, date, and any requested corrections.",
+    "Do not batch-generate all backgrounds or all sprites across windows. Finish the current window milestone before starting another, unless the user explicitly changes the sequence.",
+    "Data dependencies can use clearly labeled fixtures during G0–G5. G6 must resolve necessary approved navigation and data contracts; dependencies do not authorize premature implementation.",
+    "G3 is a parent gate with four required serial subgates G3a–G3d. Asset document stages 3–6 are those same approvals, not a parallel or alternate workflow."
+  ],
+  "proposed_sequence": {
+    "first": "M0",
+    "then": "Approve the character/gear feasibility specification; a minimal representative sprite sample follows the first applicable G1/G2 approvals and must pass G3 before a full sprite batch.",
+    "first_window": "WIN-001",
+    "remaining_order": [
+      "WIN-002",
+      "WIN-003",
+      "WIN-004",
+      "WIN-005",
+      "WIN-006",
+      "WIN-007",
+      "WIN-008",
+      "WIN-009",
+      "WIN-010",
+      "WIN-011",
+      "WIN-012",
+      "WIN-013",
+      "WIN-014",
+      "WIN-015",
+      "WIN-016",
+      "WIN-017",
+      "WIN-018",
+      "WIN-019",
+      "WIN-020",
+      "WIN-021",
+      "WIN-022",
+      "WIN-023",
+      "WIN-024",
+      "WIN-025",
+      "WIN-026",
+      "WIN-027",
+      "WIN-028",
+      "WIN-029",
+      "WIN-030",
+      "WIN-031",
+      "WIN-032",
+      "WIN-033",
+      "WIN-034",
+      "WIN-035",
+      "WIN-036",
+      "WIN-037",
+      "WIN-038",
+      "WIN-039",
+      "WIN-040",
+      "WIN-041",
+      "WIN-042",
+      "WIN-043",
+      "WIN-044",
+      "WIN-045",
+      "WIN-046",
+      "WIN-047",
+      "WIN-048",
+      "WIN-049",
+      "WIN-050",
+      "WIN-051",
+      "WIN-052",
+      "WIN-053",
+      "WIN-054",
+      "WIN-055",
+      "WIN-056",
+      "WIN-057",
+      "WIN-058",
+      "WIN-059",
+      "WIN-060",
+      "WIN-061",
+      "WIN-062",
+      "WIN-063",
+      "WIN-064"
+    ],
+    "note": "Order is a proposal for user review. The System window can demonstrate future destinations as an approved visual shell; it must not pretend unfinished destinations work. Foundation/reusable windows are developed when their first approved consumer requires them, with their own gates. No engine, architecture, schedule estimate or app implementation is selected here.",
+    "next_activity_after_M0": "Open WIN-001 System / Home G0 for its flow/data approval. Once G0 is approved, generate only its empty background (G1), present it, and wait for approval. No automatic asset generation occurs in the current planning/data turn."
+  },
+  "windows": [
+    {
+      "id": "WIN-001",
+      "name": {
+        "en": "System / Home",
+        "es": "Sistema / Inicio"
+      },
+      "purpose": "Show the character, appropriate next activity, and earned game progress at a glance.",
+      "steps": [
+        "Open System",
+        "Review character and today’s plan or protected recovery",
+        "Choose Training, Tower, Equipment, or Interdimensional Gym",
+        "Return here after an activity"
+      ],
+      "depends_on": [
+        "WIN-009",
+        "WIN-013"
+      ],
+      "data_domains": [
+        "account",
+        "training_profile",
+        "session_plan",
+        "progression_policy",
+        "recovery_policy",
+        "avatar_catalog",
+        "inventory",
+        "localization"
+      ],
+      "asset_needs": [
+        "Original cosmic chamber background",
+        "Reusable character pedestal and atmospheric foreground",
+        "Equipped character idle sample",
+        "System frame, navigation sigils, XP and consistency indicators"
+      ],
+      "acceptance": [
+        "Use fictional or approved private data in renders",
+        "Recovery appears as a valid next action",
+        "Fitness progression is distinct from tower progress",
+        "Height, weight, age, and fasting are absent from the public character view",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "g0_awaiting_approval",
+      "scope": "v1",
+      "current_artifact": "docs/windows/WIN-001-system-home-g0.md",
+      "render_manifest": "design/reference-manifests/WIN-001-system-home-v2.json"
+    },
+    {
+      "id": "WIN-002",
+      "name": {
+        "en": "Welcome / Sign in",
+        "es": "Bienvenida / Iniciar sesión"
+      },
+      "purpose": "Enter an existing account or start the account journey.",
+      "steps": [
+        "Select detected or preferred language",
+        "Choose account sign-in or Google",
+        "Complete the chosen authentication flow",
+        "Resume setup or enter System"
+      ],
+      "depends_on": [
+        "WIN-003"
+      ],
+      "data_domains": [
+        "account",
+        "localization",
+        "authentication_policy"
+      ],
+      "asset_needs": [
+        "Original portal threshold background",
+        "Portal frame foreground",
+        "Title mark, authentication controls, provider-approved marks"
+      ],
+      "acceptance": [
+        "Account and Google login are represented",
+        "Proposed iOS equivalent sign-in remains a platform-review decision",
+        "Cancellation and invalid credentials preserve a recoverable route",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-003",
+      "name": {
+        "en": "Language Selection",
+        "es": "Selección de idioma"
+      },
+      "purpose": "Choose automatic device language or a persistent English/Spanish override.",
+      "steps": [
+        "View detected language",
+        "Choose System default, English, or Español",
+        "Preview localized labels",
+        "Save and return to the originating window"
+      ],
+      "depends_on": [],
+      "data_domains": [
+        "localization",
+        "account_preferences"
+      ],
+      "asset_needs": [
+        "Reuse entry or settings background with explicit approval",
+        "Language selector frame and check states"
+      ],
+      "acceptance": [
+        "Language is available before sign-in and later in Settings",
+        "Changing language does not reset training or account data",
+        "Unsupported device languages have a stated English fallback",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-004",
+      "name": {
+        "en": "Create Account / Verify Email",
+        "es": "Crear cuenta / Verificar correo"
+      },
+      "purpose": "Create an email account and verify its ownership.",
+      "steps": [
+        "Enter email and password",
+        "Review required acknowledgements from consent flow",
+        "Submit and verify email",
+        "Continue private setup or resolve an existing account"
+      ],
+      "depends_on": [
+        "WIN-002",
+        "WIN-006",
+        "WIN-007"
+      ],
+      "data_domains": [
+        "account",
+        "consent_policy",
+        "authentication_policy"
+      ],
+      "asset_needs": [
+        "Reuse entry background with explicit approval",
+        "Account form, password visibility control, verification state art"
+      ],
+      "acceptance": [
+        "No public profile exposes email or birth date",
+        "Pending, expired, resend, and existing-account states are included",
+        "Success resumes the correct setup step",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-005",
+      "name": {
+        "en": "Password Recovery",
+        "es": "Recuperar contraseña"
+      },
+      "purpose": "Recover access to an email account.",
+      "steps": [
+        "Enter account email",
+        "Receive neutral next-step guidance",
+        "Follow recovery link and choose new password",
+        "Return to sign-in"
+      ],
+      "depends_on": [
+        "WIN-002"
+      ],
+      "data_domains": [
+        "account",
+        "authentication_policy",
+        "localization"
+      ],
+      "asset_needs": [
+        "Reuse entry background with explicit approval",
+        "Recovery panel and link status icons"
+      ],
+      "acceptance": [
+        "Confirmation does not disclose whether an address belongs to another user",
+        "Invalid and expired links offer a clear retry",
+        "OAuth accounts receive suitable provider guidance",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-006",
+      "name": {
+        "en": "Age / Region Eligibility",
+        "es": "Edad / Región de acceso"
+      },
+      "purpose": "Collect the minimum private eligibility information needed for the selected release region.",
+      "steps": [
+        "Choose country and broad region where needed",
+        "Provide age eligibility information",
+        "Resolve supported, unsupported, or under-15 status",
+        "Continue to the applicable consent path"
+      ],
+      "depends_on": [
+        "WIN-003"
+      ],
+      "data_domains": [
+        "account",
+        "consent_policy",
+        "region_catalog",
+        "localization"
+      ],
+      "asset_needs": [
+        "Reuse entry background with explicit approval",
+        "Private-data cue, region picker, eligibility status panel"
+      ],
+      "acceptance": [
+        "15+ is the product minimum, not a universal consent rule",
+        "No GPS is required for broad regional selection",
+        "Unsupported-country and underage exits are explicit",
+        "Exact country eligibility requires a reviewed policy before launch",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-007",
+      "name": {
+        "en": "Privacy / Required Consent",
+        "es": "Privacidad / Consentimientos"
+      },
+      "purpose": "Explain the data uses and obtain the acknowledgements required for the user’s region and age.",
+      "steps": [
+        "Read concise localized explanation",
+        "Open full policy details",
+        "Choose optional permissions separately",
+        "Accept required terms or leave setup"
+      ],
+      "depends_on": [
+        "WIN-006"
+      ],
+      "data_domains": [
+        "consent_policy",
+        "account",
+        "localization"
+      ],
+      "asset_needs": [
+        "Reuse entry background with explicit approval",
+        "Layered consent panels, optional switches, document links"
+      ],
+      "acceptance": [
+        "Health-data use, public game identity, and optional features are explained separately",
+        "Optional consent is not preselected",
+        "A consent version and decision can be recorded",
+        "Google sign-in is not treated as health-data consent",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-008",
+      "name": {
+        "en": "Guardian Consent / Pending Access",
+        "es": "Consentimiento del tutor / Acceso pendiente"
+      },
+      "purpose": "Handle a guardian route only when the reviewed regional policy requires it.",
+      "steps": [
+        "Explain why a guardian step applies",
+        "Start the reviewed guardian process",
+        "Show pending or declined status",
+        "Resume permitted setup after approval"
+      ],
+      "depends_on": [
+        "WIN-006",
+        "WIN-007"
+      ],
+      "data_domains": [
+        "consent_policy",
+        "account",
+        "authentication_policy"
+      ],
+      "asset_needs": [
+        "Reuse entry background with explicit approval",
+        "Guardian status panel and pending/approved/declined state icons"
+      ],
+      "acceptance": [
+        "Country and age policy decides whether this appears",
+        "No invented universal guardian threshold",
+        "Restricted features remain unavailable while approval is pending",
+        "Resend, expiry, and declined paths are specified",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-009",
+      "name": {
+        "en": "Private Fitness Profile",
+        "es": "Perfil físico privado"
+      },
+      "purpose": "Record useful training inputs without equating body measurements with appearance or health.",
+      "steps": [
+        "Review profile privacy",
+        "Enter optional useful height and bodyweight with units",
+        "Complete experience and suitability questions",
+        "Save or update the private profile"
+      ],
+      "depends_on": [
+        "WIN-007"
+      ],
+      "data_domains": [
+        "training_profile",
+        "account",
+        "unit_preferences",
+        "consent_policy"
+      ],
+      "asset_needs": [
+        "Private dossier background or approved entry reuse",
+        "Measurement fields, unit controls, suitability panel"
+      ],
+      "acceptance": [
+        "Appearance and medical assumptions are not inferred from sex presentation or measurements",
+        "No required somatotype or BMI-based character classification",
+        "Pain, illness, injury, or uncertain suitability can route to pause or appropriate guidance",
+        "Adult and teen inputs are distinguishable",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-010",
+      "name": {
+        "en": "Goals / Experience",
+        "es": "Objetivos / Experiencia"
+      },
+      "purpose": "Choose training aims and establish a suitable starting level.",
+      "steps": [
+        "Choose general fitness or another supported focus",
+        "Describe training experience and current ability",
+        "Review what the selection changes",
+        "Save and continue"
+      ],
+      "depends_on": [
+        "WIN-009"
+      ],
+      "data_domains": [
+        "training_profile",
+        "training_templates",
+        "generation_rules",
+        "localization"
+      ],
+      "asset_needs": [
+        "Reuse private dossier background with explicit approval",
+        "Goal emblems and experience-choice panels"
+      ],
+      "acceptance": [
+        "A muscular avatar does not select advanced training",
+        "Teen choices use reviewed teen content",
+        "Users can change goals without losing past progress",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-011",
+      "name": {
+        "en": "Available Equipment",
+        "es": "Equipo disponible"
+      },
+      "purpose": "Record the actual equipment and location available for a workout.",
+      "steps": [
+        "Choose home, gym, or custom location",
+        "Select available equipment including bodyweight only",
+        "Add relevant load ranges or constraints",
+        "Save reusable equipment profiles"
+      ],
+      "depends_on": [
+        "WIN-009"
+      ],
+      "data_domains": [
+        "equipment_catalog",
+        "training_profile",
+        "generation_rules"
+      ],
+      "asset_needs": [
+        "Equipment room background or approved dossier reuse",
+        "Equipment category pictograms and selected/unavailable states"
+      ],
+      "acceptance": [
+        "Bodyweight-only training is a complete path",
+        "Equipment availability filters generated plans and substitutions",
+        "A unavailable item is never silently required",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-012",
+      "name": {
+        "en": "Schedule / Session Time",
+        "es": "Horario / Duración de sesión"
+      },
+      "purpose": "Set a realistic routine with protected recovery and editable session time.",
+      "steps": [
+        "Choose available training days",
+        "Set typical time per session",
+        "Review planned training and recovery",
+        "Save or revise schedule"
+      ],
+      "depends_on": [
+        "WIN-010",
+        "WIN-011"
+      ],
+      "data_domains": [
+        "training_profile",
+        "training_templates",
+        "recovery_policy",
+        "generation_rules"
+      ],
+      "asset_needs": [
+        "Reuse private dossier background with explicit approval",
+        "Weekly schedule tiles and duration control"
+      ],
+      "acceptance": [
+        "Daily hard training is not a default",
+        "Recovery days preserve consistency",
+        "School, sports, and other activity can inform the schedule",
+        "Estimates include rest and warm-up",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-013",
+      "name": {
+        "en": "Character Customization",
+        "es": "Personalización del personaje"
+      },
+      "purpose": "Choose the avatar independently of private measurements and fit later gear to approved body variants.",
+      "steps": [
+        "Choose male or female presentation",
+        "Adjust build and muscle definition independently",
+        "Select skin tone, hairstyle, hair color, and face options",
+        "Preview supported gear and movement",
+        "Save appearance"
+      ],
+      "depends_on": [
+        "WIN-009"
+      ],
+      "data_domains": [
+        "avatar_catalog",
+        "gear_catalog",
+        "account_preferences",
+        "localization"
+      ],
+      "asset_needs": [
+        "Neutral character workshop background",
+        "Turntable/pedestal foreground",
+        "Approved body layers, skin masks or swatches, hair variants, face variants, gear fitting samples",
+        "Customization controls"
+      ],
+      "acceptance": [
+        "Skin tone stays consistent across face, body, hands, and animation poses",
+        "Hair has defined back/front layers and headgear rules",
+        "Gear follows approved body variants without floating or clipping",
+        "No body shape grants training prescriptions or combat power",
+        "A representative character/gear feasibility sample is approved before large sprite batches",
+        "Customization controls expose only approved renderable fit combinations; source-model sliders do not imply unrendered sprite combinations exist.",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-014",
+      "name": {
+        "en": "Character Status",
+        "es": "Estado del personaje"
+      },
+      "purpose": "Inspect the chosen character, class, game stats, and appearance.",
+      "steps": [
+        "Open personal status",
+        "Inspect Boxer abilities and earned stats",
+        "Preview equipped items",
+        "Open customization or equipment"
+      ],
+      "depends_on": [
+        "WIN-013"
+      ],
+      "data_domains": [
+        "avatar_catalog",
+        "progression_policy",
+        "gear_catalog",
+        "inventory",
+        "tower_content"
+      ],
+      "asset_needs": [
+        "Reuse System or workshop background with explicit approval",
+        "Full equipped character pose",
+        "Status stat glyphs and Boxer ability icons"
+      ],
+      "acceptance": [
+        "Game stats are visually separate from private fitness measurements",
+        "Three normal attacks and one special are represented",
+        "Paid cosmetics do not add combat advantage",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-015",
+      "name": {
+        "en": "Training Hub",
+        "es": "Entrenamiento"
+      },
+      "purpose": "Select the next real-world workout or a reviewed preset.",
+      "steps": [
+        "Review today’s plan and recent training",
+        "Choose generated plan or preset",
+        "Open readiness check",
+        "Continue to plan review"
+      ],
+      "depends_on": [
+        "WIN-010",
+        "WIN-011",
+        "WIN-012"
+      ],
+      "data_domains": [
+        "training_profile",
+        "session_plan",
+        "training_templates",
+        "recovery_policy",
+        "session_log"
+      ],
+      "asset_needs": [
+        "Training portal background",
+        "Quest plinth foreground",
+        "Training and recovery emblems"
+      ],
+      "acceptance": [
+        "Training means real exercise; the Interdimensional Gym means social play",
+        "An appropriate rest path is as available as starting a boss",
+        "Automatic generation never implies automatic repetition counting",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-016",
+      "name": {
+        "en": "Readiness / Adjust Today",
+        "es": "Estado de hoy / Ajustar sesión"
+      },
+      "purpose": "Use a short self-report to support an appropriate plan or rest option.",
+      "steps": [
+        "Report energy, soreness, and relevant concerns",
+        "Review normal, reduced, or pause guidance",
+        "Choose an available session option",
+        "Apply the result to today’s plan"
+      ],
+      "depends_on": [
+        "WIN-015"
+      ],
+      "data_domains": [
+        "readiness",
+        "generation_rules",
+        "recovery_policy",
+        "training_profile"
+      ],
+      "asset_needs": [
+        "Reuse training background with explicit approval",
+        "Readiness choices and rest/stop cue"
+      ],
+      "acceptance": [
+        "Pain, injury, illness, or concerning responses do not force a workout",
+        "Light is a valid choice with no competitive punishment",
+        "The app does not claim to diagnose a condition",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-017",
+      "name": {
+        "en": "Generated Plan Review",
+        "es": "Revisar plan generado"
+      },
+      "purpose": "Explain and review the automatically assembled plan before exercise starts.",
+      "steps": [
+        "Choose available time and equipment profile",
+        "Generate from reviewed content",
+        "Review warm-up, exercises, dose, rest, and cool-down",
+        "Accept, edit, or choose an alternative"
+      ],
+      "depends_on": [
+        "WIN-016"
+      ],
+      "data_domains": [
+        "exercise_catalog",
+        "training_templates",
+        "generation_rules",
+        "session_plan",
+        "training_profile"
+      ],
+      "asset_needs": [
+        "Reuse training background with explicit approval",
+        "Plan scroll, rationale labels, exercise thumbnails"
+      ],
+      "acceptance": [
+        "The generator selects reviewed exercises and templates",
+        "Plan includes a readable explanation of fit to inputs",
+        "Regeneration does not randomly reset useful progression",
+        "Only plan generation is automatic; logs are manual",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-018",
+      "name": {
+        "en": "Preset Library",
+        "es": "Biblioteca de rutinas"
+      },
+      "purpose": "Choose a reviewed routine appropriate to age group, ability, time, and equipment.",
+      "steps": [
+        "Filter supported presets",
+        "Inspect purpose and expected duration",
+        "Check fit to equipment and ability",
+        "Use the preset and review the session"
+      ],
+      "depends_on": [
+        "WIN-015"
+      ],
+      "data_domains": [
+        "training_templates",
+        "exercise_catalog",
+        "training_profile",
+        "generation_rules"
+      ],
+      "asset_needs": [
+        "Archive chamber background or approved training reuse",
+        "Preset banners, filter controls, goal emblems"
+      ],
+      "acceptance": [
+        "Teen and adult applicability is visible",
+        "Unsuitable or unavailable presets explain why",
+        "A preset remains editable within supported rules",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-019",
+      "name": {
+        "en": "Routine Editor",
+        "es": "Editar rutina"
+      },
+      "purpose": "Edit a proposed workout while keeping its exercise purpose and manageable dose visible.",
+      "steps": [
+        "Review ordered blocks",
+        "Adjust supported sets, repetitions, duration, or rest",
+        "Replace or remove an exercise",
+        "Review recalculated duration and plan checks",
+        "Save the edited plan"
+      ],
+      "depends_on": [
+        "WIN-017",
+        "WIN-018"
+      ],
+      "data_domains": [
+        "session_plan",
+        "exercise_catalog",
+        "generation_rules",
+        "training_templates"
+      ],
+      "asset_needs": [
+        "Reuse training background with explicit approval",
+        "Editable exercise cards, reorder controls, validation markers"
+      ],
+      "acceptance": [
+        "Edits preserve warm-up and recovery intent or explain the change",
+        "Conflicts with equipment or reviewed bounds are identified",
+        "No load is prescribed from bodyweight, avatar, or game difficulty alone",
+        "Save and cancel states are shown",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-020",
+      "name": {
+        "en": "Exercise Substitution",
+        "es": "Cambiar ejercicio"
+      },
+      "purpose": "Replace an exercise with an appropriate reviewed alternative.",
+      "steps": [
+        "Select the exercise to replace",
+        "Choose reason such as equipment or difficulty",
+        "Review compatible alternatives and dose changes",
+        "Confirm and return to the editor"
+      ],
+      "depends_on": [
+        "WIN-019"
+      ],
+      "data_domains": [
+        "exercise_catalog",
+        "generation_rules",
+        "equipment_catalog",
+        "session_plan"
+      ],
+      "asset_needs": [
+        "Reuse training background with explicit approval",
+        "Comparison sheet, movement-pattern icons, alternative thumbnails"
+      ],
+      "acceptance": [
+        "Alternatives preserve the intended movement or disclose a broader plan adjustment",
+        "Equipment and teen applicability are checked",
+        "Pain-related requests can lead to stop guidance rather than a forced substitute",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-021",
+      "name": {
+        "en": "Exercise Guide / Animation",
+        "es": "Guía de ejercicio / Animación"
+      },
+      "purpose": "Show a reviewed demonstration, setup, cues, and common mistakes.",
+      "steps": [
+        "Open an exercise from a plan or library",
+        "Review setup and demonstration",
+        "Read brief cues and stop guidance",
+        "Return to the current plan or session"
+      ],
+      "depends_on": [
+        "WIN-017"
+      ],
+      "data_domains": [
+        "exercise_catalog",
+        "exercise_media",
+        "localization",
+        "accessibility_preferences"
+      ],
+      "asset_needs": [
+        "Neutral demonstration stage",
+        "Licensed or original exercise demonstration media",
+        "Replay, pause, view-angle, caption and cue assets"
+      ],
+      "acceptance": [
+        "Media source, license, attribution, and variant match are recorded",
+        "Demonstration does not claim to verify the user’s form",
+        "A text/static fallback exists",
+        "Instructions use separate aerobic and resistance effort scales appropriately",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-022",
+      "name": {
+        "en": "Light / Medium / Hard",
+        "es": "Ligero / Medio / Intenso"
+      },
+      "purpose": "Select a bounded adjustment to the appropriate baseline workout.",
+      "steps": [
+        "Read Medium baseline",
+        "Compare available Light and Hard adjustments",
+        "Review changed dose, variations, and rest",
+        "Apply choice or return unchanged"
+      ],
+      "depends_on": [
+        "WIN-016",
+        "WIN-017"
+      ],
+      "data_domains": [
+        "generation_rules",
+        "readiness",
+        "session_plan",
+        "progression_policy"
+      ],
+      "asset_needs": [
+        "Reuse training background with explicit approval",
+        "Three difficulty sigils and change-summary panel"
+      ],
+      "acceptance": [
+        "Medium is default",
+        "Hard is available only when supported by readiness, experience, and reviewed rules",
+        "No XP multiplier rewards harder exercise",
+        "Rest and stop remain accessible",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-023",
+      "name": {
+        "en": "Workout Boss Briefing",
+        "es": "Preparación del jefe de entrenamiento"
+      },
+      "purpose": "Present the physical session as a boss encounter before logging starts.",
+      "steps": [
+        "Review session blocks and exercise instructions",
+        "Inspect the boss and reward preview",
+        "Confirm equipment and readiness",
+        "Begin warm-up and the session"
+      ],
+      "depends_on": [
+        "WIN-017",
+        "WIN-022"
+      ],
+      "data_domains": [
+        "session_plan",
+        "exercise_catalog",
+        "boss_catalog",
+        "progression_policy"
+      ],
+      "asset_needs": [
+        "Workout arena background",
+        "Arena foreground props",
+        "Approved boss idle sprite and equipped character idle sprite",
+        "Session objective frame and start control"
+      ],
+      "acceptance": [
+        "Rewards reflect the approved session rather than absolute kilograms",
+        "User can edit or return before starting",
+        "Fantasy combat visuals do not obscure exercise instructions",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-024",
+      "name": {
+        "en": "Workout Boss / Manual Logging",
+        "es": "Jefe de entrenamiento / Registro manual"
+      },
+      "purpose": "Advance the workout boss by manually logging each exercise set.",
+      "steps": [
+        "Review current exercise and target",
+        "Perform the set away from interactive combat controls",
+        "Enter completed reps, load, duration, and optional effort",
+        "Save the set and show boss progress",
+        "Move to rest or next exercise"
+      ],
+      "depends_on": [
+        "WIN-023",
+        "WIN-021"
+      ],
+      "data_domains": [
+        "session_plan",
+        "session_log",
+        "exercise_catalog",
+        "progression_policy",
+        "boss_catalog"
+      ],
+      "asset_needs": [
+        "Reuse approved workout arena and foreground",
+        "Approved boss damage/idle and character encouragement states",
+        "Repetition/load/duration inputs, set ledger, boss progress HUD"
+      ],
+      "acceptance": [
+        "No camera, wearable, detection, or automatic rep counting is implied",
+        "User can correct a log without duplicating rewards",
+        "Timed and repetition-based exercises both fit",
+        "Stop and exercise guidance remain accessible",
+        "An interrupted session preserves confirmed logs",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-025",
+      "name": {
+        "en": "Rest Timer",
+        "es": "Temporizador de descanso"
+      },
+      "purpose": "Support sufficient rest between exercise sets.",
+      "steps": [
+        "Start suggested rest after a saved set",
+        "Review upcoming exercise",
+        "Extend, pause, or skip rest",
+        "Return to logging when ready"
+      ],
+      "depends_on": [
+        "WIN-024"
+      ],
+      "data_domains": [
+        "session_plan",
+        "session_log",
+        "timer_state",
+        "recovery_policy"
+      ],
+      "asset_needs": [
+        "Reuse workout arena with explicit approval",
+        "Subdued boss/character idle reuse",
+        "Timer ring, extend and continue controls"
+      ],
+      "acceptance": [
+        "Extending rest is not penalized",
+        "Timer completion does not auto-log a set",
+        "Reduced-motion and quiet states are designed",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-026",
+      "name": {
+        "en": "Pause / End Workout",
+        "es": "Pausar / Terminar entrenamiento"
+      },
+      "purpose": "Pause or stop a physical session while preserving completed work.",
+      "steps": [
+        "Pause from the session",
+        "Review resume, adjust, or stop options",
+        "Confirm early end when needed",
+        "Save completed work and return to an appropriate state"
+      ],
+      "depends_on": [
+        "WIN-024"
+      ],
+      "data_domains": [
+        "session_log",
+        "session_plan",
+        "progression_policy",
+        "recovery_policy"
+      ],
+      "asset_needs": [
+        "Reuse subdued workout arena",
+        "Pause overlay, reason choices, saved-progress confirmation"
+      ],
+      "acceptance": [
+        "Illness, pain, or inability to continue is not framed as failure",
+        "Saved sets survive exit",
+        "Partial completion is described honestly and cannot be repeatedly rewarded",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-027",
+      "name": {
+        "en": "Workout Complete / Loot",
+        "es": "Entrenamiento completado / Botín"
+      },
+      "purpose": "Summarize the completed session and its earned game rewards.",
+      "steps": [
+        "View completed work and boss result",
+        "Review coins, cosmetics, and fitness XP",
+        "Optionally record how the session felt",
+        "Return to System or history"
+      ],
+      "depends_on": [
+        "WIN-024",
+        "WIN-026"
+      ],
+      "data_domains": [
+        "session_log",
+        "progression_policy",
+        "inventory",
+        "economy_policy",
+        "boss_catalog"
+      ],
+      "asset_needs": [
+        "Approved victory arena variant",
+        "Defeated boss or reward chest assets",
+        "Earned item sprites and reward reveal UI"
+      ],
+      "acceptance": [
+        "Rewards are granted once",
+        "Light and adapted sessions receive appropriate recognition",
+        "No leaderboard incentive for excessive volume",
+        "Loot can be reviewed with reduced motion",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-028",
+      "name": {
+        "en": "Recovery Day",
+        "es": "Día de recuperación"
+      },
+      "purpose": "Make scheduled recovery and suitable gentle activity a legitimate part of the routine.",
+      "steps": [
+        "Review why today is recovery",
+        "Choose rest or an available gentle option",
+        "Record the choice if useful",
+        "Continue to social gym, tower, or System"
+      ],
+      "depends_on": [
+        "WIN-012",
+        "WIN-016"
+      ],
+      "data_domains": [
+        "recovery_policy",
+        "session_log",
+        "progression_policy",
+        "training_templates"
+      ],
+      "asset_needs": [
+        "Calm sanctuary background",
+        "Recovery props",
+        "Character resting pose if approved",
+        "Protected-consistency emblem"
+      ],
+      "acceptance": [
+        "Recovery protects consistency under the reviewed policy",
+        "Fasting is never a recovery quest",
+        "Tower and social play remain available without extra physical exercise",
+        "Rest is not described as a lost day",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-029",
+      "name": {
+        "en": "Training History / Progress",
+        "es": "Historial / Progreso del entrenamiento"
+      },
+      "purpose": "Review sessions and useful personal progress without body comparison.",
+      "steps": [
+        "Choose time range",
+        "Review consistency, completed sessions, and personal exercise progress",
+        "Open a session",
+        "Adjust display units or filters"
+      ],
+      "depends_on": [
+        "WIN-024"
+      ],
+      "data_domains": [
+        "session_log",
+        "progression_policy",
+        "recovery_policy",
+        "unit_preferences"
+      ],
+      "asset_needs": [
+        "Training archive background",
+        "Timeline, trend and filter assets"
+      ],
+      "acceptance": [
+        "No public disclosure of weight or private training logs",
+        "Progress is personal rather than a raw-lift competition",
+        "Empty, partial, and mixed-unit histories are handled",
+        "No health improvement is claimed from game XP",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-030",
+      "name": {
+        "en": "Session Details / Correction",
+        "es": "Detalle de sesión / Corrección"
+      },
+      "purpose": "Inspect an individual training record and correct an honest entry error.",
+      "steps": [
+        "Open a past session",
+        "Inspect exercises, logs, and adjustments",
+        "Correct permitted values or add notes",
+        "Review saved correction and unchanged reward handling"
+      ],
+      "depends_on": [
+        "WIN-029"
+      ],
+      "data_domains": [
+        "session_log",
+        "progression_policy",
+        "unit_preferences"
+      ],
+      "asset_needs": [
+        "Reuse training archive background",
+        "Detailed set table, edit controls, correction state"
+      ],
+      "acceptance": [
+        "History distinguishes planned from completed work",
+        "Editing a past record cannot farm rewards",
+        "Units and exercise variant remain unambiguous",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-031",
+      "name": {
+        "en": "Consistency / Recovery Calendar",
+        "es": "Calendario de constancia / Recuperación"
+      },
+      "purpose": "Show adherence to the agreed schedule, protected recovery, and pauses.",
+      "steps": [
+        "Inspect the calendar",
+        "Open a training or recovery day",
+        "Review protected streak rules",
+        "Adjust future schedule or record an allowed pause"
+      ],
+      "depends_on": [
+        "WIN-012",
+        "WIN-029"
+      ],
+      "data_domains": [
+        "recovery_policy",
+        "progression_policy",
+        "session_log",
+        "training_profile"
+      ],
+      "asset_needs": [
+        "Reuse System or archive background",
+        "Training/recovery/pause day markers and streak glyph"
+      ],
+      "acceptance": [
+        "Ranking is based on protected consistency, not consecutive hard workouts",
+        "Illness and recovery states have explicit treatment",
+        "Changing a schedule does not silently rewrite completed history",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-032",
+      "name": {
+        "en": "Inventory",
+        "es": "Inventario"
+      },
+      "purpose": "Browse owned gear and cosmetic rewards.",
+      "steps": [
+        "Filter items by slot, rarity, or ownership state",
+        "Select an item",
+        "Inspect details or preview on the character",
+        "Equip supported items"
+      ],
+      "depends_on": [
+        "WIN-013"
+      ],
+      "data_domains": [
+        "inventory",
+        "gear_catalog",
+        "economy_policy",
+        "avatar_catalog"
+      ],
+      "asset_needs": [
+        "Armory background",
+        "Gear racks and inventory foreground",
+        "Item icons and optional equipped character preview",
+        "Inventory grid and rarity borders"
+      ],
+      "acceptance": [
+        "Basic, Rare, and Ultra Rare describe earned rarity",
+        "Premium denotes cosmetic availability or style, not superior power",
+        "Filter and empty-slot states are included",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-033",
+      "name": {
+        "en": "Item Details",
+        "es": "Detalles del objeto"
+      },
+      "purpose": "Explain an item’s slot, appearance, ownership, and acquisition.",
+      "steps": [
+        "Open an item",
+        "Inspect visual and description",
+        "Review source and cosmetic status",
+        "Preview, equip, or return"
+      ],
+      "depends_on": [
+        "WIN-032"
+      ],
+      "data_domains": [
+        "gear_catalog",
+        "inventory",
+        "economy_policy",
+        "localization"
+      ],
+      "asset_needs": [
+        "Reuse armory background",
+        "Large item sprite and rarity frame",
+        "Source/ownership indicators"
+      ],
+      "acceptance": [
+        "Actual appearance and slot restrictions are clear",
+        "Price and earnable source are distinct",
+        "Paid items have no hidden fitness XP or combat advantage",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-034",
+      "name": {
+        "en": "Equip / Appearance Preview",
+        "es": "Equipar / Vista previa de apariencia"
+      },
+      "purpose": "Try owned gear on the character and resolve slot compatibility.",
+      "steps": [
+        "Choose an equipment slot",
+        "Compare equipped and candidate item",
+        "Inspect supported views and representative motion",
+        "Apply or discard the change"
+      ],
+      "depends_on": [
+        "WIN-013",
+        "WIN-032",
+        "WIN-033"
+      ],
+      "data_domains": [
+        "avatar_catalog",
+        "gear_catalog",
+        "inventory",
+        "account_preferences"
+      ],
+      "asset_needs": [
+        "Reuse character workshop or armory",
+        "Full layered equipped character, hair/headgear alternatives and body-fit variants",
+        "Slot map and apply/cancel controls"
+      ],
+      "acceptance": [
+        "Items visibly follow the character in status, tower, and gym",
+        "Skin tone and hair customization survive gear swaps",
+        "Headgear hide/show rules are explicit",
+        "No clipping, missing hands, misordered layers, or floating items in approved samples",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-035",
+      "name": {
+        "en": "Cosmetic Shop",
+        "es": "Tienda de cosméticos"
+      },
+      "purpose": "Offer clearly priced cosmetic items and themes.",
+      "steps": [
+        "Browse categories",
+        "Inspect an exact cosmetic preview",
+        "Review price and ownership",
+        "Start purchase or return"
+      ],
+      "depends_on": [
+        "WIN-033"
+      ],
+      "data_domains": [
+        "gear_catalog",
+        "theme_catalog",
+        "inventory",
+        "economy_policy",
+        "purchase_catalog"
+      ],
+      "asset_needs": [
+        "Merchant alcove background",
+        "Cosmetic display props",
+        "Item/theme preview art",
+        "Price and ownership labels"
+      ],
+      "acceptance": [
+        "No purchasable fitness XP or combat power",
+        "No paid randomized loot in V1",
+        "Availability and teen purchase requirements follow the reviewed platform/region policy",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-036",
+      "name": {
+        "en": "Purchase / Restore Result",
+        "es": "Compra / Resultado de restauración"
+      },
+      "purpose": "Confirm an exact cosmetic purchase and explain pending, cancelled, or restored results.",
+      "steps": [
+        "Review exact item and total displayed price",
+        "Enter the platform purchase flow",
+        "Handle success, cancellation, pending, or error",
+        "Verify entitlement or restore purchases"
+      ],
+      "depends_on": [
+        "WIN-035"
+      ],
+      "data_domains": [
+        "purchase_catalog",
+        "inventory",
+        "economy_policy",
+        "account"
+      ],
+      "asset_needs": [
+        "Reuse shop background",
+        "Purchase summary and entitlement status icons"
+      ],
+      "acceptance": [
+        "The approved item and price stay visible before purchase",
+        "A cancelled or pending purchase never appears owned prematurely",
+        "Restore and duplicate-ownership states are covered",
+        "Platform-owned purchase UI is documented as external, not a generated imitation",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-037",
+      "name": {
+        "en": "Tower Entrance / Loadout",
+        "es": "Entrada a la torre / Equipo"
+      },
+      "purpose": "Prepare the Boxer for a separate action-game run.",
+      "steps": [
+        "Review tower progress",
+        "Inspect gear and four abilities",
+        "Choose supported starting floor or run option",
+        "Enter the tower"
+      ],
+      "depends_on": [
+        "WIN-014",
+        "WIN-034"
+      ],
+      "data_domains": [
+        "tower_content",
+        "progression_policy",
+        "inventory",
+        "avatar_catalog"
+      ],
+      "asset_needs": [
+        "Tower gate background",
+        "Entrance props",
+        "Equipped Boxer idle sprite",
+        "Run controls and ability/loadout frame"
+      ],
+      "acceptance": [
+        "Rest days do not lock tower play",
+        "Three attacks and one special are visible",
+        "Exercise load does not automatically set avatar strength",
+        "Tower progression is distinct from fitness XP",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-038",
+      "name": {
+        "en": "Tower Floor / Room Route",
+        "es": "Piso de la torre / Ruta de salas"
+      },
+      "purpose": "Understand the current floor, room connections, and available paths.",
+      "steps": [
+        "Enter a generated floor",
+        "Inspect explored rooms and exits",
+        "Choose an accessible room",
+        "Track the requirement to clear enemies before advancing"
+      ],
+      "depends_on": [
+        "WIN-037"
+      ],
+      "data_domains": [
+        "tower_content",
+        "tower_run_state"
+      ],
+      "asset_needs": [
+        "Modular floor/room backgrounds and door props",
+        "Room-map tiles and discovered/locked/cleared indicators"
+      ],
+      "acceptance": [
+        "Procedural variation uses approved room pieces",
+        "The route is readable without spoiling unexplored rooms",
+        "Floor difficulty does not prescribe more physical exercise",
+        "Infinite tower means new floors generated as needed, not an infinite asset batch",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-039",
+      "name": {
+        "en": "Tower Combat",
+        "es": "Combate en la torre"
+      },
+      "purpose": "Move freely and fight with Boxer attacks in a readable isometric arena.",
+      "steps": [
+        "Move into a room",
+        "Use free movement and three normal attacks",
+        "Build and activate the special",
+        "Defeat every required enemy",
+        "Continue through the exit"
+      ],
+      "depends_on": [
+        "WIN-038"
+      ],
+      "data_domains": [
+        "tower_content",
+        "tower_run_state",
+        "avatar_catalog",
+        "gear_catalog",
+        "accessibility_preferences"
+      ],
+      "asset_needs": [
+        "Approved modular arena backgrounds",
+        "Collision-readable foreground props",
+        "Layered Boxer directional movement/attack/hit sprites; enemy sprites",
+        "Ability effects, joystick, four action buttons and health HUD"
+      ],
+      "acceptance": [
+        "View resembles the approved isometric combat concept without copying another game’s assets",
+        "Movement and attack controls fit mobile reach zones",
+        "Gear and hair remain coherent across approved motions",
+        "Enemies, damage feedback, and interactable exits remain readable",
+        "Orientation is confirmed in G0; landscape is a proposal",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-040",
+      "name": {
+        "en": "Room Clear / Tower Loot",
+        "es": "Sala despejada / Botín de la torre"
+      },
+      "purpose": "Resolve a cleared room and allow a deliberate reward or exit action.",
+      "steps": [
+        "Confirm all required enemies are defeated",
+        "Inspect reward",
+        "Collect once",
+        "Choose an unlocked exit or continue"
+      ],
+      "depends_on": [
+        "WIN-039"
+      ],
+      "data_domains": [
+        "tower_run_state",
+        "inventory",
+        "economy_policy",
+        "progression_policy"
+      ],
+      "asset_needs": [
+        "Reuse approved cleared room",
+        "Chest/drop and cleared-door props",
+        "Loot sprites and compact reward controls"
+      ],
+      "acceptance": [
+        "Reward collection is idempotent",
+        "Physical workout data is not changed by tower loot",
+        "The next exit and current run state are clear",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-041",
+      "name": {
+        "en": "Tower Defeat / Retry",
+        "es": "Derrota en la torre / Reintentar"
+      },
+      "purpose": "Explain a lost run and offer fair recovery options.",
+      "steps": [
+        "Review defeat summary",
+        "Inspect kept and lost run progress",
+        "Retry the allowed checkpoint or leave",
+        "Return to entrance or the run"
+      ],
+      "depends_on": [
+        "WIN-039"
+      ],
+      "data_domains": [
+        "tower_run_state",
+        "progression_policy",
+        "economy_policy"
+      ],
+      "asset_needs": [
+        "Reuse approved arena with subdued overlay",
+        "Boxer defeat pose and loss/result panel"
+      ],
+      "acceptance": [
+        "Defeat never removes completed physical workouts",
+        "No paid combat-power rescue is offered",
+        "Retry and leave outcomes are explicit",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-042",
+      "name": {
+        "en": "Tower Run Summary",
+        "es": "Resumen de la incursión"
+      },
+      "purpose": "Summarize a completed or voluntarily ended tower run.",
+      "steps": [
+        "Review highest floor and rooms cleared",
+        "Inspect earned tower rewards",
+        "See relevant game achievements",
+        "Return to System or start another run"
+      ],
+      "depends_on": [
+        "WIN-040",
+        "WIN-041"
+      ],
+      "data_domains": [
+        "tower_run_state",
+        "progression_policy",
+        "inventory",
+        "economy_policy"
+      ],
+      "asset_needs": [
+        "Tower overlook or approved entrance reuse",
+        "Run medal and reward summary art"
+      ],
+      "acceptance": [
+        "Tower achievements and fitness achievements remain clearly labeled",
+        "Exiting is a valid action",
+        "Rewards do not duplicate after reconnect or reopen",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-043",
+      "name": {
+        "en": "Interdimensional Gym / Lobby",
+        "es": "Gimnasio interdimensional / Vestíbulo"
+      },
+      "purpose": "Choose a permitted social gym instance and review basic interaction rules.",
+      "steps": [
+        "Review room availability and social rules",
+        "Choose an available instance",
+        "Confirm entry when needed",
+        "Enter the shared gym"
+      ],
+      "depends_on": [
+        "WIN-013",
+        "WIN-057"
+      ],
+      "data_domains": [
+        "social_policy",
+        "social_room_state",
+        "account",
+        "preset_messages"
+      ],
+      "asset_needs": [
+        "Portal concourse background",
+        "Room portal props",
+        "Character preview reuse",
+        "Room list and occupancy icons"
+      ],
+      "acceptance": [
+        "This is a social space, distinct from real training plans",
+        "Teen room access and discoverability follow reviewed policy",
+        "Full, unavailable, and reconnect states are included",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-044",
+      "name": {
+        "en": "Interdimensional Gym / Shared Room",
+        "es": "Gimnasio interdimensional / Sala compartida"
+      },
+      "purpose": "Walk around a shared social gym, use emotes, and meet permitted players.",
+      "steps": [
+        "Enter the instance",
+        "Move freely among approved props",
+        "Select a player or use a preset phrase/emote",
+        "Open friends or limited chat",
+        "Leave the room"
+      ],
+      "depends_on": [
+        "WIN-043"
+      ],
+      "data_domains": [
+        "social_room_state",
+        "social_policy",
+        "avatar_catalog",
+        "gear_catalog",
+        "preset_messages"
+      ],
+      "asset_needs": [
+        "Original interdimensional gym background pieces",
+        "Fitness-themed decor, portals and readable walkable foreground",
+        "Equipped player directional idle/walk sprites and emotes",
+        "Player markers and social HUD"
+      ],
+      "acceptance": [
+        "Other players cannot see private measurements, age, or fasting logs",
+        "Gear appearance is consistent with equipment preview",
+        "No free-text chat in V1",
+        "Username and behavior reporting remain available",
+        "Gym props do not imply automatic rep detection",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-045",
+      "name": {
+        "en": "Player Card / Interaction",
+        "es": "Ficha de jugador / Interacción"
+      },
+      "purpose": "Inspect a permitted public identity and choose safe social actions.",
+      "steps": [
+        "Select a visible player",
+        "View alias, avatar, and allowed achievements",
+        "Send a permitted friend request or preset interaction",
+        "Mute, block, report, or close"
+      ],
+      "depends_on": [
+        "WIN-044"
+      ],
+      "data_domains": [
+        "social_policy",
+        "account",
+        "avatar_catalog",
+        "progression_policy"
+      ],
+      "asset_needs": [
+        "Reuse approved gym background",
+        "Public avatar portrait and action panel"
+      ],
+      "acceptance": [
+        "Teen profiles are private by default",
+        "Age, exact location, health data, and physical measurements are absent",
+        "Actions obey friendship and blocked-user state",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-046",
+      "name": {
+        "en": "Friends / Requests",
+        "es": "Amigos / Solicitudes"
+      },
+      "purpose": "Manage friendships and requests without exposing private identity.",
+      "steps": [
+        "Open friends or requests",
+        "Review a permitted alias and avatar",
+        "Accept, decline, remove, or invite where allowed",
+        "Open a permitted private conversation"
+      ],
+      "depends_on": [
+        "WIN-045"
+      ],
+      "data_domains": [
+        "social_policy",
+        "friends_graph",
+        "account"
+      ],
+      "asset_needs": [
+        "Reuse System or gym background",
+        "Friend avatars, request badges, presence indicators"
+      ],
+      "acceptance": [
+        "Blocked players cannot send new requests or direct messages",
+        "Teen discoverability and invitation defaults stay restricted",
+        "Online presence visibility has a privacy setting",
+        "Friend removal outcome is clear",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-047",
+      "name": {
+        "en": "Gym Public Preset Chat",
+        "es": "Chat público del gimnasio / Frases"
+      },
+      "purpose": "Communicate in a gym room using localized approved phrases and emotes.",
+      "steps": [
+        "Open the room chat",
+        "Pick a phrase category",
+        "Preview and send an approved phrase",
+        "Read locally translated replies",
+        "Mute, report, or close"
+      ],
+      "depends_on": [
+        "WIN-044"
+      ],
+      "data_domains": [
+        "preset_messages",
+        "social_policy",
+        "social_room_state",
+        "localization"
+      ],
+      "asset_needs": [
+        "Reuse approved gym scene",
+        "Chat panel, phrase category icons, emote assets"
+      ],
+      "acceptance": [
+        "No keyboard/free-text field is offered",
+        "Phrase identifiers localize to each recipient’s selected language",
+        "Spam limits and report paths are represented",
+        "Usernames remain reportable content",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-048",
+      "name": {
+        "en": "Private Preset Chat",
+        "es": "Chat privado / Frases"
+      },
+      "purpose": "Exchange approved localized phrases with permitted friends.",
+      "steps": [
+        "Choose a permitted friend",
+        "Open the conversation",
+        "Select and send a preset phrase or emote",
+        "Mute, block, report, or close"
+      ],
+      "depends_on": [
+        "WIN-046"
+      ],
+      "data_domains": [
+        "preset_messages",
+        "social_policy",
+        "friends_graph",
+        "localization"
+      ],
+      "asset_needs": [
+        "Reuse System or gym background",
+        "Private conversation panel and phrase picker"
+      ],
+      "acceptance": [
+        "Strangers cannot initiate private messages to teens",
+        "Block status prevents delivery",
+        "No free-text field is offered",
+        "Empty, offline, and unavailable conversations have clear states",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-049",
+      "name": {
+        "en": "Mute / Block / Report",
+        "es": "Silenciar / Bloquear / Reportar"
+      },
+      "purpose": "Let a player stop unwanted interaction and report behavior or identity content.",
+      "steps": [
+        "Choose the relevant player or message",
+        "Select mute, block, or report",
+        "Choose an approved report reason and review the effect",
+        "Confirm and see outcome"
+      ],
+      "depends_on": [
+        "WIN-045",
+        "WIN-047",
+        "WIN-048"
+      ],
+      "data_domains": [
+        "social_policy",
+        "report_reason_catalog",
+        "friends_graph"
+      ],
+      "asset_needs": [
+        "Reuse originating background",
+        "Safety action sheet, reason icons, confirmation state"
+      ],
+      "acceptance": [
+        "Blocking is effective for friend requests and private contact",
+        "Reports cover aliases, messages, and behavior",
+        "A report receipt does not promise an unreviewed moderation outcome",
+        "Restricted structured input is supported without unrestricted teen free text",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-050",
+      "name": {
+        "en": "Rankings / Scope Selection",
+        "es": "Clasificaciones / Selección de alcance"
+      },
+      "purpose": "Browse recreational fitness XP and protected-consistency standings in permitted scopes.",
+      "steps": [
+        "Choose fitness XP or consistency",
+        "Select permitted friends, state/region, country, or world scope",
+        "Review own position and rule explanation",
+        "Open only a permitted public player card"
+      ],
+      "depends_on": [
+        "WIN-031",
+        "WIN-046",
+        "WIN-057"
+      ],
+      "data_domains": [
+        "ranking_policy",
+        "progression_policy",
+        "social_policy",
+        "region_catalog"
+      ],
+      "asset_needs": [
+        "Hall of records background",
+        "Ranking banners, scope emblems, list frames"
+      ],
+      "acceptance": [
+        "Teen accounts default to private friends-only rankings; public teen scope is unavailable until a reviewed policy explicitly enables it",
+        "No ranking by weight, body shape, fasting, or absolute lifted kilograms",
+        "Regional scope uses broad volunteered region, not continuous GPS",
+        "Self-reported workouts are described as recreational data",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-051",
+      "name": {
+        "en": "Adult Fasting / Optional Setup",
+        "es": "Ayuno para adultos / Configuración opcional"
+      },
+      "purpose": "Offer an optional neutral log to eligible adults who choose to enable it.",
+      "steps": [
+        "Open adult-only wellness settings",
+        "Read suitability and professional-supervision information",
+        "Choose a supported plan no longer than 20 hours",
+        "Confirm enablement or leave it off"
+      ],
+      "depends_on": [
+        "WIN-009",
+        "WIN-055"
+      ],
+      "data_domains": [
+        "fasting_policy",
+        "fasting_log",
+        "account_preferences",
+        "consent_policy"
+      ],
+      "asset_needs": [
+        "Quiet wellness background",
+        "Neutral clock symbols and informational panel"
+      ],
+      "acceptance": [
+        "Entire feature is absent below 18",
+        "No XP, buffs, streak rewards, ranks, or progressive fasting targets",
+        "20:4 is a supported-plan cap, not a safety claim",
+        "Suitability copy receives appropriate review before use",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-052",
+      "name": {
+        "en": "Adult Fasting Timer",
+        "es": "Temporizador de ayuno para adultos"
+      },
+      "purpose": "Display an optional adult’s chosen schedule without rewarding duration.",
+      "steps": [
+        "Review current timer and planned end",
+        "Start or correct the chosen start time",
+        "View neutral progress and information",
+        "End at any time or finish at the chosen limit"
+      ],
+      "depends_on": [
+        "WIN-051"
+      ],
+      "data_domains": [
+        "fasting_policy",
+        "fasting_log",
+        "timer_state"
+      ],
+      "asset_needs": [
+        "Reuse quiet wellness background",
+        "Neutral timer and stop control"
+      ],
+      "acceptance": [
+        "No projected fat-burning, autophagy, or health-benefit claims",
+        "End is always prominent and penalty-free",
+        "No supported plan above 20 hours or automatic extension",
+        "A missed timer end records reality without encouraging continuation",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-053",
+      "name": {
+        "en": "End / Correct Fasting Log",
+        "es": "Terminar / Corregir registro de ayuno"
+      },
+      "purpose": "End or correct an adult fasting entry without judgment.",
+      "steps": [
+        "Choose end or correction",
+        "Review actual start and end",
+        "Save or discard the log",
+        "Return to history or System"
+      ],
+      "depends_on": [
+        "WIN-052"
+      ],
+      "data_domains": [
+        "fasting_log",
+        "fasting_policy"
+      ],
+      "asset_needs": [
+        "Reuse quiet wellness background",
+        "Neutral entry review and saved-state controls"
+      ],
+      "acceptance": [
+        "Early ending loses no game progress",
+        "Actual timestamps may be corrected without turning over-20-hour entries into supported targets",
+        "No celebratory duration ranking or failure label",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-054",
+      "name": {
+        "en": "Adult Fasting History",
+        "es": "Historial de ayuno para adultos"
+      },
+      "purpose": "Review private neutral fasting records.",
+      "steps": [
+        "Open private history",
+        "Inspect dates and recorded durations",
+        "Open an entry to correct or delete",
+        "Disable the feature if desired"
+      ],
+      "depends_on": [
+        "WIN-053"
+      ],
+      "data_domains": [
+        "fasting_log",
+        "fasting_policy",
+        "account_preferences"
+      ],
+      "asset_needs": [
+        "Reuse quiet wellness background",
+        "Neutral history list and edit/delete controls"
+      ],
+      "acceptance": [
+        "History stays private and never feeds ranking or training load escalation",
+        "No streak or longest-fast celebration",
+        "Disabling and deleting records have distinct effects",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-055",
+      "name": {
+        "en": "Settings",
+        "es": "Configuración"
+      },
+      "purpose": "Provide a clear index for user preferences and account controls.",
+      "steps": [
+        "Open Settings",
+        "Choose language/units, privacy, accessibility, themes, notifications, or account",
+        "Update a preference in its window",
+        "Return to the originating activity"
+      ],
+      "depends_on": [
+        "WIN-002"
+      ],
+      "data_domains": [
+        "account_preferences",
+        "localization",
+        "unit_preferences"
+      ],
+      "asset_needs": [
+        "System archive/settings background",
+        "Settings category sigils and preference controls"
+      ],
+      "acceptance": [
+        "Language is manually switchable after automatic selection",
+        "Metric and imperial preferences preserve canonical values",
+        "Adult-only wellness is absent for teen accounts",
+        "Changes do not silently reset progress",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-056",
+      "name": {
+        "en": "Account / Linked Sign-in",
+        "es": "Cuenta / Métodos de acceso"
+      },
+      "purpose": "Review account access and manage supported sign-in methods.",
+      "steps": [
+        "Review masked account identity",
+        "Link or inspect a supported sign-in method",
+        "Reauthenticate for sensitive changes",
+        "Confirm result or sign out"
+      ],
+      "depends_on": [
+        "WIN-055"
+      ],
+      "data_domains": [
+        "account",
+        "authentication_policy",
+        "consent_policy"
+      ],
+      "asset_needs": [
+        "Reuse settings background",
+        "Linked-provider icons and account action panels"
+      ],
+      "acceptance": [
+        "Linking does not create duplicate characters or lose progress",
+        "Provider disconnect cannot strand an account without an access path",
+        "Sign-out and account deletion are distinct",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-057",
+      "name": {
+        "en": "Privacy / Social Permissions",
+        "es": "Privacidad / Permisos sociales"
+      },
+      "purpose": "Control visibility, discovery, contact, and optional data use.",
+      "steps": [
+        "Review private/public data distinction",
+        "Inspect age-appropriate visibility and contact options",
+        "Change permitted options",
+        "Save and review the effect"
+      ],
+      "depends_on": [
+        "WIN-007"
+      ],
+      "data_domains": [
+        "social_policy",
+        "consent_policy",
+        "account_preferences",
+        "ranking_policy"
+      ],
+      "asset_needs": [
+        "Reuse settings background",
+        "Privacy shields, visibility previews, blocked-user list"
+      ],
+      "acceptance": [
+        "Teen defaults remain private and restricted",
+        "Health data never becomes public through a leaderboard switch",
+        "Geolocation is not required",
+        "Previously granted optional consents can be reviewed",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-058",
+      "name": {
+        "en": "Accessibility / Controls",
+        "es": "Accesibilidad / Controles"
+      },
+      "purpose": "Make the approved art usable through readable interfaces, adaptable controls, and reduced effects.",
+      "steps": [
+        "Review text and contrast previews",
+        "Set motion, flash, sound, haptic, and subtitle preferences",
+        "Preview tower control placement where supported",
+        "Save and return"
+      ],
+      "depends_on": [
+        "WIN-055"
+      ],
+      "data_domains": [
+        "accessibility_preferences",
+        "localization"
+      ],
+      "asset_needs": [
+        "Reuse settings background",
+        "Text/contrast previews and mobile control mockup",
+        "Reduced-effect variants of approved UI assets"
+      ],
+      "acceptance": [
+        "Text fit is verified in both languages",
+        "Meaning is not conveyed by color alone",
+        "Reduced motion avoids essential information loss",
+        "Interface accessibility is included even though disability-specific exercise programming is deferred",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-059",
+      "name": {
+        "en": "Themes / Personalization",
+        "es": "Temas / Personalización"
+      },
+      "purpose": "Preview approved interface themes without changing gameplay.",
+      "steps": [
+        "Browse owned/default themes",
+        "Preview the theme on representative UI",
+        "Apply or open the exact shop item",
+        "Restore the default if desired"
+      ],
+      "depends_on": [
+        "WIN-055",
+        "WIN-035"
+      ],
+      "data_domains": [
+        "theme_catalog",
+        "inventory",
+        "account_preferences"
+      ],
+      "asset_needs": [
+        "Theme preview backgrounds and frames approved individually",
+        "Sample icons and color/material variants"
+      ],
+      "acceptance": [
+        "Themes preserve contrast and legibility",
+        "Theme purchases are cosmetic",
+        "Applying a theme does not change training, stats, or eligibility",
+        "Each theme’s asset changes follow the same serial gates",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-060",
+      "name": {
+        "en": "Notifications / Reminders",
+        "es": "Notificaciones / Recordatorios"
+      },
+      "purpose": "Configure optional reminders for the agreed routine and permitted social activity.",
+      "steps": [
+        "Choose reminder categories",
+        "Select schedule and quiet hours",
+        "Review the platform permission request if needed",
+        "Save or disable reminders"
+      ],
+      "depends_on": [
+        "WIN-012",
+        "WIN-055"
+      ],
+      "data_domains": [
+        "account_preferences",
+        "recovery_policy",
+        "social_policy",
+        "localization"
+      ],
+      "asset_needs": [
+        "Reuse settings background",
+        "Reminder-category icons and quiet-hours controls"
+      ],
+      "acceptance": [
+        "Reminders respect recovery and pauses",
+        "No pressure to extend fasting or complete excessive training",
+        "Public lock-screen wording avoids private health details",
+        "Platform-owned permission dialogs are documented as external",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-061",
+      "name": {
+        "en": "Help / Support / Credits",
+        "es": "Ayuda / Soporte / Créditos"
+      },
+      "purpose": "Explain the product, access support, and show policy and asset attributions.",
+      "steps": [
+        "Choose gameplay or workout-app help",
+        "Read relevant guidance or troubleshooting",
+        "Open the supported help route",
+        "Review credits and third-party media licenses"
+      ],
+      "depends_on": [
+        "WIN-055"
+      ],
+      "data_domains": [
+        "help_content",
+        "media_attribution",
+        "localization"
+      ],
+      "asset_needs": [
+        "Reuse settings/archive background",
+        "Help-category emblems and credits panels"
+      ],
+      "acceptance": [
+        "Exercise media attribution is discoverable where license requires it",
+        "Help distinguishes manual logging from plan generation",
+        "Support route and report-abuse route are not conflated",
+        "No credentials or private training logs are automatically disclosed",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-062",
+      "name": {
+        "en": "Export Data / Delete Account",
+        "es": "Exportar datos / Eliminar cuenta"
+      },
+      "purpose": "Give users deliberate control over their data and account lifecycle.",
+      "steps": [
+        "Choose export or account deletion",
+        "Review scope, consequences, and retention explanation",
+        "Reauthenticate where needed",
+        "Confirm and view pending or completed outcome"
+      ],
+      "depends_on": [
+        "WIN-056"
+      ],
+      "data_domains": [
+        "account",
+        "consent_policy",
+        "data_lifecycle_policy",
+        "session_log",
+        "fasting_log"
+      ],
+      "asset_needs": [
+        "Reuse settings background",
+        "Distinct export and deletion panels, progress/result states"
+      ],
+      "acceptance": [
+        "Deletion is available inside the app",
+        "Export and deletion are separate actions",
+        "Retention and recovery claims match reviewed policy",
+        "Destructive actions cannot be triggered by a stray tap",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-063",
+      "name": {
+        "en": "Shared Confirmation / Unsaved Changes",
+        "es": "Confirmación compartida / Cambios sin guardar"
+      },
+      "purpose": "Provide a consistent reusable confirmation pattern for non-specialized actions.",
+      "steps": [
+        "Trigger an action that needs review",
+        "Read its concrete effect",
+        "Confirm, cancel, or keep editing",
+        "Return to the correct originating state"
+      ],
+      "depends_on": [],
+      "data_domains": [
+        "localization",
+        "action_state"
+      ],
+      "asset_needs": [
+        "Reuse and dim the originating background with explicit approval",
+        "Shared confirmation frame, primary/secondary controls"
+      ],
+      "acceptance": [
+        "Copy names the actual action",
+        "Default focus and control placement discourage accidental loss",
+        "Purchase, deletion, workout stop, and fasting end keep their own domain-specific milestones",
+        "No generic confirmation replaces a required consent flow",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    },
+    {
+      "id": "WIN-064",
+      "name": {
+        "en": "Shared Loading / Offline / Error / Empty",
+        "es": "Estados de carga / Sin conexión / Error / Vacío"
+      },
+      "purpose": "Provide coherent reusable transient and recovery states across all windows.",
+      "steps": [
+        "Encounter a loading, empty, offline, sync, or error state",
+        "See what is known and what is still pending",
+        "Retry, continue locally where supported, or return",
+        "Confirm recovery without duplicate work"
+      ],
+      "depends_on": [],
+      "data_domains": [
+        "localization",
+        "connection_state",
+        "action_state"
+      ],
+      "asset_needs": [
+        "Reuse originating backgrounds with explicit approval",
+        "Shared loading sigil, empty-state illustration, offline/error/sync icons"
+      ],
+      "acceptance": [
+        "No invented successful save, purchase, or reward while status is uncertain",
+        "Manual workout drafts and confirmed logs are visually distinguishable",
+        "Loading respects reduced motion",
+        "Every consuming window records which of these states it needs",
+        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
+      ],
+      "stage": "not_started",
+      "scope": "v1"
+    }
+  ],
+  "asset_workflow_mapping": {
+    "source_document": "docs/design/asset-production-and-animation-sources.md",
+    "avatar_contract": "data/art/avatar-contract.json",
+    "stage_map": {
+      "G0": 0,
+      "G1": 1,
+      "G2": 2,
+      "G3a": 3,
+      "G3b": 4,
+      "G3c": 5,
+      "G3d": 6,
+      "G4": 7,
+      "G5": 8,
+      "G6": 9
+    },
+    "note": "G0 is the prerequisite window-brief approval and is included in the avatar contract before background."
+  },
+  "visual_reference_contract": "docs/design/visual-reference-contract.md"
+}

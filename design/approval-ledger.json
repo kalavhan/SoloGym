@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "style": {
+    "state": "approved",
+    "approved_by": "user",
+    "date": "2026-09-25",
+    "evidence": "i like the style.",
+    "reference_files": [
+      "design/renders/01-system-status-en-v1.png",
+      "design/renders/02-workout-boss-es-v1.png",
+      "design/renders/03-tower-combat-en-v1.png"
+    ],
+    "scope": "Overall visual direction. Production assets and individual windows require separate approval."
+  },
+  "current_milestone": "WIN-001_system_home",
+  "window_approvals": [
+    {
+      "window_id": "WIN-001",
+      "gate": "G0",
+      "state": "approved_for_implementation",
+      "artifact": "docs/windows/WIN-001-system-home-g0.md",
+      "data_artifact": "data/windows/WIN-001-system-home.json",
+      "subsequent_asset_gates": "superseded_for_WIN-001_by_complete_window_assembly_then_visual_review",
+      "render_manifest": "design/reference-manifests/WIN-001-system-home-v2.json",
+      "render_references": [
+        {
+          "file": "design/renders/WIN-001-system-home-en-proposal-v2.png",
+          "sha256": "a08c31f246a041acad0704361c2404c5e7cea5bab7cc25b571a2b1ff2d8ccde8"
+        },
+        {
+          "file": "design/renders/WIN-001-system-home-es-proposal-v2.png",
+          "sha256": "58dc7ac147b93ced4e254cb01e89a7903ce4cd7609b7c5e3428947c9625f9d32"
+        }
+      ],
+      "review_scope": "Approved EN/ES v2 as visual target; authorize complete Home implementation with shared assets and pixel mapping, then focused visual review. No per-button render/approval loop.",
+      "approved_by": "user",
+      "evidence": "make this 1:1 ... build completely and then test visually for match 1:1 ... This sounds good. make sure to keep updating the github"
+    }
+  ],
+  "required_next_artifact": "Complete working WIN-001 Home window and full-screen visual comparison to v2; push completed work to kalavhan/SoloGym.",
+  "foundation_design_approval": {
+    "state": "accepted_for_design",
+    "approved_by": "user",
+    "date": "2026-09-25",
+    "evidence": "perfect, continue.",
+    "scope": "Training data shape and staged window plan; does not approve exercise content for public release, individual assets, or window composites.",
+    "professional_and_youth_content_review": "pending"
+  },
+  "proposal_render_policy": {
+    "requested_by": "user",
+    "evidence": "in the proposal include the rendering so we can keep it and use it for the work and make sure it matches 1:1",
+    "rule": "Each window proposal includes retained versioned renders. The exact approved version becomes its visual target; staged production asset approvals remain separate."
+  },
+  "implementation_workflow": {
+    "scope": "WIN-001",
+    "approach": "target-render development (TDR interpretation), one pixel map, shared assets, complete assembly before focused full-screen QA",
+    "github_updates": "authorized by user",
+    "old_per_asset_stop_points": "superseded by latest explicit build instruction for this window"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SoloGym draft training input",
+  "type": "object",
+  "required": [
+    "id",
+    "age",
+    "experience",
+    "goal",
+    "environment",
+    "equipment",
+    "session_minutes",
+    "sessions_per_week",
+    "difficulty",
+    "readiness",
+    "excluded_exercises",
+    "preferred_exercises",
+    "recent_strength_dates",
+    "teen_supervision_available",
+    "professional_guidance_needed"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 15,
+      "maximum": 120
+    },
+    "experience": {
+      "enum": [
+        "beginner",
+        "intermediate"
+      ]
+    },
+    "goal": {
+      "enum": [
+        "general_fitness",
+        "strength",
+        "muscle_growth",
+        "endurance",
+        "mobility"
+      ]
+    },
+    "environment": {
+      "enum": [
+        "home",
+        "gym",
+        "outdoor"
+      ]
+    },
+    "equipment": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "session_minutes": {
+      "type": "integer",
+      "minimum": 15,
+      "maximum": 60
+    },
+    "sessions_per_week": {
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 5
+    },
+    "difficulty": {
+      "enum": [
+        "light",
+        "medium",
+        "hard"
+      ]
+    },
+    "readiness": {
+      "enum": [
+        "ready",
+        "low_energy",
+        "ill",
+        "pain",
+        "injury"
+      ]
+    },
+    "excluded_exercises": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "preferred_exercises": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "recent_strength_dates": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date"
+      },
+      "uniqueItems": true
+    },
+    "teen_supervision_available": {
+      "type": "boolean"
+    },
+    "professional_guidance_needed": {
+      "type": "boolean"
+    }
+  }
+}

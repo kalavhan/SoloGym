@@ -1,0 +1,3 @@
+Use case: precise-object-edit
+Input image is the exact edit target. Keep everything unchanged except the length of the CYAN XP FILL in the very small bar near the top.
+In this 853 x 1844 image, the XP track runs approximately from x=242 to x=573, at y=315 to y=331. The cyan fill currently ends around x=410, incorrectly halfway. Extend ONLY its right edge to x=447, so the cyan fill covers 62% of the usable track and the remaining 38% stays dark. Preserve the rounded fill ends, glow, frame and all text including 1,240 / 2,000 XP. Do not move the track or change any character, background, label, glyph, panel, icon, number, font or any other part of the image. This is a surgical progress-bar correction; output the same complete portrait screen.

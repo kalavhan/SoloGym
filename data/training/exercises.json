@@ -1,0 +1,2359 @@
+{
+  "schema_version": "1.0.0",
+  "content_status": "draft_requires_professional_review",
+  "exercises": [
+    {
+      "id": "chair_squat",
+      "name": {
+        "en": "Chair squat",
+        "es": "Sentadilla a silla"
+      },
+      "category": "strength",
+      "movement_pattern": "squat",
+      "equipment_all": [
+        "chair"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Use a firm, non-wheeled chair that cannot slide.",
+          "Sit back slowly, touch the seat, then stand with your feet planted.",
+          "Use a comfortable range and keep breathing."
+        ],
+        "es": [
+          "Usa una silla firme, sin ruedas y que no se deslice.",
+          "Lleva la cadera atrás, toca el asiento y levántate con los pies apoyados.",
+          "Usa un recorrido cómodo y sigue respirando."
+        ]
+      },
+      "regressions": [],
+      "progressions": [
+        "bodyweight_squat"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "bodyweight_squat",
+      "name": {
+        "en": "Bodyweight squat",
+        "es": "Sentadilla sin peso"
+      },
+      "category": "strength",
+      "movement_pattern": "squat",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Place your feet where you feel stable.",
+          "Bend your hips and knees together, keeping your feet planted.",
+          "Return to standing without bouncing at the bottom."
+        ],
+        "es": [
+          "Coloca los pies donde te sientas estable.",
+          "Flexiona caderas y rodillas a la vez, con los pies apoyados.",
+          "Vuelve a ponerte de pie sin rebotar abajo."
+        ]
+      },
+      "regressions": [
+        "chair_squat"
+      ],
+      "progressions": [
+        "dumbbell_goblet_squat"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "dumbbell_goblet_squat",
+      "name": {
+        "en": "Dumbbell goblet squat",
+        "es": "Sentadilla con mancuerna al pecho"
+      },
+      "category": "strength",
+      "movement_pattern": "squat",
+      "equipment_all": [
+        "dumbbells"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 45,
+      "cues": {
+        "en": [
+          "Hold one manageable dumbbell close to your chest.",
+          "Lower with control while keeping your feet planted.",
+          "Stand smoothly; reduce the load if your position changes."
+        ],
+        "es": [
+          "Sostén una mancuerna manejable cerca del pecho.",
+          "Baja con control y mantén los pies apoyados.",
+          "Sube con suavidad; reduce el peso si pierdes la postura."
+        ]
+      },
+      "regressions": [
+        "bodyweight_squat"
+      ],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "leg_press",
+      "name": {
+        "en": "Leg press",
+        "es": "Prensa de piernas"
+      },
+      "category": "strength",
+      "movement_pattern": "squat",
+      "equipment_all": [
+        "leg_press_machine"
+      ],
+      "environments": [
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 90,
+      "cues": {
+        "en": [
+          "Have the seat and safety stops adjusted to fit you.",
+          "Lower only while your pelvis and back stay supported.",
+          "Press smoothly without snapping your knees straight."
+        ],
+        "es": [
+          "Pide ayuda para ajustar el asiento y los topes a tu cuerpo.",
+          "Baja solo mientras la pelvis y la espalda sigan apoyadas.",
+          "Empuja con suavidad sin bloquear las rodillas de golpe."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "supported_split_squat",
+      "name": {
+        "en": "Supported split squat",
+        "es": "Sentadilla dividida con apoyo"
+      },
+      "category": "strength",
+      "movement_pattern": "single_leg",
+      "equipment_all": [
+        "stable_surface"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Use a fixed support and a stable staggered stance.",
+          "Bend both knees through a comfortable range.",
+          "Rise with control, using the support for balance."
+        ],
+        "es": [
+          "Usa un apoyo fijo y coloca un pie delante del otro con estabilidad.",
+          "Flexiona ambas rodillas dentro de un recorrido cómodo.",
+          "Sube con control y usa el apoyo para mantener el equilibrio."
+        ]
+      },
+      "regressions": [],
+      "progressions": [
+        "split_squat"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "split_squat",
+      "name": {
+        "en": "Split squat",
+        "es": "Sentadilla dividida"
+      },
+      "category": "strength",
+      "movement_pattern": "single_leg",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Set a stable staggered stance with room between your feet.",
+          "Lower your body by bending both knees.",
+          "Keep your front foot planted as you rise."
+        ],
+        "es": [
+          "Coloca un pie delante del otro dejando espacio entre ambos.",
+          "Baja el cuerpo flexionando ambas rodillas.",
+          "Mantén el pie delantero apoyado al subir."
+        ]
+      },
+      "regressions": [
+        "supported_split_squat"
+      ],
+      "progressions": [
+        "reverse_lunge"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "reverse_lunge",
+      "name": {
+        "en": "Reverse lunge",
+        "es": "Zancada hacia atrás"
+      },
+      "category": "strength",
+      "movement_pattern": "single_leg",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Step back into a stance you can balance.",
+          "Lower with control and keep the front foot planted.",
+          "Return smoothly, then complete the prescribed work on the other side."
+        ],
+        "es": [
+          "Da un paso atrás hasta una postura estable.",
+          "Baja con control y mantén el pie delantero apoyado.",
+          "Regresa con suavidad y completa el trabajo indicado del otro lado."
+        ]
+      },
+      "regressions": [
+        "split_squat",
+        "supported_split_squat"
+      ],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "low_step_up",
+      "name": {
+        "en": "Low step-up",
+        "es": "Subida a escalón bajo"
+      },
+      "category": "strength",
+      "movement_pattern": "single_leg",
+      "equipment_all": [
+        "low_step"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": true,
+      "setup_seconds": 45,
+      "cues": {
+        "en": [
+          "Use a stable, non-slip exercise step, never a chair.",
+          "Place your whole lead foot on the step.",
+          "Stand up and step down slowly without jumping."
+        ],
+        "es": [
+          "Usa un escalón de ejercicio estable y antideslizante, nunca una silla.",
+          "Apoya todo el pie delantero en el escalón.",
+          "Sube y baja despacio, sin saltar."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "glute_bridge",
+      "name": {
+        "en": "Glute bridge",
+        "es": "Puente de glúteos"
+      },
+      "category": "strength",
+      "movement_pattern": "hinge",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Lie on your back with knees bent and feet planted.",
+          "Lift your hips without arching your lower back.",
+          "Lower slowly while keeping your breathing steady."
+        ],
+        "es": [
+          "Acuéstate boca arriba con las rodillas flexionadas y los pies apoyados.",
+          "Eleva la cadera sin arquear la zona lumbar.",
+          "Baja despacio y mantén una respiración continua."
+        ]
+      },
+      "regressions": [],
+      "progressions": [
+        "single_leg_glute_bridge"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "hip_hinge_drill",
+      "name": {
+        "en": "Hip hinge practice",
+        "es": "Práctica de bisagra de cadera"
+      },
+      "category": "mobility",
+      "movement_pattern": "hinge",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Stand with soft knees and a comfortable stance.",
+          "Move your hips backward while your trunk tips forward as one unit.",
+          "Return upright without forcing depth or stretching through pain."
+        ],
+        "es": [
+          "Ponte de pie con las rodillas ligeramente flexionadas.",
+          "Lleva la cadera atrás e inclina el tronco como una sola unidad.",
+          "Vuelve a erguirte sin forzar la profundidad ni provocar dolor."
+        ]
+      },
+      "regressions": [],
+      "progressions": [
+        "dumbbell_romanian_deadlift"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "aap2020"
+      ]
+    },
+    {
+      "id": "dumbbell_romanian_deadlift",
+      "name": {
+        "en": "Dumbbell Romanian deadlift",
+        "es": "Peso muerto rumano con mancuernas"
+      },
+      "category": "strength",
+      "movement_pattern": "hinge",
+      "equipment_all": [
+        "dumbbells"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 45,
+      "cues": {
+        "en": [
+          "Start upright with the dumbbells close to your thighs.",
+          "Keep your knees slightly bent and send your hips backward.",
+          "Stop before your back position changes, then stand smoothly."
+        ],
+        "es": [
+          "Comienza de pie con las mancuernas cerca de los muslos.",
+          "Mantén las rodillas algo flexionadas y lleva la cadera atrás.",
+          "Detente antes de cambiar la postura de la espalda y sube con suavidad."
+        ]
+      },
+      "regressions": [
+        "hip_hinge_drill"
+      ],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "standing_calf_raise",
+      "name": {
+        "en": "Supported single-leg calf raise",
+        "es": "Elevación de talón a una pierna con apoyo"
+      },
+      "category": "strength",
+      "movement_pattern": "single_leg",
+      "equipment_all": [
+        "stable_surface"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Hold a fixed support and lift one foot just off the floor.",
+          "Raise the heel of your supporting foot slowly without leaning on the support.",
+          "Lower with control, then repeat on the other side."
+        ],
+        "es": [
+          "Sujeta un apoyo fijo y despega un pie ligeramente del suelo.",
+          "Eleva despacio el talón del pie apoyado sin recargar tu peso en el soporte.",
+          "Baja con control y repite del otro lado."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "wall_pushup",
+      "name": {
+        "en": "Wall push-up",
+        "es": "Flexión contra la pared"
+      },
+      "category": "strength",
+      "movement_pattern": "horizontal_push",
+      "equipment_all": [
+        "wall"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Place your hands on a solid wall near shoulder height.",
+          "Keep your body aligned as your elbows bend.",
+          "Press away smoothly; move your feet closer if needed."
+        ],
+        "es": [
+          "Apoya las manos en una pared firme cerca de la altura de los hombros.",
+          "Mantén el cuerpo alineado al flexionar los codos.",
+          "Empuja con suavidad; acerca los pies si lo necesitas."
+        ]
+      },
+      "regressions": [],
+      "progressions": [
+        "incline_pushup"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "incline_pushup",
+      "name": {
+        "en": "Incline push-up",
+        "es": "Flexión con manos elevadas"
+      },
+      "category": "strength",
+      "movement_pattern": "horizontal_push",
+      "equipment_all": [
+        "stable_surface"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Use a fixed surface that can safely bear your weight.",
+          "Keep your body aligned as you lower your chest toward it.",
+          "Push away with control; a higher surface can make it easier."
+        ],
+        "es": [
+          "Usa una superficie fija que soporte tu peso con seguridad.",
+          "Mantén el cuerpo alineado al acercar el pecho al apoyo.",
+          "Empuja con control; un apoyo más alto puede facilitarlo."
+        ]
+      },
+      "regressions": [
+        "wall_pushup"
+      ],
+      "progressions": [
+        "pushup"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "knee_pushup",
+      "name": {
+        "en": "Knee push-up",
+        "es": "Flexión con rodillas apoyadas"
+      },
+      "category": "strength",
+      "movement_pattern": "horizontal_push",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Keep your knees comfortably supported on the floor.",
+          "Maintain a straight line from your shoulders to your knees.",
+          "Lower and press smoothly without flaring your elbows wide."
+        ],
+        "es": [
+          "Apoya las rodillas cómodamente en el suelo.",
+          "Mantén una línea recta desde los hombros hasta las rodillas.",
+          "Baja y empuja con suavidad sin abrir demasiado los codos."
+        ]
+      },
+      "regressions": [
+        "incline_pushup",
+        "wall_pushup"
+      ],
+      "progressions": [
+        "pushup"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "pushup",
+      "name": {
+        "en": "Push-up",
+        "es": "Flexión de brazos"
+      },
+      "category": "strength",
+      "movement_pattern": "horizontal_push",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Start with hands under or slightly wider than your shoulders.",
+          "Keep your trunk steady as you lower through a comfortable range.",
+          "Press up without letting your hips sag."
+        ],
+        "es": [
+          "Coloca las manos debajo de los hombros o un poco más separadas.",
+          "Mantén el tronco estable al bajar dentro de un recorrido cómodo.",
+          "Empuja sin dejar caer la cadera."
+        ]
+      },
+      "regressions": [
+        "incline_pushup",
+        "knee_pushup"
+      ],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "dumbbell_floor_press",
+      "name": {
+        "en": "Dumbbell floor press",
+        "es": "Press de pecho con mancuernas en el suelo"
+      },
+      "category": "strength",
+      "movement_pattern": "horizontal_push",
+      "equipment_all": [
+        "dumbbells"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 60,
+      "cues": {
+        "en": [
+          "Lie down and bring manageable dumbbells into position with control.",
+          "Lower until your upper arms gently meet the floor.",
+          "Press upward smoothly and keep your wrists over your forearms."
+        ],
+        "es": [
+          "Acuéstate y coloca mancuernas manejables en posición con control.",
+          "Baja hasta que los brazos toquen suavemente el suelo.",
+          "Empuja hacia arriba con las muñecas alineadas sobre los antebrazos."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "chest_press_machine",
+      "name": {
+        "en": "Machine chest press",
+        "es": "Press de pecho en máquina"
+      },
+      "category": "strength",
+      "movement_pattern": "horizontal_push",
+      "equipment_all": [
+        "chest_press_machine"
+      ],
+      "environments": [
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 75,
+      "cues": {
+        "en": [
+          "Adjust the seat so the handles sit around chest height.",
+          "Keep your back supported as you press.",
+          "Return slowly without letting the weight stack slam."
+        ],
+        "es": [
+          "Ajusta el asiento para que los agarres queden cerca de la altura del pecho.",
+          "Mantén la espalda apoyada al empujar.",
+          "Regresa despacio sin golpear las placas de peso."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "resistance_band_row",
+      "name": {
+        "en": "Resistance-band row",
+        "es": "Remo con banda elástica"
+      },
+      "category": "strength",
+      "movement_pattern": "horizontal_pull",
+      "equipment_all": [
+        "resistance_band",
+        "band_anchor"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 90,
+      "cues": {
+        "en": [
+          "Inspect the band and use a rated anchor installed as its maker directs.",
+          "Pull toward your ribs while keeping your trunk still.",
+          "Return slowly; never improvise an anchor on loose furniture."
+        ],
+        "es": [
+          "Revisa la banda y usa un anclaje apto instalado según su fabricante.",
+          "Tira hacia las costillas manteniendo quieto el tronco.",
+          "Regresa despacio; no improvises anclajes en muebles sueltos."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "dumbbell_row",
+      "name": {
+        "en": "Bent-over dumbbell row",
+        "es": "Remo inclinado con mancuernas"
+      },
+      "category": "strength",
+      "movement_pattern": "horizontal_pull",
+      "equipment_all": [
+        "dumbbells"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 45,
+      "cues": {
+        "en": [
+          "Hinge at your hips with soft knees and a steady back position.",
+          "Pull both dumbbells toward your ribs without jerking your trunk.",
+          "Lower slowly; stand and reset if you lose your position."
+        ],
+        "es": [
+          "Inclínate desde la cadera con las rodillas algo flexionadas y la espalda estable.",
+          "Lleva ambas mancuernas hacia las costillas sin sacudir el tronco.",
+          "Baja despacio; ponte de pie y recolócate si pierdes la postura."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "seated_cable_row",
+      "name": {
+        "en": "Seated cable row",
+        "es": "Remo sentado en polea"
+      },
+      "category": "strength",
+      "movement_pattern": "horizontal_pull",
+      "equipment_all": [
+        "cable_machine"
+      ],
+      "environments": [
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 75,
+      "cues": {
+        "en": [
+          "Use the machine seat, foot supports, and intended rowing handle.",
+          "Pull toward your trunk without leaning far backward.",
+          "Let your arms extend with control while keeping your trunk steady."
+        ],
+        "es": [
+          "Usa el asiento, los apoyos para los pies y el agarre de remo de la máquina.",
+          "Tira hacia el tronco sin inclinarte demasiado atrás.",
+          "Extiende los brazos con control y mantén estable el tronco."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "lat_pulldown",
+      "name": {
+        "en": "Lat pulldown",
+        "es": "Jalón al pecho"
+      },
+      "category": "strength",
+      "movement_pattern": "vertical_pull",
+      "equipment_all": [
+        "lat_pulldown_machine"
+      ],
+      "environments": [
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 75,
+      "cues": {
+        "en": [
+          "Adjust the seat and thigh pad to keep you supported.",
+          "Pull the handle toward the upper chest, in front of your head.",
+          "Return smoothly without swinging or releasing the handle."
+        ],
+        "es": [
+          "Ajusta el asiento y el apoyo de muslos para quedar estable.",
+          "Acerca el agarre a la parte alta del pecho, por delante de la cabeza.",
+          "Regresa con suavidad, sin balancearte ni soltar el agarre."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "dumbbell_overhead_press",
+      "name": {
+        "en": "Dumbbell overhead press",
+        "es": "Press de hombros con mancuernas"
+      },
+      "category": "strength",
+      "movement_pattern": "vertical_push",
+      "equipment_all": [
+        "dumbbells"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 45,
+      "cues": {
+        "en": [
+          "Start with manageable dumbbells near shoulder height.",
+          "Press through a comfortable range without leaning backward.",
+          "Lower slowly and keep breathing throughout."
+        ],
+        "es": [
+          "Comienza con mancuernas manejables cerca de la altura de los hombros.",
+          "Empuja dentro de un recorrido cómodo sin inclinarte hacia atrás.",
+          "Baja despacio y respira durante todo el movimiento."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "seated_shoulder_press_machine",
+      "name": {
+        "en": "Machine shoulder press",
+        "es": "Press de hombros en máquina"
+      },
+      "category": "strength",
+      "movement_pattern": "vertical_push",
+      "equipment_all": [
+        "shoulder_press_machine"
+      ],
+      "environments": [
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": false,
+      "setup_seconds": 75,
+      "cues": {
+        "en": [
+          "Adjust the seat and handles to a comfortable starting position.",
+          "Keep your back supported while pressing upward.",
+          "Return slowly and stop before the movement becomes uncomfortable."
+        ],
+        "es": [
+          "Ajusta el asiento y los agarres a una posición inicial cómoda.",
+          "Mantén la espalda apoyada al empujar hacia arriba.",
+          "Regresa despacio y detente antes de sentir molestias."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "dead_bug",
+      "name": {
+        "en": "Dead bug",
+        "es": "Extensión alternada en posición de insecto"
+      },
+      "category": "strength",
+      "movement_pattern": "core",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Lie on your back with hips and knees bent and arms raised.",
+          "Extend the opposite arm and leg only while your trunk stays still.",
+          "Return slowly and change sides without holding your breath."
+        ],
+        "es": [
+          "Acuéstate boca arriba con caderas y rodillas flexionadas y brazos elevados.",
+          "Extiende el brazo y la pierna contrarios sin mover el tronco.",
+          "Regresa despacio y cambia de lado sin aguantar la respiración."
+        ]
+      },
+      "regressions": [
+        "heel_slide"
+      ],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "bird_dog",
+      "name": {
+        "en": "Bird dog",
+        "es": "Extensión alternada en cuadrupedia"
+      },
+      "category": "strength",
+      "movement_pattern": "core",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Start on hands and knees on a comfortable floor surface.",
+          "Reach one arm and the opposite leg without twisting your trunk.",
+          "Return with control and repeat on the other side."
+        ],
+        "es": [
+          "Apoya manos y rodillas en una superficie de suelo cómoda.",
+          "Extiende un brazo y la pierna contraria sin girar el tronco.",
+          "Regresa con control y repite del otro lado."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "forearm_plank",
+      "name": {
+        "en": "Forearm plank",
+        "es": "Plancha sobre antebrazos"
+      },
+      "category": "strength",
+      "movement_pattern": "core",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "seconds",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Set your elbows below your shoulders and support yourself on your toes.",
+          "Keep your body aligned and breathe steadily.",
+          "End the hold before your hips sag or you need to strain."
+        ],
+        "es": [
+          "Coloca los codos bajo los hombros y apóyate en las puntas de los pies.",
+          "Mantén el cuerpo alineado y respira de forma continua.",
+          "Termina antes de que caiga la cadera o tengas que forzar la postura."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "side_plank_knees",
+      "name": {
+        "en": "Side plank from knees",
+        "es": "Plancha lateral con rodillas apoyadas"
+      },
+      "category": "strength",
+      "movement_pattern": "core",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "seconds",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Lie on your side with knees bent and elbow below your shoulder.",
+          "Lift your hips while keeping your shoulder comfortable.",
+          "Breathe steadily and lower before your position changes."
+        ],
+        "es": [
+          "Acuéstate de lado con rodillas flexionadas y codo bajo el hombro.",
+          "Eleva la cadera manteniendo el hombro cómodo.",
+          "Respira de forma continua y baja antes de perder la postura."
+        ]
+      },
+      "regressions": [],
+      "progressions": [
+        "side_plank"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "side_plank",
+      "name": {
+        "en": "Side plank",
+        "es": "Plancha lateral"
+      },
+      "category": "strength",
+      "movement_pattern": "core",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "seconds",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Set your elbow below your shoulder and extend your legs.",
+          "Raise your hips so your body forms a steady line.",
+          "Breathe and finish the hold before your hips drop."
+        ],
+        "es": [
+          "Coloca el codo bajo el hombro y extiende las piernas.",
+          "Eleva la cadera para formar una línea estable con el cuerpo.",
+          "Respira y termina antes de que baje la cadera."
+        ]
+      },
+      "regressions": [
+        "side_plank_knees"
+      ],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "heel_slide",
+      "name": {
+        "en": "Supine heel slide",
+        "es": "Deslizamiento de talón acostado"
+      },
+      "category": "strength",
+      "movement_pattern": "core",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Lie on your back with both knees bent.",
+          "Slide one heel away only as far as your trunk stays still.",
+          "Bring it back slowly and repeat with the other leg."
+        ],
+        "es": [
+          "Acuéstate boca arriba con ambas rodillas flexionadas.",
+          "Desliza un talón hacia delante solo hasta donde el tronco siga quieto.",
+          "Regresa despacio y repite con la otra pierna."
+        ]
+      },
+      "regressions": [],
+      "progressions": [
+        "dead_bug"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "band_pallof_press",
+      "name": {
+        "en": "Band anti-rotation press",
+        "es": "Press antirrotación con banda"
+      },
+      "category": "strength",
+      "movement_pattern": "core",
+      "equipment_all": [
+        "resistance_band",
+        "band_anchor"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": true,
+      "setup_seconds": 90,
+      "cues": {
+        "en": [
+          "Use an inspected band and a rated anchor fitted as directed.",
+          "Stand side-on and press your hands forward without turning your trunk.",
+          "Return with control, then set up facing the other way."
+        ],
+        "es": [
+          "Usa una banda revisada y un anclaje apto instalado según las instrucciones.",
+          "Ponte de lado y lleva las manos adelante sin girar el tronco.",
+          "Regresa con control y después cambia de orientación."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "single_leg_glute_bridge",
+      "name": {
+        "en": "Single-leg glute bridge",
+        "es": "Puente de glúteos a una pierna"
+      },
+      "category": "strength",
+      "movement_pattern": "hinge",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": true,
+      "prescription_unit": "reps",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Lie on your back with one foot planted and the other leg lifted.",
+          "Raise your hips only while keeping them level.",
+          "Lower slowly, then complete the planned work on the other side."
+        ],
+        "es": [
+          "Acuéstate boca arriba con un pie apoyado y la otra pierna elevada.",
+          "Eleva la cadera solo mientras puedas mantenerla nivelada.",
+          "Baja despacio y completa el trabajo previsto del otro lado."
+        ]
+      },
+      "regressions": [
+        "glute_bridge"
+      ],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "acsm2026",
+        "aap2020"
+      ]
+    },
+    {
+      "id": "easy_walk",
+      "name": {
+        "en": "Easy walk",
+        "es": "Caminata suave"
+      },
+      "category": "cardio",
+      "movement_pattern": "cardio",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym",
+        "outdoor"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "minutes",
+      "unilateral": false,
+      "setup_seconds": 15,
+      "cues": {
+        "en": [
+          "Choose a clear, level route with enough room to walk safely.",
+          "Use a pace that feels easy and lets you speak comfortably.",
+          "Slow down or stop if you feel unwell."
+        ],
+        "es": [
+          "Elige una ruta despejada y nivelada con espacio para caminar.",
+          "Usa un ritmo suave que te permita hablar con comodidad.",
+          "Reduce el paso o detente si te sientes mal."
+        ]
+      },
+      "regressions": [],
+      "progressions": [
+        "brisk_walk"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "who2020",
+        "cdc_intensity2025"
+      ]
+    },
+    {
+      "id": "brisk_walk",
+      "name": {
+        "en": "Brisk walk",
+        "es": "Caminata a paso ligero"
+      },
+      "category": "cardio",
+      "movement_pattern": "cardio",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym",
+        "outdoor"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "minutes",
+      "unilateral": false,
+      "setup_seconds": 15,
+      "cues": {
+        "en": [
+          "Begin easily on a clear route and increase pace gradually.",
+          "Aim for a pace where you can talk but singing is difficult.",
+          "Shorten your stride or slow down if you need to recover."
+        ],
+        "es": [
+          "Comienza suave en una ruta despejada y aumenta el paso poco a poco.",
+          "Busca un ritmo que permita hablar, pero dificulte cantar.",
+          "Acorta el paso o camina más despacio si necesitas recuperarte."
+        ]
+      },
+      "regressions": [
+        "easy_walk"
+      ],
+      "progressions": [
+        "walk_jog_intervals"
+      ],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "who2020",
+        "cdc_intensity2025"
+      ]
+    },
+    {
+      "id": "marching_in_place",
+      "name": {
+        "en": "Marching in place",
+        "es": "Marcha en el sitio"
+      },
+      "category": "cardio",
+      "movement_pattern": "cardio",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym",
+        "outdoor"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "minutes",
+      "unilateral": false,
+      "setup_seconds": 15,
+      "cues": {
+        "en": [
+          "Stand in a clear area with a non-slip floor.",
+          "Lift one foot at a time to a comfortable height.",
+          "Keep a manageable pace and let your arms move naturally."
+        ],
+        "es": [
+          "Ponte de pie en una zona despejada con suelo antideslizante.",
+          "Eleva un pie a la vez hasta una altura cómoda.",
+          "Mantén un ritmo manejable y mueve los brazos con naturalidad."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "who2020",
+        "cdc_intensity2025"
+      ]
+    },
+    {
+      "id": "low_impact_step_touch",
+      "name": {
+        "en": "Side step and touch",
+        "es": "Paso lateral con toque"
+      },
+      "category": "cardio",
+      "movement_pattern": "cardio",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym",
+        "outdoor"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "minutes",
+      "unilateral": false,
+      "setup_seconds": 15,
+      "cues": {
+        "en": [
+          "Use a clear floor with room to step sideways.",
+          "Step to one side and bring the other foot toward it without jumping.",
+          "Repeat smoothly at a pace that lets you talk."
+        ],
+        "es": [
+          "Usa un suelo despejado con espacio para moverte de lado.",
+          "Da un paso lateral y acerca el otro pie, sin saltar.",
+          "Repite con suavidad a un ritmo que permita hablar."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "who2020",
+        "cdc_intensity2025"
+      ]
+    },
+    {
+      "id": "stationary_cycling",
+      "name": {
+        "en": "Stationary cycling",
+        "es": "Bicicleta estática"
+      },
+      "category": "cardio",
+      "movement_pattern": "cardio",
+      "equipment_all": [
+        "stationary_bike"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "minutes",
+      "unilateral": false,
+      "setup_seconds": 90,
+      "cues": {
+        "en": [
+          "Adjust the seat so your knee stays slightly bent at the bottom of the pedal stroke.",
+          "Begin with easy resistance and pedal smoothly.",
+          "Use effort and the talk test, not speed alone, to guide your pace."
+        ],
+        "es": [
+          "Ajusta el asiento para que la rodilla quede algo flexionada al bajar el pedal.",
+          "Empieza con poca resistencia y pedalea con suavidad.",
+          "Guía el ritmo por el esfuerzo y la facilidad para hablar, no solo por la velocidad."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "who2020",
+        "cdc_intensity2025"
+      ]
+    },
+    {
+      "id": "elliptical",
+      "name": {
+        "en": "Elliptical trainer",
+        "es": "Elíptica"
+      },
+      "category": "cardio",
+      "movement_pattern": "cardio",
+      "equipment_all": [
+        "elliptical_machine"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "minutes",
+      "unilateral": false,
+      "setup_seconds": 75,
+      "cues": {
+        "en": [
+          "Hold the supports while getting on and off the machine.",
+          "Start with low resistance and a controlled stride.",
+          "Keep your feet on the pedals and choose an effort you can sustain."
+        ],
+        "es": [
+          "Sujeta los apoyos al subir y bajar de la máquina.",
+          "Empieza con poca resistencia y una zancada controlada.",
+          "Mantén los pies en los pedales y elige un esfuerzo sostenible."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "who2020",
+        "cdc_intensity2025"
+      ]
+    },
+    {
+      "id": "walk_jog_intervals",
+      "name": {
+        "en": "Walk and easy jog intervals",
+        "es": "Intervalos de caminata y trote suave"
+      },
+      "category": "cardio",
+      "movement_pattern": "cardio",
+      "equipment_all": [],
+      "environments": [
+        "gym",
+        "outdoor"
+      ],
+      "min_experience": "intermediate",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "minutes",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Warm up by walking on a clear, level route.",
+          "Follow the planned walking and easy jogging times without sprinting.",
+          "Return to walking sooner whenever the jogging effort feels too high."
+        ],
+        "es": [
+          "Calienta caminando por una ruta despejada y nivelada.",
+          "Sigue los tiempos previstos de caminata y trote suave, sin esprintar.",
+          "Vuelve a caminar antes si el esfuerzo del trote resulta excesivo."
+        ]
+      },
+      "regressions": [
+        "brisk_walk",
+        "easy_walk"
+      ],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "who2020",
+        "cdc_intensity2025"
+      ]
+    },
+    {
+      "id": "shoulder_circles",
+      "name": {
+        "en": "Shoulder circles",
+        "es": "Círculos de hombros"
+      },
+      "category": "mobility",
+      "movement_pattern": "mobility",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym",
+        "outdoor"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "seconds",
+      "unilateral": false,
+      "setup_seconds": 10,
+      "cues": {
+        "en": [
+          "Stand or sit tall with your arms relaxed.",
+          "Move your shoulders through small, comfortable circles.",
+          "Change direction slowly without forcing the range."
+        ],
+        "es": [
+          "Ponte de pie o siéntate erguido con los brazos relajados.",
+          "Mueve los hombros en círculos pequeños y cómodos.",
+          "Cambia de dirección despacio, sin forzar el recorrido."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "aap2020"
+      ]
+    },
+    {
+      "id": "standing_calf_stretch",
+      "name": {
+        "en": "Standing calf stretch",
+        "es": "Estiramiento de pantorrilla de pie"
+      },
+      "category": "mobility",
+      "movement_pattern": "mobility",
+      "equipment_all": [
+        "wall"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "seconds",
+      "unilateral": true,
+      "setup_seconds": 15,
+      "cues": {
+        "en": [
+          "Place your hands on a wall and step one foot back.",
+          "Keep the back heel down and lean forward until you feel a gentle stretch.",
+          "Hold without bouncing, then switch sides."
+        ],
+        "es": [
+          "Apoya las manos en una pared y lleva un pie hacia atrás.",
+          "Mantén el talón trasero apoyado e inclínate hasta sentir tensión suave.",
+          "Mantén la posición sin rebotar y cambia de lado."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "aap2020"
+      ]
+    },
+    {
+      "id": "ankle_rocks",
+      "name": {
+        "en": "Supported ankle rocks",
+        "es": "Movilidad de tobillo con apoyo"
+      },
+      "category": "mobility",
+      "movement_pattern": "mobility",
+      "equipment_all": [
+        "wall"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "seconds",
+      "unilateral": true,
+      "setup_seconds": 15,
+      "cues": {
+        "en": [
+          "Face a wall with one foot a short distance in front.",
+          "Guide that knee forward while keeping its heel on the floor.",
+          "Use a small, comfortable range and change sides."
+        ],
+        "es": [
+          "Mira hacia una pared y coloca un pie un poco por delante.",
+          "Lleva esa rodilla hacia delante con el talón apoyado en el suelo.",
+          "Usa un recorrido pequeño y cómodo y cambia de lado."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "aap2020"
+      ]
+    },
+    {
+      "id": "standing_thoracic_rotation",
+      "name": {
+        "en": "Standing upper-back rotation",
+        "es": "Rotación de espalda alta de pie"
+      },
+      "category": "mobility",
+      "movement_pattern": "mobility",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym",
+        "outdoor"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "seconds",
+      "unilateral": false,
+      "setup_seconds": 15,
+      "cues": {
+        "en": [
+          "Stand comfortably with arms crossed over your chest.",
+          "Turn your upper trunk gently while keeping your hips mostly forward.",
+          "Return to center and repeat the other way without forcing."
+        ],
+        "es": [
+          "Ponte de pie con comodidad y cruza los brazos sobre el pecho.",
+          "Gira suavemente la parte alta del tronco con la cadera orientada al frente.",
+          "Regresa al centro y repite hacia el otro lado sin forzar."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "aap2020"
+      ]
+    },
+    {
+      "id": "cat_cow",
+      "name": {
+        "en": "Gentle cat-cow",
+        "es": "Gato-vaca suave"
+      },
+      "category": "mobility",
+      "movement_pattern": "mobility",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "seconds",
+      "unilateral": false,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Start on hands and knees with a comfortable neck position.",
+          "Gently round and then ease your back through a small range.",
+          "Move slowly with your breathing instead of pushing to the end range."
+        ],
+        "es": [
+          "Apoya manos y rodillas con el cuello en una posición cómoda.",
+          "Redondea y luego extiende suavemente la espalda en un recorrido pequeño.",
+          "Muévete despacio con la respiración, sin forzar los extremos."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "aap2020"
+      ]
+    },
+    {
+      "id": "half_kneeling_hip_flexor_stretch",
+      "name": {
+        "en": "Half-kneeling hip-flexor stretch",
+        "es": "Estiramiento de cadera con una rodilla apoyada"
+      },
+      "category": "mobility",
+      "movement_pattern": "mobility",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "seconds",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Kneel on one knee with comfortable padding and the other foot forward.",
+          "Keep your trunk upright and gently shift your hips forward.",
+          "Avoid arching your back; stop at a mild stretch and change sides."
+        ],
+        "es": [
+          "Apoya una rodilla con acolchado cómodo y coloca el otro pie delante.",
+          "Mantén el tronco erguido y lleva suavemente la cadera hacia delante.",
+          "Evita arquear la espalda; detente con tensión leve y cambia de lado."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "aap2020"
+      ]
+    },
+    {
+      "id": "supine_hamstring_stretch",
+      "name": {
+        "en": "Supine hamstring stretch with strap",
+        "es": "Estiramiento posterior de muslo con correa"
+      },
+      "category": "mobility",
+      "movement_pattern": "mobility",
+      "equipment_all": [
+        "stretch_strap"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "seconds",
+      "unilateral": true,
+      "setup_seconds": 45,
+      "cues": {
+        "en": [
+          "Lie on your back and place an exercise strap around one foot.",
+          "Lift that leg with the knee slightly bent until the stretch feels mild.",
+          "Keep your head supported and release slowly before changing sides."
+        ],
+        "es": [
+          "Acuéstate boca arriba y coloca una correa de ejercicio alrededor de un pie.",
+          "Eleva esa pierna con la rodilla algo flexionada hasta sentir tensión leve.",
+          "Mantén la cabeza apoyada y suelta despacio antes de cambiar de lado."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "aap2020"
+      ]
+    },
+    {
+      "id": "standing_hip_circles",
+      "name": {
+        "en": "Standing hip circles",
+        "es": "Círculos de cadera de pie"
+      },
+      "category": "mobility",
+      "movement_pattern": "mobility",
+      "equipment_all": [],
+      "environments": [
+        "home",
+        "gym",
+        "outdoor"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "seconds",
+      "unilateral": false,
+      "setup_seconds": 15,
+      "cues": {
+        "en": [
+          "Stand with a comfortable stance and soft knees.",
+          "Move your pelvis in small circles while keeping your feet planted.",
+          "Change direction without forcing your lower back."
+        ],
+        "es": [
+          "Ponte de pie con una postura cómoda y rodillas algo flexionadas.",
+          "Mueve la pelvis en círculos pequeños con los pies apoyados.",
+          "Cambia de dirección sin forzar la zona lumbar."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "aap2020"
+      ]
+    },
+    {
+      "id": "wall_slide",
+      "name": {
+        "en": "Wall arm slide",
+        "es": "Deslizamiento de brazos en pared"
+      },
+      "category": "mobility",
+      "movement_pattern": "mobility",
+      "equipment_all": [
+        "wall"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "seconds",
+      "unilateral": false,
+      "setup_seconds": 15,
+      "cues": {
+        "en": [
+          "Face a wall with your forearms resting lightly against it.",
+          "Slide your arms upward only through a comfortable range.",
+          "Keep your ribs relaxed and avoid leaning backward."
+        ],
+        "es": [
+          "Mira hacia una pared y apoya suavemente los antebrazos.",
+          "Desliza los brazos hacia arriba solo dentro de un recorrido cómodo.",
+          "Mantén las costillas relajadas y evita inclinarte hacia atrás."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "aap2020"
+      ]
+    },
+    {
+      "id": "supported_tandem_stance",
+      "name": {
+        "en": "Supported tandem balance",
+        "es": "Equilibrio en línea con apoyo"
+      },
+      "category": "mobility",
+      "movement_pattern": "mobility",
+      "equipment_all": [
+        "stable_surface"
+      ],
+      "environments": [
+        "home",
+        "gym"
+      ],
+      "min_experience": "beginner",
+      "age_groups": [
+        "teen",
+        "adult"
+      ],
+      "supervision_required_for_teens": false,
+      "prescription_unit": "seconds",
+      "unilateral": true,
+      "setup_seconds": 30,
+      "cues": {
+        "en": [
+          "Stand beside a fixed support and keep one hand on it.",
+          "Place one foot ahead of the other, leaving more space if needed for balance.",
+          "Stay upright, breathe, and change the leading foot for the next hold."
+        ],
+        "es": [
+          "Ponte junto a un apoyo fijo y mantén una mano sobre él.",
+          "Coloca un pie delante del otro y deja más espacio si necesitas equilibrio.",
+          "Mantente erguido, respira y cambia el pie delantero en la siguiente pausa."
+        ]
+      },
+      "regressions": [],
+      "progressions": [],
+      "media": {
+        "status": "unassigned",
+        "asset_id": null,
+        "license_id": null
+      },
+      "source_ids": [
+        "who2020"
+      ]
+    }
+  ]
+}

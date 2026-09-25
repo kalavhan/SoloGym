@@ -1,0 +1,599 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "sologym.avatar.authoring-proposal",
+  "updated_on": "2026-09-25",
+  "status": "proposed_pending_sprite_and_rig_proof",
+  "production_ready": false,
+  "engine_decision": null,
+  "notes": [
+    "This is an authoring and data proposal, not a rendered asset pack or an engine selection.",
+    "All example records are original unrendered placeholders. No vendor assets or licenses are implied.",
+    "The accepted concept style does not approve these individual assets.",
+    "Fitness measurements remain outside this appearance contract. Appearance does not determine workout prescriptions or combat strength.",
+    "Rendered sprite appearances can use only exported fit variants; continuous source-model morphs do not imply continuous sprite customization."
+  ],
+  "reference_style": {
+    "id": "sologym_manhua_system_v1",
+    "status": "concept_direction_accepted",
+    "individual_assets_approved": false
+  },
+  "identifiers": {
+    "asset_id": "Stable internal ID; never derive identity from a translated label or filename.",
+    "skeleton_id": "Versioned authoring skeleton contract including bind pose, scale and named sockets.",
+    "fit_family_id": "Approved body presentation, size and muscle-definition combination with matching clothing fits.",
+    "action_id": "Shared semantic action across portrait, gym and tower representations; clips can differ by fit family.",
+    "clip_id": "A versioned, authored motion for an action, skeleton and fit family.",
+    "atlas_id": "Versioned exported atlas or layer bundle; absent until an export exists.",
+    "mask_id": "Versioned skin, hair, clothing or occlusion mask tied to the same fit, direction, clip and frame.",
+    "source_asset_id": "Provenance record for an actual owned or licensed source; null for an unrendered proposal."
+  },
+  "directions_proposed": [
+    "s",
+    "sw",
+    "w",
+    "nw",
+    "n",
+    "ne",
+    "e",
+    "se"
+  ],
+  "actions_proposed": [
+    {
+      "action_id": "idle",
+      "loop_expected": true
+    },
+    {
+      "action_id": "walk",
+      "loop_expected": true
+    },
+    {
+      "action_id": "run",
+      "loop_expected": true
+    },
+    {
+      "action_id": "jab",
+      "loop_expected": false
+    },
+    {
+      "action_id": "uppercut",
+      "loop_expected": false
+    },
+    {
+      "action_id": "hook",
+      "loop_expected": false
+    },
+    {
+      "action_id": "special",
+      "loop_expected": false
+    },
+    {
+      "action_id": "hit",
+      "loop_expected": false
+    },
+    {
+      "action_id": "defeat",
+      "loop_expected": false
+    },
+    {
+      "action_id": "celebrate",
+      "loop_expected": false
+    },
+    {
+      "action_id": "wave",
+      "loop_expected": false
+    }
+  ],
+  "skeletons_proposed": [
+    {
+      "skeleton_id": "humanoid_shared_proposal_v0",
+      "status": "not_authored",
+      "bind_pose": null,
+      "source_units": null,
+      "source_axes": null,
+      "sockets": [
+        "head",
+        "chest",
+        "pelvis",
+        "hand_l",
+        "hand_r",
+        "foot_l",
+        "foot_r",
+        "back",
+        "ground_root"
+      ],
+      "source_asset_id": null
+    }
+  ],
+  "presentation_options": [
+    "male",
+    "female"
+  ],
+  "build_presets_proposed": [
+    {
+      "id": "smaller_soft",
+      "size_axis": "smaller",
+      "muscle_definition_axis": "lower"
+    },
+    {
+      "id": "smaller_defined",
+      "size_axis": "smaller",
+      "muscle_definition_axis": "higher"
+    },
+    {
+      "id": "larger_soft",
+      "size_axis": "larger",
+      "muscle_definition_axis": "lower"
+    },
+    {
+      "id": "larger_defined",
+      "size_axis": "larger",
+      "muscle_definition_axis": "higher"
+    }
+  ],
+  "fit_families_proposed": [
+    {
+      "fit_family_id": "male_smaller_soft_v0",
+      "presentation": "male",
+      "build_preset_id": "smaller_soft"
+    },
+    {
+      "fit_family_id": "male_smaller_defined_v0",
+      "presentation": "male",
+      "build_preset_id": "smaller_defined"
+    },
+    {
+      "fit_family_id": "male_larger_soft_v0",
+      "presentation": "male",
+      "build_preset_id": "larger_soft"
+    },
+    {
+      "fit_family_id": "male_larger_defined_v0",
+      "presentation": "male",
+      "build_preset_id": "larger_defined"
+    },
+    {
+      "fit_family_id": "female_smaller_soft_v0",
+      "presentation": "female",
+      "build_preset_id": "smaller_soft"
+    },
+    {
+      "fit_family_id": "female_smaller_defined_v0",
+      "presentation": "female",
+      "build_preset_id": "smaller_defined"
+    },
+    {
+      "fit_family_id": "female_larger_soft_v0",
+      "presentation": "female",
+      "build_preset_id": "larger_soft"
+    },
+    {
+      "fit_family_id": "female_larger_defined_v0",
+      "presentation": "female",
+      "build_preset_id": "larger_defined"
+    }
+  ],
+  "equipment_slots": [
+    {
+      "slot_id": "head",
+      "sockets": [
+        "head"
+      ],
+      "kind": "rigid_or_skinned",
+      "hair_policy_required": true
+    },
+    {
+      "slot_id": "torso",
+      "sockets": [
+        "chest"
+      ],
+      "kind": "skinned",
+      "hair_policy_required": false
+    },
+    {
+      "slot_id": "legs",
+      "sockets": [
+        "pelvis"
+      ],
+      "kind": "skinned",
+      "hair_policy_required": false
+    },
+    {
+      "slot_id": "hands",
+      "sockets": [
+        "hand_l",
+        "hand_r"
+      ],
+      "kind": "paired",
+      "hair_policy_required": false
+    },
+    {
+      "slot_id": "feet",
+      "sockets": [
+        "foot_l",
+        "foot_r"
+      ],
+      "kind": "paired",
+      "hair_policy_required": false
+    },
+    {
+      "slot_id": "back",
+      "sockets": [
+        "back"
+      ],
+      "kind": "rigid_or_skinned",
+      "hair_policy_required": true
+    },
+    {
+      "slot_id": "aura",
+      "sockets": [
+        "ground_root"
+      ],
+      "kind": "effect",
+      "hair_policy_required": false
+    }
+  ],
+  "rarities": [
+    "basic",
+    "rare",
+    "ultra_rare",
+    "premium"
+  ],
+  "color_regions": {
+    "skin": {
+      "mask_semantic": "skin_only",
+      "include": [
+        "exposed_face",
+        "exposed_neck",
+        "exposed_limbs",
+        "exposed_torso"
+      ],
+      "exclude": [
+        "hair",
+        "eyes",
+        "teeth",
+        "base_clothes",
+        "equipment"
+      ],
+      "palette_id": null,
+      "palette_status": "pending_visual_approval",
+      "preserve_authored_shading": true
+    },
+    "hair": {
+      "mask_semantic": "hair_only",
+      "exclude": [
+        "skin",
+        "headgear",
+        "eyes"
+      ],
+      "palette_id": null,
+      "palette_status": "pending_visual_approval",
+      "preserve_authored_shading": true
+    },
+    "equipment": {
+      "mask_semantics": [
+        "primary_material",
+        "secondary_material",
+        "rarity_accent"
+      ],
+      "allow_global_body_tint": false
+    }
+  },
+  "hair_policy_values": [
+    "show",
+    "hide",
+    "fitted_variant"
+  ],
+  "render_rules": {
+    "layer_order": "direction_and_frame_specific_or_depth_composited",
+    "global_body_then_all_gear_order_allowed": false,
+    "all_passes_share_camera_pose_fit_and_frame": true,
+    "body_and_gear_coverage_masks_required": true,
+    "gear_to_gear_compatibility_required": true,
+    "mirroring": "explicit_per_asset_only",
+    "shadow": "separate_ground_anchored_pass",
+    "ground_anchor": "stable_origin_with_explicit_vertical_offset_for_airborne_frames",
+    "trimmed_frames_preserve_original_canvas_and_offsets": true
+  },
+  "export_contract": {
+    "status": "proposed_pending_export_proof",
+    "master_format": "png_rgba",
+    "required_identifiers": [
+      "asset_id",
+      "atlas_id",
+      "skeleton_id",
+      "fit_family_id",
+      "action_id",
+      "clip_id",
+      "source_revision"
+    ],
+    "required_frame_fields": [
+      "direction",
+      "frame_index",
+      "duration_ms",
+      "canvas_size_px",
+      "source_rect_px",
+      "trim_offset_px",
+      "pivot_px",
+      "ground_anchor_px",
+      "vertical_offset_px",
+      "layer_or_depth_pass",
+      "mask_ids"
+    ],
+    "required_clip_fields": [
+      "loop",
+      "frame_count",
+      "duration_ms",
+      "action_event_markers"
+    ],
+    "event_markers_are_authored_not_inferred_from_pixels": true,
+    "atlas_padding_px": null,
+    "alpha_convention": null,
+    "color_space": null,
+    "max_texture_size_px": null,
+    "memory_budget_bytes": null,
+    "unresolved_export_settings_block_release": true
+  },
+  "approval_contract": {
+    "stage_order": [
+      "window_brief",
+      "background",
+      "props",
+      "base",
+      "customization",
+      "equipment",
+      "animation_export",
+      "ui_components",
+      "window_composite",
+      "implemented_window"
+    ],
+    "states": [
+      "not_started",
+      "in_review",
+      "changes_requested",
+      "approved",
+      "not_applicable"
+    ],
+    "approval_record_fields": [
+      "stage",
+      "asset_revision",
+      "state",
+      "approved_by",
+      "approved_at",
+      "evidence_reference",
+      "not_applicable_reason"
+    ],
+    "silence_is_approval": false,
+    "changes_require_dependent_composite_recheck": true
+  },
+  "provenance_contract": {
+    "rights_values": [
+      "allowed",
+      "prohibited",
+      "unverified"
+    ],
+    "required_fields": [
+      "source_asset_id",
+      "provider",
+      "provider_record_id",
+      "source_url",
+      "author",
+      "rightsholder",
+      "license_name",
+      "license_version",
+      "license_url",
+      "terms_checked_on",
+      "agreement_reference",
+      "attribution_text",
+      "modifications",
+      "storage_policy",
+      "source_checksum",
+      "rights",
+      "review_status"
+    ],
+    "rights_fields": [
+      "commercial_display",
+      "modify",
+      "redistribute_raw",
+      "offline_storage",
+      "ai_training"
+    ],
+    "credentials_or_signed_urls_permitted": false,
+    "unknown_rights_block_import_and_release": true,
+    "generation_fields_when_applicable": [
+      "generator",
+      "model_identifier",
+      "checkpoint_hash",
+      "workflow_version",
+      "prompt_reference",
+      "seed",
+      "reference_asset_ids",
+      "reference_permissions"
+    ]
+  },
+  "sample_appearance_recipe": {
+    "status": "illustrative_unrendered",
+    "base_asset_id": "base_female_proposal_v0",
+    "fit_family_id": "female_larger_soft_v0",
+    "skin_palette_entry_id": null,
+    "hair_asset_id": "hair_short_swept_proposal_v0",
+    "hair_palette_entry_id": null,
+    "equipped_items": {
+      "head": null,
+      "torso": null,
+      "legs": null,
+      "hands": "gauntlets_basic_proposal_v0",
+      "feet": null,
+      "back": null,
+      "aura": null
+    },
+    "runtime_usable": false
+  },
+  "sample_assets": [
+    {
+      "asset_id": "base_male_proposal_v0",
+      "kind": "base_character",
+      "presentation": "male",
+      "skeleton_id": "humanoid_shared_proposal_v0",
+      "intended_fit_family_ids": [
+        "male_smaller_soft_v0",
+        "male_smaller_defined_v0",
+        "male_larger_soft_v0",
+        "male_larger_defined_v0"
+      ],
+      "verified_fit_family_ids": [],
+      "mask_semantics": [
+        "skin_only",
+        "base_clothes",
+        "body_coverage"
+      ],
+      "base_clothing": "neutral_athletic_clothing",
+      "source_asset_id": null,
+      "atlas_id": null,
+      "clip_ids": [],
+      "approval_state": "not_started",
+      "provenance_record_id": "unrendered_original_proposal",
+      "runtime_usable": false
+    },
+    {
+      "asset_id": "base_female_proposal_v0",
+      "kind": "base_character",
+      "presentation": "female",
+      "skeleton_id": "humanoid_shared_proposal_v0",
+      "intended_fit_family_ids": [
+        "female_smaller_soft_v0",
+        "female_smaller_defined_v0",
+        "female_larger_soft_v0",
+        "female_larger_defined_v0"
+      ],
+      "verified_fit_family_ids": [],
+      "mask_semantics": [
+        "skin_only",
+        "base_clothes",
+        "body_coverage"
+      ],
+      "base_clothing": "neutral_athletic_clothing",
+      "source_asset_id": null,
+      "atlas_id": null,
+      "clip_ids": [],
+      "approval_state": "not_started",
+      "provenance_record_id": "unrendered_original_proposal",
+      "runtime_usable": false
+    },
+    {
+      "asset_id": "hair_short_swept_proposal_v0",
+      "kind": "hair",
+      "presentation_restrictions": [],
+      "skeleton_id": "humanoid_shared_proposal_v0",
+      "socket_ids": [
+        "head"
+      ],
+      "parts": [
+        "hair_back",
+        "hair_front"
+      ],
+      "mask_semantics": [
+        "hair_only",
+        "headgear_coverage"
+      ],
+      "intended_fit_family_ids": [
+        "male_smaller_soft_v0",
+        "male_smaller_defined_v0",
+        "male_larger_soft_v0",
+        "male_larger_defined_v0",
+        "female_smaller_soft_v0",
+        "female_smaller_defined_v0",
+        "female_larger_soft_v0",
+        "female_larger_defined_v0"
+      ],
+      "verified_fit_family_ids": [],
+      "fitted_headgear_variants": [],
+      "source_asset_id": null,
+      "atlas_id": null,
+      "clip_ids": [],
+      "approval_state": "not_started",
+      "provenance_record_id": "unrendered_original_proposal",
+      "runtime_usable": false
+    },
+    {
+      "asset_id": "gauntlets_basic_proposal_v0",
+      "kind": "equipment",
+      "slot_id": "hands",
+      "rarity": "basic",
+      "skeleton_id": "humanoid_shared_proposal_v0",
+      "socket_ids": [
+        "hand_l",
+        "hand_r"
+      ],
+      "parts": [
+        "gauntlet_l",
+        "gauntlet_r"
+      ],
+      "paired_equip": true,
+      "presentation_restrictions": [],
+      "mask_semantics": [
+        "primary_material",
+        "secondary_material",
+        "rarity_accent",
+        "covered_hand_regions"
+      ],
+      "intended_fit_family_ids": [
+        "male_smaller_soft_v0",
+        "male_smaller_defined_v0",
+        "male_larger_soft_v0",
+        "male_larger_defined_v0",
+        "female_smaller_soft_v0",
+        "female_smaller_defined_v0",
+        "female_larger_soft_v0",
+        "female_larger_defined_v0"
+      ],
+      "verified_fit_family_ids": [],
+      "fit_transforms": [],
+      "coverage_mask_ids": [],
+      "incompatible_item_ids": [],
+      "gameplay_modifier": null,
+      "source_asset_id": null,
+      "atlas_id": null,
+      "clip_ids": [],
+      "approval_state": "not_started",
+      "provenance_record_id": "unrendered_original_proposal",
+      "runtime_usable": false
+    }
+  ],
+  "provenance_records": [
+    {
+      "provenance_record_id": "unrendered_original_proposal",
+      "source_asset_id": null,
+      "provider": null,
+      "provider_record_id": null,
+      "source_url": null,
+      "author": null,
+      "rightsholder": null,
+      "license_name": null,
+      "license_version": null,
+      "license_url": null,
+      "terms_checked_on": null,
+      "agreement_reference": null,
+      "attribution_text": null,
+      "modifications": [],
+      "storage_policy": "no_source_asset_exists",
+      "source_checksum": null,
+      "rights": {
+        "commercial_display": "unverified",
+        "modify": "unverified",
+        "redistribute_raw": "unverified",
+        "offline_storage": "unverified",
+        "ai_training": "unverified"
+      },
+      "review_status": "proposal_only_no_rights_claim"
+    }
+  ],
+  "release_invariants": [
+    "Only explicitly approved revisions enter a window composite.",
+    "An equip operation requires a verified fit family, compatible skeleton and all necessary export records.",
+    "Headgear declares and validates hair visibility for the selected hairstyle.",
+    "Color masks may not modify unrelated surfaces.",
+    "Every directional clip has stable frame registration and verified occlusion.",
+    "An item cannot become available merely because its intended fit is listed.",
+    "Missing rights, export settings, approvals or sources keep an asset unavailable for release."
+  ]
+}
