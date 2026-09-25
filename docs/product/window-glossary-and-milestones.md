@@ -1,6 +1,6 @@
 # SoloGym window glossary and milestone plan
 
-**Status:** the user approved the overall manhua System style and accepted the training data shape and milestone plan for continued design. [WIN-001 System / Home's G0 sheet](../windows/WIN-001-system-home-g0.md) now includes retained English and Spanish v2 proposal renders and is awaiting approval. Every window proposal must include its own rendered principal-state previews. Individual production backgrounds, sprites, controls, and asset composites still require separate approval; no production assets or app windows have been built. This approval status supersedes the earlier “awaiting style approval” wording in the initial concept document.
+**Status · 2026-09-25:** the user confirmed Android installation and accepted the appearance of the [WIN-001 native Home preview](../windows/WIN-001-implementation.md): “logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos”. [WIN-002 Welcome / Sign in](../windows/WIN-002-welcome-sign-in-g0.md) is now the active G0 proposal; its new visual reference is not yet approved. The remaining 62 windows are unstarted. Home acceptance covers its appearance and installation, not exhaustive feature/device/security verification or mathematical pixel identity. The original reference hashes and visual comparison measurements are preserved.
 
 Android and iOS; ages 15+; US, Canada, and Latin America as target regions, with the exact country release list and policies still to be reviewed. English and Spanish follow the device initially and can be switched manually. Automatic means **workout plan generation only**. Sets, repetitions, load, and timers are logged manually.
 
@@ -18,7 +18,9 @@ Acceptance for M0:
 
 ## How a window milestone proceeds
 
-Every window below inherits the following exact serial approval gates. Each approval is a stop point. Finish corrections and receive approval before advancing. Approval of a background is not approval of its characters or controls.
+The current workflow follows the user's latest target-render development instruction: prepare and approve one retained bilingual window proposal, map its corners/centers and shared assets, build the complete window, then perform focused full-screen visual and interaction checks. Do not create an individual render/test instance or approval loop for every button or shared UI asset. A new window still requires its own visual-target approval; WIN-002 is at that proposal step.
+
+The original G0–G6 asset plan below is retained as production context. Its individual UI asset stop points are superseded by the current complete-window workflow. Separately scoped modular characters, customization, gear fitting and motion still require their own explicit deliverables before an asset library is expanded.
 
 | Gate | Deliverable and stop point |
 | --- | --- |
@@ -39,22 +41,22 @@ G3 contains four separate stop points, matching the more detailed [asset-product
 | G3c — Wearable equipment | Item concepts, slots, attachments, fitting, masks and equipped samples. | 5 |
 | G3d — Motion/export | Necessary motion, layering, fit, frame registration and export proof. | 6 |
 
-The full mapping is G0 = asset stage 0; G1 = 1; G2 = 2; G3a–G3d = 3–6; G4 = 7; G5 = 8; G6 = 9. These are the same serial process, not alternate workflows. The [avatar contract](../../data/art/avatar-contract.json) also starts with window-brief approval (G0), followed by the background and subsequent asset stages. Every G3 subgate requires its own approval or explicit reuse/N/A decision.
+The original mapping is G0 = asset stage 0; G1 = 1; G2 = 2; G3a–G3d = 3–6; G4 = 7; G5 = 8; G6 = 9. The [avatar contract](../../data/art/avatar-contract.json) retains this staged approach for separately scoped modular character and gear production. The current shared UI workflow uses the complete-window override above.
 
 For reused assets, present the exact existing version in its new context and record **reuse approved**. Do not regenerate it automatically. When a layer is irrelevant, record **N/A** with the reason and approve that decision. Each approval record names the window, gate, asset IDs/versions, decision, date, and corrections. A rejection sends the affected gate back for revision; it does not invalidate unrelated approved assets.
 
-The [visual-reference contract](../design/visual-reference-contract.md) defines the retained reference, baseline matching and responsive review requirements for every window. G0 preview approval establishes the composition target; it does not approve the flattened preview as a production asset or waive G1–G6. Keep the approved proposal accessible throughout asset work and implementation. English and Spanish share the same appearance, items and data fixture. Other phone sizes and text scales require explicit responsive treatment rather than stretching the reference.
+The [visual-reference contract](../design/visual-reference-contract.md) defines the retained reference, baseline matching and responsive review requirements. G0 preview approval establishes the composition target; shared UI production follows the current complete-window override above. Keep the approved proposal accessible throughout implementation. English and Spanish share the same appearance, items and data fixture. Other phone sizes and text scales require responsive treatment rather than stretching the reference.
 
-Only one window is active at a time. Shared asset work belongs to the current window and is approved there before reuse elsewhere. Do not produce every background first or all sprites at once. G6 is future work after the exact bilingual composite has been accepted.
+Only one window is active at a time. Shared asset work belongs to that window and uses the recorded reference and reuse decisions. Do not produce every background first or all sprites at once. Implementation follows approval of the current window's retained bilingual visual target, then a focused complete-screen review.
 
 ## Proposed sequence and character feasibility
 
 1. Complete and approve M0: training data shape, starter content, and generation rules.
 2. Review the character/gear feasibility specification: supported silhouettes, skin palettes, hair layers, clothing slots, animation coverage, and a small representative fit sample. This specification does not authorize a full sprite batch. A generated sample still follows background/prop approvals and G3.
-3. Begin **WIN-001 System / Home**. Its first artifact is the flow/data sheet with retained English and Spanish proposal renders. After approval, generate its production background alone and wait. Approve the small character/gear sample and remaining assets in sequence, then compare their assembled System screen with the accepted proposal.
+3. **WIN-001 System / Home** is built and its Android installation/appearance are accepted. Its fictional local data and static illustrated avatar do not complete the modular character/gear work. Continue with **WIN-002 Welcome / Sign in**, beginning with its retained English and Spanish proposal renders and flow/data brief.
 4. Continue through the listed window order, one completed milestone at a time. Deep layout, exact copy, and asset prompts are decided only when that window becomes current.
 
-**Current next activity:** review WIN-001 System / Home’s G0 flow/data sheet and its English and Spanish v2 proposal renders. After approval, generate **its production background alone** at G1 and wait for that separate approval.
+**Current next activity:** prepare and review [WIN-002 Welcome / Sign in’s G0 brief](../windows/WIN-002-welcome-sign-in-g0.md) and retained English/Spanish proposal renders. Its visual target is not yet approved. After approval, build the complete window and use focused full-screen checks against that exact reference.
 
 The numeric order after System is proposed and can be changed by the user. Account/setup dependencies can use fictional approved fixtures for renders; dependent data contracts must be resolved before an implemented flow is called complete. Shared language, confirmations, and error states may be required by the first consumer; they retain their own milestones and approval records. A destination pictured in an early hub render is not evidence that its feature is built.
 
@@ -75,7 +77,7 @@ Teen accounts use private profiles and restricted social defaults. Public teen r
 
 ## Window glossary
 
-There are 64 milestones: **WIN-001 is awaiting G0 approval; the other 63 are not started**. The inventory covers the currently defined V1 scope; unspecified additional mini-games and disability-specific exercise programming are later discovery work, not hidden commitments. Important conditional windows remain listed even when many players will never see them.
+There are 64 milestones: **WIN-001 native Home appearance is accepted; WIN-002 is the active G0 proposal and is not approved; the other 62 are not started**. The inventory covers the currently defined V1 scope; unspecified additional mini-games and disability-specific exercise programming are later discovery work, not hidden commitments. Important conditional windows remain listed even when many players will never see them.
 
 ### System and account entry
 
@@ -183,9 +185,11 @@ There are 64 milestones: **WIN-001 is awaiting G0 approval; the other 63 are not
 
 ## Per-window flow, data, assets, and acceptance
 
-The steps below describe the user journey separately from production gates. Every entry inherits G0–G6. Asset needs are unique assets or explicit reuse candidates, not authorization to generate anything now. Dependency IDs identify related prerequisite contracts/windows; data-domain names are stable conceptual boundaries to map to the data package as it is reviewed.
+The steps below describe the user journey separately from production gates. Their original G0–G6 acceptance wording is read with the current complete-window TDR override above. Asset needs are unique assets or explicit reuse candidates, not authorization to generate all windows now. Dependency IDs identify related prerequisite contracts/windows; data-domain names are stable conceptual boundaries to map to the data package as it is reviewed.
 
 ### WIN-001 — System / Home / Sistema / Inicio
+
+**Stage:** native Home preview appearance accepted on Android, 2026-09-25. See the [implementation evidence and scope](../windows/WIN-001-implementation.md).
 
 **Purpose:** Show the character, appropriate next activity, and earned game progress at a glance.
 
@@ -201,9 +205,11 @@ The steps below describe the user journey separately from production gates. Ever
 - Recovery appears as a valid next action
 - Fitness progression is distinct from tower progress
 - Height, weight, age, and fasting are absent from the public character view
-- G0–G6 approved in sequence; reuse or N/A recorded; English/Spanish and relevant teen/adult/mobile states verified.
+- Approved v2 mapped into the complete native Home, then focused whole-screen EN/ES and interaction checks; installed appearance accepted by the user. Preserve the measured differences and the documented limits.
 
 ### WIN-002 — Welcome / Sign in / Bienvenida / Iniciar sesión
+
+**Stage:** active [G0 proposal](../windows/WIN-002-welcome-sign-in-g0.md), not yet approved. Retain and approve this window's own EN/ES reference before complete-window implementation.
 
 **Purpose:** Enter an existing account or start the account journey.
 
@@ -218,7 +224,7 @@ The steps below describe the user journey separately from production gates. Ever
 - Account and Google login are represented
 - Proposed iOS equivalent sign-in remains a platform-review decision
 - Cancellation and invalid credentials preserve a recoverable route
-- G0–G6 approved in sequence; reuse or N/A recorded; English/Spanish and relevant teen/adult/mobile states verified.
+- Approve the retained bilingual G0 target, assemble the complete window, then perform focused full-screen and interaction checks. No per-button rendering or approval loop.
 
 ### WIN-003 — Language Selection / Selección de idioma
 
@@ -1317,6 +1323,6 @@ The steps below describe the user journey separately from production gates. Ever
 
 ## Review outcome to record next
 
-M0's data shape and milestone plan have been accepted for continued design. Review WIN-001’s G0 sheet together with its retained English and Spanish proposal renders, including exact scope, layout, sample data and orientation. Once that proposal is approved, create its production background alone and wait for approval. Keep the accepted render as the visual target throughout the separate asset gates; development, full sprite production, and deeper planning for later windows remain outside the current step.
+M0's data shape and milestone plan are accepted for continued design, and the user has accepted the installed native Home's appearance. The next decision is WIN-002 Welcome / Sign in: review its flow/data brief and retained English/Spanish renders. Its reference is not yet approved. Once approved, assemble the complete window before focused visual/interaction checks; do not add per-button render or approval loops. Later windows and full modular sprite production remain outside this step.
 
 Canonical machine-readable inventory: [`data/product/window-milestones.json`](../../data/product/window-milestones.json). Original concept context: [`design/visual-approval-plan.md`](../../design/visual-approval-plan.md). Research context: [`docs/research/2026-09-25-fitness-game-research.md`](../research/2026-09-25-fitness-game-research.md).

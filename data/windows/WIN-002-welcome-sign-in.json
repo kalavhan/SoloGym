@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-002",
+  "stage": "g0_proposal_pending_visual_approval",
+  "names": {
+    "en": "Welcome / Sign in",
+    "es": "Bienvenida / Iniciar sesión"
+  },
+  "prerequisite": "WIN-001 native Home appearance accepted by user on 2026-09-25.",
+  "scope": "Entry choice and returning-user email sign-in. Account creation, age/region, consent and recovery keep their existing window IDs.",
+  "platforms": {
+    "android": [
+      "email",
+      "google"
+    ],
+    "ios": {
+      "proposed": [
+        "email",
+        "google",
+        "apple"
+      ],
+      "status": "platform-specific provider layout and native integration require review; retained v1 images depict Android"
+    }
+  },
+  "fixture": {
+    "id": "android_signed_out_online",
+    "platform": "android",
+    "locale": "es",
+    "connection": "online",
+    "session": "none",
+    "inputs": {
+      "email": "",
+      "password": ""
+    },
+    "personal_data": "none",
+    "view": "welcome",
+    "validation_errors": []
+  },
+  "locales": {
+    "es": {
+      "title": "BIENVENIDA",
+      "subtitle": "Elige cómo entrar",
+      "email_entry": "ENTRAR CON CORREO",
+      "google": "Continuar con Google",
+      "apple": "Continuar con Apple",
+      "new_here": "¿Primera vez aquí?",
+      "create": "CREAR CUENTA",
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "back": "Volver",
+      "email_title": "INICIAR SESIÓN",
+      "email_label": "Correo electrónico",
+      "password_label": "Contraseña",
+      "submit": "INICIAR SESIÓN",
+      "forgot": "¿Olvidaste tu contraseña?",
+      "show_password": "Mostrar contraseña",
+      "hide_password": "Ocultar contraseña",
+      "signing_in": "Iniciando sesión…",
+      "offline": "Conéctate a internet para iniciar sesión.",
+      "invalid": "No pudimos iniciar sesión. Revisa tus datos e inténtalo de nuevo.",
+      "provider_error": "No se pudo completar el acceso. Inténtalo de nuevo.",
+      "expired": "Tu sesión terminó. Vuelve a iniciar sesión.",
+      "rate_limited": "Espera un momento antes de volver a intentarlo.",
+      "required_email": "Introduce tu correo electrónico.",
+      "required_password": "Introduce tu contraseña.",
+      "retry": "Reintentar"
+    },
+    "en": {
+      "title": "WELCOME",
+      "subtitle": "Choose how to enter",
+      "email_entry": "SIGN IN WITH EMAIL",
+      "google": "Continue with Google",
+      "apple": "Continue with Apple",
+      "new_here": "New here?",
+      "create": "CREATE ACCOUNT",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "back": "Back",
+      "email_title": "SIGN IN",
+      "email_label": "Email address",
+      "password_label": "Password",
+      "submit": "SIGN IN",
+      "forgot": "Forgot password?",
+      "show_password": "Show password",
+      "hide_password": "Hide password",
+      "signing_in": "Signing in…",
+      "offline": "Connect to the internet to sign in.",
+      "invalid": "We couldn't sign you in. Check your details and try again.",
+      "provider_error": "Sign-in couldn't be completed. Try again.",
+      "expired": "Your session ended. Sign in again.",
+      "rate_limited": "Wait a moment before trying again.",
+      "required_email": "Enter your email address.",
+      "required_password": "Enter your password.",
+      "retry": "Try again"
+    }
+  },
+  "states": [
+    {
+      "id": "welcome",
+      "actions": [
+        "email_entry",
+        "google",
+        "create",
+        "language",
+        "privacy",
+        "terms"
+      ]
+    },
+    {
+      "id": "email_sign_in",
+      "actions": [
+        "submit",
+        "forgot",
+        "show_hide_password",
+        "back",
+        "language"
+      ],
+      "layout": "Same entry art; replace choices with two labeled fields, submit and recovery. Scroll content above keyboard; preserve field values on language changes, never persist password."
+    },
+    {
+      "id": "auth_pending",
+      "actions": [
+        "cancel_where_provider_supports"
+      ],
+      "rule": "One in-flight request. Localize progress. Disable duplicate submission; never award game progress."
+    },
+    {
+      "id": "provider_cancelled",
+      "next": "welcome",
+      "rule": "Normal cancellation, not an error; keep provider choice available."
+    },
+    {
+      "id": "offline",
+      "next": "current_entry_view",
+      "rule": "Explain network requirement. Preserve non-sensitive typed context; never invent a session."
+    },
+    {
+      "id": "invalid_credentials",
+      "next": "email_sign_in",
+      "rule": "Neutral response, no account-existence disclosure."
+    },
+    {
+      "id": "provider_error",
+      "next": "welcome",
+      "rule": "Allow explicit retry; discard unfinished identity exchange."
+    },
+    {
+      "id": "session_expired",
+      "next": "welcome",
+      "rule": "Preserve game data; reauthenticate; no automatic account reset."
+    },
+    {
+      "id": "rate_limited",
+      "next": "current_entry_view",
+      "rule": "Respect server retry interval; accessible localized countdown if supplied."
+    }
+  ],
+  "routes": {
+    "email_entry": {
+      "view": "email_sign_in",
+      "window_id": "WIN-002"
+    },
+    "forgot": {
+      "window_id": "WIN-005"
+    },
+    "language": {
+      "window_id": "WIN-003",
+      "return_to": "originating_entry_view"
+    },
+    "create": {
+      "intent": "create_email_account",
+      "eligibility": "WIN-006",
+      "consent": "WIN-007",
+      "conditional_guardian": "WIN-008",
+      "account_creation": "WIN-004",
+      "rule": "Collect reviewed age/region/consent requirements before creating the game profile; do not invent universal guardian thresholds."
+    },
+    "google": {
+      "intent": "native_provider_authentication",
+      "existing_account": "Use backend-authorized setup/consent checkpoint or WIN-001",
+      "new_identity": "Minimal pending onboarding only, then WIN-006/007 and WIN-008 when applicable before activating a fitness profile. Provider identity is not fitness-data consent."
+    },
+    "authentication_success": {
+      "rule": "Backend-authorized resume checkpoint, not an arbitrary client redirect. No direct Home route until required account checks complete."
+    },
+    "privacy": {
+      "window_id": "WIN-007",
+      "mode": "document_read_only",
+      "document": "privacy",
+      "requires_authentication": false,
+      "rule": "Public read-only document view; opening it does not record consent."
+    },
+    "terms": {
+      "window_id": "WIN-007",
+      "mode": "document_read_only",
+      "document": "terms",
+      "requires_authentication": false,
+      "rule": "Public read-only document view; opening it does not record consent."
+    }
+  },
+  "security_contract": {
+    "password": "Only in the input control/request lifetime; never written to PlayerPrefs, logs, fixtures or analytics.",
+    "token_storage": "Platform-protected storage; backend session/revocation design required before live authentication.",
+    "google": "Native SDK/Credential Manager where supported; server validates signature/aud/iss/exp and identifies by sub. Do not link identities by email alone.",
+    "oauth": "Use platform auth session or external browser and PKCE/state/nonce as applicable; never collect Google credentials inside an app-owned WebView.",
+    "consent": "No bundled 'continuing accepts everything' statement and no preselected optional permission.",
+    "preview": "Never simulate successful Google/email authentication as a real account. Any local preview is explicitly identified."
+  },
+  "visual_contract": {
+    "reference_size_requested": [
+      853,
+      1844
+    ],
+    "orientation": "portrait",
+    "safe_area": "Fit recorded reference aspect without stretching; artwork can crop only under an approved responsive layout.",
+    "style_reference": "artifacts/visual/WIN-001/home-en-final.png",
+    "layers": [
+      "portal_environment",
+      "foreground_frame",
+      "game_wordmark",
+      "native_localized_text",
+      "official_provider_control",
+      "native_hit_targets"
+    ],
+    "no_character_sprites": true,
+    "provider_branding": "Generated provider mark in a proposal is illustrative, not an approved production asset. Use official Google/native Apple controls and review their exact final geometry.",
+    "touch_target_logical_minimum": [
+      48,
+      48
+    ],
+    "email_step": "Reuse background/frame; its field/keyboard composition must be reviewed before declaring WIN-002 implementation complete.",
+    "verification": "Complete window first; one full-screen comparison per locale after assembly, plus focused auth cancellation/error and keyboard interaction checks. No per-button render loop."
+  },
+  "implementation_dependencies": [
+    "Accepted WIN-002 visual target",
+    "Chosen authentication service and owned project",
+    "Google OAuth client IDs and final Android signing-certificate registration",
+    "Reviewed account eligibility and consent rules",
+    "Provider assets/native Unity integration",
+    "iOS equivalent login decision and Apple developer configuration"
+  ],
+  "sources": [
+    {
+      "title": "Google identity branding",
+      "url": "https://developers.google.com/identity/branding-guidelines"
+    },
+    {
+      "title": "Google sign-in on Android",
+      "url": "https://developer.android.com/identity/sign-in/credential-manager-siwg"
+    },
+    {
+      "title": "Google backend authentication",
+      "url": "https://developers.google.com/identity/sign-in/android/backend-auth"
+    },
+    {
+      "title": "App Store login-services guideline",
+      "url": "https://developer.apple.com/app-store/review/guidelines/#login-services"
+    },
+    {
+      "title": "OAuth for native apps",
+      "url": "https://datatracker.ietf.org/doc/html/rfc8252"
+    }
+  ]
+}

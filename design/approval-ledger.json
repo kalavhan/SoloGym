@@ -12,7 +12,7 @@
     ],
     "scope": "Overall visual direction. Production assets and individual windows require separate approval."
   },
-  "current_milestone": "WIN-001_system_home",
+  "current_milestone": "WIN-002_welcome_sign_in",
   "window_approvals": [
     {
       "window_id": "WIN-001",
@@ -35,12 +35,43 @@
       "review_scope": "Approved EN/ES v2 as visual target; authorize complete Home implementation with shared assets and pixel mapping, then focused visual review. No per-button render/approval loop.",
       "approved_by": "user",
       "evidence": "make this 1:1 ... build completely and then test visually for match 1:1 ... This sounds good. make sure to keep updating the github"
+    },
+    {
+      "window_id": "WIN-001",
+      "gate": "G6_visual_acceptance",
+      "state": "accepted_native_home_preview",
+      "approved_by": "user",
+      "date": "2026-09-25",
+      "evidence": "logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos",
+      "artifact": "docs/windows/WIN-001-implementation.md",
+      "scope": "User confirmed successful Android installation and the expected visual appearance of the native Home preview. This accepts its appearance and authorizes moving to the next window; it does not certify byte-identical pixels, complete feature coverage, security, all devices, iOS or the future destination windows."
+    },
+    {
+      "window_id": "WIN-002",
+      "gate": "G0",
+      "state": "proposal_ready_pending_user_approval",
+      "artifact": "docs/windows/WIN-002-welcome-sign-in-g0.md",
+      "data_artifact": "data/windows/WIN-002-welcome-sign-in.json",
+      "render_manifest": "design/reference-manifests/WIN-002-welcome-sign-in-v1.json",
+      "review_scope": "Welcome / Sign in flow, bilingual copy and retained visual proposal. Approval of WIN-001 does not approve this new window or its reference.",
+      "render_references": [
+        {
+          "file": "design/renders/WIN-002-welcome-sign-in-es-proposal-v1.png",
+          "sha256": "f8577b1567fd177ed28e8d14f5d722f7da91eae369baa25fbb376eb75cafd31d",
+          "locale": "es"
+        },
+        {
+          "file": "design/renders/WIN-002-welcome-sign-in-en-proposal-v1.png",
+          "sha256": "d6fb587da7514d94064482b8bbeeb05d56012a29e66aa2cc16be60be14fb7b26",
+          "locale": "en"
+        }
+      ]
     }
   ],
-  "required_next_artifact": "Review the completed WIN-001 native Home and retained EN/ES full-screen comparisons; record any remaining visual corrections or acceptance before starting the next window.",
+  "required_next_artifact": "User review of retained WIN-002 Android Welcome principal-state EN/ES renders; exact hashes recorded. Then complete-window implementation under TDR after target approval.",
   "implementation_review": {
     "window_id": "WIN-001",
-    "state": "implemented_ready_for_visual_review",
+    "state": "native_home_appearance_accepted_by_user",
     "artifact": "docs/windows/WIN-001-implementation.md",
     "runtime_project": "app",
     "captures": [
@@ -52,9 +83,15 @@
       "artifacts/visual/WIN-001/comparison-es.metrics.json"
     ],
     "focused_interaction_checks": "5 passed; artifacts/visual/WIN-001/home-en-final.smoke.json",
-    "builds": "Linux and Android builds succeeded; no actual mobile-device check or iOS binary",
+    "builds": "Linux and Android builds succeeded; user confirmed Android installation and expected appearance on 2026-09-25. Phone model and Android version were not provided; no iOS binary.",
     "strict_pixel_match_accepted": false,
-    "limitations": "Native font rendering and reconstructed glass differ from the source raster; both runtime locales share EN artwork. Fictional local data and static avatar; destination windows and modular customization are not implemented."
+    "limitations": "Native font rendering and reconstructed glass differ from the source raster; both runtime locales share EN artwork. Fictional local data and static avatar; destination windows and modular customization are not implemented.",
+    "user_visual_acceptance": {
+      "accepted_by": "user",
+      "date": "2026-09-25",
+      "evidence": "logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos",
+      "scope": "Android installation and expected Home appearance only; existing comparison metrics and source hashes are unchanged."
+    }
   },
   "foundation_design_approval": {
     "state": "accepted_for_design",
@@ -67,12 +104,12 @@
   "proposal_render_policy": {
     "requested_by": "user",
     "evidence": "in the proposal include the rendering so we can keep it and use it for the work and make sure it matches 1:1",
-    "rule": "Each window proposal includes retained versioned renders. The exact approved version becomes its visual target. WIN-001 follows the latest complete-window implementation instruction recorded below; other asset milestones retain their recorded workflow."
+    "rule": "Each window proposal includes retained versioned renders. The exact approved version becomes its visual target. Continue one window at a time using target-render development: assemble the complete approved window, then focused whole-screen visual and interaction checks; do not render or test an instance for each button."
   },
   "implementation_workflow": {
-    "scope": "WIN-001",
+    "scope": "One active window at a time; completed WIN-001 and current WIN-002 continuation",
     "approach": "target-render development (TDR interpretation), one pixel map, shared assets, complete assembly before focused full-screen QA",
     "github_updates": "authorized by user",
-    "old_per_asset_stop_points": "superseded by latest explicit build instruction for this window"
+    "old_per_asset_stop_points": "The latest TDR instruction supersedes per-button rendering and individual UI asset approval loops for the complete-window workflow. A new window still requires its own visual-target approval before implementation; modular character/gear production remains separately scoped."
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "milestone_plan_accepted_for_design; WIN-001_native_home_implemented_ready_for_visual_review; remaining_63_windows_not_started",
+  "status": "milestone_plan_accepted_for_design; WIN-001_native_home_appearance_accepted_by_user; WIN-002_G0_proposal_in_progress_not_approved; remaining_62_windows_not_started",
   "product": "SoloGym",
   "constraints": {
     "platforms": [
@@ -101,7 +101,7 @@
     }
   ],
   "approval_rules": [
-    "WIN-001 follows the latest user-authorized override: complete native screen assembly using approved v2 reference mapping, then focused full-screen visual and interaction checks. Earlier per-asset stops are superseded for this window only.",
+    "Current user-authorized workflow: approve each retained bilingual window proposal, assemble the complete native window using reference mapping and shared assets, then perform focused whole-screen visual and interaction checks. Do not create per-button render/test loops. WIN-001 appearance is accepted; WIN-002 is the only active proposal and is not yet approved.",
     "The accepted overall style does not approve any individual background, sprite, prop, gear item, frame, or composed window.",
     "Except for an explicitly recorded user override, every window inherits G0 through G6 in that exact order. No later gate starts while the previous gate lacks user approval.",
     "Reuse requires an explicit recorded approval of the exact asset; regeneration is not the default. Record N/A with a reason when a stage has no applicable asset.",
@@ -179,8 +179,8 @@
       "WIN-063",
       "WIN-064"
     ],
-    "note": "The System window is implemented in Unity 6000.3.24f1 with fictional local data and unavailable notices for future destinations. Foundation/reusable windows retain their own milestones. The remaining sequence is a proposal for review.",
-    "next_activity_after_M0": "WIN-001 v2 is approved as the visual target and native Home is built. Review its retained full-screen comparisons before the next window; this implementation does not complete the modular avatar pipeline."
+    "note": "The System Home preview is implemented in Unity 6000.3.24f1 and its Android installation/appearance are accepted by the user. It uses fictional local data and unavailable notices for future destinations. WIN-002 Welcome / Sign in is now the active G0 proposal; no other window has started.",
+    "next_activity_after_M0": "WIN-001 native Home appearance was accepted on 2026-09-25. Prepare and review the WIN-002 Welcome / Sign in bilingual G0 proposal; retain its own rendered reference before implementation. The modular avatar pipeline remains a later deliverable."
   },
   "windows": [
     {
@@ -224,10 +224,15 @@
         "Follow the recorded WIN-001 override: approved v2 reference, measured pixel mapping, complete native screen assembly, then focused whole-screen comparison and interaction checks. Preserve the original reference and record remaining differences.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "implemented_ready_for_visual_review",
+      "stage": "native_home_appearance_accepted_by_user",
       "scope": "v1",
       "current_artifact": "docs/windows/WIN-001-implementation.md",
-      "render_manifest": "design/reference-manifests/WIN-001-system-home-v2.json"
+      "render_manifest": "design/reference-manifests/WIN-001-system-home-v2.json",
+      "acceptance_record": {
+        "date": "2026-09-25",
+        "evidence": "logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos",
+        "scope": "Android installation and expected native Home appearance; not exhaustive feature/device/security verification or mathematical pixel identity."
+      }
     },
     {
       "id": "WIN-002",
@@ -259,11 +264,14 @@
         "Account and Google login are represented",
         "Proposed iOS equivalent sign-in remains a platform-review decision",
         "Cancellation and invalid credentials preserve a recoverable route",
-        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Approve the retained bilingual G0 visual target, then use complete-window TDR assembly and focused full-screen visual/interaction checks. No per-button render loop. Record milestone acceptance before starting the next window.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "not_started",
-      "scope": "v1"
+      "stage": "g0_proposal_ready_pending_user_approval",
+      "scope": "v1",
+      "current_artifact": "docs/windows/WIN-002-welcome-sign-in-g0.md",
+      "data_artifact": "data/windows/WIN-002-welcome-sign-in.json",
+      "render_manifest": "design/reference-manifests/WIN-002-welcome-sign-in-v1.json"
     },
     {
       "id": "WIN-003",
@@ -2592,5 +2600,7 @@
     },
     "note": "G0 is the prerequisite window-brief approval and is included in the avatar contract before background."
   },
-  "visual_reference_contract": "docs/design/visual-reference-contract.md"
+  "visual_reference_contract": "docs/design/visual-reference-contract.md",
+  "active_window": "WIN-002",
+  "approval_workflow_status": "Original G0–G6 asset-stage reference retained; latest complete-window TDR override in approval_rules takes precedence for shared UI. WIN-002 still requires its own G0 visual-target approval."
 }

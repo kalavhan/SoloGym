@@ -4,6 +4,8 @@ Unity **6000.3.24f1**, built-in renderer and uGUI **2.0.0**. Open this `app` dir
 
 The Home window has editable runtime text and values, English/Spanish detection and persistent language choice, real UI controls, and training/recovery/saved/completed/setup/review/loading/error presentation. The illustrated character is the approved static Home portrait; modular customization and tower gameplay remain later windows. Profile/game values are fictional local fixtures. Destination buttons dispatch the correct window ID and show an honest unavailable notice until that destination is implemented. See the [final captures and reference comparisons](../docs/windows/WIN-001-implementation.md#current-visual-evidence) for the current visual result and remaining differences.
 
+The user installed this Home build on Android and accepted its appearance on 2026-09-25. The device model/OS version were not supplied; this is a visual acceptance report, not comprehensive device or authentication testing. The next window is documented in [WIN-002 Welcome / Sign in](../docs/windows/WIN-002-welcome-sign-in-g0.md).
+
 ## Target-render development
 
 `Resources/Home/PixelMap.json` defines source-pixel geometry from the approved 853×1844 renders. `HomeScreen.cs` assembles the entire screen from shared source artwork, mapped clean text regions, native text, a data-driven XP bar and controls. `ReferenceTextLayout.cs` aligns live glyph bounds with the measured reference. Both languages share the same runtime art.

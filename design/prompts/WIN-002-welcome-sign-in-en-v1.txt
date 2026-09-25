@@ -1,0 +1,12 @@
+Use case: text-localization.
+Image 1 is the EDIT TARGET: SoloGym WIN-002 Android Welcome / Sign in Spanish proposal. Create its English localization. Preserve the complete composition, image dimensions, temple architecture, portal, statuary, reflective floor, lighting, SoloGym wordmark, frame geometry, Google button/logo treatment, and ALL control positions. Do not redesign or add elements. Change ONLY the listed UI text, keeping readable centered type and the same font roles:
+“ES” → “EN”
+“BIENVENIDA” → “WELCOME”
+“Elige cómo entrar” → “Choose how to enter”
+“ENTRAR CON CORREO” → “SIGN IN WITH EMAIL”
+“Continuar con Google” → “Continue with Google”
+“¿Primera vez aquí?” → “New here?”
+“CREAR CUENTA” → “CREATE ACCOUNT”
+“Privacidad” → “Privacy”
+“Términos” → “Terms”
+Exact English spelling and capitalization. Keep the Google text in ordinary medium sans typography; preserve its white button and colored G. Keep all other headings/game controls in the same silver serif. No extra label, platform name, phone frame, watermark, username, form fields, Apple button, or navigation. Same single full portrait Android screen, same aspect and canvas as the source.

@@ -2,6 +2,8 @@
 
 The user approved proposal v2 and requested complete-window construction before focused visual testing, using reference pixel coordinates and shared components. That instruction supersedes the earlier per-asset approval stops for this implementation. The original EN/ES target PNGs remain unchanged and versioned.
 
+**User acceptance · 2026-09-25:** “logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos”. The user confirmed Android installation and accepted the native Home's appearance. WIN-001's visual preview is accepted, and [WIN-002 Welcome / Sign in](WIN-002-welcome-sign-in-g0.md) is the next active proposal. This is not exhaustive feature, device, security or pixel-identity verification.
+
 ## Implemented
 
 - Unity 6000.3.24f1 native project, portrait layout and Android build configuration.
@@ -22,7 +24,7 @@ The native player passed [five focused interaction checks](../../artifacts/visua
 
 ## Scope and delivery
 
-The runnable deliverable is the Home window with fictional local data. Linux and Android builds succeeded; the local ARM64 Android APK is approximately 21 MB and uses debug signing. No actual mobile-device check has been performed. No iOS binary is built on this Linux host, and iOS behavior is unverified. The [app README](../../app/README.md) contains exact build and capture commands. The other 63 windows remain unimplemented.
+The runnable deliverable is the Home window with fictional local data. Linux and Android builds succeeded; the local ARM64 Android APK is approximately 21 MB and uses debug signing. The user confirmed installation and expected Home appearance on an Android phone on 2026-09-25; the phone model and Android version were not supplied, and this was not a complete interaction or device-compatibility test. No iOS binary is built on this Linux host, and iOS behavior is unverified. The [app README](../../app/README.md) contains exact build and capture commands. The other 63 windows remain unimplemented.
 
 Larger text, other aspect-ratio layouts, native screen-reader support, production account/backend connections, and full destination screens remain their respective milestones. Standard portrait safe-area fitting is present now.
 
@@ -37,7 +39,7 @@ All captures and references use **853 × 1844 pixels**, with no resizing or imag
 | English | [Final capture](../../artifacts/visual/WIN-001/home-en-final.png) | [Side by side](../../artifacts/visual/WIN-001/comparison-en.side-by-side.png) · [Overlay](../../artifacts/visual/WIN-001/comparison-en.overlay.png) · [Metrics](../../artifacts/visual/WIN-001/comparison-en.metrics.json) | 4.1887 | 91.7185% |
 | Español | [Captura final](../../artifacts/visual/WIN-001/home-es-final.png) | [Comparación](../../artifacts/visual/WIN-001/comparison-es.side-by-side.png) · [Superposición](../../artifacts/visual/WIN-001/comparison-es.overlay.png) · [Métricas](../../artifacts/visual/WIN-001/comparison-es.metrics.json) | 7.4626 | 77.9612% |
 
-The reference is on the left and the actual native player is on the right in each side-by-side image. The lower Spanish agreement also reflects artwork differences in the independently generated Spanish target; runtime locales share the English artwork. Full-screen visual review and these measurements do not record user acceptance of a strict 1:1 match.
+The reference is on the left and the actual native player is on the right in each side-by-side image. The lower Spanish agreement also reflects artwork differences in the independently generated Spanish target; runtime locales share the English artwork. The user subsequently accepted the installed Home's appearance. These original measurements remain unchanged and do not assert a mathematical pixel-identical match.
 
 ![Final native Home in English](../../artifacts/visual/WIN-001/home-en-final.png)
 

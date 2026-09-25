@@ -1,0 +1,468 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-002",
+  "status": "proposal_mapping_not_approved",
+  "canvas": {
+    "width": 853,
+    "height": 1844,
+    "origin": "top_left",
+    "unit": "source_pixel"
+  },
+  "source": {
+    "file": "design/renders/WIN-002-welcome-sign-in-es-proposal-v1.png",
+    "sha256": "f8577b1567fd177ed28e8d14f5d722f7da91eae369baa25fbb376eb75cafd31d"
+  },
+  "method": "Approximate visible bounds from the complete Spanish proposal; corners/centers calculated. Not extracted sprites or recovered font metrics. Re-measure after target approval.",
+  "scaling": "Uniform safe-area fit; retain aspect ratio. Touch hit areas may extend beyond visible controls.",
+  "elements": [
+    {
+      "id": "language",
+      "kind": "control",
+      "rect": {
+        "x": 687,
+        "y": 36,
+        "width": 118,
+        "height": 62
+      },
+      "center": [
+        746.0,
+        67.0
+      ],
+      "corners": [
+        [
+          687,
+          36
+        ],
+        [
+          805,
+          36
+        ],
+        [
+          805,
+          98
+        ],
+        [
+          687,
+          98
+        ]
+      ]
+    },
+    {
+      "id": "wordmark",
+      "kind": "artwork",
+      "rect": {
+        "x": 166,
+        "y": 142,
+        "width": 526,
+        "height": 126
+      },
+      "center": [
+        429.0,
+        205.0
+      ],
+      "corners": [
+        [
+          166,
+          142
+        ],
+        [
+          692,
+          142
+        ],
+        [
+          692,
+          268
+        ],
+        [
+          166,
+          268
+        ]
+      ]
+    },
+    {
+      "id": "portal",
+      "kind": "artwork",
+      "rect": {
+        "x": 233,
+        "y": 396,
+        "width": 390,
+        "height": 465
+      },
+      "center": [
+        428.0,
+        628.5
+      ],
+      "corners": [
+        [
+          233,
+          396
+        ],
+        [
+          623,
+          396
+        ],
+        [
+          623,
+          861
+        ],
+        [
+          233,
+          861
+        ]
+      ]
+    },
+    {
+      "id": "entry.panel",
+      "kind": "frame",
+      "rect": {
+        "x": 60,
+        "y": 1019,
+        "width": 734,
+        "height": 633
+      },
+      "center": [
+        427.0,
+        1335.5
+      ],
+      "corners": [
+        [
+          60,
+          1019
+        ],
+        [
+          794,
+          1019
+        ],
+        [
+          794,
+          1652
+        ],
+        [
+          60,
+          1652
+        ]
+      ]
+    },
+    {
+      "id": "entry.title",
+      "kind": "text",
+      "rect": {
+        "x": 196,
+        "y": 1058,
+        "width": 466,
+        "height": 66
+      },
+      "center": [
+        429.0,
+        1091.0
+      ],
+      "corners": [
+        [
+          196,
+          1058
+        ],
+        [
+          662,
+          1058
+        ],
+        [
+          662,
+          1124
+        ],
+        [
+          196,
+          1124
+        ]
+      ]
+    },
+    {
+      "id": "entry.subtitle",
+      "kind": "text",
+      "rect": {
+        "x": 287,
+        "y": 1171,
+        "width": 283,
+        "height": 44
+      },
+      "center": [
+        428.5,
+        1193.0
+      ],
+      "corners": [
+        [
+          287,
+          1171
+        ],
+        [
+          570,
+          1171
+        ],
+        [
+          570,
+          1215
+        ],
+        [
+          287,
+          1215
+        ]
+      ]
+    },
+    {
+      "id": "email.button",
+      "kind": "control",
+      "rect": {
+        "x": 91,
+        "y": 1235,
+        "width": 671,
+        "height": 95
+      },
+      "center": [
+        426.5,
+        1282.5
+      ],
+      "corners": [
+        [
+          91,
+          1235
+        ],
+        [
+          762,
+          1235
+        ],
+        [
+          762,
+          1330
+        ],
+        [
+          91,
+          1330
+        ]
+      ]
+    },
+    {
+      "id": "email.label",
+      "kind": "text",
+      "rect": {
+        "x": 203,
+        "y": 1260,
+        "width": 449,
+        "height": 51
+      },
+      "center": [
+        427.5,
+        1285.5
+      ],
+      "corners": [
+        [
+          203,
+          1260
+        ],
+        [
+          652,
+          1260
+        ],
+        [
+          652,
+          1311
+        ],
+        [
+          203,
+          1311
+        ]
+      ]
+    },
+    {
+      "id": "google.button",
+      "kind": "official_provider_control",
+      "rect": {
+        "x": 101,
+        "y": 1354,
+        "width": 652,
+        "height": 100
+      },
+      "center": [
+        427.0,
+        1404.0
+      ],
+      "corners": [
+        [
+          101,
+          1354
+        ],
+        [
+          753,
+          1354
+        ],
+        [
+          753,
+          1454
+        ],
+        [
+          101,
+          1454
+        ]
+      ]
+    },
+    {
+      "id": "register.hint",
+      "kind": "text",
+      "rect": {
+        "x": 288,
+        "y": 1471,
+        "width": 279,
+        "height": 45
+      },
+      "center": [
+        427.5,
+        1493.5
+      ],
+      "corners": [
+        [
+          288,
+          1471
+        ],
+        [
+          567,
+          1471
+        ],
+        [
+          567,
+          1516
+        ],
+        [
+          288,
+          1516
+        ]
+      ]
+    },
+    {
+      "id": "register.button",
+      "kind": "control",
+      "rect": {
+        "x": 174,
+        "y": 1528,
+        "width": 506,
+        "height": 76
+      },
+      "center": [
+        427.0,
+        1566.0
+      ],
+      "corners": [
+        [
+          174,
+          1528
+        ],
+        [
+          680,
+          1528
+        ],
+        [
+          680,
+          1604
+        ],
+        [
+          174,
+          1604
+        ]
+      ]
+    },
+    {
+      "id": "register.label",
+      "kind": "text",
+      "rect": {
+        "x": 299,
+        "y": 1542,
+        "width": 258,
+        "height": 47
+      },
+      "center": [
+        428.0,
+        1565.5
+      ],
+      "corners": [
+        [
+          299,
+          1542
+        ],
+        [
+          557,
+          1542
+        ],
+        [
+          557,
+          1589
+        ],
+        [
+          299,
+          1589
+        ]
+      ]
+    },
+    {
+      "id": "privacy.link",
+      "kind": "control",
+      "rect": {
+        "x": 263,
+        "y": 1695,
+        "width": 133,
+        "height": 50
+      },
+      "center": [
+        329.5,
+        1720.0
+      ],
+      "corners": [
+        [
+          263,
+          1695
+        ],
+        [
+          396,
+          1695
+        ],
+        [
+          396,
+          1745
+        ],
+        [
+          263,
+          1745
+        ]
+      ]
+    },
+    {
+      "id": "terms.link",
+      "kind": "control",
+      "rect": {
+        "x": 462,
+        "y": 1695,
+        "width": 116,
+        "height": 50
+      },
+      "center": [
+        520.0,
+        1720.0
+      ],
+      "corners": [
+        [
+          462,
+          1695
+        ],
+        [
+          578,
+          1695
+        ],
+        [
+          578,
+          1745
+        ],
+        [
+          462,
+          1745
+        ]
+      ]
+    }
+  ],
+  "implementation": "One shared environment/frame for both locales, live text, official provider assets. Assemble the whole window before full-screen comparison; no per-control render instances."
+}
