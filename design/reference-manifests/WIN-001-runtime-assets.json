@@ -1,0 +1,29 @@
+{
+  "window_id": "WIN-001",
+  "status": "used_in_native_home",
+  "source_art": {
+    "file": "app/Assets/SoloGym/Resources/Home/SourceArt.png",
+    "sha256": "a08c31f246a041acad0704361c2404c5e7cea5bab7cc25b571a2b1ff2d8ccde8"
+  },
+  "source_reference": "design/renders/WIN-001-system-home-en-proposal-v2.png",
+  "clean_plate": {
+    "file": "app/Assets/SoloGym/Resources/Home/CleanPlate.png",
+    "sha256": "8f47e8572c29abc2686d58eb2b1852c09a80b53f0a8c01aa6e264af288fbc320"
+  },
+  "clean_plate_prompt": {
+    "file": "design/prompts/WIN-001-home-clean-plate-v1.txt",
+    "sha256": "32abd66cfadf55b95482cf3274f53f6e0c1975502a25fb0eeccdac6a42bbb1de"
+  },
+  "generation_tool": "image_gen.imagegen; one whole-screen edit, not per-button generations",
+  "runtime_usage": "Source atlas split into semantic bands; cleaned plate replaces mapped baked-label regions. Native text, controls and progress width overlay the artwork.",
+  "character_limitation": "Opaque static portrait and gear illustration; not transparent sprites, equippable layers or a modular avatar rig.",
+  "shared_locales": [
+    "en",
+    "es"
+  ],
+  "reference_geometry": "design/mapping/WIN-001-home-map.json",
+  "font_licenses": [
+    "app/Assets/SoloGym/Resources/Fonts/Liberation-LICENSE.txt",
+    "app/Assets/SoloGym/Resources/Fonts/Noto-LICENSE.txt"
+  ]
+}

@@ -1,0 +1,650 @@
+{
+  "schema_version": "0.2.0",
+  "window_id": "WIN-001",
+  "gate": "G0",
+  "status": "awaiting_user_approval_with_rendered_proposal_v2",
+  "runtime_implemented": false,
+  "fixture_notice": "Fictional design data. Exercise content, economy values and assets are not production approved.",
+  "copy": {
+    "title": {
+      "en": "SYSTEM",
+      "es": "SISTEMA"
+    },
+    "class_boxer": {
+      "en": "Boxer",
+      "es": "Boxeador"
+    },
+    "class_boxer_female": {
+      "en": "Boxer",
+      "es": "Boxeadora"
+    },
+    "fitness_level": {
+      "en": "Fitness level {level}",
+      "es": "Nivel de entrenamiento {level}"
+    },
+    "fitness_xp": {
+      "en": "Fitness XP",
+      "es": "XP de entrenamiento"
+    },
+    "xp_progress": {
+      "en": "{current} / {required} XP",
+      "es": "{current} / {required} XP"
+    },
+    "coins": {
+      "en": "Coins",
+      "es": "Monedas"
+    },
+    "combat_stats": {
+      "en": "Combat stats",
+      "es": "Estadísticas de combate"
+    },
+    "power": {
+      "en": "Power",
+      "es": "Poder"
+    },
+    "guard": {
+      "en": "Guard",
+      "es": "Defensa"
+    },
+    "focus": {
+      "en": "Focus",
+      "es": "Concentración"
+    },
+    "today": {
+      "en": "Today",
+      "es": "Hoy"
+    },
+    "training_planned": {
+      "en": "Today's training",
+      "es": "Entrenamiento de hoy"
+    },
+    "training_detail": {
+      "en": "Check how you feel, then review your plan.",
+      "es": "Revisa cómo te sientes y luego tu rutina."
+    },
+    "check_today": {
+      "en": "Check today",
+      "es": "Revisar mi estado"
+    },
+    "duration": {
+      "en": "About {minutes} min",
+      "es": "Aprox. {minutes} min"
+    },
+    "light": {
+      "en": "Light",
+      "es": "Ligero"
+    },
+    "medium": {
+      "en": "Medium",
+      "es": "Medio"
+    },
+    "hard": {
+      "en": "Hard",
+      "es": "Intenso"
+    },
+    "pull_gap": {
+      "en": "Pulling exercise missing. Review equipment.",
+      "es": "Falta un ejercicio de tracción. Revisa el equipo."
+    },
+    "setup_required": {
+      "en": "Set up your training",
+      "es": "Configura tu entrenamiento"
+    },
+    "setup_detail": {
+      "en": "Add your experience, equipment and available time.",
+      "es": "Añade tu experiencia, equipo y tiempo disponible."
+    },
+    "continue_setup": {
+      "en": "Continue setup",
+      "es": "Continuar configuración"
+    },
+    "session_saved": {
+      "en": "Session saved",
+      "es": "Sesión guardada"
+    },
+    "session_saved_detail": {
+      "en": "{completed} of {total} sets recorded. Review before continuing.",
+      "es": "{completed} de {total} series registradas. Revisa antes de continuar."
+    },
+    "review_session": {
+      "en": "Review session",
+      "es": "Revisar sesión"
+    },
+    "view_saved_session": {
+      "en": "View saved session",
+      "es": "Ver sesión guardada"
+    },
+    "rest_today": {
+      "en": "Rest today",
+      "es": "Descansa hoy"
+    },
+    "rest_detail": {
+      "en": "Training is paused based on today's check-in.",
+      "es": "El entrenamiento está en pausa según tu estado de hoy."
+    },
+    "recovery": {
+      "en": "Recovery day",
+      "es": "Día de recuperación"
+    },
+    "recovery_detail": {
+      "en": "Rest is part of your plan. Your consistency is protected.",
+      "es": "Descansar es parte de tu rutina. Tu constancia está protegida."
+    },
+    "view_recovery": {
+      "en": "View recovery",
+      "es": "Ver recuperación"
+    },
+    "review_required": {
+      "en": "Review your training",
+      "es": "Revisa tu entrenamiento"
+    },
+    "supervision_detail": {
+      "en": "This strength session needs appropriate supervision.",
+      "es": "Esta sesión de fuerza requiere supervisión adecuada."
+    },
+    "guidance_detail": {
+      "en": "Review your guidance needs before starting a session.",
+      "es": "Revisa tus necesidades de orientación antes de iniciar una sesión."
+    },
+    "review_readiness": {
+      "en": "Review readiness",
+      "es": "Revisar mi estado"
+    },
+    "completed": {
+      "en": "Today's training complete",
+      "es": "Entrenamiento de hoy completado"
+    },
+    "completed_detail": {
+      "en": "Your session is recorded. View your progress.",
+      "es": "Tu sesión está registrada. Consulta tu progreso."
+    },
+    "view_session": {
+      "en": "View session",
+      "es": "Ver sesión"
+    },
+    "plan_needed": {
+      "en": "Choose your training",
+      "es": "Elige tu entrenamiento"
+    },
+    "no_plan_detail": {
+      "en": "Review your schedule and choose a plan.",
+      "es": "Revisa tu horario y elige una rutina."
+    },
+    "plan_changes_detail": {
+      "en": "Your plan needs an adjustment. Review time and equipment.",
+      "es": "Tu rutina necesita un ajuste. Revisa el tiempo y el equipo."
+    },
+    "review_training": {
+      "en": "Review training",
+      "es": "Revisar entrenamiento"
+    },
+    "consistency_one": {
+      "en": "Consistency: {days} day",
+      "es": "Constancia: {days} día"
+    },
+    "consistency_other": {
+      "en": "Consistency: {days} days",
+      "es": "Constancia: {days} días"
+    },
+    "consistency_note": {
+      "en": "Recovery counts toward consistency.",
+      "es": "La recuperación cuenta para tu constancia."
+    },
+    "private_profile": {
+      "en": "Private profile",
+      "es": "Perfil privado"
+    },
+    "nav_system": {
+      "en": "System",
+      "es": "Sistema"
+    },
+    "nav_train": {
+      "en": "Train",
+      "es": "Entrenar"
+    },
+    "nav_tower": {
+      "en": "Tower",
+      "es": "Torre"
+    },
+    "nav_gear": {
+      "en": "Gear",
+      "es": "Equipo"
+    },
+    "nav_gym": {
+      "en": "Gym",
+      "es": "Gimnasio"
+    },
+    "gym_accessible_name": {
+      "en": "Interdimensional Gym, social room",
+      "es": "Gimnasio interdimensional, sala social"
+    },
+    "head": {
+      "en": "Head",
+      "es": "Cabeza"
+    },
+    "torso": {
+      "en": "Torso",
+      "es": "Torso"
+    },
+    "hands": {
+      "en": "Hands",
+      "es": "Manos"
+    },
+    "legs": {
+      "en": "Legs",
+      "es": "Piernas"
+    },
+    "feet": {
+      "en": "Feet",
+      "es": "Pies"
+    },
+    "back": {
+      "en": "Back",
+      "es": "Espalda"
+    },
+    "slot_accessible_name": {
+      "en": "{slot}: {item}. Open equipment.",
+      "es": "{slot}: {item}. Abrir equipo."
+    },
+    "empty_slot": {
+      "en": "Empty",
+      "es": "Vacío"
+    },
+    "settings": {
+      "en": "Settings",
+      "es": "Ajustes"
+    },
+    "language": {
+      "en": "Change language",
+      "es": "Cambiar idioma"
+    },
+    "character_details": {
+      "en": "View character",
+      "es": "Ver personaje"
+    },
+    "character_loading": {
+      "en": "Character loading",
+      "es": "Cargando personaje"
+    },
+    "character_unavailable": {
+      "en": "Character preview unavailable",
+      "es": "Vista del personaje no disponible"
+    },
+    "offline": {
+      "en": "Offline · saved data",
+      "es": "Sin conexión · datos guardados"
+    },
+    "last_updated": {
+      "en": "Last updated: {date} {time}",
+      "es": "Última actualización: {date} {time}"
+    },
+    "pending_changes": {
+      "en": "Changes pending",
+      "es": "Cambios pendientes"
+    },
+    "connection_needed": {
+      "en": "Connect to enter the social Gym.",
+      "es": "Conéctate para entrar al gimnasio social."
+    },
+    "loading": {
+      "en": "Loading your System…",
+      "es": "Cargando tu Sistema…"
+    },
+    "load_error": {
+      "en": "Could not load your System",
+      "es": "No se pudo cargar tu Sistema"
+    },
+    "retry": {
+      "en": "Retry",
+      "es": "Reintentar"
+    }
+  },
+  "navigation": [
+    {
+      "label_key": "nav_system",
+      "target": "WIN-001"
+    },
+    {
+      "label_key": "nav_train",
+      "target": "WIN-015"
+    },
+    {
+      "label_key": "nav_tower",
+      "target": "WIN-037"
+    },
+    {
+      "label_key": "nav_gear",
+      "target": "WIN-032"
+    },
+    {
+      "label_key": "nav_gym",
+      "target": "WIN-043",
+      "accessible_name_key": "gym_accessible_name"
+    }
+  ],
+  "gear_slots_visible": [
+    "head",
+    "torso",
+    "hands",
+    "legs",
+    "feet",
+    "back"
+  ],
+  "state_precedence": [
+    "rest_today",
+    "setup_required",
+    "review_required",
+    "session_saved",
+    "completed",
+    "recovery",
+    "training_planned",
+    "plan_needed"
+  ],
+  "primary_states": {
+    "rest_today": {
+      "title_key": "rest_today",
+      "body_key": "rest_detail",
+      "action_key": "view_recovery",
+      "target": "WIN-028"
+    },
+    "setup_required": {
+      "title_key": "setup_required",
+      "body_key": "setup_detail",
+      "action_key": "continue_setup",
+      "target": "first_missing_setup_window",
+      "allowed_targets": [
+        "WIN-009",
+        "WIN-010",
+        "WIN-011",
+        "WIN-012",
+        "WIN-013"
+      ]
+    },
+    "review_required": {
+      "title_key": "review_required",
+      "body_key": "guidance_detail",
+      "body_keys_by_reason": {
+        "supervision_needed": "supervision_detail",
+        "professional_guidance_needed": "guidance_detail"
+      },
+      "action_key": "review_readiness",
+      "target": "WIN-016",
+      "reason_conditions": {
+        "supervision_needed": "Only a current proposed or unfinished strength session for a teen lacking the required supervision; not scheduled recovery or an already completed session.",
+        "professional_guidance_needed": "Only a current proposed or unfinished physical session requiring individual guidance; not scheduled recovery or an already completed session."
+      }
+    },
+    "session_saved": {
+      "title_key": "session_saved",
+      "body_key": "session_saved_detail",
+      "action_key": "review_session",
+      "target": "WIN-016",
+      "context": "resume_existing_session"
+    },
+    "completed": {
+      "title_key": "completed",
+      "body_key": "completed_detail",
+      "action_key": "view_session",
+      "target": "WIN-030"
+    },
+    "recovery": {
+      "title_key": "recovery",
+      "body_key": "recovery_detail",
+      "action_key": "view_recovery",
+      "target": "WIN-028"
+    },
+    "training_planned": {
+      "title_key": "training_planned",
+      "body_key": "training_detail",
+      "action_key": "check_today",
+      "target": "WIN-016"
+    },
+    "plan_needed": {
+      "title_key": "plan_needed",
+      "body_key": "no_plan_detail",
+      "body_keys_by_reason": {
+        "needs_changes": "plan_changes_detail"
+      },
+      "action_key": "review_training",
+      "target": "WIN-015"
+    }
+  },
+  "display_fixture": {
+    "username": "KAI",
+    "class_id": "boxer",
+    "class_label_key": "class_boxer",
+    "appearance_presentation": "male",
+    "appearance_recipe_reference": "data/windows/WIN-001-system-home.json#/render_appearance_fixture",
+    "appearance_asset_status": "unrendered_proposal",
+    "fitness_progress": {
+      "level": 12,
+      "xp_into_level": 1240,
+      "xp_required_for_next_level": 2000,
+      "confirmation": "fictional_confirmed_for_render"
+    },
+    "combat_stats": {
+      "power": 24,
+      "guard": 18,
+      "focus": 21,
+      "status": "fictional_balance_values"
+    },
+    "coins": {
+      "confirmed_balance": 840,
+      "pending_not_included": 0
+    },
+    "consistency": {
+      "days": 7,
+      "includes_protected_recovery": true,
+      "status": "fictional_confirmed_for_render"
+    },
+    "plan_reference": {
+      "file": "data/training/examples/adult_home_beginner.json",
+      "session_date": "2026-09-28",
+      "template_id": "foundation_a"
+    },
+    "local_timezone": "America/Monterrey",
+    "plan_summary": {
+      "name": {
+        "en": "Foundation A",
+        "es": "Base A"
+      },
+      "estimated_seconds": 1410,
+      "display_minutes_rounded_up": 24,
+      "effective_difficulty": "medium",
+      "main_exercises": 4,
+      "main_sets": 8,
+      "coverage_gaps": [
+        "pull"
+      ],
+      "message_keys": [
+        "pull_gap"
+      ],
+      "content_status": "draft_requires_professional_review"
+    }
+  },
+  "review_scenarios": [
+    {
+      "id": "adult_training",
+      "age_band": "adult",
+      "primary_state": "training_planned",
+      "connection": "online",
+      "use_plan_summary": true,
+      "private_profile_label": false
+    },
+    {
+      "id": "teen_review",
+      "age_band": "teen",
+      "primary_state": "review_required",
+      "reason": "supervision_needed",
+      "source_file": "data/training/examples/teen_without_supervision.json",
+      "source_date": "2026-09-28",
+      "connection": "online",
+      "use_plan_summary": false,
+      "private_profile_label": true
+    },
+    {
+      "id": "scheduled_recovery",
+      "age_band": "adult",
+      "primary_state": "recovery",
+      "source_file": "data/training/examples/adult_home_beginner.json",
+      "source_date": "2026-09-29",
+      "connection": "online",
+      "use_plan_summary": false
+    },
+    {
+      "id": "illness_with_saved_session",
+      "age_band": "adult",
+      "primary_state": "rest_today",
+      "connection": "online",
+      "use_plan_summary": false,
+      "saved_session": {
+        "id": "fictional_session_001",
+        "completed_main_sets": 3,
+        "total_main_sets": 8
+      },
+      "secondary_action": {
+        "label_key": "view_saved_session",
+        "target": "WIN-030",
+        "context": "read_only_saved_record"
+      }
+    },
+    {
+      "id": "saved_session",
+      "age_band": "adult",
+      "primary_state": "session_saved",
+      "connection": "online",
+      "use_plan_summary": false,
+      "saved_session": {
+        "id": "fictional_session_001",
+        "completed_main_sets": 3,
+        "total_main_sets": 8,
+        "readiness_recheck_required": true
+      }
+    },
+    {
+      "id": "completed",
+      "age_band": "adult",
+      "primary_state": "completed",
+      "connection": "online",
+      "use_plan_summary": false,
+      "saved_session": {
+        "id": "fictional_session_001",
+        "completed_main_sets": 8,
+        "total_main_sets": 8
+      },
+      "rewards_already_in_confirmed_totals": true
+    },
+    {
+      "id": "new_player",
+      "age_band": "adult",
+      "primary_state": "setup_required",
+      "connection": "online",
+      "use_plan_summary": false,
+      "next_setup_window": "WIN-009",
+      "display_overrides": {
+        "fitness_level": 1,
+        "xp_into_level": 0,
+        "xp_required_for_next_level": null,
+        "coins": 0,
+        "consistency_days": 0,
+        "combat_stats": null,
+        "appearance_recipe_reference": null
+      }
+    },
+    {
+      "id": "plan_needs_changes",
+      "age_band": "adult",
+      "primary_state": "plan_needed",
+      "reason": "needs_changes",
+      "connection": "online",
+      "use_plan_summary": false
+    },
+    {
+      "id": "offline_recovery",
+      "age_band": "adult",
+      "primary_state": "recovery",
+      "connection": "offline",
+      "cache": "usable",
+      "banner_key": "offline",
+      "use_plan_summary": false,
+      "gym_entry": "connection_required",
+      "cache_last_confirmed_at": "2026-09-28T08:15:00-06:00",
+      "cache_timestamp_key": "last_updated"
+    },
+    {
+      "id": "pending_saved_session",
+      "age_band": "adult",
+      "primary_state": "session_saved",
+      "connection": "offline",
+      "cache": "usable",
+      "banner_key": "offline",
+      "secondary_banner_key": "pending_changes",
+      "use_plan_summary": false,
+      "saved_session": {
+        "id": "fictional_session_001",
+        "completed_main_sets": 3,
+        "total_main_sets": 8,
+        "readiness_recheck_required": true
+      },
+      "pending_rewards_in_confirmed_totals": false,
+      "gym_entry": "connection_required",
+      "cache_last_confirmed_at": "2026-09-28T08:15:00-06:00",
+      "cache_timestamp_key": "last_updated"
+    },
+    {
+      "id": "loading_without_cache",
+      "primary_state": null,
+      "connection": "loading",
+      "cache": "absent",
+      "message_key": "loading",
+      "data_actions_enabled": false
+    },
+    {
+      "id": "error_without_cache",
+      "primary_state": null,
+      "connection": "error",
+      "cache": "absent",
+      "message_key": "load_error",
+      "action_key": "retry",
+      "data_actions_enabled": false
+    }
+  ],
+  "invariants": [
+    "Home never records reps, starts a workout timer, assigns medical clearance or grants rewards.",
+    "Primary state is resolved before an independent connectivity overlay.",
+    "A teen review/recovery state never renders the generator's unfinalized difficulty or predicted boss reward fields.",
+    "Pending changes never increase confirmed XP or coin totals.",
+    "Appearance and economy fixture values are not derived from the example training profile.",
+    "Missing values remain unknown, not zero; new_player zero values represent an explicitly fictional new account.",
+    "No production asset or new window is approved by this G0 fixture."
+  ],
+  "render_appearance_fixture": {
+    "id": "WIN-001_kai_male_concept_v2",
+    "status": "illustrated_proposal_not_production_asset_recipe",
+    "presentation": "male",
+    "fit_family_proposal": "male_larger_defined_v0",
+    "base_asset_id": null,
+    "skin_description": "warm brown; exact production palette pending G3b",
+    "hair_description": "short dark hair as in original accepted concept; production hair asset pending G3b",
+    "base_outfit_description": "sleeveless charcoal high-neck training armor, dark trousers, hand wraps and black high boots with blue accents",
+    "equipped_items": {
+      "head": null,
+      "torso": null,
+      "hands": "gauntlets_basic_proposal_v0",
+      "legs": null,
+      "feet": null,
+      "back": null,
+      "aura": null
+    },
+    "slot_icon_semantics": "Unlit monochrome silhouettes are category glyphs, not owned inventory items. Only the glowing Hands slot denotes the equipped gauntlet concept. Base clothes and boots belong to the illustrated base outfit.",
+    "production_asset_versions": null,
+    "runtime_usable": false
+  },
+  "render_references": {
+    "en": "design/renders/WIN-001-system-home-en-proposal-v2.png",
+    "es": "design/renders/WIN-001-system-home-es-proposal-v2.png",
+    "manifest": "design/reference-manifests/WIN-001-system-home-v2.json",
+    "scenario": "adult_training",
+    "approval_status": "awaiting_user_approval"
+  }
+}

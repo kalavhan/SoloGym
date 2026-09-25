@@ -1,0 +1,94 @@
+{
+  "window": "WIN-001",
+  "date": "2026-09-25",
+  "unity": "6000.3.24f1",
+  "workflow": "Complete screen built first, followed by whole-screen captures and focused corrections. No per-button capture scenes.",
+  "capture_runtime": "Actual Linux Standalone Unity player under Xvfb/OpenGL; source canvas 853x1844. Not an Android device capture.",
+  "builds": [
+    {
+      "platform": "Linux x86_64",
+      "result": "succeeded",
+      "artifact": {
+        "file": "app/Builds/Linux/SoloGym.x86_64",
+        "bytes": 4472,
+        "sha256": "8027f7d1f9ae7dacfc826fb218adcc1ae7464af098a8a59397e7531c0f7ec0bc"
+      },
+      "note": "Executable requires adjacent build runtime files. Local artifact excluded from Git."
+    },
+    {
+      "platform": "Android ARM64 IL2CPP",
+      "result": "succeeded",
+      "artifact": {
+        "file": "app/Builds/Android/SoloGym-debug.apk",
+        "bytes": 21954144,
+        "sha256": "97ef036e6ea673b1c130bc76b836596e70453ffe1d5e0ce16158e9193ae1cfe1"
+      },
+      "signing": "local debug",
+      "minimum_api": 26,
+      "physical_device_tested": false
+    },
+    {
+      "platform": "iOS",
+      "result": "not_built",
+      "reason": "No iOS module or macOS/Xcode host in this environment."
+    }
+  ],
+  "runtime_sources": [
+    {
+      "file": "app/Assets/SoloGym/Editor/SoloGymBuild.cs",
+      "bytes": 9339,
+      "sha256": "838efcd45c2b27a24a69790ecddd0037b9ff491b09e4d3c7c26fbce3ff311efd"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/HomeScreen.cs",
+      "bytes": 31903,
+      "sha256": "09cb780c51fb3ba42b67e719569543b135b48356ee9c77f930db128eb1a31c04"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/HomeState.cs",
+      "bytes": 23647,
+      "sha256": "adbac112186e2888f6d0b9ad30191c01984d36648b592a373e8fb136cbeb064a"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/ReferenceTextLayout.cs",
+      "bytes": 1639,
+      "sha256": "29c16e7ba771671822575a5c06fdee1ca20cd8e150d4c7792e1aae732d5eb7cd"
+    }
+  ],
+  "captures": [
+    {
+      "file": "artifacts/visual/WIN-001/home-en-final.png",
+      "bytes": 2747184,
+      "sha256": "063c705185de3ab2e47f609dc765b963b005a8b3c0e7e6d38581ebd3e99d0d64"
+    },
+    {
+      "file": "artifacts/visual/WIN-001/home-es-final.png",
+      "bytes": 2754229,
+      "sha256": "3c417a0ba9e70e7075cee86c1f5a4adf24531cceff4ee49228f9f7e99357904d"
+    }
+  ],
+  "smoke": {
+    "passed": true,
+    "checks": [
+      "language control",
+      "saved-session readiness route",
+      "illness recovery",
+      "teen supervision",
+      "offline gym notice"
+    ]
+  },
+  "comparisons": {
+    "en": {
+      "MAE_RGB_0_255": 4.188743908403754,
+      "maxdiff": 255,
+      "percentage_pixels_maxchannel_diff_lte_8": 91.71845953925535
+    },
+    "es": {
+      "MAE_RGB_0_255": 7.462604867851884,
+      "maxdiff": 255,
+      "percentage_pixels_maxchannel_diff_lte_8": 77.96122146411923
+    }
+  },
+  "visual_result": "Composition and measured placement reviewed; native-font and cleaned-region differences remain. No strict pixel-identical certification.",
+  "scope": "Local Home window using fictional profile data and static illustration. Destination windows and modular avatar not implemented."
+}

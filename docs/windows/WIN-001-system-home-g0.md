@@ -1,26 +1,26 @@
 # WIN-001 — System / Home: flow and data approval
 
-**Stage: G0, awaiting approval of the brief and rendered proposal v2.** The user requested a rendering inside the proposal, retained as the 1:1 work reference. The two versioned images below now form part of this proposal. They do not approve the separately produced background, sprites or UI assets. The training data shape is accepted for design; exercise content review remains pending.
+**Stage: v2 visual target approved; native Home implemented for visual review.** The two versioned images below remain the immutable 1:1 work reference. The user's latest instruction authorized complete-window construction with pixel mapping before focused full-screen checks, superseding the earlier per-asset stops for WIN-001. See the [implementation and comparison evidence](WIN-001-implementation.md). Runtime visual acceptance is not recorded as a strict 1:1 pass. The training data shape is accepted for design; exercise content review remains pending.
 
 ## Rendered proposal — retained visual target
 
 **English · WIN-001 / adult training / online / v2**
 
-![SoloGym System Home English proposal v2](</home/josue/Documents/ChatGPT/leveling fitness app 2/design/renders/WIN-001-system-home-en-proposal-v2.png>)
+![SoloGym System Home English proposal v2](../../design/renders/WIN-001-system-home-en-proposal-v2.png)
 
 [Open original English PNG](../../design/renders/WIN-001-system-home-en-proposal-v2.png)
 
 **Español · WIN-001 / entrenamiento adulto / en línea / v2**
 
-![Propuesta de Sistema e Inicio de SoloGym en español v2](</home/josue/Documents/ChatGPT/leveling fitness app 2/design/renders/WIN-001-system-home-es-proposal-v2.png>)
+![Propuesta de Sistema e Inicio de SoloGym en español v2](../../design/renders/WIN-001-system-home-es-proposal-v2.png)
 
 [Abrir PNG original en español](../../design/renders/WIN-001-system-home-es-proposal-v2.png)
 
 Both renders show the same male Boxer, base outfit, gauntlets, temple, six slots and fictional data. The prior data-only female placeholder is replaced for this specific render fixture; male and female customization remain in scope. The unlit slot illustrations are category glyphs, not owned or equipped items; the base clothes/boots do not imply inventory ownership. Hands is the equipped gauntlet sample.
 
-These are complete static **proposal composites**, generated with the built-in imagegen tool from the accepted style reference. They are not an extracted asset pack or a working interface. The [render manifest](../../design/reference-manifests/WIN-001-system-home-v2.json) records exact file hashes, dimensions, prompts, fixture and approval status. The original v1 concept remains archived; v2 is the proposed window-specific target.
+These are complete static **proposal composites**, generated with the built-in imagegen tool from the accepted style reference. They are reference images; the separate [native implementation](../../app/README.md) contains live text and controls. The [render manifest](../../design/reference-manifests/WIN-001-system-home-v2.json) records exact file hashes, dimensions, prompts, fixture and approval status. The original v1 concept remains archived; v2 is the approved window-specific target.
 
-**1:1 means comparing implementation against the approved image, at its recorded canvas, locale and state.** Preserve layout, character placement, background composition, gear positions, frame geometry, palette, copy and data. Before implementation, rebuild the composite from the individually approved production assets and editable text, and compare it against this proposal. Any discrepancy requires correction or an explicitly approved new reference; G5 does not silently replace the proposal. Other screen sizes, larger text and different states receive their own approved variants. See the [visual matching contract](../design/visual-reference-contract.md).
+**1:1 means comparing implementation against the approved image, at its recorded canvas, locale and state.** Preserve layout, character placement, background composition, gear positions, frame geometry, palette, copy and data. For this window, the authorized workflow assembles the complete native screen with editable text first and then compares full-screen captures. Remaining differences are recorded for review; the runtime does not silently replace the proposal. Other screen sizes, larger text and different states need their own verification. See the [visual matching contract](../design/visual-reference-contract.md) and the current [implementation report](WIN-001-implementation.md).
 
 The raster proposal's decorative XP fill is illustrative. The runtime value must be exactly 1,240 / 2,000 = 62%; its exact geometry, font metrics and touch regions will be measured in the editable G5 composite rather than inferred as production-ready from generated pixels. The two language previews preserve the same composition but are separate generated images, not evidence of byte-identical underlying artwork. Production uses one shared asset set.
 
@@ -43,7 +43,7 @@ The raster proposal's decorative XP fill is illustrative. The runtime value must
 
 System is the personal home screen after sign-in and required eligibility/consent checks. It presents the equipped Boxer, earned progress and **one primary Today panel**. Training, Tower, Equipment and the Interdimensional Gym remain distinct destinations. It is not a feed, a leaderboard or an exercise entry form.
 
-Keep the accepted concept's indigo temple, cyan System frame, silver type and restrained violet light. Preserve the full-body character and flanking gear slots. The following content refinements are proposed for approval: remove decorative slogans and unsupported neck/ring/trinket slots; label fitness XP separately from combat stats; replace the concept's direct “Enter session” with a readiness/review action. There is no coin-purchase shortcut on Home.
+Keep the accepted concept's indigo temple, cyan System frame, silver type and restrained violet light. Preserve the full-body character and flanking gear slots. The approved v2 content refinements remove decorative slogans and unsupported neck/ring/trinket slots, label fitness XP separately from combat stats, and replace the concept's direct “Enter session” with a readiness/review action. There is no coin-purchase shortcut on Home.
 
 ## Visible layout and interaction zones
 
@@ -121,7 +121,9 @@ Username KAI, level 12, 1,240/2,000 fitness XP, 840 coins, seven consistency day
 
 The G0 copy dictionary supplies exact EN/ES strings for the window, state messages, navigation, slot labels and accessibility labels. Dynamic numbers use locale formatting. Singular/plural consistency uses separate strings. Do not bake translated words or example numbers into the background or sprites.
 
-## Assets and their later approval gates
+## Original asset plan — retained for future modular production
+
+The table records the earlier asset-by-asset plan. The latest user instruction supersedes those separate stops for the Home implementation. The current screen uses shared illustrated artwork; it does not complete the modular character, gear fitting or motion/export deliverables below.
 
 | Gate | Smallest proposed deliverable |
 | --- | --- |
@@ -135,8 +137,8 @@ The G0 copy dictionary supplies exact EN/ES strings for the window, state messag
 | G5 | Exact English and Spanish Home composites plus recovery, teen-review, saved-session, completed, setup, and connection/error states; reuse assets explicitly |
 | G6 | Implement Home and verify its accepted flows, states and phone captures; unresolved destination windows remain tracked dependencies |
 
-## G0 acceptance decision
+## Recorded decision and current review
 
-Approve the **rendered proposal v2 and matching brief**: content hierarchy, six visible equipment slots, one Today panel, routes/state precedence, data distinctions, bilingual wording, portrait layout constraints and background composition. This establishes the window's proposed visual target, not separate production asset approval, final economy or exercise prescription. The PNG versions and hashes identify exactly what is being reviewed.
+The user approved the **rendered proposal v2** as the implementation target and requested complete construction before a focused visual comparison: “make this 1:1 ... build completely and then test visually for match 1:1.” The exact PNG versions and hashes remain retained. This approval does not validate final economy or exercise prescriptions.
 
-After G0 approval, generate **only the G1 background** and stop for its separate approval. Do not generate the character, props, controls or final screen alongside it. This stop follows the user's requested step-by-step approval workflow.
+The native Home and its [EN/ES captures and comparison metrics](WIN-001-implementation.md#current-visual-evidence) are now available for review. Per-button rendering and the former G1-only stop were superseded for this window. The [approval ledger](../../design/approval-ledger.json) distinguishes approved target artwork from pending acceptance of the implemented result.
