@@ -37,7 +37,25 @@
       "evidence": "make this 1:1 ... build completely and then test visually for match 1:1 ... This sounds good. make sure to keep updating the github"
     }
   ],
-  "required_next_artifact": "Complete working WIN-001 Home window and full-screen visual comparison to v2; push completed work to kalavhan/SoloGym.",
+  "required_next_artifact": "Review the completed WIN-001 native Home and retained EN/ES full-screen comparisons; record any remaining visual corrections or acceptance before starting the next window.",
+  "implementation_review": {
+    "window_id": "WIN-001",
+    "state": "implemented_ready_for_visual_review",
+    "artifact": "docs/windows/WIN-001-implementation.md",
+    "runtime_project": "app",
+    "captures": [
+      "artifacts/visual/WIN-001/home-en-final.png",
+      "artifacts/visual/WIN-001/home-es-final.png"
+    ],
+    "comparison_metrics": [
+      "artifacts/visual/WIN-001/comparison-en.metrics.json",
+      "artifacts/visual/WIN-001/comparison-es.metrics.json"
+    ],
+    "focused_interaction_checks": "5 passed; artifacts/visual/WIN-001/home-en-final.smoke.json",
+    "builds": "Linux and Android builds succeeded; no actual mobile-device check or iOS binary",
+    "strict_pixel_match_accepted": false,
+    "limitations": "Native font rendering and reconstructed glass differ from the source raster; both runtime locales share EN artwork. Fictional local data and static avatar; destination windows and modular customization are not implemented."
+  },
   "foundation_design_approval": {
     "state": "accepted_for_design",
     "approved_by": "user",
@@ -49,7 +67,7 @@
   "proposal_render_policy": {
     "requested_by": "user",
     "evidence": "in the proposal include the rendering so we can keep it and use it for the work and make sure it matches 1:1",
-    "rule": "Each window proposal includes retained versioned renders. The exact approved version becomes its visual target; staged production asset approvals remain separate."
+    "rule": "Each window proposal includes retained versioned renders. The exact approved version becomes its visual target. WIN-001 follows the latest complete-window implementation instruction recorded below; other asset milestones retain their recorded workflow."
   },
   "implementation_workflow": {
     "scope": "WIN-001",

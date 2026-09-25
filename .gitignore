@@ -11,6 +11,8 @@ app/[Bb]uilds/
 app/MemoryCaptures/
 app/Recordings/
 app/.vs/
+app/.utmp/
+app/.cxx/
 app/*.csproj
 app/*.sln
 *.apk

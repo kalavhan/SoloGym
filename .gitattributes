@@ -1,0 +1,7 @@
+# Unity writes a space after empty YAML values; preserve its native serialization.
+*.meta text eol=lf whitespace=-blank-at-eol
+*.asset text eol=lf whitespace=-blank-at-eol
+*.unity text eol=lf whitespace=-blank-at-eol
+*.cs text eol=lf
+*.png binary
+*.ttf binary

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "milestone_plan_accepted_for_design; WIN-001_G0_with_EN_ES_renders_awaiting_approval; no_separate_production_assets_or_app_implementation",
+  "status": "milestone_plan_accepted_for_design; WIN-001_native_home_implemented_ready_for_visual_review; remaining_63_windows_not_started",
   "product": "SoloGym",
   "constraints": {
     "platforms": [
@@ -101,8 +101,9 @@
     }
   ],
   "approval_rules": [
+    "WIN-001 follows the latest user-authorized override: complete native screen assembly using approved v2 reference mapping, then focused full-screen visual and interaction checks. Earlier per-asset stops are superseded for this window only.",
     "The accepted overall style does not approve any individual background, sprite, prop, gear item, frame, or composed window.",
-    "Every window inherits G0 through G6 in that exact order. No later gate starts while the previous gate lacks user approval.",
+    "Except for an explicitly recorded user override, every window inherits G0 through G6 in that exact order. No later gate starts while the previous gate lacks user approval.",
     "Reuse requires an explicit recorded approval of the exact asset; regeneration is not the default. Record N/A with a reason when a stage has no applicable asset.",
     "An approval log must capture window ID, gate, asset IDs and versions, user decision, date, and any requested corrections.",
     "Do not batch-generate all backgrounds or all sprites across windows. Finish the current window milestone before starting another, unless the user explicitly changes the sequence.",
@@ -178,8 +179,8 @@
       "WIN-063",
       "WIN-064"
     ],
-    "note": "Order is a proposal for user review. The System window can demonstrate future destinations as an approved visual shell; it must not pretend unfinished destinations work. Foundation/reusable windows are developed when their first approved consumer requires them, with their own gates. No engine, architecture, schedule estimate or app implementation is selected here.",
-    "next_activity_after_M0": "Open WIN-001 System / Home G0 for its flow/data approval. Once G0 is approved, generate only its empty background (G1), present it, and wait for approval. No automatic asset generation occurs in the current planning/data turn."
+    "note": "The System window is implemented in Unity 6000.3.24f1 with fictional local data and unavailable notices for future destinations. Foundation/reusable windows retain their own milestones. The remaining sequence is a proposal for review.",
+    "next_activity_after_M0": "WIN-001 v2 is approved as the visual target and native Home is built. Review its retained full-screen comparisons before the next window; this implementation does not complete the modular avatar pipeline."
   },
   "windows": [
     {
@@ -220,12 +221,12 @@
         "Recovery appears as a valid next action",
         "Fitness progression is distinct from tower progress",
         "Height, weight, age, and fasting are absent from the public character view",
-        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Follow the recorded WIN-001 override: approved v2 reference, measured pixel mapping, complete native screen assembly, then focused whole-screen comparison and interaction checks. Preserve the original reference and record remaining differences.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "g0_awaiting_approval",
+      "stage": "implemented_ready_for_visual_review",
       "scope": "v1",
-      "current_artifact": "docs/windows/WIN-001-system-home-g0.md",
+      "current_artifact": "docs/windows/WIN-001-implementation.md",
       "render_manifest": "design/reference-manifests/WIN-001-system-home-v2.json"
     },
     {
