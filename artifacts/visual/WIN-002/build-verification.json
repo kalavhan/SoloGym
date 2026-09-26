@@ -1,0 +1,53 @@
+{
+  "version": "0.2.1",
+  "android_version_code": 3,
+  "date": "2026-09-25",
+  "android": {
+    "package": "com.kalavhan.sologym",
+    "path": "app/Builds/Android/SoloGym-debug.apk",
+    "bytes": 35637787,
+    "sha256": "f56b0451b23c12cedff4948ea0e24b34de9624750731b23da646376774643e23",
+    "architecture": "arm64-v8a",
+    "min_api": 26,
+    "target_api": 36,
+    "signature_v2_verified": true,
+    "same_signing_certificate_as_0_1_0": true,
+    "advertising_attribution_install_referrer_permissions": "absent",
+    "analytics_collection_deactivated": true,
+    "google_oauth_resource_matches_local_configuration": true,
+    "google_oauth_client_matches_package_and_signing_certificate": true
+  },
+  "linux": {
+    "path": "app/Builds/Linux/SoloGym.x86_64",
+    "build": "passed",
+    "version": "0.2.0"
+  },
+  "visual": {
+    "reference_size": [
+      853,
+      1844
+    ],
+    "views": [
+      "welcome-en-final.png",
+      "welcome-es-final.png",
+      "email-es-final.png"
+    ],
+    "review": "complete full-screen review; no text overflow; Google corners corrected",
+    "strict_pixel_identity": false,
+    "captured_app_version": "0.2.0",
+    "reused_for_version": "0.2.1",
+    "reuse_reason": "Authentication configuration and Android version only; no UI changes."
+  },
+  "focused_checks": {
+    "passed": 5,
+    "source": "welcome-en-final.smoke.json",
+    "scope": "Unconfigured auth service; completed before final visual-only correction; no real provider login"
+  },
+  "authentication": {
+    "email": "enabled and configured in local APK; physical-device sign-in unverified",
+    "google": "enabled in Firebase and configured in local APK with actual web OAuth client; physical-device sign-in unverified",
+    "google_public_support_contact_authorization": "User chose option 1 authorizing the selected public support address; saved in Firebase.",
+    "oauth_audience": "External users; existing production status observed without changing it."
+  },
+  "user_acceptance": "native WIN-002 build not yet reviewed on user device"
+}

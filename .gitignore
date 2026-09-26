@@ -21,3 +21,34 @@ app/*.sln
 *.jks
 *.log
 artifacts/local/
+
+# Reproducible official Firebase SDK: tools/install_firebase_unity.py (not vendored).
+app/Assets/Firebase/
+app/Assets/Firebase.meta
+app/Assets/ExternalDependencyManager/
+app/Assets/ExternalDependencyManager.meta
+app/Assets/GeneratedLocalRepo/
+app/Assets/GeneratedLocalRepo.meta
+app/Assets/Editor Default Resources/Firebase/
+app/Assets/Editor Default Resources/Firebase.meta
+app/Assets/Plugins/iOS/Firebase/
+app/Assets/Plugins/iOS/Firebase.meta
+app/Assets/Plugins/tvOS/Firebase/
+app/Assets/Plugins/tvOS/Firebase.meta
+app/Assets/Plugins/Android/FirebaseApp.androidlib/
+app/Assets/Plugins/Android/FirebaseApp.androidlib.meta
+app/Assets/Plugins/Android/*.aar
+app/Assets/Plugins/Android/*.aar.meta
+app/Assets/Plugins/Android/*.jar
+app/Assets/Plugins/Android/*.jar.meta
+app/Assets/google-services.json
+app/Assets/google-services.json.meta
+app/Assets/GoogleService-Info.plist
+app/Assets/GoogleService-Info.plist.meta
+app/Assets/Resources/google-services-desktop.json
+app/Assets/Resources/google-services-desktop.json.meta
+app/Assets/StreamingAssets/google-services-desktop.json
+app/Assets/StreamingAssets/google-services-desktop.json.meta
+app/ProjectSettings/AndroidResolverDependencies.xml
+app/Assets/SoloGym/Resources/Auth/FirebaseConfig.json
+app/Assets/SoloGym/Resources/Auth/FirebaseConfig.json.meta

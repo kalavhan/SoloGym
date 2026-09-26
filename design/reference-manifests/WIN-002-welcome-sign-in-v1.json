@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-002",
+  "reference_version": "proposal-v1",
+  "status": "approved_visual_target",
+  "generation_tool": "built-in image_gen.imagegen via imagegen skill",
+  "proposal_document": "docs/windows/WIN-002-welcome-sign-in-g0.md",
+  "fixture": {
+    "file": "data/windows/WIN-002-welcome-sign-in.json",
+    "sha256": "2f1648143e2f866c589bf730e3ebfb7fa9bb786d6418c688ebaee7a51d659561"
+  },
+  "style_reference": {
+    "file": "artifacts/visual/WIN-001/home-en-final.png",
+    "sha256": "063c705185de3ab2e47f609dc765b963b005a8b3c0e7e6d38581ebd3e99d0d64"
+  },
+  "layout_map": {
+    "file": "design/mapping/WIN-002-welcome-map-v1.json",
+    "sha256": "fdca47e92d34178c0d4aafca3f8ec75e3c7d5bca2252b1c7ff252eecde2389fe"
+  },
+  "renders": [
+    {
+      "file": "design/renders/WIN-002-welcome-sign-in-es-proposal-v1.png",
+      "sha256": "f8577b1567fd177ed28e8d14f5d722f7da91eae369baa25fbb376eb75cafd31d",
+      "locale": "es",
+      "width_px": 853,
+      "height_px": 1844,
+      "mode": "RGB",
+      "platform": "android",
+      "state": "signed_out_online",
+      "role": "approved_visual_target",
+      "visually_reviewed": true
+    },
+    {
+      "file": "design/renders/WIN-002-welcome-sign-in-en-proposal-v1.png",
+      "sha256": "d6fb587da7514d94064482b8bbeeb05d56012a29e66aa2cc16be60be14fb7b26",
+      "locale": "en",
+      "width_px": 853,
+      "height_px": 1844,
+      "mode": "RGB",
+      "platform": "android",
+      "state": "signed_out_online",
+      "role": "approved_visual_target",
+      "visually_reviewed": true
+    }
+  ],
+  "generation_steps": [
+    {
+      "id": "es_principal_state",
+      "mode": "new_window_using_home_style_reference",
+      "prompt": {
+        "file": "design/prompts/WIN-002-welcome-sign-in-es-v1.txt",
+        "sha256": "fd659f227fd884358e8998a225d4f3599721cf222e7fb5e6fef5240de10d5fe6"
+      },
+      "output": "design/renders/WIN-002-welcome-sign-in-es-proposal-v1.png"
+    },
+    {
+      "id": "en_localization",
+      "mode": "text_localization_edit",
+      "prompt": {
+        "file": "design/prompts/WIN-002-welcome-sign-in-en-v1.txt",
+        "sha256": "83ab17a985320f963a77de05dac299e2f3acc223af32d298f04e1b792c3c39c2"
+      },
+      "source": "design/renders/WIN-002-welcome-sign-in-es-proposal-v1.png",
+      "output": "design/renders/WIN-002-welcome-sign-in-en-proposal-v1.png"
+    }
+  ],
+  "implementation_status": "email_and_google_configured_android_0.2.1_build_verified_device_review_pending",
+  "approval_scope": "Android principal welcome composition, copy and access choices. Does not approve account backend, legal policies, provider art, iOS layout or email/keyboard state.",
+  "provider_assets": "AI-rendered provider mark is illustrative. Use official Google resources/native Apple button in implementation and review final geometry.",
+  "shared_art": "Use one environment/frame for all locales in implementation. Generated localized previews do not prove byte-identical art.",
+  "next": "Complete native window assembly using retained reference, followed by focused full-screen visual checks.",
+  "version_policy": "Do not overwrite an approved render; use a new version and hash for changes.",
+  "approved_by": "user",
+  "approval_evidence": "si, esta perfecta"
+}

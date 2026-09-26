@@ -11,10 +11,11 @@ using UnityEngine.SceneManagement;
 
 namespace SoloGym.Editor
 {
-    /// <summary>Reproducible WIN-001 scene and local development builds.</summary>
+    /// <summary>Reproducible entry/Home scenes and local development builds.</summary>
     public static class SoloGymBuild
     {
         public const string ScenePath = "Assets/SoloGym/Scenes/SystemHome.unity";
+        public const string WelcomeScenePath = "Assets/SoloGym/Scenes/Welcome.unity";
 
         [MenuItem("SoloGym/Create or Open System Home")]
         public static void CreateScene()
@@ -43,10 +44,49 @@ namespace SoloGym.Editor
             Debug.Log("SoloGym: System Home scene is ready at " + ScenePath);
         }
 
+        [MenuItem("SoloGym/Create or Open Welcome")]
+        public static void CreateWelcomeScene()
+        {
+            ConfigureCommon();
+            if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                throw new OperationCanceledException("Scene creation was cancelled.");
+
+            Directory.CreateDirectory(Path.Combine(Application.dataPath, "SoloGym/Scenes"));
+            AssetDatabase.Refresh();
+            Scene scene = File.Exists(Path.Combine(ProjectRoot, WelcomeScenePath))
+                ? EditorSceneManager.OpenScene(WelcomeScenePath, OpenSceneMode.Single)
+                : EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+
+            WelcomeScreen screen = UnityEngine.Object.FindFirstObjectByType<WelcomeScreen>();
+            if (screen == null)
+            {
+                var root = new GameObject("SoloGym Welcome");
+                root.AddComponent<WelcomeScreen>();
+            }
+            EditorSceneManager.MarkSceneDirty(scene);
+            if (!EditorSceneManager.SaveScene(scene, WelcomeScenePath))
+                throw new BuildFailedException("Could not save " + WelcomeScenePath);
+            AssetDatabase.SaveAssets();
+            Debug.Log("SoloGym: Welcome scene is ready at " + WelcomeScenePath);
+        }
+
+        [MenuItem("SoloGym/Configure Entry and Home Scenes")]
+        public static void ConfigureScenes()
+        {
+            CreateScene();
+            CreateWelcomeScene();
+            EditorBuildSettings.scenes = new[]
+            {
+                new EditorBuildSettingsScene(WelcomeScenePath, true),
+                new EditorBuildSettingsScene(ScenePath, true)
+            };
+            AssetDatabase.SaveAssets();
+        }
+
         [MenuItem("SoloGym/Build/Linux Development")]
         public static void BuildLinux()
         {
-            CreateScene();
+            ConfigureScenes();
             if (!BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinux64))
                 throw new BuildFailedException("This Unity editor has no Linux Standalone support module.");
             PlayerSettings.SetScriptingBackend(NamedBuildTarget.Standalone, ScriptingImplementation.Mono2x);
@@ -88,7 +128,7 @@ namespace SoloGym.Editor
             PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.kalavhan.sologym");
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
             PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevelAuto;
-            PlayerSettings.Android.bundleVersionCode = 1;
+            PlayerSettings.Android.bundleVersionCode = 3;
             PlayerSettings.Android.useCustomKeystore = false;
             EditorUserBuildSettings.buildAppBundle = false;
             EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
@@ -101,7 +141,7 @@ namespace SoloGym.Editor
         [MenuItem("SoloGym/Build/Android Development APK")]
         public static void BuildAndroid()
         {
-            CreateScene();
+            ConfigureScenes();
             ConfigureAndroid();
             Build(BuildTarget.Android, "Builds/Android/SoloGym-debug.apk");
         }
@@ -112,7 +152,7 @@ namespace SoloGym.Editor
         {
             PlayerSettings.companyName = "kalavhan";
             PlayerSettings.productName = "SoloGym";
-            PlayerSettings.bundleVersion = "0.1.0";
+            PlayerSettings.bundleVersion = "0.2.1";
             PlayerSettings.colorSpace = ColorSpace.Gamma;
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
             PlayerSettings.allowedAutorotateToPortrait = true;
@@ -131,11 +171,18 @@ namespace SoloGym.Editor
         {
             string output = Path.Combine(ProjectRoot, relativeOutput);
             Directory.CreateDirectory(Path.GetDirectoryName(output));
+            string[] authDefines = FirebaseIntegrationSetup.ScriptingDefinesForBuild;
+            var localBuildDefines = new string[authDefines.Length + 1];
+            Array.Copy(authDefines, localBuildDefines, authDefines.Length);
+            // These commands produce local review builds. The explicitly labelled
+            // sample Home remains accessible independently of authentication.
+            localBuildDefines[authDefines.Length] = "SOLOGYM_REVIEW";
             var options = new BuildPlayerOptions
             {
-                scenes = new[] { ScenePath },
+                scenes = new[] { WelcomeScenePath, ScenePath },
                 locationPathName = output,
                 target = target,
+                extraScriptingDefines = localBuildDefines,
                 options = BuildOptions.None
             };
             BuildReport report = BuildPipeline.BuildPlayer(options);
@@ -151,8 +198,10 @@ namespace SoloGym.Editor
     {
         void OnPreprocessTexture()
         {
-            if (!assetPath.StartsWith("Assets/SoloGym/Resources/Home/", StringComparison.Ordinal)
-                || !assetPath.EndsWith(".png", StringComparison.OrdinalIgnoreCase)) return;
+            bool referenceAsset = assetPath.StartsWith("Assets/SoloGym/Resources/Home/", StringComparison.Ordinal)
+                || assetPath.StartsWith("Assets/SoloGym/Resources/Welcome/", StringComparison.Ordinal)
+                || assetPath.StartsWith("Assets/SoloGym/Resources/Provider/", StringComparison.Ordinal);
+            if (!referenceAsset || !assetPath.EndsWith(".png", StringComparison.OrdinalIgnoreCase)) return;
             var texture = (TextureImporter)assetImporter;
             texture.textureType = TextureImporterType.Default;
             texture.sRGBTexture = true;

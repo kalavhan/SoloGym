@@ -1,0 +1,30 @@
+{
+  "window_id": "WIN-006",
+  "status": "proposal_awaiting_user_approval",
+  "generation_tool": "built-in image_gen",
+  "version": 1,
+  "references": [
+    {
+      "file": "design/renders/WIN-006-age-region-es-proposal-v1.png",
+      "locale": "es",
+      "sha256": "788ebd159c0e9369e50e078841b4c8b7e727ee94073b332f3999e21f86d3ef5b",
+      "dimensions": [
+        853,
+        1844
+      ],
+      "prompt": "design/prompts/WIN-006-age-region-es-v1.txt"
+    },
+    {
+      "file": "design/renders/WIN-006-age-region-en-proposal-v1.png",
+      "locale": "en",
+      "sha256": "5e62512c20323c42a35decfbb53007b525b5328e82d3c32de6de237820e4f9fa",
+      "dimensions": [
+        853,
+        1844
+      ],
+      "prompt": "design/prompts/WIN-006-age-region-en-v1.txt"
+    }
+  ],
+  "inspection": "Whole-screen visual inspection: shared portal, legible labels and no overlapping controls. EN age render retains country endonym México; runtime localized copy uses Mexico. Locale-specific line wrapping is retained in the references.",
+  "implementation": "Not started. Approval defines the visual target, not a claim of existing pixel-identical implementation."
+}

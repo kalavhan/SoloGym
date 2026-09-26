@@ -1,0 +1,753 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-002",
+  "reference_version": "proposal-v1",
+  "status": "measured_approved_reference_layout",
+  "default_locale": "es",
+  "canvas": {
+    "width": 853,
+    "height": 1844,
+    "origin": "top_left",
+    "unit": "source_pixel",
+    "bounds_convention": "inclusive start, exclusive end"
+  },
+  "sources": {
+    "es": {
+      "file": "design/renders/WIN-002-welcome-sign-in-es-proposal-v1.png",
+      "sha256": "f8577b1567fd177ed28e8d14f5d722f7da91eae369baa25fbb376eb75cafd31d"
+    },
+    "en": {
+      "file": "design/renders/WIN-002-welcome-sign-in-en-proposal-v1.png",
+      "sha256": "d6fb587da7514d94064482b8bbeeb05d56012a29e66aa2cc16be60be14fb7b26"
+    }
+  },
+  "measurement": {
+    "rect": "Manually inspected source-pixel rectangles contain both locale variants and a small cleanup margin. Only use clean-plate pixels within these rectangles, except the full provider button, which is reconstructed in white with the official mark.",
+    "glyph_bounds": "Native glyph target bounds measured from bright foreground within each text rectangle (dark foreground for provider text). This is not font extraction or exact segmentation.",
+    "shared_geometry": "Spanish source is the default; English changes live glyph geometry only. Never display both locales baked into their source images as the runtime UI.",
+    "verification": "Build the complete screen before capturing one full-screen image per locale; no per-button render instances."
+  },
+  "provider_button": {
+    "background": "#FFFFFF",
+    "border": "#747775",
+    "text_color": "#1F1F1F",
+    "font_resource": "Fonts/GoogleSans-Medium",
+    "logo_resource": "Welcome/GoogleG",
+    "logo_source_size": [
+      200,
+      204
+    ],
+    "guidelines": "https://developers.google.com/identity/branding-guidelines",
+    "note": "Official current gradient G replaces the AI-rendered legacy mark in the approved proposal. Keep the original provider control bounds, then lay out official branded content without distorting the logo."
+  },
+  "elements": [
+    {
+      "id": "language.label",
+      "kind": "text",
+      "rect": {
+        "x": 758,
+        "y": 49,
+        "width": 44,
+        "height": 30
+      },
+      "glyph_bounds": {
+        "x": 766,
+        "y": 55,
+        "width": 26,
+        "height": 18
+      },
+      "center": [
+        780.0,
+        64.0
+      ],
+      "corners": [
+        [
+          758,
+          49
+        ],
+        [
+          802,
+          49
+        ],
+        [
+          802,
+          79
+        ],
+        [
+          758,
+          79
+        ]
+      ],
+      "text": "ES",
+      "locale_overrides": {
+        "en": {
+          "text": "EN",
+          "rect": {
+            "x": 758,
+            "y": 49,
+            "width": 44,
+            "height": 30
+          },
+          "glyph_bounds": {
+            "x": 766,
+            "y": 56,
+            "width": 28,
+            "height": 17
+          }
+        }
+      }
+    },
+    {
+      "id": "entry.title",
+      "kind": "text",
+      "rect": {
+        "x": 190,
+        "y": 1056,
+        "width": 477,
+        "height": 77
+      },
+      "glyph_bounds": {
+        "x": 199,
+        "y": 1066,
+        "width": 459,
+        "height": 59
+      },
+      "center": [
+        428.5,
+        1094.5
+      ],
+      "corners": [
+        [
+          190,
+          1056
+        ],
+        [
+          667,
+          1056
+        ],
+        [
+          667,
+          1133
+        ],
+        [
+          190,
+          1133
+        ]
+      ],
+      "text": "BIENVENIDA",
+      "locale_overrides": {
+        "en": {
+          "text": "WELCOME",
+          "rect": {
+            "x": 190,
+            "y": 1056,
+            "width": 477,
+            "height": 77
+          },
+          "glyph_bounds": {
+            "x": 221,
+            "y": 1066,
+            "width": 408,
+            "height": 55
+          }
+        }
+      }
+    },
+    {
+      "id": "entry.subtitle",
+      "kind": "text",
+      "rect": {
+        "x": 263,
+        "y": 1171,
+        "width": 327,
+        "height": 43
+      },
+      "glyph_bounds": {
+        "x": 293,
+        "y": 1179,
+        "width": 275,
+        "height": 33
+      },
+      "center": [
+        426.5,
+        1192.5
+      ],
+      "corners": [
+        [
+          263,
+          1171
+        ],
+        [
+          590,
+          1171
+        ],
+        [
+          590,
+          1214
+        ],
+        [
+          263,
+          1214
+        ]
+      ],
+      "text": "Elige cómo entrar",
+      "locale_overrides": {
+        "en": {
+          "text": "Choose how to enter",
+          "rect": {
+            "x": 263,
+            "y": 1171,
+            "width": 327,
+            "height": 43
+          },
+          "glyph_bounds": {
+            "x": 270,
+            "y": 1179,
+            "width": 315,
+            "height": 25
+          }
+        }
+      }
+    },
+    {
+      "id": "email.label",
+      "kind": "text",
+      "rect": {
+        "x": 200,
+        "y": 1261,
+        "width": 459,
+        "height": 47
+      },
+      "glyph_bounds": {
+        "x": 210,
+        "y": 1270,
+        "width": 440,
+        "height": 28
+      },
+      "center": [
+        429.5,
+        1284.5
+      ],
+      "corners": [
+        [
+          200,
+          1261
+        ],
+        [
+          659,
+          1261
+        ],
+        [
+          659,
+          1308
+        ],
+        [
+          200,
+          1308
+        ]
+      ],
+      "text": "ENTRAR CON CORREO",
+      "locale_overrides": {
+        "en": {
+          "text": "SIGN IN WITH EMAIL",
+          "rect": {
+            "x": 200,
+            "y": 1261,
+            "width": 459,
+            "height": 47
+          },
+          "glyph_bounds": {
+            "x": 214,
+            "y": 1270,
+            "width": 426,
+            "height": 28
+          }
+        }
+      }
+    },
+    {
+      "id": "google.label",
+      "kind": "text",
+      "rect": {
+        "x": 303,
+        "y": 1382,
+        "width": 359,
+        "height": 46
+      },
+      "glyph_bounds": {
+        "x": 311,
+        "y": 1389,
+        "width": 344,
+        "height": 34
+      },
+      "center": [
+        482.5,
+        1405.0
+      ],
+      "corners": [
+        [
+          303,
+          1382
+        ],
+        [
+          662,
+          1382
+        ],
+        [
+          662,
+          1428
+        ],
+        [
+          303,
+          1428
+        ]
+      ],
+      "text": "Continuar con Google",
+      "locale_overrides": {
+        "en": {
+          "text": "Continue with Google",
+          "rect": {
+            "x": 303,
+            "y": 1382,
+            "width": 359,
+            "height": 46
+          },
+          "glyph_bounds": {
+            "x": 312,
+            "y": 1389,
+            "width": 345,
+            "height": 34
+          }
+        }
+      }
+    },
+    {
+      "id": "register.hint",
+      "kind": "text",
+      "rect": {
+        "x": 291,
+        "y": 1474,
+        "width": 272,
+        "height": 40
+      },
+      "glyph_bounds": {
+        "x": 301,
+        "y": 1482,
+        "width": 253,
+        "height": 27
+      },
+      "center": [
+        427.0,
+        1494.0
+      ],
+      "corners": [
+        [
+          291,
+          1474
+        ],
+        [
+          563,
+          1474
+        ],
+        [
+          563,
+          1514
+        ],
+        [
+          291,
+          1514
+        ]
+      ],
+      "text": "¿Primera vez aquí?",
+      "locale_overrides": {
+        "en": {
+          "text": "New here?",
+          "rect": {
+            "x": 291,
+            "y": 1474,
+            "width": 272,
+            "height": 40
+          },
+          "glyph_bounds": {
+            "x": 356,
+            "y": 1482,
+            "width": 142,
+            "height": 21
+          }
+        }
+      }
+    },
+    {
+      "id": "register.label",
+      "kind": "text",
+      "rect": {
+        "x": 276,
+        "y": 1545,
+        "width": 302,
+        "height": 43
+      },
+      "glyph_bounds": {
+        "x": 305,
+        "y": 1556,
+        "width": 247,
+        "height": 22
+      },
+      "center": [
+        427.0,
+        1566.5
+      ],
+      "corners": [
+        [
+          276,
+          1545
+        ],
+        [
+          578,
+          1545
+        ],
+        [
+          578,
+          1588
+        ],
+        [
+          276,
+          1588
+        ]
+      ],
+      "text": "CREAR CUENTA",
+      "locale_overrides": {
+        "en": {
+          "text": "CREATE ACCOUNT",
+          "rect": {
+            "x": 276,
+            "y": 1545,
+            "width": 302,
+            "height": 43
+          },
+          "glyph_bounds": {
+            "x": 284,
+            "y": 1557,
+            "width": 286,
+            "height": 21
+          }
+        }
+      }
+    },
+    {
+      "id": "privacy.label",
+      "kind": "text",
+      "rect": {
+        "x": 261,
+        "y": 1703,
+        "width": 137,
+        "height": 35
+      },
+      "glyph_bounds": {
+        "x": 272,
+        "y": 1709,
+        "width": 114,
+        "height": 17
+      },
+      "center": [
+        329.5,
+        1720.5
+      ],
+      "corners": [
+        [
+          261,
+          1703
+        ],
+        [
+          398,
+          1703
+        ],
+        [
+          398,
+          1738
+        ],
+        [
+          261,
+          1738
+        ]
+      ],
+      "text": "Privacidad",
+      "locale_overrides": {
+        "en": {
+          "text": "Privacy",
+          "rect": {
+            "x": 261,
+            "y": 1703,
+            "width": 137,
+            "height": 35
+          },
+          "glyph_bounds": {
+            "x": 299,
+            "y": 1709,
+            "width": 79,
+            "height": 23
+          }
+        }
+      }
+    },
+    {
+      "id": "terms.label",
+      "kind": "text",
+      "rect": {
+        "x": 458,
+        "y": 1703,
+        "width": 123,
+        "height": 35
+      },
+      "glyph_bounds": {
+        "x": 469,
+        "y": 1709,
+        "width": 101,
+        "height": 17
+      },
+      "center": [
+        519.5,
+        1720.5
+      ],
+      "corners": [
+        [
+          458,
+          1703
+        ],
+        [
+          581,
+          1703
+        ],
+        [
+          581,
+          1738
+        ],
+        [
+          458,
+          1738
+        ]
+      ],
+      "text": "Términos",
+      "locale_overrides": {
+        "en": {
+          "text": "Terms",
+          "rect": {
+            "x": 458,
+            "y": 1703,
+            "width": 123,
+            "height": 35
+          },
+          "glyph_bounds": {
+            "x": 480,
+            "y": 1710,
+            "width": 65,
+            "height": 16
+          }
+        }
+      }
+    },
+    {
+      "id": "language",
+      "kind": "control",
+      "rect": {
+        "x": 687,
+        "y": 36,
+        "width": 118,
+        "height": 62
+      },
+      "center": [
+        746.0,
+        67.0
+      ],
+      "corners": [
+        [
+          687,
+          36
+        ],
+        [
+          805,
+          36
+        ],
+        [
+          805,
+          98
+        ],
+        [
+          687,
+          98
+        ]
+      ]
+    },
+    {
+      "id": "email.button",
+      "kind": "control",
+      "rect": {
+        "x": 91,
+        "y": 1235,
+        "width": 671,
+        "height": 95
+      },
+      "center": [
+        426.5,
+        1282.5
+      ],
+      "corners": [
+        [
+          91,
+          1235
+        ],
+        [
+          762,
+          1235
+        ],
+        [
+          762,
+          1330
+        ],
+        [
+          91,
+          1330
+        ]
+      ]
+    },
+    {
+      "id": "google.button",
+      "kind": "official_provider_control",
+      "rect": {
+        "x": 101,
+        "y": 1354,
+        "width": 652,
+        "height": 100
+      },
+      "center": [
+        427.0,
+        1404.0
+      ],
+      "corners": [
+        [
+          101,
+          1354
+        ],
+        [
+          753,
+          1354
+        ],
+        [
+          753,
+          1454
+        ],
+        [
+          101,
+          1454
+        ]
+      ]
+    },
+    {
+      "id": "register.button",
+      "kind": "control",
+      "rect": {
+        "x": 174,
+        "y": 1528,
+        "width": 506,
+        "height": 76
+      },
+      "center": [
+        427.0,
+        1566.0
+      ],
+      "corners": [
+        [
+          174,
+          1528
+        ],
+        [
+          680,
+          1528
+        ],
+        [
+          680,
+          1604
+        ],
+        [
+          174,
+          1604
+        ]
+      ]
+    },
+    {
+      "id": "privacy.link",
+      "kind": "control",
+      "rect": {
+        "x": 263,
+        "y": 1695,
+        "width": 133,
+        "height": 50
+      },
+      "center": [
+        329.5,
+        1720.0
+      ],
+      "corners": [
+        [
+          263,
+          1695
+        ],
+        [
+          396,
+          1695
+        ],
+        [
+          396,
+          1745
+        ],
+        [
+          263,
+          1745
+        ]
+      ]
+    },
+    {
+      "id": "terms.link",
+      "kind": "control",
+      "rect": {
+        "x": 462,
+        "y": 1695,
+        "width": 116,
+        "height": 50
+      },
+      "center": [
+        520.0,
+        1720.0
+      ],
+      "corners": [
+        [
+          462,
+          1695
+        ],
+        [
+          578,
+          1695
+        ],
+        [
+          578,
+          1745
+        ],
+        [
+          462,
+          1745
+        ]
+      ]
+    },
+    {
+      "id": "google.logo",
+      "kind": "official_brand_asset",
+      "rect": {
+        "x": 195,
+        "y": 1374,
+        "width": 58.823529,
+        "height": 60
+      },
+      "resource": "Welcome/GoogleG",
+      "note": "Preserves official 200:204 asset aspect ratio; draw on white; no tint or recolor."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "status": "proposal",
+  "window_id": "WIN-007",
+  "initial_state": {
+    "privacyAcknowledged": false,
+    "termsAccepted": false,
+    "optionalPermissions": {}
+  },
+  "documents": {
+    "privacy": "Versioned localized policy; final approved document required",
+    "terms": "Versioned localized terms; final approved document required"
+  },
+  "continue_requires": [
+    "eligible country/age policy",
+    "required documents available",
+    "privacyAcknowledged",
+    "termsAccepted",
+    "guardian requirement resolved if applicable"
+  ],
+  "actions": {
+    "back": "WIN-006, retain draft",
+    "not_now": "Exit onboarding to WIN-002, discard unsaved consent draft, do not record acceptance or delete Firebase account",
+    "read_document": "Shared scrollable document reader; return preserves current choices",
+    "continue_to": "WIN-008 if required; otherwise next profile milestone WIN-009 or account creation WIN-004 for pre-auth entry; unfinished destination gets explicit checkpoint"
+  },
+  "states": [
+    "unchecked",
+    "documents_unavailable",
+    "document_reader",
+    "ready",
+    "saving",
+    "save_failed",
+    "saved",
+    "guardian_required"
+  ],
+  "storage": {
+    "current": "Not implemented",
+    "proposed_private_collection": "users/{uid}/consentReceipts",
+    "receipt": [
+      "document IDs and versions",
+      "locale",
+      "specific decisions",
+      "server timestamp",
+      "policy version"
+    ],
+    "authority": "Authenticated server validates versions and required decisions; client cannot forge a completed onboarding status",
+    "retry": "Idempotent receipt; no duplicate acceptances; failure keeps screen and allows retry"
+  },
+  "separation": [
+    "Privacy acknowledgement is not blanket consent to health-data processing",
+    "Terms acceptance is not optional analytics or marketing consent",
+    "Google sign-in is not health-data consent",
+    "No ranking or social visibility is enabled here",
+    "Any needed health-data consent is separate and precedes collection"
+  ],
+  "release_gate": "Final truthful policies, operator/contact and retention/deletion process must be supplied and reviewed before public release. No invented legal text or placeholder URLs presented as real documents."
+}

@@ -140,5 +140,11 @@
     "Modular avatar customization, equipment fitting and animation/export proof.",
     "Production account/data connections and destination-window implementation."
   ],
-  "version_policy": "Never overwrite reviewed or approved render files. Any replacement gets a new version, hash and approval record. G5 cannot silently replace an approved G0 visual target."
+  "version_policy": "Never overwrite reviewed or approved render files. Any replacement gets a new version, hash and approval record. G5 cannot silently replace an approved G0 visual target.",
+  "native_appearance_acceptance": {
+    "status": "accepted_by_user",
+    "date": "2026-09-25",
+    "evidence": "logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos",
+    "scope": "Installed Android Home appearance; source hashes and quantitative differences remain unchanged. Not a byte-identical or all-devices certification."
+  }
 }

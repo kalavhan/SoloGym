@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SoloGym
@@ -315,11 +316,13 @@ namespace SoloGym
 
         void ShowSettings()
         {
-            OpenModal(L("Settings", "Ajustes"), reviewMode ? 420 : 320);
+            OpenModal(L("Settings", "Ajustes"), reviewMode ? 510 : 410);
             DialogButton(modal, new Rect(38, 110, 584, 66), L("Language", "Idioma"), ShowLanguage);
             if (reviewMode)
                 DialogButton(modal, new Rect(38, 195, 584, 66), L("Preview scenarios", "Escenarios de vista previa"), ShowScenarios);
-            var note = TextAt("Local build notice", modal, new Rect(38, reviewMode ? 286 : 205, 575, 74), 21, body);
+            DialogButton(modal, new Rect(38, reviewMode ? 280 : 195, 584, 66),
+                L("Back to Welcome", "Volver a Bienvenida"), () => SceneManager.LoadScene("Welcome"));
+            var note = TextAt("Local build notice", modal, new Rect(38, reviewMode ? 371 : 290, 575, 74), 21, body);
             note.horizontalOverflow = HorizontalWrapMode.Wrap;
             note.text = L("SoloGym · Home window\nLocal build with fictional profile data.",
                 "SoloGym · Ventana de inicio\nVersión local con datos de perfil ficticios.");
