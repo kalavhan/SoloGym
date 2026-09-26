@@ -1,6 +1,6 @@
 {
   "window_id": "WIN-007",
-  "status": "proposal_awaiting_user_approval",
+  "status": "approved_visual_target",
   "generation_tool": "built-in image_gen",
   "version": 1,
   "references": [
@@ -26,5 +26,11 @@
     }
   ],
   "inspection": "Whole-screen visual inspection: shared portal, legible labels and no overlapping controls. EN age render retains country endonym México; runtime localized copy uses Mexico. Locale-specific line wrapping is retained in the references.",
-  "implementation": "Not started. Approval defines the visual target, not a claim of existing pixel-identical implementation."
+  "implementation": "Native UI implemented; final focused visual/interaction verification in progress. See docs/windows/WIN-006-007-implementation.md. Source PNG hashes remain unchanged.",
+  "approval": {
+    "approved_by": "user",
+    "date": "2026-09-25",
+    "evidence": "aprobado, no hay necesidad de generar el apk aun. implementa y terminanndo prepare la siguiente ventana",
+    "scope": "Retained bilingual full-window v1 targets approved for complete native implementation; no APK requested. Source approval does not certify identical runtime pixels."
+  }
 }

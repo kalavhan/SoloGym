@@ -1,0 +1,699 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "display_catalog_only_not_launch_allowlist",
+  "countries": [
+    {
+      "code": "US",
+      "en": "United States",
+      "es": "Estados Unidos"
+    },
+    {
+      "code": "CA",
+      "en": "Canada",
+      "es": "Canadá"
+    },
+    {
+      "code": "MX",
+      "en": "Mexico",
+      "es": "México"
+    },
+    {
+      "code": "AR",
+      "en": "Argentina",
+      "es": "Argentina"
+    },
+    {
+      "code": "BO",
+      "en": "Bolivia",
+      "es": "Bolivia"
+    },
+    {
+      "code": "BR",
+      "en": "Brazil",
+      "es": "Brasil"
+    },
+    {
+      "code": "CL",
+      "en": "Chile",
+      "es": "Chile"
+    },
+    {
+      "code": "CO",
+      "en": "Colombia",
+      "es": "Colombia"
+    },
+    {
+      "code": "CR",
+      "en": "Costa Rica",
+      "es": "Costa Rica"
+    },
+    {
+      "code": "CU",
+      "en": "Cuba",
+      "es": "Cuba"
+    },
+    {
+      "code": "DO",
+      "en": "Dominican Republic",
+      "es": "República Dominicana"
+    },
+    {
+      "code": "EC",
+      "en": "Ecuador",
+      "es": "Ecuador"
+    },
+    {
+      "code": "SV",
+      "en": "El Salvador",
+      "es": "El Salvador"
+    },
+    {
+      "code": "GT",
+      "en": "Guatemala",
+      "es": "Guatemala"
+    },
+    {
+      "code": "HT",
+      "en": "Haiti",
+      "es": "Haití"
+    },
+    {
+      "code": "HN",
+      "en": "Honduras",
+      "es": "Honduras"
+    },
+    {
+      "code": "NI",
+      "en": "Nicaragua",
+      "es": "Nicaragua"
+    },
+    {
+      "code": "PA",
+      "en": "Panama",
+      "es": "Panamá"
+    },
+    {
+      "code": "PY",
+      "en": "Paraguay",
+      "es": "Paraguay"
+    },
+    {
+      "code": "PE",
+      "en": "Peru",
+      "es": "Perú"
+    },
+    {
+      "code": "UY",
+      "en": "Uruguay",
+      "es": "Uruguay"
+    },
+    {
+      "code": "VE",
+      "en": "Venezuela",
+      "es": "Venezuela"
+    },
+    {
+      "code": "BZ",
+      "en": "Belize",
+      "es": "Belice"
+    }
+  ],
+  "subdivisions": [
+    {
+      "code": "US-AL",
+      "countryCode": "US",
+      "en": "Alabama",
+      "es": "Alabama"
+    },
+    {
+      "code": "US-AK",
+      "countryCode": "US",
+      "en": "Alaska",
+      "es": "Alaska"
+    },
+    {
+      "code": "US-AZ",
+      "countryCode": "US",
+      "en": "Arizona",
+      "es": "Arizona"
+    },
+    {
+      "code": "US-AR",
+      "countryCode": "US",
+      "en": "Arkansas",
+      "es": "Arkansas"
+    },
+    {
+      "code": "US-CA",
+      "countryCode": "US",
+      "en": "California",
+      "es": "California"
+    },
+    {
+      "code": "US-CO",
+      "countryCode": "US",
+      "en": "Colorado",
+      "es": "Colorado"
+    },
+    {
+      "code": "US-CT",
+      "countryCode": "US",
+      "en": "Connecticut",
+      "es": "Connecticut"
+    },
+    {
+      "code": "US-DE",
+      "countryCode": "US",
+      "en": "Delaware",
+      "es": "Delaware"
+    },
+    {
+      "code": "US-DC",
+      "countryCode": "US",
+      "en": "District of Columbia",
+      "es": "District of Columbia"
+    },
+    {
+      "code": "US-FL",
+      "countryCode": "US",
+      "en": "Florida",
+      "es": "Florida"
+    },
+    {
+      "code": "US-GA",
+      "countryCode": "US",
+      "en": "Georgia",
+      "es": "Georgia"
+    },
+    {
+      "code": "US-HI",
+      "countryCode": "US",
+      "en": "Hawaii",
+      "es": "Hawaii"
+    },
+    {
+      "code": "US-ID",
+      "countryCode": "US",
+      "en": "Idaho",
+      "es": "Idaho"
+    },
+    {
+      "code": "US-IL",
+      "countryCode": "US",
+      "en": "Illinois",
+      "es": "Illinois"
+    },
+    {
+      "code": "US-IN",
+      "countryCode": "US",
+      "en": "Indiana",
+      "es": "Indiana"
+    },
+    {
+      "code": "US-IA",
+      "countryCode": "US",
+      "en": "Iowa",
+      "es": "Iowa"
+    },
+    {
+      "code": "US-KS",
+      "countryCode": "US",
+      "en": "Kansas",
+      "es": "Kansas"
+    },
+    {
+      "code": "US-KY",
+      "countryCode": "US",
+      "en": "Kentucky",
+      "es": "Kentucky"
+    },
+    {
+      "code": "US-LA",
+      "countryCode": "US",
+      "en": "Louisiana",
+      "es": "Louisiana"
+    },
+    {
+      "code": "US-ME",
+      "countryCode": "US",
+      "en": "Maine",
+      "es": "Maine"
+    },
+    {
+      "code": "US-MD",
+      "countryCode": "US",
+      "en": "Maryland",
+      "es": "Maryland"
+    },
+    {
+      "code": "US-MA",
+      "countryCode": "US",
+      "en": "Massachusetts",
+      "es": "Massachusetts"
+    },
+    {
+      "code": "US-MI",
+      "countryCode": "US",
+      "en": "Michigan",
+      "es": "Michigan"
+    },
+    {
+      "code": "US-MN",
+      "countryCode": "US",
+      "en": "Minnesota",
+      "es": "Minnesota"
+    },
+    {
+      "code": "US-MS",
+      "countryCode": "US",
+      "en": "Mississippi",
+      "es": "Mississippi"
+    },
+    {
+      "code": "US-MO",
+      "countryCode": "US",
+      "en": "Missouri",
+      "es": "Missouri"
+    },
+    {
+      "code": "US-MT",
+      "countryCode": "US",
+      "en": "Montana",
+      "es": "Montana"
+    },
+    {
+      "code": "US-NE",
+      "countryCode": "US",
+      "en": "Nebraska",
+      "es": "Nebraska"
+    },
+    {
+      "code": "US-NV",
+      "countryCode": "US",
+      "en": "Nevada",
+      "es": "Nevada"
+    },
+    {
+      "code": "US-NH",
+      "countryCode": "US",
+      "en": "New Hampshire",
+      "es": "New Hampshire"
+    },
+    {
+      "code": "US-NJ",
+      "countryCode": "US",
+      "en": "New Jersey",
+      "es": "New Jersey"
+    },
+    {
+      "code": "US-NM",
+      "countryCode": "US",
+      "en": "New Mexico",
+      "es": "New Mexico"
+    },
+    {
+      "code": "US-NY",
+      "countryCode": "US",
+      "en": "New York",
+      "es": "New York"
+    },
+    {
+      "code": "US-NC",
+      "countryCode": "US",
+      "en": "North Carolina",
+      "es": "North Carolina"
+    },
+    {
+      "code": "US-ND",
+      "countryCode": "US",
+      "en": "North Dakota",
+      "es": "North Dakota"
+    },
+    {
+      "code": "US-OH",
+      "countryCode": "US",
+      "en": "Ohio",
+      "es": "Ohio"
+    },
+    {
+      "code": "US-OK",
+      "countryCode": "US",
+      "en": "Oklahoma",
+      "es": "Oklahoma"
+    },
+    {
+      "code": "US-OR",
+      "countryCode": "US",
+      "en": "Oregon",
+      "es": "Oregon"
+    },
+    {
+      "code": "US-PA",
+      "countryCode": "US",
+      "en": "Pennsylvania",
+      "es": "Pennsylvania"
+    },
+    {
+      "code": "US-RI",
+      "countryCode": "US",
+      "en": "Rhode Island",
+      "es": "Rhode Island"
+    },
+    {
+      "code": "US-SC",
+      "countryCode": "US",
+      "en": "South Carolina",
+      "es": "South Carolina"
+    },
+    {
+      "code": "US-SD",
+      "countryCode": "US",
+      "en": "South Dakota",
+      "es": "South Dakota"
+    },
+    {
+      "code": "US-TN",
+      "countryCode": "US",
+      "en": "Tennessee",
+      "es": "Tennessee"
+    },
+    {
+      "code": "US-TX",
+      "countryCode": "US",
+      "en": "Texas",
+      "es": "Texas"
+    },
+    {
+      "code": "US-UT",
+      "countryCode": "US",
+      "en": "Utah",
+      "es": "Utah"
+    },
+    {
+      "code": "US-VT",
+      "countryCode": "US",
+      "en": "Vermont",
+      "es": "Vermont"
+    },
+    {
+      "code": "US-VA",
+      "countryCode": "US",
+      "en": "Virginia",
+      "es": "Virginia"
+    },
+    {
+      "code": "US-WA",
+      "countryCode": "US",
+      "en": "Washington",
+      "es": "Washington"
+    },
+    {
+      "code": "US-WV",
+      "countryCode": "US",
+      "en": "West Virginia",
+      "es": "West Virginia"
+    },
+    {
+      "code": "US-WI",
+      "countryCode": "US",
+      "en": "Wisconsin",
+      "es": "Wisconsin"
+    },
+    {
+      "code": "US-WY",
+      "countryCode": "US",
+      "en": "Wyoming",
+      "es": "Wyoming"
+    },
+    {
+      "code": "CA-AB",
+      "countryCode": "CA",
+      "en": "Alberta",
+      "es": "Alberta"
+    },
+    {
+      "code": "CA-BC",
+      "countryCode": "CA",
+      "en": "British Columbia",
+      "es": "British Columbia"
+    },
+    {
+      "code": "CA-MB",
+      "countryCode": "CA",
+      "en": "Manitoba",
+      "es": "Manitoba"
+    },
+    {
+      "code": "CA-NB",
+      "countryCode": "CA",
+      "en": "New Brunswick",
+      "es": "New Brunswick"
+    },
+    {
+      "code": "CA-NL",
+      "countryCode": "CA",
+      "en": "Newfoundland and Labrador",
+      "es": "Newfoundland and Labrador"
+    },
+    {
+      "code": "CA-NS",
+      "countryCode": "CA",
+      "en": "Nova Scotia",
+      "es": "Nova Scotia"
+    },
+    {
+      "code": "CA-NT",
+      "countryCode": "CA",
+      "en": "Northwest Territories",
+      "es": "Northwest Territories"
+    },
+    {
+      "code": "CA-NU",
+      "countryCode": "CA",
+      "en": "Nunavut",
+      "es": "Nunavut"
+    },
+    {
+      "code": "CA-ON",
+      "countryCode": "CA",
+      "en": "Ontario",
+      "es": "Ontario"
+    },
+    {
+      "code": "CA-PE",
+      "countryCode": "CA",
+      "en": "Prince Edward Island",
+      "es": "Prince Edward Island"
+    },
+    {
+      "code": "CA-QC",
+      "countryCode": "CA",
+      "en": "Quebec",
+      "es": "Quebec"
+    },
+    {
+      "code": "CA-SK",
+      "countryCode": "CA",
+      "en": "Saskatchewan",
+      "es": "Saskatchewan"
+    },
+    {
+      "code": "CA-YT",
+      "countryCode": "CA",
+      "en": "Yukon",
+      "es": "Yukon"
+    },
+    {
+      "code": "MX-AGU",
+      "countryCode": "MX",
+      "en": "Aguascalientes",
+      "es": "Aguascalientes"
+    },
+    {
+      "code": "MX-BCN",
+      "countryCode": "MX",
+      "en": "Baja California",
+      "es": "Baja California"
+    },
+    {
+      "code": "MX-BCS",
+      "countryCode": "MX",
+      "en": "Baja California Sur",
+      "es": "Baja California Sur"
+    },
+    {
+      "code": "MX-CAM",
+      "countryCode": "MX",
+      "en": "Campeche",
+      "es": "Campeche"
+    },
+    {
+      "code": "MX-CHP",
+      "countryCode": "MX",
+      "en": "Chiapas",
+      "es": "Chiapas"
+    },
+    {
+      "code": "MX-CHH",
+      "countryCode": "MX",
+      "en": "Chihuahua",
+      "es": "Chihuahua"
+    },
+    {
+      "code": "MX-CMX",
+      "countryCode": "MX",
+      "en": "Ciudad de México",
+      "es": "Ciudad de México"
+    },
+    {
+      "code": "MX-COA",
+      "countryCode": "MX",
+      "en": "Coahuila",
+      "es": "Coahuila"
+    },
+    {
+      "code": "MX-COL",
+      "countryCode": "MX",
+      "en": "Colima",
+      "es": "Colima"
+    },
+    {
+      "code": "MX-DUR",
+      "countryCode": "MX",
+      "en": "Durango",
+      "es": "Durango"
+    },
+    {
+      "code": "MX-GUA",
+      "countryCode": "MX",
+      "en": "Guanajuato",
+      "es": "Guanajuato"
+    },
+    {
+      "code": "MX-GRO",
+      "countryCode": "MX",
+      "en": "Guerrero",
+      "es": "Guerrero"
+    },
+    {
+      "code": "MX-HID",
+      "countryCode": "MX",
+      "en": "Hidalgo",
+      "es": "Hidalgo"
+    },
+    {
+      "code": "MX-JAL",
+      "countryCode": "MX",
+      "en": "Jalisco",
+      "es": "Jalisco"
+    },
+    {
+      "code": "MX-MEX",
+      "countryCode": "MX",
+      "en": "Estado de México",
+      "es": "Estado de México"
+    },
+    {
+      "code": "MX-MIC",
+      "countryCode": "MX",
+      "en": "Michoacán",
+      "es": "Michoacán"
+    },
+    {
+      "code": "MX-MOR",
+      "countryCode": "MX",
+      "en": "Morelos",
+      "es": "Morelos"
+    },
+    {
+      "code": "MX-NAY",
+      "countryCode": "MX",
+      "en": "Nayarit",
+      "es": "Nayarit"
+    },
+    {
+      "code": "MX-NLE",
+      "countryCode": "MX",
+      "en": "Nuevo León",
+      "es": "Nuevo León"
+    },
+    {
+      "code": "MX-OAX",
+      "countryCode": "MX",
+      "en": "Oaxaca",
+      "es": "Oaxaca"
+    },
+    {
+      "code": "MX-PUE",
+      "countryCode": "MX",
+      "en": "Puebla",
+      "es": "Puebla"
+    },
+    {
+      "code": "MX-QUE",
+      "countryCode": "MX",
+      "en": "Querétaro",
+      "es": "Querétaro"
+    },
+    {
+      "code": "MX-ROO",
+      "countryCode": "MX",
+      "en": "Quintana Roo",
+      "es": "Quintana Roo"
+    },
+    {
+      "code": "MX-SLP",
+      "countryCode": "MX",
+      "en": "San Luis Potosí",
+      "es": "San Luis Potosí"
+    },
+    {
+      "code": "MX-SIN",
+      "countryCode": "MX",
+      "en": "Sinaloa",
+      "es": "Sinaloa"
+    },
+    {
+      "code": "MX-SON",
+      "countryCode": "MX",
+      "en": "Sonora",
+      "es": "Sonora"
+    },
+    {
+      "code": "MX-TAB",
+      "countryCode": "MX",
+      "en": "Tabasco",
+      "es": "Tabasco"
+    },
+    {
+      "code": "MX-TAM",
+      "countryCode": "MX",
+      "en": "Tamaulipas",
+      "es": "Tamaulipas"
+    },
+    {
+      "code": "MX-TLA",
+      "countryCode": "MX",
+      "en": "Tlaxcala",
+      "es": "Tlaxcala"
+    },
+    {
+      "code": "MX-VER",
+      "countryCode": "MX",
+      "en": "Veracruz",
+      "es": "Veracruz"
+    },
+    {
+      "code": "MX-YUC",
+      "countryCode": "MX",
+      "en": "Yucatán",
+      "es": "Yucatán"
+    },
+    {
+      "code": "MX-ZAC",
+      "countryCode": "MX",
+      "en": "Zacatecas",
+      "es": "Zacatecas"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-009",
+  "status": "proposal_awaiting_approval",
+  "steps": [
+    "private_data_notice_and_applicable_separate_consent",
+    "optional_measurements",
+    "readiness"
+  ],
+  "fixture": {
+    "fictional": true,
+    "adult": true,
+    "unitSystem": "metric",
+    "heightCm": 170,
+    "bodyweightKg": 70
+  },
+  "initial_state": {
+    "unitSystem": "metric",
+    "heightCm": null,
+    "bodyweightKg": null,
+    "readiness": null
+  },
+  "fields": {
+    "unitSystem": [
+      "metric",
+      "imperial"
+    ],
+    "heightCm": "Optional number normalized from cm or ft/in; missing is not zero",
+    "bodyweightKg": "Optional number normalized from kg or lb; missing is not zero",
+    "readiness": [
+      "ready",
+      "low_energy",
+      "ill",
+      "pain",
+      "injury"
+    ]
+  },
+  "constraints": [
+    "No automatic BMI, somatotype or appearance classification",
+    "No public/ranking projection of measurements",
+    "Omitting both measurements still permits later plan generation with required training inputs",
+    "Separate applicable health-data decision before collection; WIN-007 terms are not a substitute",
+    "Uncertain readiness has a pause route, not a forced ready answer"
+  ],
+  "persistence": "Future private server-authorized profile; no collection or backend implemented by this proposal",
+  "navigation": {
+    "depends_on": "WIN-007; WIN-008 where required; authenticated identity",
+    "next": "WIN-010"
+  }
+}

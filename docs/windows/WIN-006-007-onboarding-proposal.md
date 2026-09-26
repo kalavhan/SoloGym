@@ -1,12 +1,14 @@
 # WIN-006 + WIN-007 — Origen, privacidad y consentimiento
 
-Estado: **propuesta visual v1 pendiente de aprobación**. Fecha: 2026-09-25.
+Estado: **propuesta visual v1 aprobada para implementación**. Fecha: 2026-09-25.
+
+Aprobación expresa: “aprobado, no hay necesidad de generar el apk aun. implementa y terminanndo prepare la siguiente ventana”. Se implementan ambas ventanas completas y se verifican sin generar un APK. Al terminar se prepara la siguiente propuesta; esta aprobación no autoriza implementar automáticamente una ventana nueva. Seguimiento: [informe de implementación](WIN-006-007-implementation.md).
 
 El usuario aceptó la versión entregada de acceso: “perfect, is working great, next window”. Después amplió esta iteración: “haz privacidad y consentimiento tambien en esta iteracion”. La aceptación reportada no identifica proveedor ni dispositivo y no sustituye pruebas independientes de ambos proveedores.
 
 ## Referencias conservadas
 
-Generadas con la herramienta integrada `image_gen`, usando la Bienvenida aprobada como referencia. Cada archivo es inmutable y tiene dimensiones y SHA-256 en su manifiesto. Los prompts exactos están en `design/prompts/`. Estas imágenes son objetivos propuestos, no capturas de una implementación existente.
+Generadas con la herramienta integrada `image_gen`, usando la Bienvenida aprobada como referencia. Cada archivo es inmutable y tiene dimensiones y SHA-256 en su manifiesto. Los prompts exactos están en `design/prompts/`. Estas imágenes son los objetivos visuales aprobados, no capturas de la implementación.
 
 ### WIN-006 — Tu origen
 
@@ -39,7 +41,7 @@ Las decisiones sociales/ranking se toman después y no publican edad, peso ni in
 
 La pantalla propone el diseño, **no un texto legal final**. Antes de habilitar aceptación real deben existir documentos completos EN/ES, versiones aprobadas, identificación y contacto del responsable, y reglas reales de conservación/eliminación y países. Si faltan documentos, el lector muestra el estado no disponible y Continuar permanece bloqueado; ningún enlace ficticio o documento de muestra se registra como aceptado. Ajustes permitirá revisar decisiones cuando ese hito se implemente; el pie del render representa ese comportamiento objetivo.
 
-## Plan de construcción tras aprobación visual
+## Plan de construcción aprobado
 
 | Hito | Construcción completa | Verificación enfocada |
 | --- | --- | --- |
@@ -54,4 +56,4 @@ Los mapas iniciales de esquinas y centros están en `design/mapping/WIN-006-prop
 
 Se inspeccionaron las cuatro imágenes completas, se conservaron prompts y hashes y se validó el JSON de esta entrega. No cambió código Unity, configuración Firebase ni APK; no se repitieron builds o pruebas de componentes ajenos a la propuesta.
 
-**Decisión pendiente:** aceptar o ajustar las dos ventanas en EN/ES. La aprobación visual autorizará su implementación con el flujo anterior.
+**Decisión registrada:** las dos ventanas EN/ES están aprobadas para su implementación. El APK queda expresamente fuera de esta iteración. La verificación nativa y sus diferencias se registran en el informe de implementación; no se sustituyen estos renders por capturas.

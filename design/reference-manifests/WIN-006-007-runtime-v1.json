@@ -1,0 +1,65 @@
+{
+  "status": "implemented_native_ui_pending_user_acceptance",
+  "reference_canvas": [
+    853,
+    1844
+  ],
+  "art": [
+    {
+      "file": "app/Assets/SoloGym/Resources/Onboarding/AgeClean.png",
+      "sha256": "91ed3484839893ba00cb22b6a8c142a3d35adb2e67ae17dd2379547bccc57348",
+      "dimensions": [
+        853,
+        1843
+      ]
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Onboarding/ConsentClean.png",
+      "sha256": "a4dee6054be35cbf776da4343c18b9e8bfe7ae6e51b7b26f266fd3e50974f440",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Onboarding/ConsentSourceEn.png",
+      "sha256": "e6c08c14c382536e781a6e570242160b5c3e2cdabb873b2a5f71d216610dfa8e",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Onboarding/AgeSource.png",
+      "sha256": "788ebd159c0e9369e50e078841b4c8b7e727ee94073b332f3999e21f86d3ef5b",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Onboarding/ConsentSource.png",
+      "sha256": "a1eaecdfdac0c88bcd39e70ddd1b3f8190f79c8ff9b429aef5044e65823c18af",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Onboarding/AgeSourceEn.png",
+      "sha256": "5e62512c20323c42a35decfbb53007b525b5328e82d3c32de6de237820e4f9fa",
+      "dimensions": [
+        853,
+        1844
+      ]
+    }
+  ],
+  "tool": "built-in image_gen for two full-window clean plates; source reference art retained outside text rectangles",
+  "prompts": [
+    "design/prompts/WIN-006-clean-plate-v1.txt",
+    "design/prompts/WIN-007-clean-plate-v1.txt"
+  ],
+  "pixel_geometry_source": "app/Assets/SoloGym/Scripts/OnboardingScreen.cs",
+  "text": "Live Unity text/input; reference glyph rectangles. The source images are not used as screenshot-only test output.",
+  "comparison": "Whole-screen source/capture without resizing. No exact-pixel certification."
+}

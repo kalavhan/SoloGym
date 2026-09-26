@@ -12,7 +12,7 @@
     ],
     "scope": "Overall visual direction. Production assets and individual windows require separate approval."
   },
-  "current_milestone": "WIN-006_and_WIN-007_onboarding_proposals",
+  "current_milestone": "WIN-006_and_WIN-007_native_review_and_WIN-009_proposal",
   "window_approvals": [
     {
       "window_id": "WIN-001",
@@ -81,19 +81,34 @@
     {
       "window_id": "WIN-006",
       "gate": "G0",
-      "state": "awaiting_user_approval",
+      "state": "approved_for_implementation",
       "artifact": "docs/windows/WIN-006-007-onboarding-proposal.md",
-      "render_manifest": "design/reference-manifests/WIN-006-age-region-v1.json"
+      "render_manifest": "design/reference-manifests/WIN-006-age-region-v1.json",
+      "approved_by": "user",
+      "date": "2026-09-25",
+      "evidence": "aprobado, no hay necesidad de generar el apk aun. implementa y terminanndo prepare la siguiente ventana",
+      "review_scope": "Retained bilingual full-window v1 targets and paired onboarding flow approved. Build both complete windows, then focused desktop visual/interaction checks. No APK generation in this iteration. After implementation, prepare the next window proposal; its implementation still needs target approval."
     },
     {
       "window_id": "WIN-007",
       "gate": "G0",
-      "state": "awaiting_user_approval",
+      "state": "approved_for_implementation",
       "artifact": "docs/windows/WIN-006-007-onboarding-proposal.md",
-      "render_manifest": "design/reference-manifests/WIN-007-privacy-consent-v1.json"
+      "render_manifest": "design/reference-manifests/WIN-007-privacy-consent-v1.json",
+      "approved_by": "user",
+      "date": "2026-09-25",
+      "evidence": "aprobado, no hay necesidad de generar el apk aun. implementa y terminanndo prepare la siguiente ventana",
+      "review_scope": "Retained bilingual full-window v1 targets and paired onboarding flow approved. Build both complete windows, then focused desktop visual/interaction checks. No APK generation in this iteration. After implementation, prepare the next window proposal; its implementation still needs target approval."
+    },
+    {
+      "window_id": "WIN-009",
+      "gate": "G0",
+      "state": "awaiting_user_approval",
+      "artifact": "docs/windows/WIN-009-private-fitness-profile-g0.md",
+      "render_manifest": "design/reference-manifests/WIN-009-private-fitness-profile-v1.json"
     }
   ],
-  "required_next_artifact": "User approval of retained bilingual WIN-006 and WIN-007 visual proposals before complete-window implementation.",
+  "required_next_artifact": "Review native WIN-006/007 evidence and the next WIN-009 bilingual proposal; no APK in this iteration.",
   "welcome_implementation_review": {
     "window_id": "WIN-002",
     "state": "accepted_by_user_report",
@@ -161,10 +176,12 @@
     "rule": "Each window proposal includes retained versioned renders. The exact approved version becomes its visual target. Continue one window at a time using target-render development: assemble the complete approved window, then focused whole-screen visual and interaction checks; do not render or test an instance for each button."
   },
   "implementation_workflow": {
-    "scope": "WIN-006 and WIN-007 together, explicitly requested: haz privacidad y consentimiento tambien en esta iteracion",
+    "scope": "WIN-006 and WIN-007 approved together; explicit approval and sequencing recorded in their G0 entries.",
     "approach": "target-render development (TDR interpretation), one pixel map, shared assets, complete assembly before focused full-screen QA",
     "github_updates": "authorized by user",
-    "old_per_asset_stop_points": "The latest TDR instruction supersedes per-button rendering and individual UI asset approval loops for the complete-window workflow. A new window still requires its own visual-target approval before implementation; modular character/gear production remains separately scoped."
+    "old_per_asset_stop_points": "The latest TDR instruction supersedes per-button rendering and individual UI asset approval loops for the complete-window workflow. A new window still requires its own visual-target approval before implementation; modular character/gear production remains separately scoped.",
+    "android_artifact": "Do not build or replace APK in this iteration, as requested by the user.",
+    "next_window": "After implementing and checking this pair, prepare the next applicable window proposal. Do not implement that next window until its retained visual target is approved."
   },
   "authentication_choice": {
     "provider": "Firebase Authentication",
@@ -186,5 +203,13 @@
     },
     "device_sign_in_verification": "user_reported_working_provider_unspecified",
     "note": "Personal project only. No personal email address or administrative credential is committed. Local configuration is not proof of successful device authentication."
+  },
+  "onboarding_implementation_review": {
+    "state": "native_ui_verified_production_services_pending",
+    "artifact": "docs/windows/WIN-006-007-implementation.md",
+    "verification": "artifacts/visual/WIN-006/build-verification.json",
+    "user_native_acceptance": "pending",
+    "strict_pixel_match_accepted": false,
+    "no_apk_requested": true
   }
 }
