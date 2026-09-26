@@ -14,12 +14,12 @@ namespace SoloGym
     public sealed class WelcomeScreen : MonoBehaviour
     {
         const float Width = 853, Height = 1844;
-        static readonly Color Silver = new Color32(227, 233, 246, 255);
-        static readonly Color Cyan = new Color32(101, 222, 252, 255);
+        static Color Silver => SystemUI.Theme.text;
+        static Color Cyan => SystemUI.Theme.accent;
         readonly Dictionary<string, Element> map = new Dictionary<string, Element>();
         readonly Dictionary<string, Text> labels = new Dictionary<string, Text>();
         readonly Dictionary<string, Button> buttons = new Dictionary<string, Button>();
-        Texture2D source, clean, googleLogo;
+        Texture2D googleLogo;
         Font serif, bold, body, googleFont;
         RectTransform root, welcomeGroup, emailGroup, modal;
         WelcomeController controller;
@@ -30,6 +30,7 @@ namespace SoloGym
         Rect lastSafe;
         Vector2 lastSize;
         bool reviewMode, allowPreview, lastKeyboard, lastOnline = true, switching;
+        OnboardingScreen onboarding;
         float lastKeyboardHeight, nextRefresh;
         string requestedCapture;
 
@@ -56,6 +57,10 @@ namespace SoloGym
                 SceneManager.LoadScene("SystemHome");
                 return;
             }
+            if(Argument("-sologym-window")=="avatar")
+            {gameObject.AddComponent<AvatarProofScreen>().Initialize();enabled=false;return;}
+            if(Argument("-sologym-window")=="components")
+            {gameObject.AddComponent<SystemGallery>().Initialize();enabled=false;return;}
             Application.targetFrameRate = 60;
             Screen.orientation = ScreenOrientation.Portrait;
             requestedCapture = Argument("-sologym-capture");
@@ -65,12 +70,10 @@ namespace SoloGym
             // even after real Firebase is configured. This never authorizes an account.
             reviewMode = true;
 #endif
-            source = Resources.Load<Texture2D>("Welcome/SourceArt");
-            clean = Resources.Load<Texture2D>("Welcome/CleanPlate");
             googleLogo = Resources.Load<Texture2D>("Welcome/GoogleG");
-            serif = Resources.Load<Font>("Fonts/LiberationSerif-Regular");
-            bold = Resources.Load<Font>("Fonts/LiberationSerif-Bold");
-            body = Resources.Load<Font>("Fonts/NotoSans-Regular");
+            serif = SystemUI.Theme.heading;
+            bold = SystemUI.Theme.headingBold;
+            body = SystemUI.Theme.body;
             googleFont = Resources.Load<Font>("Fonts/GoogleSans-Medium");
             var data = JsonUtility.FromJson<PixelMap>(Resources.Load<TextAsset>("Welcome/PixelMap").text);
             foreach (var element in data.elements) map[element.id] = element;
@@ -94,7 +97,10 @@ namespace SoloGym
             if (Argument("-sologym-view") == "email") controller.OpenEmail();
             Render(controller.Model);
             FitSafeArea();
-            if (requestedCapture != null) StartCoroutine(Capture());
+            string initialWindow = Argument("-sologym-window");
+            if ((initialWindow == "age" || initialWindow == "consent" || initialWindow == "profile") && reviewMode)
+                OpenOnboarding(true, null, requestedCapture);
+            else if (requestedCapture != null) StartCoroutine(Capture());
         }
 
         void CreateCanvas()
@@ -118,20 +124,12 @@ namespace SoloGym
 
         void CreateArtAndText()
         {
-            Art("Wordmark and spires", root, new Rect(0, 0, Width, 300), source);
-            Art("Portal and staircase", root, new Rect(0, 300, Width, 719), source);
-            Art("Entry panel and button chrome", root, new Rect(0, 1019, Width, 636), source);
-            Art("Reflections and footer", root, new Rect(0, 1655, Width, 189), source);
+            SystemUI.PortalPage(root,1019,632);
+            SystemUI.Divider(root,1147,163,525);
+            SystemUI.Icon(root,new Rect(421,1705,10,25),"sigil",Silver);
             welcomeGroup = NewRect("Welcome controls", root, new Rect(0, 0, Width, Height));
-            foreach (var item in map.Values)
-            {
-                if (item.kind != "text") continue;
-                bool shared = item.id == "language.label" || item.id == "privacy.label" || item.id == "terms.label";
-                Transform parent = shared ? root : welcomeGroup;
-                // These bounded clean-plate regions remove baked labels only. The approved
-                // composition remains intact everywhere outside live text and the provider.
-                if (item.id != "google.label") Art("Clean text / " + item.id, parent, Expanded(item.rect.Rect, 1), clean);
-            }
+            SystemUI.Panel(welcomeGroup,Bounds("email.button"),PanelStyle.Primary);
+            SystemUI.Panel(welcomeGroup,Bounds("register.button"),PanelStyle.Outline);
             // One native rounded surface replaces every AI provider interior pixel.
             // Its smooth contour preserves the approved silhouette without corner seams.
             var provider = NewRect("Official Google rounded surface", welcomeGroup, Bounds("google.button"))
@@ -188,8 +186,7 @@ namespace SoloGym
             showPasswordLabel = showPasswordButton.GetComponentInChildren<Text>();
             showPasswordLabel.fontSize = 22;
             submitButton = NativeButton(emailGroup, new Rect(104, 1480, 645, 92), "", () => StartEmail());
-            submitButton.targetGraphic.color = new Color32(4, 94, 137, 255);
-            submitButton.gameObject.AddComponent<Outline>().effectColor = Cyan;
+            ((SystemPanel)submitButton.targetGraphic).style=PanelStyle.Primary;
             submitLabel = submitButton.GetComponentInChildren<Text>();
             submitLabel.font = bold; submitLabel.fontSize = 38;
             forgotButton = NativeButton(emailGroup, new Rect(157, 1580, 538, 52), "", () => controller.ForgotPassword());
@@ -204,10 +201,7 @@ namespace SoloGym
         InputField InputAt(string name, Rect rect, bool password)
         {
             var node = NewRect(name + " input", emailGroup, rect);
-            var background = node.gameObject.AddComponent<Image>();
-            background.color = new Color32(8, 31, 51, 255);
-            var outline = node.gameObject.AddComponent<Outline>();
-            outline.effectColor = new Color32(55, 121, 159, 255); outline.effectDistance = new Vector2(1, -1);
+            var background=node.gameObject.AddComponent<SystemPanel>();background.theme=SystemUI.Theme;background.style=PanelStyle.Input;
             var input = node.gameObject.AddComponent<InputField>();
             var value = TextAt(name + " value", node, new Rect(19, 1, rect.width - (password ? 181 : 38), rect.height - 2), 30, body);
             value.supportRichText = false;
@@ -226,7 +220,7 @@ namespace SoloGym
         void Render(WelcomeViewModel model)
         {
             bool english = model.Language == "en";
-            foreach (var pair in labels) Place(pair.Value.rectTransform, TextBounds(pair.Key, english));
+            foreach (var pair in labels) Place(pair.Value.rectTransform, Bounds(pair.Key));
             Set("language.label", english ? "EN" : "ES");
             Set("entry.title", model.Copy("title"));
             Set("entry.subtitle", model.Copy("subtitle"));
@@ -287,6 +281,9 @@ namespace SoloGym
 
         void Navigate(WelcomeNavigation navigation)
         {
+            if (navigation.WindowId == "WIN-006") { OpenOnboarding(false); return; }
+            if (navigation.WindowId == "WIN-007" && (navigation.Context == "privacy" || navigation.Context == "terms"))
+            { OpenOnboarding(false, navigation.Context); return; }
             string heading = navigation.Context == "privacy" ? controller.Model.Copy("privacy") :
                 navigation.Context == "terms" ? controller.Model.Copy("terms") :
                 navigation.WindowId == "WIN-005" ? controller.Model.Copy("forgot") : controller.Model.Copy("create");
@@ -300,7 +297,7 @@ namespace SoloGym
 
         void ShowLanguage()
         {
-            OpenModal(controller.Model.Copy("language"), allowPreview || reviewMode ? 620 : 430);
+            OpenModal(controller.Model.Copy("language"), allowPreview || reviewMode ? 725 : 430);
             NativeButton(modal, new Rect(34, 108, 592, 82), "English", () => { controller.SetLanguage("en"); CloseModal(); });
             NativeButton(modal, new Rect(34, 207, 592, 82), "Español", () => { controller.SetLanguage("es"); CloseModal(); });
             NativeButton(modal, new Rect(34, 306, 592, 82), L("Use device language", "Usar idioma del dispositivo"),
@@ -312,7 +309,25 @@ namespace SoloGym
                 note.text = L("Sample Home uses fictional profile data. It does not sign you in.",
                     "El Inicio de muestra usa datos ficticios. No inicia una sesión de cuenta.");
                 NativeButton(modal, new Rect(34, 505, 592, 82), L("View sample Home", "Ver Inicio de muestra"), OpenSampleHome);
+                NativeButton(modal, new Rect(34, 608, 592, 82), L("Preview profile setup", "Vista previa de configuración"), () => OpenOnboarding(true));
             }
+        }
+
+        void OpenOnboarding(bool review, string document = null, string capturePath = null)
+        {
+            if (onboarding != null || (review && !reviewMode && !allowPreview)) return;
+            CloseModal();
+            controller.CancelAuthentication();
+            ClearPasswordInput();
+            root.gameObject.SetActive(false);
+            onboarding = new GameObject("SoloGym onboarding").AddComponent<OnboardingScreen>();
+            onboarding.Initialize(controller.Model.LanguagePreference, review, () =>
+            {
+                onboarding = null;
+                root.gameObject.SetActive(true);
+                controller.SetLanguage(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"));
+                Render(controller.Model);
+            }, document, capturePath);
         }
 
         void OpenSampleHome()
@@ -340,8 +355,7 @@ namespace SoloGym
             var shade = NewRect("Dialog shade", root, new Rect(0, 0, Width, Height));
             shade.gameObject.AddComponent<Image>().color = new Color(0, .01f, .04f, .85f);
             modal = NewRect("System dialog", shade, new Rect(96.5f, (Height - height) / 2, 660, height));
-            modal.gameObject.AddComponent<Image>().color = new Color32(5, 18, 34, 255);
-            var line = modal.gameObject.AddComponent<Outline>(); line.effectColor = Cyan; line.effectDistance = new Vector2(1, -1);
+            var frame=modal.gameObject.AddComponent<SystemPanel>();frame.theme=SystemUI.Theme;frame.ornaments=true;
             var heading = TextAt("Dialog heading", modal, new Rect(34, 22, 500, 70), 34, bold);
             heading.text = title;
             NativeButton(modal, new Rect(559, 8, 92, 92), "×", CloseModal);
@@ -359,37 +373,17 @@ namespace SoloGym
         Text Label(string key, Transform parent, int size, Font font, Color? color = null)
         {
             var label = TextAt(key, parent, Bounds(key), size, font, color);
-            label.gameObject.AddComponent<ReferenceTextLayout>();
+            var fit=label.gameObject.AddComponent<SystemTextFit>();fit.maximum=size;label.alignment=TextAnchor.MiddleCenter;
+            if(key=="entry.title")label.gameObject.AddComponent<OnboardingSilverText>();
             labels[key] = label;
             return label;
         }
 
-        Text TextAt(string name, Transform parent, Rect rect, int size, Font font, Color? color = null)
-        {
-            var label = NewRect(name, parent, rect).gameObject.AddComponent<Text>();
-            label.font = font; label.fontSize = size; label.color = color ?? Silver;
-            label.alignment = TextAnchor.MiddleLeft; label.raycastTarget = false;
-            label.horizontalOverflow = HorizontalWrapMode.Overflow;
-            label.verticalOverflow = VerticalWrapMode.Overflow;
-            label.supportRichText = false;
-            return label;
-        }
+        Text TextAt(string name,Transform parent,Rect rect,int size,Font font,Color? color=null)
+        {var text=SystemUI.Text(parent,rect,"",size,font,color);text.name=name;return text;}
 
         Button NativeButton(Transform parent, Rect rect, string caption, Action action)
-        {
-            var node = NewRect(caption.Length == 0 ? "Action" : caption, parent, rect);
-            var image = node.gameObject.AddComponent<Image>(); image.color = new Color32(11, 43, 64, 255);
-            var button = node.gameObject.AddComponent<Button>(); button.targetGraphic = image;
-            var colors = button.colors;
-            colors.highlightedColor = new Color(.8f, .95f, 1);
-            colors.pressedColor = new Color(.3f, .8f, 1);
-            colors.disabledColor = new Color(.5f, .55f, .6f, .8f);
-            button.colors = colors;
-            button.onClick.AddListener(() => action());
-            var label = TextAt("Caption", node, new Rect(10, 0, rect.width - 20, rect.height), 27, body);
-            label.alignment = TextAnchor.MiddleCenter; label.text = caption;
-            return button;
-        }
+        {return SystemUI.Button(parent,rect,caption,action);}
 
         void Hit(string key, Transform parent, Rect rect, Action action)
         {
@@ -401,13 +395,7 @@ namespace SoloGym
             buttons[key] = button;
         }
 
-        RawImage Art(string name, Transform parent, Rect rect, Texture2D texture)
-        {
-            var image = NewRect(name, parent, rect).gameObject.AddComponent<RawImage>();
-            image.texture = texture; image.raycastTarget = false;
-            image.uvRect = new Rect(rect.x / Width, 1 - (rect.y + rect.height) / Height, rect.width / Width, rect.height / Height);
-            return image;
-        }
+
 
         void Fill(string name, Transform parent, Rect rect, Color color)
         {
@@ -415,12 +403,8 @@ namespace SoloGym
             image.color = color; image.raycastTarget = false;
         }
 
-        static RectTransform NewRect(string name, Transform parent, Rect rect)
-        {
-            var node = new GameObject(name, typeof(RectTransform));
-            var transform = node.GetComponent<RectTransform>(); transform.SetParent(parent, false);
-            Place(transform, rect); return transform;
-        }
+        static RectTransform NewRect(string name,Transform parent,Rect rect)
+        {return SystemUI.Node(name,parent,rect);}
 
         static void Place(RectTransform transform, Rect rect)
         {
@@ -453,7 +437,7 @@ namespace SoloGym
 
         void Update()
         {
-            if (controller == null) return;
+            if (controller == null || onboarding != null) return;
             bool keyboard = TouchScreenKeyboard.visible && controller.Model.View == WelcomeView.EmailSignIn;
             float keyboardHeight = keyboard ? TouchScreenKeyboard.area.height : 0;
             if (lastSize.x != Screen.width || lastSize.y != Screen.height || lastSafe != Screen.safeArea ||
@@ -491,8 +475,7 @@ namespace SoloGym
                 float submitBottom = Screen.height - topInset - 1572 * scale;
                 upward = Mathf.Max(0, occlusion + 18 * scale - submitBottom);
             }
-            root.localScale = new Vector3(scale, scale, 1);
-            root.anchoredPosition = new Vector2(safe.x + (safe.width - Width * scale) / 2, -topInset + upward);
+            SystemViewport.Fit(root,Width,Height,upward);
             lastSize = new Vector2(Screen.width, Screen.height); lastSafe = safe;
             lastKeyboard = keyboard; lastKeyboardHeight = keyboardHeight;
         }

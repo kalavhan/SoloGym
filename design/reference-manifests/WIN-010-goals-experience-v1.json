@@ -1,0 +1,44 @@
+{
+  "window_id": "WIN-010",
+  "status": "proposal_awaiting_user_approval",
+  "generation_tool": "built-in image_gen",
+  "version": 1,
+  "date": "2026-09-25",
+  "references": [
+    {
+      "file": "design/renders/WIN-010-goals-experience-es-proposal-v1.png",
+      "locale": "es",
+      "sha256": "f749ffa23fceee3b866a3e1a2a487df3075f2ff8383a89cda5ba7c094f9269ed",
+      "dimensions": [
+        853,
+        1844
+      ],
+      "prompt": "design/prompts/WIN-010-goals-experience-es-v1.txt"
+    },
+    {
+      "file": "design/renders/WIN-010-goals-experience-en-proposal-v1.png",
+      "locale": "en",
+      "sha256": "9dd2a58707b88b4affd91e99ccc3e622d04c95941b4fab5801b88b66fd60c693",
+      "dimensions": [
+        853,
+        1844
+      ],
+      "prompt": "design/prompts/WIN-010-goals-experience-en-v1.txt"
+    }
+  ],
+  "input_reference": {
+    "file": "design/renders/WIN-009-private-fitness-profile-es-proposal-v1.png",
+    "role": "Approved WIN-009 Spanish target supplies established environment and panel style for the Spanish edit. English localizes the generated WIN-010 Spanish screen.",
+    "sha256": "70bfb0452684e0f87ed48de6e78b9be322372294db60beff99dd7bdff28f3883"
+  },
+  "fixture": {
+    "fictional": true,
+    "audience": "adult",
+    "step": "goal",
+    "selected_goal": "general_fitness",
+    "runtime_initial_values": "No selection on first entry; explicit choice required. Experience is a later step."
+  },
+  "inspection": "Both generated whole-screen outputs inspected: all five goal choices, correct localized copy, only first row selected, retained portal/logo/glass frame, single cyan action, no overlap or clipped text visible. Each locale retains its own immutable full-screen reference.",
+  "scope": "Principal adult goal step of a three-step goal/experience/review window. Other states reuse editable UI and shared frame; teen focus choices are limited to general fitness and mobility by the proposed product scope. No per-control renders.",
+  "implementation": "Not started. User target approval is required before WIN-010 implementation. No new training algorithm, content prescription, backend collection, APK or fitness result is claimed."
+}

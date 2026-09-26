@@ -7723,5 +7723,6 @@
         }
       }
     }
-  ]
+  ],
+  "runtime_role": "Baseline geometry only. Background, logo and character are separate assets; chrome and controls are shared code. No clean-plate sampling or glyph-vertex fitting."
 }

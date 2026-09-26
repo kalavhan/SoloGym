@@ -1,0 +1,274 @@
+{
+  "status": "engineering_proof_not_production",
+  "parts": [
+    {
+      "id": "head",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        49,
+        48,
+        211,
+        309
+      ],
+      "skin": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torso",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        344,
+        23,
+        299,
+        343
+      ],
+      "skin": [
+        0,
+        0.12,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "upper_left",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        698,
+        32,
+        167,
+        307
+      ],
+      "skin": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "upper_right",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        1016,
+        32,
+        162,
+        307
+      ],
+      "skin": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "forearm_left",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        90,
+        386,
+        109,
+        281
+      ],
+      "skin": [
+        0,
+        0.36,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "forearm_right",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        435,
+        385,
+        110,
+        283
+      ],
+      "skin": [
+        0,
+        0.36,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "hand_left",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        738,
+        432,
+        138,
+        220
+      ],
+      "skin": [
+        0,
+        0,
+        1,
+        0.54
+      ]
+    },
+    {
+      "id": "hand_right",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        994,
+        433,
+        139,
+        221
+      ],
+      "skin": [
+        0,
+        0,
+        1,
+        0.54
+      ]
+    },
+    {
+      "id": "thigh_left",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        59,
+        689,
+        196,
+        295
+      ],
+      "skin": [
+        0,
+        0,
+        1,
+        0.55
+      ]
+    },
+    {
+      "id": "thigh_right",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        387,
+        689,
+        187,
+        293
+      ],
+      "skin": [
+        0,
+        0,
+        1,
+        0.55
+      ]
+    },
+    {
+      "id": "calf_left",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        660,
+        685,
+        164,
+        319
+      ],
+      "skin": [
+        0,
+        0.54,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "calf_right",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        1059,
+        685,
+        158,
+        319
+      ],
+      "skin": [
+        0,
+        0.54,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "hair_spiky",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        48,
+        1025,
+        243,
+        167
+      ],
+      "skin": []
+    },
+    {
+      "id": "hair_swept",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        360,
+        1028,
+        248,
+        183
+      ],
+      "skin": []
+    },
+    {
+      "id": "eyes",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        661,
+        1097,
+        250,
+        60
+      ],
+      "skin": []
+    },
+    {
+      "id": "mouth",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        1056,
+        1129,
+        105,
+        31
+      ],
+      "skin": []
+    },
+    {
+      "id": "shirt",
+      "resource": "AvatarProof/Equipment-v1",
+      "rect": [
+        16,
+        122,
+        578,
+        778
+      ],
+      "skin": []
+    },
+    {
+      "id": "glove_left",
+      "resource": "AvatarProof/Equipment-v1",
+      "rect": [
+        686,
+        273,
+        358,
+        629
+      ],
+      "skin": []
+    },
+    {
+      "id": "glove_right",
+      "resource": "AvatarProof/Equipment-v1",
+      "rect": [
+        1090,
+        285,
+        374,
+        615
+      ],
+      "skin": []
+    }
+  ]
+}

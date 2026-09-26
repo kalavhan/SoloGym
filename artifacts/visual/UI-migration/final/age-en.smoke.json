@@ -1,0 +1,1 @@
+{"passed":true,"checks":["11 onboarding state checks","underage blocked","native country picker","consent initially disabled","document reader unavailable","checkbox interactions","locale preserves choices","back preserves draft","real policy fails closed","profile draft survives Back to consent and reentry through native controls"]}

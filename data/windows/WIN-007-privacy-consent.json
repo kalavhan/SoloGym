@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "proposal",
+  "status": "native_ui_implemented",
   "window_id": "WIN-007",
   "initial_state": {
     "privacyAcknowledged": false,
@@ -35,7 +35,7 @@
     "guardian_required"
   ],
   "storage": {
-    "current": "Not implemented",
+    "current": "Draft in memory only; remote persistence and server policy not implemented. Normal route fails closed; explicit review never saves acceptance.",
     "proposed_private_collection": "users/{uid}/consentReceipts",
     "receipt": [
       "document IDs and versions",
@@ -54,5 +54,11 @@
     "No ranking or social visibility is enabled here",
     "Any needed health-data consent is separate and precedes collection"
   ],
-  "release_gate": "Final truthful policies, operator/contact and retention/deletion process must be supplied and reviewed before public release. No invented legal text or placeholder URLs presented as real documents."
+  "release_gate": "Final truthful policies, operator/contact and retention/deletion process must be supplied and reviewed before public release. No invented legal text or placeholder URLs presented as real documents.",
+  "approval": {
+    "date": "2026-09-25",
+    "evidence": "aprobado, no hay necesidad de generar el apk aun. implementa y terminanndo prepare la siguiente ventana",
+    "scope": "Visual target and intended flow; deployment of final policy documents and server-authoritative persistence remains dependent on reviewed configuration."
+  },
+  "implementation_report": "docs/windows/WIN-006-007-implementation.md"
 }

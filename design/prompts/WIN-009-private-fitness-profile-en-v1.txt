@@ -1,0 +1,17 @@
+Use case: text-localization
+Asset type: English full-screen SoloGym WIN-009 Private Fitness Profile proposal, 853 x 1844 portrait.
+Input image: edit target is the finished Spanish WIN-009 screen. Change ONLY the language of the specified UI text. Preserve the exact SoloGym logo, cathedral background, purple portal, art, framing, panel shape, all field and control positions, numeric values, icons, material textures, cyan light and silver typography. Keep metric selected and imperial unselected. No new assets or design changes. Preserve the portrait dimensions.
+Replace visible Spanish with this exact English copy:
+"Volver" -> "Back"
+"ES" -> "EN"
+"PERFIL PRIVADO" -> "PRIVATE PROFILE"
+"Tus medidas, a tu ritmo" -> "Your measurements, your pace"
+"Unidades" -> "Units"
+"Altura (opcional)" -> "Height (optional)"
+"Peso corporal (opcional)" -> "Bodyweight (optional)"
+"Puedes continuar sin añadir tus medidas." -> "You can continue without adding measurements."
+"No se muestran en tu perfil público." -> "Not shown on your public profile."
+"CONTINUAR" -> "CONTINUE"
+"Privacidad" -> "Privacy"
+"Términos" -> "Terms"
+Keep "cm / kg", "ft / lb", "170", "cm", "70", "kg" and the SoloGym wordmark unchanged. Make text crisp and correctly spelled. Fit each phrase inside its existing area, using modest font-size adjustment only when necessary, without moving surrounding controls or squeezing text into other fields. Never add extra labels, disclaimers, legal permissions, numerical progress or other UI. This is a fictional adult visual fixture and a retained proposal, not an implemented window.

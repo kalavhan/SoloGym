@@ -1,8 +1,8 @@
 # SoloGym window glossary and milestone plan
 
-> Current status (2026-09-25): WIN-002 accepted by user report: “perfect, is working great, next window”. Active iteration: WIN-006 + WIN-007, bilingual visual proposals pending approval; see `docs/windows/WIN-006-007-onboarding-proposal.md`. This status supersedes older pending-review/next-window notes below; historical test evidence is unchanged.
+**Current status · 2026-09-25:** WIN-001 Home and WIN-002 access are accepted by user report. WIN-006/007/009 native UI is implemented and Linux-verified; production policy, legal-document and storage dependencies remain pending. [WIN-010 Goals / Experience](../windows/WIN-010-goals-experience-g0.md) has retained bilingual renders awaiting approval. The [layered UI migration](../engineering/layered-ui-and-avatar-implementation.md) now covers all five existing windows in Linux 0.5.0, with shared code components, separate artwork, a component gallery and a first avatar engineering proof. The new native output is available for visual review; the avatar proof still needs art refinement. No APK requested.
 
-**Status · 2026-09-25:** the user confirmed Android installation and accepted the appearance of the [WIN-001 native Home preview](../windows/WIN-001-implementation.md): “logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos”. [WIN-002 Welcome / Sign in](../windows/WIN-002-welcome-sign-in-g0.md) is now the active G0 proposal; its v1 visual reference is approved for implementation. The remaining 62 windows are unstarted. Home acceptance covers its appearance and installation, not exhaustive feature/device/security verification or mathematical pixel identity. The original reference hashes and visual comparison measurements are preserved.
+User acceptance and retained targets do not certify every device, live services or mathematical pixel identity. The original reference hashes and prior test evidence remain unchanged.
 
 Android and iOS; ages 15+; US, Canada, and Latin America as target regions, with the exact country release list and policies still to be reviewed. English and Spanish follow the device initially and can be switched manually. Automatic means **workout plan generation only**. Sets, repetitions, load, and timers are logged manually.
 
@@ -20,7 +20,7 @@ Acceptance for M0:
 
 ## How a window milestone proceeds
 
-The current workflow follows the user's latest target-render development instruction: prepare and approve one retained bilingual window proposal, map its corners/centers and shared assets, build the complete window, then perform focused full-screen visual and interaction checks. Do not create an individual render/test instance or approval loop for every button or shared UI asset. A new window still requires its own visual-target approval; WIN-002 is at that proposal step.
+The current workflow follows the user's latest target-render development instruction: prepare and approve one retained bilingual window proposal, map its corners/centers and shared assets, build the complete window, then perform focused full-screen visual and interaction checks. Do not create an individual render/test instance or approval loop for every button or shared UI asset. A new window still requires its own visual-target approval; WIN-009 is approved for construction and WIN-010 remains a subsequent proposal.
 
 The original G0–G6 asset plan below is retained as production context. Its individual UI asset stop points are superseded by the current complete-window workflow. Separately scoped modular characters, customization, gear fitting and motion still require their own explicit deliverables before an asset library is expanded.
 
@@ -55,10 +55,10 @@ Only one window is active at a time. Shared asset work belongs to that window an
 
 1. Complete and approve M0: training data shape, starter content, and generation rules.
 2. Review the character/gear feasibility specification: supported silhouettes, skin palettes, hair layers, clothing slots, animation coverage, and a small representative fit sample. This specification does not authorize a full sprite batch. A generated sample still follows background/prop approvals and G3.
-3. **WIN-001 System / Home** is built and its Android installation/appearance are accepted. Its fictional local data and static illustrated avatar do not complete the modular character/gear work. Continue with **WIN-002 Welcome / Sign in**, beginning with its retained English and Spanish proposal renders and flow/data brief.
+3. **WIN-001 System / Home** and **WIN-002 Welcome / Sign in** have user acceptance. Home still uses fictional local data and a static illustrated avatar. WIN-006/007 UI has been implemented with production dependencies explicitly pending; the current approved window is **WIN-009 Private Fitness Profile**.
 4. Continue through the listed window order, one completed milestone at a time. Deep layout, exact copy, and asset prompts are decided only when that window becomes current.
 
-**Current next activity:** prepare and review [WIN-002 Welcome / Sign in’s G0 brief](../windows/WIN-002-welcome-sign-in-g0.md) and retained English/Spanish proposal renders. Its v1 visual target is now approved. After approval, build the complete window and use focused full-screen checks against that exact reference.
+**Current next activity:** review the [migrated native windows and avatar proof](../engineering/layered-ui-and-avatar-implementation.md), then resolve WIN-010 target approval before its implementation. WIN-009 is implemented and its earlier approved ES/EN v1 targets are retained. Regional-policy, guardian and authentication dependencies remain active; review mode does not bypass them in production.
 
 The numeric order after System is proposed and can be changed by the user. Account/setup dependencies can use fictional approved fixtures for renders; dependent data contracts must be resolved before an implemented flow is called complete. Shared language, confirmations, and error states may be required by the first consumer; they retain their own milestones and approval records. A destination pictured in an early hub render is not evidence that its feature is built.
 
@@ -79,7 +79,7 @@ Teen accounts use private profiles and restricted social defaults. Public teen r
 
 ## Window glossary
 
-There are 64 milestones: **WIN-001 native Home appearance is accepted; WIN-002 is the active G0 proposal and is not approved; the other 62 are not started**. The inventory covers the currently defined V1 scope; unspecified additional mini-games and disability-specific exercise programming are later discovery work, not hidden commitments. Important conditional windows remain listed even when many players will never see them.
+There are 64 milestones. **WIN-009 is implemented; WIN-010’s proposal awaits approval after the shared UI migration.** Individual statuses are recorded in the machine-readable inventory; shared controls and conditional routes do not automatically complete their separate milestones. The inventory covers the currently defined V1 scope; unspecified additional mini-games and disability-specific exercise programming are later discovery work, not hidden commitments. Important conditional windows remain listed even when many players will never see them.
 
 ### System and account entry
 
@@ -335,9 +335,11 @@ The steps below describe the user journey separately from production gates. Thei
 
 ### WIN-009 — Private Fitness Profile / Perfil físico privado
 
+**Stage:** v1 target approved; native implementation and focused verification in progress. No APK.
+
 **Purpose:** Record useful training inputs without equating body measurements with appearance or health.
 
-**User steps:** 1. Review profile privacy → 2. Enter optional useful height and bodyweight with units → 3. Complete experience and suitability questions → 4. Save or update the private profile.
+**User steps:** 1. Review the private-data notice and applicable separate decision → 2. Enter or omit optional height and bodyweight with units → 3. Declare current readiness or pause → 4. Continue when production gates permit. Experience and goals belong to WIN-010.
 
 **Dependencies:** WIN-007.
 **Data:** `training_profile`, `account`, `unit_preferences`, `consent_policy`.
@@ -352,6 +354,8 @@ The steps below describe the user journey separately from production gates. Thei
 - G0–G6 approved in sequence; reuse or N/A recorded; English/Spanish and relevant teen/adult/mobile states verified.
 
 ### WIN-010 — Goals / Experience / Objetivos / Experiencia
+
+**Stage:** next proposal brief prepared; retained renders and approval pending after WIN-009 verification.
 
 **Purpose:** Choose training aims and establish a suitable starting level.
 
@@ -1325,6 +1329,6 @@ The steps below describe the user journey separately from production gates. Thei
 
 ## Review outcome to record next
 
-M0's data shape and milestone plan are accepted for continued design, and the user has accepted the installed native Home's appearance. The next decision is WIN-002 Welcome / Sign in: review its flow/data brief and retained English/Spanish renders. Its reference is not yet approved. Once approved, assemble the complete window before focused visual/interaction checks; do not add per-button render or approval loops. Later windows and full modular sprite production remain outside this step.
+M0's data shape is accepted for design; content review remains pending. WIN-009's retained bilingual target and staged profile flow are approved. Complete its implementation and focused full-screen checks without an APK, then present WIN-010 Goals / Experience as the next retained proposal. WIN-010 requires its own target approval before implementation. Full modular character and gear production remain separate milestones.
 
 Canonical machine-readable inventory: [`data/product/window-milestones.json`](../../data/product/window-milestones.json). Original concept context: [`design/visual-approval-plan.md`](../../design/visual-approval-plan.md). Research context: [`docs/research/2026-09-25-fitness-game-research.md`](../research/2026-09-25-fitness-game-research.md).

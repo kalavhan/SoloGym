@@ -1,6 +1,6 @@
 # SoloGym asset production and exercise demonstration sources
 
-Updated 2026-09-25. The user accepted the initial manhua System style and requested a retained rendering in every window proposal for matching during implementation. WIN-001 has English and Spanish v2 proposal renders awaiting approval. This document proposes how to produce reusable parts, with separate approval for each stage; proposal images do not approve production assets, select an engine, purchase content, or implement an app window. “Character stripes” is interpreted as character **sprites**.
+Updated 2026-09-25. Unity is now the app engine; Home and Welcome are accepted by user report, WIN-006/007/009 are implemented, and WIN-010 has retained proposal renders. The latest user direction requires backgrounds separate from reusable code containers/controls and modular, tintable character sprites. See the [layered UI and avatar architecture](../engineering/layered-ui-and-avatar-architecture.md). The five existing windows now use that rendering architecture; see the [implementation and captures](../engineering/layered-ui-and-avatar-implementation.md). A small layered avatar engineering proof exists, with art, fitting and directional limitations recorded; a production modular character library does not yet exist. “Character stripes” is interpreted as character **sprites**.
 
 ## Work in two separate asset collections
 
@@ -8,7 +8,9 @@ Updated 2026-09-25. The user accepted the initial manhua System style and reques
 
 **Exercise demonstrations** teach a real movement. They require correct technique, a match to the exact exercise variant and equipment, English/Spanish explanations, and permission to display the source media. A punch used in tower combat is not automatically an appropriate boxing exercise demonstration. The training catalogue can exist before a media supplier is selected; unresolved demonstration records must remain visibly unresolved.
 
-## Repeat this approval sequence for each window
+## Original asset approval sequence
+
+The table below records the original granular workflow. The subsequent complete-window TDR instruction supersedes individual UI component/per-button stop points: assemble shared code components and perform whole-window review. Do not generate a bitmap for each control. New window targets still need approval; separately scoped character/base/customization/gear/motion batches keep their review gates.
 
 The window milestone document determines order. Complete the current window before starting the next. Reuse accepted assets by version, and seek approval for changes to them. A stage marked not applicable needs a recorded reason; it is not silently skipped.
 
@@ -27,7 +29,7 @@ The window milestone document determines order. Complete the current window befo
 
 Each review should identify the window ID, stage, asset version, exact file and requested decision. Approval applies to that version and stage. A revised background invalidates dependent composites until checked again. Silence is not acceptance. G0 proposal previews are part of the brief; they do not start or approve Stage 1 background production.
 
-Follow the [visual-reference contract](visual-reference-contract.md) for immutable reference storage, baseline matching and responsive reviews. Keep the approved proposal visible throughout production. Its flattened illustration is a composition target, not proof that its character layers, gear or animation already work. English and Spanish use the same appearance, equipment and fixture. Production must retain editable text and separately approved assets; different phone sizes or larger text receive explicit responsive review rather than stretching a screenshot. Stages 1–9 retain their individual stop points even when a complete proposal image already exists.
+Follow the [visual-reference contract](visual-reference-contract.md) for immutable reference storage, baseline matching and responsive reviews. Keep the approved proposal visible throughout production. Its flattened illustration is a composition target, not proof that its character layers, gear or animation already work. English and Spanish use the same appearance, equipment and fixture. Production must retain editable text and separately approved assets; different phone sizes or larger text receive explicit responsive review rather than stretching a screenshot. Apply the current TDR override above for UI work; keep the original staged reviews for separately scoped character asset production.
 
 ## Character customization that also works during movement
 
@@ -45,7 +47,7 @@ The following comparison is a SoloGym engineering proposal. It is not a claim th
 
 **Recommended source pipeline:** approved AI-assisted concept art → cleaned model/reference sheets → a shared modular 3D authoring rig → a small eight-direction 2D sprite proof. Decide between rendered sprites and live 3D only after that proof measures visual fit, customization coverage and device cost. This keeps a reusable source if the initial sprite route proves too restrictive. Layered 2D remains a reasonable alternative for menu portraits, but those portraits must depict the same selected equipment.
 
-Blender provides modeling, rigging, animation, rendering and scripting; its current developer documentation includes shape-key and weighting tools. These capabilities support the proposed authoring approach, without deciding the app engine. [Blender features](https://www.blender.org/features/), [Blender rigging and shape keys](https://developer.blender.org/docs/release_notes/4.5/animation_rigging/).
+Blender provides modeling, rigging, animation, rendering and scripting; its current developer documentation includes shape-key and weighting tools. These capabilities support the proposed authoring approach, while Unity remains the app engine and the avatar rendering method awaits its proof. [Blender features](https://www.blender.org/features/), [Blender rigging and shape keys](https://developer.blender.org/docs/release_notes/4.5/animation_rigging/).
 
 ### Required attachment and appearance rules
 
@@ -60,7 +62,7 @@ Blender provides modeling, rigging, animation, rendering and scripting; its curr
 | Direction and overlap | Use direction- and frame-specific ordering or depth-aware composition. A far arm, glove or cape may be behind the torso while the near part is in front. A global “body, then every item” sequence is insufficient. |
 | Hidden surfaces | Equipment declares body/hair coverage masks. A torso item may hide covered base-clothing sections; gloves hide covered hands. Overlapping equipment also needs compatibility rules. Depth/occlusion passes must be produced from identical camera/pose/fit settings. |
 | Rarity | Basic, Rare, Ultra Rare and Premium change cosmetic material/detail/effects. Rarity is an item attribute, not a skeleton or body type. Premium does not grant fitness XP or combat advantage. |
-| Same character everywhere | A stable appearance recipe stores body, skin, hair and item IDs. Menu portraits and game sprites are derived from this recipe. Do not infer appearance from a gameplay stat. |
+| Same character everywhere | A stable appearance recipe stores body fit, head, skin, eyes, eyebrows, mouth, hair and item IDs. Menu portraits and game sprites are derived from this recipe. Do not infer appearance from a gameplay stat. |
 
 A conventional 2D rig supports slots, selectable attachments, tinting and keyed draw order; this is why the alternative can support equipment, although direction-specific art remains necessary. Spine is an example of that capability, not a selected tool or license. [Spine slots](https://eu.esotericsoftware.com/spine-slots), [Spine runtime skins](https://eu.esotericsoftware.com/spine-runtime-skins).
 

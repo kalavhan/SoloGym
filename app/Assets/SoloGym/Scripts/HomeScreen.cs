@@ -20,7 +20,6 @@ namespace SoloGym
         readonly Dictionary<string, MapElement> map = new Dictionary<string, MapElement>();
         readonly Dictionary<string, Text> labels = new Dictionary<string, Text>();
         readonly Dictionary<string, Button> buttons = new Dictionary<string, Button>();
-        Texture2D source, clean;
         Font serif, bold, body, referenceBody;
         RectTransform root, modal, statePanel, banner, portraitCover;
         Canvas canvas;
@@ -32,9 +31,9 @@ namespace SoloGym
         Rect lastSafeArea;
         bool reviewMode;
         string requestedCapture;
-        static readonly Color Silver = new Color32(224, 235, 249, 255);
-        static readonly Color Cyan = new Color32(81, 230, 255, 255);
-        static readonly Color Gold = new Color32(255, 203, 75, 255);
+        static Color Silver => SystemUI.Theme.text;
+        static Color Cyan => SystemUI.Theme.accent;
+        static Color Gold => SystemUI.Theme.gold;
 
         [Serializable] sealed class PixelMap { public MapElement[] elements; }
         [Serializable] sealed class MapElement
@@ -58,11 +57,9 @@ namespace SoloGym
             Screen.orientation = ScreenOrientation.Portrait;
             reviewMode = Application.isEditor || HasArgument("-sologym-review");
             requestedCapture = Argument("-sologym-capture");
-            source = Resources.Load<Texture2D>("Home/SourceArt");
-            clean = Resources.Load<Texture2D>("Home/CleanPlate");
-            serif = Resources.Load<Font>("Fonts/LiberationSerif-Regular");
-            bold = Resources.Load<Font>("Fonts/LiberationSerif-Bold");
-            body = Resources.Load<Font>("Fonts/NotoSans-Regular");
+            serif = SystemUI.Theme.heading;
+            bold = SystemUI.Theme.headingBold;
+            body = SystemUI.Theme.body;
             referenceBody = Resources.Load<Font>("Fonts/NotoSerif-Regular");
             var data = JsonUtility.FromJson<PixelMap>(Resources.Load<TextAsset>("Home/PixelMap").text);
             foreach (var element in data.elements) map[element.id] = element;
@@ -105,28 +102,46 @@ namespace SoloGym
 
         void CreateArt()
         {
-            // A single approved source atlas supplies artwork, split into semantic
-            // bands so it is never a screenshot shown in place of real controls.
-            var bands = new[] { new Rect(0,0,853,164), new Rect(0,164,853,176),
-                new Rect(0,340,853,754), new Rect(0,1094,853,136),
-                new Rect(0,1230,853,430), new Rect(0,1660,853,184) };
-            var names = new[] {"Header art", "Identity frame", "Character and gear illustration",
-                "Combat frame", "Today frame", "Navigation chrome"};
-            for (int i = 0; i < bands.Length; i++) Art(names[i], bands[i], source);
-
-            // Use the shared AI-cleaned plate ONLY beneath editable text. Original
-            // artwork outside these mapped regions remains unchanged.
-            foreach (var item in map.Values)
-                if (item.kind == "text") Art("Clean text / " + item.id, Expanded(item.rect.Rect, 1), clean);
-            // The generated plate moved a clock into this text-only region. Sample
-            // nearby empty glass while keeping the original clock in its mapped spot.
-            var bodyCleanup = Art("Body text clean glass", new Rect(74, 1397, 37, 34), clean);
-            bodyCleanup.uvRect = new Rect(115 / Width, 1 - 1431 / Height, 37 / Width, 34 / Height);
-            Art("Empty XP track", new Rect(240, 312, 335, 22), clean);
-            // The reference's luminous fill is a shared texture region. Its native
-            // UI width still follows actual XP rather than a baked progress value.
-            var fill = Art("Live XP fill", Bounds("fitness_xp.reference_fill"), source);
-            xpTransform = fill.rectTransform;
+            SystemUI.Art(root,new Rect(0,0,Width,Height),"Art/HomeBackground-v1");
+            SystemUI.Wordmark(root,new Rect(42,13,366,83));
+            SystemUI.Icon(root,new Rect(667,38,30,30),"globe",Silver);
+            SystemUI.Icon(root,new Rect(780,28,46,48),"gear",Silver);
+            SystemUI.Divider(root,149,117,614);
+            var portraitPanel=SystemUI.Panel(root,new Rect(92,164,670,930),PanelStyle.Glass,true);
+            portraitPanel.color=new Color(1,1,1,.7f);
+            SystemUI.Panel(root,new Rect(591,198,145,48),PanelStyle.Slot);
+            SystemUI.Icon(root,new Rect(594,200,43,42),"coin",Gold);
+            SystemUI.Icon(root,new Rect(130,196,54,90),"sigil",Silver);
+            SystemUI.Panel(root,new Rect(121,307,614,31),PanelStyle.Slot);
+            SystemUI.Panel(root,new Rect(243,314,329,18),PanelStyle.Track);
+            xpTransform=SystemUI.Panel(root,new Rect(246,317,200,12),PanelStyle.Fill).rectTransform;
+            var portrait=SystemUI.Art(root,new Rect(245,386,350,708),"Art/KaiPortrait-v1");
+            portrait.uvRect=new Rect(.155f,.023f,.69f,.958f);
+            foreach(var slot in new[]{"head","torso","hands","legs","feet","back"})
+            {
+                var r=Bounds("gear."+slot+".control");SystemUI.Panel(root,r,slot=="hands"?PanelStyle.Selected:PanelStyle.Slot);
+                SystemUI.Icon(root,new Rect(r.x+25,r.y+16,r.width-50,r.height-60),slot=="back"?"backpack":slot,slot=="hands"?Cyan:Silver);
+            }
+            SystemUI.Panel(root,new Rect(74,1118,704,97),PanelStyle.Glass);
+            // Keep the frame edge behind the section heading, clear of both language labels.
+            var statsHeadingSurface=SystemUI.Node("Stats heading surface",root,new Rect(275,1099,307,29)).gameObject.AddComponent<Image>();
+            statsHeadingSurface.color=SystemUI.Theme.glass;statsHeadingSurface.raycastTarget=false;
+            SystemUI.Icon(root,new Rect(127,1142,55,56),"power",Silver);
+            SystemUI.Icon(root,new Rect(349,1142,58,59),"guard",Silver);
+            SystemUI.Icon(root,new Rect(574,1142,60,59),"focus",Silver);
+            SystemUI.Panel(root,new Rect(26,1229,800,426),PanelStyle.Glass,true);
+            SystemUI.Icon(root,new Rect(70,1245,45,47),"sigil",Silver);
+            SystemUI.Icon(root,new Rect(76,1320,63,42),"dumbbell",Silver);
+            SystemUI.Icon(root,new Rect(161,1364,23,23),"clock",Silver);
+            SystemUI.Icon(root,new Rect(78,1441,27,27),"warning",Gold);
+            SystemUI.Panel(root,new Rect(52,1495,748,89),PanelStyle.Primary);
+            SystemUI.Icon(root,new Rect(262,1596,32,50),"flame",Gold);
+            SystemUI.Panel(root,new Rect(0,1675,853,169),PanelStyle.Glass);
+            foreach(var nav in new[]{"system","train","tower","gear","gym"})
+            {
+                if(nav=="system")SystemUI.Panel(root,Bounds("navigation.system.control"),PanelStyle.Outline);
+                SystemUI.Icon(root,Bounds("navigation."+nav+".icon"),nav=="system"?"sigil":nav=="gear"?"helmet":nav,nav=="system"?Cyan:Silver);
+            }
         }
 
         void CreateText()
@@ -215,7 +230,8 @@ namespace SoloGym
             bool es = model.Language == "es";
             foreach (var pair in labels)
             {
-                Rect rect = TextBounds(pair.Key, es);
+                Rect rect = Bounds(pair.Key, es);
+                if(es&&pair.Key=="fitness_xp.label")rect=new Rect(124,306,115,33);
                 Place(pair.Value.rectTransform, rect);
                 if (pair.Key != "header.language.label" &&
                     (pair.Key.StartsWith("fitness_xp.") || pair.Key.StartsWith("gear.") ||
@@ -236,7 +252,10 @@ namespace SoloGym
             Set("wallet.value", model.CoinsValue);
             Set("fitness_xp.label", es ? "XP de\nentrenamiento" : model.XpLabel);
             Set("fitness_xp.value", model.XpProgressLabel);
-            labels["fitness_xp.label"].fontSize = es ? 18 : 22;
+            var xpFit = labels["fitness_xp.label"].GetComponent<SystemTextFit>();
+            xpFit.maximum = es ? 18 : 22;
+            xpFit.minimum = 14;
+            labels["fitness_xp.label"].lineSpacing = es ? .75f : 1;
             foreach (var slot in model.GearSlots) Set("gear." + slot.Id + ".label", slot.Label.ToUpperInvariant());
             Set("combat_stats.heading", model.CombatStatsLabel.ToUpperInvariant());
             Set("combat_stats.power.label", model.PowerLabel.ToUpperInvariant());
@@ -245,7 +264,7 @@ namespace SoloGym
             Set("combat_stats.guard.value", model.GuardValue);
             Set("combat_stats.focus.label", model.FocusLabel.ToUpperInvariant());
             Set("combat_stats.focus.value", model.FocusValue);
-            labels["combat_stats.focus.label"].fontSize = es ? 18 : 21;
+            labels["combat_stats.focus.label"].GetComponent<SystemTextFit>().maximum = es ? 18 : 21;
             Set("today.heading", model.ShowPlanSummary ? model.PrimaryTitle.ToUpperInvariant() : model.TodayLabel.ToUpperInvariant());
             Set("today.name", model.PlanName);
             Set("today.duration", es ? "Aprox. 24 min" : "About 24 min");
@@ -253,15 +272,6 @@ namespace SoloGym
             Set("today.body", model.PrimaryBody);
             Set("today.gap_text", model.PlanWarning);
             Set("today.cta_label", model.PrimaryAction.ToUpperInvariant());
-            // Alternate actions preserve readable proportions rather than stretching
-            // short state names across the training reference's full caption width.
-            if (!model.ShowPlanSummary)
-            {
-                Place(labels["today.cta_label"].rectTransform, new Rect(160, 1507, 505, 49));
-                labels["today.cta_label"].GetComponent<ReferenceTextLayout>().FitWidth = false;
-            }
-            else labels["today.cta_label"].GetComponent<ReferenceTextLayout>().FitWidth = true;
-            labels["today.heading"].GetComponent<ReferenceTextLayout>().FitWidth = model.ShowPlanSummary;
             Set("consistency.value", model.ConsistencyLabel);
             Set("consistency.body", model.ConsistencyNote);
             string[] names = { "system", "train", "tower", "gear", "gym" };
@@ -270,7 +280,7 @@ namespace SoloGym
                 Set("navigation." + names[i] + ".label", model.Navigation[i].Label);
             }
             // Three pixels of decorative glow sit outside each end of the fill.
-            Place(xpTransform, new Rect(245, 314, 319 * model.XpFraction + 6, 18));
+            Place(xpTransform, new Rect(246, 317, 323 * model.XpFraction, 12));
             xpTransform.gameObject.SetActive(model.XpFraction > 0);
             statePanel.gameObject.SetActive(!model.ShowPlanSummary);
             stateTitle.text = model.PrimaryTitle;
@@ -371,8 +381,7 @@ namespace SoloGym
             var overlay = NewRect("Modal shade", root, new Rect(0, 0, Width, Height));
             var image = overlay.gameObject.AddComponent<Image>(); image.color = new Color(0, .015f, .035f, .8f);
             modal = NewRect("System panel", overlay, new Rect(96.5f, (Height - height) / 2, 660, height));
-            var panelImage = modal.gameObject.AddComponent<Image>(); panelImage.color = new Color32(5, 17, 33, 255);
-            var outline = modal.gameObject.AddComponent<Outline>(); outline.effectColor = Cyan; outline.effectDistance = new Vector2(1, -1);
+            var frame=modal.gameObject.AddComponent<SystemPanel>();frame.theme=SystemUI.Theme;frame.ornaments=true;
             var heading = TextAt("Dialog heading", modal, new Rect(38, 27, 525, 56), 35, bold);
             heading.text = title;
             DialogButton(modal, new Rect(574, 16, 66, 66), "×", CloseModal);
@@ -388,16 +397,7 @@ namespace SoloGym
         }
 
         Button DialogButton(Transform parent, Rect rect, string caption, Action action)
-        {
-            var node = NewRect(caption.Length > 0 ? caption : "Action", parent, rect);
-            var img = node.gameObject.AddComponent<Image>(); img.color = new Color32(12, 43, 65, 255);
-            var button = node.gameObject.AddComponent<Button>(); button.targetGraphic = img;
-            var colors = button.colors; colors.highlightedColor = new Color(.75f, .95f, 1); colors.pressedColor = new Color(.3f, .75f, 1); button.colors = colors;
-            button.onClick.AddListener(() => action());
-            var label = TextAt("Caption", node, new Rect(10, 0, rect.width - 20, rect.height), 27, body);
-            label.alignment = TextAnchor.MiddleCenter; label.text = caption;
-            return button;
-        }
+        {return SystemUI.Button(parent,rect,caption,action);}
 
         void Hit(string key, Rect rect, Action action)
         {
@@ -420,38 +420,16 @@ namespace SoloGym
         {
             Rect rect = Bounds(key);
             var result = TextAt(key, root, rect, size, font, color);
-            result.gameObject.AddComponent<ReferenceTextLayout>();
+            var fit=result.gameObject.AddComponent<SystemTextFit>();fit.maximum=size;result.alignment=TextAnchor.MiddleCenter;
             labels[key] = result;
             return result;
         }
 
-        Text TextAt(string name, Transform parent, Rect rect, int size, Font font, Color? color = null)
-        {
-            var node = NewRect(name, parent, rect);
-            var text = node.gameObject.AddComponent<Text>();
-            text.font = font; text.fontSize = size; text.color = color ?? Silver;
-            text.alignment = TextAnchor.MiddleLeft; text.raycastTarget = false;
-            text.horizontalOverflow = HorizontalWrapMode.Overflow;
-            text.verticalOverflow = VerticalWrapMode.Overflow;
-            text.supportRichText = false;
-            return text;
-        }
+        Text TextAt(string name,Transform parent,Rect rect,int size,Font font,Color? color=null)
+        {var text=SystemUI.Text(parent,rect,"",size,font,color);text.name=name;return text;}
 
-        RawImage Art(string name, Rect rect, Texture2D texture)
-        {
-            var node = NewRect(name, root, rect);
-            var image = node.gameObject.AddComponent<RawImage>();
-            image.texture = texture; image.raycastTarget = false;
-            image.uvRect = new Rect(rect.x / Width, 1 - (rect.y + rect.height) / Height, rect.width / Width, rect.height / Height);
-            return image;
-        }
-
-        static RectTransform NewRect(string name, Transform parent, Rect rect)
-        {
-            var go = new GameObject(name, typeof(RectTransform));
-            var rt = go.GetComponent<RectTransform>(); rt.SetParent(parent, false);
-            Place(rt, rect); return rt;
-        }
+        static RectTransform NewRect(string name,Transform parent,Rect rect)
+        {return SystemUI.Node(name,parent,rect);}
 
         static void Place(RectTransform rt, Rect rect)
         {
@@ -462,7 +440,9 @@ namespace SoloGym
         Rect Bounds(string key, bool spanish = false)
         {
             if (!map.TryGetValue(key, out var entry)) throw new InvalidOperationException("Missing pixel mapping: " + key);
-            return spanish && entry.locale_overrides?.es?.rect != null ? entry.locale_overrides.es.rect.Rect : entry.rect.Rect;
+            var translated=entry.locale_overrides?.es?.rect;
+            // JsonUtility can materialize omitted nested boxes as zero-sized objects.
+            return spanish && translated!=null && translated.width>0 && translated.height>0 ? translated.Rect : entry.rect.Rect;
         }
 
         Rect TextBounds(string key, bool spanish)
@@ -511,9 +491,7 @@ namespace SoloGym
         {
             Rect safe = Screen.safeArea;
             float scale = Mathf.Min(safe.width / Width, safe.height / Height);
-            root.localScale = new Vector3(scale, scale, 1);
-            root.anchoredPosition = new Vector2(safe.x + (safe.width - Width * scale) / 2,
-                -(Screen.height - safe.yMax + (safe.height - Height * scale) / 2));
+            SystemViewport.Fit(root,Width,Height);
             lastSize = new Vector2(Screen.width, Screen.height); lastSafeArea = safe;
         }
 

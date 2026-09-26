@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "final_documents_not_supplied",
+  "documents": [
+    {
+      "id": "privacy",
+      "language": "en",
+      "available": false,
+      "version": "",
+      "title": "Privacy",
+      "body": ""
+    },
+    {
+      "id": "privacy",
+      "language": "es",
+      "available": false,
+      "version": "",
+      "title": "Privacidad",
+      "body": ""
+    },
+    {
+      "id": "terms",
+      "language": "en",
+      "available": false,
+      "version": "",
+      "title": "Terms",
+      "body": ""
+    },
+    {
+      "id": "terms",
+      "language": "es",
+      "available": false,
+      "version": "",
+      "title": "Términos",
+      "body": ""
+    }
+  ]
+}

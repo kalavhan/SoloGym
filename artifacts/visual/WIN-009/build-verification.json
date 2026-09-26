@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-25",
+  "version": "0.4.0",
+  "platform": "Linux",
+  "build": "succeeded",
+  "captures": [
+    {
+      "file": "artifacts/visual/WIN-009/imperial-en-final.png",
+      "sha256": "c304d1509212424bf726d7c43747e65c455abb90baf7daf46d4a17b1de89ce23",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "artifacts/visual/WIN-009/profile-en-final.png",
+      "sha256": "cb41b83be4289fb044f8854fcbe8f10d5b45e6132f74836c324e09abb149644d",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "artifacts/visual/WIN-009/profile-es-final.png",
+      "sha256": "25021e196fbb99363cacd1efe10257ef1cbf3b4b8cf788e3e695426ad0395dac",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "artifacts/visual/WIN-009/readiness-es-final.png",
+      "sha256": "124c5280366c96c701d767cb6a6d7de95481255ddaf33c39f3bf6629ca2bb42f",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "artifacts/visual/WIN-009/notice-es-final.png",
+      "sha256": "533efc53278472dd480831bd3635d0d02da1d922384dfb13c6146b8fdb5c3da8",
+      "dimensions": [
+        853,
+        1844
+      ]
+    }
+  ],
+  "checks": {
+    "profile_state_groups": 12,
+    "profile_ui_groups": 6,
+    "onboarding_regression_state_groups": 11,
+    "onboarding_ui_and_profile_reentry_groups": 9,
+    "passed": true
+  },
+  "android": {
+    "rebuilt": false,
+    "unchanged_apk": {
+      "file": "app/Builds/Android/SoloGym-debug.apk",
+      "sha256": "f56b0451b23c12cedff4948ea0e24b34de9624750731b23da646376774643e23"
+    }
+  },
+  "limits": [
+    "Native user acceptance and Android/iOS keyboard verification pending",
+    "Production health-data policy, documents and authenticated storage unavailable; real mode cannot collect measurements",
+    "Review drafts are memory-only and do not complete a live profile",
+    "Native glyphs, shaded text and reconstructed text regions differ from source; no strict pixel-match certification"
+  ]
+}

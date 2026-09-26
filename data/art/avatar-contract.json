@@ -1,16 +1,17 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "contract_id": "sologym.avatar.authoring-proposal",
   "updated_on": "2026-09-25",
-  "status": "proposed_pending_sprite_and_rig_proof",
+  "status": "authoring_proposal_with_first_engineering_proof_pending_visual_rig_acceptance",
   "production_ready": false,
-  "engine_decision": null,
+  "engine_decision": "Unity 6000.3.24f1; avatar rendering pipeline pending sprite and rig proof",
   "notes": [
-    "This is an authoring and data proposal, not a rendered asset pack or an engine selection.",
+    "This is an authoring and data proposal, not a rendered asset pack. Unity is selected; avatar authoring and rendering implementation remain pending proof.",
     "All example records are original unrendered placeholders. No vendor assets or licenses are implied.",
     "The accepted concept style does not approve these individual assets.",
     "Fitness measurements remain outside this appearance contract. Appearance does not determine workout prescriptions or combat strength.",
-    "Rendered sprite appearances can use only exported fit variants; continuous source-model morphs do not imply continuous sprite customization."
+    "Rendered sprite appearances can use only exported fit variants; continuous source-model morphs do not imply continuous sprite customization.",
+    "Nullable face/palette IDs are unresolved proposal placeholders. They are not usable runtime fallback selections."
   ],
   "reference_style": {
     "id": "sologym_manhua_system_v1",
@@ -276,6 +277,16 @@
         "rarity_accent"
       ],
       "allow_global_body_tint": false
+    },
+    "eyes": {
+      "mask_semantic": "iris_only",
+      "palette_id": null,
+      "palette_status": "pending_visual_approval",
+      "exclude": [
+        "skin",
+        "sclera",
+        "eyelids"
+      ]
     }
   },
   "hair_policy_values": [
@@ -426,7 +437,12 @@
       "back": null,
       "aura": null
     },
-    "runtime_usable": false
+    "runtime_usable": false,
+    "head_asset_id": null,
+    "eyes_asset_id": null,
+    "eye_palette_entry_id": null,
+    "eyebrows_asset_id": null,
+    "mouth_asset_id": null
   },
   "sample_assets": [
     {
@@ -595,5 +611,63 @@
     "Every directional clip has stable frame registration and verified occlusion.",
     "An item cannot become available merely because its intended fit is listed.",
     "Missing rights, export settings, approvals or sources keep an asset unavailable for release."
-  ]
+  ],
+  "architecture_document": "docs/engineering/layered-ui-and-avatar-architecture.md",
+  "body_parts_proposed": {
+    "status": "unrendered_pending_rig_proof",
+    "core": [
+      "head",
+      "neck",
+      "torso",
+      "pelvis"
+    ],
+    "paired": [
+      "upper_arm",
+      "forearm",
+      "hand",
+      "thigh",
+      "lower_leg",
+      "foot"
+    ],
+    "paired_sides": [
+      "left",
+      "right"
+    ],
+    "face": [
+      "eyes",
+      "eyebrows",
+      "mouth"
+    ],
+    "hair": [
+      "hair_back",
+      "hair_front"
+    ],
+    "registration": "Shared rig/bind pose or synchronized frame registration; matching direction, canvas, pivots and attachment anchors.",
+    "runtime_packing": "Authoring parts may be packed into atlases; this list does not require a texture or draw call for every part.",
+    "distant_face": "A combined low-detail face may represent the same appearance recipe in distant gameplay."
+  },
+  "engineering_proof": {
+    "report": "docs/engineering/layered-ui-and-avatar-implementation.md",
+    "recipe_class": "app/Assets/SoloGym/Scripts/Avatar/AvatarAppearance.cs",
+    "renderer": "app/Assets/SoloGym/Scripts/Avatar/LayeredAvatar.cs",
+    "part_registry": "app/Assets/SoloGym/Resources/AvatarProof/Parts.json",
+    "base_fit_count": 1,
+    "skin_palette_count": 2,
+    "hair_style_count": 2,
+    "actions": [
+      "idle",
+      "walk",
+      "jab"
+    ],
+    "views": "two_mirrored_proof_views_only",
+    "production_ready": false,
+    "remaining": [
+      "joint silhouette cleanup",
+      "precise skin and equipment coverage masks",
+      "hair/head and shoulder fits",
+      "female and other body fits",
+      "authored isometric directions",
+      "final animation and equipment compatibility proof"
+    ]
+  }
 }

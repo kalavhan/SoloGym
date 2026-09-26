@@ -148,11 +148,25 @@ namespace SoloGym.Editor
 
         static string ProjectRoot => Directory.GetParent(Application.dataPath).FullName;
 
+        static void EnsureTheme()
+        {
+            const string folder="Assets/SoloGym/Resources/UI";
+            const string path=folder+"/DefaultTheme.asset";
+            if(AssetDatabase.LoadAssetAtPath<SystemTheme>(path)!=null)return;
+            Directory.CreateDirectory(folder);AssetDatabase.Refresh();
+            var theme=ScriptableObject.CreateInstance<SystemTheme>();
+            theme.heading=Resources.Load<Font>("Fonts/LiberationSerif-Regular");
+            theme.headingBold=Resources.Load<Font>("Fonts/LiberationSerif-Bold");
+            theme.body=Resources.Load<Font>("Fonts/NotoSans-Regular");
+            AssetDatabase.CreateAsset(theme,path);AssetDatabase.SaveAssets();
+        }
+
         static void ConfigureCommon()
         {
             PlayerSettings.companyName = "kalavhan";
             PlayerSettings.productName = "SoloGym";
-            PlayerSettings.bundleVersion = "0.2.1";
+            PlayerSettings.bundleVersion = "0.5.0";
+            EnsureTheme();
             PlayerSettings.colorSpace = ColorSpace.Gamma;
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
             PlayerSettings.allowedAutorotateToPortrait = true;
@@ -200,7 +214,9 @@ namespace SoloGym.Editor
         {
             bool referenceAsset = assetPath.StartsWith("Assets/SoloGym/Resources/Home/", StringComparison.Ordinal)
                 || assetPath.StartsWith("Assets/SoloGym/Resources/Welcome/", StringComparison.Ordinal)
-                || assetPath.StartsWith("Assets/SoloGym/Resources/Provider/", StringComparison.Ordinal);
+                || assetPath.StartsWith("Assets/SoloGym/Resources/Provider/", StringComparison.Ordinal)
+                || assetPath.StartsWith("Assets/SoloGym/Resources/Onboarding/", StringComparison.Ordinal)
+                || assetPath.StartsWith("Assets/SoloGym/Resources/Profile/", StringComparison.Ordinal);
             if (!referenceAsset || !assetPath.EndsWith(".png", StringComparison.OrdinalIgnoreCase)) return;
             var texture = (TextureImporter)assetImporter;
             texture.textureType = TextureImporterType.Default;

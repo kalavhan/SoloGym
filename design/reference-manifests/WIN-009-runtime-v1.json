@@ -1,0 +1,40 @@
+{
+  "window_id": "WIN-009",
+  "status": "native_ui_verified_pending_user_acceptance",
+  "reference_canvas": [
+    853,
+    1844
+  ],
+  "art": [
+    {
+      "file": "app/Assets/SoloGym/Resources/Profile/CleanPlate.png",
+      "sha256": "caad6d0c4682b4e3e0b3d28fe1bd66abe8156d6fb84f8fa89d7d9f49d2c664f9",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Profile/SourceEn.png",
+      "sha256": "ec71b5becc1ffa7d7412e9d371f2bfa2d1f12a31c73ddfd87617d5ef8d368950",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Profile/SourceEs.png",
+      "sha256": "70bfb0452684e0f87ed48de6e78b9be322372294db60beff99dd7bdff28f3883",
+      "dimensions": [
+        853,
+        1844
+      ]
+    }
+  ],
+  "generation_tool": "built-in image_gen",
+  "prompt": "design/prompts/WIN-009-clean-plate-v1.txt",
+  "geometry_source": "app/Assets/SoloGym/Scripts/PrivateProfileScreen.cs",
+  "text": "Live localized native labels and inputs. One whole-window clean plate removes baked text in bounded regions.",
+  "states": "Notice, Measurements, Readiness, Paused, Checkpoint reuse the portal frame. No per-button image generation.",
+  "visual_evidence": "artifacts/visual/WIN-009/build-verification.json"
+}
