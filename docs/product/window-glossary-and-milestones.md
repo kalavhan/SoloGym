@@ -374,9 +374,11 @@ The steps below describe the user journey separately from production gates. Thei
 
 ### WIN-011 — Available Equipment / Equipo disponible
 
+**Stage:** G0 proposal and native UI implemented; user acceptance pending.
+
 **Purpose:** Record the actual equipment and location available for a workout.
 
-**User steps:** 1. Choose home, gym, or custom location → 2. Select available equipment including bodyweight only → 3. Add relevant load ranges or constraints → 4. Save reusable equipment profiles.
+**User steps:** 1. Choose home, gym, or outdoor environment → 2. Select available equipment or confirm bodyweight only → 3. Review and continue to schedule setup (WIN-012).
 
 **Dependencies:** WIN-009.
 **Data:** `equipment_catalog`, `training_profile`, `generation_rules`.

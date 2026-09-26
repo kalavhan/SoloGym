@@ -50,6 +50,20 @@ namespace SoloGym
             var caption=Caption(p.transform,new Rect(Theme.controlPadding,0,r.width-2*Theme.controlPadding,r.height),label,Theme.bodySize,Theme.body);
             caption.GetComponent<SystemTextFit>().multiline=false;return b;
         }
+        public static Button ChoiceButton(Transform parent,Rect r,string label,bool selected,Action action,PanelStyle? unselectedStyle=null)
+        {
+            var style=selected?PanelStyle.Selected:unselectedStyle??PanelStyle.Outline;
+            var p=Panel(parent,r,style);p.raycastTarget=true;
+            if(!selected)p.rimWidth=2.5f;
+            var b=p.gameObject.AddComponent<Button>();b.targetGraphic=p;
+            var colors=b.colors;colors.highlightedColor=new Color(.85f,1,1);colors.pressedColor=new Color(.45f,.75f,1);colors.disabledColor=new Color(.4f,.5f,.6f,.65f);b.colors=colors;
+            b.onClick.AddListener(()=>action?.Invoke());
+            const float glyphX=20,glyphW=36,labelX=56;
+            Text(p.transform,new Rect(glyphX,0,glyphW,r.height),selected?"◆":"◇",Theme.bodySize,Theme.body,Theme.text,TextAnchor.MiddleCenter);
+            var caption=Text(p.transform,new Rect(labelX,0,r.width-labelX-Theme.controlPadding,r.height),label,Theme.bodySize,Theme.body,Theme.text,TextAnchor.MiddleLeft);
+            var fit=caption.gameObject.AddComponent<SystemTextFit>();fit.maximum=Theme.bodySize;fit.minimum=16;fit.multiline=false;
+            return b;
+        }
         public static Button Hit(Transform parent,Rect r,Action action,string name="Control")
         {
             var n=Node(name,parent,r);var image=n.gameObject.AddComponent<Image>();image.color=Color.clear;
@@ -104,6 +118,13 @@ namespace SoloGym
         {
             Panel(parent,r,PanelStyle.Input);
             if(unitDivider>0){var line=Node("Unit divider",parent,new Rect(r.x+unitDivider,r.y+16,1.5f,r.height-32)).gameObject.AddComponent<Image>();line.color=Theme.border*.6f;line.raycastTarget=false;}
+        }
+        public static SystemScrollAffordance AttachScrollAffordance(ScrollRect scroll,Rect viewportPageRect,float rowStride=74f,Transform chevronParent=null)
+        {
+            var host=Node("Scroll affordance",scroll.viewport.parent,viewportPageRect);
+            var affordance=host.gameObject.AddComponent<SystemScrollAffordance>();
+            affordance.Initialize(scroll,viewportPageRect,rowStride,chevronParent??scroll.viewport.parent);
+            return affordance;
         }
     }
 }

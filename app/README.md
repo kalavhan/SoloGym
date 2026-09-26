@@ -100,6 +100,18 @@ app/Builds/Linux/SoloGym.x86_64 -screen-fullscreen 0 -screen-width 853 -screen-h
 
 Add `-sologym-goals-view experience` or `review` for later steps. The onboarding profile checkpoint opens this window automatically in review. See [WIN-010 implementation](../docs/windows/WIN-010-implementation.md).
 
+## Available equipment (WIN-011)
+
+Review mode: environment (home / gym / outdoor), scrollable equipment multi-select or bodyweight-only, then review. Outdoor uses bodyweight-only when the catalog list is empty.
+
+```bash
+app/Builds/Linux/SoloGym.x86_64 -screen-fullscreen 0 -screen-width 853 -screen-height 1844 \
+  -sologym-review -sologym-window equipment -sologym-locale es \
+  -sologym-capture "$PWD/artifacts/visual/WIN-011/equipment-es-final.png" -sologym-smoke
+```
+
+Goals review checkpoint opens this window in the onboarding chain. See [WIN-011 implementation](../docs/windows/WIN-011-implementation.md).
+
 ## Layered UI verification
 
 Run `python3 tools/capture_layered_ui.py` from the repository root after a Linux build. It captures the five migrated windows in both languages, selected supporting states, a phone-sized viewport, the component gallery and the avatar proof. See [the current report](../docs/engineering/layered-ui-and-avatar-implementation.md) for results and the avatar’s production limits.
