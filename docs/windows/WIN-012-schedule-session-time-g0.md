@@ -1,11 +1,10 @@
 # WIN-012 — Horario / Duración de sesión
 
-Estado: **G0 actualizado; interfaz nativa de dos pasos implementada; aceptación del usuario pendiente**. Fecha: 2026-09-26.
+Estado: **G0 actualizado; interfaz nativa de pantalla única implementada; aceptación del usuario pendiente**. Fecha: 2026-09-26.
 
-## Flujo en dos pasos
+## Flujo
 
-1. **Configurar horario (pantalla única).** Panel más alto: días de entrenamiento (2–5), selector de **horas (0–4)** y **minutos (0, 15, 30, 45)** para **tiempo disponible**, texto de ayuda en área desplazable (sin solaparse con Continuar).
-2. **Revisar rutina.** Bloques **Entrenamiento** y **Recuperación** con fichas seleccionadas no editables; resumen de tiempo disponible; enlace **Cambiar horario**; Continuar → WIN-013 en revisión.
+1. **Configurar horario (pantalla única).** Días de entrenamiento (2–5), ruedas de **horas (0–12)** y **minutos (0–60)** para tiempo disponible, texto de ayuda desplazable. **Continuar** → WIN-013 (sin pantalla intermedia “Revisa tu rutina”).
 
 ## Datos
 

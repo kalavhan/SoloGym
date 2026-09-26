@@ -1,0 +1,37 @@
+{
+  "window_id": "WIN-013",
+  "status": "proposal_awaiting_user_approval",
+  "generation_tool": "interim_engineering_capture",
+  "version": 1,
+  "date": "2026-09-26",
+  "references": [
+    {
+      "file": "design/renders/WIN-013-character-customization-es-proposal-v1.png",
+      "locale": "es",
+      "sha256": "0229f9a977546d9420feb6e6a729de21c80ff9afd951212e24c1b86cb15f0b5e",
+      "dimensions": [853, 1844],
+      "prompt": "design/prompts/WIN-013-character-customization-es-v1.txt",
+      "note": "Interim placeholder from avatar engineering proof capture; replace after image_gen full portal composite."
+    },
+    {
+      "file": "design/renders/WIN-013-character-customization-en-proposal-v1.png",
+      "locale": "en",
+      "sha256": "0229f9a977546d9420feb6e6a729de21c80ff9afd951212e24c1b86cb15f0b5e",
+      "dimensions": [853, 1844],
+      "prompt": "design/prompts/WIN-013-character-customization-en-v1.txt",
+      "note": "Interim placeholder from avatar engineering proof capture; replace after image_gen full portal composite."
+    }
+  ],
+  "input_reference": {
+    "file": "artifacts/visual/WIN-012/schedule-es-final.png",
+    "role": "Portal frame and panel rhythm from WIN-012 schedule setup."
+  },
+  "fixture": {
+    "fictional": true,
+    "skin_palette_id": "warm",
+    "hair_id": "spiky",
+    "preview_gear": true
+  },
+  "scope": "Single-screen character customization v1; AvatarProof runtime only.",
+  "implementation": "Native UI uses PortalPage + LayeredAvatar; full bilingual portal renders pending user G0 approval."
+}

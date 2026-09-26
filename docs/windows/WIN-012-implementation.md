@@ -15,7 +15,7 @@ G0 summary: [WIN-012-schedule-session-time-g0.md](WIN-012-schedule-session-time-
 ## Navigation
 
 - Equipment checkpoint `REVIEW:WIN-012` → `OpenSchedule`.
-- Continue on setup → `REVIEW:WIN-013` notice (next window).
+- Continue on setup → `REVIEW:WIN-013` → `OpenCharacter`.
 
 ## Verification
 

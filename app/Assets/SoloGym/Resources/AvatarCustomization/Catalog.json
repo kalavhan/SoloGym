@@ -1,0 +1,68 @@
+{
+  "status": "engineering_workshop_catalog",
+  "notes": [
+    "AvatarAppearance is the onboarding-facing slice of the contract recipe; tower will resolve the same IDs later.",
+    "Skin entries tint masked regions only; equipment layers on the shared base rig."
+  ],
+  "skinPalettes": [
+    { "id": "warm", "enabled": true, "displayColor": "#FFC892", "tint": [1.0, 0.77, 0.57, 1.0] },
+    { "id": "sand", "enabled": true, "displayColor": "#E8B48A", "tint": [0.93, 0.72, 0.58, 1.0] },
+    { "id": "honey", "enabled": true, "displayColor": "#D99A6A", "tint": [0.88, 0.62, 0.45, 1.0] },
+    { "id": "amber", "enabled": true, "displayColor": "#C47E52", "tint": [0.78, 0.52, 0.36, 1.0] },
+    { "id": "deep", "enabled": true, "displayColor": "#7D482B", "tint": [0.49, 0.28, 0.17, 1.0] },
+    { "id": "espresso", "enabled": true, "displayColor": "#5A321F", "tint": [0.38, 0.22, 0.14, 1.0] },
+    { "id": "cocoa", "enabled": true, "displayColor": "#3D2216", "tint": [0.28, 0.16, 0.11, 1.0] },
+    { "id": "umber", "enabled": true, "displayColor": "#2A1810", "tint": [0.22, 0.12, 0.08, 1.0] }
+  ],
+  "hairStyles": [
+    { "id": "spiky", "enabled": true, "layerPartId": "hair_spiky", "tileColor": "#1A2230", "labelEn": "Spiky", "labelEs": "Espinoso" },
+    { "id": "swept", "enabled": true, "layerPartId": "hair_swept", "tileColor": "#243040", "labelEn": "Swept", "labelEs": "Lateral" }
+  ],
+  "eyes": [
+    { "id": "proof_eyes", "enabled": true, "layerPartId": "eyes", "tileColor": "#2A3545", "labelEn": "Default", "labelEs": "Predeterminado" }
+  ],
+  "mouths": [
+    { "id": "proof_mouth", "enabled": true, "layerPartId": "mouth", "tileColor": "#3A2830", "labelEn": "Default", "labelEs": "Predeterminado" }
+  ],
+  "fitFamilies": [
+    { "id": "proof_male_athletic", "enabled": true, "labelEn": "Athletic (proof)", "labelEs": "Atlético (prueba)" },
+    { "id": "male_smaller_soft_v0", "enabled": false, "labelEn": "Compact · soft", "labelEs": "Compacto · suave" },
+    { "id": "male_smaller_defined_v0", "enabled": false, "labelEn": "Compact · defined", "labelEs": "Compacto · definido" },
+    { "id": "male_larger_soft_v0", "enabled": false, "labelEn": "Tall · soft", "labelEs": "Alto · suave" },
+    { "id": "male_larger_defined_v0", "enabled": false, "labelEn": "Tall · defined", "labelEs": "Alto · definido" }
+  ],
+  "equipmentSlots": [
+    {
+      "slotId": "torso",
+      "items": [
+        { "id": "", "enabled": true, "labelEn": "None", "labelEs": "Ninguno", "tileColor": "#142030" },
+        { "id": "proof_training_top", "enabled": true, "labelEn": "Training top", "labelEs": "Top de entreno", "tileColor": "#1E4A66", "compatibleFitFamilies": ["proof_male_athletic"] }
+      ]
+    },
+    {
+      "slotId": "hands",
+      "items": [
+        { "id": "", "enabled": true, "labelEn": "None", "labelEs": "Ninguno", "tileColor": "#142030" },
+        { "id": "proof_cyan_gloves", "enabled": true, "labelEn": "Cyan gloves", "labelEs": "Guantes cian", "tileColor": "#0E6A88", "compatibleFitFamilies": ["proof_male_athletic"] }
+      ]
+    },
+    {
+      "slotId": "head",
+      "items": [
+        { "id": "", "enabled": true, "labelEn": "None", "labelEs": "Ninguno", "tileColor": "#142030" }
+      ]
+    },
+    {
+      "slotId": "legs",
+      "items": [
+        { "id": "", "enabled": true, "labelEn": "None", "labelEs": "Ninguno", "tileColor": "#142030" }
+      ]
+    },
+    {
+      "slotId": "feet",
+      "items": [
+        { "id": "", "enabled": true, "labelEn": "None", "labelEs": "Ninguno", "tileColor": "#142030" }
+      ]
+    }
+  ]
+}
