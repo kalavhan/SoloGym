@@ -590,13 +590,12 @@
       },
       "purpose": "Record the actual equipment and location available for a workout.",
       "steps": [
-        "Choose home, gym, or custom location",
-        "Select available equipment including bodyweight only",
-        "Add relevant load ranges or constraints",
-        "Save reusable equipment profiles"
+        "Choose home, gym, or outdoor environment",
+        "Select available equipment or confirm bodyweight only",
+        "Review and continue to schedule setup"
       ],
       "depends_on": [
-        "WIN-009"
+        "WIN-010"
       ],
       "data_domains": [
         "equipment_catalog",
@@ -614,8 +613,10 @@
         "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "not_started",
-      "scope": "v1"
+      "stage": "native_ui_verified_pending_user_acceptance",
+      "scope": "v1",
+      "current_artifact": "docs/windows/WIN-011-implementation.md",
+      "render_manifest": "design/reference-manifests/WIN-011-available-equipment-v1.json"
     },
     {
       "id": "WIN-012",
@@ -2623,8 +2624,8 @@
     "note": "G0 is the prerequisite window-brief approval and is included in the avatar contract before background."
   },
   "visual_reference_contract": "docs/design/visual-reference-contract.md",
-  "active_window": "WIN-010",
-  "approval_workflow_status": "WIN-010 G0 approved and native UI implemented; focused Linux verification and user acceptance pending. No APK.",
+  "active_window": "WIN-011",
+  "approval_workflow_status": "WIN-011 G0 proposal and native UI implemented; G0 ledger awaiting user sign-off; Linux verification captured. No APK.",
   "ui_architecture": {
     "document": "docs/engineering/layered-ui-and-avatar-architecture.md",
     "status": "implemented_pending_native_visual_acceptance",
@@ -2637,7 +2638,7 @@
       "WIN-002",
       "WIN-001"
     ],
-    "next_new_window": "WIN-010",
+    "next_new_window": "WIN-011",
     "next_new_window_target_approved": false,
     "verification": "Complete-window baseline comparisons and focused interactions; no per-control render loop and no APK.",
     "implementation_report": "docs/engineering/layered-ui-and-avatar-implementation.md",

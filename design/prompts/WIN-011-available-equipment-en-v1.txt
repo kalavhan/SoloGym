@@ -1,0 +1,16 @@
+Use case: ui-mockup
+Asset type: one full-screen SoloGym mobile game UI proposal, WIN-011 Available Equipment, English. Target 853 x 1844 portrait, identical to the Spanish input reference. No phone frame, collage or asset sheet.
+Use the generated Spanish WIN-011 full screen as the exact visual reference. Preserve all environment art, wordmark, portal, panel silhouette, three rows, selected first-row diamond, spacings, cyan button shape, footer and top navigation. Change ONLY the UI language with careful localized font fitting.
+Exact English strings:
+"Back"
+"EN"
+"AVAILABLE EQUIPMENT"
+"YOUR SPACE"
+"Choose where you usually train"
+"Home"
+"Gym"
+"Outdoor"
+"You can update this when your setup changes."
+"CONTINUE"
+"Privacy · Terms"
+Do not redesign or add elements.

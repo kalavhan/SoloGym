@@ -19,6 +19,7 @@ namespace SoloGym
         OnboardingController controller;
         PrivateProfileScreen profile;
         GoalsExperienceScreen goals;
+        EquipmentScreen equipment;
         int profileReturnFrame = -1;
         InputField ageInput;
         Text status, countryValue, regionValue, privacyCheck, termsCheck, continueText;
@@ -58,6 +59,8 @@ namespace SoloGym
                 OpenProfile(capture);
             else if (Argument("-sologym-window") == "goals" && review)
                 OpenGoals(capture);
+            else if (Argument("-sologym-window") == "equipment" && review)
+                OpenEquipment(capture);
             else if (capture != null) StartCoroutine(Capture());
         }
 
@@ -109,12 +112,40 @@ namespace SoloGym
                 else root.gameObject.SetActive(true);
             }, () => controller.Decline(), id =>
             {
-                if (id != "REVIEW:WIN-011") return;
+                if (id == "REVIEW:WIN-011") OpenEquipment();
+            }, capturePath, step);
+        }
+
+        void OpenEquipment(string capturePath = null)
+        {
+            if (!controller.Model.ReviewMode) return;
+            KeyboardOff();
+            CloseModal();
+            if (goals != null) goals.gameObject.SetActive(false);
+            if (profile != null) profile.gameObject.SetActive(false);
+            root.gameObject.SetActive(false);
+            string step = Argument("-sologym-equipment-view");
+            if (equipment != null)
+            {
+                equipment.Resume(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"));
+                return;
+            }
+            var node = new GameObject("Available equipment");
+            node.transform.SetParent(transform, false);
+            equipment = node.AddComponent<EquipmentScreen>();
+            equipment.Initialize(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"), true, () =>
+            {
+                equipment.gameObject.SetActive(false);
+                if (goals != null) goals.gameObject.SetActive(true);
+                else root.gameObject.SetActive(true);
+            }, () => controller.Decline(), id =>
+            {
+                if (id != "REVIEW:WIN-012") return;
                 KeyboardOff();
                 Notice(L("Next step", "Siguiente paso"),
-                    L("Available equipment is the next window. Nothing was saved to your account.",
-                        "El equipo disponible es la siguiente ventana. No se guardaron datos en tu cuenta."));
-            }, capturePath, step);
+                    L("Schedule and session time is the next window. Nothing was saved to your account.",
+                        "El horario y la duración de sesión es la siguiente ventana. No se guardaron datos en tu cuenta."));
+            }, capturePath ?? (Argument("-sologym-window") == "equipment" ? capture : null), step);
         }
 
         void Render(OnboardingViewModel model)

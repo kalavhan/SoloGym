@@ -1,0 +1,28 @@
+{
+  "environments": [
+    { "id": "home", "en": "Home", "es": "Casa" },
+    { "id": "gym", "en": "Gym", "es": "Gimnasio" },
+    { "id": "outdoor", "en": "Outdoor", "es": "Aire libre" }
+  ],
+  "equipment": [
+    { "id": "wall", "en": "Clear wall", "es": "Pared despejada" },
+    { "id": "chair", "en": "Stable chair", "es": "Silla estable" },
+    { "id": "stable_surface", "en": "Stable support", "es": "Apoyo estable" },
+    { "id": "dumbbells", "en": "Dumbbells", "es": "Mancuernas" },
+    { "id": "resistance_band", "en": "Resistance band", "es": "Banda de resistencia" },
+    { "id": "band_anchor", "en": "Rated band anchor", "es": "Anclaje adecuado para banda" },
+    { "id": "cable_machine", "en": "Cable machine", "es": "Máquina de poleas" },
+    { "id": "lat_pulldown_machine", "en": "Lat pulldown machine", "es": "Máquina de jalón al pecho" },
+    { "id": "leg_press_machine", "en": "Leg press", "es": "Prensa de piernas" },
+    { "id": "chest_press_machine", "en": "Chest press machine", "es": "Máquina de press de pecho" },
+    { "id": "shoulder_press_machine", "en": "Shoulder press machine", "es": "Máquina de press de hombros" },
+    { "id": "stationary_bike", "en": "Stationary bike", "es": "Bicicleta fija" },
+    { "id": "elliptical_machine", "en": "Elliptical", "es": "Elíptica" },
+    { "id": "low_step", "en": "Stable low step", "es": "Escalón bajo estable" },
+    { "id": "stretch_strap", "en": "Stretch strap", "es": "Correa de estiramiento" },
+    { "id": "bench", "en": "Exercise bench", "es": "Banco de ejercicio" }
+  ],
+  "visible_home": ["wall", "chair", "stable_surface", "dumbbells", "resistance_band", "band_anchor", "stationary_bike", "elliptical_machine", "low_step", "stretch_strap"],
+  "visible_gym": ["wall", "chair", "stable_surface", "dumbbells", "bench", "resistance_band", "band_anchor", "cable_machine", "lat_pulldown_machine", "leg_press_machine", "chest_press_machine", "shoulder_press_machine", "stationary_bike", "elliptical_machine", "low_step", "stretch_strap"],
+  "visible_outdoor": []
+}

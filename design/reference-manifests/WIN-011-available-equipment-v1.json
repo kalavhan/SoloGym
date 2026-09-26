@@ -1,0 +1,42 @@
+{
+  "window_id": "WIN-011",
+  "status": "proposal_awaiting_user_approval",
+  "generation_tool": "built-in image_gen",
+  "version": 1,
+  "date": "2026-09-26",
+  "references": [
+    {
+      "file": "design/renders/WIN-011-available-equipment-es-proposal-v1.png",
+      "locale": "es",
+      "sha256": "119cb3641d518e76a8b9fae35eca4f4387c06a68dda36ed823346120c802d69f",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "prompt": "design/prompts/WIN-011-available-equipment-es-v1.txt"
+    },
+    {
+      "file": "design/renders/WIN-011-available-equipment-en-proposal-v1.png",
+      "locale": "en",
+      "sha256": "3ebaa39acf60e55462ed357a6ff2487fa4b5d7265c0230806d717687143aacd6",
+      "dimensions": [
+        720,
+        1280
+      ],
+      "prompt": "design/prompts/WIN-011-available-equipment-en-v1.txt"
+    }
+  ],
+  "input_reference": {
+    "file": "design/renders/WIN-010-goals-experience-es-proposal-v1.png",
+    "role": "WIN-010 Spanish target supplies portal and panel style for the Spanish equipment step-1 edit."
+  },
+  "fixture": {
+    "fictional": true,
+    "step": "environment",
+    "environment": "home",
+    "runtime_initial_values": "No environment on first entry; explicit choice required."
+  },
+  "inspection": "Generated whole-screen outputs: three environment rows, localized copy, first row selected in fixture, portal and frame retained. Steps 2-3 use live UI on the shared frame; no per-item equipment renders.",
+  "scope": "Principal adult environment step of a three-step equipment window.",
+  "implementation": "Native UI follows G0 approval. Runtime composes PortalBackground-v1 at 853x1844; proposal PNGs are composition targets."
+}

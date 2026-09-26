@@ -145,9 +145,17 @@
       "evidence": "Implement WIN-010 plan: full EN/ES copy for steps 2-3, teen subset and uncertainty confirm, step-1 targets aligned to migrated portal; steps 2-3 text-only on shared frame.",
       "data_artifact": "data/windows/WIN-010-goals-experience.json",
       "g1_background_reuse": "Art/PortalBackground-v1 and SystemUI.PortalPage (718, 965); N/A new character art"
+    },
+    {
+      "window_id": "WIN-011",
+      "gate": "G0",
+      "state": "awaiting_user_approval",
+      "artifact": "docs/windows/WIN-011-available-equipment-g0.md",
+      "render_manifest": "design/reference-manifests/WIN-011-available-equipment-v1.json",
+      "data_artifact": "data/windows/WIN-011-available-equipment.json"
     }
   ],
-  "required_next_artifact": "WIN-010 native implementation and focused Linux verification; no APK.",
+  "required_next_artifact": "Review WIN-011 G0 flow, copy and retained step-1 renders; then native implementation verification. No APK.",
   "welcome_implementation_review": {
     "window_id": "WIN-002",
     "state": "accepted_by_user_report",

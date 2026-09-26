@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-011",
+  "status": "native_ui_implemented_pending_user_acceptance",
+  "source_catalog": "data/training/equipment.json",
+  "source_schema": "data/schemas/training-profile.schema.json",
+  "source_exercises": "data/training/exercises.json",
+  "steps": [
+    "environment",
+    "equipment",
+    "review"
+  ],
+  "fixture": {
+    "fictional": true,
+    "step": "environment",
+    "environment": "home",
+    "equipment": [],
+    "bodyweight_only": false,
+    "note": "Proposal render may show home selected; runtime starts with empty environment and no equipment selections."
+  },
+  "initial_state": {
+    "environment": null,
+    "equipment": [],
+    "bodyweight_only": false
+  },
+  "environments": [
+    {
+      "id": "home",
+      "en": "Home",
+      "es": "Casa"
+    },
+    {
+      "id": "gym",
+      "en": "Gym",
+      "es": "Gimnasio"
+    },
+    {
+      "id": "outdoor",
+      "en": "Outdoor",
+      "es": "Aire libre"
+    }
+  ],
+  "equipment_by_environment": {
+    "home": [
+      "wall",
+      "chair",
+      "stable_surface",
+      "dumbbells",
+      "resistance_band",
+      "band_anchor",
+      "stationary_bike",
+      "elliptical_machine",
+      "low_step",
+      "stretch_strap"
+    ],
+    "gym": [
+      "wall",
+      "chair",
+      "stable_surface",
+      "dumbbells",
+      "bench",
+      "resistance_band",
+      "band_anchor",
+      "cable_machine",
+      "lat_pulldown_machine",
+      "leg_press_machine",
+      "chest_press_machine",
+      "shoulder_press_machine",
+      "stationary_bike",
+      "elliptical_machine",
+      "low_step",
+      "stretch_strap"
+    ],
+    "outdoor": []
+  },
+  "outdoor_note": "Catalog equipment ids are derived from exercises with non-empty equipment_all for the selected environment. Outdoor-eligible exercises in the draft catalog are bodyweight-only, so the checklist is empty; the user confirms bodyweight-only explicitly.",
+  "bodyweight_only": {
+    "en": "Bodyweight only",
+    "es": "Solo peso corporal",
+    "stores": "equipment array cleared; not inferred from goal or avatar"
+  },
+  "copy": {
+    "window_title_en": "AVAILABLE EQUIPMENT",
+    "window_title_es": "EQUIPO DISPONIBLE",
+    "environment_title_en": "YOUR SPACE",
+    "environment_title_es": "TU ESPACIO",
+    "environment_subtitle_en": "Choose where you usually train",
+    "environment_subtitle_es": "Elige dónde entrenas habitualmente",
+    "environment_footer_en": "You can update this when your setup changes.",
+    "environment_footer_es": "Puedes actualizarlo cuando cambie tu espacio.",
+    "equipment_title_en": "WHAT YOU HAVE",
+    "equipment_title_es": "LO QUE TIENES",
+    "equipment_subtitle_en": "Select everything you can use safely today",
+    "equipment_subtitle_es": "Selecciona todo lo que puedas usar con seguridad hoy",
+    "outdoor_helper_en": "Outdoor sessions in this catalog use open-space and bodyweight movements. Confirm bodyweight only to continue.",
+    "outdoor_helper_es": "Las sesiones al aire libre en este catálogo usan movimientos en espacio abierto y peso corporal. Confirma solo peso corporal para continuar.",
+    "review_title_en": "REVIEW AND CONTINUE",
+    "review_title_es": "REVISAR Y CONTINUAR",
+    "review_environment_label_en": "Where you train",
+    "review_environment_label_es": "Dónde entrenas",
+    "review_equipment_label_en": "Equipment",
+    "review_equipment_label_es": "Equipo",
+    "change_environment_en": "Change location",
+    "change_environment_es": "Cambiar lugar",
+    "change_equipment_en": "Change equipment",
+    "change_equipment_es": "Cambiar equipo",
+    "review_body_en": "You'll still set your schedule before sessions are prepared. Nothing is saved to your account in this preview.",
+    "review_body_es": "Todavía configurarás tu horario antes de preparar las sesiones. En esta vista previa no se guarda nada en tu cuenta.",
+    "bodyweight_review_en": "Bodyweight only",
+    "bodyweight_review_es": "Solo peso corporal"
+  },
+  "constraints": [
+    "environment is a required explicit choice: home, gym, or outdoor per training-profile schema.",
+    "Continue from equipment requires bodyweight_only or at least one selected equipment id when the environment has catalog items.",
+    "Outdoor requires explicit bodyweight_only because the derived equipment list is empty.",
+    "No load ranges, named equipment profiles, or inference from avatar, goal, or measurements.",
+    "Unavailable equipment is never silently required by this UI; only declared items are stored.",
+    "Return and language changes preserve the draft; exit discards unsaved changes."
+  ],
+  "navigation": {
+    "depends_on": "WIN-010",
+    "next": "WIN-012"
+  },
+  "persistence": "In-memory draft in review mode only until private profile service exists.",
+  "render_manifest": "design/reference-manifests/WIN-011-available-equipment-v1.json"
+}

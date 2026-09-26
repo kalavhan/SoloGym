@@ -61,6 +61,24 @@ namespace SoloGym
             {gameObject.AddComponent<AvatarProofScreen>().Initialize();enabled=false;return;}
             if(Argument("-sologym-window")=="components")
             {gameObject.AddComponent<SystemGallery>().Initialize();enabled=false;return;}
+            if (Argument("-sologym-window") == "equipment")
+            {
+                Application.targetFrameRate = 60;
+                Screen.orientation = ScreenOrientation.Portrait;
+                requestedCapture = Argument("-sologym-capture");
+                reviewMode = Application.isEditor || HasArgument("-sologym-review");
+#if SOLOGYM_REVIEW
+                reviewMode = true;
+#endif
+                if (!reviewMode) { Debug.LogError("WIN-011 preview requires -sologym-review."); enabled = false; return; }
+                if (FindFirstObjectByType<EventSystem>() == null)
+                    new GameObject("Input", typeof(EventSystem), typeof(StandaloneInputModule));
+                var equipPreview = new GameObject("SoloGym equipment preview").AddComponent<OnboardingScreen>();
+                string equipLocale = Argument("-sologym-locale");
+                equipPreview.Initialize(equipLocale ?? "auto", true, () => Application.Quit(), null, requestedCapture);
+                enabled = false;
+                return;
+            }
             if (Argument("-sologym-window") == "goals")
             {
                 Application.targetFrameRate = 60;
@@ -118,7 +136,7 @@ namespace SoloGym
             string initialWindow = Argument("-sologym-window");
             if ((initialWindow == "age" || initialWindow == "consent" || initialWindow == "profile") && reviewMode)
                 OpenOnboarding(true, null, requestedCapture);
-            else if (initialWindow == "goals" && reviewMode)
+            else if ((initialWindow == "goals" || initialWindow == "equipment") && reviewMode)
                 OpenOnboarding(true, null, requestedCapture);
             else if (requestedCapture != null) StartCoroutine(Capture());
         }

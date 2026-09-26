@@ -12,6 +12,7 @@ namespace SoloGym
         public SystemTheme theme;
         public bool ornaments;
         public float corner = -1;
+        public float rimWidth = -1;
         public override Texture mainTexture => Texture2D.whiteTexture;
         Color Tint(Color c) => c * color;
         protected override void OnPopulateMesh(VertexHelper v)
@@ -34,7 +35,8 @@ namespace SoloGym
             Fan(v,p,Tint(fill),Tint(active?Color.Lerp(fill,Color.black,.5f):fill));
             if(style!=PanelStyle.Fill)
             {
-                Stroke(v,p,Tint(rim),active?2.5f:t.borderWidth);
+                float stroke=rimWidth>=0?rimWidth:active?2.5f:t.borderWidth;
+                Stroke(v,p,Tint(rim),stroke);
                 var inner=r;inner.xMin+=5;inner.xMax-=5;inner.yMin+=5;inner.yMax-=5;
                 if(style==PanelStyle.Primary||style==PanelStyle.Glass)
                     Stroke(v,Points(inner,Mathf.Max(0,cut-2)),Tint(new Color(rim.r,rim.g,rim.b,active?.55f:.18f)),1);

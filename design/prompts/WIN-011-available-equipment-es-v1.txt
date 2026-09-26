@@ -1,0 +1,17 @@
+Use case: ui-mockup
+Asset type: one full-screen SoloGym mobile game UI proposal, WIN-011 Available Equipment, Spanish. Target 853 x 1844 portrait, not a phone frame, collage or asset sheet.
+Input image: approved WIN-010 Spanish full screen is the exact established visual reference. Preserve the SoloGym wordmark, indigo cathedral spires, violet magical portal, reflective stone floor, dark-blue glass and thin cyan angular rune-cut frame.
+Primary request: replace the goals list with the first step of an equipment setup flow: choose where you train. Remove every old goals title, five goal rows and goal helper. Keep the logo upper area and magical portal clearly visible. A single large translucent panel in the same lower region holds a silver serif title, subtitle, three roomy vertically stacked selection rows, one quiet helper line and one bright cyan beveled main action. Rows are dark indigo glass with subtle cyan edges. The first row (Home/Casa) is selected with a brighter cyan outline and a small checked diamond at its left; the other two rows have an empty diamond. Equal row size, legible labels, generous spacing. No equipment icons, machines, characters or new sprites.
+Exact text, each string once:
+"Volver"
+"ES"
+"EQUIPO DISPONIBLE"
+"TU ESPACIO"
+"Elige dónde entrenas habitualmente"
+"Casa"
+"Gimnasio"
+"Aire libre"
+"Puedes actualizarlo cuando cambie tu espacio."
+"CONTINUAR"
+"Privacidad · Términos"
+Fictional fixture: Casa selected. Runtime first entry is unselected. Footer below panel. No load ranges, saved profiles, schedules, XP, or save confirmations. Complete retained target for step 1 only; later steps use editable UI on the same frame.
