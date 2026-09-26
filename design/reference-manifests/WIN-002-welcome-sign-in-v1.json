@@ -64,7 +64,7 @@
       "output": "design/renders/WIN-002-welcome-sign-in-en-proposal-v1.png"
     }
   ],
-  "implementation_status": "native_built_email_configured_google_pending_permission_device_review_pending",
+  "implementation_status": "email_and_google_configured_android_0.2.1_build_verified_device_review_pending",
   "approval_scope": "Android principal welcome composition, copy and access choices. Does not approve account backend, legal policies, provider art, iOS layout or email/keyboard state.",
   "provider_assets": "AI-rendered provider mark is illustrative. Use official Google resources/native Apple button in implementation and review final geometry.",
   "shared_art": "Use one environment/frame for all locales in implementation. Generated localized previews do not prove byte-identical art.",

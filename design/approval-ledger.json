@@ -71,14 +71,21 @@
       "evidence": "si, esta perfecta"
     }
   ],
-  "required_next_artifact": "Resolve the pending public-support-contact permission for Google, complete its OAuth configuration and verify real sign-in on a phone. Record native Welcome review separately; signup and onboarding remain subsequent milestones.",
+  "required_next_artifact": "Review the verified 0.2.1/code 3 APK on a physical device and verify email/Google sign-in plus cancellation. Record native Welcome acceptance separately; signup and onboarding remain subsequent milestones.",
   "welcome_implementation_review": {
     "window_id": "WIN-002",
-    "state": "native_built_email_configured_google_pending_permission_device_review_pending",
+    "state": "email_and_google_configured_android_build_verified_device_review_pending",
     "artifact": "docs/windows/WIN-002-implementation.md",
     "runtime_project": "app",
-    "version": "0.2.0",
-    "android_version_code": 2,
+    "version": "0.2.1",
+    "android_version_code": 3,
+    "capture_version": "0.2.0; UI unchanged by the Google configuration update",
+    "verified_update": {
+      "version": "0.2.1",
+      "android_version_code": 3,
+      "build_verification": "APK build, v2 signature, unchanged signing certificate, packaged OAuth configuration and privacy-manifest checks passed",
+      "artifact": "artifacts/visual/WIN-002/build-verification.json"
+    },
     "captures": [
       "artifacts/visual/WIN-002/welcome-en-final.png",
       "artifacts/visual/WIN-002/welcome-es-final.png",
@@ -89,10 +96,10 @@
       "artifacts/visual/WIN-002/comparison-es.metrics.json"
     ],
     "focused_interaction_checks": "5 passed with unconfigured auth service; artifacts/visual/WIN-002/welcome-en-final.smoke.json",
-    "builds": "Final Android ARM64 IL2CPP APK and Linux player succeeded with local email configuration and SOLOGYM_REVIEW. Android signature verified; advertising, attribution and install-referrer permissions removed. Physical-device sign-in and native Welcome acceptance remain pending.",
+    "builds": "Android 0.2.1/code 3 ARM64 IL2CPP APK succeeded with both providers configured and SOLOGYM_REVIEW; v2 signature, unchanged signing certificate, packaged OAuth configuration and privacy checks passed. Linux player and unchanged UI captures remain 0.2.0. Physical-device provider checks and native Welcome acceptance remain pending.",
     "user_native_visual_acceptance": "not_recorded_for_WIN-002",
     "strict_pixel_match_accepted": false,
-    "limitations": "Native Welcome has no user acceptance or real-device/provider verification recorded. Google is disabled pending public-support-contact permission and has an empty web client ID. Signup, recovery, onboarding, legal content and production profile routing remain future milestones. SOLOGYM_REVIEW exposes a labeled sample Home; iOS Google/Apple adapters and iOS binary remain pending."
+    "limitations": "Native Welcome has no user acceptance or real-device/provider verification recorded. Both providers are enabled/configured and the Android binary is verified. Signup, recovery, onboarding, legal content and production profile routing remain future milestones. SOLOGYM_REVIEW exposes a labeled sample Home; iOS Google/Apple adapters and iOS binary remain pending."
   },
   "implementation_review": {
     "window_id": "WIN-001",
@@ -139,7 +146,7 @@
   },
   "authentication_choice": {
     "provider": "Firebase Authentication",
-    "state": "email_configured_google_disabled_pending_public_support_contact_permission",
+    "state": "email_and_google_enabled_configured_physical_device_verification_pending",
     "evidence": "Preparar Firebase Authentication para un proyecto nuevo",
     "account_owner": "user_selected_personal_google_account",
     "project_id": "sologym-66395",
@@ -147,9 +154,14 @@
     "android_package": "com.kalavhan.sologym",
     "android_registration": "actual Firebase app ID and installation-signing SHA-1/SHA-256 fingerprints registered",
     "email_password_provider": "enabled",
-    "local_configuration": "ignored files populated from observed Firebase Console values; SDK JSON reconstructed after the download failed",
-    "google_provider": "disabled; googleWebClientId empty",
-    "google_permission": "Automatic approval review rejected the public-support-contact publication step pending explicit permission; user response pending",
+    "local_configuration": "ignored files retain existing Firebase SDK client fields plus real OAuth clients observed in the Console",
+    "google_provider": "enabled; real web and Android OAuth clients configured; Android package and SHA-1 match the existing APK",
+    "google_oauth_audience": "External / In production observed in Console; read-only inspection, no audience change",
+    "google_permission": {
+      "state": "authorized_by_user",
+      "evidence": "1",
+      "interpretation": "User selected the first option authorizing use of the chosen public support email. This resolved the earlier automatic-review permission block; no personal address is recorded here."
+    },
     "device_sign_in_verification": "not_performed",
     "note": "Personal project only. No personal email address or administrative credential is committed. Local configuration is not proof of successful device authentication."
   }
