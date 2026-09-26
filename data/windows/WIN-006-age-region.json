@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "proposal",
+  "status": "native_ui_implemented",
   "window_id": "WIN-006",
   "fixture": {
     "declaredAge": 21,
@@ -33,7 +33,7 @@
     "guardian_if_required": "WIN-008 remains separate"
   },
   "storage": {
-    "current": "Not implemented; Firebase Authentication does not store these fields",
+    "current": "Draft in memory only; remote persistence and server policy not implemented. Normal route fails closed; explicit review never saves acceptance.",
     "draft": "Memory only until eligible authenticated persistence is appropriate",
     "proposed_private_document": "users/{uid}/private/eligibility",
     "fields": [
@@ -47,5 +47,11 @@
     "age_transition": "Reconfirm age when an adult-only feature is requested; no guessed birthday or automatic age increment",
     "ranking": "No public projection or participation enabled by this form"
   },
-  "release_gate": "Reviewed country policies required. Unknown policies fail closed. Fictional MX render is not launch approval."
+  "release_gate": "Reviewed country policies required. Unknown policies fail closed. Fictional MX render is not launch approval.",
+  "approval": {
+    "date": "2026-09-25",
+    "evidence": "aprobado, no hay necesidad de generar el apk aun. implementa y terminanndo prepare la siguiente ventana",
+    "scope": "Visual target and intended flow; deployment of final policy documents and server-authoritative persistence remains dependent on reviewed configuration."
+  },
+  "implementation_report": "docs/windows/WIN-006-007-implementation.md"
 }

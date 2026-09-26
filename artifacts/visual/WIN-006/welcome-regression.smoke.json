@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "language control",
+    "email input and validation",
+    "password masking and reveal",
+    "back clears password",
+    "unconfigured provider never authorizes Home"
+  ]
+}

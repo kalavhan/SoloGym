@@ -30,6 +30,7 @@ namespace SoloGym
         Rect lastSafe;
         Vector2 lastSize;
         bool reviewMode, allowPreview, lastKeyboard, lastOnline = true, switching;
+        OnboardingScreen onboarding;
         float lastKeyboardHeight, nextRefresh;
         string requestedCapture;
 
@@ -94,7 +95,10 @@ namespace SoloGym
             if (Argument("-sologym-view") == "email") controller.OpenEmail();
             Render(controller.Model);
             FitSafeArea();
-            if (requestedCapture != null) StartCoroutine(Capture());
+            string initialWindow = Argument("-sologym-window");
+            if ((initialWindow == "age" || initialWindow == "consent") && reviewMode)
+                OpenOnboarding(true, null, requestedCapture);
+            else if (requestedCapture != null) StartCoroutine(Capture());
         }
 
         void CreateCanvas()
@@ -287,6 +291,9 @@ namespace SoloGym
 
         void Navigate(WelcomeNavigation navigation)
         {
+            if (navigation.WindowId == "WIN-006") { OpenOnboarding(false); return; }
+            if (navigation.WindowId == "WIN-007" && (navigation.Context == "privacy" || navigation.Context == "terms"))
+            { OpenOnboarding(false, navigation.Context); return; }
             string heading = navigation.Context == "privacy" ? controller.Model.Copy("privacy") :
                 navigation.Context == "terms" ? controller.Model.Copy("terms") :
                 navigation.WindowId == "WIN-005" ? controller.Model.Copy("forgot") : controller.Model.Copy("create");
@@ -300,7 +307,7 @@ namespace SoloGym
 
         void ShowLanguage()
         {
-            OpenModal(controller.Model.Copy("language"), allowPreview || reviewMode ? 620 : 430);
+            OpenModal(controller.Model.Copy("language"), allowPreview || reviewMode ? 725 : 430);
             NativeButton(modal, new Rect(34, 108, 592, 82), "English", () => { controller.SetLanguage("en"); CloseModal(); });
             NativeButton(modal, new Rect(34, 207, 592, 82), "Español", () => { controller.SetLanguage("es"); CloseModal(); });
             NativeButton(modal, new Rect(34, 306, 592, 82), L("Use device language", "Usar idioma del dispositivo"),
@@ -312,7 +319,25 @@ namespace SoloGym
                 note.text = L("Sample Home uses fictional profile data. It does not sign you in.",
                     "El Inicio de muestra usa datos ficticios. No inicia una sesión de cuenta.");
                 NativeButton(modal, new Rect(34, 505, 592, 82), L("View sample Home", "Ver Inicio de muestra"), OpenSampleHome);
+                NativeButton(modal, new Rect(34, 608, 592, 82), L("Preview profile setup", "Vista previa de configuración"), () => OpenOnboarding(true));
             }
+        }
+
+        void OpenOnboarding(bool review, string document = null, string capturePath = null)
+        {
+            if (onboarding != null || (review && !reviewMode && !allowPreview)) return;
+            CloseModal();
+            controller.CancelAuthentication();
+            ClearPasswordInput();
+            root.gameObject.SetActive(false);
+            onboarding = new GameObject("SoloGym onboarding").AddComponent<OnboardingScreen>();
+            onboarding.Initialize(controller.Model.LanguagePreference, review, () =>
+            {
+                onboarding = null;
+                root.gameObject.SetActive(true);
+                controller.SetLanguage(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"));
+                Render(controller.Model);
+            }, document, capturePath);
         }
 
         void OpenSampleHome()
@@ -453,7 +478,7 @@ namespace SoloGym
 
         void Update()
         {
-            if (controller == null) return;
+            if (controller == null || onboarding != null) return;
             bool keyboard = TouchScreenKeyboard.visible && controller.Model.View == WelcomeView.EmailSignIn;
             float keyboardHeight = keyboard ? TouchScreenKeyboard.area.height : 0;
             if (lastSize.x != Screen.width || lastSize.y != Screen.height || lastSafe != Screen.safeArea ||

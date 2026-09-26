@@ -1,0 +1,44 @@
+{
+  "window_id": "WIN-009",
+  "status": "proposal_awaiting_user_approval",
+  "generation_tool": "built-in image_gen",
+  "version": 1,
+  "references": [
+    {
+      "file": "design/renders/WIN-009-private-fitness-profile-es-proposal-v1.png",
+      "locale": "es",
+      "sha256": "70bfb0452684e0f87ed48de6e78b9be322372294db60beff99dd7bdff28f3883",
+      "dimensions": [
+        853,
+        1844
+      ],
+      "prompt": "design/prompts/WIN-009-private-fitness-profile-es-v1.txt"
+    },
+    {
+      "file": "design/renders/WIN-009-private-fitness-profile-en-proposal-v1.png",
+      "locale": "en",
+      "sha256": "ec71b5becc1ffa7d7412e9d371f2bfa2d1f12a31c73ddfd87617d5ef8d368950",
+      "dimensions": [
+        853,
+        1844
+      ],
+      "prompt": "design/prompts/WIN-009-private-fitness-profile-en-v1.txt"
+    }
+  ],
+  "input_reference": {
+    "file": "design/renders/WIN-006-age-region-es-proposal-v1.png",
+    "role": "Approved visual reference for Spanish generation; English localizes the generated Spanish screen.",
+    "sha256": "788ebd159c0e9369e50e078841b4c8b7e727ee94073b332f3999e21f86d3ef5b"
+  },
+  "fixture": {
+    "fictional": true,
+    "audience": "adult",
+    "unitSystem": "metric",
+    "heightCm": 170,
+    "bodyweightKg": 70,
+    "runtime_initial_values": "Both optional measurements empty; no real user data."
+  },
+  "inspection": "Both generated whole-screen outputs inspected: established portal/logo and angular glass retained; correct ES/EN copy; optional measurements and 170/70 fixture; no visible overlapping controls. English privacy cue wraps to three lines while Spanish uses two. Each locale keeps its own immutable reference.",
+  "scope": "Principal optional-measurements step in a staged private-profile flow. Notice/required health-data consent and readiness steps reuse the frame; no per-control image generation.",
+  "implementation": "Not started. This next-window proposal requires approval before construction. No backend, profile collection or training change is claimed."
+}

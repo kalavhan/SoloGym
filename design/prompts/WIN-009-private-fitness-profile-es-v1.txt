@@ -1,0 +1,23 @@
+Use case: ui-mockup
+Asset type: one full-screen SoloGym mobile game UI proposal, WIN-009 Private Fitness Profile, Spanish. Target 853 x 1844 portrait, not a phone frame or collage.
+Input image: approved WIN-006 Spanish full screen is the visual reference and environment to preserve for the same game. Reuse it: preserve the SoloGym wordmark, indigo cathedral, violet portal, cyan angular glass borders, silver engraved serif text and reflective stone. Reuse the environment composition. No character, gear, sprites, BMI display, medical diagnosis, weight-loss goals or public ranking.
+Remove all old WIN-006 age/country labels, age value, country field and province field. Replace them with the requested measurements layout. Compose one elegant cultivation-manhua System window for OPTIONAL private measurements, as a staged onboarding step. Top-left small back control, top-right globe ES. Keep the logo upper area and magical portal visible; one broad dark translucent rune-cut panel below. Generous spacing, large readable controls, live-UI-friendly exact text. No white website cards, pills or desktop sidebar.
+Exact text:
+"Volver"
+"ES"
+"PERFIL PRIVADO"
+"Tus medidas, a tu ritmo"
+"Unidades"
+"cm / kg"
+"ft / lb"
+"Altura (opcional)"
+"170"
+"cm"
+"Peso corporal (opcional)"
+"70"
+"kg"
+"Puedes continuar sin añadir tus medidas."
+"No se muestran en tu perfil público."
+"CONTINUAR"
+"Privacidad · Términos"
+The metric option is selected; imperial is an unselected adjacent angular segment. The fictional adult values 170 cm and 70 kg are visual fixtures only; actual runtime starts empty. Two vertically stacked dark-blue glass fields, each with left-aligned value and right-aligned unit. A subtle small silver lock accompanies the privacy line. One bright cyan beveled main action matching the approved portal screens. No prechecked consent and no new health-data consent claims. No approval or saving status. Keep every line sharp, correctly spelled, and safely inside the panel. This is the complete-window target for later 1:1 implementation, not production evidence.

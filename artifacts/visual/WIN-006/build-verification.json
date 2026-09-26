@@ -1,0 +1,64 @@
+{
+  "date": "2026-09-25",
+  "version": "0.3.0",
+  "platform": "Linux local player",
+  "build": "succeeded",
+  "windows": [
+    "WIN-006",
+    "WIN-007"
+  ],
+  "captures": [
+    {
+      "file": "artifacts/visual/WIN-006/age-es-final.png",
+      "sha256": "66ec2b1eaeb915903b72f3e1e1d56ce1ccc15831ed32f50d9213f11cca8ebd11",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "artifacts/visual/WIN-006/age-en-final.png",
+      "sha256": "c494e5e5a242e7d1ad154ccca33685f7064a3ce693b8e2edd2b6f3d5d3501bd2",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "artifacts/visual/WIN-007/consent-es-final.png",
+      "sha256": "b2c26379e3cf97974701adc32b0b1223b26e80beeb3d6c6c56d7bafd9f9667d0",
+      "dimensions": [
+        853,
+        1844
+      ]
+    },
+    {
+      "file": "artifacts/visual/WIN-007/consent-en-final.png",
+      "sha256": "5b0996fd155aed26a09778ffe6fbaa7d8ed17e08affe7bbc153e10e6f06b54e4",
+      "dimensions": [
+        853,
+        1844
+      ]
+    }
+  ],
+  "checks": {
+    "state_groups": 11,
+    "ui_groups": 8,
+    "welcome_regression_groups": 5,
+    "passed": true
+  },
+  "android": {
+    "rebuilt": false,
+    "reason": "Explicit user instruction",
+    "unchanged_apk": {
+      "file": "app/Builds/Android/SoloGym-debug.apk",
+      "sha256": "f56b0451b23c12cedff4948ea0e24b34de9624750731b23da646376774643e23"
+    }
+  },
+  "limitations": [
+    "Real regional policies, final legal documents and server receipt/persistence unavailable; normal mode fails closed",
+    "Review mode is labeled and memory-only; it never authorizes a completed account profile",
+    "Linux captures do not verify Android keyboard, iOS or every screen size",
+    "Native glyph shading, reconstructed text backgrounds and review label differ from the proposal"
+  ]
+}

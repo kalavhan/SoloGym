@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "WIN-001 and WIN-002 accepted by user report; WIN-006 and WIN-007 visual proposals awaiting approval",
+  "status": "WIN-006/007 native UI implemented and Linux-verified; production policies/documents/storage pending. WIN-009 proposal next.",
   "product": "SoloGym",
   "constraints": {
     "platforms": [
@@ -101,7 +101,7 @@
     }
   ],
   "approval_rules": [
-    "Current iteration includes WIN-006 and WIN-007 at user request; their visual targets require approval before implementation.",
+    "WIN-006 and WIN-007 targets approved together. Complete implementation and focused checks without APK; then prepare the next applicable proposal. A new target still needs approval before implementation.",
     "The accepted overall style does not approve any individual background, sprite, prop, gear item, frame, or composed window.",
     "Except for an explicitly recorded user override, every window inherits G0 through G6 in that exact order. No later gate starts while the previous gate lacks user approval.",
     "Reuse requires an explicit recorded approval of the exact asset; regeneration is not the default. Record N/A with a reason when a stage has no applicable asset.",
@@ -179,8 +179,13 @@
       "WIN-063",
       "WIN-064"
     ],
-    "note": "The System Home preview is implemented in Unity 6000.3.24f1 and its Android installation/appearance are accepted by the user. WIN-002 native Welcome/email entry and Android integration are built. Email and Google are enabled/configured after explicit public-support-contact permission. The 0.2.1/code 3 Android update passed build, signature, packaged configuration and privacy checks; physical-device provider checks remain pending. Home remains fictional sample data; signup, recovery and onboarding are future windows.",
-    "next_activity_after_M0": "WIN-002 target is approved and the 0.2.1/code 3 Android build is verified. Review native Welcome and both provider flows on a physical device. Source-target approval is not native or authentication acceptance. The modular avatar pipeline remains a later deliverable."
+    "note": "WIN-001 and WIN-002 accepted by user report. WIN-006 and WIN-007 retained bilingual targets are now approved for complete-window implementation without an APK. WIN-003 language choice is shared within Welcome; WIN-004 signup and WIN-005 recovery remain separate pending work. The existing Home remains fictional sample data.",
+    "next_activity_after_M0": "Finish and verify WIN-006 and WIN-007; prepare WIN-009 private fitness profile for the eligible authenticated path. WIN-008 remains a conditional guardian branch determined by a reviewed regional policy, and WIN-004 remains the pre-auth email signup branch.",
+    "current_iteration": [
+      "WIN-006",
+      "WIN-007"
+    ],
+    "next_proposal": "WIN-009"
   },
   "windows": [
     {
@@ -411,9 +416,15 @@
         "Approve retained full-window target, build complete window, then focused visual and interaction QA. No per-button render loop.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "G0_visual_proposal_awaiting_approval",
+      "stage": "native_ui_verified_pending_user_acceptance",
       "scope": "v1",
-      "current_artifact": "docs/windows/WIN-006-007-onboarding-proposal.md"
+      "current_artifact": "docs/windows/WIN-006-007-implementation.md",
+      "proposal_artifact": "docs/windows/WIN-006-007-onboarding-proposal.md",
+      "acceptance_record": {
+        "date": "2026-09-25",
+        "evidence": "aprobado, no hay necesidad de generar el apk aun. implementa y terminanndo prepare la siguiente ventana",
+        "scope": "Visual-target and complete implementation approval, without APK; not native acceptance or verified production consent service."
+      }
     },
     {
       "id": "WIN-007",
@@ -448,9 +459,15 @@
         "Approve retained full-window target, build complete window, then focused visual and interaction QA. No per-button render loop.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "G0_visual_proposal_awaiting_approval",
+      "stage": "native_ui_verified_pending_user_acceptance",
       "scope": "v1",
-      "current_artifact": "docs/windows/WIN-006-007-onboarding-proposal.md"
+      "current_artifact": "docs/windows/WIN-006-007-implementation.md",
+      "proposal_artifact": "docs/windows/WIN-006-007-onboarding-proposal.md",
+      "acceptance_record": {
+        "date": "2026-09-25",
+        "evidence": "aprobado, no hay necesidad de generar el apk aun. implementa y terminanndo prepare la siguiente ventana",
+        "scope": "Visual-target and complete implementation approval, without APK; not native acceptance or verified production consent service."
+      }
     },
     {
       "id": "WIN-008",
@@ -523,8 +540,10 @@
         "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "not_started",
-      "scope": "v1"
+      "stage": "G0_visual_proposal_awaiting_approval",
+      "scope": "v1",
+      "current_artifact": "docs/windows/WIN-009-private-fitness-profile-g0.md",
+      "render_manifest": "design/reference-manifests/WIN-009-private-fitness-profile-v1.json"
     },
     {
       "id": "WIN-010",
@@ -2603,9 +2622,6 @@
     "note": "G0 is the prerequisite window-brief approval and is included in the avatar contract before background."
   },
   "visual_reference_contract": "docs/design/visual-reference-contract.md",
-  "active_window": [
-    "WIN-006",
-    "WIN-007"
-  ],
-  "approval_workflow_status": "Retained bilingual full-window targets awaiting approval; then complete assembly and focused QA, no per-button gates."
+  "active_window": "WIN-009",
+  "approval_workflow_status": "WIN-006/007 native UI verified in Linux; production services and user native acceptance pending. WIN-009 bilingual proposal awaits visual-target approval."
 }

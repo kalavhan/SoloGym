@@ -1,8 +1,10 @@
 # SoloGym
 
-Mobile fitness RPG for Android and iOS, ages 15+, in English and Spanish. This repository contains the native Unity Welcome and Home previews, approved manhua System references, research, training data, an offline generation reference and the window milestone plan.
+Mobile fitness RPG for Android and iOS, ages 15+, in English and Spanish. This repository contains native Unity Welcome, age/region, privacy/consent and Home interfaces, approved manhua System references, research, training data, an offline generation reference and the window milestone plan.
 
-**Current milestone: WIN-006 Age / Region + WIN-007 Privacy / Consent — bilingual proposals awaiting approval.** The user reported the 0.2.1 build working (“perfect, is working great, next window”) and requested both onboarding windows in this iteration. This is user acceptance, not independent provider-by-provider verification. [Review the retained renders, data contracts and flow](docs/windows/WIN-006-007-onboarding-proposal.md). No onboarding runtime or database deployment is included in this proposal.
+**Current milestone: WIN-006 Age / Region + WIN-007 Privacy / Consent — native UI implemented and visually reviewed in Linux.** The approved pair now includes live bilingual fields and controls, country/region pickers, a document reader and Welcome navigation. The Linux review player is **0.3.0**. Drafts stay in memory; regional eligibility policies, final legal documents and server persistence remain unavailable, so the normal flow cannot record acceptance or complete onboarding. [Implementation and verification status](docs/windows/WIN-006-007-implementation.md) · [approved targets and flow](docs/windows/WIN-006-007-onboarding-proposal.md). **No APK is generated or replaced in this iteration**, as requested. [WIN-009 Private Fitness Profile](docs/windows/WIN-009-private-fitness-profile-g0.md) has retained bilingual proposal renders awaiting approval; it is not implemented.
+
+The user reported the existing Android 0.2.1 Welcome build working (“perfect, is working great, next window”). This is user acceptance, not independent provider-by-provider verification.
 
 The user installed WIN-001 on Android and accepted its appearance on 2026-09-25: “logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos”. [Home captures and comparisons](docs/windows/WIN-001-implementation.md#current-visual-evidence) remain unchanged. Home still presents fictional local data and a static avatar; this acceptance does not certify pixel-identical output or exhaustive device/feature testing.
 
@@ -12,6 +14,9 @@ The training data shape and milestone plan are accepted for continued design; ex
 
 | Deliverable | Contents |
 | --- | --- |
+| [Age/region and privacy implementation](docs/windows/WIN-006-007-implementation.md) | Native two-window UI, in-memory drafts, review entry, pending production dependencies and focused verification |
+| [Approved onboarding targets](docs/windows/WIN-006-007-onboarding-proposal.md) | Four retained EN/ES renders, approved flow and data contracts |
+| [Next window: private fitness profile](docs/windows/WIN-009-private-fitness-profile-g0.md) | Retained EN/ES renders, staged flow and private data shape; target approval pending |
 | [Welcome implementation and visual evidence](docs/windows/WIN-002-implementation.md) | Native entry and email form, retained captures, focused checks and current delivery limits |
 | [Welcome / Sign in — approved target](docs/windows/WIN-002-welcome-sign-in-g0.md) | Bilingual entry flow, data, states and retained v1 renders |
 | [Native Unity app](app/README.md) | Unity project, build/run commands, Welcome entry and Home preview |
@@ -31,7 +36,7 @@ The training data shape and milestone plan are accepted for continued design; ex
 
 ## How we will build each window
 
-One window is active at a time. Continue the user's target-render development workflow: retain and approve the window proposal, map the approved image, assemble the complete screen, then perform a small number of whole-screen visual and interaction checks. No per-button rendering loop is used. **WIN-002's v1 target is approved; its assembled native result is a separate review.** The original staged asset plan remains recorded for separately scoped modular character work.
+Work follows the currently approved window or explicitly grouped iteration. Continue the user's target-render development workflow: retain and approve the window proposal, map the approved image, assemble the complete screen, then perform a small number of whole-screen visual and interaction checks. No per-button rendering loop is used. **WIN-006/007 v1 targets are approved together; their native output is checked separately against those retained targets.** The original staged asset plan remains recorded for separately scoped modular character work.
 
 The approved Home target's exact PNGs, prompts, dimensions and hashes are retained in [the reference manifest](design/reference-manifests/WIN-001-system-home-v2.json). The full-screen comparison preserves remaining differences from native fonts, reconstructed glass and the shared artwork across locales. The user has accepted the installed Home's appearance; the source renders and measured differences have not been replaced or relabeled as byte-identical. Approval state is recorded in [the ledger](design/approval-ledger.json).
 
