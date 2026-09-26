@@ -1,8 +1,8 @@
 # WIN-002 — Bienvenida / Iniciar sesión
 
-**Estado: propuesta visual v1 para revisión.** Inicio (WIN-001) ya fue aceptado por el usuario después de instalarlo en Android: «se ve exactamente como lo esperaba». El siguiente hito es la entrada a SoloGym. Esta propuesta conserva el templo índigo, el portal violeta, los marcos angulares cian y la tipografía plateada del juego.
+**Estado: referencia visual v1 aprobada por el usuario («si, esta perfecta»); implementación en curso.** Inicio (WIN-001) ya fue aceptado por el usuario después de instalarlo en Android: «se ve exactamente como lo esperaba». El siguiente hito es la entrada a SoloGym. Esta propuesta conserva el templo índigo, el portal violeta, los marcos angulares cian y la tipografía plateada del juego.
 
-Esta entrega define la ventana y conserva su referencia visual; todavía no conecta cuentas ni modifica la aplicación instalada. Los [datos y textos EN/ES](../../data/windows/WIN-002-welcome-sign-in.json) y el [manifiesto de imágenes](../../design/reference-manifests/WIN-002-welcome-sign-in-v1.json) permiten continuar sin reinterpretar el diseño.
+Este documento conserva la referencia aprobada y el alcance original. La ventana nativa y el formulario ya están construidos; su [informe de implementación](WIN-002-implementation.md) registra capturas, comprobaciones y el estado de conexión. Firebase tiene el acceso por correo habilitado y configurado localmente. Google sigue deshabilitado a la espera de permiso para su contacto público de soporte. La verificación del build final está pendiente; no se ha registrado acceso real ni aceptación del nuevo build en un dispositivo. Los [datos y textos EN/ES](../../data/windows/WIN-002-welcome-sign-in.json) y el [manifiesto de imágenes](../../design/reference-manifests/WIN-002-welcome-sign-in-v1.json) permiten continuar sin reinterpretar el diseño.
 
 ## Referencias conservadas
 
@@ -67,6 +67,6 @@ El servidor deberá validar el token y usar el identificador estable del proveed
 3. Completar las vistas de correo, errores y teclado dentro de la misma ventana. Resolver el servicio de cuentas y las credenciales de desarrollo antes de presentar autenticación real.
 4. Construir la ventana completa y comparar capturas EN/ES con las referencias guardadas. Hacer solo comprobaciones enfocadas de idioma, cancelación, error, teclado y retorno al punto correcto; sin renders por botón.
 
-Siguen pendientes el proveedor de autenticación y su proyecto, los identificadores OAuth, el registro de la firma Android y la configuración Apple. Aprobar la imagen no crea esos servicios ni certifica políticas de acceso por país. La ventana solo se considerará funcional cuando el acceso real y las rutas necesarias estén resueltos; un acceso ficticio no contará como Google funcionando.
+El proyecto personal `sologym-66395` está creado en el plan Spark, con `com.kalavhan.sologym` y sus huellas de firma Android registrados. Correo/contraseña está habilitado y la configuración local usa valores observados en Firebase Console. Google continúa deshabilitado hasta resolver el permiso para su contacto público y la configuración OAuth. Apple/iOS y las rutas de registro, recuperación y configuración de perfil siguen pendientes. Aprobar la imagen o crear el proyecto no verifica un acceso real ni certifica políticas por país. El [informe de implementación](WIN-002-implementation.md) mantiene estas limitaciones separadas del trabajo visual.
 
 **Decisión visual actual:** portal, distribución del panel, jerarquía de botones y textos de Bienvenida en español/inglés. La implementación mantiene el método solicitado: referencia aprobada, construcción completa y revisión visual enfocada.

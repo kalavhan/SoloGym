@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "android_version_code": 2,
+  "date": "2026-09-25",
+  "android": {
+    "package": "com.kalavhan.sologym",
+    "path": "app/Builds/Android/SoloGym-debug.apk",
+    "bytes": 35635703,
+    "sha256": "b8c55e2ebb7190cca4984bcf04e2d0ffd9df1ddb39e96cf0e3086091faf929d2",
+    "architecture": "arm64-v8a",
+    "min_api": 26,
+    "target_api": 36,
+    "signature_v2_verified": true,
+    "same_signing_certificate_as_0_1_0": true,
+    "advertising_attribution_install_referrer_permissions": "absent",
+    "analytics_collection_deactivated": true
+  },
+  "linux": {
+    "path": "app/Builds/Linux/SoloGym.x86_64",
+    "build": "passed"
+  },
+  "visual": {
+    "reference_size": [
+      853,
+      1844
+    ],
+    "views": [
+      "welcome-en-final.png",
+      "welcome-es-final.png",
+      "email-es-final.png"
+    ],
+    "review": "complete full-screen review; no text overflow; Google corners corrected",
+    "strict_pixel_identity": false
+  },
+  "focused_checks": {
+    "passed": 5,
+    "source": "welcome-en-final.smoke.json",
+    "scope": "Unconfigured auth service; completed before final visual-only correction; no real provider login"
+  },
+  "authentication": {
+    "email": "configured in local APK; physical-device sign-in unverified",
+    "google": "disabled pending public-support-contact permission and OAuth setup"
+  },
+  "user_acceptance": "native WIN-002 build not yet reviewed on user device"
+}

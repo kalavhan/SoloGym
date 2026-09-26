@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "window_id": "WIN-002",
   "reference_version": "proposal-v1",
-  "status": "pending_user_visual_approval",
+  "status": "approved_visual_target",
   "generation_tool": "built-in image_gen.imagegen via imagegen skill",
   "proposal_document": "docs/windows/WIN-002-welcome-sign-in-g0.md",
   "fixture": {
@@ -27,7 +27,7 @@
       "mode": "RGB",
       "platform": "android",
       "state": "signed_out_online",
-      "role": "proposal_target_pending_approval",
+      "role": "approved_visual_target",
       "visually_reviewed": true
     },
     {
@@ -39,7 +39,7 @@
       "mode": "RGB",
       "platform": "android",
       "state": "signed_out_online",
-      "role": "proposal_target_pending_approval",
+      "role": "approved_visual_target",
       "visually_reviewed": true
     }
   ],
@@ -64,10 +64,12 @@
       "output": "design/renders/WIN-002-welcome-sign-in-en-proposal-v1.png"
     }
   ],
-  "implementation_status": "not_started",
+  "implementation_status": "native_built_email_configured_google_pending_permission_device_review_pending",
   "approval_scope": "Android principal welcome composition, copy and access choices. Does not approve account backend, legal policies, provider art, iOS layout or email/keyboard state.",
   "provider_assets": "AI-rendered provider mark is illustrative. Use official Google resources/native Apple button in implementation and review final geometry.",
   "shared_art": "Use one environment/frame for all locales in implementation. Generated localized previews do not prove byte-identical art.",
-  "next": "Obtain visual-target acceptance, then implement the complete approved window and compare full-screen outputs; no per-button rendering.",
-  "version_policy": "Do not overwrite an approved render; use a new version and hash for changes."
+  "next": "Complete native window assembly using retained reference, followed by focused full-screen visual checks.",
+  "version_policy": "Do not overwrite an approved render; use a new version and hash for changes.",
+  "approved_by": "user",
+  "approval_evidence": "si, esta perfecta"
 }

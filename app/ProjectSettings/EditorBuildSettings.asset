@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/SoloGym/Scenes/Welcome.unity
+    guid: 0c98dd925694c0ce38e4ba5a8aa4f811
+  - enabled: 1
     path: Assets/SoloGym/Scenes/SystemHome.unity
     guid: 9191cfae7f4c3d920a701c276574c0c5
   m_configObjects: {}

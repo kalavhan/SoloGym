@@ -1,8 +1,10 @@
 # SoloGym
 
-Mobile fitness RPG for Android and iOS, ages 15+, in English and Spanish. This repository contains the native Unity Home preview, approved manhua System references, research, training data, an offline generation reference and the window milestone plan.
+Mobile fitness RPG for Android and iOS, ages 15+, in English and Spanish. This repository contains the native Unity Welcome and Home previews, approved manhua System references, research, training data, an offline generation reference and the window milestone plan.
 
-**Current milestone: WIN-002 Welcome / Sign in — G0 proposal ready for review, not yet approved.** The user installed the WIN-001 native Home preview on Android and accepted its appearance on 2026-09-25: “logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos”. [Retained player captures and comparisons](docs/windows/WIN-001-implementation.md#current-visual-evidence) remain unchanged. This acceptance covers the installed Home preview and its appearance; fictional local data, future destination windows and modular avatar customization retain their documented limits. It does not certify pixel-identical output or exhaustive device/feature testing.
+**Current milestone: WIN-002 Welcome / Sign in — native screen built; Firebase email configured; Android/Linux review builds ready.** The approved v1 target is implemented with live EN/ES labels, language selection, an email/password form and Firebase/Android Google adapters. The personal Spark project `sologym-66395` has its Android app and signing fingerprints registered, and Email/Password enabled. Google remains disabled pending permission for its public support contact. [The implementation report](docs/windows/WIN-002-implementation.md) retains full-screen evidence and the authentication boundary. The new build has not received the user's device or visual acceptance; no successful real-provider sign-in is claimed. Signup, recovery, onboarding and production profile access remain future milestones.
+
+The user installed WIN-001 on Android and accepted its appearance on 2026-09-25: “logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos”. [Home captures and comparisons](docs/windows/WIN-001-implementation.md#current-visual-evidence) remain unchanged. Home still presents fictional local data and a static avatar; this acceptance does not certify pixel-identical output or exhaustive device/feature testing.
 
 The training data shape and milestone plan are accepted for continued design; exercise content review is still pending. Automatic generation creates editable workout plans for bosses; players enter repetitions, sets, load and time manually.
 
@@ -10,8 +12,10 @@ The training data shape and milestone plan are accepted for continued design; ex
 
 | Deliverable | Contents |
 | --- | --- |
-| [Welcome / Sign in — current proposal](docs/windows/WIN-002-welcome-sign-in-g0.md) | Next window: bilingual entry flow, data, states and retained render for review |
-| [Native Home app](app/README.md) | Unity project, build/run commands, language and state review controls |
+| [Welcome implementation and visual evidence](docs/windows/WIN-002-implementation.md) | Native entry and email form, retained captures, focused checks and current delivery limits |
+| [Welcome / Sign in — approved target](docs/windows/WIN-002-welcome-sign-in-g0.md) | Bilingual entry flow, data, states and retained v1 renders |
+| [Native Unity app](app/README.md) | Unity project, build/run commands, Welcome entry and Home preview |
+| [Firebase integration setup](docs/engineering/firebase-auth-setup.md) | Reproducible SDK installer, project configuration and real-device verification requirements |
 | [Home implementation and visual evidence](docs/windows/WIN-001-implementation.md) | Scope, final EN/ES player captures, reference comparisons and focused verification |
 | [System / Home — approved target](docs/windows/WIN-001-system-home-g0.md) | Retained EN/ES renders, flow, states, data and wording |
 | [Visual reference contract](docs/design/visual-reference-contract.md) | Versioned image references, exact approval scope and screenshot comparison for 1:1 matching |
@@ -27,7 +31,7 @@ The training data shape and milestone plan are accepted for continued design; ex
 
 ## How we will build each window
 
-One window is active at a time. Continue the user's target-render development workflow: retain and approve the window proposal, map the approved image, assemble the complete screen, then perform a small number of whole-screen visual and interaction checks. No per-button rendering loop is used. **WIN-002 is currently at proposal review; its new render is not yet approved.** The original staged asset plan remains recorded for separately scoped modular character work.
+One window is active at a time. Continue the user's target-render development workflow: retain and approve the window proposal, map the approved image, assemble the complete screen, then perform a small number of whole-screen visual and interaction checks. No per-button rendering loop is used. **WIN-002's v1 target is approved; its assembled native result is a separate review.** The original staged asset plan remains recorded for separately scoped modular character work.
 
 The approved Home target's exact PNGs, prompts, dimensions and hashes are retained in [the reference manifest](design/reference-manifests/WIN-001-system-home-v2.json). The full-screen comparison preserves remaining differences from native fonts, reconstructed glass and the shared artwork across locales. The user has accepted the installed Home's appearance; the source renders and measured differences have not been replaced or relabeled as byte-identical. Approval state is recorded in [the ledger](design/approval-ledger.json).
 
@@ -47,4 +51,4 @@ The current reference passes 22 behavior tests covering age/readiness, supervisi
 
 The training content and exact prescription defaults remain drafts requiring exercise-professional and youth review before release. Technical validation does not supply that review. Missing equipment produces explicit coverage gaps; body appearance and fasting do not determine workout prescriptions or rewards. Exercise demonstration records remain unassigned pending rights and technique review.
 
-The repository is [kalavhan/SoloGym](https://github.com/kalavhan/SoloGym). The research and approved-reference foundation is published on `main` at [`b0acc47`](https://github.com/kalavhan/SoloGym/commit/b0acc472d6f660d0cd6f7246eda7f7035dce0efe). Home implementation is maintained on `codex/system-home`; generated player builds, signing material and Unity caches are excluded from Git.
+The repository is [kalavhan/SoloGym](https://github.com/kalavhan/SoloGym). The Home implementation is merged into `main`; Welcome and authentication work is maintained on `codex/welcome-auth`. Generated player builds, signing material, environment-specific Firebase configuration and Unity caches are excluded from Git.

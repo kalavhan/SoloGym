@@ -49,7 +49,7 @@
     {
       "window_id": "WIN-002",
       "gate": "G0",
-      "state": "proposal_ready_pending_user_approval",
+      "state": "approved_for_implementation",
       "artifact": "docs/windows/WIN-002-welcome-sign-in-g0.md",
       "data_artifact": "data/windows/WIN-002-welcome-sign-in.json",
       "render_manifest": "design/reference-manifests/WIN-002-welcome-sign-in-v1.json",
@@ -65,10 +65,35 @@
           "sha256": "d6fb587da7514d94064482b8bbeeb05d56012a29e66aa2cc16be60be14fb7b26",
           "locale": "en"
         }
-      ]
+      ],
+      "approved_by": "user",
+      "date": "2026-09-25",
+      "evidence": "si, esta perfecta"
     }
   ],
-  "required_next_artifact": "User review of retained WIN-002 Android Welcome principal-state EN/ES renders; exact hashes recorded. Then complete-window implementation under TDR after target approval.",
+  "required_next_artifact": "Resolve the pending public-support-contact permission for Google, complete its OAuth configuration and verify real sign-in on a phone. Record native Welcome review separately; signup and onboarding remain subsequent milestones.",
+  "welcome_implementation_review": {
+    "window_id": "WIN-002",
+    "state": "native_built_email_configured_google_pending_permission_device_review_pending",
+    "artifact": "docs/windows/WIN-002-implementation.md",
+    "runtime_project": "app",
+    "version": "0.2.0",
+    "android_version_code": 2,
+    "captures": [
+      "artifacts/visual/WIN-002/welcome-en-final.png",
+      "artifacts/visual/WIN-002/welcome-es-final.png",
+      "artifacts/visual/WIN-002/email-es-final.png"
+    ],
+    "comparison_metrics": [
+      "artifacts/visual/WIN-002/comparison-en.metrics.json",
+      "artifacts/visual/WIN-002/comparison-es.metrics.json"
+    ],
+    "focused_interaction_checks": "5 passed with unconfigured auth service; artifacts/visual/WIN-002/welcome-en-final.smoke.json",
+    "builds": "Final Android ARM64 IL2CPP APK and Linux player succeeded with local email configuration and SOLOGYM_REVIEW. Android signature verified; advertising, attribution and install-referrer permissions removed. Physical-device sign-in and native Welcome acceptance remain pending.",
+    "user_native_visual_acceptance": "not_recorded_for_WIN-002",
+    "strict_pixel_match_accepted": false,
+    "limitations": "Native Welcome has no user acceptance or real-device/provider verification recorded. Google is disabled pending public-support-contact permission and has an empty web client ID. Signup, recovery, onboarding, legal content and production profile routing remain future milestones. SOLOGYM_REVIEW exposes a labeled sample Home; iOS Google/Apple adapters and iOS binary remain pending."
+  },
   "implementation_review": {
     "window_id": "WIN-001",
     "state": "native_home_appearance_accepted_by_user",
@@ -111,5 +136,21 @@
     "approach": "target-render development (TDR interpretation), one pixel map, shared assets, complete assembly before focused full-screen QA",
     "github_updates": "authorized by user",
     "old_per_asset_stop_points": "The latest TDR instruction supersedes per-button rendering and individual UI asset approval loops for the complete-window workflow. A new window still requires its own visual-target approval before implementation; modular character/gear production remains separately scoped."
+  },
+  "authentication_choice": {
+    "provider": "Firebase Authentication",
+    "state": "email_configured_google_disabled_pending_public_support_contact_permission",
+    "evidence": "Preparar Firebase Authentication para un proyecto nuevo",
+    "account_owner": "user_selected_personal_google_account",
+    "project_id": "sologym-66395",
+    "plan": "Spark",
+    "android_package": "com.kalavhan.sologym",
+    "android_registration": "actual Firebase app ID and installation-signing SHA-1/SHA-256 fingerprints registered",
+    "email_password_provider": "enabled",
+    "local_configuration": "ignored files populated from observed Firebase Console values; SDK JSON reconstructed after the download failed",
+    "google_provider": "disabled; googleWebClientId empty",
+    "google_permission": "Automatic approval review rejected the public-support-contact publication step pending explicit permission; user response pending",
+    "device_sign_in_verification": "not_performed",
+    "note": "Personal project only. No personal email address or administrative credential is committed. Local configuration is not proof of successful device authentication."
   }
 }

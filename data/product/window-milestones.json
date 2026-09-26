@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "milestone_plan_accepted_for_design; WIN-001_native_home_appearance_accepted_by_user; WIN-002_G0_proposal_in_progress_not_approved; remaining_62_windows_not_started",
+  "status": "WIN-001_native_appearance_accepted; WIN-002_native_built_email_configured_google_pending_permission_device_review_pending; remaining_62_windows_not_started",
   "product": "SoloGym",
   "constraints": {
     "platforms": [
@@ -179,8 +179,8 @@
       "WIN-063",
       "WIN-064"
     ],
-    "note": "The System Home preview is implemented in Unity 6000.3.24f1 and its Android installation/appearance are accepted by the user. It uses fictional local data and unavailable notices for future destinations. WIN-002 Welcome / Sign in is now the active G0 proposal; no other window has started.",
-    "next_activity_after_M0": "WIN-001 native Home appearance was accepted on 2026-09-25. Prepare and review the WIN-002 Welcome / Sign in bilingual G0 proposal; retain its own rendered reference before implementation. The modular avatar pipeline remains a later deliverable."
+    "note": "The System Home preview is implemented in Unity 6000.3.24f1 and its Android installation/appearance are accepted by the user. WIN-002 native Welcome/email entry and Android integration are built. Firebase email is enabled/configured locally; Google is disabled pending public-support-contact permission. Final configured Android and Linux builds passed; physical-device verification remains pending. Home remains fictional sample data; signup, recovery and onboarding are future windows.",
+    "next_activity_after_M0": "WIN-002 target is approved. Review the configured native result on a physical device. Google permission/OAuth configuration and real-device provider checks remain open; source-target approval is not native or authentication acceptance. The modular avatar pipeline remains a later deliverable."
   },
   "windows": [
     {
@@ -267,9 +267,9 @@
         "Approve the retained bilingual G0 visual target, then use complete-window TDR assembly and focused full-screen visual/interaction checks. No per-button render loop. Record milestone acceptance before starting the next window.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "g0_proposal_ready_pending_user_approval",
+      "stage": "native_built_email_configured_google_pending_permission_device_review_pending",
       "scope": "v1",
-      "current_artifact": "docs/windows/WIN-002-welcome-sign-in-g0.md",
+      "current_artifact": "docs/windows/WIN-002-implementation.md",
       "data_artifact": "data/windows/WIN-002-welcome-sign-in.json",
       "render_manifest": "design/reference-manifests/WIN-002-welcome-sign-in-v1.json"
     },

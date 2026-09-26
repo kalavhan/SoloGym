@@ -1,0 +1,2 @@
+-keep class com.kalavhan.sologym.auth.GoogleIdentityBridge { *; }
+-keep interface com.kalavhan.sologym.auth.GoogleIdentityBridge$Callback { *; }
