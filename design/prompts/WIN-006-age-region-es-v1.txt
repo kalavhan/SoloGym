@@ -1,0 +1,22 @@
+Use case: ui-mockup
+Asset type: full-screen SoloGym mobile game UI proposal, WIN-006 Age / Region, Spanish. Generate ONE finished portrait screen, NOT a phone mockup, collage or asset sheet. Target 853 x 1844 pixels, matching the reference aspect ratio.
+Input image: the approved SoloGym Welcome screen is the visual style and environment reference. Preserve its exact SoloGym wordmark, indigo cathedral spires, violet magical portal, cyan angular glass frames, silver engraved serif typography and reflective stone. This is the next window in the SAME GAME. Preserve the environment and the logo upper area as closely as possible. No character, no equipment and no new monsters.
+Primary request: replace the Welcome/authentication panel with a beautiful native-game onboarding panel for age and country of residence. Remove every welcome, Google, email and create-account control from the old panel. Reuse the atmospheric background; enlarge the SINGLE dark translucent angular rune-edged panel upward to approximately x60 y750 width733 height940, leaving the upper logo and portal visible. It must look like a cultivation manhua System window, not a generic website, dashboard or SaaS form. No white cards or rounded pill fields.
+Layout: safe margin at top, small angular back control top-left; original compact globe/language control top-right. Inside the panel: small step label at y790, centered large silver title around y850, clear subtitle around y937. Then three vertically stacked large input controls with thin cyan rune-cut edges. First is age with left-aligned numeral and a right-aligned years suffix, second is country with a subtle downward chevron, third is optional state/province with a chevron. Labels sit ABOVE each field, not inside. Ensure generous breathing room and no overlap. A small quiet privacy cue above the bottom action; one prominent cyan luminous beveled CONTINUAR button at y1555-1650. The Privacy/Terms footer sits below the main panel around y1740. Every control must be legible on a mobile screen. No desktop sidebar or bottom game navigation.
+Exact Spanish copy, each string once except decorative logo:
+Top-left: "Volver"
+Top-right: "ES"
+Small panel label: "PASO 1 · PERFIL"
+Large title: "TU ORIGEN"
+Subtitle: "Edad y país de residencia"
+First field label: "Edad"
+First field value: "21"; right suffix: "años"
+Age helper beneath field: "SoloGym es para personas de 15 años o más."
+Second field label: "País de residencia"
+Second field value: "México"
+Third field label: "Estado / provincia (opcional)"
+Third field placeholder: "Seleccionar"
+Privacy cue with a small silver lock icon: "Tu edad es privada. No usamos GPS."
+Main action: "CONTINUAR"
+Footer: "Privacidad · Términos"
+All values are a fictional adult fixture. Keep exact accents and correct spelling. Make the fields dark blue glass with soft cyan outlines and understated silver text, and make the main action visually match the accepted cyan sign-in button. Do not add checkboxes, legal-consent acceptance, rewards, health claims, DOB, progress percentages, XP, avatars or ranks. Prioritize matching the established game art and exact text over extra decoration. This is a whole-window reference for later 1:1 implementation.

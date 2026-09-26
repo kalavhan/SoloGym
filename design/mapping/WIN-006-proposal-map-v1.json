@@ -1,0 +1,111 @@
+{
+  "window_id": "WIN-006",
+  "locale": "es",
+  "reference_size": [
+    853,
+    1844
+  ],
+  "status": "Initial manually estimated corners/centers; measure against retained raster during implementation. EN privacy rows shift upward due to wrapping; do not use ES row coordinates blindly.",
+  "elements": {
+    "panel": {
+      "rect": [
+        60,
+        718,
+        732,
+        965
+      ],
+      "top_left": [
+        60,
+        718
+      ],
+      "bottom_right": [
+        792,
+        1683
+      ],
+      "center": [
+        426.0,
+        1200.5
+      ]
+    },
+    "age": {
+      "rect": [
+        101,
+        1022,
+        652,
+        81
+      ],
+      "top_left": [
+        101,
+        1022
+      ],
+      "bottom_right": [
+        753,
+        1103
+      ],
+      "center": [
+        427.0,
+        1062.5
+      ]
+    },
+    "country": {
+      "rect": [
+        101,
+        1209,
+        652,
+        82
+      ],
+      "top_left": [
+        101,
+        1209
+      ],
+      "bottom_right": [
+        753,
+        1291
+      ],
+      "center": [
+        427.0,
+        1250.0
+      ]
+    },
+    "region": {
+      "rect": [
+        101,
+        1361,
+        652,
+        83
+      ],
+      "top_left": [
+        101,
+        1361
+      ],
+      "bottom_right": [
+        753,
+        1444
+      ],
+      "center": [
+        427.0,
+        1402.5
+      ]
+    },
+    "continue": {
+      "rect": [
+        91,
+        1544,
+        671,
+        99
+      ],
+      "top_left": [
+        91,
+        1544
+      ],
+      "bottom_right": [
+        762,
+        1643
+      ],
+      "center": [
+        426.5,
+        1593.5
+      ]
+    }
+  }
+}

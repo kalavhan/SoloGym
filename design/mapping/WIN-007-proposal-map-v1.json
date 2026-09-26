@@ -1,0 +1,151 @@
+{
+  "window_id": "WIN-007",
+  "locale": "es",
+  "reference_size": [
+    853,
+    1844
+  ],
+  "status": "Initial manually estimated corners/centers; measure against retained raster during implementation. EN privacy rows shift upward due to wrapping; do not use ES row coordinates blindly.",
+  "elements": {
+    "panel": {
+      "rect": [
+        60,
+        718,
+        732,
+        987
+      ],
+      "top_left": [
+        60,
+        718
+      ],
+      "bottom_right": [
+        792,
+        1705
+      ],
+      "center": [
+        426.0,
+        1211.5
+      ]
+    },
+    "privacy_document": {
+      "rect": [
+        101,
+        1167,
+        652,
+        74
+      ],
+      "top_left": [
+        101,
+        1167
+      ],
+      "bottom_right": [
+        753,
+        1241
+      ],
+      "center": [
+        427.0,
+        1204.0
+      ]
+    },
+    "terms_document": {
+      "rect": [
+        101,
+        1252,
+        652,
+        74
+      ],
+      "top_left": [
+        101,
+        1252
+      ],
+      "bottom_right": [
+        753,
+        1326
+      ],
+      "center": [
+        427.0,
+        1289.0
+      ]
+    },
+    "privacy_checkbox": {
+      "rect": [
+        106,
+        1351,
+        42,
+        43
+      ],
+      "top_left": [
+        106,
+        1351
+      ],
+      "bottom_right": [
+        148,
+        1394
+      ],
+      "center": [
+        127.0,
+        1372.5
+      ]
+    },
+    "terms_checkbox": {
+      "rect": [
+        106,
+        1418,
+        42,
+        43
+      ],
+      "top_left": [
+        106,
+        1418
+      ],
+      "bottom_right": [
+        148,
+        1461
+      ],
+      "center": [
+        127.0,
+        1439.5
+      ]
+    },
+    "continue": {
+      "rect": [
+        91,
+        1540,
+        671,
+        91
+      ],
+      "top_left": [
+        91,
+        1540
+      ],
+      "bottom_right": [
+        762,
+        1631
+      ],
+      "center": [
+        426.5,
+        1585.5
+      ]
+    },
+    "not_now": {
+      "rect": [
+        355,
+        1642,
+        142,
+        40
+      ],
+      "top_left": [
+        355,
+        1642
+      ],
+      "bottom_right": [
+        497,
+        1682
+      ],
+      "center": [
+        426.0,
+        1662.0
+      ]
+    }
+  }
+}

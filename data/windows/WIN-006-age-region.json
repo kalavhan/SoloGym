@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "status": "proposal",
+  "window_id": "WIN-006",
+  "fixture": {
+    "declaredAge": 21,
+    "countryCode": "MX",
+    "subdivisionCode": null,
+    "fictional": true
+  },
+  "initial_state": {
+    "declaredAge": null,
+    "countryCode": null,
+    "subdivisionCode": null
+  },
+  "fields": {
+    "declaredAge": "Required integer, product minimum 15; private self-declaration, not verified age",
+    "countryCode": "Required ISO country code chosen by user, never inferred from language or GPS",
+    "subdivisionCode": "Optional catalog code; reset when country changes"
+  },
+  "states": [
+    "empty",
+    "invalid_age",
+    "under_15",
+    "country_unavailable",
+    "policy_review_pending",
+    "eligible_teen",
+    "eligible_adult"
+  ],
+  "navigation": {
+    "back": "WIN-002",
+    "continue_to": "WIN-007",
+    "guardian_if_required": "WIN-008 remains separate"
+  },
+  "storage": {
+    "current": "Not implemented; Firebase Authentication does not store these fields",
+    "draft": "Memory only until eligible authenticated persistence is appropriate",
+    "proposed_private_document": "users/{uid}/private/eligibility",
+    "fields": [
+      "declaredAge",
+      "countryCode",
+      "subdivisionCode",
+      "declaredAt",
+      "policyVersion"
+    ],
+    "authority": "Server validates eligibility against a reviewed country/age policy; never trust client adult flags",
+    "age_transition": "Reconfirm age when an adult-only feature is requested; no guessed birthday or automatic age increment",
+    "ranking": "No public projection or participation enabled by this form"
+  },
+  "release_gate": "Reviewed country policies required. Unknown policies fail closed. Fictional MX render is not launch approval."
+}

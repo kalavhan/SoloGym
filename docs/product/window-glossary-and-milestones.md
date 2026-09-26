@@ -1,5 +1,7 @@
 # SoloGym window glossary and milestone plan
 
+> Current status (2026-09-25): WIN-002 accepted by user report: “perfect, is working great, next window”. Active iteration: WIN-006 + WIN-007, bilingual visual proposals pending approval; see `docs/windows/WIN-006-007-onboarding-proposal.md`. This status supersedes older pending-review/next-window notes below; historical test evidence is unchanged.
+
 **Status · 2026-09-25:** the user confirmed Android installation and accepted the appearance of the [WIN-001 native Home preview](../windows/WIN-001-implementation.md): “logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos”. [WIN-002 Welcome / Sign in](../windows/WIN-002-welcome-sign-in-g0.md) is now the active G0 proposal; its v1 visual reference is approved for implementation. The remaining 62 windows are unstarted. Home acceptance covers its appearance and installation, not exhaustive feature/device/security verification or mathematical pixel identity. The original reference hashes and visual comparison measurements are preserved.
 
 Android and iOS; ages 15+; US, Canada, and Latin America as target regions, with the exact country release list and policies still to be reviewed. English and Spanish follow the device initially and can be switched manually. Automatic means **workout plan generation only**. Sets, repetitions, load, and timers are logged manually.

@@ -1,5 +1,7 @@
 # WIN-002 — native Welcome and sign-in implementation
 
+> Current status (2026-09-25): WIN-002 accepted by user report: “perfect, is working great, next window”. Active iteration: WIN-006 + WIN-007, bilingual visual proposals pending approval; see `docs/windows/WIN-006-007-onboarding-proposal.md`. This status supersedes older pending-review/next-window notes below; historical test evidence is unchanged.
+
 The user approved the retained Welcome v1 render with “si, esta perfecta”. The native Welcome screen and email form are assembled in Unity using the requested target-render workflow: map the approved image, complete the window, then compare a small number of full-screen captures. Approval of the source target and earlier Home preview does not imply acceptance of this new build or a verified account sign-in.
 
 ## Implemented

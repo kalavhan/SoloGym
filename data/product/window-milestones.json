@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "WIN-001_native_appearance_accepted; WIN-002_email_and_google_configured_android_build_verified_device_review_pending; remaining_62_windows_not_started",
+  "status": "WIN-001 and WIN-002 accepted by user report; WIN-006 and WIN-007 visual proposals awaiting approval",
   "product": "SoloGym",
   "constraints": {
     "platforms": [
@@ -101,7 +101,7 @@
     }
   ],
   "approval_rules": [
-    "Current user-authorized workflow: approve each retained bilingual window proposal, assemble the complete native window using reference mapping and shared assets, then perform focused whole-screen visual and interaction checks. Do not create per-button render/test loops. WIN-001 appearance is accepted; WIN-002 is the only active proposal and is not yet approved.",
+    "Current iteration includes WIN-006 and WIN-007 at user request; their visual targets require approval before implementation.",
     "The accepted overall style does not approve any individual background, sprite, prop, gear item, frame, or composed window.",
     "Except for an explicitly recorded user override, every window inherits G0 through G6 in that exact order. No later gate starts while the previous gate lacks user approval.",
     "Reuse requires an explicit recorded approval of the exact asset; regeneration is not the default. Record N/A with a reason when a stage has no applicable asset.",
@@ -267,7 +267,7 @@
         "Approve the retained bilingual G0 visual target, then use complete-window TDR assembly and focused full-screen visual/interaction checks. No per-button render loop. Record milestone acceptance before starting the next window.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "email_and_google_configured_android_build_verified_device_review_pending",
+      "stage": "accepted_by_user_report",
       "scope": "v1",
       "current_artifact": "docs/windows/WIN-002-implementation.md",
       "data_artifact": "data/windows/WIN-002-welcome-sign-in.json",
@@ -408,11 +408,12 @@
         "No GPS is required for broad regional selection",
         "Unsupported-country and underage exits are explicit",
         "Exact country eligibility requires a reviewed policy before launch",
-        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Approve retained full-window target, build complete window, then focused visual and interaction QA. No per-button render loop.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "not_started",
-      "scope": "v1"
+      "stage": "G0_visual_proposal_awaiting_approval",
+      "scope": "v1",
+      "current_artifact": "docs/windows/WIN-006-007-onboarding-proposal.md"
     },
     {
       "id": "WIN-007",
@@ -444,11 +445,12 @@
         "Optional consent is not preselected",
         "A consent version and decision can be recorded",
         "Google sign-in is not treated as health-data consent",
-        "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
+        "Approve retained full-window target, build complete window, then focused visual and interaction QA. No per-button render loop.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "not_started",
-      "scope": "v1"
+      "stage": "G0_visual_proposal_awaiting_approval",
+      "scope": "v1",
+      "current_artifact": "docs/windows/WIN-006-007-onboarding-proposal.md"
     },
     {
       "id": "WIN-008",
@@ -2601,6 +2603,9 @@
     "note": "G0 is the prerequisite window-brief approval and is included in the avatar contract before background."
   },
   "visual_reference_contract": "docs/design/visual-reference-contract.md",
-  "active_window": "WIN-002",
-  "approval_workflow_status": "Original G0–G6 asset-stage reference retained; latest complete-window TDR override in approval_rules takes precedence for shared UI. WIN-002 still requires its own G0 visual-target approval."
+  "active_window": [
+    "WIN-006",
+    "WIN-007"
+  ],
+  "approval_workflow_status": "Retained bilingual full-window targets awaiting approval; then complete assembly and focused QA, no per-button gates."
 }

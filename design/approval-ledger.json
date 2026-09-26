@@ -12,7 +12,7 @@
     ],
     "scope": "Overall visual direction. Production assets and individual windows require separate approval."
   },
-  "current_milestone": "WIN-002_welcome_sign_in",
+  "current_milestone": "WIN-006_and_WIN-007_onboarding_proposals",
   "window_approvals": [
     {
       "window_id": "WIN-001",
@@ -69,12 +69,34 @@
       "approved_by": "user",
       "date": "2026-09-25",
       "evidence": "si, esta perfecta"
+    },
+    {
+      "window_id": "WIN-002",
+      "gate": "G6_user_report",
+      "state": "accepted_by_user_report",
+      "date": "2026-09-25",
+      "evidence": "perfect, is working great, next window",
+      "scope": "User reports current build working and authorizes next milestone; provider, device model and exhaustive test coverage unspecified."
+    },
+    {
+      "window_id": "WIN-006",
+      "gate": "G0",
+      "state": "awaiting_user_approval",
+      "artifact": "docs/windows/WIN-006-007-onboarding-proposal.md",
+      "render_manifest": "design/reference-manifests/WIN-006-age-region-v1.json"
+    },
+    {
+      "window_id": "WIN-007",
+      "gate": "G0",
+      "state": "awaiting_user_approval",
+      "artifact": "docs/windows/WIN-006-007-onboarding-proposal.md",
+      "render_manifest": "design/reference-manifests/WIN-007-privacy-consent-v1.json"
     }
   ],
-  "required_next_artifact": "Review the verified 0.2.1/code 3 APK on a physical device and verify email/Google sign-in plus cancellation. Record native Welcome acceptance separately; signup and onboarding remain subsequent milestones.",
+  "required_next_artifact": "User approval of retained bilingual WIN-006 and WIN-007 visual proposals before complete-window implementation.",
   "welcome_implementation_review": {
     "window_id": "WIN-002",
-    "state": "email_and_google_configured_android_build_verified_device_review_pending",
+    "state": "accepted_by_user_report",
     "artifact": "docs/windows/WIN-002-implementation.md",
     "runtime_project": "app",
     "version": "0.2.1",
@@ -96,10 +118,10 @@
       "artifacts/visual/WIN-002/comparison-es.metrics.json"
     ],
     "focused_interaction_checks": "5 passed with unconfigured auth service; artifacts/visual/WIN-002/welcome-en-final.smoke.json",
-    "builds": "Android 0.2.1/code 3 ARM64 IL2CPP APK succeeded with both providers configured and SOLOGYM_REVIEW; v2 signature, unchanged signing certificate, packaged OAuth configuration and privacy checks passed. Linux player and unchanged UI captures remain 0.2.0. Physical-device provider checks and native Welcome acceptance remain pending.",
-    "user_native_visual_acceptance": "not_recorded_for_WIN-002",
+    "builds": "Android 0.2.1/code 3 ARM64 IL2CPP APK succeeded with both providers configured and SOLOGYM_REVIEW; v2 signature, unchanged signing certificate, packaged OAuth configuration and privacy checks passed. Linux player and unchanged UI captures remain 0.2.0. User subsequently reported the delivered build working; independent provider-by-provider checks remain unrecorded.",
+    "user_native_visual_acceptance": "User reports current build working; see G6_user_report",
     "strict_pixel_match_accepted": false,
-    "limitations": "Native Welcome has no user acceptance or real-device/provider verification recorded. Both providers are enabled/configured and the Android binary is verified. Signup, recovery, onboarding, legal content and production profile routing remain future milestones. SOLOGYM_REVIEW exposes a labeled sample Home; iOS Google/Apple adapters and iOS binary remain pending."
+    "limitations": "User report does not isolate each provider or certify every device/test. Signup, recovery and onboarding remain subsequent work; iOS binary pending."
   },
   "implementation_review": {
     "window_id": "WIN-001",
@@ -139,14 +161,14 @@
     "rule": "Each window proposal includes retained versioned renders. The exact approved version becomes its visual target. Continue one window at a time using target-render development: assemble the complete approved window, then focused whole-screen visual and interaction checks; do not render or test an instance for each button."
   },
   "implementation_workflow": {
-    "scope": "One active window at a time; completed WIN-001 and current WIN-002 continuation",
+    "scope": "WIN-006 and WIN-007 together, explicitly requested: haz privacidad y consentimiento tambien en esta iteracion",
     "approach": "target-render development (TDR interpretation), one pixel map, shared assets, complete assembly before focused full-screen QA",
     "github_updates": "authorized by user",
     "old_per_asset_stop_points": "The latest TDR instruction supersedes per-button rendering and individual UI asset approval loops for the complete-window workflow. A new window still requires its own visual-target approval before implementation; modular character/gear production remains separately scoped."
   },
   "authentication_choice": {
     "provider": "Firebase Authentication",
-    "state": "email_and_google_enabled_configured_physical_device_verification_pending",
+    "state": "configured_user_reported_working",
     "evidence": "Preparar Firebase Authentication para un proyecto nuevo",
     "account_owner": "user_selected_personal_google_account",
     "project_id": "sologym-66395",
@@ -162,7 +184,7 @@
       "evidence": "1",
       "interpretation": "User selected the first option authorizing use of the chosen public support email. This resolved the earlier automatic-review permission block; no personal address is recorded here."
     },
-    "device_sign_in_verification": "not_performed",
+    "device_sign_in_verification": "user_reported_working_provider_unspecified",
     "note": "Personal project only. No personal email address or administrative credential is committed. Local configuration is not proof of successful device authentication."
   }
 }
