@@ -152,7 +152,7 @@ namespace SoloGym.Editor
         {
             PlayerSettings.companyName = "kalavhan";
             PlayerSettings.productName = "SoloGym";
-            PlayerSettings.bundleVersion = "0.3.0";
+            PlayerSettings.bundleVersion = "0.4.0";
             PlayerSettings.colorSpace = ColorSpace.Gamma;
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
             PlayerSettings.allowedAutorotateToPortrait = true;
@@ -201,7 +201,8 @@ namespace SoloGym.Editor
             bool referenceAsset = assetPath.StartsWith("Assets/SoloGym/Resources/Home/", StringComparison.Ordinal)
                 || assetPath.StartsWith("Assets/SoloGym/Resources/Welcome/", StringComparison.Ordinal)
                 || assetPath.StartsWith("Assets/SoloGym/Resources/Provider/", StringComparison.Ordinal)
-                || assetPath.StartsWith("Assets/SoloGym/Resources/Onboarding/", StringComparison.Ordinal);
+                || assetPath.StartsWith("Assets/SoloGym/Resources/Onboarding/", StringComparison.Ordinal)
+                || assetPath.StartsWith("Assets/SoloGym/Resources/Profile/", StringComparison.Ordinal);
             if (!referenceAsset || !assetPath.EndsWith(".png", StringComparison.OrdinalIgnoreCase)) return;
             var texture = (TextureImporter)assetImporter;
             texture.textureType = TextureImporterType.Default;

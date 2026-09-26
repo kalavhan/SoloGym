@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "WIN-006/007 native UI implemented and Linux-verified; production policies/documents/storage pending. WIN-009 proposal next.",
+  "status": "WIN-009 native UI implemented and Linux-verified; WIN-010 bilingual proposal awaiting approval. Production policy/storage dependencies remain pending.",
   "product": "SoloGym",
   "constraints": {
     "platforms": [
@@ -101,7 +101,7 @@
     }
   ],
   "approval_rules": [
-    "WIN-006 and WIN-007 targets approved together. Complete implementation and focused checks without APK; then prepare the next applicable proposal. A new target still needs approval before implementation.",
+    "WIN-009 retained bilingual v1 target and staged private-profile flow approved with “si perfecto”. Complete implementation and focused checks without an APK; then prepare WIN-010. A new target still needs approval before implementation.",
     "The accepted overall style does not approve any individual background, sprite, prop, gear item, frame, or composed window.",
     "Except for an explicitly recorded user override, every window inherits G0 through G6 in that exact order. No later gate starts while the previous gate lacks user approval.",
     "Reuse requires an explicit recorded approval of the exact asset; regeneration is not the default. Record N/A with a reason when a stage has no applicable asset.",
@@ -179,13 +179,12 @@
       "WIN-063",
       "WIN-064"
     ],
-    "note": "WIN-001 and WIN-002 accepted by user report. WIN-006 and WIN-007 retained bilingual targets are now approved for complete-window implementation without an APK. WIN-003 language choice is shared within Welcome; WIN-004 signup and WIN-005 recovery remain separate pending work. The existing Home remains fictional sample data.",
-    "next_activity_after_M0": "Finish and verify WIN-006 and WIN-007; prepare WIN-009 private fitness profile for the eligible authenticated path. WIN-008 remains a conditional guardian branch determined by a reviewed regional policy, and WIN-004 remains the pre-auth email signup branch.",
+    "note": "WIN-001 and WIN-002 accepted by user report. WIN-006/007 native UI implemented and Linux-verified, with production services pending. WIN-009 target approved for complete-window implementation without an APK. WIN-003 language choice is shared within Welcome; WIN-004 signup and WIN-005 recovery remain separate pending work. Home still uses fictional sample data.",
+    "next_activity_after_M0": "Implement and verify approved WIN-009; then prepare WIN-010 Goals / Experience. Regional-policy, guardian and authentication requirements remain active before production profile collection.",
     "current_iteration": [
-      "WIN-006",
-      "WIN-007"
+      "WIN-009"
     ],
-    "next_proposal": "WIN-009"
+    "next_proposal": "WIN-010"
   },
   "windows": [
     {
@@ -514,10 +513,10 @@
       },
       "purpose": "Record useful training inputs without equating body measurements with appearance or health.",
       "steps": [
-        "Review profile privacy",
-        "Enter optional useful height and bodyweight with units",
-        "Complete experience and suitability questions",
-        "Save or update the private profile"
+        "Review the private-data notice and applicable separate decision",
+        "Enter or omit optional height and bodyweight with units",
+        "Declare current readiness or pause",
+        "Review draft status and continue when production gates permit"
       ],
       "depends_on": [
         "WIN-007"
@@ -540,9 +539,9 @@
         "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "G0_visual_proposal_awaiting_approval",
+      "stage": "native_ui_verified_pending_user_acceptance",
       "scope": "v1",
-      "current_artifact": "docs/windows/WIN-009-private-fitness-profile-g0.md",
+      "current_artifact": "docs/windows/WIN-009-implementation.md",
       "render_manifest": "design/reference-manifests/WIN-009-private-fitness-profile-v1.json"
     },
     {
@@ -553,10 +552,9 @@
       },
       "purpose": "Choose training aims and establish a suitable starting level.",
       "steps": [
-        "Choose general fitness or another supported focus",
-        "Describe training experience and current ability",
-        "Review what the selection changes",
-        "Save and continue"
+        "Choose a supported training focus",
+        "Describe experience or confirm a beginner starting point when unsure",
+        "Review the selections and continue to equipment setup"
       ],
       "depends_on": [
         "WIN-009"
@@ -578,8 +576,10 @@
         "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "not_started",
-      "scope": "v1"
+      "stage": "G0_visual_proposal_awaiting_approval",
+      "scope": "v1",
+      "current_artifact": "docs/windows/WIN-010-goals-experience-g0.md",
+      "render_manifest": "design/reference-manifests/WIN-010-goals-experience-v1.json"
     },
     {
       "id": "WIN-011",
@@ -2622,6 +2622,6 @@
     "note": "G0 is the prerequisite window-brief approval and is included in the avatar contract before background."
   },
   "visual_reference_contract": "docs/design/visual-reference-contract.md",
-  "active_window": "WIN-009",
-  "approval_workflow_status": "WIN-006/007 native UI verified in Linux; production services and user native acceptance pending. WIN-009 bilingual proposal awaits visual-target approval."
+  "active_window": "WIN-010",
+  "approval_workflow_status": "WIN-009 approved target implemented, focused native verification passed, no new APK. WIN-010 target approval required before code."
 }

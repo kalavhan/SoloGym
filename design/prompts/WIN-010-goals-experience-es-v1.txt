@@ -1,0 +1,18 @@
+Use case: ui-mockup
+Asset type: one full-screen SoloGym mobile game UI proposal, WIN-010 Goals / Experience, Spanish. Target 853 x 1844 portrait, not a phone frame, collage or asset sheet.
+Input image: approved WIN-009 Spanish full screen is the exact established visual reference. Preserve the SoloGym wordmark, indigo cathedral spires, violet magical portal, reflective stone floor, dark-blue glass and thin cyan angular rune-cut frame. This is the next staged onboarding window in the same game.
+Primary request: replace the private measurements form with the first step of a Goals / Experience flow: choose one training focus. Remove every old measurements title, field, unit selector, number and privacy sentence. Keep the logo upper area and magical portal clearly visible. A single large translucent panel in the same lower region holds a silver serif title, subtitle, five roomy vertically stacked selection rows, one quiet helper line and one bright cyan beveled main action. Match the approved game's framing, typography, atmosphere and spacing; no generic web cards, pills or dashboard UI. Rows should be dark indigo glass with subtle cyan edges. The first row is selected with a brighter cyan outline and a small checked diamond at its left; the remaining rows have an empty diamond. All five rows must have equal size, legible labels and generous spacing. No new character, equipment or other sprite production.
+Exact text, each string once:
+"Volver"
+"ES"
+"TU RUTA"
+"Elige tu enfoque de entrenamiento"
+"Condición general"
+"Fuerza"
+"Desarrollo muscular"
+"Resistencia"
+"Movilidad"
+"Podrás cambiarlo cuando quieras."
+"CONTINUAR"
+"Privacidad · Términos"
+The selected general-fitness option is a fictional adult fixture. The real first entry is unselected. Top-left compact back control, top-right compact globe/ES, footer below panel. Make the first row visibly selected without adding text or badges. Fit all five choices within the panel with no clipping or overlap. Do not add descriptions to each row, fitness prescriptions, weights, calories, weight-loss goals, avatar physique, rewards, progress bars, streaks, XP, consent checkboxes or save confirmations. This is the complete retained visual target for later 1:1 implementation; the next experience and review steps will reuse its frame and editable UI, not additional image generations per control.
