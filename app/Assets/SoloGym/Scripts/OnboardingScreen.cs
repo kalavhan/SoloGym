@@ -18,6 +18,7 @@ namespace SoloGym
         Font serif, bold, body;
         OnboardingController controller;
         PrivateProfileScreen profile;
+        GoalsExperienceScreen goals;
         int profileReturnFrame = -1;
         InputField ageInput;
         Text status, countryValue, regionValue, privacyCheck, termsCheck, continueText;
@@ -55,6 +56,8 @@ namespace SoloGym
             Render(controller.Model); Fit();
             if (Argument("-sologym-window") == "profile" && review)
                 OpenProfile(capture);
+            else if (Argument("-sologym-window") == "goals" && review)
+                OpenGoals(capture);
             else if (capture != null) StartCoroutine(Capture());
         }
 
@@ -76,7 +79,42 @@ namespace SoloGym
                 // The same Escape press must not also back out of this parent screen.
                 profileReturnFrame = Time.frameCount;
                 controller.SetLanguage(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"));
-            }, () => controller.Decline(), capturePath);
+            }, () => controller.Decline(), capturePath, id =>
+            {
+                if (id == "REVIEW:WIN-010") OpenGoals();
+            });
+        }
+
+        void OpenGoals(string capturePath = null)
+        {
+            if (!controller.Model.ReviewMode) return;
+            KeyboardOff();
+            CloseModal();
+            if (profile != null) profile.gameObject.SetActive(false);
+            root.gameObject.SetActive(false);
+            bool teen = Argument("-sologym-audience") == "teen" || controller.IsTeenAudience();
+            string step = Argument("-sologym-goals-view");
+            if (goals != null)
+            {
+                goals.Resume(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"));
+                return;
+            }
+            var node = new GameObject("Goals and experience");
+            node.transform.SetParent(transform, false);
+            goals = node.AddComponent<GoalsExperienceScreen>();
+            goals.Initialize(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"), true, teen, () =>
+            {
+                goals.gameObject.SetActive(false);
+                if (profile != null) profile.gameObject.SetActive(true);
+                else root.gameObject.SetActive(true);
+            }, () => controller.Decline(), id =>
+            {
+                if (id != "REVIEW:WIN-011") return;
+                KeyboardOff();
+                Notice(L("Next step", "Siguiente paso"),
+                    L("Available equipment is the next window. Nothing was saved to your account.",
+                        "El equipo disponible es la siguiente ventana. No se guardaron datos en tu cuenta."));
+            }, capturePath, step);
         }
 
         void Render(OnboardingViewModel model)

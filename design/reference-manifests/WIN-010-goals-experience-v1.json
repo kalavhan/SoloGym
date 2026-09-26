@@ -1,6 +1,6 @@
 {
   "window_id": "WIN-010",
-  "status": "proposal_awaiting_user_approval",
+  "status": "g0_approved",
   "generation_tool": "built-in image_gen",
   "version": 1,
   "date": "2026-09-25",
@@ -40,5 +40,6 @@
   },
   "inspection": "Both generated whole-screen outputs inspected: all five goal choices, correct localized copy, only first row selected, retained portal/logo/glass frame, single cyan action, no overlap or clipped text visible. Each locale retains its own immutable full-screen reference.",
   "scope": "Principal adult goal step of a three-step goal/experience/review window. Other states reuse editable UI and shared frame; teen focus choices are limited to general fitness and mobility by the proposed product scope. No per-control renders.",
-  "implementation": "Not started. User target approval is required before WIN-010 implementation. No new training algorithm, content prescription, backend collection, APK or fitness result is claimed."
+  "implementation": "G0 approved 2026-09-26. Native UI uses PortalBackground-v1 and shared SystemUI kit; steps 2-3 are live text on the shared frame. No new training algorithm, backend collection, APK or fitness result is claimed.",
+  "g0_alignment": "Step-1 proposal PNGs remain hash-pinned targets; runtime composes the same portal geometry as migrated WIN-009 (718x965 glass panel). Empty goal/experience on first entry; proposal fixture selection is visual-only."
 }

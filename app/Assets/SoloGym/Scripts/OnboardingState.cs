@@ -170,6 +170,13 @@ namespace SoloGym
             Refresh();
         }
 
+        public bool IsTeenAudience()
+        {
+            if (!int.TryParse(ageText, NumberStyles.None, CultureInfo.InvariantCulture, out int age))
+                return false;
+            return age >= 15 && age < 18;
+        }
+
         public void SetPrivacyAcknowledged(bool value)
         {
             if (disposed || step != OnboardingStep.Consent) return;

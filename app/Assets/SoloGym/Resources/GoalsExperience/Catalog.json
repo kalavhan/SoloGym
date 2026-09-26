@@ -1,0 +1,14 @@
+{
+  "goals": [
+    { "id": "general_fitness", "en": "General fitness", "es": "Condición general" },
+    { "id": "strength", "en": "Strength", "es": "Fuerza" },
+    { "id": "muscle_growth", "en": "Muscle growth", "es": "Desarrollo muscular" },
+    { "id": "endurance", "en": "Endurance", "es": "Resistencia" },
+    { "id": "mobility", "en": "Mobility", "es": "Movilidad" }
+  ],
+  "experience_choices": [
+    { "id": "beginner", "en": "I'm starting or returning", "es": "Estoy empezando o retomando" },
+    { "id": "intermediate", "en": "I train regularly and know the basic movements", "es": "Entreno con regularidad y conozco los movimientos básicos" }
+  ],
+  "teen_visible_goals": ["general_fitness", "mobility"]
+}

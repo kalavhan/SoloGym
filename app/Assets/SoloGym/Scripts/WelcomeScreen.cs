@@ -61,6 +61,24 @@ namespace SoloGym
             {gameObject.AddComponent<AvatarProofScreen>().Initialize();enabled=false;return;}
             if(Argument("-sologym-window")=="components")
             {gameObject.AddComponent<SystemGallery>().Initialize();enabled=false;return;}
+            if (Argument("-sologym-window") == "goals")
+            {
+                Application.targetFrameRate = 60;
+                Screen.orientation = ScreenOrientation.Portrait;
+                requestedCapture = Argument("-sologym-capture");
+                reviewMode = Application.isEditor || HasArgument("-sologym-review");
+#if SOLOGYM_REVIEW
+                reviewMode = true;
+#endif
+                if (!reviewMode) { Debug.LogError("WIN-010 preview requires -sologym-review."); enabled = false; return; }
+                if (FindFirstObjectByType<EventSystem>() == null)
+                    new GameObject("Input", typeof(EventSystem), typeof(StandaloneInputModule));
+                var preview = new GameObject("SoloGym goals preview").AddComponent<OnboardingScreen>();
+                string goalsLocale = Argument("-sologym-locale");
+                preview.Initialize(goalsLocale ?? "auto", true, () => Application.Quit(), null, requestedCapture);
+                enabled = false;
+                return;
+            }
             Application.targetFrameRate = 60;
             Screen.orientation = ScreenOrientation.Portrait;
             requestedCapture = Argument("-sologym-capture");
@@ -99,6 +117,8 @@ namespace SoloGym
             FitSafeArea();
             string initialWindow = Argument("-sologym-window");
             if ((initialWindow == "age" || initialWindow == "consent" || initialWindow == "profile") && reviewMode)
+                OpenOnboarding(true, null, requestedCapture);
+            else if (initialWindow == "goals" && reviewMode)
                 OpenOnboarding(true, null, requestedCapture);
             else if (requestedCapture != null) StartCoroutine(Capture());
         }

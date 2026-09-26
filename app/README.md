@@ -88,6 +88,18 @@ The onboarding review route opens the private-profile notice, optional measureme
 
 Capture the approved principal state with `-sologym-window profile -sologym-review -sologym-locale es -sologym-capture <absolute-output.png>`. Add `-sologym-profile-view notice`, `imperial`, `readiness` or `paused` for complete supporting states. `-sologym-smoke` on the default measurements view runs profile checks; the existing onboarding smoke now also checks Back/reentry draft preservation. These flags use fictional review data, never a screenshot-only reference mode. [Evidence and limits](../docs/windows/WIN-009-implementation.md).
 
+## Goals and experience (WIN-010)
+
+Review mode opens a three-step flow: training focus, experience (with an explicit not-sure confirmation), then review. Teen preview uses `-sologym-audience teen` to show only general fitness and mobility. Production saves remain blocked until the private profile service exists.
+
+```bash
+app/Builds/Linux/SoloGym.x86_64 -screen-fullscreen 0 -screen-width 853 -screen-height 1844 \
+  -sologym-review -sologym-window goals -sologym-locale es \
+  -sologym-capture "$PWD/artifacts/visual/WIN-010/goals-es-final.png" -sologym-smoke
+```
+
+Add `-sologym-goals-view experience` or `review` for later steps. The onboarding profile checkpoint opens this window automatically in review. See [WIN-010 implementation](../docs/windows/WIN-010-implementation.md).
+
 ## Layered UI verification
 
 Run `python3 tools/capture_layered_ui.py` from the repository root after a Linux build. It captures the five migrated windows in both languages, selected supporting states, a phone-sized viewport, the component gallery and the avatar proof. See [the current report](../docs/engineering/layered-ui-and-avatar-implementation.md) for results and the avatar’s production limits.

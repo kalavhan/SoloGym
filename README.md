@@ -2,9 +2,11 @@
 
 Mobile fitness RPG for Android and iOS, ages 15+, in English and Spanish. This repository contains native Unity Welcome, age/region, privacy/consent and Home interfaces, approved manhua System references, research, training data, an offline generation reference and the window milestone plan.
 
-**Latest feature milestone: WIN-009 Private Fitness Profile — initially implemented and verified in Linux 0.4.0, then migrated to shared components in 0.5.0.** Optional metric/imperial measurements, privacy notice, readiness and pause steps use the approved bilingual references. Back preserves the in-memory draft across the previous window. [Implementation and captures](docs/windows/WIN-009-implementation.md). Production data-use policy and server persistence remain unavailable; review mode never saves measurements or authorizes a finished profile. No APK was rebuilt. [WIN-010 Goals / Experience](docs/windows/WIN-010-goals-experience-g0.md) has retained EN/ES renders awaiting approval.
+**Latest feature milestone: WIN-010 Goals / Experience — native three-step UI in the Linux review player with focused smoke checks.** [Implementation and captures](docs/windows/WIN-010-implementation.md). G0 flow and step-1 targets are approved; production profile save remains unavailable.
 
-**Layered UI migration implemented in Linux 0.5.0:** Home, Welcome, age/region, privacy/consent and private profile now use shared code panels/controls, an editable theme and independent artwork. The interactive component gallery and modular avatar engineering proof are included. [Implementation, captures and limits](docs/engineering/layered-ui-and-avatar-implementation.md). The proof avatar is not production art, and WIN-010 remains behind its recorded visual approval.
+**WIN-009 Private Fitness Profile** uses shared components in Linux 0.5.0: optional measurements, privacy notice, readiness and pause. [Implementation](docs/windows/WIN-009-implementation.md). No APK was rebuilt for these windows.
+
+**Layered UI migration (0.5.0):** Home, Welcome, onboarding and private profile use shared code panels/controls and independent artwork. [Implementation, captures and limits](docs/engineering/layered-ui-and-avatar-implementation.md). The avatar proof is not production art.
 
 The user reported the existing Android 0.2.1 Welcome build working (“perfect, is working great, next window”). This is user acceptance, not independent provider-by-provider verification.
 
