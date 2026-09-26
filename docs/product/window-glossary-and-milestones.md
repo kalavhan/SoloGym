@@ -1,6 +1,6 @@
 # SoloGym window glossary and milestone plan
 
-**Current status · 2026-09-25:** WIN-001 Home and WIN-002 access are accepted by user report. WIN-006/007 native UI is implemented and Linux-verified; their production policy, legal-document and storage dependencies remain pending. The user approved [WIN-009 Private Fitness Profile](../windows/WIN-009-private-fitness-profile-g0.md) with “si perfecto”. Its complete native implementation is the current milestone, with no APK requested. [WIN-010 Goals / Experience](../windows/WIN-010-goals-experience-g0.md) will be prepared as the next proposal after verification.
+**Current status · 2026-09-25:** WIN-001 Home and WIN-002 access are accepted by user report. WIN-006/007/009 native UI is implemented and Linux-verified; production policy, legal-document and storage dependencies remain pending. [WIN-010 Goals / Experience](../windows/WIN-010-goals-experience-g0.md) has retained bilingual renders awaiting approval. Before advancing it, follow the [layered UI migration](../engineering/layered-ui-and-avatar-architecture.md), starting with shared components and WIN-009. The existing screens have not yet been refactored. No APK requested.
 
 User acceptance and retained targets do not certify every device, live services or mathematical pixel identity. The original reference hashes and prior test evidence remain unchanged.
 
@@ -79,7 +79,7 @@ Teen accounts use private profiles and restricted social defaults. Public teen r
 
 ## Window glossary
 
-There are 64 milestones. **WIN-009 is the current approved implementation; WIN-010 is next for proposal.** Individual statuses are recorded in the machine-readable inventory; shared controls and conditional routes do not automatically complete their separate milestones. The inventory covers the currently defined V1 scope; unspecified additional mini-games and disability-specific exercise programming are later discovery work, not hidden commitments. Important conditional windows remain listed even when many players will never see them.
+There are 64 milestones. **WIN-009 is implemented; WIN-010’s proposal awaits approval after the shared UI migration.** Individual statuses are recorded in the machine-readable inventory; shared controls and conditional routes do not automatically complete their separate milestones. The inventory covers the currently defined V1 scope; unspecified additional mini-games and disability-specific exercise programming are later discovery work, not hidden commitments. Important conditional windows remain listed even when many players will never see them.
 
 ### System and account entry
 
