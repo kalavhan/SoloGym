@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "window_id": "WIN-009",
-  "status": "proposal_awaiting_approval",
+  "status": "native_ui_verified_pending_user_acceptance",
   "steps": [
     "private_data_notice_and_applicable_separate_consent",
     "optional_measurements",
@@ -25,7 +25,7 @@
       "metric",
       "imperial"
     ],
-    "heightCm": "Optional number normalized from cm or ft/in; missing is not zero",
+    "heightCm": "Optional canonical decimal; metric cm input or separate feet/inches; empty remains absent.",
     "bodyweightKg": "Optional number normalized from kg or lb; missing is not zero",
     "readiness": [
       "ready",
@@ -42,9 +42,14 @@
     "Separate applicable health-data decision before collection; WIN-007 terms are not a substitute",
     "Uncertain readiness has a pause route, not a forced ready answer"
   ],
-  "persistence": "Future private server-authorized profile; no collection or backend implemented by this proposal",
+  "persistence": "Memory-only draft; no production collection, server persistence or consent receipt. Review fixture is explicit.",
   "navigation": {
     "depends_on": "WIN-007; WIN-008 where required; authenticated identity",
     "next": "WIN-010"
+  },
+  "approval": {
+    "date": "2026-09-25",
+    "evidence": "si perfecto",
+    "render_manifest": "design/reference-manifests/WIN-009-private-fitness-profile-v1.json"
   }
 }

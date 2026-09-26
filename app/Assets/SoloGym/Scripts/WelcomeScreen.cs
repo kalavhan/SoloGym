@@ -96,7 +96,7 @@ namespace SoloGym
             Render(controller.Model);
             FitSafeArea();
             string initialWindow = Argument("-sologym-window");
-            if ((initialWindow == "age" || initialWindow == "consent") && reviewMode)
+            if ((initialWindow == "age" || initialWindow == "consent" || initialWindow == "profile") && reviewMode)
                 OpenOnboarding(true, null, requestedCapture);
             else if (requestedCapture != null) StartCoroutine(Capture());
         }

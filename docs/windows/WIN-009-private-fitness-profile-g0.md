@@ -1,12 +1,12 @@
 # WIN-009 — Perfil físico privado
 
-Estado: **propuesta visual v1 EN/ES pendiente de aprobación**. Fecha: 2026-09-25.
+Estado: **objetivo visual v1 EN/ES aprobado para implementación**. Fecha: 2026-09-25. El usuario respondió “si perfecto”. La instrucción previa de no generar APK sigue vigente.
 
-Este hito sigue a WIN-007 para una persona autenticada que puede continuar. WIN-008 sigue siendo la rama condicional de tutor; no se elimina. La creación de una cuenta por correo continúa en WIN-004 cuando corresponda. La propuesta se prepara por la instrucción de avanzar a la siguiente ventana después de implementar WIN-006/007; no autoriza implementar WIN-009 todavía.
+Este hito sigue a WIN-007 para una persona autenticada que puede continuar. WIN-008 sigue siendo la rama condicional de tutor; no se elimina. La creación de una cuenta por correo continúa en WIN-004 cuando corresponda. Esta aceptación autoriza construir WIN-009 completo y comprobar después sus pantallas e interacciones. El [informe de implementación](WIN-009-implementation.md) separa la evidencia nativa de las dependencias de producción.
 
 ## Referencias retenidas
 
-Generadas con la herramienta integrada **ImageGen** después de implementar WIN-006/007. La versión ES parte del render aprobado de origen; la versión EN localiza esa composición. Son objetivos propuestos, no capturas de UI implementada. Ambas imágenes miden **853 × 1844**. Los archivos, dimensiones, prompts exactos y hashes SHA-256 están en el [manifiesto v1](../../design/reference-manifests/WIN-009-private-fitness-profile-v1.json).
+Generadas con la herramienta integrada **ImageGen** después de implementar WIN-006/007. La versión ES parte del render aprobado de origen; la versión EN localiza esa composición. Son los objetivos visuales aprobados, no capturas de UI implementada. Ambas imágenes miden **853 × 1844**. Los archivos, dimensiones, prompts exactos y hashes SHA-256 están en el [manifiesto v1](../../design/reference-manifests/WIN-009-private-fitness-profile-v1.json).
 
 ![Perfil físico privado — Español](../../design/renders/WIN-009-private-fitness-profile-es-proposal-v1.png)
 
@@ -48,6 +48,6 @@ Copia principal EN: **PRIVATE PROFILE**, “Your measurements, your pace”, “
 
 La frase de privacidad describe la visibilidad del perfil en la app; los documentos completos deben explicar el tratamiento por el servicio y el acceso operativo necesario. No implica cifrado de extremo a extremo ni excluye el procesamiento por el servicio.
 
-## Cierre esperado de G0
+## Decisión de G0
 
-Los dos objetivos completos ES/EN están guardados con sus prompts, dimensiones y hashes. **Decisión pendiente: aceptar o ajustar esta ventana y su flujo de tres pasos.** Solo la aceptación de estos objetivos autorizará construir WIN-009; las etapas siguientes de objetivos, equipo, agenda y avatar no se incluyen automáticamente. No cambió código ni se recopiló información de salud al preparar esta propuesta.
+Los dos objetivos completos ES/EN están guardados con sus prompts, dimensiones y hashes. El usuario aprobó esta ventana y su flujo de tres pasos con **“si perfecto”**. Se construye la ventana completa antes de su revisión enfocada. La aceptación no incluye automáticamente WIN-010, equipo, agenda ni avatar: WIN-010 se preparará como la siguiente propuesta retenida. No se genera APK.

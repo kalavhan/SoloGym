@@ -18,6 +18,8 @@ namespace SoloGym
         Texture2D ageSource, ageSourceEn, ageClean, consentSource, consentSourceEn, consentClean;
         Font serif, bold, body;
         OnboardingController controller;
+        PrivateProfileScreen profile;
+        int profileReturnFrame = -1;
         InputField ageInput;
         Text status, countryValue, regionValue, privacyCheck, termsCheck, continueText;
         Button continueButton;
@@ -45,9 +47,10 @@ namespace SoloGym
             controller = new OnboardingController(review);
             controller.SetLanguage(language);
             controller.ExitRequested += Exit;
-            controller.CheckpointRequested += id => Notice(L("Next step", "Siguiente paso"),
-                L("This preview ends here. Private profile setup is the next window. No account consent was saved.",
-                  "La vista previa termina aquí. El perfil privado es la siguiente ventana. No se guardó consentimiento de cuenta."));
+            controller.CheckpointRequested += id =>
+            {
+                if (id == "REVIEW:WIN-009" && controller.Model.ReviewMode) OpenProfile();
+            };
             var canvasNode = new GameObject("Onboarding UI", typeof(RectTransform), typeof(Canvas), typeof(GraphicRaycaster));
             canvasNode.transform.SetParent(transform, false);
             var canvas = canvasNode.GetComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay;
@@ -57,7 +60,30 @@ namespace SoloGym
             if (document != null) controller.ReadDocument(document);
             else if (Argument("-sologym-window") == "consent" && review) controller.ContinueAge();
             Render(controller.Model); Fit();
-            if (capture != null) StartCoroutine(Capture());
+            if (Argument("-sologym-window") == "profile" && review)
+                OpenProfile(capture);
+            else if (capture != null) StartCoroutine(Capture());
+        }
+
+        void OpenProfile(string capturePath = null)
+        {
+            if (!controller.Model.ReviewMode) return;
+            KeyboardOff(); CloseModal(); root.gameObject.SetActive(false);
+            if (profile != null)
+            {
+                profile.Resume(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"));
+                return;
+            }
+            var node = new GameObject("Private fitness profile");
+            node.transform.SetParent(transform, false);
+            profile = node.AddComponent<PrivateProfileScreen>();
+            profile.Initialize(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"), true, () =>
+            {
+                root.gameObject.SetActive(true);
+                // The same Escape press must not also back out of this parent screen.
+                profileReturnFrame = Time.frameCount;
+                controller.SetLanguage(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"));
+            }, () => controller.Decline(), capturePath);
         }
 
         void Render(OnboardingViewModel model)
@@ -283,7 +309,7 @@ namespace SoloGym
         }
         void Update()
         {
-            if(root==null)return;
+            if(root==null||(profile!=null&&profile.gameObject.activeSelf)||Time.frameCount==profileReturnFrame)return;
             if(lastSize.x!=Screen.width||lastSize.y!=Screen.height||lastSafe!=Screen.safeArea||lastKeyboard!=TouchScreenKeyboard.visible||lastKeyboardHeight!=TouchScreenKeyboard.area.height)Fit();
             if(Input.GetKeyDown(KeyCode.Escape)){if(controller.Model.Step==OnboardingStep.Document){if(documentOnly)Exit();else controller.Back();}else if(modal!=null)CloseModal();else controller.Back();}
         }
@@ -319,7 +345,11 @@ namespace SoloGym
             controller.SetLanguage("en");yield return null;passed &= controller.Model.PrivacyAcknowledged&&controller.Model.Language=="en";
             controller.Back();yield return null;passed &= controller.Model.AgeText=="21"&&controller.Model.CountryCode=="MX";
             using(var real=new OnboardingController(false)){real.SetAge("21");real.SelectCountry("MX");real.ContinueAge();passed &= real.Model.Step==OnboardingStep.AgeRegion&&!string.IsNullOrEmpty(real.Model.Error);}
-            string result="{\"passed\":"+(passed?"true":"false")+",\"checks\":[\"11 onboarding state checks\",\"underage blocked\",\"native country picker\",\"consent initially disabled\",\"document reader unavailable\",\"checkbox interactions\",\"locale preserves choices\",\"back preserves draft\",\"real policy fails closed\"]}";
+            controller.ContinueAge();controls["continue"].onClick.Invoke();yield return null;
+            var retainedProfile=profile;
+            passed &= retainedProfile!=null&&retainedProfile.CheckBackRetentionForReview(()=>controls["continue"].onClick.Invoke());
+            passed &= profile==retainedProfile;
+            string result="{\"passed\":"+(passed?"true":"false")+",\"checks\":[\"11 onboarding state checks\",\"underage blocked\",\"native country picker\",\"consent initially disabled\",\"document reader unavailable\",\"checkbox interactions\",\"locale preserves choices\",\"back preserves draft\",\"real policy fails closed\",\"profile draft survives Back to consent and reentry through native controls\"]}";
             File.WriteAllText(Path.ChangeExtension(capture,".smoke.json"),result);Debug.Log("SOLOGYM_ONBOARDING_SMOKE "+result);if(!passed)Application.Quit(2);
         }
         void OnDestroy(){controller?.Dispose();}

@@ -1,6 +1,6 @@
 {
   "window_id": "WIN-009",
-  "status": "proposal_awaiting_user_approval",
+  "status": "approved_visual_target_implementation_in_progress",
   "generation_tool": "built-in image_gen",
   "version": 1,
   "references": [
@@ -40,5 +40,11 @@
   },
   "inspection": "Both generated whole-screen outputs inspected: established portal/logo and angular glass retained; correct ES/EN copy; optional measurements and 170/70 fixture; no visible overlapping controls. English privacy cue wraps to three lines while Spanish uses two. Each locale keeps its own immutable reference.",
   "scope": "Principal optional-measurements step in a staged private-profile flow. Notice/required health-data consent and readiness steps reuse the frame; no per-control image generation.",
-  "implementation": "Not started. This next-window proposal requires approval before construction. No backend, profile collection or training change is claimed."
+  "implementation": "Complete-window implementation in progress; evidence will be recorded in docs/windows/WIN-009-implementation.md. No APK requested. No backend or production health-data authorization is implied.",
+  "approval": {
+    "approved_by": "user",
+    "date": "2026-09-25",
+    "evidence": "si perfecto",
+    "scope": "Retained ES/EN v1 targets and three-step private-profile flow approved for complete-window implementation. Earlier instruction not to generate an APK remains active. This is target approval, not acceptance of an implemented profile or a server consent receipt."
+  }
 }

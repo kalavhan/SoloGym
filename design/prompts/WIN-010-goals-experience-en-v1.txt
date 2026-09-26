@@ -1,0 +1,17 @@
+Use case: text-localization
+Asset type: one full-screen SoloGym mobile game UI proposal, WIN-010 Goals / Experience, English. Target 853 x 1844 portrait, identical to the Spanish input reference. No phone frame, collage or asset sheet.
+Use the generated Spanish WIN-010 full screen as the exact visual reference. Preserve all environment art, the SoloGym wordmark, portal, panel silhouette, rows, selected first-row diamond, spacings, cyan button shape, footer and top navigation. Change ONLY the UI language, with careful localized font fitting where needed. Keep typography silver and engraved, fields dark blue glass, and cyan angular edging identical. Do not redesign or add elements.
+Exact replacements:
+"Volver" -> "Back"
+"ES" -> "EN"
+"TU RUTA" -> "YOUR PATH"
+"Elige tu enfoque de entrenamiento" -> "Choose your training focus"
+"Condición general" -> "General fitness"
+"Fuerza" -> "Strength"
+"Desarrollo muscular" -> "Muscle growth"
+"Resistencia" -> "Endurance"
+"Movilidad" -> "Mobility"
+"Podrás cambiarlo cuando quieras." -> "You can change this at any time."
+"CONTINUAR" -> "CONTINUE"
+"Privacidad · Términos" -> "Privacy · Terms"
+Each translated string appears once in the same role. Maintain five equal vertical choices; only General fitness is selected in this fictional adult fixture. Keep all labels legible inside the panel. No additional text, fitness prescriptions, body measurements, weight-loss goals, rewards, avatars or save confirmations. This is a retained whole-window visual reference, not an implemented UI screenshot.

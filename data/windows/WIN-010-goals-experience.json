@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-010",
+  "status": "proposal_awaiting_user_approval",
+  "source_rules": "data/training/rules.json",
+  "source_schema": "data/schemas/training-profile.schema.json",
+  "steps": [
+    "goal",
+    "experience",
+    "review"
+  ],
+  "fixture": {
+    "fictional": true,
+    "audience": "adult",
+    "step": "goal",
+    "goal": "general_fitness",
+    "experience": null
+  },
+  "initial_state": {
+    "goal": null,
+    "experience": null
+  },
+  "goals": [
+    {
+      "id": "general_fitness",
+      "en": "General fitness",
+      "es": "Condición general"
+    },
+    {
+      "id": "strength",
+      "en": "Strength",
+      "es": "Fuerza"
+    },
+    {
+      "id": "muscle_growth",
+      "en": "Muscle growth",
+      "es": "Desarrollo muscular"
+    },
+    {
+      "id": "endurance",
+      "en": "Endurance",
+      "es": "Resistencia"
+    },
+    {
+      "id": "mobility",
+      "en": "Mobility",
+      "es": "Movilidad"
+    }
+  ],
+  "experience_choices": [
+    {
+      "id": "beginner",
+      "en": "I'm starting or returning",
+      "es": "Estoy empezando o retomando"
+    },
+    {
+      "id": "intermediate",
+      "en": "I train regularly and know the basic movements",
+      "es": "Entreno con regularidad y conozco los movimientos básicos"
+    }
+  ],
+  "uncertainty": {
+    "en": "I'm not sure",
+    "es": "No estoy seguro",
+    "behavior": "Offer beginner as a starting point and require explicit confirmation; do not infer an experience level."
+  },
+  "teen_visible_goals": [
+    "general_fitness",
+    "mobility"
+  ],
+  "teen_policy_note": "Draft product scope aligns with existing generator foundation mapping; no weight-loss goals or automatic Hard eligibility. Existing supervision and reviewed regional access requirements remain active.",
+  "constraints": [
+    "Goal and experience are required explicit choices; no inference from physique, optional measurements or avatar.",
+    "No weight-loss, calorie, fasting or appearance goals.",
+    "No new plan is generated until equipment, schedule and other required training inputs exist and production content gates permit it.",
+    "Goal and experience changes do not delete prior progress or confer rewards.",
+    "An existing readiness pause is preserved; this window cannot clear it.",
+    "Return and language changes preserve the draft; exit discards unsaved changes."
+  ],
+  "navigation": {
+    "depends_on": "WIN-009 and upstream authenticated eligibility/consent gates",
+    "next": "WIN-011"
+  },
+  "persistence": "Proposal only. Future private profile fields; no backend or runtime implementation is added here.",
+  "reference_status": "Retained ES/EN v1 full-screen principal adult goal-step proposals generated with built-in ImageGen and visually inspected; target approval pending.",
+  "render_manifest": "design/reference-manifests/WIN-010-goals-experience-v1.json"
+}
