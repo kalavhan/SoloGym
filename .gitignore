@@ -21,6 +21,8 @@ app/*.sln
 *.jks
 *.log
 artifacts/local/
+artifacts/visual/UI-migration/final/local-config/
+artifacts/visual/UI-migration/final/motion/
 
 # Reproducible official Firebase SDK: tools/install_firebase_unity.py (not vendored).
 app/Assets/Firebase/

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "WIN-009 implemented; shared layered UI migration planned before WIN-010. WIN-010 target approval and production policy/storage dependencies remain pending.",
+  "status": "Shared layered UI migration implemented for WIN-001/002/006/007/009 in Linux 0.5.0; first avatar engineering proof available, production art pending. WIN-010 target approval remains pending.",
   "product": "SoloGym",
   "constraints": {
     "platforms": [
@@ -2624,10 +2624,10 @@
   },
   "visual_reference_contract": "docs/design/visual-reference-contract.md",
   "active_window": "WIN-010",
-  "approval_workflow_status": "Shared UI architecture recorded, migration pending. WIN-010 target remains unapproved; existing target acceptance and capture evidence are unchanged.",
+  "approval_workflow_status": "UI migration available for review; existing target hashes unchanged. WIN-010 is still awaiting target approval. No APK.",
   "ui_architecture": {
     "document": "docs/engineering/layered-ui-and-avatar-architecture.md",
-    "status": "planned_not_implemented",
+    "status": "implemented_pending_native_visual_acceptance",
     "runtime_rule": "Independent background artwork, shared code containers/controls, theme data and live localized text; no new flattened-window textures or panel-crop/clean-plate UI.",
     "migration_order": [
       "shared_ui_kit",
@@ -2639,6 +2639,13 @@
     ],
     "next_new_window": "WIN-010",
     "next_new_window_target_approved": false,
-    "verification": "Complete-window baseline comparisons and focused interactions; no per-control render loop and no APK."
+    "verification": "Complete-window baseline comparisons and focused interactions; no per-control render loop and no APK.",
+    "implementation_report": "docs/engineering/layered-ui-and-avatar-implementation.md",
+    "completed_steps": [
+      "UI-01",
+      "UI-02",
+      "UI-03",
+      "UI-04"
+    ]
   }
 }

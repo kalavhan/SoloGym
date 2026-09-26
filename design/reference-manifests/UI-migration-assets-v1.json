@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-25",
+  "scope": "UI migration and first modular character engineering proof",
+  "source_targets_unchanged": true,
+  "production_avatar_ready": false,
+  "asset_records": [
+    {
+      "path": "app/Assets/SoloGym/Resources/Art/PortalBackground-v1.png",
+      "sha256": "04229631b63cf344de413c95a40f8e47510351aad81004facf1769d07512b66e",
+      "size_px": [
+        853,
+        1844
+      ],
+      "mode": "RGB",
+      "source_reference": "design/renders/WIN-002-welcome-sign-in-en-proposal-v1.png",
+      "generated_filename": "exec-eab22cce-1279-4ab1-b138-92c1c2053a26.png",
+      "role": "Environment extracted/reconstructed without UI, reused across Welcome and private setup.",
+      "tool": "built-in imagegen",
+      "visual_status": "new_extracted_asset_pending_user_review",
+      "prompt": "design/prompts/UI-migration/portal-background-v1.txt"
+    },
+    {
+      "path": "app/Assets/SoloGym/Resources/Art/HomeBackground-v1.png",
+      "sha256": "14bf0cb0a30a3f213588734f82a79793a5c4b5ef6c26d8e7ca6ce99337647d14",
+      "size_px": [
+        853,
+        1844
+      ],
+      "mode": "RGB",
+      "source_reference": "design/renders/WIN-001-system-home-en-proposal-v2.png",
+      "generated_filename": "exec-a9fe89c6-2865-409c-bc80-675ee0127896.png",
+      "role": "Home environment reconstructed behind former avatar and UI.",
+      "tool": "built-in imagegen",
+      "visual_status": "new_extracted_asset_pending_user_review",
+      "prompt": "design/prompts/UI-migration/home-background-v1.txt"
+    },
+    {
+      "path": "app/Assets/SoloGym/Resources/Art/KaiPortrait-v1.png",
+      "sha256": "4a9e97e0e0b73229923ef1d9ee30438601decc30cd80a4b19178c9006f0b7d8f",
+      "size_px": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "source_reference": "design/renders/WIN-001-system-home-en-proposal-v2.png",
+      "generated_filename": "exec-24f10add-89a6-46d0-a148-354363e1b4c0.png",
+      "role": "Temporary static full-body cutout. Not the modular proof avatar.",
+      "tool": "built-in imagegen",
+      "visual_status": "new_extracted_asset_pending_user_review",
+      "prompt": "design/prompts/UI-migration/kai-portrait-v1.txt"
+    },
+    {
+      "path": "app/Assets/SoloGym/Resources/Art/Wordmark-v1.png",
+      "sha256": "d9a213e2c305fcce4b304471af9591a0cf6df1d5b1f472394f0f76008e9e5d72",
+      "size_px": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "source_reference": "design/renders/WIN-002-welcome-sign-in-en-proposal-v1.png",
+      "generated_filename": "exec-90b67de0-59e9-4be7-8a20-1603d8111f58.png",
+      "role": "Independent reusable branding; no UI labels baked into panels.",
+      "tool": "built-in imagegen",
+      "visual_status": "new_extracted_asset_pending_user_review",
+      "prompt": "design/prompts/UI-migration/wordmark-v1.txt"
+    },
+    {
+      "path": "app/Assets/SoloGym/Resources/Art/IllustratedIcons-v1.png",
+      "sha256": "e2e1954c54ee5dd2cb61cebfc1bad81fd6e6765ea963b97d73c1aeab503e7dc6",
+      "size_px": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "source_reference": "design/renders/WIN-001-system-home-en-proposal-v2.png",
+      "generated_filename": "exec-59f74327-1aee-4e56-b594-d8002fb1a035.png",
+      "role": "Twelve illustrated inventory/stat/navigation emblems in one atlas; no frames or labels.",
+      "tool": "built-in imagegen",
+      "visual_status": "new_extracted_asset_pending_user_review",
+      "prompt": "design/prompts/UI-migration/illustrated-icons-v1.txt"
+    },
+    {
+      "path": "app/Assets/SoloGym/Resources/AvatarProof/BodyParts-v1.png",
+      "sha256": "57afbffb26c683d5ff84afc500f15721747757cfa5ddee09b7cbc4d328756079",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "generated_filename": "exec-503bfd59-9be5-4806-859c-64c501c66e5a.png",
+      "role": "Unapproved engineering proof parts; hand-authored registration and coarse semantic skin regions. Not production-ready art.",
+      "tool": "built-in imagegen",
+      "visual_status": "engineering_proof_pending_review",
+      "prompt": "design/prompts/UI-migration/avatar-body-parts-v1.txt",
+      "source_reference": "design/renders/WIN-001-system-home-en-proposal-v2.png"
+    },
+    {
+      "path": "app/Assets/SoloGym/Resources/AvatarProof/Equipment-v1.png",
+      "sha256": "27e38f990a393384ecde88befa226f4aef15db975d3766e1537957b79196fb2c",
+      "size_px": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "generated_filename": "exec-e33efebc-f030-4804-91a9-287c2539a822.png",
+      "role": "Unapproved engineering proof parts; hand-authored registration and coarse semantic skin regions. Not production-ready art.",
+      "tool": "built-in imagegen",
+      "visual_status": "engineering_proof_pending_review",
+      "prompt": "design/prompts/UI-migration/avatar-equipment-v1.txt",
+      "source_references": [
+        "app/Assets/SoloGym/Resources/AvatarProof/BodyParts-v1.png",
+        "design/renders/WIN-001-system-home-en-proposal-v2.png"
+      ]
+    }
+  ],
+  "registration": "Atlas UV rectangles are metadata in Art/IconAtlas.json and AvatarProof/Parts.json. Generated master PNGs are copied unchanged. Runtime textures preserve alpha; no post-generation raster edits.",
+  "limitations": [
+    "New environment fills, icon extraction, native fonts and procedural chrome differ from the approved flattened references; no pixel-identical certification.",
+    "Avatar proof uses one body fit, coarse skin-region masks and two explicitly mirrored views; no eight-direction, female/body-fit or final animation library."
+  ]
+}

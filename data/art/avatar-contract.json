@@ -2,7 +2,7 @@
   "schema_version": "0.2.0",
   "contract_id": "sologym.avatar.authoring-proposal",
   "updated_on": "2026-09-25",
-  "status": "proposed_pending_sprite_and_rig_proof",
+  "status": "authoring_proposal_with_first_engineering_proof_pending_visual_rig_acceptance",
   "production_ready": false,
   "engine_decision": "Unity 6000.3.24f1; avatar rendering pipeline pending sprite and rig proof",
   "notes": [
@@ -645,5 +645,29 @@
     "registration": "Shared rig/bind pose or synchronized frame registration; matching direction, canvas, pivots and attachment anchors.",
     "runtime_packing": "Authoring parts may be packed into atlases; this list does not require a texture or draw call for every part.",
     "distant_face": "A combined low-detail face may represent the same appearance recipe in distant gameplay."
+  },
+  "engineering_proof": {
+    "report": "docs/engineering/layered-ui-and-avatar-implementation.md",
+    "recipe_class": "app/Assets/SoloGym/Scripts/Avatar/AvatarAppearance.cs",
+    "renderer": "app/Assets/SoloGym/Scripts/Avatar/LayeredAvatar.cs",
+    "part_registry": "app/Assets/SoloGym/Resources/AvatarProof/Parts.json",
+    "base_fit_count": 1,
+    "skin_palette_count": 2,
+    "hair_style_count": 2,
+    "actions": [
+      "idle",
+      "walk",
+      "jab"
+    ],
+    "views": "two_mirrored_proof_views_only",
+    "production_ready": false,
+    "remaining": [
+      "joint silhouette cleanup",
+      "precise skin and equipment coverage masks",
+      "hair/head and shoulder fits",
+      "female and other body fits",
+      "authored isometric directions",
+      "final animation and equipment compatibility proof"
+    ]
   }
 }
