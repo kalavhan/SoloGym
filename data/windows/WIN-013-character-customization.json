@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-013",
+  "status": "g0_proposed_native_v1",
+  "depends_on": "WIN-012",
+  "steps": ["setup"],
+  "future_steps_documented": [
+    "presentation",
+    "build_muscle",
+    "face_hair",
+    "gear_motion_preview",
+    "save_appearance"
+  ],
+  "fixture": {
+    "fictional": true,
+    "skin_palette_id": "warm",
+    "hair_id": "spiky",
+    "preview_gear": true,
+    "note": "Runtime defaults match AvatarAppearance proof; user may change before continue."
+  },
+  "initial_state": {
+    "skin_palette_id": "warm",
+    "hair_id": "spiky",
+    "torso_item_id": "proof_training_top",
+    "hand_item_id": "proof_cyan_gloves"
+  },
+  "proof_options": {
+    "skin_palette_ids": ["warm", "deep"],
+    "hair_ids": ["spiky", "swept"],
+    "preview_gear_ids": {
+      "on": { "torso_item_id": "proof_training_top", "hand_item_id": "proof_cyan_gloves" },
+      "off": { "torso_item_id": null, "hand_item_id": null }
+    }
+  },
+  "navigation": {
+    "depends_on": "WIN-012",
+    "checkpoint_from_schedule": "REVIEW:WIN-013",
+    "checkpoint_on_continue": "REVIEW:SETUP_COMPLETE",
+    "next": "home_setup_complete"
+  },
+  "persistence": "In-memory draft in review mode only.",
+  "render_manifest": "design/reference-manifests/WIN-013-character-customization-v1.json",
+  "art_scope": "AvatarProof engineering atlas only; not production character workshop."
+}

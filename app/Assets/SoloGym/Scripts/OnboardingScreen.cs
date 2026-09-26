@@ -21,6 +21,7 @@ namespace SoloGym
         GoalsExperienceScreen goals;
         EquipmentScreen equipment;
         ScheduleScreen schedule;
+        CharacterStudioScreen character;
         int profileReturnFrame = -1;
         InputField ageInput;
         Text status, countryValue, regionValue, privacyCheck, termsCheck, continueText;
@@ -64,6 +65,8 @@ namespace SoloGym
                 OpenEquipment(capture);
             else if (Argument("-sologym-window") == "schedule" && review)
                 OpenSchedule(capture);
+            else if (Argument("-sologym-window") == "character" && review)
+                OpenCharacter(capture);
             else if (capture != null) StartCoroutine(Capture());
         }
 
@@ -173,12 +176,57 @@ namespace SoloGym
                 else root.gameObject.SetActive(true);
             }, () => controller.Decline(), id =>
             {
-                if (id != "REVIEW:WIN-013") return;
-                KeyboardOff();
-                Notice(L("Next step", "Siguiente paso"),
-                    L("Character customization is the next window. Nothing was saved to your account.",
-                        "La personalización del personaje es la siguiente ventana. No se guardaron datos en tu cuenta."));
+                if (id == "REVIEW:WIN-013") OpenCharacter();
             }, capturePath ?? (Argument("-sologym-window") == "schedule" ? capture : null), step);
+        }
+
+        void OpenCharacter(string capturePath = null)
+        {
+            if (!controller.Model.ReviewMode) return;
+            KeyboardOff();
+            CloseModal();
+            if (schedule != null) schedule.gameObject.SetActive(false);
+            if (equipment != null) equipment.gameObject.SetActive(false);
+            if (goals != null) goals.gameObject.SetActive(false);
+            if (profile != null) profile.gameObject.SetActive(false);
+            root.gameObject.SetActive(false);
+            if (character != null)
+            {
+                character.Resume(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"));
+                return;
+            }
+            var node = new GameObject("Character customization");
+            node.transform.SetParent(transform, false);
+            character = node.AddComponent<CharacterStudioScreen>();
+            string lang = PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto");
+            character.Initialize(lang, true, () =>
+            {
+                character.gameObject.SetActive(false);
+                if (schedule != null) schedule.gameObject.SetActive(true);
+                else if (equipment != null) equipment.gameObject.SetActive(true);
+                else root.gameObject.SetActive(true);
+            }, () => controller.Decline(), id =>
+            {
+                if (id != "REVIEW:SETUP_COMPLETE") return;
+                KeyboardOff();
+                SetupCompleteNotice();
+            }, capturePath ?? (Argument("-sologym-window") == "character" ? capture : null));
+        }
+
+        void SetupCompleteNotice()
+        {
+            string lang = PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto");
+            if (lang != "es" && lang != "en") lang = Application.systemLanguage == SystemLanguage.Spanish ? "es" : "en";
+            OpenModal(CharacterCustomizationCopy.Get("setup_complete_title", lang));
+            var text = TextAt(modal, new Rect(35, 140, 640, 610),
+                CharacterCustomizationCopy.Get("setup_complete_body", lang), 30, body, Silver, TextAnchor.UpperLeft);
+            text.horizontalOverflow = HorizontalWrapMode.Wrap;
+            ModalButton(modal, new Rect(35, 890, 640, 80), L("Close", "Cerrar"), () =>
+            {
+                CloseModal();
+                if (character != null) character.gameObject.SetActive(false);
+                Exit();
+            });
         }
 
         void Render(OnboardingViewModel model)
@@ -371,7 +419,7 @@ namespace SoloGym
 
         void Update()
         {
-            if(root==null||(profile!=null&&profile.gameObject.activeSelf)||Time.frameCount==profileReturnFrame)return;
+            if(root==null||(profile!=null&&profile.gameObject.activeSelf)||(schedule!=null&&schedule.gameObject.activeSelf)||(character!=null&&character.gameObject.activeSelf)||Time.frameCount==profileReturnFrame)return;
             if(lastSize.x!=Screen.width||lastSize.y!=Screen.height||lastSafe!=Screen.safeArea||lastKeyboard!=TouchScreenKeyboard.visible||lastKeyboardHeight!=TouchScreenKeyboard.area.height)Fit();
             if(Input.GetKeyDown(KeyCode.Escape)){if(controller.Model.Step==OnboardingStep.Document){if(documentOnly)Exit();else controller.Back();}else if(modal!=null)CloseModal();else controller.Back();}
         }

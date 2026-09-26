@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "fit_family_id": "proof_male_athletic",
+  "view_id": "front_proof",
+  "status": "engineering_reference_pending_visual_acceptance",
+  "notes": [
+    "Joint offsets and camera presets are the authoritative registration for the proof rig.",
+    "Tower and Home must resolve the same fit_family_id before using alternate manifests."
+  ],
+  "golden_capture": {
+    "recipe": {
+      "baseId": "proof_male_athletic_v1",
+      "fitId": "proof_male_athletic",
+      "fitFamilyId": "proof_male_athletic",
+      "skinPaletteId": "warm",
+      "hairId": "spiky",
+      "eyesId": "proof_eyes",
+      "mouthId": "proof_mouth",
+      "torsoItemId": "",
+      "handItemId": ""
+    },
+    "resource_png": "AvatarReference/proof_male_athletic_front_golden",
+    "expected_sha256": "1fe7428d5cd11d7ea2bd57a9043eba613eadb258d055823d33cdb55cd48c3e0d",
+    "viewport": { "width": 512, "height": 640 }
+  },
+  "stage_anchor": {
+    "rig_pivot_x": 0.5,
+    "rig_pivot_y": 0.58,
+    "clip_width": 665,
+    "clip_height": 720
+  },
+  "sockets": {
+    "head": { "joint": "Head socket", "x": 5, "y": -112 },
+    "shoulder_far": { "joint": "Far shoulder", "x": -78, "y": 17 },
+    "shoulder_near": { "joint": "Near shoulder", "x": 77, "y": 18 },
+    "hip_far": { "joint": "Far hip", "x": -40, "y": 190 },
+    "hip_near": { "joint": "Near hip", "x": 40, "y": 190 }
+  },
+  "camera_presets": {
+    "fullBody": {
+      "rig_scale": 1.0,
+      "rig_offset_x": 0,
+      "rig_offset_y": 0,
+      "animate_limbs": true
+    },
+    "faceCloseUp": {
+      "rig_scale": 2.6,
+      "rig_offset_x": 0,
+      "rig_offset_y": -95,
+      "animate_limbs": false,
+      "anchor_socket": "head"
+    }
+  },
+  "hit_regions": [
+    { "id": "head", "category": "face", "rect": [0.38, 0.08, 0.24, 0.22] },
+    { "id": "torso", "category": "gear", "rect": [0.32, 0.28, 0.36, 0.32] },
+    { "id": "body", "category": "body", "rect": [0.28, 0.22, 0.44, 0.55] },
+    { "id": "skin", "category": "skin", "rect": [0.25, 0.18, 0.5, 0.62] }
+  ]
+}

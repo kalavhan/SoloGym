@@ -87,5 +87,33 @@ namespace SoloGym
         {
             return new ReviewLayout { PanelY = MaxPanelTop, PanelHeight = MaxPanelHeight };
         }
+
+        public const float CharacterPreviewTop = 548f;
+        public const float CharacterPreviewHeight = 360f;
+
+        public static ScheduleSetupLayout SolveCharacterSetup(float choicesContentHeight)
+        {
+            const float gapAfterPreview = 24f;
+            const float maxChoicesViewport = 520f;
+            float choicesTop = CharacterPreviewTop + CharacterPreviewHeight + gapAfterPreview;
+            float scrollH = Mathf.Min(maxChoicesViewport, Mathf.Max(0, choicesContentHeight));
+            float blockBottom = choicesTop + scrollH;
+            float primaryTop = blockBottom + PortalFrameLayout.BelowPrimaryGap;
+            float secondaryTop = primaryTop + PortalFrameLayout.PrimaryHeight + SecondaryBelowPrimary;
+            float panelY = MaxPanelTop;
+            float panelBottom = secondaryTop + PortalFrameLayout.SecondaryHeight + SchedulePanelTopPadding;
+            float panelHeight = Mathf.Clamp(panelBottom - panelY, MinPanelHeight, MaxPanelHeight);
+
+            return new ScheduleSetupLayout
+            {
+                PanelY = panelY,
+                PanelHeight = panelHeight,
+                ScrollViewport = new Rect(PortalFrameLayout.ContentX, choicesTop, PortalFrameLayout.ContentWidth,
+                    scrollH),
+                PrimaryTop = primaryTop,
+                SecondaryTop = secondaryTop,
+                StatusTop = primaryTop - StatusAbovePrimary
+            };
+        }
     }
 }

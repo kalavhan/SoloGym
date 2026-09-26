@@ -697,8 +697,10 @@
         "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "not_started",
-      "scope": "v1"
+      "stage": "g3_studio_native_pending_user_acceptance",
+      "scope": "v1",
+      "current_artifact": "docs/windows/WIN-013-character-studio-g3.md",
+      "render_manifest": "design/reference-manifests/WIN-013-character-studio-g3-v1.json"
     },
     {
       "id": "WIN-014",
