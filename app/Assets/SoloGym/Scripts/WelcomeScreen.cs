@@ -79,6 +79,24 @@ namespace SoloGym
                 enabled = false;
                 return;
             }
+            if (Argument("-sologym-window") == "schedule")
+            {
+                Application.targetFrameRate = 60;
+                Screen.orientation = ScreenOrientation.Portrait;
+                requestedCapture = Argument("-sologym-capture");
+                reviewMode = Application.isEditor || HasArgument("-sologym-review");
+#if SOLOGYM_REVIEW
+                reviewMode = true;
+#endif
+                if (!reviewMode) { Debug.LogError("WIN-012 preview requires -sologym-review."); enabled = false; return; }
+                if (FindFirstObjectByType<EventSystem>() == null)
+                    new GameObject("Input", typeof(EventSystem), typeof(StandaloneInputModule));
+                var schedulePreview = new GameObject("SoloGym schedule preview").AddComponent<OnboardingScreen>();
+                string scheduleLocale = Argument("-sologym-locale");
+                schedulePreview.Initialize(scheduleLocale ?? "auto", true, () => Application.Quit(), null, requestedCapture);
+                enabled = false;
+                return;
+            }
             if (Argument("-sologym-window") == "goals")
             {
                 Application.targetFrameRate = 60;
@@ -136,7 +154,7 @@ namespace SoloGym
             string initialWindow = Argument("-sologym-window");
             if ((initialWindow == "age" || initialWindow == "consent" || initialWindow == "profile") && reviewMode)
                 OpenOnboarding(true, null, requestedCapture);
-            else if ((initialWindow == "goals" || initialWindow == "equipment") && reviewMode)
+            else if ((initialWindow == "goals" || initialWindow == "equipment" || initialWindow == "schedule") && reviewMode)
                 OpenOnboarding(true, null, requestedCapture);
             else if (requestedCapture != null) StartCoroutine(Capture());
         }

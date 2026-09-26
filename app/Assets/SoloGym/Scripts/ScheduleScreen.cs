@@ -8,15 +8,16 @@ using UnityEngine.UI;
 
 namespace SoloGym
 {
-    /// <summary>Environment and equipment selection on the shared portal frame.</summary>
-    public sealed class EquipmentScreen : MonoBehaviour
+    /// <summary>Combined weekday and availability setup, then badge review on the shared portal frame.</summary>
+    public sealed class ScheduleScreen : MonoBehaviour
     {
-        const float W = 853, H = 1844;
+        const float W = PortalFrameLayout.PageWidth, H = PortalFrameLayout.PageHeight;
+        const float WindowTitleY = 490;
         static Color Silver => SystemUI.Theme.text;
         static Color Cyan => SystemUI.Theme.accent;
         RectTransform root, page, modal;
         Font serif, bold, body;
-        EquipmentController controller;
+        ScheduleController controller;
         Action back, leave;
         Action<string> onCheckpoint;
         string capture;
@@ -24,7 +25,8 @@ namespace SoloGym
         readonly Dictionary<string, Button> controls = new Dictionary<string, Button>();
         Vector2 lastSize;
         Rect lastSafe;
-        float equipmentScrollY;
+        float setupScrollY;
+        PortalWindowFrame.ScheduleSetupLayout setupLayout;
 
         public void Initialize(string language, bool review, Action onBack, Action onExit,
             Action<string> checkpointHandler = null, string capturePath = null, string initialStep = null)
@@ -36,15 +38,15 @@ namespace SoloGym
             serif = SystemUI.Theme.heading;
             bold = SystemUI.Theme.headingBold;
             body = SystemUI.Theme.body;
-            controller = new EquipmentController(review);
+            controller = new ScheduleController(review);
             controller.SetLanguage(language);
-            var node = new GameObject("Equipment canvas", typeof(RectTransform), typeof(Canvas), typeof(GraphicRaycaster));
+            var node = new GameObject("Schedule canvas", typeof(RectTransform), typeof(Canvas), typeof(GraphicRaycaster));
             node.transform.SetParent(transform, false);
             var canvas = node.GetComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             canvas.sortingOrder = 40;
             canvas.pixelPerfect = true;
-            root = RectNode("Equipment reference 853x1844", node.transform, new Rect(0, 0, W, H));
+            root = RectNode("Schedule reference 853x1844", node.transform, new Rect(0, 0, W, H));
             controller.Changed += Render;
             controller.ExitRequested += Exit;
             controller.CheckpointRequested += id =>
@@ -61,17 +63,13 @@ namespace SoloGym
         void ApplyInitialStep(string initialStep)
         {
             if (!controller.Model.ReviewMode || string.IsNullOrEmpty(initialStep)) return;
-            if (initialStep == "equipment")
+            if (initialStep == "review" || initialStep == "duration")
             {
-                controller.SelectEnvironment("home");
-                controller.ContinueEnvironment();
-            }
-            else if (initialStep == "review")
-            {
-                controller.SelectEnvironment("home");
-                controller.ContinueEnvironment();
-                controller.SetBodyweightOnly(true);
-                controller.ContinueEquipment();
+                controller.ToggleDay(0);
+                controller.ToggleDay(2);
+                controller.ToggleDay(4);
+                controller.SetAvailabilityHours(1);
+                controller.SetAvailabilityMinutes(30);
             }
         }
 
@@ -82,23 +80,25 @@ namespace SoloGym
             Fit();
         }
 
-        void Render(EquipmentViewModel model)
+        void Render(ScheduleViewModel model)
         {
             CloseModal();
             if (page != null)
             {
-                if (model.Step == EquipmentStep.Equipment)
+                if (model.Step == ScheduleStep.Setup)
                 {
                     var existingScroll = page.GetComponentInChildren<ScrollRect>();
                     if (existingScroll != null && existingScroll.content != null)
-                        equipmentScrollY = existingScroll.content.anchoredPosition.y;
+                        setupScrollY = existingScroll.content.anchoredPosition.y;
                 }
                 page.gameObject.SetActive(false);
                 Destroy(page.gameObject);
             }
             controls.Clear();
-            page = RectNode("Equipment page", root, new Rect(0, 0, W, H));
-            SystemUI.PortalPage(page, PortalFrameLayout.OnboardingPanelY, PortalFrameLayout.OnboardingPanelHeight);
+            page = RectNode("Schedule page", root, new Rect(0, 0, W, H));
+            float scrollContentHeight = MeasureSetupScrollContentHeight(model);
+            setupLayout = PortalWindowFrame.SolveScheduleSetup(scrollContentHeight);
+            SystemUI.PortalPage(page, setupLayout.PanelY, setupLayout.PanelHeight);
             SystemUI.Divider(page, 807);
             SystemUI.Icon(page, new Rect(43, 47, 28, 34), "back", Silver);
             SystemUI.Icon(page, new Rect(421, 1728, 10, 25), "sigil", Silver);
@@ -106,20 +106,9 @@ namespace SoloGym
             Live("Language", new Rect(765, 56, 29, 20), model.Language.ToUpperInvariant(), 27);
             Hit("back", new Rect(30, 20, 180, 100), Back);
             Hit("language", new Rect(680, 20, 130, 100), Language);
-            Live("Title", new Rect(L(128, 139), 836, L(596, 575), 53),
+            Live("Title", new Rect(L(168, 200), WindowTitleY, L(517, 453), 53),
                 model.Copy("window_title"), 72, Silver, bold);
-            switch (model.Step)
-            {
-                case EquipmentStep.Environment:
-                    EnvironmentStep(model);
-                    break;
-                case EquipmentStep.Equipment:
-                    EquipmentStepView(model);
-                    break;
-                default:
-                    ReviewStep(model);
-                    break;
-            }
+            SetupStep(model);
             Live("Privacy", new Rect(L(294, 275), 1735, L(89, 116), 24), L("Privacy", "Privacidad"), 29);
             Live("Terms", new Rect(L(491, 472), 1735, L(68, 101), 24), L("Terms", "Términos"), 29);
             Hit("privacy", new Rect(250, 1706, 179, 85), () => Document("privacy"));
@@ -128,145 +117,138 @@ namespace SoloGym
                 TextAt(page, new Rect(80, 280, 693, 35),
                     L("PREVIEW · FICTIONAL DATA · NOT SAVED", "VISTA PREVIA · DATOS FICTICIOS · SIN GUARDAR"),
                     20, body, Cyan, TextAnchor.MiddleCenter);
-            status = TextAt(page, PortalFrameLayout.StatusRect, model.Error, 20, body, new Color32(255, 207, 161, 255),
+            var statusRect = setupLayout.StatusRect;
+            status = TextAt(page, statusRect, model.Error, 20, body, new Color32(255, 207, 161, 255),
                 TextAnchor.MiddleCenter);
             status.horizontalOverflow = HorizontalWrapMode.Wrap;
         }
 
-        void EnvironmentStep(EquipmentViewModel model)
+        float MeasureSetupScrollContentHeight(ScheduleViewModel model)
         {
-            Heading(model.Copy("environment_title"));
-            TextAt(page, new Rect(112, 978, 629, 36), model.Copy("environment_subtitle"), 29, body, Silver, TextAnchor.MiddleCenter);
-            const float firstRowY = 1072;
-            for (int i = 0; i < model.Environments.Length; i++)
-            {
-                var entry = model.Environments[i];
-                Choice(entry.id, page, new Rect(107, firstRowY + i * 81, 641, 74), entry.Label(model.Language),
-                    model.EnvironmentId == entry.id, () => controller.SelectEnvironment(entry.id));
-            }
-            var footer = TextAt(page, new Rect(112, firstRowY + model.Environments.Length * 81 + 8, 629, 40), model.Copy("environment_footer"), 26, body, Silver,
-                TextAnchor.MiddleCenter);
-            footer.horizontalOverflow = HorizontalWrapMode.Wrap;
-            Primary(() => controller.ContinueEnvironment(), model.Copy("continue"), model.CanContinue);
-            Secondary("leave", PortalFrameLayout.SecondaryRect, model.Copy("not_now"), controller.Decline);
+            var measureHost = RectNode("Setup scroll measure", page,
+                new Rect(PortalFrameLayout.ContentX, -4000, PortalFrameLayout.ContentWidth, 8));
+            BuildSetupContent(model, measureHost);
+            var content = measureHost.GetChild(0) as RectTransform;
+            Canvas.ForceUpdateCanvases();
+            float height = content != null ? content.rect.height : 0;
+            Destroy(measureHost.gameObject);
+            return height;
         }
 
-        void EquipmentStepView(EquipmentViewModel model)
+        void SetupStep(ScheduleViewModel model)
         {
-            TextAt(page, new Rect(105, 900, 643, 60), model.Copy("equipment_title"), 35, serif, Silver, TextAnchor.MiddleCenter);
-            const float subtitleY = 968;
-            const float subtitleH = 72;
-            var equipmentSubtitle = TextAt(page, new Rect(112, subtitleY, 629, subtitleH), model.Copy("equipment_subtitle"), 27, body,
-                Silver, TextAnchor.MiddleCenter);
-            equipmentSubtitle.horizontalOverflow = HorizontalWrapMode.Wrap;
-            const float listTop = subtitleY + subtitleH + 48;
-            var viewportRect = PortalFrameLayout.ScrollViewportRect(listTop);
-            var viewport = RectNode("Equipment scroll viewport", page, viewportRect);
+            var viewportRect = setupLayout.ScrollViewport;
+            var viewport = RectNode("Setup scroll viewport", page, viewportRect);
             viewport.gameObject.AddComponent<RectMask2D>();
-            const float scrollPadTop = 8;
-            const float rowH = 74;
-            float contentHeight = scrollPadTop + rowH;
-            if (model.VisibleEquipment.Length == 0) contentHeight += 120;
-            else contentHeight += rowH * model.VisibleEquipment.Length;
-            var content = RectNode("Equipment scroll content", viewport, new Rect(0, 0, 641, contentHeight));
-            content.pivot = new Vector2(0, 1);
-            content.anchorMin = content.anchorMax = new Vector2(0, 1);
-            content.anchoredPosition = Vector2.zero;
+            BuildSetupContent(model, viewport);
+            var content = viewport.GetChild(0) as RectTransform;
             var scroll = viewport.gameObject.AddComponent<ScrollRect>();
             scroll.content = content;
             scroll.viewport = viewport;
             scroll.horizontal = false;
             scroll.movementType = ScrollRect.MovementType.Clamped;
             scroll.scrollSensitivity = 40;
-            Choice("bodyweight", content, new Rect(12, scrollPadTop, 617, rowH), model.Copy("bodyweight_only"), model.BodyweightOnly,
-                () => controller.SetBodyweightOnly(!model.BodyweightOnly));
-            float rowY = scrollPadTop + rowH;
-            if (model.VisibleEquipment.Length == 0)
-            {
-                var outdoor = TextAt(content, new Rect(12, rowY + 8, 617, 120), model.Copy("outdoor_helper"), 24, body, Silver,
-                    TextAnchor.UpperLeft);
-                outdoor.horizontalOverflow = HorizontalWrapMode.Wrap;
-                Canvas.ForceUpdateCanvases();
-                float helperH = outdoor.preferredHeight + 8;
-                content.sizeDelta = new Vector2(641, scrollPadTop + rowH + helperH);
-            }
-            else
-            {
-                for (int i = 0; i < model.VisibleEquipment.Length; i++)
-                {
-                    var entry = model.VisibleEquipment[i];
-                    bool selected = Array.IndexOf(model.SelectedEquipmentIds, entry.id) >= 0;
-                    string key = entry.id;
-                    controls[key] = SystemUI.ChoiceButton(content, new Rect(12, rowY + i * rowH, 617, rowH),
-                        entry.Label(model.Language), selected, () => controller.ToggleEquipment(key));
-                }
-            }
             Canvas.ForceUpdateCanvases();
             float maxScroll = Mathf.Max(0, content.rect.height - viewport.rect.height);
-            content.anchoredPosition = new Vector2(0, Mathf.Clamp(equipmentScrollY, 0, maxScroll));
+            content.anchoredPosition = new Vector2(0, Mathf.Clamp(setupScrollY, 0, maxScroll));
             scroll.onValueChanged.AddListener(_ =>
             {
-                if (scroll.content != null) equipmentScrollY = scroll.content.anchoredPosition.y;
+                if (scroll.content != null) setupScrollY = scroll.content.anchoredPosition.y;
             });
-            SystemUI.AttachScrollAffordance(scroll, viewportRect, rowH, page);
-            Primary(() => controller.ContinueEquipment(), model.Copy("continue"), model.CanContinue);
-            Secondary("leave", PortalFrameLayout.SecondaryRect, model.Copy("not_now"), controller.Decline);
+            SystemUI.AttachScrollAffordance(scroll, viewportRect, 72, page);
+            BuildTimeWheels(model, setupLayout.WheelBandTop, setupLayout.TimeHeaderTop);
+            Primary(() => controller.ContinueSetup(), model.Copy("continue"), model.CanContinue, setupLayout.PrimaryRect,
+                setupLayout.PrimaryCaptionRect);
+            Secondary("leave", setupLayout.SecondaryRect, model.Copy("not_now"), controller.Decline);
         }
 
-        void ReviewStep(EquipmentViewModel model)
+        void BuildTimeWheels(ScheduleViewModel model, float wheelBandTop, float timeHeaderTop)
         {
-            Heading(model.Copy("review_title"));
-            float y = 1000;
-            y = PlaceWrappedBlock(y, model.Copy("review_environment") + ": " + model.EnvironmentLabel, 80) + 8;
-            PlaceReviewLink("change_environment", y, model.Copy("change_environment"), controller.EditEnvironment);
-            y += 44;
-            y = PlaceWrappedBlock(y, model.Copy("review_equipment") + ": " + model.EquipmentSummary, 280) + 8;
-            PlaceReviewLink("change_equipment", y, model.Copy("change_equipment"), controller.EditEquipment);
-            y += 44;
-            float bodyMax = Mathf.Max(80, 1535 - y);
-            PlaceWrappedBlock(y, model.Copy("review_body"), bodyMax);
-            Primary(() => controller.ContinueReview(), model.Copy("continue"), model.CanContinue && model.ReviewMode);
-            Secondary("back_review", PortalFrameLayout.SecondaryRect, model.Copy("back"), () => controller.Back());
+            float wheelBandHeight = PortalFrameLayout.WheelBandHeight;
+            TextAt(page, new Rect(105, timeHeaderTop, 643, 34), model.Copy("time_title"),
+                28, serif, Silver, TextAnchor.MiddleCenter);
+            var sub = TextAt(page, new Rect(112, wheelBandTop - 46, 629, 36), model.Copy("time_subtitle"), 22, body,
+                Silver, TextAnchor.MiddleCenter);
+            sub.horizontalOverflow = HorizontalWrapMode.Wrap;
+            const float wheelW = 76f, labelW = 108f, pairGap = 32f;
+            float pairW = wheelW + labelW;
+            float rowW = pairW * 2 + pairGap;
+            float rowX = PortalFrameLayout.ContentX + (PortalFrameLayout.ContentWidth - rowW) * 0.5f;
+            float wheelY = wheelBandTop;
+            SystemWheelPicker.Attach(page, new Rect(rowX, wheelY, wheelW, wheelBandHeight), model.HourOptions,
+                model.AvailabilityHours, h => h.ToString(), controller.SetAvailabilityHours);
+            WheelLabel(rowX + wheelW + 6, wheelY, wheelBandHeight, labelW, model.Copy("hours_label"));
+            float minX = rowX + pairW + pairGap;
+            SystemWheelPicker.Attach(page, new Rect(minX, wheelY, wheelW, wheelBandHeight), model.MinuteOptions,
+                model.AvailabilityMinutes, m => m.ToString("00"), controller.SetAvailabilityMinutes);
+            WheelLabel(minX + wheelW + 6, wheelY, wheelBandHeight, labelW, model.Copy("minutes_label"));
         }
 
-        void Heading(string title) => TextAt(page, new Rect(105, 918, 643, 65), title, 35, serif, Silver, TextAnchor.MiddleCenter);
-
-        float PlaceWrappedBlock(float y, string content, float maxHeight)
+        void WheelLabel(float x, float y, float wheelBandHeight, float width, string label)
         {
-            var text = TextAt(page, new Rect(112, y, 629, maxHeight), content, 29, body, Silver, TextAnchor.UpperLeft);
-            text.horizontalOverflow = HorizontalWrapMode.Wrap;
+            var text = TextAt(page, new Rect(x, y + wheelBandHeight * 0.5f - 18, width, 36), label, 21, body, Silver,
+                TextAnchor.MiddleLeft);
+            text.horizontalOverflow = HorizontalWrapMode.Overflow;
+            text.verticalOverflow = VerticalWrapMode.Overflow;
+        }
+
+        void BuildSetupContent(ScheduleViewModel model, RectTransform viewport)
+        {
+            var content = RectNode("Setup scroll content", viewport,
+                new Rect(0, 0, PortalFrameLayout.ScrollContentWidth, 900));
+            content.pivot = new Vector2(0, 1);
+            content.anchorMin = content.anchorMax = new Vector2(0, 1);
+            content.anchoredPosition = Vector2.zero;
+            float y = 24;
+            var daysTitle = TextAt(content, new Rect(12, y, 617, 36), model.Copy("days_title"), 28, serif, Silver,
+                TextAnchor.MiddleCenter);
             Canvas.ForceUpdateCanvases();
-            float h = Mathf.Min(text.preferredHeight, maxHeight);
-            text.rectTransform.sizeDelta = new Vector2(629, h);
-            return y + h;
+            y += daysTitle.preferredHeight + 14;
+            var subtitle = TextAt(content, new Rect(12, y, 617, 52), model.Copy("days_subtitle"), 25, body, Silver,
+                TextAnchor.MiddleCenter);
+            subtitle.horizontalOverflow = HorizontalWrapMode.Wrap;
+            Canvas.ForceUpdateCanvases();
+            y += Mathf.Max(52, subtitle.preferredHeight) + 16;
+            const float chipW = 148f, chipH = 58f, gap = 8f, startX = 12f;
+            for (int i = 0; i < model.Weekdays.Length; i++)
+            {
+                var entry = model.Weekdays[i];
+                int row = i < 4 ? 0 : 1;
+                int col = i < 4 ? i : i - 4;
+                float rowWidth = row == 0 ? 4 * chipW + 3 * gap : 3 * chipW + 2 * gap;
+                float rowStart = startX + (617f - rowWidth) * 0.5f;
+                float rowY = y + row * (chipH + gap);
+                var rect = new Rect(rowStart + col * (chipW + gap), rowY, chipW, chipH);
+                bool selected = Array.IndexOf(model.SelectedDayIndices, entry.index) >= 0;
+                Choice("day_" + entry.index, content, rect, entry.Label(model.Language), selected,
+                    () => controller.ToggleDay(entry.index));
+            }
+            y += 2 * (chipH + gap) + 16;
+            var helper = TextAt(content, new Rect(12, y, 617, 200), model.Copy("setup_helper"), 23, body, Silver,
+                TextAnchor.UpperLeft);
+            helper.horizontalOverflow = HorizontalWrapMode.Wrap;
+            Canvas.ForceUpdateCanvases();
+            y += helper.preferredHeight + PortalFrameLayout.SectionGapMd;
+            content.sizeDelta = new Vector2(PortalFrameLayout.ScrollContentWidth, y);
         }
 
-        void PlaceReviewLink(string key, float y, string label, Action action)
+        void Primary(Action action, string text, bool active = true, Rect? buttonRect = null, Rect? captionRect = null)
         {
-            var rect = new Rect(112, y, 320, 40);
-            Hit(key, rect, action);
-            TextAt(page, rect, label, 26, serif, Cyan, TextAnchor.MiddleLeft);
-        }
-
-        void Paragraph(float y, string content)
-        {
-            var text = TextAt(page, new Rect(112, y, 629, 100), content, 29, body, Silver, TextAnchor.UpperLeft);
-            text.horizontalOverflow = HorizontalWrapMode.Wrap;
-        }
-        void Primary(Action action, string text, bool active = true)
-        {
-            var rect = PortalFrameLayout.PrimaryRect;
+            var rect = buttonRect ?? PortalFrameLayout.PrimaryRect;
+            var caption = captionRect ?? PortalFrameLayout.PrimaryCaptionRect;
             var surface = SystemUI.Panel(page, rect, PanelStyle.Primary);
             surface.color = active ? Color.white : new Color(.5f, .6f, .7f, .7f);
-            SystemUI.Caption(page, PortalFrameLayout.PrimaryCaptionRect, text, 45, bold, active ? Silver : SystemUI.Theme.muted);
+            SystemUI.Caption(page, caption, text, 45, bold, active ? Silver : SystemUI.Theme.muted);
             var button = Hit("continue", rect, action);
             button.interactable = active;
         }
+
         void Secondary(string key, Rect rect, string label, Action action)
         {
             TextAt(page, rect, label, 26, serif, Cyan, TextAnchor.MiddleCenter);
             Hit(key, rect, action);
         }
+
         void Choice(string key, Transform parent, Rect rect, string label, bool selected, Action action)
         {
             controls[key] = SystemUI.ChoiceButton(parent, rect, label, selected, action);
@@ -274,15 +256,12 @@ namespace SoloGym
 
         void Back()
         {
-            if (controller.Model.Step == EquipmentStep.Environment)
-            {
-                back?.Invoke();
-                gameObject.SetActive(false);
-            }
-            else controller.Back();
+            back?.Invoke();
+            gameObject.SetActive(false);
         }
 
         void Exit() { leave?.Invoke(); Destroy(gameObject); }
+
         void Language()
         {
             OpenModal(L("Language", "Idioma"));
@@ -291,12 +270,14 @@ namespace SoloGym
             ModalButton(new Rect(35, 340, 640, 86), L("Use device language", "Usar idioma del dispositivo"),
                 () => controller.SetLanguage("auto"));
         }
+
         void Document(string id)
         {
             Notice(id == "privacy" ? L("Privacy", "Privacidad") : L("Terms", "Términos"),
                 L("The final document is not available yet. This preview cannot record acceptance. Your choices remain in memory only.",
                     "El documento final aún no está disponible. Esta vista previa no puede registrar aceptación. Tus elecciones permanecen solo en memoria."));
         }
+
         void Notice(string title, string message)
         {
             OpenModal(title);
@@ -304,6 +285,7 @@ namespace SoloGym
             text.horizontalOverflow = HorizontalWrapMode.Wrap;
             ModalButton(new Rect(35, 620, 640, 83), L("Close", "Cerrar"), CloseModal);
         }
+
         void OpenModal(string title)
         {
             CloseModal();
@@ -316,7 +298,9 @@ namespace SoloGym
             TextAt(modal, new Rect(30, 24, 560, 70), title, 34, bold, Silver);
             ModalButton(new Rect(615, 12, 70, 80), "×", CloseModal);
         }
+
         void ModalButton(Rect rect, string label, Action action) => SystemUI.Button(modal, rect, label, action);
+
         void CloseModal()
         {
             if (modal == null) return;
@@ -361,27 +345,33 @@ namespace SoloGym
         IEnumerator Smoke()
         {
             bool passed = true;
-            try { Debug.Log("SOLOGYM_EQUIPMENT_STATE " + EquipmentStateChecks.Run()); }
+            try { Debug.Log("SOLOGYM_SCHEDULE_STATE " + ScheduleStateChecks.Run()); }
             catch (Exception e) { Debug.LogError(e.Message); passed = false; }
-            controls["gym"].onClick.Invoke();
-            yield return null;
-            passed &= controller.Model.EnvironmentId == "gym";
-            controls["continue"].onClick.Invoke();
-            yield return null;
-            passed &= controller.Model.Step == EquipmentStep.Equipment;
-            controls["bodyweight"].onClick.Invoke();
-            controls["continue"].onClick.Invoke();
-            yield return null;
-            passed &= controller.Model.Step == EquipmentStep.Review && controller.Model.BodyweightOnly;
+            if (controls.TryGetValue("day_0", out Button day0))
+            {
+                day0.onClick.Invoke();
+                yield return null;
+                controls["day_2"].onClick.Invoke();
+                controls["day_4"].onClick.Invoke();
+                yield return null;
+                passed &= controller.Model.SelectedDayIndices.Length == 3;
+                string checkpoint = null;
+                controller.CheckpointRequested += id => checkpoint = id;
+                controls["continue"].onClick.Invoke();
+                yield return null;
+                passed &= checkpoint == "REVIEW:WIN-013" && controller.Model.Step == ScheduleStep.Setup;
+            }
             string json = "{\"passed\":" + (passed ? "true" : "false")
-                + ",\"checks\":[\"equipment state checks\",\"environment selection\",\"bodyweight path\",\"review step\"]}";
+                + ",\"checks\":[\"schedule state checks\",\"day selection\",\"setup to next window\"]}";
             File.WriteAllText(Path.ChangeExtension(capture, ".smoke.json"), json);
-            Debug.Log("SOLOGYM_EQUIPMENT_SMOKE " + json);
+            Debug.Log("SOLOGYM_SCHEDULE_SMOKE " + json);
             if (!passed) Application.Quit(2);
         }
 
         void OnDestroy() => controller?.Dispose();
+
         static RectTransform RectNode(string name, Transform parent, Rect rect) => SystemUI.Node(name, parent, rect);
+
         Text Live(string name, Rect rect, string value, int size, Color? color = null, Font font = null)
         {
             var box = new Rect(rect.x, rect.y - 8, rect.width, rect.height + 16);
@@ -390,8 +380,10 @@ namespace SoloGym
             if (name == "Title") t.gameObject.AddComponent<OnboardingSilverText>();
             return t;
         }
+
         Text TextAt(Transform parent, Rect rect, string value, int size, Font font, Color color, TextAnchor align = TextAnchor.MiddleLeft)
             => SystemUI.Text(parent, rect, value, size, font, color, align);
+
         Button Hit(string key, Rect rect, Action action)
         {
             var node = RectNode(key, page, rect);
@@ -404,6 +396,7 @@ namespace SoloGym
             controls[key] = b;
             return b;
         }
+
         string L(string en, string es) => controller.Model.Language == "es" ? es : en;
         float L(float en, float es) => controller.Model.Language == "es" ? es : en;
         static bool HasArgument(string key) => Array.IndexOf(Environment.GetCommandLineArgs(), key) >= 0;

@@ -393,6 +393,8 @@ The steps below describe the user journey separately from production gates. Thei
 
 ### WIN-012 — Schedule / Session Time / Horario / Duración de sesión
 
+**Stage:** G0 proposal and native UI implemented; user acceptance pending.
+
 **Purpose:** Set a realistic routine with protected recovery and editable session time.
 
 **User steps:** 1. Choose available training days → 2. Set typical time per session → 3. Review planned training and recovery → 4. Save or revise schedule.

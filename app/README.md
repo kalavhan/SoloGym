@@ -112,6 +112,18 @@ app/Builds/Linux/SoloGym.x86_64 -screen-fullscreen 0 -screen-width 853 -screen-h
 
 Goals review checkpoint opens this window in the onboarding chain. See [WIN-011 implementation](../docs/windows/WIN-011-implementation.md).
 
+## Schedule / session time (WIN-012)
+
+Review mode: one setup screen (2–5 weekdays + inline scroll **wheels** for hours **0–12** and minutes **00–60**, labels to the right), then review with training/recovery chips.
+
+```bash
+app/Builds/Linux/SoloGym.x86_64 -screen-fullscreen 0 -screen-width 853 -screen-height 1844 \
+  -sologym-review -sologym-window schedule -sologym-locale es \
+  -sologym-capture "$PWD/artifacts/visual/WIN-012/schedule-es-final.png" -sologym-smoke
+```
+
+Add `-sologym-schedule-view review` for the review step. Equipment review checkpoint opens this window in the onboarding chain. See [WIN-012 implementation](../docs/windows/WIN-012-implementation.md).
+
 ## Layered UI verification
 
 Run `python3 tools/capture_layered_ui.py` from the repository root after a Linux build. It captures the five migrated windows in both languages, selected supporting states, a phone-sized viewport, the component gallery and the avatar proof. See [the current report](../docs/engineering/layered-ui-and-avatar-implementation.md) for results and the avatar’s production limits.

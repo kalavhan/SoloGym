@@ -153,9 +153,17 @@
       "artifact": "docs/windows/WIN-011-available-equipment-g0.md",
       "render_manifest": "design/reference-manifests/WIN-011-available-equipment-v1.json",
       "data_artifact": "data/windows/WIN-011-available-equipment.json"
+    },
+    {
+      "window_id": "WIN-012",
+      "gate": "G0",
+      "state": "awaiting_user_approval",
+      "artifact": "docs/windows/WIN-012-schedule-session-time-g0.md",
+      "render_manifest": "design/reference-manifests/WIN-012-schedule-session-time-v1.json",
+      "data_artifact": "data/windows/WIN-012-schedule-session-time.json"
     }
   ],
-  "required_next_artifact": "Review WIN-011 G0 flow, copy and retained step-1 renders; then native implementation verification. No APK.",
+  "required_next_artifact": "Review WIN-012 G0 flow, copy and retained step-1 renders; then native implementation verification. No APK.",
   "welcome_implementation_review": {
     "window_id": "WIN-002",
     "state": "accepted_by_user_report",

@@ -1,0 +1,21 @@
+Use case: ui-mockup
+Asset type: one full-screen SoloGym mobile game UI proposal, WIN-012 Schedule, English. Target 853 x 1844 portrait, not a phone frame, collage or asset sheet.
+Input image: approved WIN-011 English environment step full screen is the exact established visual reference. Preserve the SoloGym wordmark, indigo cathedral spires, violet magical portal, reflective stone floor, dark-blue glass and thin cyan angular rune-cut frame.
+Primary request: replace equipment setup with schedule step 1: choose training days. Remove every equipment title and environment rows. Keep the logo upper area and magical portal clearly visible. A single large translucent panel in the same lower region holds a silver serif title, subtitle, seven compact weekday selection chips in two rows (4 on first row, 3 on second), one quiet helper paragraph, and one bright cyan beveled main action. Chips are dark indigo glass with subtle cyan edges. Mon, Wed and Fri selected with brighter cyan outline and small checked diamond; other days empty diamond. Equal chip size, legible short labels, generous spacing. No clocks, calendars, characters or new sprites.
+Exact text, each string once:
+"Back"
+"EN"
+"SCHEDULE"
+"YOUR WEEK"
+"Choose the days you can realistically train"
+"Mon"
+"Tue"
+"Wed"
+"Thu"
+"Fri"
+"Sat"
+"Sun"
+"School, sports, walking and everyday movement still count toward activity. Here you set organized SoloGym sessions, not every minute of your day."
+"CONTINUE"
+"Privacy · Terms"
+Fictional fixture: Mon, Wed, Fri selected. Runtime first entry has none selected. Footer below panel. No session timers, saved accounts, XP, or save confirmations. Complete retained target for step 1 only; later steps use editable UI on the same frame.
