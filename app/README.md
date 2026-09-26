@@ -8,6 +8,10 @@ The Home window has editable runtime text and values, English/Spanish detection 
 
 The user installed the earlier Home build on Android and accepted its appearance on 2026-09-25. The device model/OS version were not supplied; the later Welcome acceptance is recorded separately. The current onboarding UI has not been delivered in a new APK.
 
+## Rendering architecture correction
+
+The current UI is functional but still relies on full-screen source art, cropped panel sections and clean plates. These are migration targets, not the intended reusable UI architecture. Follow the [layered UI and avatar plan](../docs/engineering/layered-ui-and-avatar-architecture.md): keep backgrounds as separate art, draw panels and controls through a shared uGUI component/theme kit, and bind real localized text and values. Start with WIN-009 before the other existing windows and WIN-010. State controllers and Firebase integration remain in place. No runtime refactor or modular sprite assets are included in this planning update.
+
 ## Age/region and privacy
 
 `OnboardingScreen.cs` assembles the two approved windows with live native UI. WIN-006 has numeric age entry, country and optional subdivision pickers, validation and shared EN/ES choice. WIN-007 has initially unchecked decisions, a reusable document reader, Back and Not now. Changes of country reset incompatible subdivisions; returning and switching language preserve the in-memory draft. Leaving onboarding discards its draft and does not delete a Firebase account.

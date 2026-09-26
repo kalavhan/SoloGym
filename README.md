@@ -4,6 +4,8 @@ Mobile fitness RPG for Android and iOS, ages 15+, in English and Spanish. This r
 
 **Current milestone: WIN-009 Private Fitness Profile — native UI implemented and verified in Linux 0.4.0.** Optional metric/imperial measurements, privacy notice, readiness and pause steps use the approved bilingual references. Back preserves the in-memory draft across the previous window. [Implementation and captures](docs/windows/WIN-009-implementation.md). Production data-use policy and server persistence remain unavailable; review mode never saves measurements or authorizes a finished profile. No APK was rebuilt. [WIN-010 Goals / Experience](docs/windows/WIN-010-goals-experience-g0.md) has retained EN/ES renders awaiting approval.
 
+**Architecture correction:** before advancing WIN-010, replace reference-image panel crops with shared Unity UI components, a theme, and independent background art. The existing windows have not been migrated yet. The [layered UI and avatar plan](docs/engineering/layered-ui-and-avatar-architecture.md) defines the migration and tintable body/face/hair/equipment contract.
+
 The user reported the existing Android 0.2.1 Welcome build working (“perfect, is working great, next window”). This is user acceptance, not independent provider-by-provider verification.
 
 The user installed WIN-001 on Android and accepted its appearance on 2026-09-25: “logre instalarla, se ve exactamente como lo esperaba. cual es el siguiente punto? sigamos”. [Home captures and comparisons](docs/windows/WIN-001-implementation.md#current-visual-evidence) remain unchanged. Home still presents fictional local data and a static avatar; this acceptance does not certify pixel-identical output or exhaustive device/feature testing.
@@ -14,11 +16,12 @@ The training data shape and milestone plan are accepted for continued design; ex
 
 | Deliverable | Contents |
 | --- | --- |
+| [Layered UI and avatar architecture](docs/engineering/layered-ui-and-avatar-architecture.md) | Shared code components, background separation, migration order and interchangeable character parts |
 | [Private profile implementation](docs/windows/WIN-009-implementation.md) | Optional measurements, feet/inches and lb conversion, staged privacy/readiness, native captures and focused checks |
 | [Goals / Experience proposal](docs/windows/WIN-010-goals-experience-g0.md) | Retained ES/EN renders and generator-compatible choices, awaiting approval |
 | [Age/region and privacy implementation](docs/windows/WIN-006-007-implementation.md) | Native two-window UI, in-memory drafts, review entry, pending production dependencies and focused verification |
 | [Approved onboarding targets](docs/windows/WIN-006-007-onboarding-proposal.md) | Four retained EN/ES renders, approved flow and data contracts |
-| [Next window: private fitness profile](docs/windows/WIN-009-private-fitness-profile-g0.md) | Retained EN/ES renders, staged flow and private data shape; target approval pending |
+| [Approved private fitness profile target](docs/windows/WIN-009-private-fitness-profile-g0.md) | Retained EN/ES renders, staged flow and private data shape |
 | [Welcome implementation and visual evidence](docs/windows/WIN-002-implementation.md) | Native entry and email form, retained captures, focused checks and current delivery limits |
 | [Welcome / Sign in — approved target](docs/windows/WIN-002-welcome-sign-in-g0.md) | Bilingual entry flow, data, states and retained v1 renders |
 | [Native Unity app](app/README.md) | Unity project, build/run commands, Welcome entry and Home preview |
@@ -38,7 +41,7 @@ The training data shape and milestone plan are accepted for continued design; ex
 
 ## How we will build each window
 
-Work follows the currently approved window or explicitly grouped iteration. Continue the user's target-render development workflow: retain and approve the window proposal, map the approved image, assemble the complete screen, then perform a small number of whole-screen visual and interaction checks. No per-button rendering loop is used. **WIN-006/007 v1 targets are approved together; their native output is checked separately against those retained targets.** The original staged asset plan remains recorded for separately scoped modular character work.
+Work follows the currently approved window or explicitly grouped iteration. Continue the user's target-render development workflow: retain and approve the window proposal, map the approved composition, assemble the complete screen with shared code components and independent artwork, then perform a small number of whole-screen visual and interaction checks. No per-button rendering loop is used. **WIN-006/007 v1 targets are approved together; their native output is checked separately against those retained targets.** The original staged asset plan remains recorded for separately scoped modular character work.
 
 The approved Home target's exact PNGs, prompts, dimensions and hashes are retained in [the reference manifest](design/reference-manifests/WIN-001-system-home-v2.json). The full-screen comparison preserves remaining differences from native fonts, reconstructed glass and the shared artwork across locales. The user has accepted the installed Home's appearance; the source renders and measured differences have not been replaced or relabeled as byte-identical. Approval state is recorded in [the ledger](design/approval-ledger.json).
 

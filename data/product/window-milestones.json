@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "WIN-009 native UI implemented and Linux-verified; WIN-010 bilingual proposal awaiting approval. Production policy/storage dependencies remain pending.",
+  "status": "WIN-009 implemented; shared layered UI migration planned before WIN-010. WIN-010 target approval and production policy/storage dependencies remain pending.",
   "product": "SoloGym",
   "constraints": {
     "platforms": [
@@ -101,6 +101,7 @@
     }
   ],
   "approval_rules": [
+    "Latest user layering direction and earlier complete-window TDR override the historical individual UI-asset/per-button stop points. Build reusable code components, retain window-target approval, and keep separate character asset reviews. The shared UI migration precedes WIN-010.",
     "WIN-009 retained bilingual v1 target and staged private-profile flow approved with “si perfecto”. Complete implementation and focused checks without an APK; then prepare WIN-010. A new target still needs approval before implementation.",
     "The accepted overall style does not approve any individual background, sprite, prop, gear item, frame, or composed window.",
     "Except for an explicitly recorded user override, every window inherits G0 through G6 in that exact order. No later gate starts while the previous gate lacks user approval.",
@@ -2623,5 +2624,21 @@
   },
   "visual_reference_contract": "docs/design/visual-reference-contract.md",
   "active_window": "WIN-010",
-  "approval_workflow_status": "WIN-009 approved target implemented, focused native verification passed, no new APK. WIN-010 target approval required before code."
+  "approval_workflow_status": "Shared UI architecture recorded, migration pending. WIN-010 target remains unapproved; existing target acceptance and capture evidence are unchanged.",
+  "ui_architecture": {
+    "document": "docs/engineering/layered-ui-and-avatar-architecture.md",
+    "status": "planned_not_implemented",
+    "runtime_rule": "Independent background artwork, shared code containers/controls, theme data and live localized text; no new flattened-window textures or panel-crop/clean-plate UI.",
+    "migration_order": [
+      "shared_ui_kit",
+      "WIN-009",
+      "WIN-006",
+      "WIN-007",
+      "WIN-002",
+      "WIN-001"
+    ],
+    "next_new_window": "WIN-010",
+    "next_new_window_target_approved": false,
+    "verification": "Complete-window baseline comparisons and focused interactions; no per-control render loop and no APK."
+  }
 }
