@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "status": "Shared layered UI migration implemented for WIN-001/002/006/007/009 in Linux 0.5.0; first avatar engineering proof available, production art pending. WIN-010 target approval remains pending.",
+  "status": "Shared layered UI migration for WIN-001/002/006/007/009 in Linux 0.5.0; WIN-010 native UI implemented pending Linux capture and user acceptance; production profile save still pending.",
   "product": "SoloGym",
   "constraints": {
     "platforms": [
@@ -577,9 +577,9 @@
         "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "G0_visual_proposal_awaiting_approval",
+      "stage": "native_ui_verified_pending_user_acceptance",
       "scope": "v1",
-      "current_artifact": "docs/windows/WIN-010-goals-experience-g0.md",
+      "current_artifact": "docs/windows/WIN-010-implementation.md",
       "render_manifest": "design/reference-manifests/WIN-010-goals-experience-v1.json"
     },
     {
@@ -2624,7 +2624,7 @@
   },
   "visual_reference_contract": "docs/design/visual-reference-contract.md",
   "active_window": "WIN-010",
-  "approval_workflow_status": "UI migration available for review; existing target hashes unchanged. WIN-010 is still awaiting target approval. No APK.",
+  "approval_workflow_status": "WIN-010 G0 approved and native UI implemented; focused Linux verification and user acceptance pending. No APK.",
   "ui_architecture": {
     "document": "docs/engineering/layered-ui-and-avatar-architecture.md",
     "status": "implemented_pending_native_visual_acceptance",

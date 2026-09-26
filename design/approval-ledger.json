@@ -137,12 +137,17 @@
     {
       "window_id": "WIN-010",
       "gate": "G0",
-      "state": "awaiting_user_approval",
+      "state": "approved_for_implementation",
       "artifact": "docs/windows/WIN-010-goals-experience-g0.md",
-      "render_manifest": "design/reference-manifests/WIN-010-goals-experience-v1.json"
+      "render_manifest": "design/reference-manifests/WIN-010-goals-experience-v1.json",
+      "approved_by": "user",
+      "date": "2026-09-26",
+      "evidence": "Implement WIN-010 plan: full EN/ES copy for steps 2-3, teen subset and uncertainty confirm, step-1 targets aligned to migrated portal; steps 2-3 text-only on shared frame.",
+      "data_artifact": "data/windows/WIN-010-goals-experience.json",
+      "g1_background_reuse": "Art/PortalBackground-v1 and SystemUI.PortalPage (718, 965); N/A new character art"
     }
   ],
-  "required_next_artifact": "Review migrated UI evidence and first avatar proof; resolve pending WIN-010 target approval. No APK.",
+  "required_next_artifact": "WIN-010 native implementation and focused Linux verification; no APK.",
   "welcome_implementation_review": {
     "window_id": "WIN-002",
     "state": "accepted_by_user_report",

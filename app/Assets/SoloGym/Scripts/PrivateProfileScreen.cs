@@ -28,7 +28,7 @@ namespace SoloGym
         float lastKeyboardHeight;
         bool lastKeyboard;
 
-        public void Initialize(string language,bool review,Action onBack,Action onExit,string capturePath=null)
+        public void Initialize(string language,bool review,Action onBack,Action onExit,string capturePath=null,Action<string> onCheckpoint=null)
         {
             back=onBack;leave=onExit;capture=capturePath;
             serif=SystemUI.Theme.heading;bold=SystemUI.Theme.headingBold;body=SystemUI.Theme.body;
@@ -39,7 +39,10 @@ namespace SoloGym
             controller.Changed+=Render;
             controller.ExitRequested+=Exit;
             // The controller exposes only a prefixed review destination; it cannot authorize a live profile.
-            controller.CheckpointRequested+=id=>Notice(L("Next step","Siguiente paso"),L("Experience and goals is the next window. Nothing was saved to your account.","Experiencia y objetivos es la siguiente ventana. No se guardaron datos en tu cuenta."));
+            controller.CheckpointRequested+=id=>{
+                if(onCheckpoint!=null)onCheckpoint(id);
+                else Notice(L("Next step","Siguiente paso"),L("Experience and goals is the next window. Nothing was saved to your account.","Experiencia y objetivos es la siguiente ventana. No se guardaron datos en tu cuenta."));
+            };
             if(review&&capture!=null)
             {
                 string view=Argument("-sologym-profile-view")??"measurements";

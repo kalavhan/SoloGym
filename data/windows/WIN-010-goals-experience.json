@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "window_id": "WIN-010",
-  "status": "proposal_awaiting_user_approval",
+  "status": "g0_approved_implementation_in_progress",
   "source_rules": "data/training/rules.json",
   "source_schema": "data/schemas/training-profile.schema.json",
   "steps": [
@@ -14,11 +14,17 @@
     "audience": "adult",
     "step": "goal",
     "goal": "general_fitness",
-    "experience": null
+    "experience": null,
+    "note": "Proposal renders show general_fitness selected; runtime initial_state requires explicit user choice."
   },
   "initial_state": {
     "goal": null,
     "experience": null
+  },
+  "review_fixture": {
+    "default_audience": "adult",
+    "default_age_from_onboarding": 21,
+    "teen_audience_cli": "-sologym-audience teen"
   },
   "goals": [
     {
@@ -62,12 +68,50 @@
   "uncertainty": {
     "en": "I'm not sure",
     "es": "No estoy seguro",
-    "behavior": "Offer beginner as a starting point and require explicit confirmation; do not infer an experience level."
+    "behavior": "Offer beginner as a starting point and require explicit confirmation; do not infer an experience level.",
+    "dialog_title_en": "Start with the basics?",
+    "dialog_title_es": "¿Empezar con la base?",
+    "dialog_body_en": "We can begin with a beginner starting point. You can adjust this later. This does not assess your ability.",
+    "dialog_body_es": "Podemos comenzar con un punto de partida para principiantes. Podrás ajustarlo más adelante. Esto no evalúa tu capacidad.",
+    "confirm_en": "USE BEGINNER STARTING POINT",
+    "confirm_es": "USAR BASE PARA PRINCIPIANTES",
+    "cancel_en": "GO BACK",
+    "cancel_es": "VOLVER"
   },
   "teen_visible_goals": [
     "general_fitness",
     "mobility"
   ],
+  "teen_helper_en": "For your age, these training focuses are available.",
+  "teen_helper_es": "Para tu edad, estos enfoques están disponibles.",
+  "copy": {
+    "window_title_en": "GOALS & EXPERIENCE",
+    "window_title_es": "OBJETIVOS Y EXPERIENCIA",
+    "goal_title_en": "YOUR PATH",
+    "goal_title_es": "TU RUTA",
+    "goal_subtitle_en": "Choose your training focus",
+    "goal_subtitle_es": "Elige tu enfoque de entrenamiento",
+    "goal_footer_en": "You can change this at any time.",
+    "goal_footer_es": "Podrás cambiarlo cuando quieras.",
+    "experience_title_en": "YOUR STARTING POINT",
+    "experience_title_es": "TU PUNTO DE PARTIDA",
+    "experience_subtitle_en": "Tell us about your training experience",
+    "experience_subtitle_es": "Cuéntanos tu experiencia con el entrenamiento",
+    "review_title_en": "REVIEW AND CONTINUE",
+    "review_title_es": "REVISAR Y CONTINUAR",
+    "review_focus_label_en": "Focus",
+    "review_focus_label_es": "Enfoque",
+    "review_experience_label_en": "Experience",
+    "review_experience_label_es": "Experiencia",
+    "change_goal_en": "Change focus",
+    "change_goal_es": "Cambiar enfoque",
+    "change_experience_en": "Change experience",
+    "change_experience_es": "Cambiar experiencia",
+    "review_body_en": "You'll still choose equipment and schedule before sessions are prepared. Nothing is saved to your account in this preview.",
+    "review_body_es": "Todavía elegirás equipo y horario antes de preparar las sesiones. En esta vista previa no se guarda nada en tu cuenta.",
+    "review_progress_en": "Changing your focus later won't erase your progress.",
+    "review_progress_es": "Cambiar el enfoque más adelante no borra tu progreso."
+  },
   "teen_policy_note": "Draft product scope aligns with existing generator foundation mapping; no weight-loss goals or automatic Hard eligibility. Existing supervision and reviewed regional access requirements remain active.",
   "constraints": [
     "Goal and experience are required explicit choices; no inference from physique, optional measurements or avatar.",
@@ -81,7 +125,7 @@
     "depends_on": "WIN-009 and upstream authenticated eligibility/consent gates",
     "next": "WIN-011"
   },
-  "persistence": "Proposal only. Future private profile fields; no backend or runtime implementation is added here.",
-  "reference_status": "Retained ES/EN v1 full-screen principal adult goal-step proposals generated with built-in ImageGen and visually inspected; target approval pending.",
+  "persistence": "In-memory draft in review mode only until private profile service exists; no Firestore or fake remote receipt.",
+  "reference_status": "Retained ES/EN v1 full-screen principal adult goal-step proposals; steps 2-3 use shared portal frame and live text only.",
   "render_manifest": "design/reference-manifests/WIN-010-goals-experience-v1.json"
 }

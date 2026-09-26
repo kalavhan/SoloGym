@@ -355,7 +355,7 @@ The steps below describe the user journey separately from production gates. Thei
 
 ### WIN-010 — Goals / Experience / Objetivos / Experiencia
 
-**Stage:** next proposal brief prepared; retained renders and approval pending after WIN-009 verification.
+**Stage:** native UI implemented; Linux verification captured; user acceptance pending.
 
 **Purpose:** Choose training aims and establish a suitable starting level.
 
