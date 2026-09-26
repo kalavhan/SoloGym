@@ -1,6 +1,6 @@
 # SoloGym asset production and exercise demonstration sources
 
-Updated 2026-09-25. Unity is now the app engine; Home and Welcome are accepted by user report, WIN-006/007/009 are implemented, and WIN-010 has retained proposal renders. The latest user direction requires backgrounds separate from reusable code containers/controls and modular, tintable character sprites. See the [layered UI and avatar architecture](../engineering/layered-ui-and-avatar-architecture.md). The current windows still need that rendering migration; no modular character library exists. “Character stripes” is interpreted as character **sprites**.
+Updated 2026-09-25. Unity is now the app engine; Home and Welcome are accepted by user report, WIN-006/007/009 are implemented, and WIN-010 has retained proposal renders. The latest user direction requires backgrounds separate from reusable code containers/controls and modular, tintable character sprites. See the [layered UI and avatar architecture](../engineering/layered-ui-and-avatar-architecture.md). The five existing windows now use that rendering architecture; see the [implementation and captures](../engineering/layered-ui-and-avatar-implementation.md). A small layered avatar engineering proof exists, with art, fitting and directional limitations recorded; a production modular character library does not yet exist. “Character stripes” is interpreted as character **sprites**.
 
 ## Work in two separate asset collections
 

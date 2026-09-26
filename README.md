@@ -2,9 +2,9 @@
 
 Mobile fitness RPG for Android and iOS, ages 15+, in English and Spanish. This repository contains native Unity Welcome, age/region, privacy/consent and Home interfaces, approved manhua System references, research, training data, an offline generation reference and the window milestone plan.
 
-**Current milestone: WIN-009 Private Fitness Profile — native UI implemented and verified in Linux 0.4.0.** Optional metric/imperial measurements, privacy notice, readiness and pause steps use the approved bilingual references. Back preserves the in-memory draft across the previous window. [Implementation and captures](docs/windows/WIN-009-implementation.md). Production data-use policy and server persistence remain unavailable; review mode never saves measurements or authorizes a finished profile. No APK was rebuilt. [WIN-010 Goals / Experience](docs/windows/WIN-010-goals-experience-g0.md) has retained EN/ES renders awaiting approval.
+**Latest feature milestone: WIN-009 Private Fitness Profile — initially implemented and verified in Linux 0.4.0, then migrated to shared components in 0.5.0.** Optional metric/imperial measurements, privacy notice, readiness and pause steps use the approved bilingual references. Back preserves the in-memory draft across the previous window. [Implementation and captures](docs/windows/WIN-009-implementation.md). Production data-use policy and server persistence remain unavailable; review mode never saves measurements or authorizes a finished profile. No APK was rebuilt. [WIN-010 Goals / Experience](docs/windows/WIN-010-goals-experience-g0.md) has retained EN/ES renders awaiting approval.
 
-**Architecture correction:** before advancing WIN-010, replace reference-image panel crops with shared Unity UI components, a theme, and independent background art. The existing windows have not been migrated yet. The [layered UI and avatar plan](docs/engineering/layered-ui-and-avatar-architecture.md) defines the migration and tintable body/face/hair/equipment contract.
+**Layered UI migration implemented in Linux 0.5.0:** Home, Welcome, age/region, privacy/consent and private profile now use shared code panels/controls, an editable theme and independent artwork. The interactive component gallery and modular avatar engineering proof are included. [Implementation, captures and limits](docs/engineering/layered-ui-and-avatar-implementation.md). The proof avatar is not production art, and WIN-010 remains behind its recorded visual approval.
 
 The user reported the existing Android 0.2.1 Welcome build working (“perfect, is working great, next window”). This is user acceptance, not independent provider-by-provider verification.
 
@@ -16,6 +16,7 @@ The training data shape and milestone plan are accepted for continued design; ex
 
 | Deliverable | Contents |
 | --- | --- |
+| [Layered UI implementation and avatar proof](docs/engineering/layered-ui-and-avatar-implementation.md) | Migrated windows, interactive previews, captures, verification and remaining art work |
 | [Layered UI and avatar architecture](docs/engineering/layered-ui-and-avatar-architecture.md) | Shared code components, background separation, migration order and interchangeable character parts |
 | [Private profile implementation](docs/windows/WIN-009-implementation.md) | Optional measurements, feet/inches and lb conversion, staged privacy/readiness, native captures and focused checks |
 | [Goals / Experience proposal](docs/windows/WIN-010-goals-experience-g0.md) | Retained ES/EN renders and generator-compatible choices, awaiting approval |
@@ -45,7 +46,7 @@ Work follows the currently approved window or explicitly grouped iteration. Cont
 
 The approved Home target's exact PNGs, prompts, dimensions and hashes are retained in [the reference manifest](design/reference-manifests/WIN-001-system-home-v2.json). The full-screen comparison preserves remaining differences from native fonts, reconstructed glass and the shared artwork across locales. The user has accepted the installed Home's appearance; the source renders and measured differences have not been replaced or relabeled as byte-identical. Approval state is recorded in [the ledger](design/approval-ledger.json).
 
-The Home preview uses Unity 6000.3.24f1 and a static illustrated character. The planned customization workflow uses a modular source character with body fits, skin masks, separate hair and fitted equipment. A small rig/sprite export proof must establish the avatar approach before a full asset library is produced. The [local tool inventory](docs/design/local-image-tool-inventory.md) records available imaging tools; it is not evidence that an avatar pipeline has been built.
+The Home preview uses Unity 6000.3.24f1 and a static illustrated character. The planned customization workflow uses a modular source character with body fits, skin masks, separate hair and fitted equipment. The included first layered 2D rig proof demonstrates customization and equipment attachments; its art limitations must be resolved before a full asset library is produced. The [local tool inventory](docs/design/local-image-tool-inventory.md) records available imaging tools; it is not evidence that an avatar pipeline has been built.
 
 ## Inspect the training reference
 

@@ -1,6 +1,6 @@
 # Layered UI and customizable avatars
 
-Recorded 2026-09-25 following the user's request to separate backgrounds, containers and controls, and to compose a tintable character from interchangeable parts. This is the implementation plan; the existing windows have not yet been migrated and the avatar assets have not been produced. WIN-010's visual target still awaits approval.
+Recorded 2026-09-25 following the user's request to separate backgrounds, containers and controls, and to compose a tintable character from interchangeable parts. UI-01 through UI-04 are now implemented in the Linux 0.5.0 review player. The first modular avatar engineering proof is available; its art, masks and rig are not production-approved. See the [implementation report](layered-ui-and-avatar-implementation.md). WIN-010's visual target still awaits approval. The sections below retain the migration design and proof requirements.
 
 ## Current implementation and correction
 
@@ -76,6 +76,6 @@ A single front-facing base is enough for a customization preview, but not for is
 
 Start with one base, two skin colors, two hairstyles, one torso item and paired gloves. Show idle, walking and one punch in two directions that expose overlap problems. If that works, extend the proof to male/female presentation, representative body fits and the proposed eight directions before producing the library. This smaller first step does not waive the broader fit/motion requirements in the asset contract.
 
-Unity's optional 2D Animation package provides sprite libraries and resolvers for swapping parts; its skeletal swapping requires matching skeletons. See [Unity Sprite Swap](https://docs.unity3d.com/Packages/com.unity.2d.animation@13.0/manual/SpriteSwapIntro.html). The package is not installed in this project, and no rig, masks or modular avatar are implemented yet. Evaluate it during the proof instead of selecting a package or promising compatible art from concept images alone.
+Unity's optional 2D Animation package provides sprite libraries and resolvers for swapping parts; its skeletal swapping requires matching skeletons. See [Unity Sprite Swap](https://docs.unity3d.com/Packages/com.unity.2d.animation@13.0/manual/SpriteSwapIntro.html). The package is not installed in this project. The first proof now uses a small native uGUI joint hierarchy, atlas metadata and a skin-region shader; it does not select the final production animation pipeline. Evaluate it during the proof instead of selecting a package or promising compatible art from concept images alone.
 
 The machine-readable proposal is [avatar-contract.json](../../data/art/avatar-contract.json). Base, customization, gear and motion remain separately reviewable batches. The shared UI refactor can proceed without generating the character library.

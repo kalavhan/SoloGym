@@ -1,6 +1,6 @@
 # SoloGym native Welcome, onboarding and Home
 
-Unity **6000.3.24f1**, built-in renderer and uGUI **2.0.0**. Open this `app` directory in Unity, then open `Assets/SoloGym/Scenes/Welcome.unity` and press Play. **SoloGym → Configure Entry and Home Scenes** reproduces the scene setup with Welcome first and Home second. The current Linux review player is **0.4.0**, including WIN-006/007/009; visual evidence and passed focused checks are retained in the [onboarding report](../docs/windows/WIN-006-007-implementation.md). The existing Android review build remains **0.2.1**, version code **3**, with both providers configured. No APK is generated or replaced in this iteration, as requested. Historical Welcome captures are retained from **0.2.0**.
+Unity **6000.3.24f1**, built-in renderer and uGUI **2.0.0**. Open this `app` directory in Unity, then open `Assets/SoloGym/Scenes/Welcome.unity` and press Play. **SoloGym → Configure Entry and Home Scenes** reproduces the scene setup with Welcome first and Home second. The current Linux review player is **0.5.0**, including WIN-006/007/009; visual evidence and passed focused checks are retained in the [onboarding report](../docs/windows/WIN-006-007-implementation.md). The existing Android review build remains **0.2.1**, version code **3**, with both providers configured. No APK is generated or replaced in this iteration, as requested. Historical Welcome captures are retained from **0.2.0**.
 
 Welcome includes persistent EN/ES selection, native email/password input, validation, password visibility and localized request/error states. Firebase Email/Password and Google are enabled. The user authorized the public support contact, and the Android Google Credential Manager integration uses the actual web/Android OAuth client configuration. See [Firebase setup](../docs/engineering/firebase-auth-setup.md) and the [Welcome implementation report](../docs/windows/WIN-002-implementation.md) for build/connection status and retained screenshots. The user subsequently reported the Android 0.2.1 build working; the report does not isolate a provider or device. Verified sign-in and Create Account now enter WIN-006, and Welcome’s Privacy/Terms links open the shared document reader. Signup, recovery, final legal content and production profile routing remain later work; the sample Home is not an authenticated profile.
 
@@ -10,7 +10,9 @@ The user installed the earlier Home build on Android and accepted its appearance
 
 ## Rendering architecture correction
 
-The current UI is functional but still relies on full-screen source art, cropped panel sections and clean plates. These are migration targets, not the intended reusable UI architecture. Follow the [layered UI and avatar plan](../docs/engineering/layered-ui-and-avatar-architecture.md): keep backgrounds as separate art, draw panels and controls through a shared uGUI component/theme kit, and bind real localized text and values. Start with WIN-009 before the other existing windows and WIN-010. State controllers and Firebase integration remain in place. No runtime refactor or modular sprite assets are included in this planning update.
+The existing windows now use independent background, logo, portrait and icon assets plus shared code containers and controls. `SystemTheme` is an editable ScriptableObject in `Resources/UI/DefaultTheme.asset`. `SystemPanel`, `SystemUI`, `SystemTextFit` and `SystemViewport` provide the shared rendering/layout kit. The old source images and clean plates moved outside Unity to `design/legacy-runtime-plates` and no longer ship as Resources. State controllers and Firebase integration are retained. See the [implementation report and captures](../docs/engineering/layered-ui-and-avatar-implementation.md).
+
+Use `-sologym-window components` to inspect resizing, language and theme changes, or `-sologym-window avatar` for the isolated modular character proof. The proof has one body fit, two skin palettes, two hairstyles, torso/glove equipment and idle/walk/jab. It has visible art/rig limitations and does not replace the static Home illustration.
 
 ## Age/region and privacy
 
@@ -22,11 +24,9 @@ The language menu exposes an explicit onboarding preview only in review mode. It
 
 ## Target-render development
 
-`Resources/Home/PixelMap.json` defines source-pixel geometry from the approved 853×1844 renders. `HomeScreen.cs` assembles the entire screen from shared source artwork, mapped clean text regions, native text, a data-driven XP bar and controls. `ReferenceTextLayout.cs` aligns live glyph bounds with the measured reference. Both languages share the same runtime art.
+The Home and Welcome pixel maps retain baseline layout coordinates only. All frames, editable controls and text are composed at runtime; no source-screen or clean-plate regions are sampled. Both locales share artwork. Native typography is uniformly sized, with wrapped content where appropriate, rather than stretching glyph vertices.
 
-No button-specific scene or image-generation loop is used. One text-free plate was generated for the whole interface; only its relevant mapped regions replace baked reference typography. The full approved screenshot is not used as a hidden screenshot-only test mode. The art is still a fixed illustration, not transparent character/equipment layers or a finished avatar rig.
-
-The project preserves artwork aspect ratio within `Screen.safeArea`. Different aspect ratios can letterbox. Larger-text reflow and native screen-reader coverage still require the accessibility milestone; this baseline does not claim those adaptations are complete.
+The shared viewport preserves the approved baseline composition inside `Screen.safeArea` and lifts focused forms above the keyboard. Different aspect ratios can letterbox. Full large-text reflow and native screen-reader coverage remain future accessibility work. Final comparisons record differences from the original target rather than claiming mathematical identity.
 
 ## Local builds
 
@@ -87,3 +87,7 @@ Font license notices are stored beside the bundled fonts. Unity caches, APKs, pl
 The onboarding review route opens the private-profile notice, optional measurements and readiness steps. Metric cm/kg or imperial feet/inches/lb inputs preserve canonical precision across unit switches. Blank measurements are permitted. Back retains the draft across WIN-007/009; explicit exit clears it. Unwell/pain/injury/uncertain answers pause setup, while ready/low energy reaches the next review checkpoint. No backend profile write or live health-data consent is implemented.
 
 Capture the approved principal state with `-sologym-window profile -sologym-review -sologym-locale es -sologym-capture <absolute-output.png>`. Add `-sologym-profile-view notice`, `imperial`, `readiness` or `paused` for complete supporting states. `-sologym-smoke` on the default measurements view runs profile checks; the existing onboarding smoke now also checks Back/reentry draft preservation. These flags use fictional review data, never a screenshot-only reference mode. [Evidence and limits](../docs/windows/WIN-009-implementation.md).
+
+## Layered UI verification
+
+Run `python3 tools/capture_layered_ui.py` from the repository root after a Linux build. It captures the five migrated windows in both languages, selected supporting states, a phone-sized viewport, the component gallery and the avatar proof. See [the current report](../docs/engineering/layered-ui-and-avatar-implementation.md) for results and the avatar’s production limits.

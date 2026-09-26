@@ -12,10 +12,9 @@ namespace SoloGym
     public sealed class OnboardingScreen : MonoBehaviour
     {
         const float W = 853, H = 1844;
-        static readonly Color Silver = new Color32(224, 231, 246, 255);
-        static readonly Color Cyan = new Color32(112, 224, 255, 255);
+        static Color Silver => SystemUI.Theme.text;
+        static Color Cyan => SystemUI.Theme.accent;
         RectTransform root, page, modal;
-        Texture2D ageSource, ageSourceEn, ageClean, consentSource, consentSourceEn, consentClean;
         Font serif, bold, body;
         OnboardingController controller;
         PrivateProfileScreen profile;
@@ -35,15 +34,9 @@ namespace SoloGym
         public void Initialize(string language, bool review, Action onClose, string document = null, string capturePath = null)
         {
             closed = onClose; documentOnly = document != null; capture = capturePath;
-            ageSource = Resources.Load<Texture2D>("Onboarding/AgeSource");
-            ageClean = Resources.Load<Texture2D>("Onboarding/AgeClean");
-            ageSourceEn = Resources.Load<Texture2D>("Onboarding/AgeSourceEn");
-            consentSource = Resources.Load<Texture2D>("Onboarding/ConsentSource");
-            consentClean = Resources.Load<Texture2D>("Onboarding/ConsentClean");
-            consentSourceEn = Resources.Load<Texture2D>("Onboarding/ConsentSourceEn");
-            serif = Resources.Load<Font>("Fonts/LiberationSerif-Regular");
-            bold = Resources.Load<Font>("Fonts/LiberationSerif-Bold");
-            body = Resources.Load<Font>("Fonts/NotoSans-Regular");
+            serif = SystemUI.Theme.heading;
+            bold = SystemUI.Theme.headingBold;
+            body = SystemUI.Theme.body;
             controller = new OnboardingController(review);
             controller.SetLanguage(language);
             controller.ExitRequested += Exit;
@@ -102,16 +95,9 @@ namespace SoloGym
             controls.Clear(); ageInput = null;
             bool consent = model.Step == OnboardingStep.Consent;
             bool document = model.Step == OnboardingStep.Document;
-            Texture2D source = consent ? (model.Language == "en" ? consentSourceEn : consentSource) : (model.Language == "en" ? ageSourceEn : ageSource);
-            Texture2D clean = consent ? consentClean : ageClean;
-            Art(page, new Rect(0, 0, W, H), source);
-            // Only text rectangles use the clean plate; all surrounding reference art remains exact.
-            if (consent && model.Language == "en")
-            {
-                for (int i = 0; i < ConsentTextRegions.Length; i++)
-                    Art(page, ConsentTextRegionsEn[i], clean, ConsentTextRegions[i]);
-            }
-            else foreach (Rect r in consent ? ConsentTextRegions : AgeTextRegions) Art(page, r, clean);
+            SystemUI.PortalPage(page,718,965);
+            SystemUI.Icon(page,new Rect(43,47,28,34),"back",Silver);
+            SystemUI.Divider(page,807);
             Live("Back", new Rect(92, 53, L(61, 83), 25), L("Back", "Volver"), 31);
             Live("Language", new Rect(765, 56, 29, 20), model.Language.ToUpperInvariant(), 27);
             Hit("back", new Rect(30, 20, 180, 100), () => { if (documentOnly) Exit(); else controller.Back(); });
@@ -124,33 +110,18 @@ namespace SoloGym
             rebuilding = false;
         }
 
-        static readonly Rect[] AgeTextRegions = {
-            new Rect(88,43,99,38),new Rect(757,45,44,40),new Rect(310,757,239,40),
-            new Rect(175,824,510,79),new Rect(175,914,510,45),new Rect(101,979,80,34),
-            new Rect(127,1036,89,49),new Rect(643,1038,87,48),new Rect(102,1108,495,32),
-            new Rect(101,1165,295,35),new Rect(129,1228,164,49),new Rect(101,1317,420,37),
-            new Rect(128,1382,206,46),new Rect(258,1484,383,32),new Rect(288,1566,279,51),
-            new Rect(262,1726,140,35),new Rect(459,1726,128,35)
-        };
-        static readonly Rect[] ConsentTextRegions = {
-            new Rect(88,43,99,38),new Rect(757,45,44,40),new Rect(284,758,290,36),
-            new Rect(157,823,544,133),new Rect(219,966,415,38),new Rect(103,1020,660,131),
-            new Rect(128,1181,460,45),new Rect(128,1267,381,43),new Rect(169,1355,462,35),
-            new Rect(169,1423,394,35),new Rect(102,1480,503,31),new Rect(287,1562,280,49),
-            new Rect(357,1641,145,43),new Rect(207,1747,440,34)
-        };
 
-        static readonly Rect[] ConsentTextRegionsEn = {
-            new Rect(88,43,99,38),new Rect(757,45,44,40),new Rect(301,758,252,36),
-            new Rect(157,823,544,133),new Rect(209,966,435,38),new Rect(103,1020,660,82),
-            new Rect(128,1139,380,45),new Rect(128,1225,375,43),new Rect(169,1313,457,43),
-            new Rect(169,1381,390,43),new Rect(102,1450,480,31),new Rect(287,1562,280,49),
-            new Rect(357,1641,145,43),new Rect(175,1747,505,34)
-        };
 
         void AgePage()
         {
             var m = controller.Model;
+            SystemUI.InputFrame(page,new Rect(102,1025,651,80),511);
+            SystemUI.Panel(page,new Rect(102,1204,651,93),PanelStyle.Input);
+            SystemUI.Panel(page,new Rect(102,1357,651,93),PanelStyle.Input);
+            SystemUI.Icon(page,new Rect(706,1236,24,24),"down",Silver);
+            SystemUI.Icon(page,new Rect(706,1389,24,24),"down",Silver);
+            SystemUI.Panel(page,new Rect(91,1543,671,100),PanelStyle.Primary);
+            SystemUI.Icon(page,new Rect(421,1728,10,25),"sigil",Silver);
             Live("Step", new Rect(323,771,210,15), L("S T E P  1  ·  P R O F I L E", "P A S O  1  ·  P E R F I L"),24,Cyan);
             Live("Title", new Rect(L(183,199),836,L(487,455),61),L("YOUR ORIGIN","TU ORIGEN"),78,Silver,bold);
             Live("Subtitle", new Rect(L(179,228),923,L(495,397),33),L("Age and country of residence","Edad y país de residencia"),39);
@@ -190,6 +161,13 @@ namespace SoloGym
         void ConsentPage()
         {
             var m=controller.Model;
+            SystemUI.Panel(page,new Rect(102,L(1122,1164),651,78),PanelStyle.Outline);
+            SystemUI.Panel(page,new Rect(102,L(1207,1249),651,80),PanelStyle.Outline);
+            SystemUI.Panel(page,new Rect(108,L(1313,1355),36,36),PanelStyle.Outline);
+            SystemUI.Panel(page,new Rect(108,L(1380,1422),36,36),PanelStyle.Outline);
+            var primary=SystemUI.Panel(page,new Rect(91,1539,671,94),PanelStyle.Primary);
+            primary.color=m.CanContinue?Color.white:new Color(.5f,.6f,.7f,.7f);
+
             Live("Step",new Rect(289,771,276,15),L("S T E P  2  ·  P R I V A C Y","P A S O  2  ·  P R I V A C I D A D"),23,Cyan);
             Live("Title 1",new Rect(L(205,165),833,L(446,529),51),L("YOUR PRIVACY","TU PRIVACIDAD"),66,Silver,bold);
             Live("Title 2",new Rect(L(174,160),901,L(505,535),51),L("YOUR CHOICES","TUS DECISIONES"),66,Silver,bold);
@@ -261,8 +239,7 @@ namespace SoloGym
         {
             CloseModal();KeyboardOff();
             var shade=RectNode("Modal shade",root,new Rect(0,0,W,H));shade.gameObject.AddComponent<Image>().color=new Color(0,.01f,.04f,.86f);
-            modal=RectNode("System dialog",shade,new Rect(71,420,711,1000));modal.gameObject.AddComponent<Image>().color=new Color32(4,18,34,255);
-            var outline=modal.gameObject.AddComponent<Outline>();outline.effectColor=Cyan;outline.effectDistance=new Vector2(1,-1);
+            modal=RectNode("System dialog",shade,new Rect(71,420,711,1000));var frame=modal.gameObject.AddComponent<SystemPanel>();frame.theme=SystemUI.Theme;frame.ornaments=true;
             TextAt(modal,new Rect(32,24,565,70),title,33,bold,Silver);
             ModalButton(modal,new Rect(611,12,80,90),"×",()=>{if(controller.Model.Step==OnboardingStep.Document){if(documentOnly)Exit();else controller.Back();}else CloseModal();});
         }
@@ -273,40 +250,23 @@ namespace SoloGym
 
         Text Live(string name,Rect rect,string content,int size,Color? color=null,Font font=null)
         {
-            var text=TextAt(page,rect,content,size,font??serif,color??Silver);text.name=name;text.gameObject.AddComponent<ReferenceTextLayout>();
-            if(name.StartsWith("Title",StringComparison.Ordinal))
-            {
-                text.gameObject.AddComponent<OnboardingSilverText>();
-                var shadow=text.gameObject.AddComponent<Shadow>();shadow.effectColor=new Color(0,0,0,.8f);shadow.effectDistance=new Vector2(1,-2);
-            }
+            var text=SystemUI.Caption(page,new Rect(rect.x,rect.y-8,rect.width,rect.height+16),content,size,font??serif,color??Silver);text.name=name;
+            if(name.StartsWith("Title",StringComparison.Ordinal))text.gameObject.AddComponent<OnboardingSilverText>();
             return text;
         }
+
         static RectTransform RectNode(string name,Transform parent,Rect rect)
-        {
-            var node=new GameObject(name,typeof(RectTransform));var rt=node.GetComponent<RectTransform>();rt.SetParent(parent,false);
-            rt.anchorMin=rt.anchorMax=rt.pivot=new Vector2(0,1);rt.anchoredPosition=new Vector2(rect.x,-rect.y);rt.sizeDelta=rect.size;return rt;
-        }
-        Text TextAt(Transform parent,Rect rect,string text,int size,Font font,Color color,TextAnchor anchor=TextAnchor.MiddleLeft)
-        {
-            var label=RectNode("Text",parent,rect).gameObject.AddComponent<Text>();label.text=text;label.font=font;label.fontSize=size;label.color=color;
-            label.alignment=anchor;label.raycastTarget=false;label.supportRichText=false;label.horizontalOverflow=HorizontalWrapMode.Overflow;label.verticalOverflow=VerticalWrapMode.Overflow;return label;
-        }
-        void Art(Transform parent,Rect rect,Texture2D texture,Rect? sample=null)
-        {
-            var image=RectNode("Reference artwork",parent,rect).gameObject.AddComponent<RawImage>();image.texture=texture;image.raycastTarget=false;
-            var uv=sample??rect;image.uvRect=new Rect(uv.x/W,1-(uv.y+uv.height)/H,uv.width/W,uv.height/H);
-        }
+        {return SystemUI.Node(name,parent,rect);}
+        Text TextAt(Transform parent,Rect rect,string value,int size,Font font,Color color,TextAnchor align=TextAnchor.MiddleLeft)
+        {return SystemUI.Text(parent,rect,value,size,font,color,align);}
         Button Hit(string key,Rect rect,Action action)
         {
             var node=RectNode(key,page,rect);var image=node.gameObject.AddComponent<Image>();image.color=Color.clear;
             var button=node.gameObject.AddComponent<Button>();button.targetGraphic=image;button.transition=Selectable.Transition.None;button.onClick.AddListener(()=>action());controls[key]=button;return button;
         }
         void ModalButton(Transform parent,Rect rect,string label,Action action)
-        {
-            var node=RectNode(label,parent,rect);var image=node.gameObject.AddComponent<Image>();image.color=new Color32(10,39,58,255);
-            var button=node.gameObject.AddComponent<Button>();button.targetGraphic=image;button.onClick.AddListener(()=>action());
-            TextAt(node,new Rect(14,0,rect.width-28,rect.height),label,28,body,Silver,TextAnchor.MiddleCenter);
-        }
+        {SystemUI.Button(parent,rect,label,action);}
+
         void Update()
         {
             if(root==null||(profile!=null&&profile.gameObject.activeSelf)||Time.frameCount==profileReturnFrame)return;
@@ -317,7 +277,7 @@ namespace SoloGym
         {
             var safe=Screen.safeArea;float scale=Mathf.Min(safe.width/W,safe.height/H);float top=Screen.height-safe.yMax+(safe.height-H*scale)/2;float lift=0;
             if(TouchScreenKeyboard.visible&&ageInput!=null){float occlusion=TouchScreenKeyboard.area.height>0?TouchScreenKeyboard.area.yMax:Screen.height*.42f;lift=Mathf.Max(0,occlusion+20*scale-(Screen.height-top-1110*scale));}
-            root.localScale=new Vector3(scale,scale,1);root.anchoredPosition=new Vector2(safe.x+(safe.width-W*scale)/2,-top+lift);
+            SystemViewport.Fit(root,W,H,lift);
             lastSize=new Vector2(Screen.width,Screen.height);lastSafe=safe;lastKeyboard=TouchScreenKeyboard.visible;lastKeyboardHeight=TouchScreenKeyboard.area.height;
         }
         IEnumerator Capture()

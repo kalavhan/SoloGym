@@ -1,0 +1,147 @@
+[
+  {
+    "name": "welcome-en",
+    "exit_code": 0,
+    "capture_exists": true,
+    ".smoke.json": {
+      "passed": true,
+      "checks": [
+        "language control",
+        "email input and validation",
+        "password masking and reveal",
+        "back clears password",
+        "unconfigured provider never authorizes Home"
+      ]
+    }
+  },
+  {
+    "name": "welcome-es",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "age-en",
+    "exit_code": 0,
+    "capture_exists": true,
+    ".smoke.json": {
+      "passed": true,
+      "checks": [
+        "11 onboarding state checks",
+        "underage blocked",
+        "native country picker",
+        "consent initially disabled",
+        "document reader unavailable",
+        "checkbox interactions",
+        "locale preserves choices",
+        "back preserves draft",
+        "real policy fails closed",
+        "profile draft survives Back to consent and reentry through native controls"
+      ]
+    }
+  },
+  {
+    "name": "age-es",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "consent-en",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "consent-es",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "profile-en",
+    "exit_code": 0,
+    "capture_exists": true,
+    ".smoke.json": {
+      "passed": true,
+      "checks": [
+        "profile state checks",
+        "native feet/inches controls",
+        "unit round trip",
+        "blank optional measurements",
+        "readiness navigation",
+        "pain pauses",
+        "ready review checkpoint"
+      ]
+    }
+  },
+  {
+    "name": "profile-es",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "home-en",
+    "exit_code": 0,
+    "capture_exists": true,
+    ".smoke.json": {
+      "passed": true,
+      "checks": [
+        "language control",
+        "saved-session readiness route",
+        "illness recovery",
+        "teen supervision",
+        "offline gym notice"
+      ]
+    }
+  },
+  {
+    "name": "home-es",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "email-en",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "profile-imperial-en",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "profile-readiness-es",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "profile-phone-es",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "components-default",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "components-alternate",
+    "exit_code": 0,
+    "capture_exists": true
+  },
+  {
+    "name": "avatar-equipped",
+    "exit_code": 0,
+    "capture_exists": true,
+    ".proof.json": {
+      "attachments_and_fit_validation_passed": true,
+      "production_ready": false
+    }
+  },
+  {
+    "name": "avatar-alternate",
+    "exit_code": 0,
+    "capture_exists": true,
+    ".proof.json": {
+      "attachments_and_fit_validation_passed": true,
+      "production_ready": false
+    }
+  }
+]

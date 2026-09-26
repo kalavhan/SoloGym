@@ -1,0 +1,42 @@
+{
+  "reference": {
+    "path": "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/renders/WIN-002-welcome-sign-in-en-proposal-v1.png",
+    "sha256": "d6fb587da7514d94064482b8bbeeb05d56012a29e66aa2cc16be60be14fb7b26",
+    "width": 853,
+    "height": 1844,
+    "mode": "RGB"
+  },
+  "actual": {
+    "path": "/home/josue/Documents/ChatGPT/leveling fitness app 2/artifacts/visual/UI-migration/final/welcome-en.png",
+    "sha256": "779e1bc8a517842e8eb15d2a7f6c5ae03e6e7b87eb8a9b9007bafd9c38bda74d",
+    "width": 853,
+    "height": 1844,
+    "mode": "RGBA"
+  },
+  "dimensions_match": true,
+  "metrics": {
+    "MAE_RGB_0_255": 13.976963191458161,
+    "maxdiff": 255,
+    "percentage_pixels_maxchannel_diff_lte_8": 47.21806155638006
+  },
+  "interpretation": {
+    "descriptive_only": true,
+    "acceptance": "No automatic 1:1 pass or failure is assigned. Inspect the complete images and the running UI.",
+    "provenance": "The caller must supply an actual application capture. This tool cannot detect reference-mode output or prove runtime provenance.",
+    "identical_source_bytes": false,
+    "alignment": "Stored pixel coordinates compared directly; no resizing, cropping, registration, EXIF orientation or color-profile transformation.",
+    "channels": "RGB only; inputs converted to RGB. Alpha and other non-RGB channels are not scored.",
+    "tolerance_metric": "The percentage within 8 counts pixels whose largest absolute RGB-channel difference is at most 8. It is not an acceptance threshold."
+  },
+  "review_images": {
+    "side_by_side": "Reference on the left, actual on the right; 32-pixel label strip added above unscaled sources.",
+    "overlay": "Equal 50% reference and 50% actual at original dimensions.",
+    "difference": "Absolute RGB difference multiplied by 4, clipped to 255; metrics use the unamplified difference."
+  },
+  "outputs": {
+    "side_by_side": "/home/josue/Documents/ChatGPT/leveling fitness app 2/artifacts/visual/UI-migration/comparisons/welcome-en.side-by-side.png",
+    "overlay": "/home/josue/Documents/ChatGPT/leveling fitness app 2/artifacts/visual/UI-migration/comparisons/welcome-en.overlay.png",
+    "difference": "/home/josue/Documents/ChatGPT/leveling fitness app 2/artifacts/visual/UI-migration/comparisons/welcome-en.difference-amplified.png",
+    "metrics": "/home/josue/Documents/ChatGPT/leveling fitness app 2/artifacts/visual/UI-migration/comparisons/welcome-en.metrics.json"
+  }
+}

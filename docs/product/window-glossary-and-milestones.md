@@ -1,6 +1,6 @@
 # SoloGym window glossary and milestone plan
 
-**Current status · 2026-09-25:** WIN-001 Home and WIN-002 access are accepted by user report. WIN-006/007/009 native UI is implemented and Linux-verified; production policy, legal-document and storage dependencies remain pending. [WIN-010 Goals / Experience](../windows/WIN-010-goals-experience-g0.md) has retained bilingual renders awaiting approval. Before advancing it, follow the [layered UI migration](../engineering/layered-ui-and-avatar-architecture.md), starting with shared components and WIN-009. The existing screens have not yet been refactored. No APK requested.
+**Current status · 2026-09-25:** WIN-001 Home and WIN-002 access are accepted by user report. WIN-006/007/009 native UI is implemented and Linux-verified; production policy, legal-document and storage dependencies remain pending. [WIN-010 Goals / Experience](../windows/WIN-010-goals-experience-g0.md) has retained bilingual renders awaiting approval. The [layered UI migration](../engineering/layered-ui-and-avatar-implementation.md) now covers all five existing windows in Linux 0.5.0, with shared code components, separate artwork, a component gallery and a first avatar engineering proof. The new native output is available for visual review; the avatar proof still needs art refinement. No APK requested.
 
 User acceptance and retained targets do not certify every device, live services or mathematical pixel identity. The original reference hashes and prior test evidence remain unchanged.
 
@@ -58,7 +58,7 @@ Only one window is active at a time. Shared asset work belongs to that window an
 3. **WIN-001 System / Home** and **WIN-002 Welcome / Sign in** have user acceptance. Home still uses fictional local data and a static illustrated avatar. WIN-006/007 UI has been implemented with production dependencies explicitly pending; the current approved window is **WIN-009 Private Fitness Profile**.
 4. Continue through the listed window order, one completed milestone at a time. Deep layout, exact copy, and asset prompts are decided only when that window becomes current.
 
-**Current next activity:** build and verify [WIN-009](../windows/WIN-009-implementation.md) against its approved ES/EN v1 targets without generating an APK. Afterward prepare WIN-010 with its own retained renders. Regional-policy, guardian and authentication dependencies remain active; review mode does not bypass them in production.
+**Current next activity:** review the [migrated native windows and avatar proof](../engineering/layered-ui-and-avatar-implementation.md), then resolve WIN-010 target approval before its implementation. WIN-009 is implemented and its earlier approved ES/EN v1 targets are retained. Regional-policy, guardian and authentication dependencies remain active; review mode does not bypass them in production.
 
 The numeric order after System is proposed and can be changed by the user. Account/setup dependencies can use fictional approved fixtures for renders; dependent data contracts must be resolved before an implemented flow is called complete. Shared language, confirmations, and error states may be required by the first consumer; they retain their own milestones and approval records. A destination pictured in an early hub render is not evidence that its feature is built.
 

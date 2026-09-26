@@ -749,5 +749,6 @@
       "resource": "Welcome/GoogleG",
       "note": "Preserves official 200:204 asset aspect ratio; draw on white; no tint or recolor."
     }
-  ]
+  ],
+  "runtime_role": "Baseline geometry only. Background, logo and character are separate assets; chrome and controls are shared code. No clean-plate sampling or glyph-vertex fitting."
 }
