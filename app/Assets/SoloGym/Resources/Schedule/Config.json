@@ -1,0 +1,19 @@
+{
+  "sessions_per_week_min": 2,
+  "sessions_per_week_max": 5,
+  "session_minutes_min": 15,
+  "session_minutes_max": 60,
+  "availability_min_minutes": 15,
+  "availability_max_minutes": 720,
+  "availability_max_hours": 12,
+  "minute_max": 60,
+  "weekdays": [
+    { "index": 0, "en": "Mon", "es": "Lun" },
+    { "index": 1, "en": "Tue", "es": "Mar" },
+    { "index": 2, "en": "Wed", "es": "Mié" },
+    { "index": 3, "en": "Thu", "es": "Jue" },
+    { "index": 4, "en": "Fri", "es": "Vie" },
+    { "index": 5, "en": "Sat", "es": "Sáb" },
+    { "index": 6, "en": "Sun", "es": "Dom" }
+  ]
+}

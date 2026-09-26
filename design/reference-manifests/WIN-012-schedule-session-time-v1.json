@@ -1,0 +1,36 @@
+{
+  "window_id": "WIN-012",
+  "status": "proposal_awaiting_user_approval",
+  "generation_tool": "built-in image_gen",
+  "version": 1,
+  "date": "2026-09-26",
+  "references": [
+    {
+      "file": "design/renders/WIN-012-schedule-session-time-es-proposal-v1.png",
+      "locale": "es",
+      "sha256": "757e4ccac7f8d497ece7473de2084cce1f4fa7664842f10efd8c09cc233a6307",
+      "dimensions": [720, 1280],
+      "prompt": "design/prompts/WIN-012-schedule-session-time-es-v1.txt"
+    },
+    {
+      "file": "design/renders/WIN-012-schedule-session-time-en-proposal-v1.png",
+      "locale": "en",
+      "sha256": "f7c9211970b2662065519ab2ef2d8a445296b7300c1539afafac646712b5fdc8",
+      "dimensions": [720, 1280],
+      "prompt": "design/prompts/WIN-012-schedule-session-time-en-v1.txt"
+    }
+  ],
+  "input_reference": {
+    "file": "design/renders/WIN-011-available-equipment-es-proposal-v1.png",
+    "role": "WIN-011 Spanish target supplies portal and panel style for the Spanish schedule step-1 edit."
+  },
+  "fixture": {
+    "fictional": true,
+    "step": "days",
+    "training_day_indices": [0, 2, 4],
+    "runtime_initial_values": "No weekdays selected on first entry; explicit 2-5 day selection required."
+  },
+  "inspection": "Generated whole-screen outputs: seven weekday chips in two rows, localized copy, three days selected in fixture, portal and frame retained. Steps 2-4 use live UI on the shared frame.",
+  "scope": "Principal adult days step of a four-step schedule window.",
+  "implementation": "Native UI uses combined setup + review. Step-1 proposal PNGs superseded; runtime PortalPage(620,1140)."
+}

@@ -87,6 +87,7 @@ namespace SoloGym
         }
         public static void PortalPage(Transform parent,float panelY,float panelHeight)
         {
+            // Panel Y/height: prefer PortalWindowFrame solvers for content-driven windows (WIN-012+).
             Art(parent,new Rect(0,0,853,1844),"Art/PortalBackground-v1");
             Wordmark(parent,new Rect(174,149,510,112));
             Icon(parent,new Rect(694,48,32,32),"globe",Theme.text);

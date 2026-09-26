@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "window_id": "WIN-012",
+  "status": "native_ui_implemented_pending_user_acceptance",
+  "source_schema": "data/schemas/training-profile.schema.json",
+  "source_rules": "data/training/rules.json",
+  "steps": [
+    "setup",
+    "review"
+  ],
+  "fixture": {
+    "fictional": true,
+    "step": "setup",
+    "training_day_indices": [0, 2, 4],
+    "availability_hours": 1,
+    "availability_minutes": 30,
+    "note": "Runtime starts with no days selected; default availability 1 h 0 min until user changes pickers."
+  },
+  "initial_state": {
+    "training_day_indices": [],
+    "availability_hours": 1,
+    "availability_minutes": 0,
+    "availability_block_minutes": 60,
+    "session_minutes_derived": 60
+  },
+  "weekdays": [
+    { "index": 0, "en": "Mon", "es": "Lun" },
+    { "index": 1, "en": "Tue", "es": "Mar" },
+    { "index": 2, "en": "Wed", "es": "Mié" },
+    { "index": 3, "en": "Thu", "es": "Jue" },
+    { "index": 4, "en": "Fri", "es": "Vie" },
+    { "index": 5, "en": "Sat", "es": "Sáb" },
+    { "index": 6, "en": "Sun", "es": "Dom" }
+  ],
+  "bounds": {
+    "sessions_per_week_min": 2,
+    "sessions_per_week_max": 5,
+    "availability_min_minutes": 15,
+    "availability_max_minutes": 720,
+    "availability_max_hours": 12,
+    "minute_max": 60,
+    "session_minutes_derived": "clamp(availability_block_minutes, 15, 60) for generator placeholder until schema splits window vs focused session"
+  },
+  "draft_fields": {
+    "availability_block_minutes": "User-facing time window; pause/resume within window; notifications deferred",
+    "sessions_per_week": "Count of selected weekday toggles",
+    "training_day_indices": "In-memory for review and future scheduling",
+    "session_minutes": "Derived only in this milestone, not a claim of continuous boss duration"
+  },
+  "navigation": {
+    "depends_on": "WIN-011",
+    "next": "WIN-013"
+  },
+  "persistence": "In-memory draft in review mode only until private profile service exists.",
+  "render_manifest": "design/reference-manifests/WIN-012-schedule-session-time-v1.json",
+  "render_note": "Step-1 proposal PNGs superseded by combined setup screen; no new image_gen target in this iteration."
+}

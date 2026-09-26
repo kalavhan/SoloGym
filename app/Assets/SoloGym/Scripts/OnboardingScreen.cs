@@ -20,6 +20,7 @@ namespace SoloGym
         PrivateProfileScreen profile;
         GoalsExperienceScreen goals;
         EquipmentScreen equipment;
+        ScheduleScreen schedule;
         int profileReturnFrame = -1;
         InputField ageInput;
         Text status, countryValue, regionValue, privacyCheck, termsCheck, continueText;
@@ -61,6 +62,8 @@ namespace SoloGym
                 OpenGoals(capture);
             else if (Argument("-sologym-window") == "equipment" && review)
                 OpenEquipment(capture);
+            else if (Argument("-sologym-window") == "schedule" && review)
+                OpenSchedule(capture);
             else if (capture != null) StartCoroutine(Capture());
         }
 
@@ -140,12 +143,42 @@ namespace SoloGym
                 else root.gameObject.SetActive(true);
             }, () => controller.Decline(), id =>
             {
-                if (id != "REVIEW:WIN-012") return;
+                if (id == "REVIEW:WIN-012") OpenSchedule();
+            }, capturePath ?? (Argument("-sologym-window") == "equipment" ? capture : null), step);
+        }
+
+        void OpenSchedule(string capturePath = null)
+        {
+            if (!controller.Model.ReviewMode) return;
+            KeyboardOff();
+            CloseModal();
+            if (equipment != null) equipment.gameObject.SetActive(false);
+            if (goals != null) goals.gameObject.SetActive(false);
+            if (profile != null) profile.gameObject.SetActive(false);
+            root.gameObject.SetActive(false);
+            string step = Argument("-sologym-schedule-view");
+            if (schedule != null)
+            {
+                schedule.Resume(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"));
+                return;
+            }
+            var node = new GameObject("Schedule and session time");
+            node.transform.SetParent(transform, false);
+            schedule = node.AddComponent<ScheduleScreen>();
+            schedule.Initialize(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"), true, () =>
+            {
+                schedule.gameObject.SetActive(false);
+                if (equipment != null) equipment.gameObject.SetActive(true);
+                else if (goals != null) goals.gameObject.SetActive(true);
+                else root.gameObject.SetActive(true);
+            }, () => controller.Decline(), id =>
+            {
+                if (id != "REVIEW:WIN-013") return;
                 KeyboardOff();
                 Notice(L("Next step", "Siguiente paso"),
-                    L("Schedule and session time is the next window. Nothing was saved to your account.",
-                        "El horario y la duración de sesión es la siguiente ventana. No se guardaron datos en tu cuenta."));
-            }, capturePath ?? (Argument("-sologym-window") == "equipment" ? capture : null), step);
+                    L("Character customization is the next window. Nothing was saved to your account.",
+                        "La personalización del personaje es la siguiente ventana. No se guardaron datos en tu cuenta."));
+            }, capturePath ?? (Argument("-sologym-window") == "schedule" ? capture : null), step);
         }
 
         void Render(OnboardingViewModel model)
