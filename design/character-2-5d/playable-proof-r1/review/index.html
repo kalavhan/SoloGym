@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoloGym · Illustrated motion review</title>
+  <style>
+    :root{color-scheme:dark;--bg:#111614;--panel:#1b231f;--line:#35453b;--text:#edf2e7;--muted:#a8b6a9;--accent:#d2ed9c;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}body{margin:0;color:var(--text);background:var(--bg)}button,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}button{cursor:pointer;color:inherit}button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}a{color:var(--accent)}[hidden]{display:none!important}.page{max-width:1440px;padding:30px clamp(20px,5vw,70px) 60px;margin:auto}.brand{font-size:17px;font-weight:800;letter-spacing:.17em}.brand span{color:var(--muted);font-size:10px;font-weight:500;letter-spacing:.13em;margin-left:14px}.topline{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--line)}.round{font-size:10px;letter-spacing:.13em;color:var(--muted)}header{padding:39px 0 28px}h1{font-size:clamp(32px,4.4vw,56px);line-height:1.1;letter-spacing:-.04em;margin:0 0 16px;font-weight:650}.intro{color:#c7d2c4;font-size:15px;line-height:1.7;max-width:760px;margin:0}.scope{margin:13px 0 0;font-size:12px;line-height:1.65;color:var(--muted);max-width:760px}.eyebrow{font-size:10px;letter-spacing:.16em;font-weight:700;color:var(--accent);margin:0 0 9px}h2{font-size:22px;line-height:1.3;font-weight:600;letter-spacing:-.02em;margin:0}h3{font-size:16px;margin:0 0 5px;font-weight:600}.selectors{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;padding:21px 0 26px}.selector-group{display:flex;align-items:center;gap:12px}.group-label{font-size:11px;color:var(--muted)}.segmented{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}.segmented button{background:transparent;border:0;border-radius:5px;padding:10px 17px;font-size:13px;color:var(--muted);min-height:39px}.segmented button[aria-pressed=true]{background:var(--accent);color:#28361e;font-weight:700}.segmented button:hover:not([aria-pressed=true]){background:#2b382e;color:var(--text)}.viewer-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start}.video-frame{position:relative;min-height:420px;background:#121820;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:grid;align-items:center}.video-frame video{display:block;width:100%;max-height:76vh;min-height:260px;background:#121820;object-fit:contain}.missing{display:flex;align-items:center;justify-content:center;text-align:center;min-height:250px;padding:40px;color:var(--muted);font-size:13px;line-height:1.7;background:#171f1c}.video-frame .missing{position:absolute;inset:0;min-height:420px}.view-summary{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px}.view-summary .eyebrow{margin-bottom:11px}.view-summary h2{margin-bottom:9px}.view-summary>p:not(.eyebrow){font-size:12px;line-height:1.75;color:var(--muted);margin:0 0 22px}.motion-label{font-size:11px;color:var(--muted);margin-bottom:9px}.motion-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.motion-buttons button{border:1px solid var(--line);border-radius:6px;background:var(--bg);padding:11px 5px;font-size:12px}.motion-buttons button[aria-pressed=true]{color:var(--accent);border-color:var(--accent);background:#263421}.motion-hint{font-size:11px;color:var(--muted);line-height:1.7;margin:14px 0 22px}.summary-links{display:flex;flex-direction:column;align-items:start;gap:15px;padding-top:21px;border-top:1px solid var(--line)}.summary-links a{font-size:12px;text-decoration:none}.summary-links a:hover{text-decoration:underline}.availability{padding:12px 16px;border:1px solid #675b3f;border-radius:7px;background:#352d1d;color:#e3d3a7;font-size:12px;line-height:1.7;margin:0 0 22px}.section-heading{margin:40px 0 20px;display:flex;justify-content:space-between;align-items:end;gap:20px}.section-heading p:last-child{font-size:12px;color:var(--muted);margin:0;line-height:1.6}.stills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.still-card{margin:0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--panel)}.still-card button{display:block;width:100%;padding:0;border:0;background:#121820;position:relative}.still-card img{display:block;width:100%;height:auto}.still-card .missing{font-size:11px;min-height:225px;padding:22px}.zoom-cue{position:absolute;right:8px;bottom:8px;background:#111a16dc;color:#e5efdb;padding:5px 7px;border:1px solid #ffffff1f;font-size:10px;border-radius:4px}.still-card figcaption{padding:16px 14px}.still-card figcaption p{font-size:11px;color:var(--muted);line-height:1.6;margin:0}.footer{margin-top:32px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.7}.footer strong{color:var(--text);font-weight:500}dialog{width:calc(100vw - 36px);height:calc(100dvh - 36px);max-width:1500px;max-height:none;border:1px solid var(--line);border-radius:12px;padding:0;background:var(--bg);color:var(--text);overflow:hidden}dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#050906e6;backdrop-filter:blur(5px)}.dialog-toolbar{padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line)}.dialog-toolbar h2{font-size:18px}.dialog-actions{display:flex;align-items:center;gap:18px}.dialog-actions a{font-size:12px;white-space:nowrap}.dialog-actions button{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 15px;font-size:12px}.dialog-image-wrap{flex:1;min-height:0;overflow:auto;display:flex;align-items:center;justify-content:center;background:#121820}.dialog-image-wrap img{max-width:100%;max-height:100%;height:auto;width:auto;object-fit:contain}
+    @media(max-width:1050px){.viewer-grid{grid-template-columns:minmax(0,1fr) 250px}.view-summary{padding:19px}.stills{grid-template-columns:repeat(2,minmax(0,1fr))}.still-card img{max-height:470px;object-fit:contain}.still-card .missing{min-height:320px}}
+    @media(max-width:700px){.page{padding-top:22px}.brand span{display:none}.round{font-size:9px}header{padding-top:28px}.intro{font-size:14px}.scope{font-size:11px}.selectors{align-items:stretch;gap:13px}.selector-group{width:100%;justify-content:space-between}.segmented{flex:1;max-width:280px}.segmented button{flex:1;padding:9px 11px}.viewer-grid{display:flex;flex-direction:column;gap:16px}.video-frame{width:100%;min-height:340px}.video-frame video{max-height:65vh}.video-frame .missing{min-height:340px}.view-summary{width:100%}.view-summary>p:not(.eyebrow){margin-bottom:16px}.motion-buttons button{padding:13px}.summary-links{flex-direction:row;justify-content:space-between;flex-wrap:wrap}.section-heading{align-items:start;flex-direction:column;gap:10px;margin-top:32px}.stills{gap:12px}.still-card figcaption{padding:12px 10px}.still-card .missing{min-height:190px;padding:15px}.still-card h3{font-size:14px}.still-card figcaption p{font-size:10px}dialog{width:100vw;height:100dvh;max-width:none;border:0;border-radius:0}.dialog-toolbar{padding:14px}.dialog-toolbar h2{font-size:15px}.dialog-actions{gap:12px}.dialog-actions a{font-size:10px}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topline"><div class="brand">SOLOGYM <span>ART REVIEW</span></div><div class="round">ILLUSTRATED 2.5D · PLAYABLE PROOF R1</div></div>
+    <header>
+      <p class="eyebrow">FROM ILLUSTRATION TO MOTION</p>
+      <h1>The character, in motion.</h1>
+      <p class="intro">Compare the studio and elevated gameplay views. Watch each motion loop, then inspect the outfit and color changes below.</p>
+      <p class="scope">This procedural motion proof covers the normal man and woman, fixed hairstyles and complete outfits. Individual gear swaps and the other body presets are outside this proof.</p>
+    </header>
+    <main>
+      <section class="selectors" aria-label="Character, camera and motion outfit">
+        <div class="selector-group"><span class="group-label">Character</span><div class="segmented" role="group" aria-label="Character"><button type="button" data-presentation="male" aria-pressed="true">Man</button><button type="button" data-presentation="female" aria-pressed="false">Woman</button></div></div>
+        <div class="selector-group"><span class="group-label">View</span><div class="segmented" role="group" aria-label="View"><button type="button" data-camera="studio" aria-pressed="true">Studio</button><button type="button" data-camera="gameplay" aria-pressed="false">Gameplay</button></div></div>
+        <div class="selector-group"><span class="group-label">Motion outfit</span><div class="segmented" role="group" aria-label="Motion outfit"><button type="button" data-outfit="base" aria-pressed="false">Base</button><button type="button" data-outfit="equipped" aria-pressed="true">Full outfit</button></div></div>
+      </section>
+      <p class="availability" id="availability" hidden>Some runtime captures are not available yet. Refresh this page after the final files have been added.</p>
+      <section class="viewer-grid" aria-label="Motion preview">
+        <div class="video-frame">
+          <video id="motion-video" controls loop muted playsinline preload="metadata" aria-label="Man, studio view, full outfit, idle motion"></video>
+          <div class="missing" id="video-missing" hidden>The motion capture will appear here when the final Unity recordings are added.</div>
+        </div>
+        <div class="view-summary">
+          <p class="eyebrow">NORMAL PRESET</p>
+          <h2 id="view-title">Man · Studio</h2>
+          <p id="view-description">Full outfit, original skin and black hair. Use the video controls to pause and inspect a pose.</p>
+          <div class="motion-label">Motion</div>
+          <div class="motion-buttons" role="group" aria-label="Motion">
+            <button type="button" data-motion="idle" aria-pressed="true">Idle</button>
+            <button type="button" data-motion="walk" aria-pressed="false">Walk</button>
+            <button type="button" data-motion="jab" aria-pressed="false">Jab</button>
+          </div>
+          <p class="motion-hint">Each motion loops. Look at the shoulders, elbows, waist, knees and foot contact through the whole motion.</p>
+          <div class="summary-links"><a id="video-link" href="runtime/male-studio-idle.mp4" target="_blank" rel="noopener">Open motion video ↗</a><a id="menu-link" href="runtime/male-studio-menu.png" target="_blank" rel="noopener">Full mobile studio ↗</a></div>
+        </div>
+      </section>
+      <div class="section-heading"><div><p class="eyebrow">REST POSE COMPARISON</p><h2>Outfit &amp; color</h2></div><p>Open any image to inspect it at full size.</p></div>
+      <section class="stills" id="stills" aria-label="Outfit and color comparisons"></section>
+      <p class="footer"><strong>User review: idle looks great; walk and jab require re-authoring.</strong> Stride phases, shoulder continuity and clothing separation remain unresolved. These experimental motions are not approved for gameplay. <a href="../user-feedback.json">Recorded feedback ↗</a></p>
+    </main>
+  </div>
+  <dialog id="still-dialog" aria-labelledby="still-title">
+    <div class="dialog-toolbar"><h2 id="still-title"></h2><div class="dialog-actions"><a id="still-source" href="#" target="_blank" rel="noopener">Original PNG ↗</a><button id="close-still" type="button">Close ×</button></div></div>
+    <div class="dialog-image-wrap"><img id="still-image" alt=""></div>
+  </dialog>
+  <script>
+    "use strict";
+    let presentation = "male";
+    let camera = "studio";
+    let outfit = "equipped";
+    let motion = "idle";
+    let mediaRevision = 0;
+    const $ = id => document.getElementById(id);
+    const player = $("motion-video");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const comparisons = [
+      {suffix:"base-bind",title:"Training basics",detail:"Original skin · black hair"},
+      {suffix:"equipped-bind",title:"Full outfit",detail:"Original skin · black hair"},
+      {suffix:"skin-deep",title:"Skin color",detail:"Deep tone · full outfit"},
+      {suffix:"hair-silver",title:"Hair color",detail:"Silver hair · full outfit"}
+    ];
+    const name = () => presentation === "male" ? "Man" : "Woman";
+    const view = () => camera === "studio" ? "Studio" : "Gameplay";
+    const filePrefix = () => presentation + "-" + camera;
+    const videoPath = () => "runtime/" + filePrefix() + (outfit === "base" ? "-base" : "") + "-" + motion + ".mp4";
+    function missing() { $("availability").hidden = false; }
+    function openStill(path, title) {
+      $("still-title").textContent = title;
+      $("still-image").src = path;
+      $("still-image").alt = title;
+      $("still-source").href = path;
+      $("still-dialog").showModal();
+    }
+    function renderStills() {
+      $("stills").replaceChildren();
+      const revision = mediaRevision;
+      for (const comparison of comparisons) {
+        const path = "runtime/static/" + filePrefix() + "-" + comparison.suffix + ".png";
+        const title = name() + " · " + view() + " · " + comparison.title;
+        const card = document.createElement("figure");
+        card.className = "still-card";
+        const button = document.createElement("button");
+        button.type = "button";
+        button.setAttribute("aria-label", "Inspect " + title);
+        const image = document.createElement("img");
+        image.src = path;
+        image.alt = title;
+        image.decoding = "async";
+        image.addEventListener("error", () => {
+          if (revision !== mediaRevision) return;
+          image.hidden = true;
+          button.disabled = true;
+          const placeholder = document.createElement("span");
+          placeholder.className = "missing";
+          placeholder.textContent = "The final Unity capture will appear here.";
+          button.append(placeholder);
+          missing();
+        }, {once:true});
+        const cue = document.createElement("span");
+        cue.className = "zoom-cue";
+        cue.textContent = "INSPECT ↗";
+        cue.setAttribute("aria-hidden", "true");
+        button.append(image, cue);
+        button.addEventListener("click", () => openStill(path, title));
+        const caption = document.createElement("figcaption");
+        const heading = document.createElement("h3");
+        heading.textContent = comparison.title;
+        const detail = document.createElement("p");
+        detail.textContent = comparison.detail;
+        caption.append(heading, detail);
+        card.append(button, caption);
+        $("stills").append(card);
+      }
+    }
+    function renderVideo(playOnSelect) {
+      const path = videoPath();
+      const outfitLabel = outfit === "base" ? "Base outfit" : "Full outfit";
+      $("video-missing").hidden = true;
+      $("view-description").textContent = outfitLabel + ", original skin and black hair. Use the video controls to pause and inspect a pose.";
+      player.setAttribute("aria-label", name() + ", " + view().toLowerCase() + " view, " + outfitLabel.toLowerCase() + ", " + motion + " motion");
+      player.src = path;
+      player.muted = true;
+      player.load();
+      if (playOnSelect || !reducedMotion) player.play().catch(() => {});
+      $("video-link").href = path;
+      document.querySelectorAll("[data-outfit]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.outfit === outfit)));
+      document.querySelectorAll("[data-motion]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.motion === motion)));
+    }
+    function renderCharacter(playOnSelect = false) {
+      mediaRevision++;
+      $("availability").hidden = true;
+      $("view-title").textContent = name() + " · " + view();
+      $("menu-link").href = "runtime/" + presentation + "-studio-menu.png";
+      $("menu-link").setAttribute("aria-label", "Open full mobile studio screenshot: " + name());
+      document.querySelectorAll("[data-presentation]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.presentation === presentation)));
+      document.querySelectorAll("[data-camera]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.camera === camera)));
+      renderVideo(playOnSelect);
+      renderStills();
+    }
+    player.addEventListener("error", () => { $("video-missing").hidden = false; missing(); });
+    player.addEventListener("loadeddata", () => { $("video-missing").hidden = true; });
+    document.querySelectorAll("[data-presentation]").forEach(button => button.addEventListener("click", () => {
+      presentation = button.dataset.presentation;
+      renderCharacter(true);
+    }));
+    document.querySelectorAll("[data-camera]").forEach(button => button.addEventListener("click", () => {
+      camera = button.dataset.camera;
+      renderCharacter(true);
+    }));
+    document.querySelectorAll("[data-motion]").forEach(button => button.addEventListener("click", () => {
+      motion = button.dataset.motion;
+      renderVideo(true);
+    }));
+    document.querySelectorAll("[data-outfit]").forEach(button => button.addEventListener("click", () => {
+      outfit = button.dataset.outfit;
+      renderVideo(true);
+    }));
+    $("close-still").addEventListener("click", () => $("still-dialog").close());
+    renderCharacter();
+  </script>
+</body>
+</html>

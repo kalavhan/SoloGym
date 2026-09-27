@@ -1,0 +1,25 @@
+{
+  "male_normal_studio": {
+    "equipped": [
+      {"id":"left_hip_cloth","points":[950,487,965,487,965,558,933,558,940,532,945,510],"offsetPixels":[29,0]}
+    ]
+  },
+  "male_normal_gameplay": {
+    "base": [
+      {"id":"left_short_cloth","points":[377,525,390,525,390,612,368,612,370,579,374,550],"offsetPixels":[100,0]}
+    ],
+    "equipped": [
+      {"id":"left_hip_cloth","points":[958,526,985,526,985,620,938,620,941,590,947,556],"offsetPixels":[45,0]}
+    ]
+  },
+  "female_normal_studio": {
+    "equipped": [
+      {"id":"left_hip_cloth","points":[889,483,910,483,910,565,878,565,882,538,886,510],"offsetPixels":[29,0]}
+    ]
+  },
+  "female_normal_gameplay": {
+    "equipped": [
+      {"id":"left_hip_cloth","points":[950,524,974,524,974,605,938,605,942,574,946,547],"offsetPixels":[29,0]}
+    ]
+  }
+}

@@ -114,7 +114,7 @@ Goals review checkpoint opens this window in the onboarding chain. See [WIN-011 
 
 ## Schedule / session time (WIN-012)
 
-Review mode: one setup screen (2–5 weekdays + inline scroll **wheels** for hours **0–12** and minutes **00–60**, labels to the right), then review with training/recovery chips.
+Review mode: one setup screen (2–5 weekdays + inline scroll **wheels** for hours **0–12** and minutes **00–60**, labels to the right).
 
 ```bash
 app/Builds/Linux/SoloGym.x86_64 -screen-fullscreen 0 -screen-width 853 -screen-height 1844 \
@@ -122,7 +122,50 @@ app/Builds/Linux/SoloGym.x86_64 -screen-fullscreen 0 -screen-width 853 -screen-h
   -sologym-capture "$PWD/artifacts/visual/WIN-012/schedule-es-final.png" -sologym-smoke
 ```
 
-Add `-sologym-schedule-view review` for the review step. Equipment review checkpoint opens this window in the onboarding chain. See [WIN-012 implementation](../docs/windows/WIN-012-implementation.md).
+Add `-sologym-schedule-view review` to prefill setup fields for captures (still one screen). Schedule continue opens WIN-013 in the onboarding chain. See [WIN-012 implementation](../docs/windows/WIN-012-implementation.md).
+
+## Character customization (WIN-013)
+
+See the [character creation checkpoint](../docs/design/character-creation-checkpoint.md)
+for approved appearance sources, unresolved motion defects and the stage after
+PR review and merge. Idle received positive user feedback; walk/jab require
+re-authoring and are not approved gameplay animation.
+
+The illustrated 2.5D playable proof covers the normal man and woman in studio
+and elevated gameplay views, skin/hair colors, a complete outfit swap and
+idle/walk/jab previews. Launch it from the repository root:
+
+```bash
+app/Builds/Linux/SoloGym.x86_64 \
+  -screen-fullscreen 0 -screen-width 853 -screen-height 1844 \
+  -sologym-review -sologym-window character -sologym-locale es \
+  -sologym-avatar-renderer illustrated
+```
+
+This opt-in preview does not save a character. See the
+[proof contract, provenance and validation](../design/character-2-5d/playable-proof-r1/README.md)
+before deriving additional bodies or equipment. Approval of the fourteen
+appearance masters does not approve their runtime derivatives.
+
+The following command opens the earlier registered-piece proof:
+
+Review mode: **full-screen character studio** (CAS-style dock + overlay carousel, single avatar host).
+
+```bash
+app/Builds/Linux/SoloGym.x86_64 -screen-fullscreen 0 -screen-width 853 -screen-height 1844 \
+  -sologym-review -sologym-window character -sologym-locale es \
+  -sologym-capture "$PWD/artifacts/visual/WIN-013/studio-es-g3.png" -sologym-smoke
+```
+
+Do not pass `-batchmode -nographics` for character captures (Linux screenshots come out blank).
+
+For interactive character review, omit `-sologym-smoke`: the screenshot is saved once and the studio stays open for customization. Add `-sologym-quit-after-capture` when an automated screenshot command should exit. `-sologym-smoke` still runs the checks and exits with their result.
+
+Review-only variants: `-sologym-character-view face`, `gear` or `body` opens that category. `-sologym-avatar-variant alternate` selects deep skin, swept hair, bare torso and bare hands through the regular customization controller. The character smoke checks pointer priority, camera changes, hair sprites, equipment visibility, mirrored poses and attachment registration before the setup checkpoint.
+
+Reference compositor check: same window plus `-sologym-avatar-reference-check` (writes `artifacts/visual/AvatarReference/reference-check.json`). Rig tuning: `-sologym-window avatar` with `-sologym-capture`.
+
+Schedule review checkpoint opens this window; continue shows setup-complete notice and returns to Welcome. See [WIN-013 implementation](../docs/windows/WIN-013-implementation.md).
 
 ## Layered UI verification
 

@@ -1,0 +1,12 @@
+{
+  "window_id": "WIN-013",
+  "gate": "G3",
+  "version": 1,
+  "locale": ["en", "es"],
+  "description": "Full-screen character studio: hero stage, category dock, overlay carousel, tap regions.",
+  "renders": [
+    { "locale": "es", "path": "design/renders/WIN-013-character-studio-es-proposal-g3-v1.png" },
+    { "locale": "en", "path": "design/renders/WIN-013-character-studio-en-proposal-g3-v1.png" }
+  ],
+  "runtime_reference": "artifacts/visual/WIN-013/studio-es-g3.png"
+}

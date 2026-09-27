@@ -22,13 +22,13 @@
       "resource": "AvatarProof/BodyParts-v1",
       "rect": [
         344,
-        23,
+        60,
         299,
-        343
+        306
       ],
       "skin": [
         0,
-        0.12,
+        0.135,
         1,
         1
       ]
@@ -70,13 +70,13 @@
       "resource": "AvatarProof/BodyParts-v1",
       "rect": [
         90,
-        386,
+        418,
         109,
-        281
+        249
       ],
       "skin": [
         0,
-        0.36,
+        0.406,
         1,
         1
       ]
@@ -86,13 +86,13 @@
       "resource": "AvatarProof/BodyParts-v1",
       "rect": [
         435,
-        385,
+        417,
         110,
-        283
+        251
       ],
       "skin": [
         0,
-        0.36,
+        0.406,
         1,
         1
       ]
@@ -166,13 +166,13 @@
       "resource": "AvatarProof/BodyParts-v1",
       "rect": [
         660,
-        685,
+        713,
         164,
-        319
+        291
       ],
       "skin": [
         0,
-        0.54,
+        0.592,
         1,
         1
       ]
@@ -182,13 +182,13 @@
       "resource": "AvatarProof/BodyParts-v1",
       "rect": [
         1059,
-        685,
+        713,
         158,
-        319
+        291
       ],
       "skin": [
         0,
-        0.54,
+        0.592,
         1,
         1
       ]
@@ -269,6 +269,18 @@
         615
       ],
       "skin": []
+    },
+    {
+      "id": "pelvis",
+      "resource": "AvatarProof/BodyParts-v1",
+      "rect": [
+        440,
+        710,
+        72,
+        128
+      ],
+      "skin": []
     }
-  ]
+  ],
+  "registration_notes": "Distal joint caps draw behind proximal limbs. Head owns the neck; torso crop removes the duplicate hollow neck cap while preserving atlas coordinates."
 }

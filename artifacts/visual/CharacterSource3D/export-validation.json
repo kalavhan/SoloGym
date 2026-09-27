@@ -1,0 +1,31 @@
+{
+  "structural_passed": true,
+  "visual_review_status": "pending",
+  "source_revision": "6a41d35035d7d597df9c96ef89514b5334862afed1ff1a0e601594b5168d0247",
+  "mesh_count": 18,
+  "bone_count": 22,
+  "vertices": 21160,
+  "triangles": 40444,
+  "lineage_vertices": 12916,
+  "body_derived_meshes": 4,
+  "sole_min_y": [
+    0.0,
+    0.0
+  ],
+  "height": [
+    1.780417,
+    1.780417
+  ],
+  "meshes_without_weight_lineage": [],
+  "limits": "Does not certify garment collision clearance, silhouette quality or animation quality.",
+  "source_hash_matches": true,
+  "blender_version": "4.5.9 LTS",
+  "export_sha256": "17883401727fbbe5031e4628d1e4f4ab3294f02e2df85419e1cb9f14b0a14f6b",
+  "rejected_corruptions": [
+    "unnormalized skin weights",
+    "NaN geometry",
+    "missing bone",
+    "missing garment shape",
+    "normalized weights on wrong master bone"
+  ]
+}

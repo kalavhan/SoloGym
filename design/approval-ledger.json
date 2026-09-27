@@ -161,9 +161,40 @@
       "artifact": "docs/windows/WIN-012-schedule-session-time-g0.md",
       "render_manifest": "design/reference-manifests/WIN-012-schedule-session-time-v1.json",
       "data_artifact": "data/windows/WIN-012-schedule-session-time.json"
+    },
+    {
+      "window_id": "WIN-013",
+      "gate": "G0",
+      "state": "awaiting_user_approval",
+      "artifact": "docs/windows/WIN-013-character-customization-g0.md",
+      "render_manifest": "design/reference-manifests/WIN-013-character-customization-v1.json",
+      "data_artifact": "data/windows/WIN-013-character-customization.json"
+    },
+    {
+      "window_id": "WIN-013",
+      "gate": "G1",
+      "state": "awaiting_user_approval",
+      "artifact": "docs/windows/WIN-013-character-customization-g1.md",
+      "render_manifest": "design/reference-manifests/WIN-013-character-customization-g1-v1.json",
+      "data_artifact": "app/Assets/SoloGym/Resources/AvatarCustomization/Catalog.json"
+    },
+    {
+      "window_id": "WIN-013",
+      "gate": "character_reference",
+      "state": "awaiting_user_approval",
+      "artifact": "docs/windows/WIN-013-character-reference-r1.md",
+      "data_artifact": "app/Assets/SoloGym/Resources/AvatarReference/proof_male_athletic/ReferenceManifest.json",
+      "verification_artifact": "artifacts/visual/AvatarReference/reference-check.json"
+    },
+    {
+      "window_id": "WIN-013",
+      "gate": "G3",
+      "state": "awaiting_user_approval",
+      "artifact": "docs/windows/WIN-013-character-studio-g3.md",
+      "render_manifest": "design/reference-manifests/WIN-013-character-studio-g3-v1.json"
     }
   ],
-  "required_next_artifact": "Review WIN-012 G0 flow, copy and retained step-1 renders; then native implementation verification. No APK.",
+  "required_next_artifact": "Review WIN-013 G3 studio + character reference check; approve reference manifest golden capture when satisfied. No APK.",
   "welcome_implementation_review": {
     "window_id": "WIN-002",
     "state": "accepted_by_user_report",

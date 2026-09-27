@@ -1,0 +1,22 @@
+{
+  "studio-es-registration-v5": {
+    "capture_written": true,
+    "exit_code": 0
+  },
+  "studio-en-alternate-v5": {
+    "capture_written": true,
+    "exit_code": 0
+  },
+  "studio-es-face-v5": {
+    "capture_written": true,
+    "exit_code": 0
+  },
+  "avatar-jab-v5": {
+    "capture_written": true,
+    "exit_code": 0
+  },
+  "studio-es-interactive-v5": {
+    "capture_written": true,
+    "stayed_open_after_capture": true
+  }
+}

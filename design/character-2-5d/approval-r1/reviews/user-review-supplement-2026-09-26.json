@@ -1,0 +1,12 @@
+{
+  "schema": "sologym.character-art-review-supplement",
+  "version": 1,
+  "source": "explicit_user_chat_reply",
+  "date": "2026-09-26",
+  "question": "Female muscular was left pending with no notes. What should I record for that design?",
+  "id": "female-muscular",
+  "source_revision": 2,
+  "source_sha256": "e5b02d0657dcf0ac418434b215ecb01307a6525f6fe34ed2b5689cf218cfc27a",
+  "status": "changes",
+  "notes": "add a little bit more muscle"
+}

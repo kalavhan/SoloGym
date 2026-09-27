@@ -1,0 +1,6 @@
+Use case: identity-preserve.
+Input image: sole edit target is the attached female muscular r2 board. Preserve the exact same adult identity, face, ponytail, skin, richly shaded manhwa illustration style, outfit, lighting, charcoal background, three-panel layout, full-body framing, poses, cameras, height and baseline. Keep the 1536 by 1024 canvas, with full hair and feet visible. No labels or extra figures.
+
+User's explicit follow-up: add a little bit more muscle
+
+Required edit: Add a LITTLE more muscle to the female muscular preset in ALL THREE figures. Use a restrained increase, about 5 to 10 percent more shoulder/upper-arm and thigh muscle volume, with subtly clearer athletic definition. She should remain smaller in muscle volume than the male muscular counterpart, with upper arms clearly narrower than her head. Do not create giant deltoids, bodybuilder biceps, oversized trapezius or huge quads. Keep the current head, face, bust, waist and hips unchanged. Maintain the same adult female identity and outfit, fitting the armholes to the slight muscle increase. This is a small refinement, not a drastic transformation.

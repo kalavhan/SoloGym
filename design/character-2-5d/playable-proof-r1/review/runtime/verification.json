@@ -1,0 +1,427 @@
+{
+  "structural_passed": true,
+  "source_manifest_sha256": "007b3950ed15444e9377b0e3a05e796d6df4ddfae10d48ed6c07966a76ae00bb",
+  "runtime_proof_sha256": "9c97c90bdefe9f5364f6b2cb77dd476346d1745d740844c78952a6eb3c7a665f",
+  "captures": {
+    "male-studio-base-bind": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 443499,
+      "sha256": "b0a78edaf2de9bef19973fed0c15c83d1c28cb7e83027da3a34f722cfe9744cd"
+    },
+    "male-studio-equipped-bind": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 512322,
+      "sha256": "bb0d8a67dcb0970a2770e90d4cfe0995715a1438b26af55decc2efb565222b6f"
+    },
+    "male-studio-skin-deep": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 502360,
+      "sha256": "f226c8b9325d6bf6b179e38f1e8c3c8d4effc957a9f24a1295868f613017e568"
+    },
+    "male-studio-hair-silver": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 512678,
+      "sha256": "c11eb6435a36a63e60260017682d769e0b6425ddc28a7bec508ccbd94e066931"
+    },
+    "male-gameplay-base-bind": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 441873,
+      "sha256": "3253c0470fa199f7dee0d11ddf3efdba6e58da9c6cb1f177cd38a888dd304122"
+    },
+    "male-gameplay-equipped-bind": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 497227,
+      "sha256": "31404f2785f5ff76aba36d28847b20a3da2299b87fb12634379d516594153da4"
+    },
+    "male-gameplay-skin-deep": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 488476,
+      "sha256": "08d5b38eadcdf2f1524da18f0c6b13a11c066abe768fb0120ac63ad4fac383bf"
+    },
+    "male-gameplay-hair-silver": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 498527,
+      "sha256": "56c646674528e9337f56eda086b71ff7dd5e53a9136edf996c23c8febe8687aa"
+    },
+    "female-studio-base-bind": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 445626,
+      "sha256": "45c7737b01a08fe293f624636e01a6d17c2f94223946373941723632377e6211"
+    },
+    "female-studio-equipped-bind": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 509550,
+      "sha256": "cc4cbbba1c97136d2435e187fa9222aafa8900bef3a4f5d5b6aae01ed6ca0e61"
+    },
+    "female-studio-skin-deep": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 500155,
+      "sha256": "16443345a28e5a247459a7f8d6202f22a71a5fe11a518b486d84a480b9cbcabf"
+    },
+    "female-studio-hair-silver": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 511838,
+      "sha256": "1890a002c7acbb6309a63262a6d8cb51a123e193f81294f65a023afe7e934629"
+    },
+    "female-gameplay-base-bind": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 453525,
+      "sha256": "bd4332e3ce540326ea3093e57592b515e4d06bb2e460980b71802789a5d77b4e"
+    },
+    "female-gameplay-equipped-bind": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 497262,
+      "sha256": "ec52379f6531c71b222a95cccb58adfa4209a80a84fbdb004ee09d0f74bdeb2b"
+    },
+    "female-gameplay-skin-deep": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 488665,
+      "sha256": "6a4b7eb8bb57b9193a1c7ee7f71c9d02a9d3f30838c034166dc7dd634eb7ebb9"
+    },
+    "female-gameplay-hair-silver": {
+      "width": 1075,
+      "height": 1106,
+      "bytes": 499435,
+      "sha256": "6a44a1ab5a91b830e76ae88192cb04ccce2df257dab4dd65788c0eaddd579a44"
+    }
+  },
+  "motion_sequences": {
+    "male-studio-idle": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 24,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-studio-walk": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 20,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-studio-jab": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 9,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-studio-base-idle": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 24,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-studio-base-walk": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 17,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-studio-base-jab": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 9,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-gameplay-idle": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 24,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-gameplay-walk": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 21,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-gameplay-jab": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 9,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-gameplay-base-idle": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 24,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-gameplay-base-walk": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 18,
+      "width": 1075,
+      "height": 1106
+    },
+    "male-gameplay-base-jab": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 8,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-studio-idle": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 24,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-studio-walk": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 20,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-studio-jab": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 9,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-studio-base-idle": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 24,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-studio-base-walk": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 18,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-studio-base-jab": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 9,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-gameplay-idle": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 24,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-gameplay-walk": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 18,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-gameplay-jab": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "equipped",
+      "distinct_frame_hashes": 9,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-gameplay-base-idle": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 24,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-gameplay-base-walk": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 19,
+      "width": 1075,
+      "height": 1106
+    },
+    "female-gameplay-base-jab": {
+      "frame_count": 24,
+      "fps": 12,
+      "outfit": "base",
+      "distinct_frame_hashes": 9,
+      "width": 1075,
+      "height": 1106
+    }
+  },
+  "visual_acceptance_inferred": false,
+  "limits": [
+    "Grounding measures transformed source alpha contours; it does not establish convincing foot shape or contact during motion.",
+    "Changed rendered hashes do not establish tint-mask isolation or visual quality.",
+    "Static equipment states do not establish independently interchangeable equipment layers.",
+    "Motion PNGs sample procedural poses; they are not recordings of user interaction."
+  ],
+  "interactive_capture_stays_open": true,
+  "videos": [
+    {
+      "path": "male-studio-idle.mp4",
+      "sha256": "d86e57c42e74b193ec1f85ab6d73c4c67ef5b7ac2ec1434cf483c418aaa8e52f",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-studio-walk.mp4",
+      "sha256": "a8005490619d5757d839ba54709e26d9ae8cbef839e00753425b7841efa2d5d6",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-studio-jab.mp4",
+      "sha256": "88372baae9d6d9185d2ffb0ff8f5728af0a9eb49e737a8c49dd765bbfbc8b251",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-studio-base-idle.mp4",
+      "sha256": "3099c1fd2c530de848b721eaa07fe713634885b3da75801b174e820568dc0be8",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-studio-base-walk.mp4",
+      "sha256": "6c29c7416816ca5669402cbb25680c46cf73b5597fa0fb2c7d00491a78c170c6",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-studio-base-jab.mp4",
+      "sha256": "5c51150418b9b12db4919289f2a5f130628dafa2a63f2edfbc25bb3eb5ecae70",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-gameplay-idle.mp4",
+      "sha256": "17041dec832448dadfdc7db1d0e5f95ce15a21aa1ec8886307b418e098831948",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-gameplay-walk.mp4",
+      "sha256": "9dbc007d62c5747a5241973fa26a93c46bd8234eebfc4d69e7be27f3399a389d",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-gameplay-jab.mp4",
+      "sha256": "e2631f0bb217ce7263bf1af0d0f30a8e1c071fb7969c49bcd1481515ef65db91",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-gameplay-base-idle.mp4",
+      "sha256": "25b82acbaf800c9cb2515ead391efee6e7a30bc79b290afe4ade8a75704507c4",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-gameplay-base-walk.mp4",
+      "sha256": "18f8971ae4fa02190744897495c5119a3a27a880c3a9d13757d11adc238e734e",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "male-gameplay-base-jab.mp4",
+      "sha256": "89b3e82bbaafcf2ea8cd2f8cac539736a6c57bd5efc5eddf59621d436e46b4f6",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-studio-idle.mp4",
+      "sha256": "0bee97dba865c13295c9dc927ea635d5dccdf9961595cd0e179be04d6e91d707",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-studio-walk.mp4",
+      "sha256": "74c91be66581340c6a911ec3d0e9386584a7aa2fd8a83a207701f16657a959e1",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-studio-jab.mp4",
+      "sha256": "93906e4ff363c564e5c9d269612a0a25af03c7019fe0c67006efab0e7e1d8b78",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-studio-base-idle.mp4",
+      "sha256": "72f5fc2c9f29579e6bf5bdb2ab7f43a2e011c3902ececbdfea9e29c5434f840d",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-studio-base-walk.mp4",
+      "sha256": "7d04ac824538ad99207c14d7c0242e39e2c14f3df06b46af675a25fac69f1d3b",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-studio-base-jab.mp4",
+      "sha256": "8ab087427121f372188902470be18ef0426b657f4cd6ec0ccbb24379a21615c2",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-gameplay-idle.mp4",
+      "sha256": "fe2423f08f5585e0c864cbd9f474caf102b3e5028af4a9b71e6f3ca31aca5c10",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-gameplay-walk.mp4",
+      "sha256": "5553ac999f3dbf4f418bba38c15e4ed8de37369a88961e789f2caa87c5b89965",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-gameplay-jab.mp4",
+      "sha256": "69339afca6a4a0fa8b33a80bd190c51608f42c4379573f0d39b0f713d7e96c0c",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-gameplay-base-idle.mp4",
+      "sha256": "172bbfe3c5086da009d4c9679647c4921e8f4ab8a8d26670f64c30700be1afc2",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-gameplay-base-walk.mp4",
+      "sha256": "d8e2304760c6dddc67b23f82179724a14a6a63924ce406ccc0b2bb50645c9739",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    },
+    {
+      "path": "female-gameplay-base-jab.mp4",
+      "sha256": "a54443a5f44e93f4b24feaa37e4c18e2802376e0c1ccd86ac0c3f58a8f08daee",
+      "description": "2 seconds of deterministic runtime pose samples at 12 fps"
+    }
+  ]
+}

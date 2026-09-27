@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "source_revision": "6a41d35035d7d597df9c96ef89514b5334862afed1ff1a0e601594b5168d0247",
+  "blender_version": "4.5.9 LTS",
+  "source_file": "design/character-source/SoloGymAthlete-v1.blend",
+  "runtime_file": "app/Assets/SoloGym/Resources/AvatarSource3D/Character.json",
+  "mesh_count": 18,
+  "bone_count": 22,
+  "vertices": 21160,
+  "triangles": 40444,
+  "shape_control": {
+    "name": "athletic",
+    "min_target": 0.25,
+    "max_target": 1.0
+  },
+  "coordinates": "Unity X left, Y up, Z front; metres; ground Y=0",
+  "status": "engineering_proof_pending_visual_review"
+}

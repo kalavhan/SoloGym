@@ -1,0 +1,1 @@
+{"passed":false,"recipe_attachments":true,"golden_match":false,"capture_sha256":"32afcbbbc82360a184f7783a3ee257b70658de3808d40c199ebc336a64b92277","expected_sha256":"1fe7428d5cd11d7ea2bd57a9043eba613eadb258d055823d33cdb55cd48c3e0d","detail":"golden sha mismatch (update manifest after approval)"}

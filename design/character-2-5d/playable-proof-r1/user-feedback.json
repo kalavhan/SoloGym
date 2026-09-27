@@ -1,0 +1,27 @@
+{
+  "schema": "sologym.illustrated-proof-user-feedback.v1",
+  "date": "2026-09-26",
+  "source": "User feedback in the current task after reviewing the playable proof",
+  "status": "reviewed_changes_required",
+  "idle": {
+    "feedback": "overall the idle looks great",
+    "status": "positive_user_feedback"
+  },
+  "walk": {
+    "status": "requires_reauthoring",
+    "issues": [
+      "Spring-like repeated movement instead of convincing stride phases and position changes",
+      "Motion looks chopped"
+    ]
+  },
+  "jab": {
+    "status": "requires_reauthoring",
+    "issues": [
+      "A fragment of the leg or clothing moves with the right hand",
+      "The jabbing arm does not match its shoulder"
+    ]
+  },
+  "production_animation_approved": false,
+  "appearance_master_approvals_changed": false,
+  "next_stage": "After PR review and merge, finish character creation and fitted customization assets before gameplay animation."
+}

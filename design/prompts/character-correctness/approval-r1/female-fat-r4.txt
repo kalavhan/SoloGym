@@ -1,0 +1,8 @@
+Use case: precise-object-edit, preserving adult character identity.
+Input image: the attached female FAT r3 approval board is the sole edit target.
+
+The user's requested correction is STILL NOT VISIBLE ENOUGH: her legs are too large. Please make a clear physical reduction in the leg silhouette, not a shading-only change.
+In the LEFT base-body figure, bring the outer and inner calf contours substantially inward: calves must be approximately one-third slimmer than the current image, visibly narrower at their widest points. Reduce the outer thigh bulges and inner thighs so the thighs are about one-fifth slimmer, blending smoothly from the unchanged hips. This should produce much more ordinary-size legs beneath a fuller torso, with soft naturally rounded fatty tissue, no large bowed calf bulges and no quadriceps or calf muscle definition. Keep knees soft. The result must be plainly slimmer than the input when compared side by side, while retaining some soft fullness. Do not shrink the entire character.
+In the CENTER and RIGHT equipped figures, narrow the actual leg and trouser volume consistently to match this new leg anatomy; keep the baggy-trouser garment design but do not keep the old oversized silhouette hidden underneath.
+
+Preserve the FULL protruding belly, broad waist, hips, bust, shoulders, arms, adult face and hairstyle exactly. Keep leg lengths, knee heights, original stance and foot/boot positions unchanged. The torso remains fat; only legs become smaller and softer. Maintain coherent hip-to-thigh anatomy. Preserve boots, equipment details, three-panel 1536x1024 composition, figure heights, cameras, charcoal background, same rich manhwa linework, lighting and material finish. No text, labels, extra figures or watermark.

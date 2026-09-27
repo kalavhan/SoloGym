@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoloGym · Character art approval R1</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets.js" defer></script>
+  <script src="review.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <div class="header-top"><a class="wordmark" href="#top">SOLOGYM <span>ART REVIEW</span></a><span class="revision">ILLUSTRATED 2.5D · R1</span></div>
+    <div class="intro" id="top">
+      <div>
+        <p class="eyebrow">CHARACTER FOUNDATION</p>
+        <h1>Seven builds.<br>One visual identity.</h1>
+        <p class="lead">Fourteen proposals for your approval. Review the body silhouette, then the outfit and the smaller gameplay view. The original illustration is our style reference.</p>
+        <p class="scope-note">These are art proposals. Layer separation, clothing fit in motion and runtime animation are still to be validated.</p>
+      </div>
+      <button class="reference-card" id="open-reference" type="button" aria-label="Open approved visual style reference">
+        <img src="../references/illustrated-style-r1.png" alt="Original approved illustrated character style" width="240" height="180">
+        <span><small>STYLE TARGET</small>Original illustration <b aria-hidden="true">↗</b></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="review-help" aria-label="How to review">
+      <div><span class="step">01</span><p><strong>Compare the silhouette</strong><br>Each named build should be easy to distinguish.</p></div>
+      <div><span class="step">02</span><p><strong>Inspect the full artboard</strong><br>Open a proposal to check skin, hair, face and outfit.</p></div>
+      <div><span class="step">03</span><p><strong>Leave a decision</strong><br>Save notes locally and export them when ready.</p></div>
+    </section>
+
+    <section class="toolbar" aria-label="Filter and compare proposals">
+      <div class="gender-tabs" role="group" aria-label="Character group">
+        <button type="button" data-gender="all" aria-pressed="true">All <span>14</span></button>
+        <button type="button" data-gender="male" aria-pressed="false">Men <span>7</span></button>
+        <button type="button" data-gender="female" aria-pressed="false">Women <span>7</span></button>
+      </div>
+      <label class="preset-filter">Build <select id="preset-filter"><option value="all">All seven presets</option></select></label>
+      <label class="status-filter">Status <select id="review-filter"><option value="all">All decisions</option><option value="needs-review">Needs review</option></select></label>
+      <button class="button secondary" id="toggle-compare" type="button" aria-expanded="false" aria-controls="comparison">Compare two</button>
+      <button class="button secondary" id="export-review" type="button">Export review JSON</button>
+    </section>
+
+    <section id="comparison" class="comparison" hidden aria-label="Compare two character proposals">
+      <div class="section-heading"><div><p class="eyebrow">SIDE BY SIDE</p><h2>Compare silhouettes and consistency</h2></div><button class="text-button" id="close-compare" type="button">Close comparison</button></div>
+      <p class="muted">Choose any two proposals. Open either artboard for a closer look; source images retain their original proportions.</p>
+      <div class="comparison-grid">
+        <div><label for="compare-left">First proposal</label><select id="compare-left"></select><button class="comparison-image" id="compare-left-image" type="button"></button></div>
+        <div><label for="compare-right">Second proposal</label><select id="compare-right"></select><button class="comparison-image" id="compare-right-image" type="button"></button></div>
+      </div>
+    </section>
+
+    <div class="section-heading gallery-heading"><div><p class="eyebrow">APPROVAL ROUND 01</p><h2 id="gallery-title">All character proposals</h2></div><p id="review-count" class="muted" aria-live="polite">Loading review decisions…</p></div>
+    <p class="local-note">Imported decisions travel with this gallery. Newer decisions and notes stay in this browser until exported. Revised images start pending, with the previous requested change shown for context. These reviews do not establish production readiness.</p>
+    <div id="gallery" class="gallery" aria-labelledby="gallery-title"></div>
+    <p id="empty-state" class="empty-state" hidden>No proposals match this filter.</p>
+  </main>
+
+  <footer><p><strong>Stable style starts here.</strong> Approved references and source files should stay versioned. Future hair, clothing and body variants must be compared against this same set.</p><a href="README.md">Review instructions</a></footer>
+
+  <dialog id="artboard-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header"><div><p class="eyebrow" id="dialog-kicker">CHARACTER PROPOSAL</p><h2 id="dialog-title"></h2></div><button class="button secondary" id="close-dialog" type="button" aria-label="Close full artboard">Close <span aria-hidden="true">×</span></button></div>
+    <div class="dialog-tools"><div class="zoom-tools"><button type="button" id="zoom-out" aria-label="Zoom out">−</button><button type="button" id="zoom-reset">Fit</button><button type="button" id="zoom-in" aria-label="Zoom in">+</button><output id="zoom-value" aria-live="polite">100%</output></div><p>+ / − zoom · 0 fit · ← / → next proposal · Esc close</p><a id="open-source" href="#" target="_blank" rel="noopener">Open image ↗</a></div>
+    <div class="artboard-viewport" id="artboard-viewport" tabindex="0" aria-label="Scrollable artboard, use plus or minus to zoom"><img id="dialog-image" alt="" draggable="false"></div>
+    <div class="dialog-bottom"><button class="button secondary" id="previous-artboard" type="button">← Previous</button><span id="dialog-position"></span><button class="button secondary" id="next-artboard" type="button">Next →</button></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>

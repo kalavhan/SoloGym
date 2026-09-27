@@ -127,5 +127,73 @@ namespace SoloGym
             affordance.Initialize(scroll,viewportPageRect,rowStride,chevronParent??scroll.viewport.parent);
             return affordance;
         }
+
+        public struct WorkshopTileSpec
+        {
+            public string key;
+            public bool selected, enabled;
+            public Color tileColor;
+            public string caption;
+            public Action onSelect;
+        }
+
+        public static float SkinSwatchRow(Transform parent,float y,float width,float swatchSize,float gap,WorkshopTileSpec[] swatches,System.Collections.Generic.Dictionary<string,Button> controls=null)
+        {
+            float x=12+(width-(swatches.Length*swatchSize+(swatches.Length-1)*gap))*0.5f;
+            for(int i=0;i<swatches.Length;i++)
+            {
+                var spec=swatches[i];
+                var rect=new Rect(x+i*(swatchSize+gap),y,swatchSize,swatchSize);
+                var b=SkinSwatchButton(parent,rect,spec.selected,spec.enabled,spec.tileColor,spec.onSelect);
+                if(controls!=null&&spec.key!=null)controls[spec.key]=b;
+            }
+            return y+swatchSize+12;
+        }
+
+        public static Button SkinSwatchButton(Transform parent,Rect r,bool selected,bool enabled,Color fill,Action action)
+        {
+            var frame=Panel(parent,new Rect(r.x-4,r.y-4,r.width+8,r.height+8),selected?PanelStyle.Selected:PanelStyle.Outline);
+            frame.raycastTarget=true;if(!selected)frame.rimWidth=2f;
+            var inner=Node("Swatch",frame.transform,new Rect(4,4,r.width,r.height)).gameObject.AddComponent<Image>();
+            inner.color=fill;inner.raycastTarget=false;
+            var b=frame.gameObject.AddComponent<Button>();b.targetGraphic=frame;b.interactable=enabled;
+            var colors=b.colors;colors.disabledColor=new Color(.35f,.4f,.5f,.5f);b.colors=colors;
+            b.onClick.AddListener(()=>{if(enabled)action?.Invoke();});
+            if(!enabled){inner.color=fill*new Color(.45f,.45f,.45f,1f);}
+            return b;
+        }
+
+        public static float OptionThumbnailRow(Transform parent,float y,float width,string sectionLabel,float tileSize,float gap,WorkshopTileSpec[] tiles,Font sectionFont,System.Collections.Generic.Dictionary<string,Button> controls=null)
+        {
+            Text(parent,new Rect(12,y,width-24,28),sectionLabel,22,sectionFont??Theme.heading,Theme.text,TextAnchor.MiddleLeft);
+            y+=32;
+            float rowH=tileSize+22;
+            float x=12;
+            for(int i=0;i<tiles.Length;i++)
+            {
+                var spec=tiles[i];
+                if(x+tileSize>width-12){x=12;y+=rowH+gap;}
+                var b=OptionThumbnailButton(parent,new Rect(x,y,tileSize,tileSize+20),spec);
+                if(controls!=null&&spec.key!=null)controls[spec.key]=b;
+                x+=tileSize+gap;
+            }
+            return y+rowH+10;
+        }
+
+        static Button OptionThumbnailButton(Transform parent,Rect r,WorkshopTileSpec spec)
+        {
+            var tileRect=new Rect(r.x,r.y,r.width,r.height-20);
+            var frame=Panel(parent,tileRect,spec.selected?PanelStyle.Selected:PanelStyle.Outline);
+            frame.raycastTarget=true;if(!spec.selected)frame.rimWidth=2f;
+            var fill=Node("Tile fill",frame.transform,new Rect(6,6,tileRect.width-12,tileRect.height-12)).gameObject.AddComponent<Image>();
+            fill.color=spec.tileColor;fill.raycastTarget=false;
+            if(!string.IsNullOrEmpty(spec.caption))
+                Caption(parent,new Rect(r.x,r.y+tileRect.height,r.width,18),spec.caption,14,Theme.body,spec.enabled?Theme.muted:Theme.muted*.7f);
+            var b=frame.gameObject.AddComponent<Button>();b.targetGraphic=frame;b.interactable=spec.enabled;
+            var colors=b.colors;colors.disabledColor=new Color(.35f,.4f,.5f,.45f);b.colors=colors;
+            b.onClick.AddListener(()=>{if(spec.enabled)spec.onSelect?.Invoke();});
+            if(!spec.enabled)fill.color=spec.tileColor*new Color(.4f,.4f,.4f,1f);
+            return b;
+        }
     }
 }

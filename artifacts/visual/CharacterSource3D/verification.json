@@ -1,0 +1,158 @@
+{
+  "structural_passed": true,
+  "visual_review_status": "pending",
+  "captures": {
+    "bare-front": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "a6e08ff0747b4d78229f4fe8b1afe3999a69ae14898ad5cee964c065bda6ccc3"
+    },
+    "bare-side": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "7958a95965dc1274547677761c11a2c3da5841abc538e0a3b7907fb9ee9c5fb9"
+    },
+    "bare-back": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "53bdc9714e1a6ecae3575a5d789a405c053fa8aba6ebc258d3205e9839c32539"
+    },
+    "bare-three-quarter": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "a29382446abc2d630a353d9f5653bd323bb74cd1decc731c96e2d4d154e90b03"
+    },
+    "bare-gameplay": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "15e58aeb43f1b0ae64fa44212a8b361882c14908eec78a4f3cd628ff01eae43e"
+    },
+    "equipped-front": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "b4229d26fdb3662ed0f0c9a8405252bb5c33670ea03763bafaaaaa4678a12f57"
+    },
+    "equipped-side": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "144679d1212f3e1474fe76e2c171103fd769973dbf90bbcfce1e71d0da039af5"
+    },
+    "equipped-back": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "c2eae2fffbf227bf72f16d7b45ff672d9c0a9b575da274f4d7c101a686f7cc3e"
+    },
+    "equipped-three-quarter": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "62c7cdc5a403ed18721311a8c94ce75e3afec2b16cd37d254bc0cce3fef43e2a"
+    },
+    "equipped-gameplay": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "7dd9d92c6fde407e9a092d0fa90588951deef320fe094c0dd9d44e437ea6e471"
+    },
+    "equipped-face": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "6ef9393aee42dac6724aa61b9c692aa1df66c995138f424254ff0c4fb3078e09"
+    },
+    "alternate-face": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "f9ae630e384dfc63d9da46c4ccd63bdb409b8edcc0d378d8e33cfb7e971e2ec1"
+    },
+    "alternate-gameplay": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "a6c6f7b5bc4f3cfa9f0ca1381e42f7748fa91f8d32cbd7fb15f09de64ab699b0"
+    },
+    "walk-gameplay": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "4c8be78ae7108cbe4d30f7a5a31a27cade61607155e0b5e70c5c3b97f9b496b6"
+    },
+    "jab-gameplay": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "3f7be502645f736b951ef40664895b56f9e2751730d4f502e0bf8d03272ea5e1"
+    },
+    "shape-min-equipped": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "65f48a6438a99c10866fe3a3af813f3aba65f8e9b033d2a5d4a699a5a8b013af"
+    },
+    "shape-mid-equipped": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "62c7cdc5a403ed18721311a8c94ce75e3afec2b16cd37d254bc0cce3fef43e2a"
+    },
+    "shape-max-equipped": {
+      "width": 998,
+      "height": 1110,
+      "sha256": "f5f7254844ebe7fec7649f4e8edbba8c23398736fc05a22eb72bdf85093d9455"
+    },
+    "studio-es-source": {
+      "width": 853,
+      "height": 1844,
+      "sha256": "067789f5d2a2be6bf668033063f2e4a9d6c8fd04739b57ff1e9b6277f7b74363"
+    },
+    "studio-es-gameplay": {
+      "width": 853,
+      "height": 1844,
+      "sha256": "460d193cffff556b38460b2cefae2df17fb236a0eddea05d7a5097c4bd3c071c"
+    },
+    "studio-en-face": {
+      "width": 853,
+      "height": 1844,
+      "sha256": "226c29e9825fb81f2ae192dce9789c1b64fc3dccde7768c500a97e31f2144cba"
+    },
+    "studio-es-alternate": {
+      "width": 853,
+      "height": 1844,
+      "sha256": "6aecfcfb2d7ac78f48cee70a25dec27e8b0e4bdd8647b5c276f073d5006fa2a6"
+    },
+    "studio-es-interactive": {
+      "width": 853,
+      "height": 1844,
+      "sha256": "067789f5d2a2be6bf668033063f2e4a9d6c8fd04739b57ff1e9b6277f7b74363"
+    }
+  },
+  "source_sha256": "f1949914b30b93c49b0e06bcb3697f0f30065a85e4cc94976875b8c87b02226f",
+  "studio_checks": [
+    "character state checks",
+    "source character loaded",
+    "source geometry and rig valid",
+    "skin dock opens",
+    "skin option available",
+    "skin recipe applied to source",
+    "head pointer hit priority",
+    "head opens source face camera",
+    "hair tab opens",
+    "spiky hair available",
+    "spiky hair geometry applied",
+    "swept hair available",
+    "swept hair geometry applied",
+    "body dock opens",
+    "full source camera restored",
+    "gear dock opens",
+    "torso slot opens",
+    "unequip torso available",
+    "fitted torso removed",
+    "equip torso available",
+    "fitted torso restored",
+    "hands slot opens",
+    "unequip gloves available",
+    "fitted gloves removed",
+    "equip gloves available",
+    "fitted gloves restored",
+    "rotate control available",
+    "rotate changes source yaw",
+    "idle source rig valid",
+    "walk source rig valid",
+    "jab source rig valid",
+    "continue control available",
+    "setup complete checkpoint"
+  ],
+  "interactive_capture_stays_open": true
+}

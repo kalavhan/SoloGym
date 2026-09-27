@@ -1,0 +1,7 @@
+Use case: identity-preserve.
+Input image: the attached artboard is the sole EDIT TARGET and authoritative reference.
+Apply the user's specific body correction below. Preserve the same adult character identity, face, hairstyle, skin color, richly shaded manhwa game illustration, outfit designs/materials, charcoal background, lighting, three-panel full-body composition, camera angles, pose, nominal height and baseline. Keep the entire hairstyle and feet visible. Left is base body, center equipped, right equipped elevated gameplay view. Apply the anatomy correction coherently across all three figures and fit clothing accordingly. Maintain the original 1536 by 1024 canvas. No text, labels, extra figures or watermark.
+
+User's review note (verbatim): man boobs a little big bigger and belly bigger
+
+Required edit: Make his soft chest modestly fuller with natural breast fullness, and make his round belly visibly larger and more projecting, roughly 15 percent more belly volume. Show soft fatty chest tissue rather than defined pectoral muscles, with subtle natural folds and gravity. Increase the lower-abdomen roundness and waist fullness consistently in ALL THREE figures. The equipped shirt must fit over the same fuller chest and rounded belly without compressing him back to the previous size. Preserve his face, limbs, stance and all other design elements.

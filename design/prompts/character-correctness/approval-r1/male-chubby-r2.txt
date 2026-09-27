@@ -1,0 +1,7 @@
+Use case: identity-preserve.
+Input image: the attached artboard is the sole EDIT TARGET and authoritative reference.
+Apply the user's specific body correction below. Preserve the same adult character identity, face, hairstyle, skin color, richly shaded manhwa game illustration, outfit designs/materials, charcoal background, lighting, three-panel full-body composition, camera angles, pose, nominal height and baseline. Keep the entire hairstyle and feet visible. Left is base body, center equipped, right equipped elevated gameplay view. Apply the anatomy correction coherently across all three figures and fit clothing accordingly. Maintain the original 1536 by 1024 canvas. No text, labels, extra figures or watermark.
+
+User's review note (verbatim): arms less muscular, he is chubby
+
+Required edit: Change ONLY the arms and their shoulder connections in ALL THREE views so this chubby man has soft, untrained-looking arms. Remove sculpted deltoid caps, biceps/triceps separation and hard muscle shadows. Reduce the current muscle bulges moderately, retaining natural fullness from fat with smooth rounded contours. The exposed arms should not look muscular or bodybuilder-like. Keep his current chubby belly, waist, legs and all other body features. Fit the shirt armholes naturally to the softer shoulders.

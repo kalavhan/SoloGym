@@ -1,0 +1,255 @@
+{
+  "schema": "sologym.illustrated-review-package.v1",
+  "packaged_at_utc": "2026-09-27T01:32:32.841469+00:00",
+  "source_capture_directory": "artifacts/visual/IllustratedCharacterProof/r6-final",
+  "structural_passed": true,
+  "visual_review_status": "pending",
+  "production_ready": false,
+  "scope": "Normal man/woman; studio/gameplay; complete base/equipped states and procedural idle/walk/jab; skin/hair tint samples.",
+  "known_limits": [
+    "Shoulder joins and clothing behind moving arms still require production art polish.",
+    "Whole outfit states do not establish independent mix-and-match gear.",
+    "Motion covers only the authored studio and elevated gameplay projections.",
+    "Structural verification is not visual approval or production readiness."
+  ],
+  "registration": {
+    "original_path": "app/Assets/SoloGym/Resources/AvatarIllustrated/Registration.json",
+    "snapshot": "Registration.snapshot.json",
+    "sha256": "007b3950ed15444e9377b0e3a05e796d6df4ddfae10d48ed6c07966a76ae00bb"
+  },
+  "capture_counts": {
+    "static_pngs": 16,
+    "motion_mp4s": 24,
+    "full_menu_pngs": 2,
+    "verified_frames": 592,
+    "verified_motion_sequences": 24
+  },
+  "raw_motion_frames_packaged": false,
+  "files": [
+    {
+      "path": "Registration.snapshot.json",
+      "bytes": 91388,
+      "sha256": "007b3950ed15444e9377b0e3a05e796d6df4ddfae10d48ed6c07966a76ae00bb"
+    },
+    {
+      "path": "female-gameplay-base-idle.mp4",
+      "bytes": 95834,
+      "sha256": "172bbfe3c5086da009d4c9679647c4921e8f4ab8a8d26670f64c30700be1afc2"
+    },
+    {
+      "path": "female-gameplay-base-jab.mp4",
+      "bytes": 122401,
+      "sha256": "a54443a5f44e93f4b24feaa37e4c18e2802376e0c1ccd86ac0c3f58a8f08daee"
+    },
+    {
+      "path": "female-gameplay-base-walk.mp4",
+      "bytes": 193789,
+      "sha256": "d8e2304760c6dddc67b23f82179724a14a6a63924ce406ccc0b2bb50645c9739"
+    },
+    {
+      "path": "female-gameplay-idle.mp4",
+      "bytes": 110476,
+      "sha256": "fe2423f08f5585e0c864cbd9f474caf102b3e5028af4a9b71e6f3ca31aca5c10"
+    },
+    {
+      "path": "female-gameplay-jab.mp4",
+      "bytes": 138644,
+      "sha256": "69339afca6a4a0fa8b33a80bd190c51608f42c4379573f0d39b0f713d7e96c0c"
+    },
+    {
+      "path": "female-gameplay-walk.mp4",
+      "bytes": 225151,
+      "sha256": "5553ac999f3dbf4f418bba38c15e4ed8de37369a88961e789f2caa87c5b89965"
+    },
+    {
+      "path": "female-studio-base-idle.mp4",
+      "bytes": 93387,
+      "sha256": "72f5fc2c9f29579e6bf5bdb2ab7f43a2e011c3902ececbdfea9e29c5434f840d"
+    },
+    {
+      "path": "female-studio-base-jab.mp4",
+      "bytes": 117031,
+      "sha256": "8ab087427121f372188902470be18ef0426b657f4cd6ec0ccbb24379a21615c2"
+    },
+    {
+      "path": "female-studio-base-walk.mp4",
+      "bytes": 198231,
+      "sha256": "7d04ac824538ad99207c14d7c0242e39e2c14f3df06b46af675a25fac69f1d3b"
+    },
+    {
+      "path": "female-studio-idle.mp4",
+      "bytes": 111146,
+      "sha256": "0bee97dba865c13295c9dc927ea635d5dccdf9961595cd0e179be04d6e91d707"
+    },
+    {
+      "path": "female-studio-jab.mp4",
+      "bytes": 138917,
+      "sha256": "93906e4ff363c564e5c9d269612a0a25af03c7019fe0c67006efab0e7e1d8b78"
+    },
+    {
+      "path": "female-studio-menu.png",
+      "bytes": 3149457,
+      "sha256": "8cf4ade5b630d25a90b038ca83a0efb6965aa3b4d83b6f6563bb579c0cacef36"
+    },
+    {
+      "path": "female-studio-walk.mp4",
+      "bytes": 242692,
+      "sha256": "74c91be66581340c6a911ec3d0e9386584a7aa2fd8a83a207701f16657a959e1"
+    },
+    {
+      "path": "illustrated-proof.json",
+      "bytes": 730239,
+      "sha256": "9c97c90bdefe9f5364f6b2cb77dd476346d1745d740844c78952a6eb3c7a665f"
+    },
+    {
+      "path": "male-gameplay-base-idle.mp4",
+      "bytes": 85258,
+      "sha256": "25b82acbaf800c9cb2515ead391efee6e7a30bc79b290afe4ade8a75704507c4"
+    },
+    {
+      "path": "male-gameplay-base-jab.mp4",
+      "bytes": 105921,
+      "sha256": "89b3e82bbaafcf2ea8cd2f8cac539736a6c57bd5efc5eddf59621d436e46b4f6"
+    },
+    {
+      "path": "male-gameplay-base-walk.mp4",
+      "bytes": 169210,
+      "sha256": "18f8971ae4fa02190744897495c5119a3a27a880c3a9d13757d11adc238e734e"
+    },
+    {
+      "path": "male-gameplay-idle.mp4",
+      "bytes": 104821,
+      "sha256": "17041dec832448dadfdc7db1d0e5f95ce15a21aa1ec8886307b418e098831948"
+    },
+    {
+      "path": "male-gameplay-jab.mp4",
+      "bytes": 127041,
+      "sha256": "e2631f0bb217ce7263bf1af0d0f30a8e1c071fb7969c49bcd1481515ef65db91"
+    },
+    {
+      "path": "male-gameplay-walk.mp4",
+      "bytes": 209526,
+      "sha256": "9dbc007d62c5747a5241973fa26a93c46bd8234eebfc4d69e7be27f3399a389d"
+    },
+    {
+      "path": "male-studio-base-idle.mp4",
+      "bytes": 87993,
+      "sha256": "3099c1fd2c530de848b721eaa07fe713634885b3da75801b174e820568dc0be8"
+    },
+    {
+      "path": "male-studio-base-jab.mp4",
+      "bytes": 112329,
+      "sha256": "5c51150418b9b12db4919289f2a5f130628dafa2a63f2edfbc25bb3eb5ecae70"
+    },
+    {
+      "path": "male-studio-base-walk.mp4",
+      "bytes": 214569,
+      "sha256": "6c29c7416816ca5669402cbb25680c46cf73b5597fa0fb2c7d00491a78c170c6"
+    },
+    {
+      "path": "male-studio-idle.mp4",
+      "bytes": 110181,
+      "sha256": "d86e57c42e74b193ec1f85ab6d73c4c67ef5b7ac2ec1434cf483c418aaa8e52f"
+    },
+    {
+      "path": "male-studio-jab.mp4",
+      "bytes": 140057,
+      "sha256": "88372baae9d6d9185d2ffb0ff8f5728af0a9eb49e737a8c49dd765bbfbc8b251"
+    },
+    {
+      "path": "male-studio-menu.png",
+      "bytes": 3146979,
+      "sha256": "e811b718c4f7b01650737f7e030e613c6b60c16266602c1f4d31756e36c561f8"
+    },
+    {
+      "path": "male-studio-walk.mp4",
+      "bytes": 253157,
+      "sha256": "a8005490619d5757d839ba54709e26d9ae8cbef839e00753425b7841efa2d5d6"
+    },
+    {
+      "path": "static/female-gameplay-base-bind.png",
+      "bytes": 453525,
+      "sha256": "bd4332e3ce540326ea3093e57592b515e4d06bb2e460980b71802789a5d77b4e"
+    },
+    {
+      "path": "static/female-gameplay-equipped-bind.png",
+      "bytes": 497262,
+      "sha256": "ec52379f6531c71b222a95cccb58adfa4209a80a84fbdb004ee09d0f74bdeb2b"
+    },
+    {
+      "path": "static/female-gameplay-hair-silver.png",
+      "bytes": 499435,
+      "sha256": "6a44a1ab5a91b830e76ae88192cb04ccce2df257dab4dd65788c0eaddd579a44"
+    },
+    {
+      "path": "static/female-gameplay-skin-deep.png",
+      "bytes": 488665,
+      "sha256": "6a4b7eb8bb57b9193a1c7ee7f71c9d02a9d3f30838c034166dc7dd634eb7ebb9"
+    },
+    {
+      "path": "static/female-studio-base-bind.png",
+      "bytes": 445626,
+      "sha256": "45c7737b01a08fe293f624636e01a6d17c2f94223946373941723632377e6211"
+    },
+    {
+      "path": "static/female-studio-equipped-bind.png",
+      "bytes": 509550,
+      "sha256": "cc4cbbba1c97136d2435e187fa9222aafa8900bef3a4f5d5b6aae01ed6ca0e61"
+    },
+    {
+      "path": "static/female-studio-hair-silver.png",
+      "bytes": 511838,
+      "sha256": "1890a002c7acbb6309a63262a6d8cb51a123e193f81294f65a023afe7e934629"
+    },
+    {
+      "path": "static/female-studio-skin-deep.png",
+      "bytes": 500155,
+      "sha256": "16443345a28e5a247459a7f8d6202f22a71a5fe11a518b486d84a480b9cbcabf"
+    },
+    {
+      "path": "static/male-gameplay-base-bind.png",
+      "bytes": 441873,
+      "sha256": "3253c0470fa199f7dee0d11ddf3efdba6e58da9c6cb1f177cd38a888dd304122"
+    },
+    {
+      "path": "static/male-gameplay-equipped-bind.png",
+      "bytes": 497227,
+      "sha256": "31404f2785f5ff76aba36d28847b20a3da2299b87fb12634379d516594153da4"
+    },
+    {
+      "path": "static/male-gameplay-hair-silver.png",
+      "bytes": 498527,
+      "sha256": "56c646674528e9337f56eda086b71ff7dd5e53a9136edf996c23c8febe8687aa"
+    },
+    {
+      "path": "static/male-gameplay-skin-deep.png",
+      "bytes": 488476,
+      "sha256": "08d5b38eadcdf2f1524da18f0c6b13a11c066abe768fb0120ac63ad4fac383bf"
+    },
+    {
+      "path": "static/male-studio-base-bind.png",
+      "bytes": 443499,
+      "sha256": "b0a78edaf2de9bef19973fed0c15c83d1c28cb7e83027da3a34f722cfe9744cd"
+    },
+    {
+      "path": "static/male-studio-equipped-bind.png",
+      "bytes": 512322,
+      "sha256": "bb0d8a67dcb0970a2770e90d4cfe0995715a1438b26af55decc2efb565222b6f"
+    },
+    {
+      "path": "static/male-studio-hair-silver.png",
+      "bytes": 512678,
+      "sha256": "c11eb6435a36a63e60260017682d769e0b6425ddc28a7bec508ccbd94e066931"
+    },
+    {
+      "path": "static/male-studio-skin-deep.png",
+      "bytes": 502360,
+      "sha256": "f226c8b9325d6bf6b179e38f1e8c3c8d4effc957a9f24a1295868f613017e568"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 13486,
+      "sha256": "8be75ad3c7f29fca026e813990e5ff946af3898e68cbc04e25333a7829aef3b9"
+    }
+  ]
+}

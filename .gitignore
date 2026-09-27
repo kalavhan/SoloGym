@@ -24,6 +24,10 @@ artifacts/local/
 artifacts/visual/UI-migration/final/local-config/
 artifacts/visual/UI-migration/final/motion/
 
+# Local iteration frames; the compact reviewed package is versioned under design/.
+artifacts/visual/IllustratedCharacterProof/
+*.blend1
+
 # Reproducible official Firebase SDK: tools/install_firebase_unity.py (not vendored).
 app/Assets/Firebase/
 app/Assets/Firebase.meta

@@ -1,0 +1,20 @@
+{
+  "window_id": "WIN-013",
+  "gate": "G1",
+  "version": 1,
+  "locale": ["en", "es"],
+  "description": "Character workshop scroll: skin swatch row, face close-up with trait rows, fit family tiles, equipment slot rows.",
+  "renders": [
+    {
+      "locale": "es",
+      "path": "design/renders/WIN-013-character-customization-es-proposal-g1-v1.png",
+      "sha256": "pending_capture"
+    },
+    {
+      "locale": "en",
+      "path": "design/renders/WIN-013-character-customization-en-proposal-g1-v1.png",
+      "sha256": "pending_capture"
+    }
+  ],
+  "runtime_reference": "artifacts/visual/WIN-013/character-es-workshop-g1.png"
+}

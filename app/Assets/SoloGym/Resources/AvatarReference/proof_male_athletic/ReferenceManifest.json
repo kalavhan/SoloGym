@@ -1,0 +1,313 @@
+{
+  "schema_version": "1.1.0",
+  "fit_family_id": "proof_male_athletic",
+  "view_id": "front_proof",
+  "status": "engineering_reference_pending_visual_acceptance",
+  "notes": [
+    "rig_layout is the single registration for this fit and view: top-left pixels, uniform source scales, back-to-front pieces.",
+    "The skeleton and sprite sorting are independent. Recipes can be shared by studio and gameplay; this atlas supplies one mirrored proof view, not oblique direction art."
+  ],
+  "golden_capture": {
+    "recipe": {
+      "baseId": "proof_male_athletic_v1",
+      "fitId": "proof_male_athletic",
+      "fitFamilyId": "proof_male_athletic",
+      "skinPaletteId": "warm",
+      "hairId": "spiky",
+      "eyesId": "proof_eyes",
+      "mouthId": "proof_mouth",
+      "torsoItemId": "",
+      "handItemId": ""
+    },
+    "resource_png": "AvatarReference/proof_male_athletic_front_golden",
+    "expected_sha256": "1fe7428d5cd11d7ea2bd57a9043eba613eadb258d055823d33cdb55cd48c3e0d",
+    "viewport": {
+      "width": 512,
+      "height": 640
+    }
+  },
+  "stage_anchor": {
+    "rig_pivot_x": 0.5,
+    "rig_pivot_y": 0.26,
+    "clip_width": 665,
+    "clip_height": 740
+  },
+  "camera_presets": {
+    "fullBody": {
+      "rig_scale": 1.06,
+      "rig_offset_x": 0,
+      "rig_offset_y": 0,
+      "animate_limbs": true
+    },
+    "faceCloseUp": {
+      "rig_scale": 2.8,
+      "rig_offset_x": 0,
+      "rig_offset_y": -280,
+      "animate_limbs": false,
+      "anchor_socket": "head"
+    }
+  },
+  "hit_regions": [
+    {
+      "id": "skin",
+      "category": "skin",
+      "rect": [
+        0.24,
+        0.09,
+        0.52,
+        0.86
+      ]
+    },
+    {
+      "id": "body",
+      "category": "body",
+      "rect": [
+        0.34,
+        0.56,
+        0.32,
+        0.4
+      ]
+    },
+    {
+      "id": "torso",
+      "category": "gear",
+      "rect": [
+        0.34,
+        0.24,
+        0.32,
+        0.34
+      ]
+    },
+    {
+      "id": "head",
+      "category": "face",
+      "rect": [
+        0.4,
+        0.04,
+        0.2,
+        0.22
+      ]
+    }
+  ],
+  "rig_layout": {
+    "joints": [
+      {
+        "id": "head",
+        "parent": "root",
+        "x": 3,
+        "y": -112
+      },
+      {
+        "id": "shoulder_far",
+        "parent": "root",
+        "x": -74,
+        "y": 34
+      },
+      {
+        "id": "elbow_far",
+        "parent": "shoulder_far",
+        "x": -37,
+        "y": 110
+      },
+      {
+        "id": "wrist_far",
+        "parent": "elbow_far",
+        "x": -2,
+        "y": 98
+      },
+      {
+        "id": "shoulder_near",
+        "parent": "root",
+        "x": 74,
+        "y": 34
+      },
+      {
+        "id": "elbow_near",
+        "parent": "shoulder_near",
+        "x": 41,
+        "y": 110
+      },
+      {
+        "id": "wrist_near",
+        "parent": "elbow_near",
+        "x": 0,
+        "y": 98
+      },
+      {
+        "id": "hip_far",
+        "parent": "root",
+        "x": -39,
+        "y": 197
+      },
+      {
+        "id": "knee_far",
+        "parent": "hip_far",
+        "x": -16,
+        "y": 131
+      },
+      {
+        "id": "hip_near",
+        "parent": "root",
+        "x": 39,
+        "y": 197
+      },
+      {
+        "id": "knee_near",
+        "parent": "hip_near",
+        "x": 9,
+        "y": 131
+      }
+    ],
+    "pieces": [
+      {
+        "id": "calf_left",
+        "socket": "knee_far",
+        "x": -60,
+        "y": -3,
+        "scale": 0.5
+      },
+      {
+        "id": "calf_right",
+        "socket": "knee_near",
+        "x": -17,
+        "y": -3,
+        "scale": 0.5
+      },
+      {
+        "id": "pelvis",
+        "socket": "root",
+        "x": -21.6,
+        "y": 188,
+        "scale": 0.6
+      },
+      {
+        "id": "thigh_left",
+        "socket": "hip_far",
+        "x": -61,
+        "y": -16,
+        "scale": 0.52
+      },
+      {
+        "id": "thigh_right",
+        "socket": "hip_near",
+        "x": -40,
+        "y": -16,
+        "scale": 0.52
+      },
+      {
+        "id": "forearm_left",
+        "socket": "elbow_far",
+        "x": -30,
+        "y": 3.76,
+        "scale": 0.43
+      },
+      {
+        "id": "forearm_right",
+        "socket": "elbow_near",
+        "x": -17,
+        "y": 3.76,
+        "scale": 0.43
+      },
+      {
+        "id": "upper_left",
+        "socket": "shoulder_far",
+        "x": -60.6,
+        "y": -18.1,
+        "scale": 0.43
+      },
+      {
+        "id": "upper_right",
+        "socket": "shoulder_near",
+        "x": -10.3,
+        "y": -18.1,
+        "scale": 0.43
+      },
+      {
+        "id": "head",
+        "socket": "head",
+        "x": -50.6,
+        "y": -12,
+        "scale": 0.48
+      },
+      {
+        "id": "torso",
+        "socket": "root",
+        "x": -99.7,
+        "y": -5.63,
+        "scale": 0.6667
+      },
+      {
+        "id": "shirt",
+        "socket": "root",
+        "x": -92.5,
+        "y": -28,
+        "scale": 0.32
+      },
+      {
+        "id": "eyes",
+        "socket": "head",
+        "x": -23,
+        "y": 48,
+        "scale": 0.235
+      },
+      {
+        "id": "mouth",
+        "socket": "head",
+        "x": 5,
+        "y": 80,
+        "scale": 0.235
+      },
+      {
+        "id": "hair_spiky",
+        "socket": "head",
+        "x": -56,
+        "y": -27,
+        "scale": 0.46
+      },
+      {
+        "id": "hand_left",
+        "socket": "wrist_far",
+        "x": -24,
+        "y": -9,
+        "scale": 0.34
+      },
+      {
+        "id": "hand_right",
+        "socket": "wrist_near",
+        "x": -23,
+        "y": -9,
+        "scale": 0.34
+      },
+      {
+        "id": "glove_left",
+        "socket": "wrist_far",
+        "x": -25,
+        "y": -12,
+        "scale": 0.15
+      },
+      {
+        "id": "glove_right",
+        "socket": "wrist_near",
+        "x": -28,
+        "y": -12,
+        "scale": 0.15
+      }
+    ],
+    "hair_variants": [
+      {
+        "id": "hair_spiky",
+        "socket": "head",
+        "x": -56,
+        "y": -27,
+        "scale": 0.46
+      },
+      {
+        "id": "hair_swept",
+        "socket": "head",
+        "x": -58,
+        "y": -23,
+        "scale": 0.46
+      }
+    ]
+  }
+}

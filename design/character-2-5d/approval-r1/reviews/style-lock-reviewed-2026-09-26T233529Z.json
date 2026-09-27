@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.0.0",
+  "style_lock_id": "sologym_illustrated_2_5d_r1",
+  "updated_on": "2026-09-26",
+  "style_status": "user_approved",
+  "approval_scope": "Illustrated appearance of illustrated-style-r1.png only; the fourteen requested body candidates and proposed female identity await the requested review.",
+  "approval_evidence": {
+    "source": "user_message",
+    "text": "perfect, lets use this. do the 7 for man and woman and share for me for approval. and we should keep this stable for later designs"
+  },
+  "production_ready": false,
+  "art_direction_document": "docs/design/character-2-5d-art-direction.md",
+  "authoring_contract": "data/art/avatar-contract.json",
+  "batch_manifest": "design/character-2-5d/approval-r1/manifest.json",
+  "rendering_evidence_policy": "Requested board paths below are not evidence of generated files; use the batch manifest for actual outputs, checksums, prompts and review states.",
+  "references": [
+    {
+      "asset_id": "illustrated_style_r1",
+      "path": "design/character-2-5d/references/illustrated-style-r1.png",
+      "sha256": "b204c3012685fcdc6c694e016055b1c21dd2308891fd9208b379aec5a04bc534",
+      "role": "approved_style",
+      "status": "user_approved_style"
+    },
+    {
+      "asset_id": "male_kai_identity_r1",
+      "path": "design/character-2-5d/references/male-kai-identity-r1.png",
+      "sha256": "4a9e97e0e0b73229923ef1d9ee30438601decc30cd80a4b19178c9006f0b7d8f",
+      "role": "male_identity",
+      "status": "existing_identity_reference"
+    },
+    {
+      "asset_id": "female_identity_r1",
+      "path": "design/character-2-5d/references/female-identity-r1.png",
+      "sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667",
+      "role": "proposed_female_identity_from_normal_candidate",
+      "status": "proposed_pending_visual_review"
+    }
+  ],
+  "style_invariants": [
+    "Illustrated 2.5D manhwa character matching the saved approved reference, not generic realistically shaded 3D.",
+    "Authored skin shadows, directional linework, stylized eyes and detailed hair masses remain legible at studio and gameplay sizes.",
+    "One recognizable adult identity per presentation across all seven presets; facial fullness may follow the preset.",
+    "Warm medium skin, black hair, charcoal/black clothing, cyan accents and silver hardware for this comparison.",
+    "Lighting, line quality and material finish remain consistent across the batch.",
+    "Full hairstyle and feet are visible; studio ground baseline and nominal height are held constant without automatic per-body scaling.",
+    "A coherent full-body master precedes any part extraction; independent generation of production limbs is prohibited.",
+    "SoloGym project-specific art direction: female presets use smaller muscle volume than their corresponding male presets, with proportionate arms and legs and restrained definition; this is not a universal claim about anatomy or biology.",
+    "The female fat_muscular preset retains a substantial soft belly, full waist and softer legs with moderate strength cues. Do not distinguish it by amplifying shoulder, upper-arm or leg bulk into bodybuilding proportions.",
+    "Production equipment requires an authored fit for every supported body/view combination, sharing the body registration, pose and frame coordinates. Static approval boards are not rig assets or interchangeable equipment layers."
+  ],
+  "identity_invariants": {
+    "male": {
+      "reference_asset_id": "male_kai_identity_r1",
+      "hair": "short spiky black hair preserving Kai silhouette",
+      "base_clothing": "charcoal shorts"
+    },
+    "female": {
+      "reference_asset_id": "female_identity_r1",
+      "identity_approval": "pending_requested_review",
+      "hair": "black high ponytail with spiky flyaways",
+      "base_clothing": "charcoal sports bra and shorts"
+    }
+  },
+  "review_panels": [
+    {
+      "index": 0,
+      "id": "base_studio",
+      "requirement": "Coherent full-body base view showing the body silhouette, torso volume and limbs."
+    },
+    {
+      "index": 1,
+      "id": "equipped_studio",
+      "requirement": "Same identity, preset and studio pose in fitted high-neck black top, dark pants, gloves and boots with cyan and silver accents."
+    },
+    {
+      "index": 2,
+      "id": "equipped_gameplay",
+      "requirement": "Same equipped character in an elevated three-quarter orthographic-style illustrated view.",
+      "target_camera_elevation_degrees": 30,
+      "exact_camera_matrix_verified": false
+    }
+  ],
+  "body_preset_rules": {
+    "selection_mode": "discrete_presets",
+    "order": [
+      "skinny",
+      "normal",
+      "chubby",
+      "fat",
+      "skinny_muscular",
+      "muscular",
+      "fat_muscular"
+    ],
+    "health_or_fitness_inference_allowed": false,
+    "measurement_driven_selection_allowed": false,
+    "gameplay_strength_mapping_allowed": false,
+    "normal": "Moderate volume and softly flat abdomen; no carved six-pack or exaggerated bodybuilder shoulders.",
+    "fat_muscular": "Substantial soft belly and fuller waist coexist with thick muscular shoulders and limbs; not simply a bulky bodybuilder.",
+    "fit_policy": "Clothing is authored for each actual body/view; never stretch one body or its garment to simulate another."
+  },
+  "review_asset_ids": [
+    "illustrated_male_skinny_r1",
+    "illustrated_male_normal_r1",
+    "illustrated_male_chubby_r1",
+    "illustrated_male_fat_r1",
+    "illustrated_male_skinny_muscular_r1",
+    "illustrated_male_muscular_r1",
+    "illustrated_male_fat_muscular_r1",
+    "illustrated_female_skinny_r1",
+    "illustrated_female_normal_r1",
+    "illustrated_female_chubby_r1",
+    "illustrated_female_fat_r1",
+    "illustrated_female_skinny_muscular_r1",
+    "illustrated_female_muscular_r1",
+    "illustrated_female_fat_muscular_r1"
+  ],
+  "requested_boards": [
+    {
+      "asset_id": "illustrated_male_skinny_r1",
+      "fit_family_id": "male_skinny_r1",
+      "presentation": "male",
+      "build_preset_id": "skinny",
+      "candidate_path": "design/character-2-5d/approval-r1/images/male-skinny-r2.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 2
+    },
+    {
+      "asset_id": "illustrated_male_normal_r1",
+      "fit_family_id": "male_normal_r1",
+      "presentation": "male",
+      "build_preset_id": "normal",
+      "candidate_path": "design/character-2-5d/approval-r1/images/male-normal.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_male_chubby_r1",
+      "fit_family_id": "male_chubby_r1",
+      "presentation": "male",
+      "build_preset_id": "chubby",
+      "candidate_path": "design/character-2-5d/approval-r1/images/male-chubby.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_male_fat_r1",
+      "fit_family_id": "male_fat_r1",
+      "presentation": "male",
+      "build_preset_id": "fat",
+      "candidate_path": "design/character-2-5d/approval-r1/images/male-fat.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_male_skinny_muscular_r1",
+      "fit_family_id": "male_skinny_muscular_r1",
+      "presentation": "male",
+      "build_preset_id": "skinny_muscular",
+      "candidate_path": "design/character-2-5d/approval-r1/images/male-skinny_muscular.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_male_muscular_r1",
+      "fit_family_id": "male_muscular_r1",
+      "presentation": "male",
+      "build_preset_id": "muscular",
+      "candidate_path": "design/character-2-5d/approval-r1/images/male-muscular.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_male_fat_muscular_r1",
+      "fit_family_id": "male_fat_muscular_r1",
+      "presentation": "male",
+      "build_preset_id": "fat_muscular",
+      "candidate_path": "design/character-2-5d/approval-r1/images/male-fat_muscular.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_female_skinny_r1",
+      "fit_family_id": "female_skinny_r1",
+      "presentation": "female",
+      "build_preset_id": "skinny",
+      "candidate_path": "design/character-2-5d/approval-r1/images/female-skinny.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_female_normal_r1",
+      "fit_family_id": "female_normal_r1",
+      "presentation": "female",
+      "build_preset_id": "normal",
+      "candidate_path": "design/character-2-5d/approval-r1/images/female-normal.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_female_chubby_r1",
+      "fit_family_id": "female_chubby_r1",
+      "presentation": "female",
+      "build_preset_id": "chubby",
+      "candidate_path": "design/character-2-5d/approval-r1/images/female-chubby.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_female_fat_r1",
+      "fit_family_id": "female_fat_r1",
+      "presentation": "female",
+      "build_preset_id": "fat",
+      "candidate_path": "design/character-2-5d/approval-r1/images/female-fat.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_female_skinny_muscular_r1",
+      "fit_family_id": "female_skinny_muscular_r1",
+      "presentation": "female",
+      "build_preset_id": "skinny_muscular",
+      "candidate_path": "design/character-2-5d/approval-r1/images/female-skinny_muscular.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 1
+    },
+    {
+      "asset_id": "illustrated_female_muscular_r1",
+      "fit_family_id": "female_muscular_r1",
+      "presentation": "female",
+      "build_preset_id": "muscular",
+      "candidate_path": "design/character-2-5d/approval-r1/images/female-muscular-r2.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 2
+    },
+    {
+      "asset_id": "illustrated_female_fat_muscular_r1",
+      "fit_family_id": "female_fat_muscular_r1",
+      "presentation": "female",
+      "build_preset_id": "fat_muscular",
+      "candidate_path": "design/character-2-5d/approval-r1/images/female-fat_muscular-r3.png",
+      "visual_status": "proposed_visual_pending",
+      "production_ready": false,
+      "selectable": false,
+      "runtime_usable": false,
+      "candidate_revision": 3
+    }
+  ],
+  "revision_policy": {
+    "saved_reference_pixels_are_authoritative": true,
+    "accepted_revisions_immutable": true,
+    "new_changes_require_new_revision_filename": true,
+    "prompt_repetition_guarantees_same_pixels": false,
+    "seed_repetition_guarantees_same_pixels": false,
+    "future_design_policy": "Derive future designs from saved identity/body masters and validate against them; do not regenerate accepted masters for each accessory.",
+    "preserve_previous_revisions_and_review_records": true,
+    "silence_is_approval": false,
+    "required_candidate_records": [
+      "asset_id",
+      "revision",
+      "exact_prompt_reference",
+      "reference_paths_and_sha256",
+      "output_path_and_sha256",
+      "available_generator_metadata",
+      "visual_review_state"
+    ],
+    "unknown_generator_model_or_seed": "Record as unavailable/null; do not invent values."
+  },
+  "runtime_readiness": {
+    "approval_board_is_production_sprite": false,
+    "approval_board_proves_interchangeable_layers": false,
+    "approval_board_proves_skin_recoloring": false,
+    "approval_board_proves_animation": false,
+    "later_verification": [
+      "registered layers and masks for the selected master",
+      "body and equipment share fit/view/frame coordinates",
+      "side/back and hidden skin coverage",
+      "idle/walk/jab in studio and gameplay views",
+      "stable foot contact and no joint gaps or garment intersections"
+    ]
+  },
+  "user_feedback": [
+    {
+      "feedback_id": "female_muscle_proportions_after_fat_muscular_r2",
+      "source": "explicit_user_visual_review",
+      "scope": "SoloGym character art direction only",
+      "reviewed_candidate": "female-fat_muscular r2",
+      "rejection_summary": "Amplified arms and legs looked unrealistically oversized to the user; the arms appeared bigger than the head.",
+      "direction": "Keep female muscle volume smaller than corresponding male presets. Use restrained, proportionate arms and softer legs; retain fat mass with moderate strength cues for female fat_muscular and restrain female muscular definition.",
+      "supersedes": "Earlier assistant recommendation to increase female fat_muscular shoulder, upper-arm and trapezius volume for stronger preset separation.",
+      "biological_generalization": false,
+      "revision_approval_inferred": false
+    }
+  ]
+}
