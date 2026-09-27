@@ -30,6 +30,11 @@ namespace SoloGym
         Vector2 lastSize;
         Rect lastSafeArea;
         bool reviewMode;
+        AutoSpriteStudioScreen autoSpriteStudio;
+        public AutoSpriteAvatarView AutoSpriteAvatar { get; private set; }
+        public Button CharacterButton => buttons["character"];
+        public Button LanguageButton => buttons["language"];
+        public string LanguagePreference => controller.Model.LanguagePreference;
         string requestedCapture;
         static Color Silver => SystemUI.Theme.text;
         static Color Cyan => SystemUI.Theme.accent;
@@ -57,6 +62,11 @@ namespace SoloGym
             Screen.orientation = ScreenOrientation.Portrait;
             reviewMode = Application.isEditor || HasArgument("-sologym-review");
             requestedCapture = Argument("-sologym-capture");
+            if (AutoSpriteSession.Requested)
+            {
+                AutoSpriteSession.Initialize();
+                if (AutoSpriteSession.CaptureTaken || AutoSpriteSession.SmokeStarted) requestedCapture = null;
+            }
             serif = SystemUI.Theme.heading;
             bold = SystemUI.Theme.headingBold;
             body = SystemUI.Theme.body;
@@ -66,7 +76,9 @@ namespace SoloGym
             CreateCanvas();
             CreateArt();
             CreateText();
-            controller = new HomeController(requestedCapture != null ? new HomeSnapshot() : null);
+            controller = new HomeController(AutoSpriteSession.Requested
+                ? new HomeSnapshot { FemalePresentation = true }
+                : requestedCapture != null ? new HomeSnapshot() : null);
             controller.Changed += Render;
             controller.NavigationRequested += Navigate;
             controller.NoticeRequested += message => ShowNotice(message);
@@ -76,6 +88,7 @@ namespace SoloGym
             CreateStateOverlays();
             var locale = Argument("-sologym-locale");
             if (locale != null) controller.SetLanguage(locale);
+            if (AutoSpriteSession.Requested) controller.SetLanguage(AutoSpriteSession.Language);
             if (Enum.TryParse(Argument("-sologym-mode"), out HomeMode mode)) controller.SetMode(mode);
             Render(controller.Model);
             FitSafeArea();
@@ -115,8 +128,16 @@ namespace SoloGym
             SystemUI.Panel(root,new Rect(121,307,614,31),PanelStyle.Slot);
             SystemUI.Panel(root,new Rect(243,314,329,18),PanelStyle.Track);
             xpTransform=SystemUI.Panel(root,new Rect(246,317,200,12),PanelStyle.Fill).rectTransform;
-            var portrait=SystemUI.Art(root,new Rect(245,386,350,708),"Art/KaiPortrait-v1");
-            portrait.uvRect=new Rect(.155f,.023f,.69f,.958f);
+            if (AutoSpriteSession.Requested)
+            {
+                AutoSpriteAvatar = gameObject.AddComponent<AutoSpriteAvatarView>();
+                AutoSpriteAvatar.Mount(root, new Rect(253, 378, 337, 690));
+            }
+            else
+            {
+                var portrait=SystemUI.Art(root,new Rect(245,386,350,708),"Art/KaiPortrait-v1");
+                portrait.uvRect=new Rect(.155f,.023f,.69f,.958f);
+            }
             foreach(var slot in new[]{"head","torso","hands","legs","feet","back"})
             {
                 var r=Bounds("gear."+slot+".control");SystemUI.Panel(root,r,slot=="hands"?PanelStyle.Selected:PanelStyle.Slot);
@@ -302,6 +323,11 @@ namespace SoloGym
 
         void Navigate(HomeNavigation destination)
         {
+            if (destination.WindowId == "WIN-014" && AutoSpriteSession.Requested)
+            {
+                OpenAutoSpriteStudio();
+                return;
+            }
             if (destination.WindowId == "WIN-001") { CloseModal(); return; }
             if (destination.WindowId == "WIN-055") { ShowSettings(); return; }
             string title = DestinationName(destination.WindowId);
@@ -313,6 +339,25 @@ namespace SoloGym
                 bodyText += "\n\n" + L("The saved record remains preserved. No exercise is resumed.",
                     "El registro guardado se conserva. No se reanuda ningún ejercicio.");
             ShowNotice(bodyText, title);
+        }
+
+        void OpenAutoSpriteStudio()
+        {
+            if (autoSpriteStudio != null) return;
+            root.gameObject.SetActive(false);
+            autoSpriteStudio = new GameObject("AutoSprite appearance").AddComponent<AutoSpriteStudioScreen>();
+            autoSpriteStudio.Initialize(controller.Model.Language, CloseAutoSpriteStudio, CloseAutoSpriteStudio);
+        }
+
+        void CloseAutoSpriteStudio()
+        {
+            if (autoSpriteStudio != null) Destroy(autoSpriteStudio.gameObject);
+            autoSpriteStudio = null;
+            AutoSpriteAvatar.RefreshView();
+            root.gameObject.SetActive(true);
+            if (AutoSpriteSession.Language != controller.Model.Language)
+                controller.SetLanguage(AutoSpriteSession.Language);
+            FitSafeArea();
         }
 
         void ShowLanguage()
@@ -482,6 +527,7 @@ namespace SoloGym
 
         void Update()
         {
+            if (autoSpriteStudio != null) return;
             if (Screen.width != lastSize.x || Screen.height != lastSize.y || Screen.safeArea != lastSafeArea) FitSafeArea();
             if (Input.GetKeyDown(KeyCode.Escape)) CloseModal();
             if (Input.GetKeyDown(KeyCode.F8)) { reviewMode = true; ShowScenarios(); }
@@ -505,8 +551,9 @@ namespace SoloGym
             File.WriteAllBytes(requestedCapture, capture.EncodeToPNG());
             Destroy(capture);
             Debug.Log("SOLOGYM_CAPTURE " + requestedCapture);
+            if (AutoSpriteSession.Requested) AutoSpriteSession.CaptureTaken = true;
             if (HasArgument("-sologym-smoke")) yield return SmokeControls();
-            Application.Quit();
+            if (!AutoSpriteSession.Requested || HasArgument("-sologym-smoke") || HasArgument("-sologym-quit-after-capture")) Application.Quit();
         }
 
         IEnumerator SmokeControls()

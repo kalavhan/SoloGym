@@ -53,7 +53,7 @@ The current registration described below supersedes older notes that socket and 
 
 Schedule review checkpoint **`REVIEW:WIN-013`** opens the studio through [`OnboardingScreen.cs`](../../app/Assets/SoloGym/Scripts/OnboardingScreen.cs). Continue fires **`REVIEW:SETUP_COMPLETE`**, followed by the setup-complete notice and the review exit to Welcome. Linux can enter the same screen through `-sologym-window character` in [`WelcomeScreen.cs`](../../app/Assets/SoloGym/Scripts/WelcomeScreen.cs).
 
-Catalog and recipe validation remain in [`Catalog.json`](../../app/Assets/SoloGym/Resources/AvatarCustomization/Catalog.json), [`AvatarCustomizationCatalog.cs`](../../app/Assets/SoloGym/Scripts/Avatar/AvatarCustomizationCatalog.cs), and [`CharacterCustomizationState.cs`](../../app/Assets/SoloGym/Scripts/CharacterCustomizationState.cs). The legacy [`CharacterCustomizationScreen.cs`](../../app/Assets/SoloGym/Scripts/CharacterCustomizationScreen.cs) remains for historical G1 artifacts and is not the onboarding studio.
+Catalog and recipe validation remain in [`Catalog.json`](../../app/Assets/SoloGym/Resources/AvatarCustomization/Catalog.json), [`AvatarCustomizationCatalog.cs`](../../app/Assets/SoloGym/Scripts/Avatar/AvatarCustomizationCatalog.cs), and [`CharacterCustomizationState.cs`](../../app/Assets/SoloGym/Scripts/CharacterCustomizationState.cs). The unused G1 `CharacterCustomizationScreen.cs` was removed during the AutoSprite cleanup; its historical implementation is preserved in checkpoint commit `19fea4d362818b9df5aa234c0e725d33b5e294c7`. The onboarding studio remains `CharacterStudioScreen.cs`.
 
 ## Native verification
 

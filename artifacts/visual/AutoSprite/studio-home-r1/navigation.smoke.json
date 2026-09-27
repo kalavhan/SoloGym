@@ -1,0 +1,15 @@
+{
+    "passed": true,
+    "checks": [
+        "PASS configuration loads transparent atlas",
+        "PASS configuration uses front atlas",
+        "PASS idle advances through provider frames",
+        "PASS pause freezes frame without changing pose",
+        "PASS Continue opens real Home screen",
+        "PASS Home uses front view and retains pause state",
+        "PASS Home exposes automatic language option",
+        "PASS Home character reopens front-facing configuration",
+        "PASS return keeps Home front-facing",
+        "PASS unchanged studio language preserves automatic Home preference"
+    ]
+}

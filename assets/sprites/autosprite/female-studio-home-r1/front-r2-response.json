@@ -1,0 +1,17 @@
+{
+  "characterId": "cmuj70eg8000910qlnap76av1",
+  "status": "queued",
+  "queuedAt": "2026-09-27T02:57:01.211Z",
+  "workflows": [
+    {
+      "jobId": "wf_71998140-8b9a-4858-8100-2d07861b7e5b",
+      "kind": "custom",
+      "videoId": "cmuj89kdl00041pvy63cx0m4m"
+    }
+  ],
+  "message": "Queued 1 workflow(s) for spritesheet generation.",
+  "usage": {
+    "creditsUsed": 5,
+    "creditsRemaining": 1485
+  }
+}

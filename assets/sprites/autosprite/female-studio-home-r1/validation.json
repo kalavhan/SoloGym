@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "characterId": "cmuj70eg8000910qlnap76av1",
+  "scope": "front-only",
+  "views": [
+    {
+      "view": "front",
+      "sheet": "front-r2-idle.png",
+      "atlas": "front-r2-idle.json",
+      "sheetSha256": "7be17706832ea8cd99ad9a02180a3581c3b253a8691144d83218966aead1bbe5",
+      "atlasSha256": "b04fcc25bc260edf48ec58f3c5d79d14805d9d84c9900f7a05cf49c6d232a8cc",
+      "frameCount": 25,
+      "durationSeconds": 2.333,
+      "uniqueFrames": 25,
+      "contentBounds": [
+        265,
+        117,
+        506,
+        652
+      ],
+      "baselineRangePixels": 1
+    }
+  ],
+  "deferredViews": [
+    {
+      "view": "isometric",
+      "sheet": "iso-idle.png",
+      "atlas": "iso-idle.json",
+      "sheetSha256": "54257e690681f238f82627a65b3b99a85f2454d66fc9f3640197e7e54df7186d",
+      "atlasSha256": "b04fcc25bc260edf48ec58f3c5d79d14805d9d84c9900f7a05cf49c6d232a8cc",
+      "frameCount": 25,
+      "durationSeconds": 2.333,
+      "uniqueFrames": 25,
+      "contentBounds": [
+        256,
+        35,
+        519,
+        738
+      ],
+      "baselineRangePixels": 0
+    }
+  ],
+  "timing": "meta.duration_s is clip length; frame.duration values are relative weights",
+  "framing": "One union of alpha bounds for the whole clip; no per-frame recentering",
+  "artApproval": "pending user review"
+}

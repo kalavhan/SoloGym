@@ -3,11 +3,20 @@
 Read `style-lock.json` and `../../docs/design/character-2-5d-art-direction.md`
 before creating or revising character art in this directory.
 
+- This directory preserves the fourteen approved illustrated references and
+  their review history. The next AutoSprite pass plans five body types per
+  gender: `slim`, `medium`, `overweight`, `obese`, `muscular`. Follow
+  `../../docs/design/character-sprite-v1-plan.md` for that active scope. Keep
+  all seven historical preset IDs per presentation unchanged; their approved
+  pixels and decisions do not make new sprites generated or approved. Use
+  AutoSprite for new sprites, export under `assets/sprites/`, and read the
+  JSON atlas before animation code. Configuration and Home are frontal first;
+  the archived gameplay panels do not authorize an isometric implementation.
 - The user approved the illustrated style in
   `references/illustrated-style-r1.png`. Preserve that game illustration style,
   linework, hair masses, authored skin shading and material highlights. The
   generic rendered 3D proof is not an accepted appearance reference.
-- Preserve one adult identity per presentation across the seven body presets.
+- Preserve one adult identity per presentation across the seven archived body presets.
   The male anchor is `references/male-kai-identity-r1.png`. The female anchor is
   `references/female-identity-r1.png`, approved through the matching
   `female-normal` r1 source in the user's recorded review.
@@ -17,7 +26,7 @@ before creating or revising character art in this directory.
   every approved source and hash; keep earlier review exports and the chat
   supplement as history. Future revisions must not alter these masters or
   inherit their decisions. The manifest records the exact selected sources.
-- User labels are `skinny`, `normal`, `chubby`, `fat`, `skinny muscular`,
+- Historical review labels are `skinny`, `normal`, `chubby`, `fat`, `skinny muscular`,
   `muscular`, `fat muscular`. IDs use underscores. `normal` has a softly flat
   abdomen without a carved six-pack. `fat_muscular` combines a substantial soft
   belly and waist with muscular shoulders and limbs. These are appearance
@@ -45,7 +54,7 @@ before creating or revising character art in this directory.
   and `female-fat` thigh/calf bulk while preserving her fat body and belly.
   These achieved rules guide future derived assets; they do not reopen any
   approved source.
-- Keep the three review panels: base studio, equipped studio, and equipped
+- Preserve the three archived review panels: base studio, equipped studio, and equipped
   elevated three-quarter gameplay view. Use the same baseline, nominal height,
   lighting and palette across candidates. Do not individually scale bodies to
   fill their panels. Keep full hair and feet visible.

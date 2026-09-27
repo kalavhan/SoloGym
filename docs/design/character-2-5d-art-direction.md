@@ -1,5 +1,14 @@
 # Illustrated 2.5D character direction
 
+This document preserves the art direction and technical exploration behind
+the fourteen approved illustration boards. The active next sprite pass is
+[five body types per gender, frontal first](character-sprite-v1-plan.md), using
+AutoSprite. Keep all fourteen references and their original IDs, hashes and
+review decisions unchanged. The seven-preset tables, three-panel review and
+mesh/gameplay proposals below describe the illustrated archive and earlier
+exploration; they are not additional requirements for the first AutoSprite
+version. New sprites require their own generation records and visual review.
+
 The character must preserve the original **Kai manhwa illustration** and its
 game presentation. The user rejected the generic rendered 3D look. The shared
 3D source remains an optional anatomy, rig and camera reference; its successful
@@ -34,9 +43,10 @@ plus the [second exported review](../../design/character-2-5d/approval-r1/review
 unchanged as history. Appearance approval does not establish production
 sprites, fitted layers or animation.
 
-## Accepted body controls
+## Approved illustration presets
 
-Use seven **discrete presets**, with the user's labels preserved verbatim:
+The completed illustration review used seven **discrete presets**, with the
+user's historical labels preserved verbatim:
 
 | Stable ID | Label | Visual requirement |
 | --- | --- | --- |

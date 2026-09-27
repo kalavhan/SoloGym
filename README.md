@@ -2,7 +2,9 @@
 
 Mobile fitness RPG for Android and iOS, ages 15+, in English and Spanish. This repository contains native Unity Welcome, age/region, privacy/consent and Home interfaces, approved manhua System references, research, training data, an offline generation reference and the window milestone plan.
 
-**Latest feature milestone: WIN-010 Goals / Experience — native three-step UI in the Linux review player with focused smoke checks.** [Implementation and captures](docs/windows/WIN-010-implementation.md). G0 flow and step-1 targets are approved; production profile save remains unavailable.
+**Current character checkpoint: frontal AutoSprite idle in configuration and Home.** [Review, cleanup and limits](docs/design/character-autosprite-checkpoint.md). The next sprite plan uses five body types per gender while preserving all 14 approved illustrated references. Body variants and separate equipment swaps remain future work.
+
+**WIN-010 Goals / Experience** provides native three-step UI in the Linux review player with focused smoke checks. [Implementation and captures](docs/windows/WIN-010-implementation.md). G0 flow and step-1 targets are approved; production profile save remains unavailable.
 
 **WIN-009 Private Fitness Profile** uses shared components in Linux 0.5.0: optional measurements, privacy notice, readiness and pause. [Implementation](docs/windows/WIN-009-implementation.md). No APK was rebuilt for these windows.
 
@@ -18,6 +20,8 @@ The training data shape and milestone plan are accepted for continued design; ex
 
 | Deliverable | Contents |
 | --- | --- |
+| [Frontal AutoSprite checkpoint](docs/design/character-autosprite-checkpoint.md) | Character/Home idle preview, preserved art, cleanup decisions and verification |
+| [Five body types per gender](docs/design/character-sprite-v1-plan.md) | Future sprite scope and exact mapping to all fourteen preserved appearance references |
 | [Layered UI implementation and avatar proof](docs/engineering/layered-ui-and-avatar-implementation.md) | Migrated windows, interactive previews, captures, verification and remaining art work |
 | [Layered UI and avatar architecture](docs/engineering/layered-ui-and-avatar-architecture.md) | Shared code components, background separation, migration order and interchangeable character parts |
 | [Private profile implementation](docs/windows/WIN-009-implementation.md) | Optional measurements, feet/inches and lb conversion, staged privacy/readiness, native captures and focused checks |
@@ -48,7 +52,7 @@ Work follows the currently approved window or explicitly grouped iteration. Cont
 
 The approved Home target's exact PNGs, prompts, dimensions and hashes are retained in [the reference manifest](design/reference-manifests/WIN-001-system-home-v2.json). The full-screen comparison preserves remaining differences from native fonts, reconstructed glass and the shared artwork across locales. The user has accepted the installed Home's appearance; the source renders and measured differences have not been replaced or relabeled as byte-identical. Approval state is recorded in [the ledger](design/approval-ledger.json).
 
-The Home preview uses Unity 6000.3.24f1 and a static illustrated character. The planned customization workflow uses a modular source character with body fits, skin masks, separate hair and fitted equipment. The included first layered 2D rig proof demonstrates customization and equipment attachments; its art limitations must be resolved before a full asset library is produced. The [local tool inventory](docs/design/local-image-tool-inventory.md) records available imaging tools; it is not evidence that an avatar pipeline has been built.
+The Home preview uses Unity 6000.3.24f1. The AutoSprite review flag enables the new frontal idle in configuration and Home; the default historical Home still uses its static portrait. New character sprites and animations use AutoSprite MCP and versioned exports under `assets/sprites/`. Read each JSON atlas before changing playback. The older layered/3D experiments remain for existing route compatibility and historical review, and are not the chosen asset-production pipeline. The [sprite plan](docs/design/character-sprite-v1-plan.md) defines body references and the next equipment-fit test.
 
 ## Inspect the training reference
 
@@ -64,4 +68,4 @@ The current reference passes 22 behavior tests covering age/readiness, supervisi
 
 The training content and exact prescription defaults remain drafts requiring exercise-professional and youth review before release. Technical validation does not supply that review. Missing equipment produces explicit coverage gaps; body appearance and fasting do not determine workout prescriptions or rewards. Exercise demonstration records remain unassigned pending rights and technique review.
 
-The repository is [kalavhan/SoloGym](https://github.com/kalavhan/SoloGym). Home, Welcome and authentication are merged into `main`. Onboarding, private profile, the layered UI migration and avatar proof are maintained on `codex/layered-ui-onboarding`, based on the current `main`. Generated player builds, signing material, environment-specific Firebase configuration and Unity caches are excluded from Git.
+The repository is [kalavhan/SoloGym](https://github.com/kalavhan/SoloGym). Merged window and character checkpoints are in `main`; the current AutoSprite checkpoint is prepared as a separate PR. Generated player builds, signing material, environment-specific Firebase configuration, local archives and Unity caches are excluded from Git.

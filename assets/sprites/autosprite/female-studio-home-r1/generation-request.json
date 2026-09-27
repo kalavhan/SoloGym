@@ -1,0 +1,27 @@
+{
+  "characterId": "cmuj70eg8000910qlnap76av1",
+  "animations": [
+    {
+      "kind": "idle",
+      "name": "SoloGym front idle r1",
+      "raw_prompt": true,
+      "prompt": "Full body front view of this exact female fighter. She faces directly toward the viewer throughout. A restrained idle loop with gentle natural breathing only, arms relaxed at her sides, hands below waist, both feet firmly planted. Preserve her face, athletic proportions, black ponytail, black sports bra, shorts, white wraps, and cyan-accent boots. Fixed camera, fixed scale, no turn, no step, no attack, no camera motion. Keep the entire character in frame on a plain background. The first and last pose match.",
+      "loop": true
+    },
+    {
+      "kind": "iso_idle_southeast",
+      "name": "SoloGym isometric idle r1",
+      "prompt": "A restrained idle with subtle breathing only. Feet stay planted; arms relaxed down. Preserve the exact outfit, face, athletic body, hair, wraps and boots. Whole body stays in frame; no props, no attack, no stepping, no camera movement.",
+      "loop": true
+    }
+  ],
+  "spritesheet": {
+    "frameCount": 25,
+    "frameSize": 768
+  },
+  "withSound": false,
+  "videoTier": "turbo",
+  "durationSec": 2,
+  "turboMode": "reference",
+  "removeBg": "default"
+}
