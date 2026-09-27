@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "batch_id": "playable-proof-r1",
+  "source_appearance_approved": true,
+  "derived_assets_user_approved": false,
+  "assets": [
+    {
+      "id": "male-studio-r1",
+      "image": "design/character-2-5d/playable-proof-r1/images/male-studio-r1.png",
+      "runtime_resource": "AvatarIllustrated/MaleStudio",
+      "sha256": "71c75ed32bcb0a3a0c970f63bc9a3b9c5594a7083412f89e00ae00fc0905305d",
+      "reference": "design/character-2-5d/approval-r1/images/male-normal-r2.png",
+      "reference_sha256": "8312e04bf8742f4e7e45a7e671cee6ba1828a1b94f84612e997cb0807896ac8c",
+      "prompt": "design/prompts/character-correctness/playable-proof-r1/male-studio-r1.txt",
+      "tool": "built-in image_gen",
+      "model_id": null,
+      "seed": null,
+      "visual_status": "derived_proof_pending_user_review",
+      "production_ready": false,
+      "scope": "Full coherent base/equipped surfaces; does not establish independent modular equipment."
+    },
+    {
+      "id": "female-studio-r1",
+      "image": "design/character-2-5d/playable-proof-r1/images/female-studio-r1.png",
+      "runtime_resource": "AvatarIllustrated/FemaleStudio",
+      "sha256": "9deb71a328b7810dc3a244c6dd54701421862ae5f67cba0b35d1787ca66667d5",
+      "reference": "design/character-2-5d/approval-r1/images/female-normal.png",
+      "reference_sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667",
+      "prompt": "design/prompts/character-correctness/playable-proof-r1/female-studio-r1.txt",
+      "tool": "built-in image_gen",
+      "model_id": null,
+      "seed": null,
+      "visual_status": "derived_proof_pending_user_review",
+      "production_ready": false,
+      "scope": "Full coherent base/equipped surfaces; does not establish independent modular equipment."
+    },
+    {
+      "id": "male-gameplay-r1",
+      "image": "design/character-2-5d/playable-proof-r1/images/male-gameplay-r1.png",
+      "runtime_resource": "AvatarIllustrated/MaleGameplay",
+      "sha256": "7ab8f0f4ba7034d03288b5f9189497a7af69514d4a3adf4cdc5ec1a7e36f821a",
+      "reference": "design/character-2-5d/approval-r1/images/male-normal-r2.png",
+      "reference_sha256": "8312e04bf8742f4e7e45a7e671cee6ba1828a1b94f84612e997cb0807896ac8c",
+      "prompt": "design/prompts/character-correctness/playable-proof-r1/male-gameplay-r1.txt",
+      "tool": "built-in image_gen",
+      "model_id": null,
+      "seed": null,
+      "visual_status": "derived_proof_pending_user_review",
+      "production_ready": false,
+      "scope": "Full coherent base/equipped surfaces; does not establish independent modular equipment."
+    },
+    {
+      "id": "female-gameplay-r1",
+      "image": "design/character-2-5d/playable-proof-r1/images/female-gameplay-r1.png",
+      "runtime_resource": "AvatarIllustrated/FemaleGameplay",
+      "sha256": "b08fb9e29547e62ad7fc47a48f0ae325175f7662e848e42fe1932773ded0ec20",
+      "reference": "design/character-2-5d/approval-r1/images/female-normal.png",
+      "reference_sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667",
+      "prompt": "design/prompts/character-correctness/playable-proof-r1/female-gameplay-r1.txt",
+      "tool": "built-in image_gen",
+      "model_id": null,
+      "seed": null,
+      "visual_status": "derived_proof_pending_user_review",
+      "production_ready": false,
+      "scope": "Full coherent base/equipped surfaces; does not establish independent modular equipment."
+    }
+  ]
+}

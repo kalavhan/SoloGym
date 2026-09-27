@@ -1,0 +1,7 @@
+Use case: identity-preserve.
+Input image: the attached artboard is the sole EDIT TARGET and authoritative reference.
+Apply the user's specific body correction below. Preserve the same adult character identity, face, hairstyle, skin color, richly shaded manhwa game illustration, outfit designs/materials, charcoal background, lighting, three-panel full-body composition, camera angles, pose, nominal height and baseline. Keep the entire hairstyle and feet visible. Left is base body, center equipped, right equipped elevated gameplay view. Apply the anatomy correction coherently across all three figures and fit clothing accordingly. Maintain the original 1536 by 1024 canvas. No text, labels, extra figures or watermark.
+
+User's review note (verbatim): arms less muscular, his arm is bigget than his head
+
+Required edit: Reduce the oversized shoulder and arm muscle bulk substantially in ALL THREE views, around 25 percent narrower upper arms. Keep him strong but proportionate: his upper-arm width should be clearly smaller than his head width, with moderate rounded strength cues instead of enormous spherical deltoids and balloon biceps. Soften deep arm muscle divisions. Preserve the substantial soft belly, broad waist, chest fullness and leg size; do not slim his fat mass. Adapt shirt armholes naturally. Keep the exact same head size and identity.

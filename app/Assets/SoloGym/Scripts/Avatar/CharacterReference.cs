@@ -15,6 +15,7 @@ namespace SoloGym
             public StageAnchor stage_anchor;
             public CameraPresetsBlock camera_presets;
             public HitRegion[] hit_regions;
+            public RigLayoutData rig_layout;
         }
 
         [Serializable] sealed class CameraPresetsBlock
@@ -46,6 +47,26 @@ namespace SoloGym
             public float[] rect;
         }
 
+        [Serializable] public sealed class RigLayoutData
+        {
+            public JointData[] joints;
+            // Back-to-front render order, independent of the joint hierarchy.
+            public PieceData[] pieces;
+            public PieceData[] hair_variants;
+        }
+
+        [Serializable] public sealed class JointData
+        {
+            public string id, parent;
+            public float x, y;
+        }
+
+        [Serializable] public sealed class PieceData
+        {
+            public string id, socket;
+            public float x, y, scale;
+        }
+
         static ManifestRoot manifest;
 
         public static void Load(string fitFamilyId = "proof_male_athletic")
@@ -67,6 +88,7 @@ namespace SoloGym
             { rig_pivot_x = .5f, rig_pivot_y = .58f, clip_width = 665, clip_height = 720 };
 
         public static HitRegion[] HitRegions => M?.hit_regions ?? Array.Empty<HitRegion>();
+        public static RigLayoutData RigLayout => M?.rig_layout;
 
         public static AvatarAppearance GoldenRecipe()
         {

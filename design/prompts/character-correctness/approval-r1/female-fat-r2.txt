@@ -1,0 +1,7 @@
+Use case: identity-preserve.
+Input image: the attached artboard is the sole EDIT TARGET and authoritative reference.
+Apply the user's specific body correction below. Preserve the same adult character identity, face, hairstyle, skin color, richly shaded manhwa game illustration, outfit designs/materials, charcoal background, lighting, three-panel full-body composition, camera angles, pose, nominal height and baseline. Keep the entire hairstyle and feet visible. Left is base body, center equipped, right equipped elevated gameplay view. Apply the anatomy correction coherently across all three figures and fit clothing accordingly. Maintain the original 1536 by 1024 canvas. No text, labels, extra figures or watermark.
+
+User's review note (verbatim): arms less muscular, a little bit slimmer, she is fat, no flat stomach
+
+Required edit: Make the arms a little slimmer and much less muscular in ALL THREE views: reduce upper-arm width roughly 15 percent, smooth deltoid/biceps bulges and remove carved muscle shadows. Keep soft natural arm fullness. At the same time make the belly unambiguously rounded and protruding, with soft lower-abdominal fullness and natural waist folds; it must not read as a flat or taut athletic stomach. Preserve her overall fat body preset, hips, bust and legs. The shirt in center and right views must follow the same rounded belly. Keep the head and identity unchanged.

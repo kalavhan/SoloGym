@@ -5,3 +5,7 @@
 *.cs text eol=lf
 *.png binary
 *.ttf binary
+# Pinned upstream graphical data and notices must retain their exact source bytes.
+design/character-source/vendor/makehuman/** -text -whitespace
+# The upstream license uses a seven-equals Markdown heading, not a merge marker.
+design/character-source/vendor/makehuman/LICENSE.md conflict-marker-size=32

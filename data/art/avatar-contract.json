@@ -1,22 +1,67 @@
 {
-  "schema_version": "0.2.0",
+  "schema_version": "0.7.0",
   "contract_id": "sologym.avatar.authoring-proposal",
-  "updated_on": "2026-09-25",
-  "status": "authoring_proposal_with_first_engineering_proof_pending_visual_rig_acceptance",
+  "updated_on": "2026-09-26",
+  "status": "illustrated_2_5d_all_fourteen_source_appearances_approved_production_exports_pending",
   "production_ready": false,
-  "engine_decision": "Unity 6000.3.24f1; avatar rendering pipeline pending sprite and rig proof",
+  "engine_decision": "Unity 6000.3.24f1; intended renderer illustrated 2.5D; source3D remains an opt-in engineering experiment whose visual style was rejected",
   "notes": [
-    "This is an authoring and data proposal, not a rendered asset pack. Unity is selected; avatar authoring and rendering implementation remain pending proof.",
-    "All example records are original unrendered placeholders. No vendor assets or licenses are implied.",
-    "The accepted concept style does not approve these individual assets.",
-    "Fitness measurements remain outside this appearance contract. Appearance does not determine workout prescriptions or combat strength.",
-    "Rendered sprite appearances can use only exported fit variants; continuous source-model morphs do not imply continuous sprite customization.",
-    "Nullable face/palette IDs are unresolved proposal placeholders. They are not usable runtime fallback selections."
+    "The intended character presentation is illustrated 2.5D in the original Kai manhwa art direction. The generic rendered 3D appearance was rejected.",
+    "A shared technical 3D source now exists with licensed CC0 base data and deterministic export. Its structure can guide authoring, but it is not an accepted visual target or production asset pack.",
+    "All fourteen male/female source appearances are explicitly user-approved with no remaining art corrections. All production fits remain not selectable and not runtime usable.",
+    "The fourteen hash-bound appearance approvals preserve immutable source masters. They do not establish separate production layers, equipment fits, animation or directional exports. Earlier decisions remain in review history.",
+    "Fitness measurements remain outside this appearance contract. Presets do not imply health, fitness, capability, workout prescriptions or combat strength and are never inferred from measurements.",
+    "Rendered sprite appearances can use only exported and verified fit variants. Source morphs do not imply continuous sprite customization.",
+    "Legacy proposal IDs and the existing proof_male_athletic runtime IDs remain traceable. They are not aliases for the new seven presets.",
+    "Nullable face/palette IDs remain unresolved authoring placeholders and are not runtime fallback selections."
   ],
   "reference_style": {
     "id": "sologym_manhua_system_v1",
-    "status": "concept_direction_accepted",
-    "individual_assets_approved": false
+    "status": "illustrated_style_r1_user_approved",
+    "individual_assets_approved": true,
+    "intended_renderer": "illustrated_2_5d",
+    "primary_character_reference": "design/character-2-5d/references/illustrated-style-r1.png",
+    "art_direction_document": "docs/design/character-2-5d-art-direction.md",
+    "preserve": [
+      "Kai facial identity and stylized proportions",
+      "manhwa linework and authored cel/painterly shading",
+      "illustrated hair masses and material highlights",
+      "game-oriented presentation"
+    ],
+    "visual_rejections": [
+      "generic realistically shaded 3D character appearance",
+      "independently generated limb pieces with mismatched perspective or hollow joint ends"
+    ],
+    "male_identity_reference": "design/character-2-5d/references/male-kai-identity-r1.png",
+    "style_lock": "design/character-2-5d/style-lock.json",
+    "approval_scope": "Illustrated style and all fourteen exact selected source appearances are user-approved. Production layers, equipment fits, animation and runtime readiness remain unverified and unavailable.",
+    "all_individual_assets_approved": true,
+    "approved_art_asset_ids": [
+      "illustrated_male_skinny_r1",
+      "illustrated_male_normal_r1",
+      "illustrated_male_chubby_r1",
+      "illustrated_male_fat_r1",
+      "illustrated_male_skinny_muscular_r1",
+      "illustrated_male_muscular_r1",
+      "illustrated_male_fat_muscular_r1",
+      "illustrated_female_skinny_r1",
+      "illustrated_female_normal_r1",
+      "illustrated_female_chubby_r1",
+      "illustrated_female_fat_r1",
+      "illustrated_female_skinny_muscular_r1",
+      "illustrated_female_muscular_r1",
+      "illustrated_female_fat_muscular_r1"
+    ],
+    "female_identity_reference": "design/character-2-5d/references/female-identity-r1.png",
+    "female_identity_approval": {
+      "status": "user_approved_identity_anchor",
+      "sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667",
+      "approved_through_asset_id": "illustrated_female_normal_r1",
+      "approved_through_revision": 1,
+      "approved_at": "2026-09-26T23:30:32.416Z",
+      "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json"
+    },
+    "latest_appearance_review_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json"
   },
   "identifiers": {
     "asset_id": "Stable internal ID; never derive identity from a translated label or filename.",
@@ -111,66 +156,764 @@
   ],
   "build_presets_proposed": [
     {
-      "id": "smaller_soft",
-      "size_axis": "smaller",
-      "muscle_definition_axis": "lower"
+      "id": "skinny",
+      "label": "skinny",
+      "label_source": "user_verbatim",
+      "status": "source_appearances_approved_registered_exports_pending",
+      "selectable": false,
+      "runtime_usable": false,
+      "visual_brief": "Narrow frame and limbs with low visible muscle volume.",
+      "source_asset_id": null,
+      "verified_fit_family_ids": [],
+      "candidate_asset_ids": [
+        "illustrated_male_skinny_r1",
+        "illustrated_female_skinny_r1"
+      ],
+      "approved_art_asset_ids": [
+        "illustrated_male_skinny_r1",
+        "illustrated_female_skinny_r1"
+      ]
     },
     {
-      "id": "smaller_defined",
-      "size_axis": "smaller",
-      "muscle_definition_axis": "higher"
+      "id": "normal",
+      "label": "normal",
+      "label_source": "user_verbatim",
+      "status": "source_appearances_approved_registered_exports_pending",
+      "selectable": false,
+      "runtime_usable": false,
+      "visual_brief": "Moderate body volume and balanced silhouette with a softly flat abdomen, no carved six-pack or exaggerated bodybuilder shoulders; the user-provided label is not a health classification.",
+      "source_asset_id": null,
+      "verified_fit_family_ids": [],
+      "candidate_asset_ids": [
+        "illustrated_male_normal_r1",
+        "illustrated_female_normal_r1"
+      ],
+      "approved_art_asset_ids": [
+        "illustrated_male_normal_r1",
+        "illustrated_female_normal_r1"
+      ]
     },
     {
-      "id": "larger_soft",
-      "size_axis": "larger",
-      "muscle_definition_axis": "lower"
+      "id": "chubby",
+      "label": "chubby",
+      "label_source": "user_verbatim",
+      "status": "source_appearances_approved_registered_exports_pending",
+      "selectable": false,
+      "runtime_usable": false,
+      "visual_brief": "Fuller, softer torso and limbs with increased visible body-fat volume.",
+      "source_asset_id": null,
+      "verified_fit_family_ids": [],
+      "candidate_asset_ids": [
+        "illustrated_male_chubby_r1",
+        "illustrated_female_chubby_r1"
+      ],
+      "approved_art_asset_ids": [
+        "illustrated_male_chubby_r1",
+        "illustrated_female_chubby_r1"
+      ]
     },
     {
-      "id": "larger_defined",
-      "size_axis": "larger",
-      "muscle_definition_axis": "higher"
+      "id": "fat",
+      "label": "fat",
+      "label_source": "user_verbatim",
+      "status": "source_appearances_approved_registered_exports_pending",
+      "selectable": false,
+      "runtime_usable": false,
+      "visual_brief": "Large visible body-fat volume with a broad, soft torso and limbs.",
+      "source_asset_id": null,
+      "verified_fit_family_ids": [],
+      "candidate_asset_ids": [
+        "illustrated_male_fat_r1",
+        "illustrated_female_fat_r1"
+      ],
+      "approved_art_asset_ids": [
+        "illustrated_male_fat_r1",
+        "illustrated_female_fat_r1"
+      ]
+    },
+    {
+      "id": "skinny_muscular",
+      "label": "skinny muscular",
+      "label_source": "user_verbatim",
+      "status": "source_appearances_approved_registered_exports_pending",
+      "selectable": false,
+      "runtime_usable": false,
+      "visual_brief": "Narrow overall silhouette with visible muscular form and definition.",
+      "source_asset_id": null,
+      "verified_fit_family_ids": [],
+      "candidate_asset_ids": [
+        "illustrated_male_skinny_muscular_r1",
+        "illustrated_female_skinny_muscular_r1"
+      ],
+      "approved_art_asset_ids": [
+        "illustrated_male_skinny_muscular_r1",
+        "illustrated_female_skinny_muscular_r1"
+      ]
+    },
+    {
+      "id": "muscular",
+      "label": "muscular",
+      "label_source": "user_verbatim",
+      "status": "source_appearances_approved_registered_exports_pending",
+      "selectable": false,
+      "runtime_usable": false,
+      "visual_brief": "Large, visibly developed muscle volume across shoulders, torso and limbs.",
+      "source_asset_id": null,
+      "verified_fit_family_ids": [],
+      "candidate_asset_ids": [
+        "illustrated_male_muscular_r1",
+        "illustrated_female_muscular_r1"
+      ],
+      "approved_art_asset_ids": [
+        "illustrated_male_muscular_r1",
+        "illustrated_female_muscular_r1"
+      ]
+    },
+    {
+      "id": "fat_muscular",
+      "label": "fat muscular",
+      "label_source": "user_verbatim",
+      "status": "source_appearances_approved_registered_exports_pending",
+      "selectable": false,
+      "runtime_usable": false,
+      "visual_brief": "Large body-fat mass with a substantial soft belly and fuller waist alongside thick muscular shoulders and limbs; visibly fat and muscular together, not merely a bulky bodybuilder.",
+      "source_asset_id": null,
+      "verified_fit_family_ids": [],
+      "candidate_asset_ids": [
+        "illustrated_male_fat_muscular_r1",
+        "illustrated_female_fat_muscular_r1"
+      ],
+      "approved_art_asset_ids": [
+        "illustrated_male_fat_muscular_r1",
+        "illustrated_female_fat_muscular_r1"
+      ]
     }
   ],
   "fit_families_proposed": [
     {
       "fit_family_id": "male_smaller_soft_v0",
       "presentation": "male",
-      "build_preset_id": "smaller_soft"
+      "build_preset_id": "smaller_soft",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
     },
     {
       "fit_family_id": "male_smaller_defined_v0",
       "presentation": "male",
-      "build_preset_id": "smaller_defined"
+      "build_preset_id": "smaller_defined",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
     },
     {
       "fit_family_id": "male_larger_soft_v0",
       "presentation": "male",
-      "build_preset_id": "larger_soft"
+      "build_preset_id": "larger_soft",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
     },
     {
       "fit_family_id": "male_larger_defined_v0",
       "presentation": "male",
-      "build_preset_id": "larger_defined"
+      "build_preset_id": "larger_defined",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
     },
     {
       "fit_family_id": "female_smaller_soft_v0",
       "presentation": "female",
-      "build_preset_id": "smaller_soft"
+      "build_preset_id": "smaller_soft",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
     },
     {
       "fit_family_id": "female_smaller_defined_v0",
       "presentation": "female",
-      "build_preset_id": "smaller_defined"
+      "build_preset_id": "smaller_defined",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
     },
     {
       "fit_family_id": "female_larger_soft_v0",
       "presentation": "female",
-      "build_preset_id": "larger_soft"
+      "build_preset_id": "larger_soft",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
     },
     {
       "fit_family_id": "female_larger_defined_v0",
       "presentation": "female",
-      "build_preset_id": "larger_defined"
+      "build_preset_id": "larger_defined",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
+    },
+    {
+      "fit_family_id": "male_skinny_r1",
+      "presentation": "male",
+      "build_preset_id": "skinny",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_male_skinny_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_male_skinny_r1",
+          "revision": 3,
+          "path": "design/character-2-5d/approval-r1/images/male-skinny-r3.png",
+          "sha256": "e55c909213627e5abf0a3ce0f4d1a6fe717d066bbe8c74a58364fcbfe26aee87"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_male_skinny_r1",
+        "revision": 3,
+        "path": "design/character-2-5d/approval-r1/images/male-skinny-r3.png",
+        "sha256": "e55c909213627e5abf0a3ce0f4d1a6fe717d066bbe8c74a58364fcbfe26aee87",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "male_normal_r1",
+      "presentation": "male",
+      "build_preset_id": "normal",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_male_normal_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_male_normal_r1",
+          "revision": 2,
+          "path": "design/character-2-5d/approval-r1/images/male-normal-r2.png",
+          "sha256": "8312e04bf8742f4e7e45a7e671cee6ba1828a1b94f84612e997cb0807896ac8c"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_male_normal_r1",
+        "revision": 2,
+        "path": "design/character-2-5d/approval-r1/images/male-normal-r2.png",
+        "sha256": "8312e04bf8742f4e7e45a7e671cee6ba1828a1b94f84612e997cb0807896ac8c",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "male_chubby_r1",
+      "presentation": "male",
+      "build_preset_id": "chubby",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_male_chubby_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_male_chubby_r1",
+          "revision": 3,
+          "path": "design/character-2-5d/approval-r1/images/male-chubby-r3.png",
+          "sha256": "e2a19b5e181a15b167fcee40ae2be8fe060a6e08eeb1471f7ce7b2daa334b378"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_male_chubby_r1",
+        "revision": 3,
+        "path": "design/character-2-5d/approval-r1/images/male-chubby-r3.png",
+        "sha256": "e2a19b5e181a15b167fcee40ae2be8fe060a6e08eeb1471f7ce7b2daa334b378",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "male_fat_r1",
+      "presentation": "male",
+      "build_preset_id": "fat",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_male_fat_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_male_fat_r1",
+          "revision": 3,
+          "path": "design/character-2-5d/approval-r1/images/male-fat-r3.png",
+          "sha256": "078a4887a9eca5e5604ec8bc57e57f313fd47449836e2c07f446760ac30ca29f"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_male_fat_r1",
+        "revision": 3,
+        "path": "design/character-2-5d/approval-r1/images/male-fat-r3.png",
+        "sha256": "078a4887a9eca5e5604ec8bc57e57f313fd47449836e2c07f446760ac30ca29f",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "male_skinny_muscular_r1",
+      "presentation": "male",
+      "build_preset_id": "skinny_muscular",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_male_skinny_muscular_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_male_skinny_muscular_r1",
+          "revision": 1,
+          "path": "design/character-2-5d/approval-r1/images/male-skinny_muscular.png",
+          "sha256": "4a2c9407e355c940b5beb2a4eff79a9167cc45a4d40f87f450a144737863c6f7"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_male_skinny_muscular_r1",
+        "revision": 1,
+        "path": "design/character-2-5d/approval-r1/images/male-skinny_muscular.png",
+        "sha256": "4a2c9407e355c940b5beb2a4eff79a9167cc45a4d40f87f450a144737863c6f7",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "male_muscular_r1",
+      "presentation": "male",
+      "build_preset_id": "muscular",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_male_muscular_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_male_muscular_r1",
+          "revision": 1,
+          "path": "design/character-2-5d/approval-r1/images/male-muscular.png",
+          "sha256": "3d75e4291972c6fdb9a8c38c61fc02fcd407e6c3cfba2480366614bd68d2233c"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_male_muscular_r1",
+        "revision": 1,
+        "path": "design/character-2-5d/approval-r1/images/male-muscular.png",
+        "sha256": "3d75e4291972c6fdb9a8c38c61fc02fcd407e6c3cfba2480366614bd68d2233c",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "male_fat_muscular_r1",
+      "presentation": "male",
+      "build_preset_id": "fat_muscular",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_male_fat_muscular_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_male_fat_muscular_r1",
+          "revision": 2,
+          "path": "design/character-2-5d/approval-r1/images/male-fat_muscular-r2.png",
+          "sha256": "bac01b185a89e8f5ac72099b379f50836c0f2160dd974a5957c3903098d63bb4"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_male_fat_muscular_r1",
+        "revision": 2,
+        "path": "design/character-2-5d/approval-r1/images/male-fat_muscular-r2.png",
+        "sha256": "bac01b185a89e8f5ac72099b379f50836c0f2160dd974a5957c3903098d63bb4",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "female_skinny_r1",
+      "presentation": "female",
+      "build_preset_id": "skinny",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_female_skinny_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_female_skinny_r1",
+          "revision": 1,
+          "path": "design/character-2-5d/approval-r1/images/female-skinny.png",
+          "sha256": "d57f6d8da224ab5d820a4550bba348da12103f47fe9c7d6c0ccdea4af83e25fc"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_female_skinny_r1",
+        "revision": 1,
+        "path": "design/character-2-5d/approval-r1/images/female-skinny.png",
+        "sha256": "d57f6d8da224ab5d820a4550bba348da12103f47fe9c7d6c0ccdea4af83e25fc",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "female_normal_r1",
+      "presentation": "female",
+      "build_preset_id": "normal",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_female_normal_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_female_normal_r1",
+          "revision": 1,
+          "path": "design/character-2-5d/approval-r1/images/female-normal.png",
+          "sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_female_normal_r1",
+        "revision": 1,
+        "path": "design/character-2-5d/approval-r1/images/female-normal.png",
+        "sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "female_chubby_r1",
+      "presentation": "female",
+      "build_preset_id": "chubby",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_female_chubby_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_female_chubby_r1",
+          "revision": 2,
+          "path": "design/character-2-5d/approval-r1/images/female-chubby-r2.png",
+          "sha256": "fd12d81ceb5864be80c17e11e60234002b3e8b7cdbc2529772ac6b26a54f04b5"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_female_chubby_r1",
+        "revision": 2,
+        "path": "design/character-2-5d/approval-r1/images/female-chubby-r2.png",
+        "sha256": "fd12d81ceb5864be80c17e11e60234002b3e8b7cdbc2529772ac6b26a54f04b5",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "female_fat_r1",
+      "presentation": "female",
+      "build_preset_id": "fat",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_female_fat_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_female_fat_r1",
+          "revision": 4,
+          "path": "design/character-2-5d/approval-r1/images/female-fat-r4.png",
+          "sha256": "9982dac6bdba5a2a2c0285c0eb17a052ef4d0912eb08da318b473d886e1f1dc5"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_female_fat_r1",
+        "revision": 4,
+        "path": "design/character-2-5d/approval-r1/images/female-fat-r4.png",
+        "sha256": "9982dac6bdba5a2a2c0285c0eb17a052ef4d0912eb08da318b473d886e1f1dc5",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "female_skinny_muscular_r1",
+      "presentation": "female",
+      "build_preset_id": "skinny_muscular",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_female_skinny_muscular_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_female_skinny_muscular_r1",
+          "revision": 1,
+          "path": "design/character-2-5d/approval-r1/images/female-skinny_muscular.png",
+          "sha256": "e0aeabd686ef2086d9ad59896573dbdb621b963a87f0da1a5ac7c1b3a471bb91"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_female_skinny_muscular_r1",
+        "revision": 1,
+        "path": "design/character-2-5d/approval-r1/images/female-skinny_muscular.png",
+        "sha256": "e0aeabd686ef2086d9ad59896573dbdb621b963a87f0da1a5ac7c1b3a471bb91",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "female_muscular_r1",
+      "presentation": "female",
+      "build_preset_id": "muscular",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_female_muscular_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_female_muscular_r1",
+          "revision": 3,
+          "path": "design/character-2-5d/approval-r1/images/female-muscular-r3.png",
+          "sha256": "5ed3163722014d33684cfde07be1d3ed6b25789b6ecc52d8a35eb76410261e5b"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "exported_art_review": {
+        "state": "pending",
+        "source_at_review_export": {
+          "asset_id": "illustrated_female_muscular_r1",
+          "revision": 2,
+          "path": "design/character-2-5d/approval-r1/images/female-muscular-r2.png",
+          "sha256": "e5b02d0657dcf0ac418434b215ecb01307a6525f6fe34ed2b5689cf218cfc27a"
+        },
+        "source_was_reviewed": false,
+        "decided_at": null,
+        "notes_verbatim": "",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_female_muscular_r1",
+        "revision": 3,
+        "path": "design/character-2-5d/approval-r1/images/female-muscular-r3.png",
+        "sha256": "5ed3163722014d33684cfde07be1d3ed6b25789b6ecc52d8a35eb76410261e5b",
+        "immutable": true
+      }
+    },
+    {
+      "fit_family_id": "female_fat_muscular_r1",
+      "presentation": "female",
+      "build_preset_id": "fat_muscular",
+      "status": "source_appearance_approved_registered_export_pending",
+      "candidate_asset_id": "illustrated_female_fat_muscular_r1",
+      "approval_batch_id": "illustrated_body_presets_approval_r1",
+      "selectable": false,
+      "runtime_usable": false,
+      "production_ready": false,
+      "source_asset_id": null,
+      "skeleton_id": null,
+      "atlas_id": null,
+      "verified_export_ids": [],
+      "last_user_art_review": {
+        "state": "approved",
+        "source_at_approval": {
+          "asset_id": "illustrated_female_fat_muscular_r1",
+          "revision": 4,
+          "path": "design/character-2-5d/approval-r1/images/female-fat_muscular-r4.png",
+          "sha256": "aaab4d248e21205fe553182347b56dc13e6d3830f12a0ed855d2fb8260a817e7"
+        },
+        "source_was_reviewed": true,
+        "decided_at": null,
+        "recorded_at": "2026-09-27T00:19:55.829Z",
+        "message_timestamp_available": false,
+        "statement": "good all approved, what is next?",
+        "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+        "applies_to_source_sha256_only": true,
+        "new_revisions_inherit_decision": false
+      },
+      "approved_visual_source": {
+        "asset_id": "illustrated_female_fat_muscular_r1",
+        "revision": 4,
+        "path": "design/character-2-5d/approval-r1/images/female-fat_muscular-r4.png",
+        "sha256": "aaab4d248e21205fe553182347b56dc13e6d3830f12a0ed855d2fb8260a817e7",
+        "immutable": true
+      }
     }
   ],
   "equipment_slots": [
@@ -303,7 +1046,14 @@
     "mirroring": "explicit_per_asset_only",
     "shadow": "separate_ground_anchored_pass",
     "ground_anchor": "stable_origin_with_explicit_vertical_offset_for_airborne_frames",
-    "trimmed_frames_preserve_original_canvas_and_offsets": true
+    "trimmed_frames_preserve_original_canvas_and_offsets": true,
+    "intended_surface_style": "authored illustrated shading and linework",
+    "body_master_before_part_extraction_required": true,
+    "independent_generation_of_production_limb_parts_allowed": false,
+    "joint_caps_with_visible_hollow_outlines_allowed": false,
+    "duplicated_neck_or_overlapping_anatomy_allowed": false,
+    "face_features_share_head_surface_and_registration": true,
+    "gameplay_view_requires_authored_angle_not_flat_sprite_rotation": true
   },
   "export_contract": {
     "status": "proposed_pending_export_proof",
@@ -668,6 +1418,457 @@
       "female and other body fits",
       "authored isometric directions",
       "final animation and equipment compatibility proof"
-    ]
+    ],
+    "runtime_base_id": "proof_male_athletic_v1",
+    "runtime_fit_family_id": "proof_male_athletic",
+    "visual_acceptance": "rejected_pending_illustrated_character_correction"
+  },
+  "legacy_build_presets_proposed": [
+    {
+      "id": "smaller_soft",
+      "size_axis": "smaller",
+      "muscle_definition_axis": "lower",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
+    },
+    {
+      "id": "smaller_defined",
+      "size_axis": "smaller",
+      "muscle_definition_axis": "higher",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
+    },
+    {
+      "id": "larger_soft",
+      "size_axis": "larger",
+      "muscle_definition_axis": "lower",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
+    },
+    {
+      "id": "larger_defined",
+      "size_axis": "larger",
+      "muscle_definition_axis": "higher",
+      "status": "superseded_authoring_placeholder",
+      "selectable": false,
+      "runtime_usable": false
+    }
+  ],
+  "body_preset_authoring_contract": {
+    "selection_mode": "discrete_presets",
+    "first_art_proof_preset_id": null,
+    "accepted_labels_only": true,
+    "continuous_body_slider_requested": false,
+    "health_or_fitness_inference_allowed": false,
+    "measurement_driven_selection_allowed": false,
+    "gameplay_strength_mapping_allowed": false,
+    "face_hair_material_identity_shared_across_presets": true,
+    "clothing_fit_per_preset_required": true,
+    "new_preset_requires": [
+      "coherent full-body source master",
+      "approved art direction and facial identity",
+      "registered studio and gameplay views",
+      "matched clothing and coverage masks",
+      "verified joints and pose deformation",
+      "source revision and export metadata"
+    ],
+    "fat_muscular_interpretation": "Large fat mass, substantial soft belly and fuller waist together with visible, proportionate muscular form; do not inflate arms beyond the chosen head/body proportions or attach health labels or stats.",
+    "legacy_policy": "Legacy placeholder and runtime proof IDs remain separate and must not silently map to these seven IDs.",
+    "style_reference_body_interpretation": "The approved illustrated-style-r1 proof reads as muscular and must not be silently labeled normal.",
+    "female_proportion_direction": "SoloGym-specific art direction: female muscle volume remains smaller than corresponding male presets, with restrained arm and leg size and moderate strength cues; not a universal biological claim.",
+    "recorded_user_art_feedback": {
+      "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+      "preserve_approved_sources": true,
+      "nonmuscular_skinny_chubby": "Use softer arms with less muscular form and definition; preserve the explicitly approved female skinny master.",
+      "male_normal": "Mildly fuller body with no visible abs.",
+      "male_fat": "Fuller soft chest and larger belly.",
+      "male_fat_muscular": "Smaller, proportionate arms while retaining fat mass and muscular traits.",
+      "female_fat": "Softer and slightly slimmer arms while retaining a protruding belly; do not flatten the stomach.",
+      "female_fat_muscular": "Modestly smaller bust while preserving the established body and restrained muscle treatment.",
+      "female_muscular": "Historical supplement requested a little more muscle while keeping proportionate limbs and smaller muscle volume than male muscular. The selected female-muscular r3 is now explicitly approved.",
+      "supplement_evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-supplement-2026-09-26.json",
+      "earlier_directions_status": "All earlier corrections have been achieved in the fourteen approved source appearances. Retain these historical rules for future derived assets; do not continue revising approved masters.",
+      "latest_evidence_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+      "achieved_historical_corrections": {
+        "contour_rule": "Reduce the actual limb contour size where requested; changing only painted shading is insufficient.",
+        "male_chubby": "Narrow upper arms, which remained almost head-width in r2; keep the softer chubby torso.",
+        "male_fat": "Narrow oversized arms and replace muscular pectoral forms with soft chest volume, retaining the full belly. This request is for male-fat, not approved male-fat_muscular r2.",
+        "female_fat": "Reduce thigh and calf bulk and muscular form while retaining the fat silhouette and protruding belly."
+      },
+      "open_art_corrections": []
+    }
+  },
+  "technical_source3d_proof": {
+    "source_document": "design/character-source/README.md",
+    "source_file": "design/character-source/SoloGymAthlete-v1.blend",
+    "runtime_file": "app/Assets/SoloGym/Resources/AvatarSource3D/Character.json",
+    "skeleton_id": "sologym_humanoid_22_v1",
+    "implementation_status": "engineering_proof_exists",
+    "visual_acceptance": "rejected_generic_3d_appearance",
+    "role": "optional anatomy, rig and registration reference for illustrated production",
+    "default_renderer": false,
+    "opt_in_arguments": [
+      "-sologym-avatar-renderer",
+      "source3d"
+    ],
+    "production_ready": false
+  },
+  "illustrated_approval_batch": {
+    "batch_id": "illustrated_body_presets_approval_r1",
+    "manifest": "design/character-2-5d/approval-r1/manifest.json",
+    "style_lock": "design/character-2-5d/style-lock.json",
+    "status": "all_fourteen_source_appearances_approved_production_exports_pending",
+    "requested_board_count": 14,
+    "candidate_asset_ids": [
+      "illustrated_male_skinny_r1",
+      "illustrated_male_normal_r1",
+      "illustrated_male_chubby_r1",
+      "illustrated_male_fat_r1",
+      "illustrated_male_skinny_muscular_r1",
+      "illustrated_male_muscular_r1",
+      "illustrated_male_fat_muscular_r1",
+      "illustrated_female_skinny_r1",
+      "illustrated_female_normal_r1",
+      "illustrated_female_chubby_r1",
+      "illustrated_female_fat_r1",
+      "illustrated_female_skinny_muscular_r1",
+      "illustrated_female_muscular_r1",
+      "illustrated_female_fat_muscular_r1"
+    ],
+    "generation_completion_source": "Read the manifest for exact selected outputs, checksums and generation records; the final approval evidence binds all fourteen source appearances.",
+    "style_approved": true,
+    "individual_assets_approved": true,
+    "production_ready": false,
+    "runtime_usable": false,
+    "all_individual_assets_approved": true,
+    "female_identity_approved": true,
+    "approved_art_asset_ids": [
+      "illustrated_male_skinny_r1",
+      "illustrated_male_normal_r1",
+      "illustrated_male_chubby_r1",
+      "illustrated_male_fat_r1",
+      "illustrated_male_skinny_muscular_r1",
+      "illustrated_male_muscular_r1",
+      "illustrated_male_fat_muscular_r1",
+      "illustrated_female_skinny_r1",
+      "illustrated_female_normal_r1",
+      "illustrated_female_chubby_r1",
+      "illustrated_female_fat_r1",
+      "illustrated_female_skinny_muscular_r1",
+      "illustrated_female_muscular_r1",
+      "illustrated_female_fat_muscular_r1"
+    ],
+    "approved_source_count": 14,
+    "user_review": {
+      "path": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+      "sha256": "4f5bb52c58a9dd7f62b2d2fe69f7aae8f52d54e24b461e75c8d56d400605537c",
+      "source": "explicit_user_message",
+      "recorded_at": "2026-09-27T00:19:55.829Z",
+      "message_timestamp_available": false,
+      "reviewed_manifest_sha256": "6adb9f04ab76ee8a7eca1719e57d25cfbe611f722ce79bde5374629a90b4584e",
+      "approved_source_count": 14,
+      "changes_requested_source_count": 0,
+      "pending_source_count": 0
+    },
+    "decision_policy": "Decisions apply only to the exact reviewed source SHA-256. Preserve approved sources unchanged; newly generated revisions start pending. The batch manifest selects current candidates.",
+    "combined_review_counts": {
+      "approved_sources": 14,
+      "changes_requested_sources": 0,
+      "unreviewed_sources": 0,
+      "scope": "Final explicit user approval of all current selected appearances. Earlier exports and supplement remain historical. Future revisions do not inherit approval."
+    },
+    "review_history": [
+      {
+        "user_review": {
+          "path": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+          "sha256": "841102cf39d03640f21e37796205f045adec2c76188fe94e5f87bc3388c861fd",
+          "exported_at": "2026-09-26T23:35:29.843Z",
+          "reviewed_manifest_sha256": "b9fe593fcd576db4ef814c605cbdd770b0a6efa185bc8f4c1c656918bac0a2ef",
+          "approved_source_count": 5,
+          "changes_requested_source_count": 8,
+          "pending_source_count": 1
+        },
+        "reviewed_source_decisions": [
+          {
+            "proposal_id": "male-skinny",
+            "state": "changes_requested",
+            "source_at_review_export": {
+              "asset_id": "illustrated_male_skinny_r1",
+              "revision": 2,
+              "path": "design/character-2-5d/approval-r1/images/male-skinny-r2.png",
+              "sha256": "cf4a53f61fed773ae4746c96e521e5bfd81581e5a0abd50bd06856a8a2099001"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:34:54.628Z",
+            "notes_verbatim": "less musuclar",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "male-normal",
+            "state": "changes_requested",
+            "source_at_review_export": {
+              "asset_id": "illustrated_male_normal_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/male-normal.png",
+              "sha256": "924b0a21c895fdffa2c524500ef826b20ac1cb80b4c11ca800b1f356c5d4e985"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:34:53.348Z",
+            "notes_verbatim": "a little bit more fat, without abs",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "male-chubby",
+            "state": "changes_requested",
+            "source_at_review_export": {
+              "asset_id": "illustrated_male_chubby_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/male-chubby.png",
+              "sha256": "98f379d24850c6742310bd29a4ade25c6d735b3b73fc63aeccc41c3bda67c9a4"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:33:21.206Z",
+            "notes_verbatim": "arms less muscular, he is chubby",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "male-fat",
+            "state": "changes_requested",
+            "source_at_review_export": {
+              "asset_id": "illustrated_male_fat_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/male-fat.png",
+              "sha256": "eb5ee196a68df4f94f4c4bad95b5a9b336a0107f59f40adb018ddae8a58b14f2"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:33:40.909Z",
+            "notes_verbatim": "man boobs a little big bigger and belly bigger",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "male-skinny_muscular",
+            "state": "approved",
+            "source_at_review_export": {
+              "asset_id": "illustrated_male_skinny_muscular_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/male-skinny_muscular.png",
+              "sha256": "4a2c9407e355c940b5beb2a4eff79a9167cc45a4d40f87f450a144737863c6f7"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:30:19.416Z",
+            "notes_verbatim": "",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "male-muscular",
+            "state": "approved",
+            "source_at_review_export": {
+              "asset_id": "illustrated_male_muscular_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/male-muscular.png",
+              "sha256": "3d75e4291972c6fdb9a8c38c61fc02fcd407e6c3cfba2480366614bd68d2233c"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:30:21.384Z",
+            "notes_verbatim": "",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "male-fat_muscular",
+            "state": "changes_requested",
+            "source_at_review_export": {
+              "asset_id": "illustrated_male_fat_muscular_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/male-fat_muscular.png",
+              "sha256": "698974f4ace8b1ffcb16d7caba3eafc43813ab4ab0d7e4af57b12da419e085b1"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:33:01.590Z",
+            "notes_verbatim": "arms less muscular, his arm is bigget than his head",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "female-skinny",
+            "state": "approved",
+            "source_at_review_export": {
+              "asset_id": "illustrated_female_skinny_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/female-skinny.png",
+              "sha256": "d57f6d8da224ab5d820a4550bba348da12103f47fe9c7d6c0ccdea4af83e25fc"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:30:29.008Z",
+            "notes_verbatim": "",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "female-normal",
+            "state": "approved",
+            "source_at_review_export": {
+              "asset_id": "illustrated_female_normal_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/female-normal.png",
+              "sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:30:32.416Z",
+            "notes_verbatim": "",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "female-chubby",
+            "state": "changes_requested",
+            "source_at_review_export": {
+              "asset_id": "illustrated_female_chubby_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/female-chubby.png",
+              "sha256": "9d8796811b9e31ffe5a94336e301ee882dc49f824aa15029f4d0be657e824aad"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:32:39.902Z",
+            "notes_verbatim": "arms less muscular",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "female-fat",
+            "state": "changes_requested",
+            "source_at_review_export": {
+              "asset_id": "illustrated_female_fat_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/female-fat.png",
+              "sha256": "b945c14af0e75746cda68b398916a02230c5715fa8e513ff301136f6eb93ef29"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:32:25.585Z",
+            "notes_verbatim": "arms less muscular, a little bit slimmer, she is fat, no flat stomach",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "female-skinny_muscular",
+            "state": "approved",
+            "source_at_review_export": {
+              "asset_id": "illustrated_female_skinny_muscular_r1",
+              "revision": 1,
+              "path": "design/character-2-5d/approval-r1/images/female-skinny_muscular.png",
+              "sha256": "e0aeabd686ef2086d9ad59896573dbdb621b963a87f0da1a5ac7c1b3a471bb91"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:30:42.432Z",
+            "notes_verbatim": "",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "female-muscular",
+            "state": "pending",
+            "source_at_review_export": {
+              "asset_id": "illustrated_female_muscular_r1",
+              "revision": 2,
+              "path": "design/character-2-5d/approval-r1/images/female-muscular-r2.png",
+              "sha256": "e5b02d0657dcf0ac418434b215ecb01307a6525f6fe34ed2b5689cf218cfc27a"
+            },
+            "source_was_reviewed": false,
+            "decided_at": null,
+            "notes_verbatim": "",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          },
+          {
+            "proposal_id": "female-fat_muscular",
+            "state": "changes_requested",
+            "source_at_review_export": {
+              "asset_id": "illustrated_female_fat_muscular_r1",
+              "revision": 3,
+              "path": "design/character-2-5d/approval-r1/images/female-fat_muscular-r3.png",
+              "sha256": "db9592af27e1c71f2e312ced9d30dad03aaa2e87d0ef76acf1e7ab7675a96296"
+            },
+            "source_was_reviewed": true,
+            "decided_at": "2026-09-26T23:31:15.880Z",
+            "notes_verbatim": "make boobs a little bit smaller",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T233529Z.json",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false
+          }
+        ],
+        "review_supplements": [
+          {
+            "proposal_id": "female-muscular",
+            "state": "changes_requested",
+            "source_at_review_export": {
+              "asset_id": "illustrated_female_muscular_r1",
+              "revision": 2,
+              "path": "design/character-2-5d/approval-r1/images/female-muscular-r2.png",
+              "sha256": "e5b02d0657dcf0ac418434b215ecb01307a6525f6fe34ed2b5689cf218cfc27a"
+            },
+            "source_was_reviewed": true,
+            "decided_at": null,
+            "notes_verbatim": "add a little bit more muscle",
+            "evidence_reference": "design/character-2-5d/approval-r1/reviews/user-review-supplement-2026-09-26.json",
+            "evidence_kind": "explicit_user_chat_supplement",
+            "applies_to_source_sha256_only": true,
+            "new_revisions_inherit_decision": false,
+            "direction": "Add a little muscle while retaining proportionate limbs and smaller muscle volume than the corresponding male preset."
+          }
+        ],
+        "combined_review_counts": {
+          "approved_sources": 5,
+          "changes_requested_sources": 9,
+          "unreviewed_sources": 0,
+          "scope": "Original exported JSON plus explicit chat supplement; newly authored revisions remain pending."
+        }
+      },
+      {
+        "user_review": {
+          "path": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T235342Z.json",
+          "sha256": "a998afc54e82d70142af17231271f426b62625b910904a908050792e7f1e36fd",
+          "exported_at": "2026-09-26T23:53:42.890Z",
+          "reviewed_manifest_sha256": "42ea389f4c31f876543a82e9b6e8b924568f985ae0e95237feaceea02b253530",
+          "approved_source_count": 11,
+          "changes_requested_source_count": 3,
+          "pending_source_count": 0
+        },
+        "reviewed_source_decisions_reference": "design/character-2-5d/approval-r1/reviews/user-review-2026-09-26T235342Z.json",
+        "combined_review_counts": {
+          "approved_sources": 11,
+          "changes_requested_sources": 3,
+          "unreviewed_sources": 0,
+          "scope": "Latest exported user review; older export and chat supplement are preserved in review_history. New revisions start pending."
+        },
+        "remaining_changes_requested_proposal_ids": [
+          "male-chubby",
+          "male-fat",
+          "female-fat"
+        ]
+      }
+    ],
+    "reviewed_source_decisions_reference": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+    "remaining_changes_requested_proposal_ids": []
   }
 }

@@ -1,0 +1,7 @@
+Use case: identity-preserve.
+Input image: the attached artboard is the sole EDIT TARGET and authoritative reference.
+Apply the user's specific body correction below. Preserve the same adult character identity, face, hairstyle, skin color, richly shaded manhwa game illustration, outfit designs/materials, charcoal background, lighting, three-panel full-body composition, camera angles, pose, nominal height and baseline. Keep the entire hairstyle and feet visible. Left is base body, center equipped, right equipped elevated gameplay view. Apply the anatomy correction coherently across all three figures and fit clothing accordingly. Maintain the original 1536 by 1024 canvas. No text, labels, extra figures or watermark.
+
+User's review note (verbatim): a little bit more fat, without abs
+
+Required edit: Add a little soft body fat to his normal build, especially a gently rounded lower abdomen and fuller waist. Remove ALL visible abdominal six-pack, oblique cuts and sculpted stomach shading. Draw a smooth soft stomach with a small natural belly, still distinctly slimmer than the chubby preset. Avoid the athletic V-shaped torso. The shirt should drape over the same mild roundness in the center and right views rather than implying abs. Preserve ordinary limb size and the rest of his design.

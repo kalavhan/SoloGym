@@ -19,11 +19,19 @@ namespace SoloGym
         {
             public RectTransform rig, headSocket, leftArm, rightArm, leftForearm, rightForearm, leftLeg, rightLeg,
                 leftCalf, rightCalf;
-            public RawImage hair, shirt, leftGlove, rightGlove;
+            public RawImage hair, shirt, leftGlove, rightGlove, leftHand, rightHand;
         }
 
+        sealed class Attachment
+        {
+            public RawImage image;
+            public RectTransform socket;
+            public Vector3 offset;
+        }
+        readonly System.Collections.Generic.List<Attachment> attachments = new System.Collections.Generic.List<Attachment>();
+
         RectTransform rig, headSocket, leftArm, rightArm, leftForearm, rightForearm, leftLeg, rightLeg, leftCalf, rightCalf;
-        RawImage hair, shirt, leftGlove, rightGlove;
+        RawImage hair, shirt, leftGlove, rightGlove, leftHand, rightHand;
         AvatarAppearance appearance;
         bool initialized;
         public bool IsInitialized => initialized;
@@ -36,6 +44,8 @@ namespace SoloGym
 
         public void Initialize(AvatarAppearance recipe)
         {
+            if (recipe == null || !recipe.IsSupportedProof)
+                throw new ArgumentException("Unsupported character recipe.", nameof(recipe));
             var asset = Resources.Load<TextAsset>("AvatarProof/Parts");
             foreach (var p in JsonUtility.FromJson<Atlas>(asset.text).parts) parts[p.id] = p;
             AvatarRigLayout.Build(this, transform, parts, out var refs);
@@ -53,6 +63,8 @@ namespace SoloGym
             shirt = refs.shirt;
             leftGlove = refs.leftGlove;
             rightGlove = refs.rightGlove;
+            leftHand = refs.leftHand;
+            rightHand = refs.rightHand;
             initialized = true;
             Apply(recipe);
             ApplyFramingFromReference();
@@ -67,7 +79,22 @@ namespace SoloGym
             ApplyPreviewFraming();
         }
 
-        internal RawImage CreatePiece(string id, Transform parent, Rect r) => Piece(id, parent, r);
+        internal RawImage CreatePiece(string id, Transform renderRoot, RectTransform socket, Rect r)
+        {
+            var image = Piece(id, renderRoot, r);
+            attachments.Add(new Attachment { image = image, socket = socket, offset = new Vector3(r.x, -r.y, 0) });
+            return image;
+        }
+
+        void SyncAttachments()
+        {
+            foreach (var attachment in attachments)
+            {
+                // Every sprite is a sibling for reliable sorting; every attachment follows its skeletal socket.
+                attachment.image.transform.localPosition = rig.InverseTransformPoint(attachment.socket.TransformPoint(attachment.offset));
+                attachment.image.transform.localRotation = Quaternion.Inverse(rig.rotation) * attachment.socket.rotation;
+            }
+        }
 
         RawImage Piece(string id, Transform parent, Rect r)
         {
@@ -100,12 +127,26 @@ namespace SoloGym
             Color skin = AvatarCustomizationCatalog.SkinTint(recipe.skinPaletteId);
             foreach (var mat in materials) mat.SetColor("_SkinTint", skin);
             string hairPart = AvatarCustomizationCatalog.HairLayerPartId(recipe.hairId);
-            if (parts.ContainsKey(hairPart)) SetPart(hair, parts[hairPart]);
+            if (parts.ContainsKey(hairPart))
+            {
+                SetPart(hair, parts[hairPart]);
+                foreach (var variant in CharacterReference.RigLayout.hair_variants)
+                {
+                    if (variant.id != hairPart) continue;
+                    var part = parts[hairPart];
+                    hair.rectTransform.sizeDelta = new Vector2(part.rect[2], part.rect[3]) * variant.scale;
+                    attachments.Find(a => a.image == hair).offset = new Vector3(variant.x, -variant.y, 0);
+                    break;
+                }
+            }
             shirt.gameObject.SetActive(!string.IsNullOrEmpty(recipe.torsoItemId));
             bool gloves = !string.IsNullOrEmpty(recipe.handItemId);
             leftGlove.gameObject.SetActive(gloves);
             rightGlove.gameObject.SetActive(gloves);
+            leftHand.gameObject.SetActive(!gloves);
+            rightHand.gameObject.SetActive(!gloves);
             ApplyPreviewFraming();
+            SyncAttachments();
             return true;
         }
 
@@ -142,30 +183,41 @@ namespace SoloGym
                 Rotate(leftArm, 0); Rotate(leftForearm, 0);
                 Rotate(rightArm, 0); Rotate(rightForearm, 0);
                 headSocket.localEulerAngles = Vector3.zero;
+                SyncAttachments();
                 return;
             }
             if (framing.animate_limbs)
             {
+                headSocket.localEulerAngles = Vector3.zero;
                 Rotate(leftLeg, walk * 15); Rotate(rightLeg, -walk * 15);
                 Rotate(leftCalf, Mathf.Max(0, -walk) * 20); Rotate(rightCalf, Mathf.Max(0, walk) * 20);
-                Rotate(leftArm, -7 - walk * 12); Rotate(leftForearm, -10);
-                Rotate(rightArm, 7 + walk * 12 + punch * 80);
-                Rotate(rightForearm, action == "jab" ? 25 * (1 - punch) : 10);
-                if (action == "jab" && punch > .45f) leftArm.SetAsFirstSibling();
-                rightArm.SetAsLastSibling();
+                Rotate(leftArm, -walk * 12); Rotate(leftForearm, 0);
+                Rotate(rightArm, walk * 12 + punch * 65);
+                Rotate(rightForearm, action == "jab" ? 18 * (1 - punch) : 0);
             }
             else
             {
-                Rotate(leftArm, -4); Rotate(leftForearm, -6);
-                Rotate(rightArm, 4); Rotate(rightForearm, 6);
+                Rotate(leftLeg, 0); Rotate(rightLeg, 0); Rotate(leftCalf, 0); Rotate(rightCalf, 0);
+                Rotate(leftArm, 0); Rotate(leftForearm, 0);
+                Rotate(rightArm, 0); Rotate(rightForearm, 0);
                 headSocket.localEulerAngles = new Vector3(0, 0, Mathf.Sin(t * 1.2f) * 2f);
             }
+            SyncAttachments();
         }
 
         static void Rotate(RectTransform joint, float angle) { joint.localEulerAngles = new Vector3(0, 0, angle); }
 
-        public bool CheckAttachments() =>
-            leftGlove.transform.parent.parent == leftForearm && rightGlove.transform.parent.parent == rightForearm;
+        public bool CheckAttachments()
+        {
+            if (!initialized || appearance == null || !appearance.IsSupportedProof) return false;
+            foreach (var a in attachments)
+            {
+                if (a.image.transform.parent != rig || a.socket == null) return false;
+                if (Vector3.Distance(a.image.transform.position, a.socket.TransformPoint(a.offset)) > .01f) return false;
+            }
+            return attachments.Find(a => a.image == leftGlove).socket.parent == leftForearm
+                && attachments.Find(a => a.image == rightGlove).socket.parent == rightForearm;
+        }
 
         void OnDestroy() { foreach (var m in materials) if (m != null) Destroy(m); }
     }

@@ -1,0 +1,121 @@
+{
+  "schema": "sologym.character-art-approval",
+  "version": 1,
+  "source": "explicit_user_message",
+  "statement": "good all approved, what is next?",
+  "recorded_at": "2026-09-27T00:19:55.829Z",
+  "message_timestamp_available": false,
+  "scope": "All fourteen current selected illustrated appearances only. Production layers, equipment fits, motion and runtime readiness are not established by this approval.",
+  "reviewed_manifest": {
+    "path": "design/character-2-5d/approval-r1/reviews/manifest-before-final-approval.json",
+    "sha256": "6adb9f04ab76ee8a7eca1719e57d25cfbe611f722ce79bde5374629a90b4584e",
+    "bytes": 91448
+  },
+  "reviewed_style_lock": {
+    "path": "design/character-2-5d/approval-r1/reviews/style-lock-before-final-approval.json",
+    "sha256": "d3cb72d74b32527e0688037699a5fabbfe949873cfd02a7b31c3f820de1553b1",
+    "bytes": 37724
+  },
+  "approved_source_count": 14,
+  "source_hashes_verified": true,
+  "approved_sources": [
+    {
+      "id": "male-skinny",
+      "asset_id": "illustrated_male_skinny_r1",
+      "revision": 3,
+      "path": "design/character-2-5d/approval-r1/images/male-skinny-r3.png",
+      "sha256": "e55c909213627e5abf0a3ce0f4d1a6fe717d066bbe8c74a58364fcbfe26aee87"
+    },
+    {
+      "id": "male-normal",
+      "asset_id": "illustrated_male_normal_r1",
+      "revision": 2,
+      "path": "design/character-2-5d/approval-r1/images/male-normal-r2.png",
+      "sha256": "8312e04bf8742f4e7e45a7e671cee6ba1828a1b94f84612e997cb0807896ac8c"
+    },
+    {
+      "id": "male-chubby",
+      "asset_id": "illustrated_male_chubby_r1",
+      "revision": 3,
+      "path": "design/character-2-5d/approval-r1/images/male-chubby-r3.png",
+      "sha256": "e2a19b5e181a15b167fcee40ae2be8fe060a6e08eeb1471f7ce7b2daa334b378"
+    },
+    {
+      "id": "male-fat",
+      "asset_id": "illustrated_male_fat_r1",
+      "revision": 3,
+      "path": "design/character-2-5d/approval-r1/images/male-fat-r3.png",
+      "sha256": "078a4887a9eca5e5604ec8bc57e57f313fd47449836e2c07f446760ac30ca29f"
+    },
+    {
+      "id": "male-skinny_muscular",
+      "asset_id": "illustrated_male_skinny_muscular_r1",
+      "revision": 1,
+      "path": "design/character-2-5d/approval-r1/images/male-skinny_muscular.png",
+      "sha256": "4a2c9407e355c940b5beb2a4eff79a9167cc45a4d40f87f450a144737863c6f7"
+    },
+    {
+      "id": "male-muscular",
+      "asset_id": "illustrated_male_muscular_r1",
+      "revision": 1,
+      "path": "design/character-2-5d/approval-r1/images/male-muscular.png",
+      "sha256": "3d75e4291972c6fdb9a8c38c61fc02fcd407e6c3cfba2480366614bd68d2233c"
+    },
+    {
+      "id": "male-fat_muscular",
+      "asset_id": "illustrated_male_fat_muscular_r1",
+      "revision": 2,
+      "path": "design/character-2-5d/approval-r1/images/male-fat_muscular-r2.png",
+      "sha256": "bac01b185a89e8f5ac72099b379f50836c0f2160dd974a5957c3903098d63bb4"
+    },
+    {
+      "id": "female-skinny",
+      "asset_id": "illustrated_female_skinny_r1",
+      "revision": 1,
+      "path": "design/character-2-5d/approval-r1/images/female-skinny.png",
+      "sha256": "d57f6d8da224ab5d820a4550bba348da12103f47fe9c7d6c0ccdea4af83e25fc"
+    },
+    {
+      "id": "female-normal",
+      "asset_id": "illustrated_female_normal_r1",
+      "revision": 1,
+      "path": "design/character-2-5d/approval-r1/images/female-normal.png",
+      "sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667"
+    },
+    {
+      "id": "female-chubby",
+      "asset_id": "illustrated_female_chubby_r1",
+      "revision": 2,
+      "path": "design/character-2-5d/approval-r1/images/female-chubby-r2.png",
+      "sha256": "fd12d81ceb5864be80c17e11e60234002b3e8b7cdbc2529772ac6b26a54f04b5"
+    },
+    {
+      "id": "female-fat",
+      "asset_id": "illustrated_female_fat_r1",
+      "revision": 4,
+      "path": "design/character-2-5d/approval-r1/images/female-fat-r4.png",
+      "sha256": "9982dac6bdba5a2a2c0285c0eb17a052ef4d0912eb08da318b473d886e1f1dc5"
+    },
+    {
+      "id": "female-skinny_muscular",
+      "asset_id": "illustrated_female_skinny_muscular_r1",
+      "revision": 1,
+      "path": "design/character-2-5d/approval-r1/images/female-skinny_muscular.png",
+      "sha256": "e0aeabd686ef2086d9ad59896573dbdb621b963a87f0da1a5ac7c1b3a471bb91"
+    },
+    {
+      "id": "female-muscular",
+      "asset_id": "illustrated_female_muscular_r1",
+      "revision": 3,
+      "path": "design/character-2-5d/approval-r1/images/female-muscular-r3.png",
+      "sha256": "5ed3163722014d33684cfde07be1d3ed6b25789b6ecc52d8a35eb76410261e5b"
+    },
+    {
+      "id": "female-fat_muscular",
+      "asset_id": "illustrated_female_fat_muscular_r1",
+      "revision": 4,
+      "path": "design/character-2-5d/approval-r1/images/female-fat_muscular-r4.png",
+      "sha256": "aaab4d248e21205fe553182347b56dc13e6d3830f12a0ed855d2fb8260a817e7"
+    }
+  ]
+}
