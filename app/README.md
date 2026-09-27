@@ -126,6 +126,25 @@ Add `-sologym-schedule-view review` to prefill setup fields for captures (still 
 
 ## Character customization (WIN-013)
 
+The current [AutoSprite checkpoint](../docs/design/character-autosprite-checkpoint.md)
+uses one **front-facing** character and a complete sprite idle loop in configuration
+and Home. Launch from the repository root:
+
+```bash
+app/Builds/Linux/SoloGym.x86_64 \
+  -screen-fullscreen 0 -screen-width 853 -screen-height 1844 \
+  -sologym-review -sologym-window character -sologym-locale es \
+  -sologym-avatar-renderer autosprite
+```
+
+Continue opens Home; tapping the character returns to configuration. Idle can be
+paused or played, and captures stay open unless `-sologym-quit-after-capture` is
+provided. This preview does not save a profile or provide equipment/body swaps.
+Isometric is deferred. The [next body plan](../docs/design/character-sprite-v1-plan.md)
+uses five types per gender and preserves all fourteen approved appearance masters.
+
+### Earlier character experiments
+
 See the [character creation checkpoint](../docs/design/character-creation-checkpoint.md)
 for approved appearance sources, unresolved motion defects and the stage after
 PR review and merge. Idle received positive user feedback; walk/jab require

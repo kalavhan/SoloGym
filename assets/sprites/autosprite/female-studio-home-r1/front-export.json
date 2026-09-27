@@ -1,0 +1,19 @@
+{
+  "id": "cmuj86z5q0007asbm3zc8cl4p",
+  "characterId": "cmuj70eg8000910qlnap76av1",
+  "kind": "idle",
+  "direction": "right",
+  "version": 1,
+  "status": "succeeded",
+  "isSelected": true,
+  "frameWidth": 768,
+  "frameHeight": 768,
+  "frameCount": 25,
+  "columns": 5,
+  "sheetUrl": "https://www.autosprite.io/api/files/spritesheets/cmuj86z5q0007asbm3zc8cl4p/sheet",
+  "atlasUrl": "https://www.autosprite.io/api/files/spritesheets/cmuj86z5q0007asbm3zc8cl4p/atlas",
+  "audioUrl": null,
+  "sourceVideoId": "cmuj85p970008rs3ch03lqchc",
+  "errorText": null,
+  "createdAt": "2026-09-27T02:54:59.966Z"
+}

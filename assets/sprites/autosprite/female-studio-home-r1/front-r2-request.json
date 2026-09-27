@@ -1,0 +1,23 @@
+{
+  "characterId": "cmuj70eg8000910qlnap76av1",
+  "animations": [
+    {
+      "kind": "custom",
+      "name": "SoloGym front anchored idle r2",
+      "prompt": "Front-facing idle: retain the supplied pose and exact face, outfit and proportions. Full body facing the viewer, gentle subtle breathing only, arms relaxed down, feet stay fixed, stationary camera. No turning, no side view, no attacks, no steps. End in the same front pose.",
+      "raw_prompt": true,
+      "first_frame_pose_id": "cmuj70eh8000b10qltzxfcom3",
+      "last_frame_pose_id": "cmuj70eh8000b10qltzxfcom3",
+      "loop": true
+    }
+  ],
+  "spritesheet": {
+    "frameCount": 25,
+    "frameSize": 768
+  },
+  "withSound": false,
+  "videoTier": "turbo",
+  "durationSec": 2,
+  "turboMode": "first_frame",
+  "removeBg": "default"
+}

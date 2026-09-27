@@ -107,6 +107,14 @@ namespace SoloGym
                 reviewMode = true;
 #endif
                 if (!reviewMode) { Debug.LogError("WIN-013 preview requires -sologym-review."); enabled = false; return; }
+                if (AutoSpriteSession.Requested)
+                {
+                    AutoSpriteSession.Initialize();
+                    new GameObject("AutoSprite character preview").AddComponent<AutoSpriteStudioScreen>().Initialize(
+                        AutoSpriteSession.Language, () => Application.Quit(), () => SceneManager.LoadScene("SystemHome"), requestedCapture);
+                    enabled = false;
+                    return;
+                }
                 if (FindFirstObjectByType<EventSystem>() == null)
                     new GameObject("Input", typeof(EventSystem), typeof(StandaloneInputModule));
                 var characterPreview = new GameObject("SoloGym character preview").AddComponent<OnboardingScreen>();

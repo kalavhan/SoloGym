@@ -1,0 +1,393 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_id": "sologym_autosprite_body_reference_plan_v1",
+  "status": "scope_confirmed_generation_pending",
+  "scope_confirmation": {
+    "source": "explicit_user_reply",
+    "question": "For the next sprite pass, should I record five body types per gender—slim, medium, overweight, obese, and muscular—while preserving all 14 approved designs as references?",
+    "answer": "Yes: five per gender, preserve all references"
+  },
+  "plan_document": "docs/design/character-sprite-v1-plan.md",
+  "source_manifest": {
+    "path": "design/character-2-5d/approval-r1/manifest.json",
+    "sha256": "44fb189c7b441c0243bf03c701cb04577a92ee960711532e7f4c95985eefec75",
+    "bytes": 105554
+  },
+  "source_style_lock": {
+    "path": "design/character-2-5d/style-lock.json",
+    "sha256": "781ae1041894e23b7bc5a059cf7da7c9403b73b7e1ff0b453cf7d7de4c7dfc7c",
+    "bytes": 42814
+  },
+  "source_approval": {
+    "path": "design/character-2-5d/approval-r1/reviews/user-approval-all-14.json",
+    "sha256": "4f5bb52c58a9dd7f62b2d2fe69f7aae8f52d54e24b461e75c8d56d400605537c",
+    "bytes": 4836
+  },
+  "preservation_policy": {
+    "all_fourteen_approved_sources_retained": true,
+    "earlier_revisions_and_review_records_retained": true,
+    "historical_ids_unchanged": true,
+    "new_sprites_inherit_source_approval": false
+  },
+  "production_scope": {
+    "provider": "AutoSprite",
+    "tools": [
+      "create_character",
+      "generate_spritesheet"
+    ],
+    "export_root": "assets/sprites/",
+    "read_json_atlas_before_animation_code": true,
+    "presentations": [
+      "male",
+      "female"
+    ],
+    "body_type_order": [
+      "slim",
+      "medium",
+      "overweight",
+      "obese",
+      "muscular"
+    ],
+    "planned_variant_count": 10,
+    "views": [
+      "front"
+    ],
+    "screens": [
+      "configuration",
+      "home"
+    ],
+    "isometric_deferred": true,
+    "gameplay_animation_deferred": true,
+    "health_or_fitness_inference_allowed": false,
+    "measurement_driven_selection_allowed": false,
+    "gameplay_strength_mapping_allowed": false,
+    "equipment_interchangeability_verified": false
+  },
+  "style_and_identity_references": [
+    {
+      "path": "design/character-2-5d/references/illustrated-style-r1.png",
+      "sha256": "b204c3012685fcdc6c694e016055b1c21dd2308891fd9208b379aec5a04bc534",
+      "bytes": 1929791,
+      "width": 1536,
+      "height": 1024,
+      "asset_id": "illustrated_style_r1",
+      "status": "user_approved_style"
+    },
+    {
+      "path": "design/character-2-5d/references/male-kai-identity-r1.png",
+      "sha256": "4a9e97e0e0b73229923ef1d9ee30438601decc30cd80a4b19178c9006f0b7d8f",
+      "bytes": 1587463,
+      "width": 1024,
+      "height": 1536,
+      "asset_id": "male_kai_identity_r1",
+      "status": "existing_identity_reference"
+    },
+    {
+      "path": "design/character-2-5d/references/female-identity-r1.png",
+      "sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667",
+      "bytes": 1909357,
+      "width": 1536,
+      "height": 1024,
+      "asset_id": "female_identity_r1",
+      "status": "user_approved_identity_anchor"
+    }
+  ],
+  "planned_variants": [
+    {
+      "planned_variant_id": "autosprite_male_slim_v1",
+      "presentation": "male",
+      "body_type": "slim",
+      "view": "front",
+      "generation_status": "not_generated",
+      "visual_review_status": "not_reviewed",
+      "runtime_selectable": false,
+      "generated_exports": [],
+      "primary_reference": {
+        "source_id": "male-skinny",
+        "source_asset_id": "illustrated_male_skinny_r1",
+        "source_revision": 3,
+        "source_appearance_status": "user_approved",
+        "source_output": {
+          "path": "design/character-2-5d/approval-r1/images/male-skinny-r3.png",
+          "sha256": "e55c909213627e5abf0a3ce0f4d1a6fe717d066bbe8c74a58364fcbfe26aee87",
+          "bytes": 1757888,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "planned_variant_id": "autosprite_male_medium_v1",
+      "presentation": "male",
+      "body_type": "medium",
+      "view": "front",
+      "generation_status": "not_generated",
+      "visual_review_status": "not_reviewed",
+      "runtime_selectable": false,
+      "generated_exports": [],
+      "primary_reference": {
+        "source_id": "male-normal",
+        "source_asset_id": "illustrated_male_normal_r1",
+        "source_revision": 2,
+        "source_appearance_status": "user_approved",
+        "source_output": {
+          "path": "design/character-2-5d/approval-r1/images/male-normal-r2.png",
+          "sha256": "8312e04bf8742f4e7e45a7e671cee6ba1828a1b94f84612e997cb0807896ac8c",
+          "bytes": 1847391,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "planned_variant_id": "autosprite_male_overweight_v1",
+      "presentation": "male",
+      "body_type": "overweight",
+      "view": "front",
+      "generation_status": "not_generated",
+      "visual_review_status": "not_reviewed",
+      "runtime_selectable": false,
+      "generated_exports": [],
+      "primary_reference": {
+        "source_id": "male-chubby",
+        "source_asset_id": "illustrated_male_chubby_r1",
+        "source_revision": 3,
+        "source_appearance_status": "user_approved",
+        "source_output": {
+          "path": "design/character-2-5d/approval-r1/images/male-chubby-r3.png",
+          "sha256": "e2a19b5e181a15b167fcee40ae2be8fe060a6e08eeb1471f7ce7b2daa334b378",
+          "bytes": 1776385,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "planned_variant_id": "autosprite_male_obese_v1",
+      "presentation": "male",
+      "body_type": "obese",
+      "view": "front",
+      "generation_status": "not_generated",
+      "visual_review_status": "not_reviewed",
+      "runtime_selectable": false,
+      "generated_exports": [],
+      "primary_reference": {
+        "source_id": "male-fat",
+        "source_asset_id": "illustrated_male_fat_r1",
+        "source_revision": 3,
+        "source_appearance_status": "user_approved",
+        "source_output": {
+          "path": "design/character-2-5d/approval-r1/images/male-fat-r3.png",
+          "sha256": "078a4887a9eca5e5604ec8bc57e57f313fd47449836e2c07f446760ac30ca29f",
+          "bytes": 1809893,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "planned_variant_id": "autosprite_male_muscular_v1",
+      "presentation": "male",
+      "body_type": "muscular",
+      "view": "front",
+      "generation_status": "not_generated",
+      "visual_review_status": "not_reviewed",
+      "runtime_selectable": false,
+      "generated_exports": [],
+      "primary_reference": {
+        "source_id": "male-muscular",
+        "source_asset_id": "illustrated_male_muscular_r1",
+        "source_revision": 1,
+        "source_appearance_status": "user_approved",
+        "source_output": {
+          "path": "design/character-2-5d/approval-r1/images/male-muscular.png",
+          "sha256": "3d75e4291972c6fdb9a8c38c61fc02fcd407e6c3cfba2480366614bd68d2233c",
+          "bytes": 1861914,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "planned_variant_id": "autosprite_female_slim_v1",
+      "presentation": "female",
+      "body_type": "slim",
+      "view": "front",
+      "generation_status": "not_generated",
+      "visual_review_status": "not_reviewed",
+      "runtime_selectable": false,
+      "generated_exports": [],
+      "primary_reference": {
+        "source_id": "female-skinny",
+        "source_asset_id": "illustrated_female_skinny_r1",
+        "source_revision": 1,
+        "source_appearance_status": "user_approved",
+        "source_output": {
+          "path": "design/character-2-5d/approval-r1/images/female-skinny.png",
+          "sha256": "d57f6d8da224ab5d820a4550bba348da12103f47fe9c7d6c0ccdea4af83e25fc",
+          "bytes": 1844686,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "planned_variant_id": "autosprite_female_medium_v1",
+      "presentation": "female",
+      "body_type": "medium",
+      "view": "front",
+      "generation_status": "not_generated",
+      "visual_review_status": "not_reviewed",
+      "runtime_selectable": false,
+      "generated_exports": [],
+      "primary_reference": {
+        "source_id": "female-normal",
+        "source_asset_id": "illustrated_female_normal_r1",
+        "source_revision": 1,
+        "source_appearance_status": "user_approved",
+        "source_output": {
+          "path": "design/character-2-5d/approval-r1/images/female-normal.png",
+          "sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667",
+          "bytes": 1909357,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "planned_variant_id": "autosprite_female_overweight_v1",
+      "presentation": "female",
+      "body_type": "overweight",
+      "view": "front",
+      "generation_status": "not_generated",
+      "visual_review_status": "not_reviewed",
+      "runtime_selectable": false,
+      "generated_exports": [],
+      "primary_reference": {
+        "source_id": "female-chubby",
+        "source_asset_id": "illustrated_female_chubby_r1",
+        "source_revision": 2,
+        "source_appearance_status": "user_approved",
+        "source_output": {
+          "path": "design/character-2-5d/approval-r1/images/female-chubby-r2.png",
+          "sha256": "fd12d81ceb5864be80c17e11e60234002b3e8b7cdbc2529772ac6b26a54f04b5",
+          "bytes": 1829131,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "planned_variant_id": "autosprite_female_obese_v1",
+      "presentation": "female",
+      "body_type": "obese",
+      "view": "front",
+      "generation_status": "not_generated",
+      "visual_review_status": "not_reviewed",
+      "runtime_selectable": false,
+      "generated_exports": [],
+      "primary_reference": {
+        "source_id": "female-fat",
+        "source_asset_id": "illustrated_female_fat_r1",
+        "source_revision": 4,
+        "source_appearance_status": "user_approved",
+        "source_output": {
+          "path": "design/character-2-5d/approval-r1/images/female-fat-r4.png",
+          "sha256": "9982dac6bdba5a2a2c0285c0eb17a052ef4d0912eb08da318b473d886e1f1dc5",
+          "bytes": 1788673,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "planned_variant_id": "autosprite_female_muscular_v1",
+      "presentation": "female",
+      "body_type": "muscular",
+      "view": "front",
+      "generation_status": "not_generated",
+      "visual_review_status": "not_reviewed",
+      "runtime_selectable": false,
+      "generated_exports": [],
+      "primary_reference": {
+        "source_id": "female-muscular",
+        "source_asset_id": "illustrated_female_muscular_r1",
+        "source_revision": 3,
+        "source_appearance_status": "user_approved",
+        "source_output": {
+          "path": "design/character-2-5d/approval-r1/images/female-muscular-r3.png",
+          "sha256": "5ed3163722014d33684cfde07be1d3ed6b25789b6ecc52d8a35eb76410261e5b",
+          "bytes": 1832278,
+          "width": 1536,
+          "height": 1024
+        }
+      }
+    }
+  ],
+  "supplementary_references": [
+    {
+      "presentation": "male",
+      "historical_preset": "skinny_muscular",
+      "role": "supplementary_reference_not_v1_selectable_type",
+      "source_id": "male-skinny_muscular",
+      "source_asset_id": "illustrated_male_skinny_muscular_r1",
+      "source_revision": 1,
+      "source_appearance_status": "user_approved",
+      "source_output": {
+        "path": "design/character-2-5d/approval-r1/images/male-skinny_muscular.png",
+        "sha256": "4a2c9407e355c940b5beb2a4eff79a9167cc45a4d40f87f450a144737863c6f7",
+        "bytes": 1814870,
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "presentation": "male",
+      "historical_preset": "fat_muscular",
+      "role": "supplementary_reference_not_v1_selectable_type",
+      "source_id": "male-fat_muscular",
+      "source_asset_id": "illustrated_male_fat_muscular_r1",
+      "source_revision": 2,
+      "source_appearance_status": "user_approved",
+      "source_output": {
+        "path": "design/character-2-5d/approval-r1/images/male-fat_muscular-r2.png",
+        "sha256": "bac01b185a89e8f5ac72099b379f50836c0f2160dd974a5957c3903098d63bb4",
+        "bytes": 1847568,
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "presentation": "female",
+      "historical_preset": "skinny_muscular",
+      "role": "supplementary_reference_not_v1_selectable_type",
+      "source_id": "female-skinny_muscular",
+      "source_asset_id": "illustrated_female_skinny_muscular_r1",
+      "source_revision": 1,
+      "source_appearance_status": "user_approved",
+      "source_output": {
+        "path": "design/character-2-5d/approval-r1/images/female-skinny_muscular.png",
+        "sha256": "e0aeabd686ef2086d9ad59896573dbdb621b963a87f0da1a5ac7c1b3a471bb91",
+        "bytes": 1826254,
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "presentation": "female",
+      "historical_preset": "fat_muscular",
+      "role": "supplementary_reference_not_v1_selectable_type",
+      "source_id": "female-fat_muscular",
+      "source_asset_id": "illustrated_female_fat_muscular_r1",
+      "source_revision": 4,
+      "source_appearance_status": "user_approved",
+      "source_output": {
+        "path": "design/character-2-5d/approval-r1/images/female-fat_muscular-r4.png",
+        "sha256": "aaab4d248e21205fe553182347b56dc13e6d3830f12a0ed855d2fb8260a817e7",
+        "bytes": 1797097,
+        "width": 1536,
+        "height": 1024
+      }
+    }
+  ]
+}

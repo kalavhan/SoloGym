@@ -1,0 +1,19 @@
+{
+  "id": "cmuj86n78000kptivmo2b6t17",
+  "characterId": "cmuj70eg8000910qlnap76av1",
+  "kind": "iso_idle_southeast",
+  "direction": "right",
+  "version": 1,
+  "status": "succeeded",
+  "isSelected": true,
+  "frameWidth": 768,
+  "frameHeight": 768,
+  "frameCount": 25,
+  "columns": 5,
+  "sheetUrl": "https://www.autosprite.io/api/files/spritesheets/cmuj86n78000kptivmo2b6t17/sheet",
+  "atlasUrl": "https://www.autosprite.io/api/files/spritesheets/cmuj86n78000kptivmo2b6t17/atlas",
+  "audioUrl": null,
+  "sourceVideoId": "cmuj85p860006rs3c3gyzt02w",
+  "errorText": null,
+  "createdAt": "2026-09-27T02:54:44.469Z"
+}
