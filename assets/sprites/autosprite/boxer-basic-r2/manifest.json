@@ -1,0 +1,103 @@
+{
+  "schema": "sologym.autosprite-outfit-concept.v1",
+  "status": "superseded_by_coverage_revision",
+  "approval": "direction_accepted_with_required_coverage_changes",
+  "tier": "basic",
+  "tierOrder": [
+    "basic",
+    "rare",
+    "ultra_rare"
+  ],
+  "characterId": "cmuj70eg8000910qlnap76av1",
+  "sourceReference": {
+    "path": "assets/sprites/autosprite/female-studio-home-r1/female-front-source.png",
+    "sha256": "9a169b724d44f13017667731e5ac1d3c752d80340d1b603b5c2377eb485e9308"
+  },
+  "request": "request.json",
+  "prompt": "prompt.txt",
+  "scope": "One static frontal Basic boxer concept with six equipment slots and one backpack product inset",
+  "animated": false,
+  "emissiveEffects": false,
+  "runtimeIntegrated": false,
+  "independentEquipmentLayersVerified": false,
+  "items": [
+    {
+      "slot": "head",
+      "id": "basic_cloth_headband",
+      "name": "Cloth headband",
+      "tier": "basic",
+      "status": "concept_pending_review"
+    },
+    {
+      "slot": "torso",
+      "id": "basic_training_jacket",
+      "name": "Sleeveless training jacket",
+      "tier": "basic",
+      "status": "concept_pending_review"
+    },
+    {
+      "slot": "hands",
+      "id": "basic_boxing_gloves",
+      "name": "Padded boxing gloves",
+      "tier": "basic",
+      "status": "concept_pending_review"
+    },
+    {
+      "slot": "legs",
+      "id": "basic_boxing_trunks",
+      "name": "Boxing trunks",
+      "tier": "basic",
+      "status": "concept_pending_review"
+    },
+    {
+      "slot": "feet",
+      "id": "basic_boxing_boots",
+      "name": "Lightweight boxing boots",
+      "tier": "basic",
+      "status": "concept_pending_review"
+    },
+    {
+      "slot": "back",
+      "id": "basic_gym_backpack",
+      "name": "Canvas boxing-gym backpack",
+      "tier": "basic",
+      "status": "concept_pending_review"
+    }
+  ],
+  "estimatedCredits": 3,
+  "backSlotDefinition": "Back-mounted equipment: backpacks, tails, wings and similar attachments. Current Basic concept uses a fabric backpack.",
+  "supersedes": "assets/sprites/autosprite/boxer-basic-r1/manifest.json",
+  "jobId": "cf_66615351-d7ff-48b6-b027-5467deae95e5",
+  "creditsUsed": 3,
+  "poseId": "cmujbld07000zc06dj0c1obrj",
+  "image": {
+    "path": "basic-backpack-concept.png",
+    "sha256": "8a9b82bb00c8687cd1655291d9989a125941a621730ee8335dfafd616bc48c5b",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      255,
+      255
+    ]
+  },
+  "retrieval": "get_character.poses; get_job_status does not resolve cf_ pose jobs",
+  "visualReview": {
+    "status": "ready_for_user_review",
+    "observed": "Front-facing character with cloth headband, open sleeveless jacket, padded boxing gloves, boxing trunks, lace-up boots and worn backpack with separate product inset. No visible glow or armor.",
+    "limitations": [
+      "Flattened concept image, not independently fitted equipment layers.",
+      "Backpack inset is for review and is not part of the runtime character."
+    ]
+  },
+  "userFeedback": {
+    "quote": "let's make it not that sexualized. not show off that much skin. and besides that everything good, you can continue.",
+    "accepted": "Overall Basic boxing style, palette and equipment direction.",
+    "requiredChanges": "Cover torso and midriff; reduce exposed skin with sleeves and longer shorts.",
+    "continuationAuthorized": true
+  },
+  "supersededBy": "assets/sprites/autosprite/boxer-basic-r3/manifest.json",
+  "productionRole": "historical_outfit_concept_reference_only",
+  "canonicalBaseEligible": false,
+  "equipmentProductionWorkflow": "superseded_by_body_base_then_isolated_assets_then_local_composition"
+}

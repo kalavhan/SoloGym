@@ -1,0 +1,233 @@
+{
+  "schema": "sologym.fitted-clothing-batch.v1",
+  "status": "accepted_for_mvp_with_known_issues",
+  "tier": "base",
+  "bodyImagesChanged": 0,
+  "hairFitsChanged": 0,
+  "fullCharacterGenerations": 0,
+  "characterUploads": 0,
+  "animated": false,
+  "runtimeIntegrated": true,
+  "creditsUsed": 12,
+  "pilotCreditsPlanned": 8,
+  "items": [
+    {
+      "id": "female-medium-top",
+      "slot": "torso",
+      "status": "rejected_source",
+      "approval": "pending_review",
+      "generationCreditsPlanned": 1,
+      "backgroundRemovalCreditsPlanned": 1,
+      "source": {
+        "path": "female-medium-top/source.png",
+        "sha256": "ea8f4b5a1e079b2e6fabcfdbaa48398cc5158fdc728f9a2753a79c377f23abf3",
+        "width": 1024,
+        "height": 1024
+      },
+      "generationCreditsUsed": 1,
+      "rejectionReason": "Provider added trousers; top is not isolated."
+    },
+    {
+      "id": "male-overweight-top",
+      "slot": "torso",
+      "status": "exported_pending_fit_review",
+      "approval": "pending_review",
+      "generationCreditsPlanned": 1,
+      "backgroundRemovalCreditsPlanned": 1,
+      "source": {
+        "path": "male-overweight-top/source.png",
+        "sha256": "e018f1b061c3093255686605c85fdaeec4d2fbf911d0f474e35eeb6c2160ea16",
+        "width": 1024,
+        "height": 1024
+      },
+      "generationCreditsUsed": 1,
+      "assetId": "cmuk4d7v3000iuhuposxb05h1",
+      "export": {
+        "path": "male-overweight-top/item.png",
+        "sha256": "94f7596b18f4f151be96d072202cc90de65d0b21cec6830f962020d1f483c3b5",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          61,
+          6,
+          962,
+          1005
+        ]
+      },
+      "backgroundRemovalCreditsUsed": 1,
+      "sourceInspection": "Isolated garment, no body parts, no added trousers or branding."
+    },
+    {
+      "id": "male-heavy-shorts",
+      "slot": "legs",
+      "status": "rejected_source",
+      "approval": "pending_review",
+      "generationCreditsPlanned": 1,
+      "backgroundRemovalCreditsPlanned": 1,
+      "source": {
+        "path": "male-heavy-shorts/source.png",
+        "sha256": "7bf04decc201c18286fffc784d8e95d0b7802bb47de30abaace4d477c4e210c7",
+        "width": 1024,
+        "height": 1024
+      },
+      "generationCreditsUsed": 1,
+      "rejectionReason": "Unrequested large logo and text changes the Base kit design."
+    },
+    {
+      "id": "female-medium-top-r2",
+      "slot": "torso",
+      "status": "exported_pending_fit_review",
+      "approval": "pending_review",
+      "generationCreditsPlanned": 1,
+      "backgroundRemovalCreditsPlanned": 1,
+      "source": {
+        "path": "female-medium-top-r2/source.png",
+        "sha256": "99bc94cfbe34d073b6467acc3bd22ef2d4a600efdb6dd2bb0e09cd34fc1fa4b9",
+        "width": 1024,
+        "height": 1024
+      },
+      "generationCreditsUsed": 1,
+      "assetId": "cmuk4gt7p0001ib0kiihvo03s",
+      "export": {
+        "path": "female-medium-top-r2/item.png",
+        "sha256": "4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          127,
+          34,
+          897,
+          986
+        ]
+      },
+      "backgroundRemovalCreditsUsed": 1,
+      "sourceInspection": "Isolated garment, no body parts, no added trousers or branding."
+    },
+    {
+      "id": "male-heavy-shorts-r2",
+      "slot": "legs",
+      "status": "exported_pending_fit_review",
+      "approval": "pending_review",
+      "generationCreditsPlanned": 1,
+      "backgroundRemovalCreditsPlanned": 1,
+      "source": {
+        "path": "male-heavy-shorts-r2/source.png",
+        "sha256": "361bffb4edf7fed6a25a2c718570210984706716425a168d0efdfd4391961464",
+        "width": 1024,
+        "height": 1024
+      },
+      "generationCreditsUsed": 1,
+      "assetId": "cmuk4gu390003ib0kxflxv0ox",
+      "export": {
+        "path": "male-heavy-shorts-r2/item.png",
+        "sha256": "424591e5fa4bd930043a2175ded27461c62bca5d454f7ffe5ccf7db5f0c6f6c5",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          20,
+          107,
+          999,
+          838
+        ]
+      },
+      "backgroundRemovalCreditsUsed": 1,
+      "sourceInspection": "Isolated garment, no body parts, no added trousers or branding."
+    },
+    {
+      "id": "female-fuller-top",
+      "slot": "torso",
+      "status": "exported_pending_fit_review",
+      "approval": "pending_review",
+      "generationCreditsPlanned": 1,
+      "backgroundRemovalCreditsPlanned": 1,
+      "source": {
+        "path": "female-fuller-top/source.png",
+        "sha256": "d4976b0daa0aa0829f4d7361f47915821e575c8b238fef84476ffd46fa60f658",
+        "width": 1024,
+        "height": 1024
+      },
+      "generationCreditsUsed": 1,
+      "assetId": "cmuk508n9000112cpfp2a5suh",
+      "export": {
+        "path": "female-fuller-top/item.png",
+        "sha256": "cf74b5a24329511ba7373153f141774030de4443f4264d7248a9467df8dffa67",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          81,
+          15,
+          943,
+          996
+        ]
+      },
+      "backgroundRemovalCreditsUsed": 1,
+      "sourceInspection": "Isolated garment, no body parts, no added trousers or branding."
+    },
+    {
+      "id": "male-muscular-top",
+      "slot": "torso",
+      "status": "exported_pending_fit_review",
+      "approval": "pending_review",
+      "generationCreditsPlanned": 1,
+      "backgroundRemovalCreditsPlanned": 1,
+      "source": {
+        "path": "male-muscular-top/source.png",
+        "sha256": "fcbfd15917964c51ce484edf85b1d37b0cc9acc0e010473bf9a03db61b4d3744",
+        "width": 1024,
+        "height": 1024
+      },
+      "generationCreditsUsed": 1,
+      "assetId": "cmuk509se00049c66z6h0mycb",
+      "export": {
+        "path": "male-muscular-top/item.png",
+        "sha256": "175c3aaa6feb8728806faa310b595730f0a2e46b720ade4fb12317400f66b7f5",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          57,
+          30,
+          961,
+          984
+        ]
+      },
+      "backgroundRemovalCreditsUsed": 1,
+      "sourceInspection": "Isolated garment, no body parts, no added trousers or branding."
+    }
+  ],
+  "reviewPage": "tools/review/garment-fit-r3.html",
+  "fitting": "fitting.json",
+  "pilotBodyIds": [
+    "female-medium",
+    "male-overweight",
+    "male-obese"
+  ],
+  "fullRevisionCreditsPlanned": 12,
+  "unresolvedGenerationCharges": [
+    {
+      "itemId": "female-fuller-top",
+      "attempt": 1,
+      "tool": "generate_asset_preview",
+      "status": "transport_timeout_no_response",
+      "possibleCredits": 1,
+      "recovery": "No returned image URL or job ID. A replacement attempt is recorded separately; original charge is unknown."
+    }
+  ],
+  "maximumRevisionCredits": 13,
+  "revisedBodyIds": [
+    "female-slim",
+    "female-medium",
+    "female-muscular",
+    "female-overweight",
+    "female-obese",
+    "male-overweight",
+    "male-obese",
+    "male-muscular"
+  ],
+  "preservedClothingApprovals": [
+    "male-slim",
+    "male-medium"
+  ],
+  "creditAccountingStatus": "12_confirmed_plus_up_to_1_timeout_charge",
+  "creditsUsedUpperBound": 13,
+  "mvpAdoption": "mvp-adoption.json"
+}

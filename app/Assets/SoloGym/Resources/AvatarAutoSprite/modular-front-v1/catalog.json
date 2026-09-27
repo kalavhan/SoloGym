@@ -1,0 +1,1925 @@
+{
+  "schema": "sologym.modular-avatar.v1",
+  "artStatus": "accepted_for_mvp_with_known_issues",
+  "sourceFittingSha256": "c040437450183a86a98479dc5e73a3d26db6af657d63765c6feb7d0c1585572b",
+  "canvasSize": 1024,
+  "viewBounds": {
+    "x": 270,
+    "y": 0,
+    "width": 480,
+    "height": 1024
+  },
+  "excludedBodyIds": [
+    "female-obese",
+    "male-obese"
+  ],
+  "tier": "base",
+  "animated": false,
+  "bodies": [
+    {
+      "id": "female-slim",
+      "gender": "female",
+      "bodyType": "slim",
+      "resource": "images/f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+      "clothingFitSha256": "5df97be6ba91b98741f6267ccb859c1951a9875c5e60a24eb4eb56ba235f88e9",
+      "hairFitSha256": "83bda31d62c74242da75274267e15b3e2c5bdc6096dda25665bb1febb8d795a9",
+      "torso": {
+        "resource": "images/4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+        "sourceRect": {
+          "x": 127,
+          "y": 34,
+          "width": 770,
+          "height": 952
+        },
+        "destinationRect": {
+          "x": 363,
+          "y": 159,
+          "width": 288,
+          "height": 350
+        }
+      },
+      "legs": {
+        "resource": "images/56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+        "sourceRect": {
+          "x": 93,
+          "y": 63,
+          "width": 837,
+          "height": 890
+        },
+        "destinationRect": {
+          "x": 368,
+          "y": 435,
+          "width": 279,
+          "height": 221
+        }
+      },
+      "hair": [
+        {
+          "id": "close-crop",
+          "resource": "images/7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 460,
+            "y": 51,
+            "width": 106,
+            "height": 99
+          }
+        },
+        {
+          "id": "short-sweep",
+          "resource": "images/0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 456,
+            "y": 47,
+            "width": 113,
+            "height": 111
+          }
+        }
+      ],
+      "neck": [
+        {
+          "points": [
+            {
+              "x": 435,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 174
+            },
+            {
+              "x": 546,
+              "y": 174
+            },
+            {
+              "x": 548,
+              "y": 202
+            },
+            {
+              "x": 540,
+              "y": 211
+            },
+            {
+              "x": 529,
+              "y": 216
+            },
+            {
+              "x": 512,
+              "y": 218
+            },
+            {
+              "x": 496,
+              "y": 216
+            },
+            {
+              "x": 482,
+              "y": 211
+            },
+            {
+              "x": 471,
+              "y": 204
+            },
+            {
+              "x": 472,
+              "y": 174
+            },
+            {
+              "x": 435,
+              "y": 174
+            }
+          ],
+          "triangles": [
+            12,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            3,
+            5,
+            6,
+            1,
+            3,
+            6,
+            1,
+            6,
+            7,
+            1,
+            7,
+            8,
+            1,
+            8,
+            9,
+            1,
+            9,
+            10,
+            1,
+            10,
+            11,
+            1,
+            11,
+            12
+          ]
+        }
+      ],
+      "hands": [
+        {
+          "points": [
+            {
+              "x": 0,
+              "y": 415
+            },
+            {
+              "x": 397,
+              "y": 415
+            },
+            {
+              "x": 397,
+              "y": 615
+            },
+            {
+              "x": 0,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "points": [
+            {
+              "x": 622,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 615
+            },
+            {
+              "x": 622,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "female-medium",
+      "gender": "female",
+      "bodyType": "medium",
+      "resource": "images/305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+      "clothingFitSha256": "3ac3f0411846cd6b052560ba3ca2c171a05957ddc2713c94890f45466e09125a",
+      "hairFitSha256": "701b34c85e019a5a30b9e7613e36811d0b0d9563da144d091b57e68622a2a64b",
+      "torso": {
+        "resource": "images/4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+        "sourceRect": {
+          "x": 127,
+          "y": 34,
+          "width": 770,
+          "height": 952
+        },
+        "destinationRect": {
+          "x": 350,
+          "y": 154,
+          "width": 315,
+          "height": 363
+        }
+      },
+      "legs": {
+        "resource": "images/56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+        "sourceRect": {
+          "x": 93,
+          "y": 63,
+          "width": 837,
+          "height": 890
+        },
+        "destinationRect": {
+          "x": 364,
+          "y": 410,
+          "width": 286,
+          "height": 245
+        }
+      },
+      "hair": [
+        {
+          "id": "close-crop",
+          "resource": "images/7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 453,
+            "y": 28,
+            "width": 112,
+            "height": 101
+          }
+        },
+        {
+          "id": "short-sweep",
+          "resource": "images/0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 450,
+            "y": 23,
+            "width": 118,
+            "height": 123
+          }
+        }
+      ],
+      "neck": [
+        {
+          "points": [
+            {
+              "x": 435,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 174
+            },
+            {
+              "x": 546,
+              "y": 174
+            },
+            {
+              "x": 548,
+              "y": 202
+            },
+            {
+              "x": 540,
+              "y": 211
+            },
+            {
+              "x": 529,
+              "y": 216
+            },
+            {
+              "x": 512,
+              "y": 218
+            },
+            {
+              "x": 496,
+              "y": 216
+            },
+            {
+              "x": 482,
+              "y": 211
+            },
+            {
+              "x": 471,
+              "y": 204
+            },
+            {
+              "x": 472,
+              "y": 174
+            },
+            {
+              "x": 435,
+              "y": 174
+            }
+          ],
+          "triangles": [
+            12,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            3,
+            5,
+            6,
+            1,
+            3,
+            6,
+            1,
+            6,
+            7,
+            1,
+            7,
+            8,
+            1,
+            8,
+            9,
+            1,
+            9,
+            10,
+            1,
+            10,
+            11,
+            1,
+            11,
+            12
+          ]
+        }
+      ],
+      "hands": [
+        {
+          "points": [
+            {
+              "x": 0,
+              "y": 415
+            },
+            {
+              "x": 396,
+              "y": 415
+            },
+            {
+              "x": 396,
+              "y": 615
+            },
+            {
+              "x": 0,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "points": [
+            {
+              "x": 619,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 615
+            },
+            {
+              "x": 619,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "female-overweight",
+      "gender": "female",
+      "bodyType": "overweight",
+      "resource": "images/23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+      "clothingFitSha256": "d3f8e1afcb5cfe5b3905c24a3c745dac84114d354971c4042a82f2d0231e3d85",
+      "hairFitSha256": "2d463cb15c7d948e47f633a0832bfafee4a17fc1d3bf4c6d69a53da8dcdbdf75",
+      "torso": {
+        "resource": "images/cf74b5a24329511ba7373153f141774030de4443f4264d7248a9467df8dffa67",
+        "sourceRect": {
+          "x": 81,
+          "y": 15,
+          "width": 862,
+          "height": 981
+        },
+        "destinationRect": {
+          "x": 328,
+          "y": 166,
+          "width": 359,
+          "height": 378
+        }
+      },
+      "legs": {
+        "resource": "images/56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+        "sourceRect": {
+          "x": 93,
+          "y": 63,
+          "width": 837,
+          "height": 890
+        },
+        "destinationRect": {
+          "x": 347,
+          "y": 424,
+          "width": 321,
+          "height": 243
+        }
+      },
+      "hair": [
+        {
+          "id": "close-crop",
+          "resource": "images/7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 450,
+            "y": 43,
+            "width": 114,
+            "height": 102
+          }
+        },
+        {
+          "id": "short-sweep",
+          "resource": "images/0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 447,
+            "y": 40,
+            "width": 120,
+            "height": 123
+          }
+        }
+      ],
+      "neck": [
+        {
+          "points": [
+            {
+              "x": 435,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 174
+            },
+            {
+              "x": 546,
+              "y": 174
+            },
+            {
+              "x": 548,
+              "y": 202
+            },
+            {
+              "x": 540,
+              "y": 211
+            },
+            {
+              "x": 529,
+              "y": 216
+            },
+            {
+              "x": 512,
+              "y": 218
+            },
+            {
+              "x": 496,
+              "y": 216
+            },
+            {
+              "x": 482,
+              "y": 211
+            },
+            {
+              "x": 471,
+              "y": 204
+            },
+            {
+              "x": 472,
+              "y": 174
+            },
+            {
+              "x": 435,
+              "y": 174
+            }
+          ],
+          "triangles": [
+            12,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            3,
+            5,
+            6,
+            1,
+            3,
+            6,
+            1,
+            6,
+            7,
+            1,
+            7,
+            8,
+            1,
+            8,
+            9,
+            1,
+            9,
+            10,
+            1,
+            10,
+            11,
+            1,
+            11,
+            12
+          ]
+        }
+      ],
+      "hands": [
+        {
+          "points": [
+            {
+              "x": 0,
+              "y": 415
+            },
+            {
+              "x": 375,
+              "y": 415
+            },
+            {
+              "x": 375,
+              "y": 615
+            },
+            {
+              "x": 0,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "points": [
+            {
+              "x": 641,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 615
+            },
+            {
+              "x": 641,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "female-muscular",
+      "gender": "female",
+      "bodyType": "muscular",
+      "resource": "images/47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+      "clothingFitSha256": "c167ba9ef66163586ab7eeb66d33dff88e64a06f00700559e3151ac10e6351f2",
+      "hairFitSha256": "9f4afb3c616dc455eb2fab6d048ea9dfb1c3669984ad402500a833419461e53c",
+      "torso": {
+        "resource": "images/4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+        "sourceRect": {
+          "x": 127,
+          "y": 34,
+          "width": 770,
+          "height": 952
+        },
+        "destinationRect": {
+          "x": 338,
+          "y": 153,
+          "width": 340,
+          "height": 371
+        }
+      },
+      "legs": {
+        "resource": "images/56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+        "sourceRect": {
+          "x": 93,
+          "y": 63,
+          "width": 837,
+          "height": 890
+        },
+        "destinationRect": {
+          "x": 356,
+          "y": 418,
+          "width": 303,
+          "height": 247
+        }
+      },
+      "hair": [
+        {
+          "id": "close-crop",
+          "resource": "images/7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 452,
+            "y": 29,
+            "width": 112,
+            "height": 101
+          }
+        },
+        {
+          "id": "short-sweep",
+          "resource": "images/0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 24,
+            "width": 117,
+            "height": 123
+          }
+        }
+      ],
+      "neck": [
+        {
+          "points": [
+            {
+              "x": 435,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 174
+            },
+            {
+              "x": 546,
+              "y": 174
+            },
+            {
+              "x": 548,
+              "y": 202
+            },
+            {
+              "x": 540,
+              "y": 211
+            },
+            {
+              "x": 529,
+              "y": 216
+            },
+            {
+              "x": 512,
+              "y": 218
+            },
+            {
+              "x": 496,
+              "y": 216
+            },
+            {
+              "x": 482,
+              "y": 211
+            },
+            {
+              "x": 471,
+              "y": 204
+            },
+            {
+              "x": 472,
+              "y": 174
+            },
+            {
+              "x": 435,
+              "y": 174
+            }
+          ],
+          "triangles": [
+            12,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            3,
+            5,
+            6,
+            1,
+            3,
+            6,
+            1,
+            6,
+            7,
+            1,
+            7,
+            8,
+            1,
+            8,
+            9,
+            1,
+            9,
+            10,
+            1,
+            10,
+            11,
+            1,
+            11,
+            12
+          ]
+        }
+      ],
+      "hands": [
+        {
+          "points": [
+            {
+              "x": 0,
+              "y": 415
+            },
+            {
+              "x": 382,
+              "y": 415
+            },
+            {
+              "x": 382,
+              "y": 590
+            },
+            {
+              "x": 0,
+              "y": 590
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "points": [
+            {
+              "x": 632,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 590
+            },
+            {
+              "x": 632,
+              "y": 590
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "male-slim",
+      "gender": "male",
+      "bodyType": "slim",
+      "resource": "images/01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+      "clothingFitSha256": "8510fb2e0a966300f9f2909d5a48dc41986c273f79f07227e525cd18dfb4a75c",
+      "hairFitSha256": "fb7faa1a23766ef09bdcd0fce578dfd40b321f223bec4b368a90958bec52dea3",
+      "torso": {
+        "resource": "images/d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+        "sourceRect": {
+          "x": 108,
+          "y": 19,
+          "width": 807,
+          "height": 971
+        },
+        "destinationRect": {
+          "x": 337,
+          "y": 155,
+          "width": 350,
+          "height": 371
+        }
+      },
+      "legs": {
+        "resource": "images/56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+        "sourceRect": {
+          "x": 93,
+          "y": 63,
+          "width": 837,
+          "height": 890
+        },
+        "destinationRect": {
+          "x": 374,
+          "y": 439,
+          "width": 276,
+          "height": 239
+        }
+      },
+      "hair": [
+        {
+          "id": "close-crop",
+          "resource": "images/7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 458,
+            "y": 30,
+            "width": 109,
+            "height": 95
+          }
+        },
+        {
+          "id": "short-sweep",
+          "resource": "images/0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 455,
+            "y": 26,
+            "width": 114,
+            "height": 113
+          }
+        }
+      ],
+      "neck": [
+        {
+          "points": [
+            {
+              "x": 435,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 174
+            },
+            {
+              "x": 546,
+              "y": 174
+            },
+            {
+              "x": 548,
+              "y": 202
+            },
+            {
+              "x": 540,
+              "y": 211
+            },
+            {
+              "x": 529,
+              "y": 216
+            },
+            {
+              "x": 512,
+              "y": 218
+            },
+            {
+              "x": 496,
+              "y": 216
+            },
+            {
+              "x": 482,
+              "y": 211
+            },
+            {
+              "x": 471,
+              "y": 204
+            },
+            {
+              "x": 472,
+              "y": 174
+            },
+            {
+              "x": 435,
+              "y": 174
+            }
+          ],
+          "triangles": [
+            12,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            3,
+            5,
+            6,
+            1,
+            3,
+            6,
+            1,
+            6,
+            7,
+            1,
+            7,
+            8,
+            1,
+            8,
+            9,
+            1,
+            9,
+            10,
+            1,
+            10,
+            11,
+            1,
+            11,
+            12
+          ]
+        }
+      ],
+      "hands": [
+        {
+          "points": [
+            {
+              "x": 0,
+              "y": 415
+            },
+            {
+              "x": 396,
+              "y": 415
+            },
+            {
+              "x": 396,
+              "y": 615
+            },
+            {
+              "x": 0,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "points": [
+            {
+              "x": 627,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 615
+            },
+            {
+              "x": 627,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "male-medium",
+      "gender": "male",
+      "bodyType": "medium",
+      "resource": "images/17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+      "clothingFitSha256": "06ef51d58bb8eaa1d0eb37dd83d6a9040a818b5d63db5e2aa5051809c7b6f703",
+      "hairFitSha256": "2b1f80a7802084b7c416734a4f628b4197c39f7a247e5a10c9913d921071fda0",
+      "torso": {
+        "resource": "images/d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+        "sourceRect": {
+          "x": 108,
+          "y": 19,
+          "width": 807,
+          "height": 971
+        },
+        "destinationRect": {
+          "x": 327,
+          "y": 155,
+          "width": 370,
+          "height": 377
+        }
+      },
+      "legs": {
+        "resource": "images/56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+        "sourceRect": {
+          "x": 93,
+          "y": 63,
+          "width": 837,
+          "height": 890
+        },
+        "destinationRect": {
+          "x": 369,
+          "y": 421,
+          "width": 286,
+          "height": 242
+        }
+      },
+      "hair": [
+        {
+          "id": "close-crop",
+          "resource": "images/7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 456,
+            "y": 37,
+            "width": 112,
+            "height": 96
+          }
+        },
+        {
+          "id": "short-sweep",
+          "resource": "images/0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 453,
+            "y": 33,
+            "width": 117,
+            "height": 114
+          }
+        }
+      ],
+      "neck": [
+        {
+          "points": [
+            {
+              "x": 435,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 174
+            },
+            {
+              "x": 546,
+              "y": 174
+            },
+            {
+              "x": 548,
+              "y": 202
+            },
+            {
+              "x": 540,
+              "y": 211
+            },
+            {
+              "x": 529,
+              "y": 216
+            },
+            {
+              "x": 512,
+              "y": 218
+            },
+            {
+              "x": 496,
+              "y": 216
+            },
+            {
+              "x": 482,
+              "y": 211
+            },
+            {
+              "x": 471,
+              "y": 204
+            },
+            {
+              "x": 472,
+              "y": 174
+            },
+            {
+              "x": 435,
+              "y": 174
+            }
+          ],
+          "triangles": [
+            12,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            3,
+            5,
+            6,
+            1,
+            3,
+            6,
+            1,
+            6,
+            7,
+            1,
+            7,
+            8,
+            1,
+            8,
+            9,
+            1,
+            9,
+            10,
+            1,
+            10,
+            11,
+            1,
+            11,
+            12
+          ]
+        }
+      ],
+      "hands": [
+        {
+          "points": [
+            {
+              "x": 0,
+              "y": 415
+            },
+            {
+              "x": 397,
+              "y": 415
+            },
+            {
+              "x": 397,
+              "y": 615
+            },
+            {
+              "x": 0,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "points": [
+            {
+              "x": 627,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 615
+            },
+            {
+              "x": 627,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "male-overweight",
+      "gender": "male",
+      "bodyType": "overweight",
+      "resource": "images/d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+      "clothingFitSha256": "a988d468ee341eb06140adf80dcef966d835240247c76eb338cbcc3794151161",
+      "hairFitSha256": "bd44b9285c72f01db1e8a40f2fc962b9873713af66c0e36a794dee0ec3255f2a",
+      "torso": {
+        "resource": "images/94f7596b18f4f151be96d072202cc90de65d0b21cec6830f962020d1f483c3b5",
+        "sourceRect": {
+          "x": 61,
+          "y": 6,
+          "width": 901,
+          "height": 999
+        },
+        "destinationRect": {
+          "x": 314,
+          "y": 157,
+          "width": 397,
+          "height": 414
+        }
+      },
+      "legs": {
+        "resource": "images/424591e5fa4bd930043a2175ded27461c62bca5d454f7ffe5ccf7db5f0c6f6c5",
+        "sourceRect": {
+          "x": 20,
+          "y": 107,
+          "width": 979,
+          "height": 731
+        },
+        "destinationRect": {
+          "x": 353,
+          "y": 444,
+          "width": 318,
+          "height": 237
+        }
+      },
+      "hair": [
+        {
+          "id": "close-crop",
+          "resource": "images/7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 455,
+            "y": 40,
+            "width": 112,
+            "height": 97
+          }
+        },
+        {
+          "id": "short-sweep",
+          "resource": "images/0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 452,
+            "y": 36,
+            "width": 117,
+            "height": 115
+          }
+        }
+      ],
+      "neck": [
+        {
+          "points": [
+            {
+              "x": 435,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 174
+            },
+            {
+              "x": 546,
+              "y": 174
+            },
+            {
+              "x": 548,
+              "y": 202
+            },
+            {
+              "x": 540,
+              "y": 211
+            },
+            {
+              "x": 529,
+              "y": 216
+            },
+            {
+              "x": 512,
+              "y": 218
+            },
+            {
+              "x": 496,
+              "y": 216
+            },
+            {
+              "x": 482,
+              "y": 211
+            },
+            {
+              "x": 471,
+              "y": 204
+            },
+            {
+              "x": 472,
+              "y": 174
+            },
+            {
+              "x": 435,
+              "y": 174
+            }
+          ],
+          "triangles": [
+            12,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            3,
+            5,
+            6,
+            1,
+            3,
+            6,
+            1,
+            6,
+            7,
+            1,
+            7,
+            8,
+            1,
+            8,
+            9,
+            1,
+            9,
+            10,
+            1,
+            10,
+            11,
+            1,
+            11,
+            12
+          ]
+        }
+      ],
+      "hands": [
+        {
+          "points": [
+            {
+              "x": 0,
+              "y": 415
+            },
+            {
+              "x": 365,
+              "y": 415
+            },
+            {
+              "x": 365,
+              "y": 615
+            },
+            {
+              "x": 0,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "points": [
+            {
+              "x": 656,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 615
+            },
+            {
+              "x": 656,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "male-muscular",
+      "gender": "male",
+      "bodyType": "muscular",
+      "resource": "images/41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+      "clothingFitSha256": "254eaa3c4ab6489036f8c6958581fe24e370fe2f112a1f184503ca7dba7d4314",
+      "hairFitSha256": "5b80f910687cd87ac77dbbfeba17c2729e5e2e84296234d4c592e5abcd405851",
+      "torso": {
+        "resource": "images/175c3aaa6feb8728806faa310b595730f0a2e46b720ade4fb12317400f66b7f5",
+        "sourceRect": {
+          "x": 57,
+          "y": 30,
+          "width": 904,
+          "height": 954
+        },
+        "destinationRect": {
+          "x": 310,
+          "y": 153,
+          "width": 403,
+          "height": 389
+        }
+      },
+      "legs": {
+        "resource": "images/56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+        "sourceRect": {
+          "x": 93,
+          "y": 63,
+          "width": 837,
+          "height": 890
+        },
+        "destinationRect": {
+          "x": 362,
+          "y": 435,
+          "width": 301,
+          "height": 237
+        }
+      },
+      "hair": [
+        {
+          "id": "close-crop",
+          "resource": "images/7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 457,
+            "y": 34,
+            "width": 110,
+            "height": 97
+          }
+        },
+        {
+          "id": "short-sweep",
+          "resource": "images/0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 454,
+            "y": 30,
+            "width": 115,
+            "height": 115
+          }
+        }
+      ],
+      "neck": [
+        {
+          "points": [
+            {
+              "x": 435,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 0
+            },
+            {
+              "x": 585,
+              "y": 174
+            },
+            {
+              "x": 546,
+              "y": 174
+            },
+            {
+              "x": 548,
+              "y": 202
+            },
+            {
+              "x": 540,
+              "y": 211
+            },
+            {
+              "x": 529,
+              "y": 216
+            },
+            {
+              "x": 512,
+              "y": 218
+            },
+            {
+              "x": 496,
+              "y": 216
+            },
+            {
+              "x": 482,
+              "y": 211
+            },
+            {
+              "x": 471,
+              "y": 204
+            },
+            {
+              "x": 472,
+              "y": 174
+            },
+            {
+              "x": 435,
+              "y": 174
+            }
+          ],
+          "triangles": [
+            12,
+            0,
+            1,
+            1,
+            2,
+            3,
+            3,
+            4,
+            5,
+            3,
+            5,
+            6,
+            1,
+            3,
+            6,
+            1,
+            6,
+            7,
+            1,
+            7,
+            8,
+            1,
+            8,
+            9,
+            1,
+            9,
+            10,
+            1,
+            10,
+            11,
+            1,
+            11,
+            12
+          ]
+        }
+      ],
+      "hands": [
+        {
+          "points": [
+            {
+              "x": 0,
+              "y": 415
+            },
+            {
+              "x": 387,
+              "y": 415
+            },
+            {
+              "x": 387,
+              "y": 615
+            },
+            {
+              "x": 0,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "points": [
+            {
+              "x": 638,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 415
+            },
+            {
+              "x": 1024,
+              "y": 615
+            },
+            {
+              "x": 638,
+              "y": 615
+            }
+          ],
+          "triangles": [
+            3,
+            0,
+            1,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "source": "body-bases-hairfree-r1/female-slim/body.png",
+      "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+      "resource": "images/f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "basic-clothing-fit-r3/female-medium-top-r2/item.png",
+      "sha256": "4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+      "resource": "images/4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "basic-clothing-front-r1/legs-r2/item.png",
+      "sha256": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+      "resource": "images/56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "hairstyles-front-r1/close-crop/item.png",
+      "sha256": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+      "resource": "images/7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "hairstyles-front-r1/short-sweep/item.png",
+      "sha256": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+      "resource": "images/0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "body-bases-hairfree-r1/female-medium/body.png",
+      "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+      "resource": "images/305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "body-bases-hairfree-r1/female-overweight/body.png",
+      "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+      "resource": "images/23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "basic-clothing-fit-r3/female-fuller-top/item.png",
+      "sha256": "cf74b5a24329511ba7373153f141774030de4443f4264d7248a9467df8dffa67",
+      "resource": "images/cf74b5a24329511ba7373153f141774030de4443f4264d7248a9467df8dffa67",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "body-bases-hairfree-r1/female-muscular/body.png",
+      "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+      "resource": "images/47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "body-bases-hairfree-r1/male-slim/body.png",
+      "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+      "resource": "images/01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "basic-clothing-front-r1/torso/item.png",
+      "sha256": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+      "resource": "images/d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "body-bases-hairfree-r1/male-medium/body.png",
+      "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+      "resource": "images/17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "body-bases-hairfree-r1/male-overweight/body.png",
+      "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+      "resource": "images/d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "basic-clothing-fit-r3/male-overweight-top/item.png",
+      "sha256": "94f7596b18f4f151be96d072202cc90de65d0b21cec6830f962020d1f483c3b5",
+      "resource": "images/94f7596b18f4f151be96d072202cc90de65d0b21cec6830f962020d1f483c3b5",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "basic-clothing-fit-r3/male-heavy-shorts-r2/item.png",
+      "sha256": "424591e5fa4bd930043a2175ded27461c62bca5d454f7ffe5ccf7db5f0c6f6c5",
+      "resource": "images/424591e5fa4bd930043a2175ded27461c62bca5d454f7ffe5ccf7db5f0c6f6c5",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "body-bases-hairfree-r1/male-muscular/body.png",
+      "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+      "resource": "images/41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "source": "basic-clothing-fit-r3/male-muscular-top/item.png",
+      "sha256": "175c3aaa6feb8728806faa310b595730f0a2e46b720ade4fb12317400f66b7f5",
+      "resource": "images/175c3aaa6feb8728806faa310b595730f0a2e46b720ade4fb12317400f66b7f5",
+      "width": 1024,
+      "height": 1024
+    }
+  ]
+}

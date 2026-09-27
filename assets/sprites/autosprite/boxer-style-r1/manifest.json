@@ -1,0 +1,19 @@
+{
+  "schema": "sologym.autosprite-style-concept.v1",
+  "status": "superseded_by_basic_tier_direction",
+  "approval": "pending_user_review",
+  "characterId": "cmuj70eg8000910qlnap76av1",
+  "sourceReference": {
+    "path": "assets/sprites/autosprite/female-studio-home-r1/female-front-source.png",
+    "sha256": "9a169b724d44f13017667731e5ac1d3c752d80340d1b603b5c2377eb485e9308"
+  },
+  "request": "request.json",
+  "prompt": "prompt.txt",
+  "scope": "One frontal RPG-boxer outfit concept; not runtime clothing layers or an animation atlas",
+  "estimatedCredits": 3,
+  "supersededReason": "User specified Basic/Rare/Ultra Rare and requested Basic clothing without glow or effects while this request was already submitted.",
+  "jobId": "cf_143d0aa5-1f58-4d92-b879-9727da3667b8",
+  "productionRole": "historical_outfit_concept_reference_only",
+  "canonicalBaseEligible": false,
+  "equipmentProductionWorkflow": "superseded_by_body_base_then_isolated_assets_then_local_composition"
+}

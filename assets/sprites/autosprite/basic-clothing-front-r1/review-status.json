@@ -1,0 +1,277 @@
+{
+  "schema": "sologym.modular-review-status.v1",
+  "batch": "modular-front-r1",
+  "status": "changes_required",
+  "sourceReview": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-2026-09-27T130559Z.json",
+    "sha256": "1ed3edf0f4eb74992c477ebae0a6aa66ea60a39e5533638eed8ea3a46d730daf",
+    "reviewedAt": "2026-09-27T13:05:59.086Z"
+  },
+  "reviewedFitting": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/fitting-reviewed-2026-09-27T130559Z.json",
+    "sha256": "3b932789bf472a82e6bdb2e6c919f29ffd327c2fddc5f2663a0165d123d5ac2e"
+  },
+  "counts": {
+    "bodies": {
+      "approved": 0,
+      "changes_requested": 10,
+      "pending": 0
+    },
+    "fits": {
+      "approved": 5,
+      "changes_requested": 3,
+      "pending": 2
+    },
+    "assets": {
+      "approved": 0,
+      "changes_requested": 0,
+      "pending": 5
+    }
+  },
+  "decisions": {
+    "bodies": {
+      "female-slim": {
+        "id": "female-slim",
+        "decision": "changes_requested",
+        "notes": "hair looks weird, is not aligned correctly, i can see the head side very much to the top, this should be aligned a little bit more to the right and/or reduced a little bit",
+        "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6"
+      },
+      "female-medium": {
+        "id": "female-medium",
+        "decision": "changes_requested",
+        "notes": "hair is not fiting correctly, it looks like it has a lot of forehead, not sure if the bald designs were made with sprite tool",
+        "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15"
+      },
+      "female-overweight": {
+        "id": "female-overweight",
+        "decision": "changes_requested",
+        "notes": "again with the hair looks weird, as it the character bald was not made with the sprite tool and now we are fitting incompatible things",
+        "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf"
+      },
+      "female-obese": {
+        "id": "female-obese",
+        "decision": "changes_requested",
+        "notes": "same as the overweight",
+        "sha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e"
+      },
+      "female-muscular": {
+        "id": "female-muscular",
+        "decision": "changes_requested",
+        "notes": "the same thing about the hair",
+        "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc"
+      },
+      "male-slim": {
+        "id": "male-slim",
+        "decision": "changes_requested",
+        "notes": "the hair looks too big, as if it was a helmet",
+        "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c"
+      },
+      "male-medium": {
+        "id": "male-medium",
+        "decision": "changes_requested",
+        "notes": "same issue with the hair, looks like a helmet",
+        "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994"
+      },
+      "male-overweight": {
+        "id": "male-overweight",
+        "decision": "changes_requested",
+        "notes": "same issue with the hair looking like a helmet",
+        "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673"
+      },
+      "male-obese": {
+        "id": "male-obese",
+        "decision": "changes_requested",
+        "notes": "same helmet issue with the hair",
+        "sha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326"
+      },
+      "male-muscular": {
+        "id": "male-muscular",
+        "decision": "changes_requested",
+        "notes": "same hair like helmet issue",
+        "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632"
+      }
+    },
+    "fits": {
+      "female-slim": {
+        "id": "female-slim",
+        "baseSha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "046059c4ac38322206a4b42809ecfa6a9143e0e1528c2b59d6220831916e10b5"
+      },
+      "female-medium": {
+        "id": "female-medium",
+        "baseSha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "de5ec49e7725ae7536e69ddf5c6ce50fe2086a6a44381452385f349ab2fee364"
+      },
+      "female-overweight": {
+        "id": "female-overweight",
+        "baseSha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "decision": "pending",
+        "notes": "the clothes are completely different, they are completely different clothes and also looks as if it was the male body, the pants look just way too big, like her two legs could ift in the hole for a single leg",
+        "sha256": "362c2309eecbd2b706c4d777991ec16c9783caeb320638c1049506df0f46ce1c"
+      },
+      "female-obese": {
+        "id": "female-obese",
+        "baseSha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e",
+        "decision": "changes_requested",
+        "notes": "same as the overweight",
+        "sha256": "2c444ca1c499236cb3a7e0222753da19b923ed803571dd0d87798e0855584b6e"
+      },
+      "female-muscular": {
+        "id": "female-muscular",
+        "baseSha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "decision": "changes_requested",
+        "notes": "her leg and the short is glitching, right leg",
+        "sha256": "7186f8f3ff31f69c20e3311f993b04319aea94a3451c57de5e19e61d1c3b0705"
+      },
+      "male-slim": {
+        "id": "male-slim",
+        "baseSha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "83b665896a52af8bb2d849a9cea548ed78f03aa7e4a35c68aa8a8d651150af2f"
+      },
+      "male-medium": {
+        "id": "male-medium",
+        "baseSha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "4dfd89d6024cff6901bfcac643a6077177cea052b556d57b80497f8f2293271b"
+      },
+      "male-overweight": {
+        "id": "male-overweight",
+        "baseSha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "decision": "changes_requested",
+        "notes": "again, clothes look completely different.",
+        "sha256": "c95a6e388b42c8b833e4398db97cf56474dc4fd4f146777804d8972dfbf33392"
+      },
+      "male-obese": {
+        "id": "male-obese",
+        "baseSha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+        "decision": "pending",
+        "notes": "clothes look completely different",
+        "sha256": "daf7eee913c1da48e0d2698bbdd26ea9727ecb314021697b6f1981aae5219c58"
+      },
+      "male-muscular": {
+        "id": "male-muscular",
+        "baseSha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "660ec834b83c16ee139a62ec4d1127abc5ea74be505946cd7323a0eb1bf8fcae"
+      }
+    },
+    "assets": {
+      "base-training-vest-r1": {
+        "id": "base-training-vest-r1",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a"
+      },
+      "base-boxing-shorts-r2": {
+        "id": "base-boxing-shorts-r2",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+      },
+      "base-training-vest-wide-r1": {
+        "id": "base-training-vest-wide-r1",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "7e49712f69308514468956f86721e3bb80554eebf129051a683005dd1a6685ca"
+      },
+      "close-crop": {
+        "id": "close-crop",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b"
+      },
+      "short-sweep": {
+        "id": "short-sweep",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+      }
+    }
+  },
+  "workItems": [
+    {
+      "id": "hair-fit",
+      "bodies": [
+        "female-slim",
+        "female-medium",
+        "female-overweight",
+        "female-obese",
+        "female-muscular",
+        "male-slim",
+        "male-medium",
+        "male-overweight",
+        "male-obese",
+        "male-muscular"
+      ],
+      "status": "revised_pending_user_review",
+      "change": "Fit hair to each actual head and hairline; reduce helmet-like volume and correct female forehead/side coverage.",
+      "evidence": "All ten body-review notes describe the hair overlay. Hair uses near-identical widths/heights across heads in the reviewed fitting data.",
+      "constraints": "Preserve body artwork while assessing placement. Do not regenerate bodies merely to fix an overlay."
+    },
+    {
+      "id": "wide-top-design",
+      "bodies": [
+        "female-overweight",
+        "female-obese",
+        "male-overweight",
+        "male-obese"
+      ],
+      "status": "revised_pending_user_review",
+      "change": "Preserve the regular top design on wider bodies; vary its fit, not panel layout or garment identity.",
+      "evidence": "The reviewed wider fit selects a separately generated top asset. The user reports that the clothes look different."
+    },
+    {
+      "id": "female-wide-shorts",
+      "bodies": [
+        "female-overweight",
+        "female-obese"
+      ],
+      "status": "revised_pending_user_review",
+      "change": "Reduce excess leg-opening width while retaining waistband coverage and the female body silhouette."
+    },
+    {
+      "id": "female-muscular-shorts-overlap",
+      "bodies": [
+        "female-muscular"
+      ],
+      "status": "revised_pending_user_review",
+      "change": "Inspect and correct the reported right-leg/shorts overlap; check hand restoration polygons as well as garment placement."
+    }
+  ],
+  "approvedFitIds": [
+    "female-slim",
+    "female-medium",
+    "male-slim",
+    "male-medium",
+    "male-muscular"
+  ],
+  "pendingWithActionableNotes": [
+    {
+      "kind": "fits",
+      "id": "female-overweight"
+    },
+    {
+      "kind": "fits",
+      "id": "male-obese"
+    }
+  ],
+  "interpretation": "Preserve submitted decisions verbatim. Body change requests describe hair fit; do not infer approval of the bald bases or rejection of body anatomy. Pending fits with notes still require follow-up. Separate asset designs remain pending.",
+  "artOrPlacementChangesInThisImport": false,
+  "additionalCreditsUsed": 0,
+  "runtimeIntegrated": false,
+  "latestRevision": {
+    "fitting": "assets/sprites/autosprite/basic-clothing-front-r1/fitting-r2.json",
+    "reviewPage": "tools/review/modular-character-front-r2.html",
+    "status": "local_corrections_pending_user_review",
+    "additionalCreditsUsed": 0
+  },
+  "supersededByReviewStatus": "assets/sprites/autosprite/basic-clothing-front-r1/review-status-r2.json"
+}

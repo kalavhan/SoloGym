@@ -1,0 +1,19 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmujsknww00058xhhwv2jeqvp",
+  "creditsUsed": 1,
+  "cached": false,
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujsknww00058xhhwv2jeqvp/base-nobg",
+  "export": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/female-overweight/body.png",
+    "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      314,
+      50,
+      701,
+      988
+    ]
+  }
+}

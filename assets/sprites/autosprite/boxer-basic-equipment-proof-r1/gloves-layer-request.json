@@ -1,0 +1,8 @@
+{
+  "tool": "generate_pose",
+  "arguments": {
+    "character_id": "cmujczhyh000613599w163ss1",
+    "prompt": "Create a separated equipment layer extracted from the supplied character reference. Render ONLY the SAME TWO BOXING GLOVES from the reference, including their cream wrist cuffs and small petrol tabs. EXACTLY TWO detached gloves, no person or other object. Keep their worn frontal orientation from the reference: knuckles forward, fingertips downward, left-of-image glove thumb pointing inward to the right, right-of-image glove thumb pointing inward to the left. Keep their same matte charcoal leather, seams, attached thumbs, rounded padded shape, clean black outlines and cel shading. The cream cuffs remain at the TOP of each glove, oriented along the original forearm angle.\nCRUCIAL: Preserve the reference 1024x1024 canvas and the gloves' original exact positions, scale and orientation on that canvas: viewer-left glove roughly x=310..393 y=432..578, viewer-right glove roughly x=584..670 y=432..578. Keep all the surrounding canvas empty. This is an overlay that will be drawn over the same character, so do not center or enlarge the pair, do not align to a product display grid, do not move gloves to another location. No hands, fingers, arms, skin, wrapped forearms, elbows, shoulders, legs, clothing, torso, face, hair, boots, backpack or shadow. The wrist cuffs end cleanly with NO SKIN continuing upward. No fake transparency checkerboard. Pure uniform white background is acceptable for professional background removal; transparent background preferred. These are the exact original charcoal padded closed boxing gloves, not a new style. No labels, UI, typography, animation or effects.",
+    "name": "Basic Gloves Layer"
+  }
+}

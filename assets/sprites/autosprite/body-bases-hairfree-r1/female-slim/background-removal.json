@@ -1,0 +1,19 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmujskm36000gam1j9zr1jwvq",
+  "creditsUsed": 1,
+  "cached": false,
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujskm36000gam1j9zr1jwvq/base-nobg",
+  "export": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/female-slim/body.png",
+    "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      351,
+      58,
+      663,
+      999
+    ]
+  }
+}

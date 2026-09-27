@@ -1,0 +1,18 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmujsz3h600088bfjxoq4nr7d",
+  "creditsUsed": 1,
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujsz3h600088bfjxoq4nr7d/base-nobg",
+  "export": {
+    "path": "torso-wide/item.png",
+    "sha256": "7e49712f69308514468956f86721e3bb80554eebf129051a683005dd1a6685ca",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      100,
+      11,
+      924,
+      974
+    ]
+  }
+}

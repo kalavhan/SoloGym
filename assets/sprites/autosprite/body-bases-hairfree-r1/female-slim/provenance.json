@@ -1,0 +1,14 @@
+{
+  "poseId": "cmujsfofz000432h3go5js1ob",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujscjkd0008v65zv1k3wyfv/1790511675362_d2648bb8-0a7b-4997-9715-96c2f9b4c4ac_custom-pose-frame-1790511675362.png",
+  "image": {
+    "path": "female-slim/source.png",
+    "sha256": "e6495652a8d6a54f4341193348f8881affedb085d3c0ac2e5c9b7395c66b466a",
+    "width": 1024,
+    "height": 1024
+  },
+  "originalSource": {
+    "path": "assets/sprites/autosprite/body-bases-front-r1/female-slim/source.png",
+    "sha256": "d17581c1d3f05b1e5948e01f8f1afa52ec5611de292d5dd4a3cb830afa976513"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "poseId": "cmujsfpu200034vhpavqq0ptp",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujscite0009cbsibs2u09h4/1790511674737_0a95e6c2-9197-4e46-b432-aa82744bd3eb_custom-pose-frame-1790511674737.png",
+  "image": {
+    "path": "male-muscular/source.png",
+    "sha256": "13dad6a6e639c55a99e6280392240ff9bdda4bc8800f998f72413d59de079c48",
+    "width": 1024,
+    "height": 1024
+  },
+  "originalSource": {
+    "path": "assets/sprites/autosprite/body-bases-front-r1/male-muscular/source.png",
+    "sha256": "180691daddf8d9f9fd8fa2b4abdea4c7b733458fb2724be1b3a2f7da6c5ac60e"
+  }
+}

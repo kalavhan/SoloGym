@@ -1,0 +1,52 @@
+{
+  "assetId": "cmujrp2uv0008icxm830irt7o",
+  "tool": "remove_asset_background",
+  "cached": false,
+  "creditsUsed": 1,
+  "sourceSha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2",
+  "sourceImage": "male-medium/source.png",
+  "export": {
+    "path": "male-medium/body.png",
+    "sha256": "8502a4d3b135facd1a49f52bb6765ef3909354ab814c63effa9c6d4fb6c62ba2",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "contentBounds": [
+      338,
+      29,
+      687,
+      999
+    ],
+    "coordinateOrigin": "top-left",
+    "trimmed": false,
+    "resized": false,
+    "sourceSha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2",
+    "provider": "AutoSprite",
+    "tool": "remove_asset_background",
+    "assetId": "cmujrp2uv0008icxm830irt7o",
+    "creditsUsed": 1,
+    "qa": {
+      "dimensionsUnchanged": true,
+      "sourceChecksumUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "opaquePixelCount": 5636,
+      "opaqueRgbChangedPixelCount": 0,
+      "opaqueRgbMaxChannelDifference": 0,
+      "opaqueRgbMeanChannelDifference": 0.0,
+      "contentBoundsAlpha128": [
+        340,
+        32,
+        685,
+        997
+      ]
+    }
+  },
+  "downloadUrlWithoutQuery": "https://www.autosprite.io/api/files/assets/cmujrp2uv0008icxm830irt7o/base-nobg"
+}

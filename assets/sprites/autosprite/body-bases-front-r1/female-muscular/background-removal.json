@@ -1,0 +1,52 @@
+{
+  "assetId": "cmujrpdk4000eicxmrjsezbbx",
+  "tool": "remove_asset_background",
+  "cached": false,
+  "creditsUsed": 1,
+  "sourceSha256": "532978e2a184731ef830b6df55bf63ccccce81641d7feb0e474552a6b0a68b8e",
+  "sourceImage": "female-muscular/source.png",
+  "export": {
+    "path": "female-muscular/body.png",
+    "sha256": "2a3a26bf6a87066e15a65f9de3d230f4c74eee0518562fe994c60cbab5af1b6c",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "contentBounds": [
+      330,
+      15,
+      680,
+      995
+    ],
+    "coordinateOrigin": "top-left",
+    "trimmed": false,
+    "resized": false,
+    "sourceSha256": "532978e2a184731ef830b6df55bf63ccccce81641d7feb0e474552a6b0a68b8e",
+    "provider": "AutoSprite",
+    "tool": "remove_asset_background",
+    "assetId": "cmujrpdk4000eicxmrjsezbbx",
+    "creditsUsed": 1,
+    "qa": {
+      "dimensionsUnchanged": true,
+      "sourceChecksumUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "opaquePixelCount": 661,
+      "opaqueRgbChangedPixelCount": 0,
+      "opaqueRgbMaxChannelDifference": 0,
+      "opaqueRgbMeanChannelDifference": 0.0,
+      "contentBoundsAlpha128": [
+        332,
+        18,
+        678,
+        993
+      ]
+    }
+  },
+  "downloadUrlWithoutQuery": "https://www.autosprite.io/api/files/assets/cmujrpdk4000eicxmrjsezbbx/base-nobg"
+}

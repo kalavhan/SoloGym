@@ -1,0 +1,2448 @@
+{
+  "schema": "sologym.modular-static-fitting.v1",
+  "id": "modular-front-r1",
+  "status": "reviewed_changes_required",
+  "canvas": {
+    "width": 1024,
+    "height": 1024,
+    "origin": "top-left"
+  },
+  "baseMutationAllowed": false,
+  "animated": false,
+  "drawOrder": [
+    "body",
+    "legs",
+    "torso",
+    "neck-from-same-body",
+    "hands-from-same-body",
+    "hair"
+  ],
+  "items": [
+    {
+      "id": "base-training-vest-r1",
+      "equipmentId": "base-training-vest-r1",
+      "name": "Training top and vest",
+      "slot": "torso",
+      "tier": "base",
+      "image": {
+        "path": "basic-clothing-front-r1/torso/item.png",
+        "sha256": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          108,
+          19,
+          915,
+          990
+        ]
+      },
+      "approval": "pending_review",
+      "userDesignReview": {
+        "id": "base-training-vest-r1",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a"
+      }
+    },
+    {
+      "id": "base-boxing-shorts-r2",
+      "equipmentId": "base-boxing-shorts",
+      "name": "Boxing shorts",
+      "slot": "legs",
+      "tier": "base",
+      "image": {
+        "path": "basic-clothing-front-r1/legs-r2/item.png",
+        "sha256": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          93,
+          63,
+          930,
+          953
+        ]
+      },
+      "approval": "pending_review",
+      "userDesignReview": {
+        "id": "base-boxing-shorts-r2",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+      }
+    },
+    {
+      "id": "base-training-vest-wide-r1",
+      "equipmentId": "base-training-vest-r1",
+      "name": "Training top \u2014 wide fit",
+      "slot": "torso",
+      "tier": "base",
+      "image": {
+        "path": "basic-clothing-front-r1/torso-wide/item.png",
+        "sha256": "7e49712f69308514468956f86721e3bb80554eebf129051a683005dd1a6685ca",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          100,
+          11,
+          924,
+          974
+        ]
+      },
+      "approval": "pending_review",
+      "userDesignReview": {
+        "id": "base-training-vest-wide-r1",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "7e49712f69308514468956f86721e3bb80554eebf129051a683005dd1a6685ca"
+      }
+    }
+  ],
+  "hairstyles": [
+    {
+      "id": "close-crop",
+      "name": "Close crop",
+      "image": {
+        "path": "hairstyles-front-r1/close-crop/item.png",
+        "sha256": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          133,
+          74,
+          893,
+          767
+        ]
+      },
+      "approval": "pending_review",
+      "userDesignReview": {
+        "id": "close-crop",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b"
+      }
+    },
+    {
+      "id": "short-sweep",
+      "name": "Short sweep",
+      "image": {
+        "path": "hairstyles-front-r1/short-sweep/item.png",
+        "sha256": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          130,
+          32,
+          901,
+          860
+        ]
+      },
+      "approval": "pending_review",
+      "userDesignReview": {
+        "id": "short-sweep",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+      }
+    }
+  ],
+  "bodies": [
+    {
+      "id": "female-slim",
+      "label": "Female \u00b7 Slim",
+      "gender": "female",
+      "bodyType": "slim",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-slim/body.png",
+        "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          351,
+          58,
+          663,
+          999
+        ]
+      },
+      "fit": {
+        "baseSha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "approval": "pending_review",
+        "torso": {
+          "sourceRect": {
+            "x": 108,
+            "y": 19,
+            "width": 807,
+            "height": 971
+          },
+          "destinationRect": {
+            "x": 358,
+            "y": 160,
+            "width": 298,
+            "height": 346
+          },
+          "assetId": "base-training-vest-r1"
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 368,
+            "y": 435,
+            "width": 279,
+            "height": 221
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              397,
+              415
+            ],
+            [
+              397,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              622,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              622,
+              615
+            ]
+          ]
+        ],
+        "notes": "Candidate fit with separate PNGs. Neck and hands use local occlusion from this same body image; no body pixels are repainted.",
+        "itemHashes": {
+          "torso": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 445,
+              "y": 51,
+              "width": 124,
+              "height": 119
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 445,
+              "y": 41,
+              "width": 124,
+              "height": 110
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "046059c4ac38322206a4b42809ecfa6a9143e0e1528c2b59d6220831916e10b5"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 445,
+            "y": 51,
+            "width": 124,
+            "height": 119
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 445,
+            "y": 41,
+            "width": 124,
+            "height": 110
+          }
+        }
+      },
+      "userBodyReview": {
+        "id": "female-slim",
+        "decision": "changes_requested",
+        "notes": "hair looks weird, is not aligned correctly, i can see the head side very much to the top, this should be aligned a little bit more to the right and/or reduced a little bit",
+        "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6"
+      },
+      "userFitReview": {
+        "id": "female-slim",
+        "baseSha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "046059c4ac38322206a4b42809ecfa6a9143e0e1528c2b59d6220831916e10b5"
+      }
+    },
+    {
+      "id": "female-medium",
+      "label": "Female \u00b7 Medium",
+      "gender": "female",
+      "bodyType": "medium",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-medium/body.png",
+        "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          344,
+          34,
+          668,
+          993
+        ]
+      },
+      "fit": {
+        "baseSha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "approval": "pending_review",
+        "torso": {
+          "sourceRect": {
+            "x": 108,
+            "y": 19,
+            "width": 807,
+            "height": 971
+          },
+          "destinationRect": {
+            "x": 352,
+            "y": 156,
+            "width": 310,
+            "height": 350
+          },
+          "assetId": "base-training-vest-r1"
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 364,
+            "y": 410,
+            "width": 286,
+            "height": 245
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              396,
+              415
+            ],
+            [
+              396,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              619,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              619,
+              615
+            ]
+          ]
+        ],
+        "notes": "Candidate fit with separate PNGs. Neck and hands use local occlusion from this same body image; no body pixels are repainted.",
+        "itemHashes": {
+          "torso": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 445,
+              "y": 28,
+              "width": 124,
+              "height": 119
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 445,
+              "y": 18,
+              "width": 124,
+              "height": 110
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "de5ec49e7725ae7536e69ddf5c6ce50fe2086a6a44381452385f349ab2fee364"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 445,
+            "y": 28,
+            "width": 124,
+            "height": 119
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 445,
+            "y": 18,
+            "width": 124,
+            "height": 110
+          }
+        }
+      },
+      "userBodyReview": {
+        "id": "female-medium",
+        "decision": "changes_requested",
+        "notes": "hair is not fiting correctly, it looks like it has a lot of forehead, not sure if the bald designs were made with sprite tool",
+        "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15"
+      },
+      "userFitReview": {
+        "id": "female-medium",
+        "baseSha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "de5ec49e7725ae7536e69ddf5c6ce50fe2086a6a44381452385f349ab2fee364"
+      }
+    },
+    {
+      "id": "female-overweight",
+      "label": "Female \u00b7 Overweight",
+      "gender": "female",
+      "bodyType": "overweight",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-overweight/body.png",
+        "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          314,
+          50,
+          701,
+          988
+        ]
+      },
+      "fit": {
+        "baseSha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "approval": "pending_review",
+        "torso": {
+          "assetId": "base-training-vest-wide-r1",
+          "sourceRect": {
+            "x": 100,
+            "y": 11,
+            "width": 824,
+            "height": 963
+          },
+          "destinationRect": {
+            "x": 328,
+            "y": 166,
+            "width": 359,
+            "height": 378
+          }
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 320,
+            "y": 424,
+            "width": 375,
+            "height": 253
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              375,
+              415
+            ],
+            [
+              375,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              641,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              641,
+              615
+            ]
+          ]
+        ],
+        "notes": "Candidate fit with separate PNGs. Neck and hands use local occlusion from this same body image; no body pixels are repainted.",
+        "itemHashes": {
+          "torso": "7e49712f69308514468956f86721e3bb80554eebf129051a683005dd1a6685ca",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 445,
+              "y": 44,
+              "width": 124,
+              "height": 119
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 445,
+              "y": 34,
+              "width": 124,
+              "height": 110
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "362c2309eecbd2b706c4d777991ec16c9783caeb320638c1049506df0f46ce1c"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 445,
+            "y": 44,
+            "width": 124,
+            "height": 119
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 445,
+            "y": 34,
+            "width": 124,
+            "height": 110
+          }
+        }
+      },
+      "userBodyReview": {
+        "id": "female-overweight",
+        "decision": "changes_requested",
+        "notes": "again with the hair looks weird, as it the character bald was not made with the sprite tool and now we are fitting incompatible things",
+        "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf"
+      },
+      "userFitReview": {
+        "id": "female-overweight",
+        "baseSha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "decision": "pending",
+        "notes": "the clothes are completely different, they are completely different clothes and also looks as if it was the male body, the pants look just way too big, like her two legs could ift in the hole for a single leg",
+        "sha256": "362c2309eecbd2b706c4d777991ec16c9783caeb320638c1049506df0f46ce1c"
+      }
+    },
+    {
+      "id": "female-obese",
+      "label": "Female \u00b7 Obese",
+      "gender": "female",
+      "bodyType": "obese",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-obese/body.png",
+        "sha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          308,
+          47,
+          705,
+          997
+        ]
+      },
+      "fit": {
+        "baseSha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e",
+        "approval": "pending_review",
+        "torso": {
+          "assetId": "base-training-vest-wide-r1",
+          "sourceRect": {
+            "x": 100,
+            "y": 11,
+            "width": 824,
+            "height": 963
+          },
+          "destinationRect": {
+            "x": 306,
+            "y": 161,
+            "width": 402,
+            "height": 405
+          }
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 298,
+            "y": 453,
+            "width": 418,
+            "height": 230
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              359,
+              415
+            ],
+            [
+              359,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              657,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              657,
+              615
+            ]
+          ]
+        ],
+        "notes": "Candidate fit with separate PNGs. Neck and hands use local occlusion from this same body image; no body pixels are repainted.",
+        "itemHashes": {
+          "torso": "7e49712f69308514468956f86721e3bb80554eebf129051a683005dd1a6685ca",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 445,
+              "y": 42,
+              "width": 124,
+              "height": 119
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 445,
+              "y": 32,
+              "width": 124,
+              "height": 110
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "2c444ca1c499236cb3a7e0222753da19b923ed803571dd0d87798e0855584b6e"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 445,
+            "y": 42,
+            "width": 124,
+            "height": 119
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 445,
+            "y": 32,
+            "width": 124,
+            "height": 110
+          }
+        }
+      },
+      "userBodyReview": {
+        "id": "female-obese",
+        "decision": "changes_requested",
+        "notes": "same as the overweight",
+        "sha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e"
+      },
+      "userFitReview": {
+        "id": "female-obese",
+        "baseSha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e",
+        "decision": "changes_requested",
+        "notes": "same as the overweight",
+        "sha256": "2c444ca1c499236cb3a7e0222753da19b923ed803571dd0d87798e0855584b6e"
+      }
+    },
+    {
+      "id": "female-muscular",
+      "label": "Female \u00b7 Muscular",
+      "gender": "female",
+      "bodyType": "muscular",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-muscular/body.png",
+        "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          328,
+          35,
+          682,
+          996
+        ]
+      },
+      "fit": {
+        "baseSha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "approval": "pending_review",
+        "torso": {
+          "sourceRect": {
+            "x": 108,
+            "y": 19,
+            "width": 807,
+            "height": 971
+          },
+          "destinationRect": {
+            "x": 340,
+            "y": 158,
+            "width": 335,
+            "height": 360
+          },
+          "assetId": "base-training-vest-r1"
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 356,
+            "y": 418,
+            "width": 303,
+            "height": 247
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              390,
+              415
+            ],
+            [
+              390,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              626,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              626,
+              615
+            ]
+          ]
+        ],
+        "notes": "Candidate fit with separate PNGs. Neck and hands use local occlusion from this same body image; no body pixels are repainted.",
+        "itemHashes": {
+          "torso": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 445,
+              "y": 30,
+              "width": 124,
+              "height": 119
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 445,
+              "y": 20,
+              "width": 124,
+              "height": 110
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "7186f8f3ff31f69c20e3311f993b04319aea94a3451c57de5e19e61d1c3b0705"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 445,
+            "y": 30,
+            "width": 124,
+            "height": 119
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 445,
+            "y": 20,
+            "width": 124,
+            "height": 110
+          }
+        }
+      },
+      "userBodyReview": {
+        "id": "female-muscular",
+        "decision": "changes_requested",
+        "notes": "the same thing about the hair",
+        "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc"
+      },
+      "userFitReview": {
+        "id": "female-muscular",
+        "baseSha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "decision": "changes_requested",
+        "notes": "her leg and the short is glitching, right leg",
+        "sha256": "7186f8f3ff31f69c20e3311f993b04319aea94a3451c57de5e19e61d1c3b0705"
+      }
+    },
+    {
+      "id": "male-slim",
+      "label": "Male \u00b7 Slim",
+      "gender": "male",
+      "bodyType": "slim",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-slim/body.png",
+        "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          342,
+          37,
+          682,
+          1002
+        ]
+      },
+      "fit": {
+        "baseSha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "approval": "pending_review",
+        "torso": {
+          "sourceRect": {
+            "x": 108,
+            "y": 19,
+            "width": 807,
+            "height": 971
+          },
+          "destinationRect": {
+            "x": 337,
+            "y": 155,
+            "width": 350,
+            "height": 371
+          },
+          "assetId": "base-training-vest-r1"
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 374,
+            "y": 439,
+            "width": 276,
+            "height": 239
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              396,
+              415
+            ],
+            [
+              396,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              627,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              627,
+              615
+            ]
+          ]
+        ],
+        "notes": "Candidate fit with separate PNGs. Neck and hands use local occlusion from this same body image; no body pixels are repainted.",
+        "itemHashes": {
+          "torso": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 30,
+              "width": 126,
+              "height": 119
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 20,
+              "width": 126,
+              "height": 110
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "83b665896a52af8bb2d849a9cea548ed78f03aa7e4a35c68aa8a8d651150af2f"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 30,
+            "width": 126,
+            "height": 119
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 20,
+            "width": 126,
+            "height": 110
+          }
+        }
+      },
+      "userBodyReview": {
+        "id": "male-slim",
+        "decision": "changes_requested",
+        "notes": "the hair looks too big, as if it was a helmet",
+        "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c"
+      },
+      "userFitReview": {
+        "id": "male-slim",
+        "baseSha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "83b665896a52af8bb2d849a9cea548ed78f03aa7e4a35c68aa8a8d651150af2f"
+      }
+    },
+    {
+      "id": "male-medium",
+      "label": "Male \u00b7 Medium",
+      "gender": "male",
+      "bodyType": "medium",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-medium/body.png",
+        "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          338,
+          44,
+          687,
+          999
+        ]
+      },
+      "fit": {
+        "baseSha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "approval": "pending_review",
+        "torso": {
+          "sourceRect": {
+            "x": 108,
+            "y": 19,
+            "width": 807,
+            "height": 971
+          },
+          "destinationRect": {
+            "x": 327,
+            "y": 155,
+            "width": 370,
+            "height": 377
+          },
+          "assetId": "base-training-vest-r1"
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 369,
+            "y": 421,
+            "width": 286,
+            "height": 242
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              397,
+              415
+            ],
+            [
+              397,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              627,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              627,
+              615
+            ]
+          ]
+        ],
+        "notes": "Candidate fit with separate PNGs. Neck and hands use local occlusion from this same body image; no body pixels are repainted.",
+        "itemHashes": {
+          "torso": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 38,
+              "width": 126,
+              "height": 119
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 28,
+              "width": 126,
+              "height": 110
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "4dfd89d6024cff6901bfcac643a6077177cea052b556d57b80497f8f2293271b"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 38,
+            "width": 126,
+            "height": 119
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 28,
+            "width": 126,
+            "height": 110
+          }
+        }
+      },
+      "userBodyReview": {
+        "id": "male-medium",
+        "decision": "changes_requested",
+        "notes": "same issue with the hair, looks like a helmet",
+        "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994"
+      },
+      "userFitReview": {
+        "id": "male-medium",
+        "baseSha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "4dfd89d6024cff6901bfcac643a6077177cea052b556d57b80497f8f2293271b"
+      }
+    },
+    {
+      "id": "male-overweight",
+      "label": "Male \u00b7 Overweight",
+      "gender": "male",
+      "bodyType": "overweight",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-overweight/body.png",
+        "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          300,
+          47,
+          721,
+          1024
+        ]
+      },
+      "fit": {
+        "baseSha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "approval": "pending_review",
+        "torso": {
+          "assetId": "base-training-vest-wide-r1",
+          "sourceRect": {
+            "x": 100,
+            "y": 11,
+            "width": 824,
+            "height": 963
+          },
+          "destinationRect": {
+            "x": 314,
+            "y": 157,
+            "width": 397,
+            "height": 414
+          }
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 324,
+            "y": 453,
+            "width": 375,
+            "height": 234
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              365,
+              415
+            ],
+            [
+              365,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              656,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              656,
+              615
+            ]
+          ]
+        ],
+        "notes": "Candidate fit with separate PNGs. Neck and hands use local occlusion from this same body image; no body pixels are repainted.",
+        "itemHashes": {
+          "torso": "7e49712f69308514468956f86721e3bb80554eebf129051a683005dd1a6685ca",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 43,
+              "width": 126,
+              "height": 119
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 33,
+              "width": 126,
+              "height": 110
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "c95a6e388b42c8b833e4398db97cf56474dc4fd4f146777804d8972dfbf33392"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 43,
+            "width": 126,
+            "height": 119
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 33,
+            "width": 126,
+            "height": 110
+          }
+        }
+      },
+      "userBodyReview": {
+        "id": "male-overweight",
+        "decision": "changes_requested",
+        "notes": "same issue with the hair looking like a helmet",
+        "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673"
+      },
+      "userFitReview": {
+        "id": "male-overweight",
+        "baseSha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "decision": "changes_requested",
+        "notes": "again, clothes look completely different.",
+        "sha256": "c95a6e388b42c8b833e4398db97cf56474dc4fd4f146777804d8972dfbf33392"
+      }
+    },
+    {
+      "id": "male-obese",
+      "label": "Male \u00b7 Obese",
+      "gender": "male",
+      "bodyType": "obese",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-obese/body.png",
+        "sha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          276,
+          29,
+          746,
+          1005
+        ]
+      },
+      "fit": {
+        "baseSha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+        "approval": "pending_review",
+        "torso": {
+          "assetId": "base-training-vest-wide-r1",
+          "sourceRect": {
+            "x": 100,
+            "y": 11,
+            "width": 824,
+            "height": 963
+          },
+          "destinationRect": {
+            "x": 290,
+            "y": 139,
+            "width": 443,
+            "height": 447
+          }
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 297,
+            "y": 465,
+            "width": 430,
+            "height": 224
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              350,
+              415
+            ],
+            [
+              350,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              672,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              672,
+              615
+            ]
+          ]
+        ],
+        "notes": "Candidate fit with separate PNGs. Neck and hands use local occlusion from this same body image; no body pixels are repainted.",
+        "itemHashes": {
+          "torso": "7e49712f69308514468956f86721e3bb80554eebf129051a683005dd1a6685ca",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 22,
+              "width": 126,
+              "height": 119
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 12,
+              "width": 126,
+              "height": 110
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "daf7eee913c1da48e0d2698bbdd26ea9727ecb314021697b6f1981aae5219c58"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 22,
+            "width": 126,
+            "height": 119
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 12,
+            "width": 126,
+            "height": 110
+          }
+        }
+      },
+      "userBodyReview": {
+        "id": "male-obese",
+        "decision": "changes_requested",
+        "notes": "same helmet issue with the hair",
+        "sha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326"
+      },
+      "userFitReview": {
+        "id": "male-obese",
+        "baseSha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+        "decision": "pending",
+        "notes": "clothes look completely different",
+        "sha256": "daf7eee913c1da48e0d2698bbdd26ea9727ecb314021697b6f1981aae5219c58"
+      }
+    },
+    {
+      "id": "male-muscular",
+      "label": "Male \u00b7 Muscular",
+      "gender": "male",
+      "bodyType": "muscular",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-muscular/body.png",
+        "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          319,
+          41,
+          705,
+          1000
+        ]
+      },
+      "fit": {
+        "baseSha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "approval": "pending_review",
+        "torso": {
+          "sourceRect": {
+            "x": 108,
+            "y": 19,
+            "width": 807,
+            "height": 971
+          },
+          "destinationRect": {
+            "x": 310,
+            "y": 153,
+            "width": 403,
+            "height": 389
+          },
+          "assetId": "base-training-vest-r1"
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 362,
+            "y": 435,
+            "width": 301,
+            "height": 237
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              387,
+              415
+            ],
+            [
+              387,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              638,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              638,
+              615
+            ]
+          ]
+        ],
+        "notes": "Candidate fit with separate PNGs. Neck and hands use local occlusion from this same body image; no body pixels are repainted.",
+        "itemHashes": {
+          "torso": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 37,
+              "width": 126,
+              "height": 119
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 27,
+              "width": 126,
+              "height": 110
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "660ec834b83c16ee139a62ec4d1127abc5ea74be505946cd7323a0eb1bf8fcae"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 37,
+            "width": 126,
+            "height": 119
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 27,
+            "width": 126,
+            "height": 110
+          }
+        }
+      },
+      "userBodyReview": {
+        "id": "male-muscular",
+        "decision": "changes_requested",
+        "notes": "same hair like helmet issue",
+        "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632"
+      },
+      "userFitReview": {
+        "id": "male-muscular",
+        "baseSha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "660ec834b83c16ee139a62ec4d1127abc5ea74be505946cd7323a0eb1bf8fcae"
+      }
+    }
+  ],
+  "costSummary": "This pass: isolated clothing and fit refinements 8 credits + requested hair-free revisions 40 credits + separate hairstyles 4 credits = 52 credits. No dressed character was generated.",
+  "equipmentItemCount": 2,
+  "reviewRecord": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-2026-09-27T130559Z.json",
+    "sha256": "1ed3edf0f4eb74992c477ebae0a6aa66ea60a39e5533638eed8ea3a46d730daf",
+    "reviewedAt": "2026-09-27T13:05:59.086Z"
+  },
+  "reviewStatusPath": "basic-clothing-front-r1/review-status.json"
+}

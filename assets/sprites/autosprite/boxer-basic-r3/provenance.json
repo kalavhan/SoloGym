@@ -1,0 +1,15 @@
+{
+  "provider": "AutoSprite",
+  "tool": "generate_pose",
+  "characterId": "cmujcu8l3000o70vv06xihlhz",
+  "poseId": "cmujcxfuq0007hr8fo2q4j3ry",
+  "label": "Basic Covered R3",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujcu8l3000o70vv06xihlhz/1790485626478_e9ad58c7-e6ce-4474-b7b4-eb6a7a1a3bb1_custom-pose-frame-1790485626478.png",
+  "output": {
+    "path": "basic-covered-concept.png",
+    "sha256": "35d7d6687df495ce307474a5691ed11b7bd99e807fdb34d3198fef02fa9e0282",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "tool": "generate_asset_preview",
+  "quality": "ultra",
+  "creditsUsed": 1,
+  "image": {
+    "path": "legs-r2/source.png",
+    "sha256": "598d3db03bbfc0486bac75f60060e97eee4c035234ff98acaf6d2e701f7194a1",
+    "width": 1024,
+    "height": 1024
+  },
+  "sourceUrl": "https://im.runware.ai/image/os/a04d20/ws/4/ii/c9d1fae8-e8f0-4a07-b23f-6b64da182c8c.png"
+}

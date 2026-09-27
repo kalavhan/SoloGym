@@ -76,9 +76,7 @@ namespace SoloGym
             CreateCanvas();
             CreateArt();
             CreateText();
-            controller = new HomeController(AutoSpriteSession.Requested
-                ? new HomeSnapshot { FemalePresentation = true }
-                : requestedCapture != null ? new HomeSnapshot() : null);
+            controller = new HomeController(requestedCapture != null || AutoSpriteSession.SmokeStarted ? new HomeSnapshot() : null);
             controller.Changed += Render;
             controller.NavigationRequested += Navigate;
             controller.NoticeRequested += message => ShowNotice(message);
@@ -88,7 +86,7 @@ namespace SoloGym
             CreateStateOverlays();
             var locale = Argument("-sologym-locale");
             if (locale != null) controller.SetLanguage(locale);
-            if (AutoSpriteSession.Requested) controller.SetLanguage(AutoSpriteSession.Language);
+            if (AutoSpriteSession.Requested) controller.SetFemalePresentation(AutoSpriteSession.Appearance.bodyId.StartsWith("female-"));
             if (Enum.TryParse(Argument("-sologym-mode"), out HomeMode mode)) controller.SetMode(mode);
             Render(controller.Model);
             FitSafeArea();
@@ -323,7 +321,7 @@ namespace SoloGym
 
         void Navigate(HomeNavigation destination)
         {
-            if (destination.WindowId == "WIN-014" && AutoSpriteSession.Requested)
+            if ((destination.WindowId == "WIN-014" || destination.WindowId == "WIN-032") && AutoSpriteSession.Requested)
             {
                 OpenAutoSpriteStudio();
                 return;
@@ -354,6 +352,7 @@ namespace SoloGym
             if (autoSpriteStudio != null) Destroy(autoSpriteStudio.gameObject);
             autoSpriteStudio = null;
             AutoSpriteAvatar.RefreshView();
+            controller.SetFemalePresentation(AutoSpriteSession.Appearance.bodyId.StartsWith("female-"));
             root.gameObject.SetActive(true);
             if (AutoSpriteSession.Language != controller.Model.Language)
                 controller.SetLanguage(AutoSpriteSession.Language);

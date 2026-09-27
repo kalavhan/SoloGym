@@ -3,38 +3,62 @@ using UnityEngine;
 
 namespace SoloGym
 {
-    /// <summary>Local art-review choices shared by Studio and Home; never an appearance save.</summary>
+    [Serializable]
+    public sealed class ModularAppearance
+    {
+        public string bodyId = "male-medium", hairId = "close-crop";
+        public bool torso = true, legs = true;
+        public ModularAppearance Clone() => JsonUtility.FromJson<ModularAppearance>(JsonUtility.ToJson(this));
+        public void Normalize()
+        {
+            // A retired selection keeps its nearest available build.
+            if (bodyId == "male-obese") bodyId = "male-overweight";
+            if (bodyId == "female-obese") bodyId = "female-overweight";
+            if (Array.IndexOf(AutoSpriteSession.BodyIds, bodyId) < 0) bodyId = "male-medium";
+            if (hairId != "none" && hairId != "close-crop" && hairId != "short-sweep") hairId = "close-crop";
+        }
+    }
+
+    /// <summary>Static MVP appearance, saved locally only when the player confirms.</summary>
     public static class AutoSpriteSession
     {
-        static bool initialized;
-        // First version uses one front-facing presentation on both screens.
-        public const string View = "front";
+        public const string AppearanceKey = "SoloGym.Appearance.Modular.v1";
+        public static readonly string[] Builds = { "slim", "medium", "overweight", "muscular" };
+        public static readonly string[] BodyIds = { "male-slim", "male-medium", "male-overweight", "male-muscular",
+            "female-slim", "female-medium", "female-overweight", "female-muscular" };
         public static string Language = "es";
-        public static bool Paused;
-        public static bool CaptureTaken;
-        public static bool SmokeStarted;
-        public static float Seconds { get; private set; }
-        static float clockStart;
-
-        public static bool Requested => Argument("-sologym-avatar-renderer") == "autosprite"
-            && (Application.isEditor || HasArgument("-sologym-review"));
+        public static bool CaptureTaken, SmokeStarted;
+        static bool initialized;
+        static ModularAppearance saved;
+        public static ModularAppearance Appearance { get { Initialize(); return saved.Clone(); } }
+        // The modular character is the default; explicit old renderers remain historical proofs.
+        public static bool Requested => Argument("-sologym-avatar-renderer") == null
+            || Argument("-sologym-avatar-renderer") == "autosprite"
+            || Argument("-sologym-avatar-renderer") == "modular";
 
         public static void Initialize()
         {
             if (initialized) return;
             initialized = true;
-            Language = Argument("-sologym-locale") ?? "es";
-            Paused = HasArgument("-sologym-autosprite-still");
-            clockStart = Time.unscaledTime;
+            string preference = Argument("-sologym-locale") ?? PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto");
+            Language = preference == "en" || preference == "es" ? preference
+                : Application.systemLanguage == SystemLanguage.Spanish ? "es" : "en";
+            ReloadAppearance();
         }
 
-        public static float PlaybackSeconds => Seconds + (Paused ? 0 : Time.unscaledTime - clockStart);
-
-        public static void TogglePause()
+        public static void ReloadAppearance()
         {
-            Seconds = PlaybackSeconds;
-            Paused = !Paused;
-            clockStart = Time.unscaledTime;
+            try { saved = JsonUtility.FromJson<ModularAppearance>(PlayerPrefs.GetString(AppearanceKey, "")); }
+            catch (ArgumentException) { saved = null; }
+            saved ??= new ModularAppearance();
+            saved.Normalize();
+        }
+
+        public static void Save(ModularAppearance appearance)
+        {
+            saved = appearance.Clone(); saved.Normalize();
+            PlayerPrefs.SetString(AppearanceKey, JsonUtility.ToJson(saved));
+            PlayerPrefs.Save();
         }
 
         public static bool HasArgument(string key) => Array.IndexOf(Environment.GetCommandLineArgs(), key) >= 0;

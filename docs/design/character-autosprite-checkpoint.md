@@ -1,5 +1,7 @@
 # Frontal AutoSprite checkpoint
 
+Historical idle checkpoint. Superseded for the MVP by the [static modular integration](character-modular-mvp.md), with four builds per gender and no animation.
+
 Character configuration and Home can now display the same complete, front-facing
 AutoSprite character with an authored idle loop. This review uses the user's
 existing female character and training outfit. It replaces procedural limb

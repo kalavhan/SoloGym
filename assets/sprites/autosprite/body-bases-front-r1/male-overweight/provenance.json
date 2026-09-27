@@ -1,0 +1,18 @@
+{
+  "provider": "AutoSprite",
+  "tool": "generate_pose",
+  "characterId": "cmujfdjq7002qbashm8hmvz7s",
+  "poseId": "cmujff177000dhqkz90j21rhz",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujfdjq7002qbashm8hmvz7s/1790489812502_534279c4-a412-4ed4-b682-998b36bd9de8_custom-pose-frame-1790489812502.png",
+  "output": {
+    "path": "male-overweight/source.png",
+    "sha256": "be2213797ef18102dc81f468635064368b0491c4b1b9862ff8a18b4fd1ac00b8",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      255,
+      255
+    ]
+  }
+}

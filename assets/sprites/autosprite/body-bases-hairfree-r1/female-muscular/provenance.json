@@ -1,0 +1,14 @@
+{
+  "poseId": "cmujsfozw0008n2jj84qmvhbk",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujscmbl0005b5hmdgxndk04/1790511678956_235729e3-5ec4-4520-aa67-4bee8c57613c_custom-pose-frame-1790511678956.png",
+  "image": {
+    "path": "female-muscular/source.png",
+    "sha256": "8eac3e54db3d21146569b97a8680cf7fe204cb3c8353aa0a8d15cc25e18e7c7f",
+    "width": 1024,
+    "height": 1024
+  },
+  "originalSource": {
+    "path": "assets/sprites/autosprite/body-bases-front-r1/female-muscular/source.png",
+    "sha256": "532978e2a184731ef830b6df55bf63ccccce81641d7feb0e474552a6b0a68b8e"
+  }
+}

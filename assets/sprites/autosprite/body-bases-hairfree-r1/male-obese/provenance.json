@@ -1,0 +1,14 @@
+{
+  "poseId": "cmujsfmra0012j7aahbsybcpk",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujsci0b0004v65zi9vim728/1790511673841_12509ebe-fa66-4901-84e9-a7e33805a694_custom-pose-frame-1790511673841.png",
+  "image": {
+    "path": "male-obese/source.png",
+    "sha256": "e6901da45179cbf8cc2dbe1dd4a5e1a1159219791c5f686cfab1a7c866f67deb",
+    "width": 1024,
+    "height": 1024
+  },
+  "originalSource": {
+    "path": "assets/sprites/autosprite/body-bases-front-r1/male-obese/source.png",
+    "sha256": "05dc101f4c026a5999436cea2abb01e580a6752e33ac7c223266ce83a54a6504"
+  }
+}

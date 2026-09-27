@@ -1,0 +1,51 @@
+{
+  "schema": "sologym.body-base-batch-validation.v1",
+  "status": "approved_exports_verified",
+  "expectedCount": 10,
+  "actualCount": 10,
+  "costCredits": 40,
+  "dataChecks": {
+    "allSourceImages1024Square": true,
+    "allSourceHashesVerified": true,
+    "allTenRequestsHaveRecordedResponses": true,
+    "allFourteenIllustrationReferencesPreserved": true,
+    "allTransparentImages1024Square": true,
+    "allExportHashesRecorded": true,
+    "allSourceAndExportDimensionsMatch": true,
+    "visibleBodyBoundsInsideCanvas": true,
+    "opaqueForegroundRgbMatchesSources": true
+  },
+  "visualInspection": {
+    "allTenInspectedIndividually": true,
+    "singleFrontalFullBody": true,
+    "onlyRequestedBaseGarments": true,
+    "noExtraEquipmentOrAnimations": true,
+    "allTenTransparentExportsInspectedOnDark": true,
+    "fullHeadToFootVisible": true
+  },
+  "userApprovalInferred": false,
+  "runtimeIntegrated": false,
+  "backgroundRemovalPerformed": true,
+  "userApprovalVerified": true,
+  "approvalChecksumMatches": 10,
+  "approvalRecord": {
+    "path": "reviews/user-approval-all-10.json",
+    "sha256": "f51438424d9144ffb150f234f184a8c21b63278a4adcdd7e9b7a96609308cccb",
+    "reviewedAt": "2026-09-27T06:27:15.112Z",
+    "approvedCount": 10
+  },
+  "generationCredits": 30,
+  "backgroundRemovalCredits": 10,
+  "canonicalBasesFrozen": true,
+  "limitations": [
+    "Equipment fit and runtime integration are pending.",
+    "Very faint provider alpha residue remains around some edges; male overweight/obese bottom edge alpha maximum is 1/255."
+  ],
+  "galleryVerification": {
+    "allTenImagesLoaded": true,
+    "recordedApprovalsDisplayed": 10,
+    "originalTransparentSwitchVerified": true,
+    "darkLightCheckerBackdropsVerified": true,
+    "syntaxCheckPassed": true
+  }
+}

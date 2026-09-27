@@ -1,0 +1,9 @@
+SOLOGYM / BASE / Boxing shorts · Female · Overweight
+
+Use shorts__female-overweight.png as the sole item-design reference. Reproduce the pictured item, preserving its silhouette, colors, seams, panels and trim. Do not invent another design.
+
+Relaxed navy above-knee boxing shorts with broad gathered waistband, two petrol end tabs, cream outer side stripes and thin cream hem. Preserve the pictured waist, hip and thigh shape.
+
+Render only this equipment item. Clean frontal game illustration with crisp outlines and restrained cel shading. No character, mannequin, skin, text, labels, grid, extra items, glow or animation. Export an isolated PNG with a clean transparent background.
+
+Intended wearer: female-overweight. The separately supplied bodies/female-overweight.png is an optional fitting guide, not another output. If fitting, preserve that body's exact pose and scale and place the garment on its 1024x1024 canvas. The supplied item image itself is a design reference, not verified registration.

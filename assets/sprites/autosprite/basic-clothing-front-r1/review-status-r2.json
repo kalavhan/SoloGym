@@ -1,0 +1,376 @@
+{
+  "schema": "sologym.modular-review-status.v2",
+  "batch": "modular-front-r2",
+  "status": "bodies_and_hair_approved_clothing_changes_required",
+  "sourceReview": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-r2-2026-09-27T170140Z.json",
+    "sha256": "29f3cae851cb048081225def792244964b470da2a1cf5dbb4141358bde0867b1",
+    "reviewedAt": "2026-09-27T17:01:40.374Z"
+  },
+  "reviewedFitting": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/fitting-reviewed-r2-2026-09-27T170140Z.json",
+    "sha256": "a233121b70630dd0c8c576416374957f54388357a10788785a31f177de18121e"
+  },
+  "counts": {
+    "bodies": {
+      "approved": 10,
+      "changes_requested": 0,
+      "pending": 0
+    },
+    "fits": {
+      "approved": 2,
+      "changes_requested": 8,
+      "pending": 0
+    },
+    "hairFits": {
+      "approved": 10,
+      "changes_requested": 0,
+      "pending": 0
+    },
+    "assets": {
+      "approved": 0,
+      "changes_requested": 0,
+      "pending": 4
+    }
+  },
+  "decisions": {
+    "bodies": {
+      "female-slim": {
+        "id": "female-slim",
+        "decision": "approved",
+        "notes": "nice",
+        "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6"
+      },
+      "female-medium": {
+        "id": "female-medium",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15"
+      },
+      "female-overweight": {
+        "id": "female-overweight",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf"
+      },
+      "female-obese": {
+        "id": "female-obese",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e"
+      },
+      "female-muscular": {
+        "id": "female-muscular",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc"
+      },
+      "male-slim": {
+        "id": "male-slim",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c"
+      },
+      "male-medium": {
+        "id": "male-medium",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994"
+      },
+      "male-overweight": {
+        "id": "male-overweight",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673"
+      },
+      "male-obese": {
+        "id": "male-obese",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326"
+      },
+      "male-muscular": {
+        "id": "male-muscular",
+        "decision": "approved",
+        "notes": "same hair like helmet issue",
+        "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632"
+      }
+    },
+    "fits": {
+      "female-slim": {
+        "id": "female-slim",
+        "baseSha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "decision": "changes_requested",
+        "notes": "it is using the make clothes, it just looks like a feminine guy, it stopped looking like a woman since is using the male tshirt",
+        "sha256": "d1d0176fbd7ab6cc87bca40012c26c682d2e1f8185f4e7648aa82edae5df52fe"
+      },
+      "female-medium": {
+        "id": "female-medium",
+        "baseSha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "decision": "changes_requested",
+        "notes": "it is using the make clothes, it just looks like a feminine guy, it stopped looking like a woman since is using the male tshirt",
+        "sha256": "fda4ec99864c4ee9e1a47866f3c628b7702ec721ccd949e96d4c57c37b787c81"
+      },
+      "female-overweight": {
+        "id": "female-overweight",
+        "baseSha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "decision": "changes_requested",
+        "notes": "it is using the make clothes, it just looks like a feminine guy, it stopped looking like a woman since is using the male tshirt",
+        "sha256": "0bd2d268a464534ed7276bb0b8ba0bd53b28bd17883eec57881968886b3d7a6f"
+      },
+      "female-obese": {
+        "id": "female-obese",
+        "baseSha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e",
+        "decision": "changes_requested",
+        "notes": "it is using the make clothes, it just looks like a feminine guy, it stopped looking like a woman since is using the male tshirt",
+        "sha256": "6fec63341ca7bc1db6d062e5e9b7e0f9fe3fd4c434a1166898997cca0555d3c1"
+      },
+      "female-muscular": {
+        "id": "female-muscular",
+        "baseSha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "decision": "changes_requested",
+        "notes": "it is using the make clothes, it just looks like a feminine guy, it stopped looking like a woman since is using the male tshirt",
+        "sha256": "1352a117d154e5b24d01061cf0ba6cc7a7ad6d1227fe3911c941544051468f23"
+      },
+      "male-slim": {
+        "id": "male-slim",
+        "baseSha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "8510fb2e0a966300f9f2909d5a48dc41986c273f79f07227e525cd18dfb4a75c",
+        "sourceFitSha256": "83b665896a52af8bb2d849a9cea548ed78f03aa7e4a35c68aa8a8d651150af2f"
+      },
+      "male-medium": {
+        "id": "male-medium",
+        "baseSha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "decision": "approved",
+        "notes": "approving fit but honestly looks very similar to slim",
+        "sha256": "06ef51d58bb8eaa1d0eb37dd83d6a9040a818b5d63db5e2aa5051809c7b6f703"
+      },
+      "male-overweight": {
+        "id": "male-overweight",
+        "baseSha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "decision": "changes_requested",
+        "notes": "the shirt  does not reflect the weight, like it just became wider and longer but is very much the same build as mid and slim, just looks stretched and zoomed\n\nThe shorts look super weird they look like they just got stretched, the border is wider than his hips",
+        "sha256": "191900ebd131195d8ba1110675fcb3d8cf1d6acc72a34588dbbe99afa9e8f815"
+      },
+      "male-obese": {
+        "id": "male-obese",
+        "baseSha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+        "decision": "changes_requested",
+        "notes": "The shorts look super weird they look like they just got stretched, the border is wider than his hips",
+        "sha256": "6179e49941e6f9558766c92a2e6b768206f73853afa3991931edc09aa841fd02"
+      },
+      "male-muscular": {
+        "id": "male-muscular",
+        "baseSha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "decision": "changes_requested",
+        "notes": "this, mid and slim looks very much the same, some small almost not notorious changes on the clothes. but overall i can't tell if this guy is supposed to be muscular, or the mid guy or the slim guy",
+        "sha256": "8c2178b1449ed79eb9e764c1ea2aced6f39d7fe157acefa40defe453e6a8fb9f"
+      }
+    },
+    "hairFits": {
+      "female-slim": {
+        "id": "female-slim",
+        "baseSha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "83bda31d62c74242da75274267e15b3e2c5bdc6096dda25665bb1febb8d795a9"
+      },
+      "female-medium": {
+        "id": "female-medium",
+        "baseSha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "701b34c85e019a5a30b9e7613e36811d0b0d9563da144d091b57e68622a2a64b"
+      },
+      "female-overweight": {
+        "id": "female-overweight",
+        "baseSha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "2d463cb15c7d948e47f633a0832bfafee4a17fc1d3bf4c6d69a53da8dcdbdf75"
+      },
+      "female-obese": {
+        "id": "female-obese",
+        "baseSha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "6213f39ca1cac94889a12747a288a4f8ea93ca3240cc2fe01d26cbcfcd5a9699"
+      },
+      "female-muscular": {
+        "id": "female-muscular",
+        "baseSha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "9f4afb3c616dc455eb2fab6d048ea9dfb1c3669984ad402500a833419461e53c"
+      },
+      "male-slim": {
+        "id": "male-slim",
+        "baseSha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "fb7faa1a23766ef09bdcd0fce578dfd40b321f223bec4b368a90958bec52dea3"
+      },
+      "male-medium": {
+        "id": "male-medium",
+        "baseSha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "2b1f80a7802084b7c416734a4f628b4197c39f7a247e5a10c9913d921071fda0"
+      },
+      "male-overweight": {
+        "id": "male-overweight",
+        "baseSha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "bd44b9285c72f01db1e8a40f2fc962b9873713af66c0e36a794dee0ec3255f2a"
+      },
+      "male-obese": {
+        "id": "male-obese",
+        "baseSha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "21da6df6c5c1acf13e711f1976d5692e17bc3df2db315eda2da4fd1148af2192"
+      },
+      "male-muscular": {
+        "id": "male-muscular",
+        "baseSha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "5b80f910687cd87ac77dbbfeba17c2729e5e2e84296234d4c592e5abcd405851"
+      }
+    },
+    "assets": {
+      "base-training-vest-r1": {
+        "id": "base-training-vest-r1",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a"
+      },
+      "base-boxing-shorts-r2": {
+        "id": "base-boxing-shorts-r2",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+      },
+      "close-crop": {
+        "id": "close-crop",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b"
+      },
+      "short-sweep": {
+        "id": "short-sweep",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+      }
+    }
+  },
+  "approvedBodyIds": [
+    "female-slim",
+    "female-medium",
+    "female-overweight",
+    "female-obese",
+    "female-muscular",
+    "male-slim",
+    "male-medium",
+    "male-overweight",
+    "male-obese",
+    "male-muscular"
+  ],
+  "approvedHairFitIds": [
+    "female-slim",
+    "female-medium",
+    "female-overweight",
+    "female-obese",
+    "female-muscular",
+    "male-slim",
+    "male-medium",
+    "male-overweight",
+    "male-obese",
+    "male-muscular"
+  ],
+  "approvedClothingFitIds": [
+    "male-slim",
+    "male-medium"
+  ],
+  "clothingChangesRequestedIds": [
+    "female-slim",
+    "female-medium",
+    "female-overweight",
+    "female-obese",
+    "female-muscular",
+    "male-overweight",
+    "male-obese",
+    "male-muscular"
+  ],
+  "workItems": [
+    {
+      "id": "female-tailored-tops",
+      "bodies": [
+        "female-slim",
+        "female-medium",
+        "female-overweight",
+        "female-obese",
+        "female-muscular"
+      ],
+      "status": "open",
+      "change": "Author separate garment-only fit variants that follow the approved female shoulder, torso and waist shapes. Preserve the same Base kit design and full coverage; do not scale a male-cut torso sprite over every woman."
+    },
+    {
+      "id": "male-overweight-top",
+      "bodies": [
+        "male-overweight"
+      ],
+      "status": "open",
+      "change": "Fit a rounded torso with appropriate drape and folds; wider/longer scaling of a slim shirt is not acceptable."
+    },
+    {
+      "id": "male-heavy-shorts",
+      "bodies": [
+        "male-overweight",
+        "male-obese"
+      ],
+      "status": "open",
+      "change": "Use body-appropriate waistband, crotch, leg openings and hem proportions without thick stretched borders or excessive flare."
+    },
+    {
+      "id": "male-muscular-top",
+      "bodies": [
+        "male-muscular"
+      ],
+      "status": "open",
+      "change": "Preserve muscular shoulder/upper-arm/torso definition in the garment cut; the clothed figure must remain distinguishable from slim and medium."
+    }
+  ],
+  "approvedWithNotes": [
+    {
+      "kind": "bodies",
+      "id": "female-slim",
+      "decision": "approved",
+      "notes": "nice",
+      "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6"
+    },
+    {
+      "kind": "bodies",
+      "id": "male-muscular",
+      "decision": "approved",
+      "notes": "same hair like helmet issue",
+      "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632"
+    },
+    {
+      "kind": "fits",
+      "id": "male-medium",
+      "baseSha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+      "decision": "approved",
+      "notes": "approving fit but honestly looks very similar to slim",
+      "sha256": "06ef51d58bb8eaa1d0eb37dd83d6a9040a818b5d63db5e2aa5051809c7b6f703"
+    }
+  ],
+  "noteInterpretation": "Preserve every note verbatim. Male-muscular body retains the earlier helmet note, but its body and separate hair-fit decisions are both approved. Do not reopen hair based solely on that retained note. Male-medium clothing stays approved with its body-distinction concern retained for comparisons.",
+  "artOrPlacementChangesInThisImport": false,
+  "additionalCreditsUsed": 0,
+  "runtimeIntegrated": false
+}

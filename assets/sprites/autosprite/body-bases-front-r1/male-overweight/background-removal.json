@@ -1,0 +1,52 @@
+{
+  "assetId": "cmujrp401000aicxmimkw1tkm",
+  "tool": "remove_asset_background",
+  "cached": false,
+  "creditsUsed": 1,
+  "sourceSha256": "be2213797ef18102dc81f468635064368b0491c4b1b9862ff8a18b4fd1ac00b8",
+  "sourceImage": "male-overweight/source.png",
+  "export": {
+    "path": "male-overweight/body.png",
+    "sha256": "8c82d267fcf960761d504381d09bd86fe8481d6912474cbae7b553e100fd7eb2",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "contentBounds": [
+      300,
+      29,
+      722,
+      1024
+    ],
+    "coordinateOrigin": "top-left",
+    "trimmed": false,
+    "resized": false,
+    "sourceSha256": "be2213797ef18102dc81f468635064368b0491c4b1b9862ff8a18b4fd1ac00b8",
+    "provider": "AutoSprite",
+    "tool": "remove_asset_background",
+    "assetId": "cmujrp401000aicxmimkw1tkm",
+    "creditsUsed": 1,
+    "qa": {
+      "dimensionsUnchanged": true,
+      "sourceChecksumUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "opaquePixelCount": 14227,
+      "opaqueRgbChangedPixelCount": 0,
+      "opaqueRgbMaxChannelDifference": 0,
+      "opaqueRgbMeanChannelDifference": 0.0,
+      "contentBoundsAlpha128": [
+        302,
+        32,
+        720,
+        1003
+      ]
+    }
+  },
+  "downloadUrlWithoutQuery": "https://www.autosprite.io/api/files/assets/cmujrp401000aicxmimkw1tkm/base-nobg"
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "unchangedReferenceImages": 19,
+  "individualObjectImages": 10,
+  "activeBodies": 8,
+  "writtenItemBriefs": 7,
+  "promptTemplates": 56,
+  "generatedImages": 0,
+  "creditsSpent": 0,
+  "missingIsolatedArt": [
+    "headband",
+    "boxing boots",
+    "wearable backpack rear/front strap layers"
+  ],
+  "gloveStatus": "existing isolated prototype, not fitted to current eight bodies"
+}

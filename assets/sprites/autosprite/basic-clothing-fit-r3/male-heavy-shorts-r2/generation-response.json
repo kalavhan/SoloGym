@@ -1,0 +1,12 @@
+{
+  "tool": "generate_asset_preview",
+  "quality": "ultra",
+  "creditsUsed": 1,
+  "image": {
+    "path": "male-heavy-shorts-r2/source.png",
+    "sha256": "361bffb4edf7fed6a25a2c718570210984706716425a168d0efdfd4391961464",
+    "width": 1024,
+    "height": 1024
+  },
+  "sourceUrl": "https://im.runware.ai/image/os/a05d22/ws/4/ii/6501fc81-7bf1-48e7-a6db-2e138afed8c1.png"
+}

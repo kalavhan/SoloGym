@@ -1,0 +1,238 @@
+{
+  "version": 2,
+  "generatedImages": 11,
+  "selectedRenders": 8,
+  "autoSpriteCalls": 0,
+  "autoSpriteCreditsSpent": 0,
+  "runtimeChanged": false,
+  "entries": [
+    {
+      "id": "top-male-initial",
+      "selected": false,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-c93615e5-b6f6-465f-9117-9a5002382029.png",
+      "prompt": "Use case: stylized-concept.\nMake one polished visual design specification sheet for the SAME Base-tier boxing training top in FOUR MALE BODY FITS. This sheet will guide another image model; be precise, consistent, and clear.\nInput image 1: the authoritative garment design (navy crewneck short-sleeved tee beneath open stand-collar vest, cream side panels, narrow dull-petrol piping). Images 2\u20135: actual slim, medium, overweight, muscular body silhouettes IN THAT ORDER, used only to inform tailoring. DO NOT render people, mannequin parts, skin, arms, heads, hands, shorts or equipment.\nOutput a landscape 3:2 white reference board, 2x2 grid, four large isolated garment renders at THE SAME physical scale and collar-to-hem length. Top left label \"MALE \u00b7 SLIM\", top right \"MALE \u00b7 MEDIUM\", bottom left \"MALE \u00b7 OVERWEIGHT\", bottom right \"MALE \u00b7 MUSCULAR\". Clear margins and modest sans-serif labels below each. Title \"BASE TRAINING TOP \u2022 ONE DESIGN / FOUR FITS\".\nKeep exact garment construction identical across all four: same crewneck tee, same open front vest, same low stand collar, identical cream side panels, same thin petrol edge trim, same plain sleeve cuff, same hip-length hem. NO new pockets, belts, logos, extra panels, buttons or zippers. Matte navy/charcoal fabric, cream panels, petrol edging, black manhwa outlines and restrained cel shading. Front orthographic, symmetrical pose, sleeves resting diagonally down beside torso to match neutral body arms. Invisible wearer volume only; empty garment openings.\nMake the SHAPE differences unmistakable through tailoring, never simple resizing: SLIM narrow shoulders and straight narrow torso; MEDIUM moderately broader shoulders/chest/waist; OVERWEIGHT softly convex belly, broader lower torso/hem and slack folds, shoulders not increased like a bodybuilder; MUSCULAR widest shoulders, roomy upper sleeves/chest but tapered waist. Similar neckline size, hem height and trim thickness across fits. Sleeves must have rounded natural shoulder-to-arm joins, not pointed wings or flared triangles. Fuller fit has actual rounded drape, not a flat rectangle. No anatomy sculpted onto cloth, no fake abs. No shadows extending outside item, no watermark. These are design references, not fitted production PNGs.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/objects/top-regular.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/male-slim.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/male-medium.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/male-overweight.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/male-muscular.png"
+      ],
+      "file": "renders/top-male-initial.png",
+      "sha256": "bb7aed4ff50ded837669464bdf50e29ff020f88179545dd6c7d6321cae4d4e29",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false
+    },
+    {
+      "id": "top-male",
+      "selected": false,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-b3076bdd-63a9-4b08-aad7-9fcafa0d4726.png",
+      "prompt": "Use case: precise-object-edit. Edit this male boxing top size-reference board for presentation and natural cloth drape. Preserve all four garments' same navy tee/open-vest design, cream side panels, petrol piping, natural sleeves, labels/order and distinct slim/medium/overweight/muscular silhouettes. Replace ALL background including any transparent areas with uniform FULLY OPAQUE pure white, no gradient, vignette, glow or drop shadows. Ensure labels are solid dark readable text. Remove the large faint title across the top; leave generous white margin instead. Keep four garment labels \"MALE \u00b7 SLIM\", \"MALE \u00b7 MEDIUM\", \"MALE \u00b7 OVERWEIGHT\", \"MALE \u00b7 MUSCULAR\". Subtly soften the muscular chest shading so ordinary jersey drapes over chest rather than looking like two hard armor cups; keep broad shoulders and tapered waist. Similarly remove the single conspicuous circular belly highlight in overweight top, instead use broad gentle convex cloth shading with gravity folds. Do NOT slim the overweight silhouette or modify any seam, panel or piping design. No bodies, people, new decoration. 3:2 landscape garment-reference sheet.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-male.png"
+      ],
+      "file": "renders/top-male.png",
+      "sha256": "7e63882163a1bedd5c7cf88ff86553c6a96b9a6fb47f9e58bac4668c2b59bc15",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false
+    },
+    {
+      "id": "top-female",
+      "selected": false,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-43c24c47-9609-4fb7-ac98-a0b3c7689195.png",
+      "prompt": "Use case: stylized-concept. Create a professional garment DESIGN reference board for a game, NOT sprites ready for import. Input 1 is the male size specification for the authoritative navy training tee + open vest: MATCH that design perfectly. Inputs 2\u20135 are actual female slim, medium, overweight, muscular silhouettes respectively; tailoring guidance only, DO NOT paint bodies.\nCreate one 3:2 landscape board on SOLID OPAQUE PURE WHITE, absolutely no transparency, vignette or gradient. Four isolated tops in a neat 2x2 grid at identical physical scale and collar-to-hem height. Labels below: \"FEMALE \u00b7 SLIM\", \"FEMALE \u00b7 MEDIUM\", \"FEMALE \u00b7 OVERWEIGHT\", \"FEMALE \u00b7 MUSCULAR\". Generous margins, no big title.\nOne unchanged design across all panels: full-length dark navy crewneck short-sleeve tee under open low stand-collar navy vest, cream lateral panels, narrow dull-petrol piping on edges, straight simple cuff hems, hip-length hem. No pockets, buckles, visible zip teeth, logos, new trim, belts. Matte cloth, clear black manhwa contours, cel shading, consistent frontal light. Static orthographic front; sleeves follow resting upper arms downward, natural rounded shoulder joins and modest ease, not wings. Garments alone on an invisible wearer, no skin, mannequin, arms or hands.\nFour distinct shape treatments: slim modest narrow shoulders and small torso, medium fuller chest and waist with moderate hips, overweight softly rounded abdomen and wider hips/hem and gentle folds, muscular broader shoulders and upper sleeves with athletic tapered waist yet smaller than male muscles. Female torso is recognizable through overall tailoring, never cleavage or sexualized curves. NO breast-shaped cups, no deep sculpted breast shadows, no skin-tight painted anatomy. Cloth skims wearer with ease. Don't just widen/zoom one sprite: keep neckline, hem height, trim width consistent and change actual shoulder/waist/hem relationships. Preserve exactly the male board's construction and palette while adapting female silhouette. Only four garments, no other equipment. Solid white fully opaque background including margins.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-male.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/female-slim.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/female-medium.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/female-overweight.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/female-muscular.png"
+      ],
+      "file": "renders/top-female.png",
+      "sha256": "f0abc190d9244100c843280d718b5f608d48c971f33629a16a1037a041fba85e",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false
+    },
+    {
+      "id": "shorts-male",
+      "selected": true,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-8e2d8f69-79cc-423d-9b81-0432c7457bb8.png",
+      "prompt": "Use case: stylized-concept. Render a game-art clothing reference sheet of ONE boxing shorts design in FOUR MALE FITS.\nImage 1 is the authoritative shorts design: matte navy above-knee boxing shorts with broad dark fabric waistband, a cream stripe down each outside seam and narrow cream hem band. Images 2\u20135 are actual male slim, medium, overweight, muscular wearers, for silhouette information only.\nOutput 3:2 landscape, fully OPAQUE WHITE background, 2x2 grid of four shorts ONLY on invisible wearers, no bodies/legs, no mannequin. Identical design construction, colors, seam placement, waistband height, hem trim thickness in every panel. Same vertical rise/inseam scale; width/shape differences arise from fit, not different zoom. Top left label \"MALE \u00b7 SLIM\", top right \"MALE \u00b7 MEDIUM\", bottom left \"MALE \u00b7 OVERWEIGHT\", bottom right \"MALE \u00b7 MUSCULAR\". Leave generous white margins; no title.\nSLIM: narrow hips and narrower leg openings, relaxed cloth not skin tight.\nMEDIUM: moderate hips/thighs, nearly straight outer legs.\nOVERWEIGHT: wider rounded waist/hips with belly allowance, natural shallow waistband arc, roomier upper thighs with controlled almost-straight hems, no huge triangular flares.\nMUSCULAR: waist narrower than overweight but wide powerful thigh volume and roomy leg openings, visible thigh-tailoring folds.\nOne ordinary Base-tier garment, navy/charcoal jersey with cream stripe and cream hem, narrow subtle petrol border if already in reference. Clear black manhwa outlines, controlled celshaded folds, frontal orthographic view. No logos, belts, shiny satin, glow, extra pockets, armor, high slits, skin, underwear, shoes or tee. Shorts have the same relaxed above-knee length as intended on their respective bodies. Make each fit shape distinct without inventing new garment designs. This is an image reference board, not a finished atlas. Flat white opaque background, no drop shadows or gradients.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/objects/shorts-regular.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/male-slim.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/male-medium.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/male-overweight.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/male-muscular.png"
+      ],
+      "file": "renders/shorts-male.png",
+      "sha256": "ed30e7cd4a8294be2bb3002b5412e225c47e0f602488ecda7c9bcf9e68c1739a",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false
+    },
+    {
+      "id": "shorts-female",
+      "selected": true,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-7300a848-dd34-417a-9923-96c4c462527e.png",
+      "prompt": "Use case: stylized-concept. Create one polished clothing design reference board: FOUR FEMALE FITS of exactly the navy/cream boxing shorts shown in input1 male design board. Inputs2\u20135 show actual female slim/medium/overweight/muscular wearers for tailoring only. DO NOT draw people, legs, underwear or mannequins.\nOne 3:2 landscape OPAQUE WHITE page with 2x2 grid, same camera scale and shorts height across panels; large clear item renders. Top left label \"FEMALE \u00b7 SLIM\", top right \"FEMALE \u00b7 MEDIUM\", bottom left \"FEMALE \u00b7 OVERWEIGHT\", bottom right \"FEMALE \u00b7 MUSCULAR\". Adequate blank margins, no big title.\nCopy exact design from input1: navy above-knee relaxed boxing shorts, broad dark gathered fabric waistband with identical two plain dull petrol end tabs, cream stripe down each outer side seam joining thin cream hem. Same number/location of seams, same trim width, same material and lighting; no logos or new styling. Crisp manhwa black outlines, restrained cel-shading, simple matte sportswear Base rarity, no glow.\nSLIM: narrow waist/hips and modest thigh room.\nMEDIUM: broader hip curve and moderate thigh room with gently narrower waist.\nOVERWEIGHT: broad softly rounded waist, wider hips/seat/thighs, actual curved drape and folds; controlled leg openings, not huge flared bells.\nMUSCULAR: defined narrower waist and strong thigh allowance, straighter athletic hips than overweight.\nFemale fit should preserve reference silhouettes without sexualized styling, booty shorts, high cut sides, leggings or painted-on anatomy. One fixed relaxed above-knee length and same waistband height, not zoomed duplicates. Render garments in a frontal view as if worn by invisible neutral wearers. Only four shorts. White opaque background with no floor shadows. This is reference art, not production fitting evidence.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/shorts-male.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/female-slim.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/female-medium.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/female-overweight.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/bodies/female-muscular.png"
+      ],
+      "file": "renders/shorts-female.png",
+      "sha256": "5eeea4c3aab6f6206cc749b378df0bce529a644779bcc3ebd27d4629b4ce4c75",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false
+    },
+    {
+      "id": "gloves",
+      "selected": true,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-a571fd99-b435-4712-9e70-b4c73a607ab2.png",
+      "prompt": "Use case: stylized-concept. Render one standalone item reference for a matching PAIR of Base-tier boxing gloves for a frontal RPG character. Image1 is the existing isolated glove prototype, image2 is the overall Base kit palette/style. Preserve their simple charcoal padded-leather glove design, rounded closed knuckles, attached thumbs, wide cream cloth/velcro wrist cuffs with ONE plain muted-petrol rectangular patch each. No text, logo, gems, spikes, glow, metal gauntlets or other equipment. Clear black manhwa ink outlines, two/three-tone cel shading, ordinary matte leather. Wearer-left and wearer-right are a matched pair, wrist openings upward and knuckles downward as worn on lowered relaxed arms, thumbs turned inward. Each entire glove visible with generous gap between, similar size and neutral front camera. Do not add hands or arms. Solid white opaque square background, no gradients, vignette or cast shadows. No captions. Make a high-quality product reference that an asset model can reproduce without inventing details; not a fitted overlay.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/objects/gloves-prototype.png",
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/style/base-kit-concept.png"
+      ],
+      "file": "renders/gloves.png",
+      "sha256": "f4ef2e17a309817ea9bc9d35e3f3ac62c05bcd75671ac6f279d2c6d11ec8d7b3",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false
+    },
+    {
+      "id": "boots",
+      "selected": true,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-5946f434-9b9a-43fd-9aed-12462063c3cd.png",
+      "prompt": "Use case: stylized-concept. Render one standalone product reference image for a PAIR of ordinary Base-tier boxing boots, using the boots in the supplied concept image as the design authority. Do not draw the person or any other equipment. Matte midnight-navy canvas/leather, slim mid-calf shaft, cream crossed laces, one narrow cream lateral stripe, dark thin flexible boxing sole, small muted petrol detail. Simple stitched panels, tasteful black manhwa outlines and clean 2\u20133 tone cel shading. No logos, armor, buckles, tactical lug soles, heels, spikes, shine or glow. Show complete wearer-left and wearer-right boots from a frontal camera, toes gently splayed outwards matching a neutral feet-apart stance. Shaft height and ground line identical. Open empty top collars, NO feet or calves inside. Two separated boots on a solid opaque WHITE square background with generous clear margins and gap; no gradient, drop shadow, captions or other objects. This is a detailed visual model reference, not a fitted production overlay. Keep the Base design restrained and consistent with the supplied concept.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/style/base-kit-concept.png"
+      ],
+      "file": "renders/boots.png",
+      "sha256": "6ba1d8f7fb48072d02377234013d21d87a1d6f62056e0189adf0ee03379152a1",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false
+    },
+    {
+      "id": "headband",
+      "selected": true,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-85bd2e7e-6ad7-4558-a707-e72dabe06f56.png",
+      "prompt": "Use case: stylized-concept. A standalone isolated product render of the narrow muted petrol-blue CLOTH HEADBAND from the supplied Base boxing outfit concept. ONE simple elastic fabric loop, a single frontal view shaped around an invisible forehead. Front band is broadest across the middle with subtly curved top and bottom edges, softly rounded sides. A short visible rear arc can establish a fabric loop, not a solid disk. Plain cloth construction with two fine stitched edge lines and two or three understated fabric folds. No bow, ribbons, jewels, logo, text, metallic plate, hair, head, face, mannequin, helmet, glow or animation effects. Clear black manhwa outlines, subdued cel-shaded petrol jersey; match concept style. Center horizontally in a square solid opaque WHITE image, occupies about70% width with generous blank margins, no cast shadow or vignette. Practical Base tier boxing accessory, not fantasy armor. This image is a design reference, not an automatically fitted head overlay.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/style/base-kit-concept.png"
+      ],
+      "file": "renders/headband.png",
+      "sha256": "22a7239654053afb44f631957b86a6d4dad677ed0dce7002988b5ef01492fd8d",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false
+    },
+    {
+      "id": "backpack",
+      "selected": true,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-501628e9-4faf-4c19-a5c5-35258e5c824d.png",
+      "prompt": "Use case: stylized-concept. Render a clear object design specification for ONE compact Base-tier boxing-gym backpack. Input image is design authority: the bag in its lower-right inset. No character, other clothes, limbs or bodies. One landscape 3:2 reference board on solid white with TWO views of exactly the same bag at same scale, unobstructed:\nLEFT: orthographic product front, label \"BAG \u00b7 OUTER FACE\".\nRIGHT: orthographic product back that touches the wearer, showing two practical padded shoulder straps and back pad, label \"BAG \u00b7 WEARER SIDE\".\nPreserve a simple rounded-rectangle midnight navy canvas main bag, one muted petrol front zip pocket, cream narrow main zip piping and pocket zipper, small navy carrying loop on top, matching navy/petrol padded straps with simple adjustment webbing. One identical ordinary Base sports backpack, no tactical pouches, huge fasteners, icons, logos, glow, armor or fantasy embellishments. Matte canvas, plain sewing, clean black manhwa outlines, crisp 2\u20133 tone cel shading matched to reference; no photoreal texture. Both views should describe consistent construction; the front pocket is only on the OUTER face, not the wearer-side back. Neutral frontal product camera and clear white space. No floating shadow, no gradient, no stylized dramatic perspective. Clear dark labels below views. Important: this is a design sheet for a future separate rear bag and front strap overlay, NOT a backpack to place on the character's chest.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/mvp-rework-r1/style/base-kit-concept.png"
+      ],
+      "file": "renders/backpack.png",
+      "sha256": "0fd853f3ef13d4b3bafa20a78e222e1ecf0641da5e2a6a5d1668ecfb3a3d2f3a",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false
+    },
+    {
+      "id": "top-male-belly-r2",
+      "selected": true,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-42bb9d78-4332-4763-ba03-3a2292c37ea6.png",
+      "prompt": "Use case: precise-object-edit. Edit ONLY the bottom-left OVERWEIGHT garment on the supplied four-cut male top reference sheet. The user says the belly is not clear enough. Keep top-left SLIM, top-right MEDIUM and bottom-right MUSCULAR exactly unchanged, including all pixels, labels, scale and white background. Do not redraw those three garments.\nIn bottom-left, keep the SAME navy crewneck tee and open stand-collar vest, cream lateral panels, narrow petrol trim, short sleeves and hip-length hem. Same camera scale and collar-to-hem length. Make the OVERWEIGHT silhouette visibly belly-led: substantially fuller, broad rounded lower abdomen; remove the cinched waist/hourglass narrowing; side silhouette smoothly convex outward around lower belly, not just a wide triangular hem. Belly/waist volume should be clearly greater than medium and muscular, visibly heavier than the current overweight reference. Keep the shoulders and collar at their current size; do NOT uniformly scale up the garment or inflate muscles. Make the rounded midsection the main difference. Use believable drape over the belly: open vest front edges gently bow outward around the abdomen, loose center tee full coverage, a few shallow horizontal tension/fold lines below/along belly and broader soft cel-shadow. Hem remains full length and covers waistband; no exposed belly, no big circular painted-on belly icon, no fake abs, no giant bust, no armor-shaped cups. The cream side panel should follow the curve, not erase the belly by making a pinched optical waist. Comfortable cloth ease. Female overweight should have a full soft abdomen too, not a narrow waist with only larger breasts/hips. No body, mannequin, skin, head or hands. This is reference artwork rather than a changed base character. Keep all text intact, clean opaque white background and 3:2 sheet composition.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-male.png"
+      ],
+      "file": "renders/top-male-belly-r2.png",
+      "sha256": "a4b9263bcf298e9afe6669dd0ef1ee43b3e43d38eab0e95596cab707f2c4dfe8",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "top-female-belly-r2",
+      "selected": true,
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-73c5c7da-fa60-4e8b-be8c-32f1fe422e48.png",
+      "prompt": "Use case: precise-object-edit. Edit ONLY the bottom-left OVERWEIGHT garment on the supplied four-cut female top reference sheet. The user says the belly is not clear enough. Keep top-left SLIM, top-right MEDIUM and bottom-right MUSCULAR exactly unchanged, including all pixels, labels, scale and white background. Do not redraw those three garments.\nIn bottom-left, keep the SAME navy crewneck tee and open stand-collar vest, cream lateral panels, narrow petrol trim, short sleeves and hip-length hem. Same camera scale and collar-to-hem length. Make the OVERWEIGHT silhouette visibly belly-led: substantially fuller, broad rounded lower abdomen; remove the cinched waist/hourglass narrowing; side silhouette smoothly convex outward around lower belly, not just a wide triangular hem. Belly/waist volume should be clearly greater than medium and muscular, visibly heavier than the current overweight reference. Keep the shoulders and collar at their current size; do NOT uniformly scale up the garment or inflate muscles. Make the rounded midsection the main difference. Use believable drape over the belly: open vest front edges gently bow outward around the abdomen, loose center tee full coverage, a few shallow horizontal tension/fold lines below/along belly and broader soft cel-shadow. Hem remains full length and covers waistband; no exposed belly, no big circular painted-on belly icon, no fake abs, no giant bust, no armor-shaped cups. The cream side panel should follow the curve, not erase the belly by making a pinched optical waist. Comfortable cloth ease. Female overweight should have a full soft abdomen too, not a narrow waist with only larger breasts/hips. No body, mannequin, skin, head or hands. This is reference artwork rather than a changed base character. Keep all text intact, clean opaque white background and 3:2 sheet composition.",
+      "references": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-female.png"
+      ],
+      "file": "renders/top-female-belly-r2.png",
+      "sha256": "8ec2f7a4958a80b4318aaa7e39a6828de5d849a428ec093721cc8ba065789145",
+      "generationMode": "built-in imagegen",
+      "status": "design_reference_draft",
+      "fitVerified": false,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "userFeedback": "Make overweight belly more evident for both men and women.",
+  "response": "Two revised top sheets with more abdominal volume; earlier sheets preserved."
+}

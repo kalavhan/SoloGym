@@ -1,0 +1,19 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmujskl80000eam1jximalxix",
+  "creditsUsed": 1,
+  "cached": false,
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujskl80000eam1jximalxix/base-nobg",
+  "export": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/male-muscular/body.png",
+    "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      319,
+      41,
+      705,
+      1000
+    ]
+  }
+}

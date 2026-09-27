@@ -1,0 +1,19 @@
+{
+  "assetId": "cmujs6h030001eju910wtp060",
+  "tool": "remove_asset_background",
+  "creditsUsed": 1,
+  "cached": false,
+  "downloadUrlWithoutQuery": "https://www.autosprite.io/api/files/assets/cmujs6h030001eju910wtp060/base-nobg",
+  "export": {
+    "path": "torso/item.png",
+    "sha256": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      108,
+      19,
+      915,
+      990
+    ]
+  }
+}

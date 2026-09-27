@@ -1,0 +1,130 @@
+{
+  "schema": "sologym.autosprite-static-equipment-proof.v1",
+  "status": "passed_static_glove_equip_remove_proof",
+  "characterId": "cmujczhyh000613599w163ss1",
+  "sourceReference": {
+    "path": "assets/sprites/autosprite/boxer-basic-r3/basic-covered-concept.png",
+    "sha256": "35d7d6687df495ce307474a5691ed11b7bd99e807fdb34d3198fef02fa9e0282"
+  },
+  "scope": "One frozen frontal female covered Basic outfit; independently equipped/removed gloves only. Other five items remain baked into the base.",
+  "animated": false,
+  "runtimeIntegrated": false,
+  "bodyTypesVerified": [
+    "female_medium_reference_only"
+  ],
+  "independentEquipmentLayersVerified": true,
+  "estimatedGenerationCredits": 6,
+  "requests": [
+    "wrapped-base-request.json",
+    "gloves-layer-request.json"
+  ],
+  "generations": [
+    {
+      "name": "wrapped-base",
+      "jobId": "cf_319e0ac7-9a15-48ff-b42e-eb4fb4ac9454",
+      "creditsUsed": 3,
+      "creditsRemaining": 1470
+    },
+    {
+      "name": "gloves-layer",
+      "jobId": "cf_b0fc7aef-48ff-43cf-8444-8250a65f6ac7",
+      "creditsUsed": 3,
+      "creditsRemaining": 1467
+    }
+  ],
+  "exports": [
+    {
+      "id": "wrapped-base",
+      "path": "wrapped-base-source.png",
+      "poseId": "cmujd0ri5000ebnezwuz1dyjd",
+      "sha256": "5bf1094a039cea4d6b3e32f163e99a2c76a8f6d1e6da41a4acef6afa53474e13",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujczhyh000613599w163ss1/1790485787401_3d95a0d4-3391-4466-bd05-4ccd4e521d91_custom-pose-frame-1790485787401.png",
+      "assetId": "cmujd2k85000gcvjgm6kpzxyw"
+    },
+    {
+      "id": "gloves-layer",
+      "path": "gloves-layer-source.png",
+      "poseId": "cmujd0rb00007f76cl05lz3w7",
+      "sha256": "1a498a39a666c4dc91727338a7f602ca30e8413eb2f15e321723bf2d619d4076",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujczhyh000613599w163ss1/1790485788336_52cfde2b-fea7-4fea-9dc8-0ed687e556e6_custom-pose-frame-1790485788336.png",
+      "assetId": "cmujd2l7b0001rlyuzq9a7wj5"
+    }
+  ],
+  "transparentExports": [
+    {
+      "id": "wrapped-base",
+      "path": "wrapped-base.png",
+      "sha256": "ff88ba3c98cd5c0463cf43ea28e4ef5919e1ae8c6762a4e9ab23c3a9d8019035",
+      "width": 1024,
+      "height": 1024,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        322,
+        35,
+        662,
+        970
+      ],
+      "assetId": "cmujd2k85000gcvjgm6kpzxyw",
+      "backgroundRemovalCredits": 1,
+      "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujd2k85000gcvjgm6kpzxyw/base-nobg"
+    },
+    {
+      "id": "gloves-layer",
+      "path": "gloves-layer.png",
+      "sha256": "283395ada984808002347a5a63bb9fafaa300930c0046b6d572360b9b476d742",
+      "width": 1024,
+      "height": 1024,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBounds": [
+        280,
+        396,
+        740,
+        645
+      ],
+      "assetId": "cmujd2l7b0001rlyuzq9a7wj5",
+      "backgroundRemovalCredits": 1,
+      "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujd2l7b0001rlyuzq9a7wj5/base-nobg"
+    }
+  ],
+  "verifiedEquipmentSlots": [
+    "hands"
+  ],
+  "unverifiedEquipmentSlots": [
+    "head",
+    "torso",
+    "legs",
+    "feet",
+    "back"
+  ],
+  "registrationFile": "proof.json",
+  "reviewHarness": "tools/review/boxing-equipment-proof.html",
+  "validation": "validation.json",
+  "creditsUsed": 8,
+  "limitations": [
+    "Only the hands slot is independently layered; the other five items remain baked into the base.",
+    "One fixed frontal female pose; no animation or other body type verified.",
+    "Provider did not preserve glove positions; measured scale and placement are recorded in proof.json.",
+    "Background removal and static fit do not establish animated layer consistency.",
+    "No Unity runtime, profile persistence or inventory changes."
+  ],
+  "productionRole": "historical_single_slot_fit_prototype",
+  "canonicalBaseEligible": false,
+  "mvpIntegrationEligible": false,
+  "reuseAssessment": {
+    "wrapped-base.png": "Historical dressed prototype; not eligible as canonical body.",
+    "gloves-layer.png": "Isolated equipment asset; reuse candidate requiring fit validation on the canonical body.",
+    "proof.json": "Registration for the historical prototype only; do not assume it fits the future base."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmujskeu70009am1j42sb94sv",
+  "creditsUsed": 1,
+  "cached": false,
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujskeu70009am1j42sb94sv/base-nobg",
+  "export": {
+    "path": "assets/sprites/autosprite/hairstyles-front-r1/close-crop/item.png",
+    "sha256": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      133,
+      74,
+      893,
+      767
+    ]
+  }
+}

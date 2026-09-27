@@ -1,0 +1,75 @@
+{
+  "schema": "sologym.autosprite-outfit-concept.v1",
+  "status": "superseded_by_backpack_correction",
+  "approval": "not_submitted_for_approval",
+  "tier": "basic",
+  "tierOrder": [
+    "basic",
+    "rare",
+    "ultra_rare"
+  ],
+  "characterId": "cmuj70eg8000910qlnap76av1",
+  "sourceReference": {
+    "path": "assets/sprites/autosprite/female-studio-home-r1/female-front-source.png",
+    "sha256": "9a169b724d44f13017667731e5ac1d3c752d80340d1b603b5c2377eb485e9308"
+  },
+  "request": "request.json",
+  "prompt": "prompt.txt",
+  "scope": "One static frontal basic-tier boxer outfit concept with six equipment slots",
+  "animated": false,
+  "emissiveEffects": false,
+  "runtimeIntegrated": false,
+  "independentEquipmentLayersVerified": false,
+  "items": [
+    {
+      "slot": "head",
+      "id": "basic_cloth_headband",
+      "name": "Cloth headband",
+      "tier": "basic",
+      "status": "concept_requested"
+    },
+    {
+      "slot": "torso",
+      "id": "basic_training_jacket",
+      "name": "Sleeveless training jacket",
+      "tier": "basic",
+      "status": "concept_requested"
+    },
+    {
+      "slot": "hands",
+      "id": "basic_boxing_gloves",
+      "name": "Padded boxing gloves",
+      "tier": "basic",
+      "status": "concept_requested"
+    },
+    {
+      "slot": "legs",
+      "id": "basic_boxing_trunks",
+      "name": "Boxing trunks",
+      "tier": "basic",
+      "status": "concept_requested"
+    },
+    {
+      "slot": "feet",
+      "id": "basic_boxing_boots",
+      "name": "Lightweight boxing boots",
+      "tier": "basic",
+      "status": "concept_requested"
+    },
+    {
+      "slot": "back",
+      "id": "basic_corner_towel",
+      "name": "Corner towel",
+      "tier": "basic",
+      "status": "concept_requested"
+    }
+  ],
+  "estimatedCredits": 3,
+  "jobId": "cf_933b3d0b-b45c-47f8-abf5-28e8ce4201c0",
+  "creditsUsed": 3,
+  "supersededBy": "assets/sprites/autosprite/boxer-basic-r2/manifest.json",
+  "reason": "User clarified that the back slot is for backpacks, tails, wings and similar back-mounted attachments; the towel is not the intended equipment.",
+  "productionRole": "historical_outfit_concept_reference_only",
+  "canonicalBaseEligible": false,
+  "equipmentProductionWorkflow": "superseded_by_body_base_then_isolated_assets_then_local_composition"
+}

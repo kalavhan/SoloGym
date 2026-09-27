@@ -1,0 +1,7 @@
+SOLOGYM / BASE / Gloves · Shared design
+
+Use gloves.png as the sole item-design reference. Reproduce the pictured item, preserving its silhouette, colors, seams, panels and trim. Do not invent another design.
+
+Matched charcoal padded boxing gloves, attached thumbs, cream wrist cuffs and plain petrol cuff patches. One hands-slot item contains the pair. Match the pictured shape and matte leather shading.
+
+Render only this equipment item. Clean frontal game illustration with crisp outlines and restrained cel shading. No character, mannequin, skin, text, labels, grid, extra items, glow or animation. Export an isolated PNG with a clean transparent background.

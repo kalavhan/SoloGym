@@ -1,0 +1,14 @@
+{
+  "poseId": "cmujsfsq70003v8iy0uy1hsca",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujscke6000dcbsiw7lbay5a/1790511676036_14d71473-7449-4691-acf3-2b75f59b1f71_custom-pose-frame-1790511676036.png",
+  "image": {
+    "path": "female-overweight/source.png",
+    "sha256": "b19ce20e3065a1cfa2c8cb8ebca7a278fc5f92c79d9d31d83b682edb6d4b3073",
+    "width": 1024,
+    "height": 1024
+  },
+  "originalSource": {
+    "path": "assets/sprites/autosprite/body-bases-front-r1/female-overweight/source.png",
+    "sha256": "58c8a5e551405b94fb5653d503e606222de43fa636f091912e26fc944f9e997b"
+  }
+}

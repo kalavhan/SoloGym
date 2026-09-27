@@ -1,0 +1,18 @@
+{
+  "provider": "AutoSprite",
+  "tool": "generate_pose",
+  "characterId": "cmujfdkj1002ubashaviaaf7w",
+  "poseId": "cmujff1rm000rhqkznfkdva8s",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujfdkj1002ubashaviaaf7w/1790489817013_9e352939-a533-4f7e-bd3f-07864db6ad4b_custom-pose-frame-1790489817013.png",
+  "output": {
+    "path": "female-muscular/source.png",
+    "sha256": "532978e2a184731ef830b6df55bf63ccccce81641d7feb0e474552a6b0a68b8e",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      255,
+      255
+    ]
+  }
+}

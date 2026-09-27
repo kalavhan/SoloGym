@@ -1,0 +1,18 @@
+{
+  "provider": "AutoSprite",
+  "tool": "generate_pose",
+  "characterId": "cmujfdjq7002qbashm8hmvz7s",
+  "poseId": "cmujff1040007hqkzs0qwteah",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujfdjq7002qbashm8hmvz7s/1790489814239_f2abe85d-8303-4055-9b43-47b72a1199cd_custom-pose-frame-1790489814239.png",
+  "output": {
+    "path": "male-muscular/source.png",
+    "sha256": "180691daddf8d9f9fd8fa2b4abdea4c7b733458fb2724be1b3a2f7da6c5ac60e",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      255,
+      255
+    ]
+  }
+}

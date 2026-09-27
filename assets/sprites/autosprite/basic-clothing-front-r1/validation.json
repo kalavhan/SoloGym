@@ -1,0 +1,59 @@
+{
+  "schema": "sologym.modular-static-validation.v1",
+  "status": "technical_checks_passed_user_changes_required",
+  "originalApprovedBodyHashesUnchanged": true,
+  "allTenRevisionAndItemImageHashesVerified": true,
+  "allTenBareBasesVisuallyInspected": true,
+  "allTenClothedCandidatesVisuallyInspected": true,
+  "separateGarmentAndHairstyleArtInspected": true,
+  "baseOnlyToggleVerified": true,
+  "independentShortsToggleVerified": true,
+  "bothHairstylesSelectable": true,
+  "darkAndLightBackdropsInspected": true,
+  "fullBodyFramingVisible": true,
+  "bodyImageEditsDuringFitting": 0,
+  "clothingGenerationTools": [
+    "generate_asset_preview",
+    "create_asset",
+    "remove_asset_background"
+  ],
+  "dressedCharacterGenerations": 0,
+  "animated": false,
+  "runtimeIntegrated": false,
+  "costCredits": {
+    "clothingIncludingRefinements": 8,
+    "explicitHairfreeRevisions": 40,
+    "isolatedHairstyles": 4,
+    "total": 52
+  },
+  "limitations": [
+    "Hair-free revisions can redraw details and need independent user approval.",
+    "Static rectangular placement and neck/hand occlusion are candidates for review, not proof of animated fit.",
+    "Only torso and legs equipment slots are included.",
+    "Provider alpha edges and fit details remain subject to visual review.",
+    "User review found hair alignment/volume issues, different wide-top styling, oversized female shorts, and a muscular-female leg overlap. Prior visual inspection did not establish acceptance."
+  ],
+  "reviewRecord": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-2026-09-27T130559Z.json",
+    "sha256": "1ed3edf0f4eb74992c477ebae0a6aa66ea60a39e5533638eed8ea3a46d730daf",
+    "reviewedAt": "2026-09-27T13:05:59.086Z"
+  },
+  "userReviewCounts": {
+    "bodies": {
+      "approved": 0,
+      "changes_requested": 10,
+      "pending": 0
+    },
+    "fits": {
+      "approved": 5,
+      "changes_requested": 3,
+      "pending": 2
+    },
+    "assets": {
+      "approved": 0,
+      "changes_requested": 0,
+      "pending": 5
+    }
+  },
+  "visualAcceptance": "Not accepted as a complete set: hair on all ten and five clothing fits need follow-up."
+}

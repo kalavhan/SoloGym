@@ -1,0 +1,12 @@
+{
+  "tool": "generate_asset_preview",
+  "quality": "ultra",
+  "creditsUsed": 1,
+  "image": {
+    "path": "torso-wide/source.png",
+    "sha256": "661b614ab912cabb1e0873190a35da5505bcba568407145ea95d9e23f1047c41",
+    "width": 1024,
+    "height": 1024
+  },
+  "sourceUrl": "https://im.runware.ai/image/os/a08dlim3/ws/4/ii/d50b4a7e-d36a-40c3-99af-d5e2fdb43791.png"
+}

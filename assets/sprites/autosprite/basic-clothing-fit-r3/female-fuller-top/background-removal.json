@@ -1,0 +1,18 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmuk508n9000112cpfp2a5suh",
+  "creditsUsed": 1,
+  "export": {
+    "path": "female-fuller-top/item.png",
+    "sha256": "cf74b5a24329511ba7373153f141774030de4443f4264d7248a9467df8dffa67",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      81,
+      15,
+      943,
+      996
+    ]
+  },
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmuk508n9000112cpfp2a5suh/base-nobg"
+}

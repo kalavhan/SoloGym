@@ -1,0 +1,57 @@
+{
+  "schema": "sologym.modular-static-validation.v2",
+  "status": "bodies_and_hair_approved_clothing_changes_required",
+  "fitting": "fitting-r2.json",
+  "imagesChanged": 0,
+  "additionalCreditsUsed": 0,
+  "retainedClothingApprovals": 5,
+  "changedClothingFits": 5,
+  "changedHairFits": 10,
+  "bodyDecisionsPreserved": true,
+  "reviewDecisionsSeparated": [
+    "body",
+    "clothing_fit",
+    "hair_fit",
+    "asset_design"
+  ],
+  "visualChecks": [
+    "Ten default hairstyle head close-ups",
+    "Five affected clothing fits and all ten bodies in comparison grid",
+    "Alternate hairstyle on male muscular and female obese",
+    "Female obese shorts with top removed",
+    "Before/after comparison"
+  ],
+  "limitations": [
+    "Eight clothing fits require revised garment artwork; another universal scaling pass does not address silhouette or drape.",
+    "Male-medium clothing is approved with a note that it resembles slim. Preserve the note in future comparisons.",
+    "Four standalone asset-design decisions remain pending; fitted-hair approvals are recorded separately.",
+    "Only static frontal torso/legs/hair composition is included; runtime integration is deferred."
+  ],
+  "latestReviewRecord": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-r2-2026-09-27T170140Z.json",
+    "sha256": "29f3cae851cb048081225def792244964b470da2a1cf5dbb4141358bde0867b1",
+    "reviewedAt": "2026-09-27T17:01:40.374Z"
+  },
+  "userReviewCounts": {
+    "bodies": {
+      "approved": 10,
+      "changes_requested": 0,
+      "pending": 0
+    },
+    "fits": {
+      "approved": 2,
+      "changes_requested": 8,
+      "pending": 0
+    },
+    "hairFits": {
+      "approved": 10,
+      "changes_requested": 0,
+      "pending": 0
+    },
+    "assets": {
+      "approved": 0,
+      "changes_requested": 0,
+      "pending": 4
+    }
+  }
+}

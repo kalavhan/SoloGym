@@ -1,0 +1,178 @@
+{
+  "schema": "sologym.static-clothing-batch.v1",
+  "status": "two_fits_approved_eight_changes_requested",
+  "baseBatch": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+  "animated": false,
+  "fullCharacterGenerations": 0,
+  "characterUploads": 0,
+  "bodyModificationAllowed": false,
+  "slots": [
+    "torso",
+    "legs"
+  ],
+  "items": [
+    {
+      "id": "base-training-vest-r1",
+      "name": "Training top and vest",
+      "slot": "torso",
+      "tier": "base",
+      "approval": "pending_review",
+      "assetId": "cmujs6h030001eju910wtp060",
+      "export": {
+        "path": "torso/item.png",
+        "sha256": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          108,
+          19,
+          915,
+          990
+        ]
+      },
+      "generationCredits": 1,
+      "backgroundRemovalCredits": 1,
+      "containsCharacter": false,
+      "animated": false,
+      "equipmentId": "base-training-vest-r1",
+      "userDesignReview": {
+        "id": "base-training-vest-r1",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a"
+      }
+    },
+    {
+      "id": "base-boxing-shorts-r2",
+      "equipmentId": "base-boxing-shorts",
+      "name": "Boxing shorts",
+      "slot": "legs",
+      "tier": "base",
+      "approval": "pending_review",
+      "assetId": "cmujsz2o000018bfjcwwgb1bq",
+      "export": {
+        "path": "legs-r2/item.png",
+        "sha256": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          93,
+          63,
+          930,
+          953
+        ]
+      },
+      "generationCredits": 1,
+      "backgroundRemovalCredits": 1,
+      "containsCharacter": false,
+      "animated": false,
+      "userDesignReview": {
+        "id": "base-boxing-shorts-r2",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+      }
+    },
+    {
+      "id": "base-training-vest-wide-r1",
+      "equipmentId": "base-training-vest-r1",
+      "name": "Training top \u2014 wide fit",
+      "slot": "torso",
+      "tier": "base",
+      "approval": "pending_review",
+      "assetId": "cmujsz3h600088bfjxoq4nr7d",
+      "export": {
+        "path": "torso-wide/item.png",
+        "sha256": "7e49712f69308514468956f86721e3bb80554eebf129051a683005dd1a6685ca",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          100,
+          11,
+          924,
+          974
+        ]
+      },
+      "generationCredits": 1,
+      "backgroundRemovalCredits": 1,
+      "containsCharacter": false,
+      "animated": false,
+      "userDesignReview": {
+        "id": "base-training-vest-wide-r1",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "7e49712f69308514468956f86721e3bb80554eebf129051a683005dd1a6685ca"
+      }
+    }
+  ],
+  "tier": "base",
+  "tierNamingNote": "Historical basic path denotes the Base tier",
+  "creditsUsed": 8,
+  "supersededExports": [
+    {
+      "id": "base-boxing-shorts-r1",
+      "name": "Boxing shorts",
+      "slot": "legs",
+      "tier": "base",
+      "approval": "pending_review",
+      "assetId": "cmujs6hxx000510im63jpdecz",
+      "export": {
+        "path": "legs/item.png",
+        "sha256": "dd30ecb75499827c7082feae7107b5f3a46fb31ad3d72ad48b021ae7eee5d88f",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          54,
+          68,
+          972,
+          930
+        ]
+      },
+      "generationCredits": 1,
+      "backgroundRemovalCredits": 1,
+      "containsCharacter": false,
+      "animated": false,
+      "reason": "Excessive hem flare when fitted to broader bodies"
+    }
+  ],
+  "equipmentItemCount": 2,
+  "fitSpriteCount": 3,
+  "generationCreditsUsed": 4,
+  "backgroundRemovalCreditsUsed": 4,
+  "scope": "Clothing assets only; hair-free base revision work is recorded separately",
+  "reviewPage": "tools/review/modular-character-front-r2.html",
+  "runtimeIntegrated": false,
+  "initialGenerationCreditsPlanned": 2,
+  "initialBackgroundRemovalCreditsPlanned": 2,
+  "reviewRecord": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-2026-09-27T130559Z.json",
+    "sha256": "1ed3edf0f4eb74992c477ebae0a6aa66ea60a39e5533638eed8ea3a46d730daf",
+    "reviewedAt": "2026-09-27T13:05:59.086Z"
+  },
+  "reviewStatusPath": "assets/sprites/autosprite/basic-clothing-front-r1/review-status.json",
+  "latestFitRevision": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/fitting-r2.json",
+    "status": "bodies_and_hair_approved_clothing_changes_required",
+    "additionalCreditsUsed": 0
+  },
+  "latestReviewRecord": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-r2-2026-09-27T170140Z.json",
+    "sha256": "29f3cae851cb048081225def792244964b470da2a1cf5dbb4141358bde0867b1",
+    "reviewedAt": "2026-09-27T17:01:40.374Z"
+  },
+  "latestReviewStatusPath": "assets/sprites/autosprite/basic-clothing-front-r1/review-status-r2.json",
+  "approvedClothingFitIds": [
+    "male-slim",
+    "male-medium"
+  ],
+  "clothingChangesRequestedIds": [
+    "female-slim",
+    "female-medium",
+    "female-overweight",
+    "female-obese",
+    "female-muscular",
+    "male-overweight",
+    "male-obese",
+    "male-muscular"
+  ]
+}

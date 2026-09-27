@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "catalog_id": "sologym_autosprite_body_reference_plan_v1",
-  "status": "scope_confirmed_generation_pending",
+  "status": "eight_static_presets_adopted_for_mvp_with_known_art_issues",
   "scope_confirmation": {
     "source": "explicit_user_reply",
-    "question": "For the next sprite pass, should I record five body types per gender—slim, medium, overweight, obese, and muscular—while preserving all 14 approved designs as references?",
+    "question": "For the next sprite pass, should I record five body types per gender\u2014slim, medium, overweight, obese, and muscular\u2014while preserving all 14 approved designs as references?",
     "answer": "Yes: five per gender, preserve all references"
   },
   "plan_document": "docs/design/character-sprite-v1-plan.md",
@@ -32,8 +32,8 @@
   "production_scope": {
     "provider": "AutoSprite",
     "tools": [
-      "create_character",
-      "generate_spritesheet"
+      "generate_pose",
+      "upload_character"
     ],
     "export_root": "assets/sprites/",
     "read_json_atlas_before_animation_code": true,
@@ -45,10 +45,9 @@
       "slim",
       "medium",
       "overweight",
-      "obese",
       "muscular"
     ],
-    "planned_variant_count": 10,
+    "planned_variant_count": 8,
     "views": [
       "front"
     ],
@@ -61,7 +60,13 @@
     "health_or_fitness_inference_allowed": false,
     "measurement_driven_selection_allowed": false,
     "gameplay_strength_mapping_allowed": false,
-    "equipment_interchangeability_verified": false
+    "equipment_interchangeability_verified": false,
+    "animation_deferred_for_mvp": true,
+    "base_garments": {
+      "male": "plain boxer bottoms, no top",
+      "female": "plain boxer bottoms and opaque sports bra",
+      "authorization": "explicit user request 2026-09-27; minimal base garment exception"
+    }
   },
   "style_and_identity_references": [
     {
@@ -98,10 +103,28 @@
       "presentation": "male",
       "body_type": "slim",
       "view": "front",
-      "generation_status": "not_generated",
-      "visual_review_status": "not_reviewed",
+      "generation_status": "approved_exported",
+      "visual_review_status": "user_approved",
       "runtime_selectable": false,
-      "generated_exports": [],
+      "generated_exports": [
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/male-slim/source.png",
+          "sha256": "499c5e0e2ac4a7486a114c79d2f8c840b402f211352fed46fb6922471dcc566e",
+          "width": 1024,
+          "height": 1024,
+          "status": "source_user_approved",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json"
+        },
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/male-slim/body.png",
+          "sha256": "a6db6948b3d8b5cff67fe26c5db7cd7122ea1e81a1c812cbdde9190594bfd08e",
+          "width": 1024,
+          "height": 1024,
+          "status": "transparent_canonical_base",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+          "source_approval": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json"
+        }
+      ],
       "primary_reference": {
         "source_id": "male-skinny",
         "source_asset_id": "illustrated_male_skinny_r1",
@@ -114,17 +137,36 @@
           "width": 1536,
           "height": 1024
         }
-      }
+      },
+      "canonical_base_frozen": true
     },
     {
       "planned_variant_id": "autosprite_male_medium_v1",
       "presentation": "male",
       "body_type": "medium",
       "view": "front",
-      "generation_status": "not_generated",
-      "visual_review_status": "not_reviewed",
+      "generation_status": "approved_exported",
+      "visual_review_status": "user_approved",
       "runtime_selectable": false,
-      "generated_exports": [],
+      "generated_exports": [
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/male-medium/source.png",
+          "sha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2",
+          "width": 1024,
+          "height": 1024,
+          "status": "source_user_approved",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json"
+        },
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/male-medium/body.png",
+          "sha256": "8502a4d3b135facd1a49f52bb6765ef3909354ab814c63effa9c6d4fb6c62ba2",
+          "width": 1024,
+          "height": 1024,
+          "status": "transparent_canonical_base",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+          "source_approval": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json"
+        }
+      ],
       "primary_reference": {
         "source_id": "male-normal",
         "source_asset_id": "illustrated_male_normal_r1",
@@ -137,17 +179,36 @@
           "width": 1536,
           "height": 1024
         }
-      }
+      },
+      "canonical_base_frozen": true
     },
     {
       "planned_variant_id": "autosprite_male_overweight_v1",
       "presentation": "male",
       "body_type": "overweight",
       "view": "front",
-      "generation_status": "not_generated",
-      "visual_review_status": "not_reviewed",
+      "generation_status": "approved_exported",
+      "visual_review_status": "user_approved",
       "runtime_selectable": false,
-      "generated_exports": [],
+      "generated_exports": [
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/male-overweight/source.png",
+          "sha256": "be2213797ef18102dc81f468635064368b0491c4b1b9862ff8a18b4fd1ac00b8",
+          "width": 1024,
+          "height": 1024,
+          "status": "source_user_approved",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json"
+        },
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/male-overweight/body.png",
+          "sha256": "8c82d267fcf960761d504381d09bd86fe8481d6912474cbae7b553e100fd7eb2",
+          "width": 1024,
+          "height": 1024,
+          "status": "transparent_canonical_base",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+          "source_approval": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json"
+        }
+      ],
       "primary_reference": {
         "source_id": "male-chubby",
         "source_asset_id": "illustrated_male_chubby_r1",
@@ -160,17 +221,36 @@
           "width": 1536,
           "height": 1024
         }
-      }
+      },
+      "canonical_base_frozen": true
     },
     {
       "planned_variant_id": "autosprite_male_obese_v1",
       "presentation": "male",
       "body_type": "obese",
       "view": "front",
-      "generation_status": "not_generated",
-      "visual_review_status": "not_reviewed",
+      "generation_status": "approved_exported",
+      "visual_review_status": "user_approved",
       "runtime_selectable": false,
-      "generated_exports": [],
+      "generated_exports": [
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/male-obese/source.png",
+          "sha256": "05dc101f4c026a5999436cea2abb01e580a6752e33ac7c223266ce83a54a6504",
+          "width": 1024,
+          "height": 1024,
+          "status": "source_user_approved",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json"
+        },
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/male-obese/body.png",
+          "sha256": "efe0aff4d744d65f79d415cc6705a822d07b2304bf918022d0568d5390a7cefb",
+          "width": 1024,
+          "height": 1024,
+          "status": "transparent_canonical_base",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+          "source_approval": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json"
+        }
+      ],
       "primary_reference": {
         "source_id": "male-fat",
         "source_asset_id": "illustrated_male_fat_r1",
@@ -183,17 +263,36 @@
           "width": 1536,
           "height": 1024
         }
-      }
+      },
+      "canonical_base_frozen": true
     },
     {
       "planned_variant_id": "autosprite_male_muscular_v1",
       "presentation": "male",
       "body_type": "muscular",
       "view": "front",
-      "generation_status": "not_generated",
-      "visual_review_status": "not_reviewed",
+      "generation_status": "approved_exported",
+      "visual_review_status": "user_approved",
       "runtime_selectable": false,
-      "generated_exports": [],
+      "generated_exports": [
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/male-muscular/source.png",
+          "sha256": "180691daddf8d9f9fd8fa2b4abdea4c7b733458fb2724be1b3a2f7da6c5ac60e",
+          "width": 1024,
+          "height": 1024,
+          "status": "source_user_approved",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json"
+        },
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/male-muscular/body.png",
+          "sha256": "122f19e2b127abe4de2ca2e7906c72faadfd2b72ac4403aed98f8c392c5b0d49",
+          "width": 1024,
+          "height": 1024,
+          "status": "transparent_canonical_base",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+          "source_approval": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json"
+        }
+      ],
       "primary_reference": {
         "source_id": "male-muscular",
         "source_asset_id": "illustrated_male_muscular_r1",
@@ -206,17 +305,36 @@
           "width": 1536,
           "height": 1024
         }
-      }
+      },
+      "canonical_base_frozen": true
     },
     {
       "planned_variant_id": "autosprite_female_slim_v1",
       "presentation": "female",
       "body_type": "slim",
       "view": "front",
-      "generation_status": "not_generated",
-      "visual_review_status": "not_reviewed",
+      "generation_status": "approved_exported",
+      "visual_review_status": "user_approved",
       "runtime_selectable": false,
-      "generated_exports": [],
+      "generated_exports": [
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/female-slim/source.png",
+          "sha256": "d17581c1d3f05b1e5948e01f8f1afa52ec5611de292d5dd4a3cb830afa976513",
+          "width": 1024,
+          "height": 1024,
+          "status": "source_user_approved",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json"
+        },
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/female-slim/body.png",
+          "sha256": "6cc1d5c74532df7b8fd2b1fe8566fc1c99ec7e59926d58d746575186d55c9976",
+          "width": 1024,
+          "height": 1024,
+          "status": "transparent_canonical_base",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+          "source_approval": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json"
+        }
+      ],
       "primary_reference": {
         "source_id": "female-skinny",
         "source_asset_id": "illustrated_female_skinny_r1",
@@ -229,17 +347,36 @@
           "width": 1536,
           "height": 1024
         }
-      }
+      },
+      "canonical_base_frozen": true
     },
     {
       "planned_variant_id": "autosprite_female_medium_v1",
       "presentation": "female",
       "body_type": "medium",
       "view": "front",
-      "generation_status": "not_generated",
-      "visual_review_status": "not_reviewed",
+      "generation_status": "approved_exported",
+      "visual_review_status": "user_approved",
       "runtime_selectable": false,
-      "generated_exports": [],
+      "generated_exports": [
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/female-medium/source.png",
+          "sha256": "6816c2b78964e896f6215311e7860a36eef4e84557d236121b275f9534d479fc",
+          "width": 1024,
+          "height": 1024,
+          "status": "source_user_approved",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json"
+        },
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/female-medium/body.png",
+          "sha256": "0898b25822e7091c0a8cf642f1121d928d8deea4a108385c65b8ab161cc32c47",
+          "width": 1024,
+          "height": 1024,
+          "status": "transparent_canonical_base",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+          "source_approval": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json"
+        }
+      ],
       "primary_reference": {
         "source_id": "female-normal",
         "source_asset_id": "illustrated_female_normal_r1",
@@ -252,17 +389,36 @@
           "width": 1536,
           "height": 1024
         }
-      }
+      },
+      "canonical_base_frozen": true
     },
     {
       "planned_variant_id": "autosprite_female_overweight_v1",
       "presentation": "female",
       "body_type": "overweight",
       "view": "front",
-      "generation_status": "not_generated",
-      "visual_review_status": "not_reviewed",
+      "generation_status": "approved_exported",
+      "visual_review_status": "user_approved",
       "runtime_selectable": false,
-      "generated_exports": [],
+      "generated_exports": [
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/female-overweight/source.png",
+          "sha256": "58c8a5e551405b94fb5653d503e606222de43fa636f091912e26fc944f9e997b",
+          "width": 1024,
+          "height": 1024,
+          "status": "source_user_approved",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json"
+        },
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/female-overweight/body.png",
+          "sha256": "b9145aaee2589cac8280394a389f33fe7f8d67987e35fed2e57abd95ffc3dbe5",
+          "width": 1024,
+          "height": 1024,
+          "status": "transparent_canonical_base",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+          "source_approval": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json"
+        }
+      ],
       "primary_reference": {
         "source_id": "female-chubby",
         "source_asset_id": "illustrated_female_chubby_r1",
@@ -275,17 +431,36 @@
           "width": 1536,
           "height": 1024
         }
-      }
+      },
+      "canonical_base_frozen": true
     },
     {
       "planned_variant_id": "autosprite_female_obese_v1",
       "presentation": "female",
       "body_type": "obese",
       "view": "front",
-      "generation_status": "not_generated",
-      "visual_review_status": "not_reviewed",
+      "generation_status": "approved_exported",
+      "visual_review_status": "user_approved",
       "runtime_selectable": false,
-      "generated_exports": [],
+      "generated_exports": [
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/female-obese/source.png",
+          "sha256": "45ec1fa669f56cde07154a9a54d23ec3686109f9673df3a7f975fa057b3f0c70",
+          "width": 1024,
+          "height": 1024,
+          "status": "source_user_approved",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json"
+        },
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/female-obese/body.png",
+          "sha256": "a3c7f8d9999ca54160a30ef9b782e811baddf1cad80051bc1dad420a0de658b6",
+          "width": 1024,
+          "height": 1024,
+          "status": "transparent_canonical_base",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+          "source_approval": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json"
+        }
+      ],
       "primary_reference": {
         "source_id": "female-fat",
         "source_asset_id": "illustrated_female_fat_r1",
@@ -298,17 +473,36 @@
           "width": 1536,
           "height": 1024
         }
-      }
+      },
+      "canonical_base_frozen": true
     },
     {
       "planned_variant_id": "autosprite_female_muscular_v1",
       "presentation": "female",
       "body_type": "muscular",
       "view": "front",
-      "generation_status": "not_generated",
-      "visual_review_status": "not_reviewed",
+      "generation_status": "approved_exported",
+      "visual_review_status": "user_approved",
       "runtime_selectable": false,
-      "generated_exports": [],
+      "generated_exports": [
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/female-muscular/source.png",
+          "sha256": "532978e2a184731ef830b6df55bf63ccccce81641d7feb0e474552a6b0a68b8e",
+          "width": 1024,
+          "height": 1024,
+          "status": "source_user_approved",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json"
+        },
+        {
+          "path": "assets/sprites/autosprite/body-bases-front-r1/female-muscular/body.png",
+          "sha256": "2a3a26bf6a87066e15a65f9de3d230f4c74eee0518562fe994c60cbab5af1b6c",
+          "width": 1024,
+          "height": 1024,
+          "status": "transparent_canonical_base",
+          "batch_manifest": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+          "source_approval": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json"
+        }
+      ],
       "primary_reference": {
         "source_id": "female-muscular",
         "source_asset_id": "illustrated_female_muscular_r1",
@@ -321,7 +515,8 @@
           "width": 1536,
           "height": 1024
         }
-      }
+      },
+      "canonical_base_frozen": true
     }
   ],
   "supplementary_references": [
@@ -389,5 +584,48 @@
         "height": 1024
       }
     }
-  ]
+  ],
+  "current_generation_batch": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/manifest.json",
+    "status": "approved_frozen_bases_ready_for_fitted_equipment"
+  },
+  "body_base_approval": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-r2-2026-09-27T170140Z.json",
+    "sha256": "29f3cae851cb048081225def792244964b470da2a1cf5dbb4141358bde0867b1",
+    "reviewedAt": "2026-09-27T17:01:40.374Z"
+  },
+  "approved_historical_body_batch": {
+    "path": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+    "status": "approved_static_bases_ready_for_equipment_fitting"
+  },
+  "approved_hairfree_body_batch": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/manifest.json",
+    "status": "approved_frozen",
+    "sourceApprovalTransfers": false,
+    "approvedSourcesPreserved": true,
+    "reviewPage": "tools/review/modular-character-front-r2.html",
+    "reviewRecord": {
+      "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-r2-2026-09-27T170140Z.json",
+      "sha256": "29f3cae851cb048081225def792244964b470da2a1cf5dbb4141358bde0867b1",
+      "reviewedAt": "2026-09-27T17:01:40.374Z"
+    },
+    "approvedBaseHairLock": {
+      "path": "assets/sprites/autosprite/body-bases-hairfree-r1/approved-base-hair-lock.json",
+      "sha256": "6130db512520de166c90596d8a0ff102f49baf0fa22b8f5cec4d609875ee1182"
+    }
+  },
+  "historical_body_base_approval": {
+    "path": "assets/sprites/autosprite/body-bases-front-r1/reviews/user-approval-all-10.json",
+    "sha256": "f51438424d9144ffb150f234f184a8c21b63278a4adcdd7e9b7a96609308cccb",
+    "reviewedAt": "2026-09-27T06:27:15.112Z"
+  },
+  "mvp_scope_update": {
+    "source": "explicit_user_message_2026-09-27",
+    "removed_from_selection": [
+      "male-obese",
+      "female-obese"
+    ],
+    "preserve_all_references": true,
+    "art_polish_deferred": true
+  }
 }

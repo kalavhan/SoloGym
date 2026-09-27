@@ -8,6 +8,23 @@ The Home window has editable runtime text and values, English/Spanish detection 
 
 The user installed the earlier Home build on Android and accepted its appearance on 2026-09-25. The device model/OS version were not supplied; the later Welcome acceptance is recorded separately. The current onboarding UI has not been delivered in a new APK.
 
+## Current character MVP
+
+The default character screen uses eight static body presets with separate hair,
+top and shorts. Confirming saves the appearance on this device and opens Home;
+Back discards edits. Art polish is deferred. No renderer flag is required.
+
+```bash
+app/Builds/Linux/SoloGym.x86_64 -screen-fullscreen 0 -screen-width 853 -screen-height 1844 \
+  -sologym-review -sologym-window character -sologym-locale es
+```
+
+Use `-sologym-window home` to open the saved appearance directly. Optional
+`-sologym-capture /absolute/path.png` saves a screenshot and keeps the app open;
+`-sologym-quit-after-capture` exits intentionally. The old registered-piece
+proof requires `-sologym-avatar-renderer legacy`; the illustrated proof remains
+explicitly selectable. See [integration and validation](../docs/design/character-modular-mvp.md).
+
 ## Rendering architecture correction
 
 The existing windows now use independent background, logo, portrait and icon assets plus shared code containers and controls. `SystemTheme` is an editable ScriptableObject in `Resources/UI/DefaultTheme.asset`. `SystemPanel`, `SystemUI`, `SystemTextFit` and `SystemViewport` provide the shared rendering/layout kit. The old source images and clean plates moved outside Unity to `design/legacy-runtime-plates` and no longer ship as Resources. State controllers and Firebase integration are retained. See the [implementation report and captures](../docs/engineering/layered-ui-and-avatar-implementation.md).
@@ -173,6 +190,7 @@ Review mode: **full-screen character studio** (CAS-style dock + overlay carousel
 ```bash
 app/Builds/Linux/SoloGym.x86_64 -screen-fullscreen 0 -screen-width 853 -screen-height 1844 \
   -sologym-review -sologym-window character -sologym-locale es \
+  -sologym-avatar-renderer legacy \
   -sologym-capture "$PWD/artifacts/visual/WIN-013/studio-es-g3.png" -sologym-smoke
 ```
 
@@ -180,11 +198,11 @@ Do not pass `-batchmode -nographics` for character captures (Linux screenshots c
 
 For interactive character review, omit `-sologym-smoke`: the screenshot is saved once and the studio stays open for customization. Add `-sologym-quit-after-capture` when an automated screenshot command should exit. `-sologym-smoke` still runs the checks and exits with their result.
 
-Review-only variants: `-sologym-character-view face`, `gear` or `body` opens that category. `-sologym-avatar-variant alternate` selects deep skin, swept hair, bare torso and bare hands through the regular customization controller. The character smoke checks pointer priority, camera changes, hair sprites, equipment visibility, mirrored poses and attachment registration before the setup checkpoint.
+Legacy review-only variants: `-sologym-character-view face`, `gear` or `body` opens that category. `-sologym-avatar-variant alternate` selects deep skin, swept hair, bare torso and bare hands through the regular customization controller. The character smoke checks pointer priority, camera changes, hair sprites, equipment visibility, mirrored poses and attachment registration before the setup checkpoint.
 
 Reference compositor check: same window plus `-sologym-avatar-reference-check` (writes `artifacts/visual/AvatarReference/reference-check.json`). Rig tuning: `-sologym-window avatar` with `-sologym-capture`.
 
-Schedule review checkpoint opens this window; continue shows setup-complete notice and returns to Welcome. See [WIN-013 implementation](../docs/windows/WIN-013-implementation.md).
+Schedule review now opens the modular MVP character screen and Continue opens Home. The explicit legacy renderer retains the old setup-complete notice. See [WIN-013 implementation](../docs/windows/WIN-013-implementation.md).
 
 ## Layered UI verification
 

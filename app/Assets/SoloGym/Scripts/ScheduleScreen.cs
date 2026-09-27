@@ -358,14 +358,20 @@ namespace SoloGym
                 string checkpoint = null;
                 controller.CheckpointRequested += id => checkpoint = id;
                 controls["continue"].onClick.Invoke();
-                yield return null;
+                // The handoff hides this GameObject, which stops its coroutines.
+                // Check synchronously and exit from Smoke itself.
                 passed &= checkpoint == "REVIEW:WIN-013" && controller.Model.Step == ScheduleStep.Setup;
+                if (AutoSpriteSession.Requested)
+                {
+                    var character = FindFirstObjectByType<AutoSpriteStudioScreen>();
+                    passed &= character != null && character.Avatar.IsLoaded;
+                }
             }
             string json = "{\"passed\":" + (passed ? "true" : "false")
                 + ",\"checks\":[\"schedule state checks\",\"day selection\",\"setup to next window\"]}";
             File.WriteAllText(Path.ChangeExtension(capture, ".smoke.json"), json);
             Debug.Log("SOLOGYM_SCHEDULE_SMOKE " + json);
-            if (!passed) Application.Quit(2);
+            Application.Quit(passed ? 0 : 2);
         }
 
         void OnDestroy() => controller?.Dispose();

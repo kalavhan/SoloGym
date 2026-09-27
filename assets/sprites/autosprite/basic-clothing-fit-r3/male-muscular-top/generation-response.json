@@ -1,0 +1,12 @@
+{
+  "tool": "generate_asset_preview",
+  "quality": "ultra",
+  "creditsUsed": 1,
+  "image": {
+    "path": "male-muscular-top/source.png",
+    "sha256": "fcbfd15917964c51ce484edf85b1d37b0cc9acc0e010473bf9a03db61b4d3744",
+    "width": 1024,
+    "height": 1024
+  },
+  "sourceUrl": "https://im.runware.ai/image/os/a10dlim3/ws/4/ii/7df57906-96ae-4334-b875-d7ea66a699b9.png"
+}

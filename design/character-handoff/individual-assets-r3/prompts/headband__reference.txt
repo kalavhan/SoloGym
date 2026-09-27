@@ -1,0 +1,7 @@
+SOLOGYM / BASE / Headband · Shared design
+
+Use headband.png as the sole item-design reference. Reproduce the pictured item, preserving its silhouette, colors, seams, panels and trim. Do not invent another design.
+
+Plain muted-petrol elastic cloth headband with subtle edge stitching and folds. Preserve its simple fabric design; no hair, face, metal plate or logo.
+
+Render only this equipment item. Clean frontal game illustration with crisp outlines and restrained cel shading. No character, mannequin, skin, text, labels, grid, extra items, glow or animation. Export an isolated PNG with a clean transparent background.

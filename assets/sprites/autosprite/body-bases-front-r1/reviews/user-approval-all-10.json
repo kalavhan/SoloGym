@@ -1,0 +1,97 @@
+{
+  "schema": "sologym.body-base-review.v1",
+  "batch": "body-bases-front-r1",
+  "reviewedAt": "2026-09-27T06:27:15.112Z",
+  "variants": [
+    {
+      "id": "female-slim",
+      "gender": "female",
+      "bodyType": "slim",
+      "image": "female-slim/source.png",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "d17581c1d3f05b1e5948e01f8f1afa52ec5611de292d5dd4a3cb830afa976513"
+    },
+    {
+      "id": "female-medium",
+      "gender": "female",
+      "bodyType": "medium",
+      "image": "female-medium/source.png",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "6816c2b78964e896f6215311e7860a36eef4e84557d236121b275f9534d479fc"
+    },
+    {
+      "id": "female-overweight",
+      "gender": "female",
+      "bodyType": "overweight",
+      "image": "female-overweight/source.png",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "58c8a5e551405b94fb5653d503e606222de43fa636f091912e26fc944f9e997b"
+    },
+    {
+      "id": "female-obese",
+      "gender": "female",
+      "bodyType": "obese",
+      "image": "female-obese/source.png",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "45ec1fa669f56cde07154a9a54d23ec3686109f9673df3a7f975fa057b3f0c70"
+    },
+    {
+      "id": "female-muscular",
+      "gender": "female",
+      "bodyType": "muscular",
+      "image": "female-muscular/source.png",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "532978e2a184731ef830b6df55bf63ccccce81641d7feb0e474552a6b0a68b8e"
+    },
+    {
+      "id": "male-slim",
+      "gender": "male",
+      "bodyType": "slim",
+      "image": "male-slim/source.png",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "499c5e0e2ac4a7486a114c79d2f8c840b402f211352fed46fb6922471dcc566e"
+    },
+    {
+      "id": "male-medium",
+      "gender": "male",
+      "bodyType": "medium",
+      "image": "male-medium/source.png",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2"
+    },
+    {
+      "id": "male-overweight",
+      "gender": "male",
+      "bodyType": "overweight",
+      "image": "male-overweight/source.png",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "be2213797ef18102dc81f468635064368b0491c4b1b9862ff8a18b4fd1ac00b8"
+    },
+    {
+      "id": "male-obese",
+      "gender": "male",
+      "bodyType": "obese",
+      "image": "male-obese/source.png",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "05dc101f4c026a5999436cea2abb01e580a6752e33ac7c223266ce83a54a6504"
+    },
+    {
+      "id": "male-muscular",
+      "gender": "male",
+      "bodyType": "muscular",
+      "image": "male-muscular/source.png",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "180691daddf8d9f9fd8fa2b4abdea4c7b733458fb2724be1b3a2f7da6c5ac60e"
+    }
+  ]
+}

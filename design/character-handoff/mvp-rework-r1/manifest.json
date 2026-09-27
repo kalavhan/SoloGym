@@ -1,0 +1,2135 @@
+{
+  "schema": "sologym.character-authoring-handoff.v1",
+  "activeBodyCount": 8,
+  "noNewGeneration": true,
+  "canvas": {
+    "width": 1024,
+    "height": 1024,
+    "origin": "top_left"
+  },
+  "concept": "style/base-kit-concept.png",
+  "bodies": [
+    {
+      "id": "female-slim",
+      "label": "Female \u00b7 Slim",
+      "gender": "female",
+      "bodyType": "slim",
+      "file": "bodies/female-slim.png",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-slim/body.png",
+        "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          351,
+          58,
+          663,
+          999
+        ]
+      },
+      "fit": {
+        "baseSha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "approval": "pending_review",
+        "torso": {
+          "assetId": "base-female-medium-top-r2-fit-r3",
+          "sourceRect": {
+            "x": 127,
+            "y": 34,
+            "width": 770,
+            "height": 952
+          },
+          "destinationRect": {
+            "x": 363,
+            "y": 159,
+            "width": 288,
+            "height": 350
+          }
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 368,
+            "y": 435,
+            "width": 279,
+            "height": 221
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              397,
+              415
+            ],
+            [
+              397,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              622,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              622,
+              615
+            ]
+          ]
+        ],
+        "notes": "New isolated garment artwork fitted over the unchanged approved body. Compare with the r2 clothing and check the waist, sleeves, collar and shorts.",
+        "itemHashes": {
+          "torso": "4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 460,
+              "y": 51,
+              "width": 106,
+              "height": 99
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 456,
+              "y": 47,
+              "width": 113,
+              "height": 111
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "29eceb217809164576a75f60407e061fc9c14422ff1ddee30dcd10908a001554"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 460,
+            "y": 51,
+            "width": 106,
+            "height": 99
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 456,
+            "y": 47,
+            "width": 113,
+            "height": 111
+          }
+        }
+      }
+    },
+    {
+      "id": "female-medium",
+      "label": "Female \u00b7 Medium",
+      "gender": "female",
+      "bodyType": "medium",
+      "file": "bodies/female-medium.png",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-medium/body.png",
+        "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          344,
+          34,
+          668,
+          993
+        ]
+      },
+      "fit": {
+        "baseSha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "approval": "pending_review",
+        "torso": {
+          "assetId": "base-female-medium-top-r2-fit-r3",
+          "sourceRect": {
+            "x": 127,
+            "y": 34,
+            "width": 770,
+            "height": 952
+          },
+          "destinationRect": {
+            "x": 350,
+            "y": 154,
+            "width": 315,
+            "height": 363
+          }
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 364,
+            "y": 410,
+            "width": 286,
+            "height": 245
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              396,
+              415
+            ],
+            [
+              396,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              619,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              619,
+              615
+            ]
+          ]
+        ],
+        "notes": "New isolated garment artwork fitted over the unchanged approved body. Compare with the r2 clothing and check the waist, sleeves, collar and shorts.",
+        "itemHashes": {
+          "torso": "4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 453,
+              "y": 28,
+              "width": 112,
+              "height": 101
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 450,
+              "y": 23,
+              "width": 118,
+              "height": 123
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "8671099539bb616a09a4d87b66fd101c69a6f96e5447198d0595841ec5898395"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 453,
+            "y": 28,
+            "width": 112,
+            "height": 101
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 450,
+            "y": 23,
+            "width": 118,
+            "height": 123
+          }
+        }
+      }
+    },
+    {
+      "id": "female-overweight",
+      "label": "Female \u00b7 Overweight",
+      "gender": "female",
+      "bodyType": "overweight",
+      "file": "bodies/female-overweight.png",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-overweight/body.png",
+        "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          314,
+          50,
+          701,
+          988
+        ]
+      },
+      "fit": {
+        "baseSha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "approval": "pending_review",
+        "torso": {
+          "assetId": "base-female-fuller-top-fit-r3",
+          "sourceRect": {
+            "x": 81,
+            "y": 15,
+            "width": 862,
+            "height": 981
+          },
+          "destinationRect": {
+            "x": 328,
+            "y": 166,
+            "width": 359,
+            "height": 378
+          }
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 347,
+            "y": 424,
+            "width": 321,
+            "height": 243
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              375,
+              415
+            ],
+            [
+              375,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              641,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              641,
+              615
+            ]
+          ]
+        ],
+        "notes": "New isolated garment artwork fitted over the unchanged approved body. Compare with the r2 clothing and check the waist, sleeves, collar and shorts.",
+        "itemHashes": {
+          "torso": "cf74b5a24329511ba7373153f141774030de4443f4264d7248a9467df8dffa67",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 450,
+              "y": 43,
+              "width": 114,
+              "height": 102
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 447,
+              "y": 40,
+              "width": 120,
+              "height": 123
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "d5c1cb83ec6588d75316f7b5e8501391228817ad5519e562a12906f220ad6f60"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 450,
+            "y": 43,
+            "width": 114,
+            "height": 102
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 447,
+            "y": 40,
+            "width": 120,
+            "height": 123
+          }
+        }
+      }
+    },
+    {
+      "id": "female-muscular",
+      "label": "Female \u00b7 Muscular",
+      "gender": "female",
+      "bodyType": "muscular",
+      "file": "bodies/female-muscular.png",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-muscular/body.png",
+        "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          328,
+          35,
+          682,
+          996
+        ]
+      },
+      "fit": {
+        "baseSha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "approval": "pending_review",
+        "torso": {
+          "assetId": "base-female-medium-top-r2-fit-r3",
+          "sourceRect": {
+            "x": 127,
+            "y": 34,
+            "width": 770,
+            "height": 952
+          },
+          "destinationRect": {
+            "x": 338,
+            "y": 153,
+            "width": 340,
+            "height": 371
+          }
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 356,
+            "y": 418,
+            "width": 303,
+            "height": 247
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              382,
+              415
+            ],
+            [
+              382,
+              590
+            ],
+            [
+              0,
+              590
+            ]
+          ],
+          [
+            [
+              632,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              590
+            ],
+            [
+              632,
+              590
+            ]
+          ]
+        ],
+        "notes": "New isolated garment artwork fitted over the unchanged approved body. Compare with the r2 clothing and check the waist, sleeves, collar and shorts.",
+        "itemHashes": {
+          "torso": "4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 452,
+              "y": 29,
+              "width": 112,
+              "height": 101
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 449,
+              "y": 24,
+              "width": 117,
+              "height": 123
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "af4b1e66591d12bffdb9d6d6be4ef448a351f9ddb122e302cf5b8462860938ba"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 452,
+            "y": 29,
+            "width": 112,
+            "height": 101
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 24,
+            "width": 117,
+            "height": 123
+          }
+        }
+      }
+    },
+    {
+      "id": "male-slim",
+      "label": "Male \u00b7 Slim",
+      "gender": "male",
+      "bodyType": "slim",
+      "file": "bodies/male-slim.png",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-slim/body.png",
+        "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          342,
+          37,
+          682,
+          1002
+        ]
+      },
+      "fit": {
+        "baseSha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "approval": "pending_review",
+        "torso": {
+          "sourceRect": {
+            "x": 108,
+            "y": 19,
+            "width": 807,
+            "height": 971
+          },
+          "destinationRect": {
+            "x": 337,
+            "y": 155,
+            "width": 350,
+            "height": 371
+          },
+          "assetId": "base-training-vest-r1"
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 374,
+            "y": 439,
+            "width": 276,
+            "height": 239
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              396,
+              415
+            ],
+            [
+              396,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              627,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              627,
+              615
+            ]
+          ]
+        ],
+        "notes": "New isolated garment artwork fitted over the unchanged approved body. Compare with the r2 clothing and check the waist, sleeves, collar and shorts.",
+        "itemHashes": {
+          "torso": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 458,
+              "y": 30,
+              "width": 109,
+              "height": 95
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 455,
+              "y": 26,
+              "width": 114,
+              "height": 113
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "b19aa9dd91869caa7041f3fce7da7ad87df6ac97551792235cd5949825662030"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 458,
+            "y": 30,
+            "width": 109,
+            "height": 95
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 455,
+            "y": 26,
+            "width": 114,
+            "height": 113
+          }
+        }
+      }
+    },
+    {
+      "id": "male-medium",
+      "label": "Male \u00b7 Medium",
+      "gender": "male",
+      "bodyType": "medium",
+      "file": "bodies/male-medium.png",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-medium/body.png",
+        "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          338,
+          44,
+          687,
+          999
+        ]
+      },
+      "fit": {
+        "baseSha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "approval": "pending_review",
+        "torso": {
+          "sourceRect": {
+            "x": 108,
+            "y": 19,
+            "width": 807,
+            "height": 971
+          },
+          "destinationRect": {
+            "x": 327,
+            "y": 155,
+            "width": 370,
+            "height": 377
+          },
+          "assetId": "base-training-vest-r1"
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 369,
+            "y": 421,
+            "width": 286,
+            "height": 242
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              397,
+              415
+            ],
+            [
+              397,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              627,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              627,
+              615
+            ]
+          ]
+        ],
+        "notes": "New isolated garment artwork fitted over the unchanged approved body. Compare with the r2 clothing and check the waist, sleeves, collar and shorts.",
+        "itemHashes": {
+          "torso": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 456,
+              "y": 37,
+              "width": 112,
+              "height": 96
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 453,
+              "y": 33,
+              "width": 117,
+              "height": 114
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "429da3084d54ff0e2a8deb73d8314a53ac1b2a2affcd033614bb5f3225d922eb"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 456,
+            "y": 37,
+            "width": 112,
+            "height": 96
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 453,
+            "y": 33,
+            "width": 117,
+            "height": 114
+          }
+        }
+      }
+    },
+    {
+      "id": "male-overweight",
+      "label": "Male \u00b7 Overweight",
+      "gender": "male",
+      "bodyType": "overweight",
+      "file": "bodies/male-overweight.png",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-overweight/body.png",
+        "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          300,
+          47,
+          721,
+          1024
+        ]
+      },
+      "fit": {
+        "baseSha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "approval": "pending_review",
+        "torso": {
+          "assetId": "base-male-overweight-top-fit-r3",
+          "sourceRect": {
+            "x": 61,
+            "y": 6,
+            "width": 901,
+            "height": 999
+          },
+          "destinationRect": {
+            "x": 314,
+            "y": 157,
+            "width": 397,
+            "height": 414
+          }
+        },
+        "legs": {
+          "assetId": "base-male-heavy-shorts-r2-fit-r3",
+          "sourceRect": {
+            "x": 20,
+            "y": 107,
+            "width": 979,
+            "height": 731
+          },
+          "destinationRect": {
+            "x": 353,
+            "y": 444,
+            "width": 318,
+            "height": 237
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              365,
+              415
+            ],
+            [
+              365,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              656,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              656,
+              615
+            ]
+          ]
+        ],
+        "notes": "New isolated garment artwork fitted over the unchanged approved body. Compare with the r2 clothing and check the waist, sleeves, collar and shorts.",
+        "itemHashes": {
+          "torso": "94f7596b18f4f151be96d072202cc90de65d0b21cec6830f962020d1f483c3b5",
+          "legs": "424591e5fa4bd930043a2175ded27461c62bca5d454f7ffe5ccf7db5f0c6f6c5"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 455,
+              "y": 40,
+              "width": 112,
+              "height": 97
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 452,
+              "y": 36,
+              "width": 117,
+              "height": 115
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "c29a9cecf6279e78263080d75f2caf1f88eeb28719493239fefb833010a61bf8"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 455,
+            "y": 40,
+            "width": 112,
+            "height": 97
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 452,
+            "y": 36,
+            "width": 117,
+            "height": 115
+          }
+        }
+      }
+    },
+    {
+      "id": "male-muscular",
+      "label": "Male \u00b7 Muscular",
+      "gender": "male",
+      "bodyType": "muscular",
+      "file": "bodies/male-muscular.png",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-muscular/body.png",
+        "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          319,
+          41,
+          705,
+          1000
+        ]
+      },
+      "fit": {
+        "baseSha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "approval": "pending_review",
+        "torso": {
+          "assetId": "base-male-muscular-top-fit-r3",
+          "sourceRect": {
+            "x": 57,
+            "y": 30,
+            "width": 904,
+            "height": 954
+          },
+          "destinationRect": {
+            "x": 310,
+            "y": 153,
+            "width": 403,
+            "height": 389
+          }
+        },
+        "legs": {
+          "assetId": "base-boxing-shorts-r2",
+          "sourceRect": {
+            "x": 93,
+            "y": 63,
+            "width": 837,
+            "height": 890
+          },
+          "destinationRect": {
+            "x": 362,
+            "y": 435,
+            "width": 301,
+            "height": 237
+          }
+        },
+        "neckOcclusion": [
+          [
+            [
+              435,
+              0
+            ],
+            [
+              585,
+              0
+            ],
+            [
+              585,
+              174
+            ],
+            [
+              546,
+              174
+            ],
+            [
+              548,
+              202
+            ],
+            [
+              540,
+              211
+            ],
+            [
+              529,
+              216
+            ],
+            [
+              512,
+              218
+            ],
+            [
+              496,
+              216
+            ],
+            [
+              482,
+              211
+            ],
+            [
+              471,
+              204
+            ],
+            [
+              472,
+              174
+            ],
+            [
+              435,
+              174
+            ]
+          ]
+        ],
+        "handOcclusion": [
+          [
+            [
+              0,
+              415
+            ],
+            [
+              387,
+              415
+            ],
+            [
+              387,
+              615
+            ],
+            [
+              0,
+              615
+            ]
+          ],
+          [
+            [
+              638,
+              415
+            ],
+            [
+              1024,
+              415
+            ],
+            [
+              1024,
+              615
+            ],
+            [
+              638,
+              615
+            ]
+          ]
+        ],
+        "notes": "New isolated garment artwork fitted over the unchanged approved body. Compare with the r2 clothing and check the waist, sleeves, collar and shorts.",
+        "itemHashes": {
+          "torso": "175c3aaa6feb8728806faa310b595730f0a2e46b720ade4fb12317400f66b7f5",
+          "legs": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650"
+        },
+        "hairFits": {
+          "close-crop": {
+            "sourceRect": {
+              "x": 133,
+              "y": 74,
+              "width": 760,
+              "height": 693
+            },
+            "destinationRect": {
+              "x": 457,
+              "y": 34,
+              "width": 110,
+              "height": 97
+            }
+          },
+          "short-sweep": {
+            "sourceRect": {
+              "x": 130,
+              "y": 32,
+              "width": 771,
+              "height": 828
+            },
+            "destinationRect": {
+              "x": 454,
+              "y": 30,
+              "width": 115,
+              "height": 115
+            }
+          }
+        },
+        "hairHashes": {
+          "close-crop": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+          "short-sweep": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+        },
+        "sha256": "d2fe6374b94168a58170c4b751ddcfa03a8de1d4b5d6f03ae2b3c7fe52530753"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 457,
+            "y": 34,
+            "width": 110,
+            "height": 97
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 454,
+            "y": 30,
+            "width": 115,
+            "height": 115
+          }
+        }
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "base-training-vest-r1",
+      "key": "top-regular",
+      "name": "Training top and vest",
+      "slot": "torso",
+      "file": "objects/top-regular.png",
+      "originalPrompt": "Isolated front navy crew-neck short-sleeve tee under open hip-length vest, cream side panels, dull petrol piping. Sleeves point down. Manhwa cel shading. No body, skin, hanger, text. White BG."
+    },
+    {
+      "id": "base-boxing-shorts-r2",
+      "key": "shorts-regular",
+      "name": "Boxing shorts",
+      "slot": "legs",
+      "file": "objects/shorts-regular.png",
+      "originalPrompt": "Front-view isolated navy boxing shorts, straight parallel sides, wide flat waistband, roomy straight legs, cream side stripes and narrow hems, dull petrol tabs. Matte manhwa cel. No body, flare, text."
+    },
+    {
+      "id": "base-male-overweight-top-fit-r3",
+      "key": "top-male-rounded",
+      "name": "Training top \u2014 rounded torso cut",
+      "slot": "torso",
+      "file": "objects/top-male-rounded.png",
+      "originalPrompt": "Front-only isolated navy crew tee+open stand-collar vest for round male belly. Short sleeves, curved belly drape, soft folds, cream lower side panels, thin petrol piping. No skin/body/pockets/glow."
+    },
+    {
+      "id": "base-female-medium-top-r2-fit-r3",
+      "key": "top-female-shaped",
+      "name": "Training top \u2014 female medium cut",
+      "slot": "torso",
+      "file": "objects/top-female-shaped.png",
+      "originalPrompt": "Women's fitted navy short-sleeve crew tee+open hip-length stand-collar vest; cream lower side panels, petrol piping. TORSO GARMENT ONLY, front view, shaped waist. No pants, body, logo, glow."
+    },
+    {
+      "id": "base-male-heavy-shorts-r2-fit-r3",
+      "key": "shorts-heavier",
+      "name": "Boxing shorts \u2014 heavier fit",
+      "slot": "legs",
+      "file": "objects/shorts-heavier.png",
+      "originalPrompt": "Isolated plain navy sports shorts ONLY. Front view, broad heavy hips, rounded seat, short straight legs; thin cream side stripes/hem, two small petrol tabs. NO text, logos, labels, skin or body."
+    },
+    {
+      "id": "base-female-fuller-top-fit-r3",
+      "key": "top-female-fuller",
+      "name": "Training top \u2014 fuller female cut",
+      "slot": "torso",
+      "file": "objects/top-female-fuller.png",
+      "originalPrompt": "Heavy female navy crew tee+open hip-length stand-collar vest; short sleeves, soft round waist, cream lower side panels, petrol piping. Front TORSO GARMENT ONLY. No pants, skin, body, logo or glow."
+    },
+    {
+      "id": "base-male-muscular-top-fit-r3",
+      "key": "top-male-muscular",
+      "name": "Training top \u2014 muscular male cut",
+      "slot": "torso",
+      "file": "objects/top-male-muscular.png",
+      "originalPrompt": "Muscular male navy crew tee+open stand-collar vest; snug short sleeves, broad chest, tapered waist, cream lower side panels, petrol piping. Front TORSO ONLY. No pants, skin, body, logo or glow."
+    },
+    {
+      "id": "close-crop",
+      "key": "hair-close-crop",
+      "name": "Close crop",
+      "slot": "hair",
+      "file": "objects/hair-close-crop.png",
+      "originalPrompt": "Isolated front-view short black cropped hairstyle wig, compact tapered sides, low textured crown, tiny fringe. Empty face opening. Manhwa cel shading. No face, head, neck, skin, body, text. White BG."
+    },
+    {
+      "id": "short-sweep",
+      "key": "hair-short-sweep",
+      "name": "Short sweep",
+      "slot": "hair",
+      "file": "objects/hair-short-sweep.png",
+      "originalPrompt": "Isolated front-view short black pixie hairstyle wig, close-fitting crown, side-swept fringe, small side locks. Empty face opening. Manhwa cel shading. No face, skin, head, neck, body, text. White BG."
+    }
+  ],
+  "slots": [
+    {
+      "id": "torso",
+      "title": "Training top + vest",
+      "state": "REWORK",
+      "priority": 1,
+      "existing": true,
+      "conceptRect": [
+        369,
+        197,
+        261,
+        310
+      ],
+      "brief": "One full-length navy/charcoal crew-neck tee with short sleeves under the open hip-length vest. Cream side panels, restrained dull petrol piping. Match one chosen collar, opening, panel layout and hem across every body.",
+      "fix": "Sleeves must follow the resting upper-arm angle, cover the shoulder, and meet the upper arm naturally. Keep appropriate ease at the armhole; no pointed wing shape. Preserve the build under the fabric without sculpted chest shading or exposed midriff.",
+      "variants": "Plan eight fitted outputs, one per active body. They are fits of ONE garment design, not eight independently reinvented outfits.",
+      "parts": "One combined tee+vest torso layer is enough for this kit. They do not need separate slots.",
+      "output": "torso__{body}__base__v2.png"
+    },
+    {
+      "id": "legs",
+      "title": "Boxing shorts",
+      "state": "REFINE / FIT",
+      "priority": 2,
+      "existing": true,
+      "conceptRect": [
+        352,
+        481,
+        270,
+        205
+      ],
+      "brief": "Matte navy boxing shorts with a broad plain waistband, restrained cream side stripe and narrow hem. Relaxed legs ending above the knees; consistent trim thickness and seam layout.",
+      "fix": "Fit the waist, hips, crotch and thighs on the supplied wearer. Keep leg openings proportional, avoid flared hems, and cover all baked underwear. Pair visually with the final torso master.",
+      "variants": "Plan eight fit exports. The current regular PNG is shared by seven of the eight bodies; male overweight uses the heavier variant. Sharing is acceptable only after each fit looks right.",
+      "parts": "One paired shorts layer; no legs, skin or shoes in the output.",
+      "output": "legs__{body}__base__v2.png"
+    },
+    {
+      "id": "hands",
+      "title": "Boxing gloves",
+      "state": "PROTOTYPE ONLY",
+      "priority": 3,
+      "existing": true,
+      "file": "objects/gloves-prototype.png",
+      "conceptRect": [
+        303,
+        417,
+        378,
+        162
+      ],
+      "brief": "A matched pair of matte charcoal padded boxing gloves, rounded knuckles, attached thumbs and cream wrist closures, with subtle dull petrol details. Practical boxing gear, not metal gauntlets.",
+      "fix": "The old pair was fitted only to a different, fully dressed historical character. Fit the current wrist angles and cover the base fingers without redrawing the hands. No exposed hand fragments beyond the glove silhouette.",
+      "variants": "Try one design with position/scale fits for all eight. Make another cut only if a wrist angle or size cannot fit. Do not assume all hands are identical.",
+      "parts": "Prefer separate wearer-left and wearer-right PNGs (left hand appears on viewer right); one hands item equips both. Label sides explicitly.",
+      "output": "hands__{body}__base__left_v1.png + right_v1.png"
+    },
+    {
+      "id": "feet",
+      "title": "Boxing boots",
+      "state": "MISSING ISOLATED ART",
+      "priority": 4,
+      "existing": false,
+      "conceptRect": [
+        311,
+        777,
+        362,
+        202
+      ],
+      "brief": "Slim mid-calf boxing boots, navy canvas/leather, cream laces and narrow cream panels, flexible thin soles. No heels, spikes, heavy tactical soles or armor.",
+      "fix": "Match the exact stance, outward foot angles and floor line. Cover toes, heel and ankle completely; keep shoe scale believable. The UI boots icon is not a wearable sprite.",
+      "variants": "Start with a shared design; check left/right footprints on all eight bodies. Adjust the boot artwork only when a pose cannot be fitted convincingly.",
+      "parts": "Left/right boot layers are convenient. Their visible upper shaft must fit the calf and should not move the body.",
+      "output": "feet__{body}__base__left_v1.png + right_v1.png"
+    },
+    {
+      "id": "head",
+      "title": "Cloth headband",
+      "state": "MISSING ISOLATED ART",
+      "priority": 5,
+      "existing": false,
+      "conceptRect": [
+        433,
+        103,
+        134,
+        61
+      ],
+      "brief": "A plain dark petrol cloth boxing headband, soft fabric tension, narrow and readable across the forehead. A small knot/tail is optional only if it fits the same neutral frontal design.",
+      "fix": "Fit forehead curvature without changing the face or head. Check it with no hair, short crop and side sweep. Decide whether it passes under the fringe or needs a small front layer.",
+      "variants": "Start with one design. Use head-specific placement for the eight bases; do not generate eight designs automatically.",
+      "parts": "Front band; optional rear knot/tails on a separate layer only when necessary. Hair remains an independent cosmetic.",
+      "output": "head__{body}__base__front_v1.png"
+    },
+    {
+      "id": "back",
+      "title": "Gym backpack",
+      "state": "MISSING WEARABLE LAYERS",
+      "priority": 6,
+      "existing": false,
+      "conceptRect": [
+        739,
+        719,
+        210,
+        252
+      ],
+      "brief": "Compact navy canvas gym backpack, cream zipper piping and a muted petrol front pocket. Ordinary fabric and hardware. Use the lower-right product inset in the concept as design reference.",
+      "fix": "For a front-facing wearer, most of the bag sits behind the torso. Only the appropriate outline and front shoulder straps should be visible. Do not paste the full product-front backpack onto the chest.",
+      "variants": "One bag design may be shared; strap paths need checking against each gender/build and the selected torso garment.",
+      "parts": "Rear bag behind body + front straps above torso; optional rear straps only if visible. All parts belong to one back-slot item.",
+      "output": "back__{body}__base__rear_v1.png + straps_front_v1.png"
+    },
+    {
+      "id": "hair",
+      "title": "Hairstyles",
+      "state": "EXISTING / OPTIONAL POLISH",
+      "priority": 7,
+      "existing": true,
+      "conceptRect": [
+        409,
+        32,
+        198,
+        180
+      ],
+      "brief": "The current close crop and short side sweep are approved separate hairstyles. Preserve the head shape and facial identity. Additional styles should be authored as independent hair layers.",
+      "fix": "No required replacement for MVP. For long styles, separate rear lengths from front fringe so clothes and backpack can overlap correctly. Do not use the ponytail in the old concept as a fit template for the current head.",
+      "variants": "Check each new hairstyle on all eight heads. Reuse the art where it fits; keep individual placement metadata.",
+      "parts": "One layer for compact hair; front/rear split for a style that falls behind shoulders.",
+      "output": "hair__style-name__{body}__front_v1.png (+ rear if needed)"
+    }
+  ],
+  "files": [
+    {
+      "file": "style/base-kit-concept.png",
+      "source": "assets/sprites/autosprite/boxer-basic-r3/basic-covered-concept.png",
+      "sha256": "35d7d6687df495ce307474a5691ed11b7bd99e807fdb34d3198fef02fa9e0282",
+      "role": "Historical outfit design reference; flattened, not a usable body base"
+    },
+    {
+      "file": "objects/top-regular.png",
+      "source": "assets/sprites/autosprite/basic-clothing-front-r1/torso/item.png",
+      "sha256": "d8e53229bac8c93afb5fde4818bb09cce17160dec02f398fe17b04c97a41b88a",
+      "role": "Current isolated garment; temporary MVP art"
+    },
+    {
+      "file": "original-prompts/top-regular.txt",
+      "source": "assets/sprites/autosprite/basic-clothing-front-r1/torso/prompt.txt",
+      "sha256": "77b55014fb7eb0d1c9440a821f4e9a07357219bdc4cebbb064defcdbfe8393be",
+      "role": "Exact text supplied to the provider; historical record, not the new requirement"
+    },
+    {
+      "file": "objects/shorts-regular.png",
+      "source": "assets/sprites/autosprite/basic-clothing-front-r1/legs-r2/item.png",
+      "sha256": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+      "role": "Current isolated garment; temporary MVP art"
+    },
+    {
+      "file": "original-prompts/shorts-regular.txt",
+      "source": "assets/sprites/autosprite/basic-clothing-front-r1/legs-r2/prompt.txt",
+      "sha256": "69fa5f4dbf49039321b1876b19850fc717363214e91872494050f5f1b6e90169",
+      "role": "Exact text supplied to the provider; historical record, not the new requirement"
+    },
+    {
+      "file": "objects/top-male-rounded.png",
+      "source": "assets/sprites/autosprite/basic-clothing-fit-r3/male-overweight-top/item.png",
+      "sha256": "94f7596b18f4f151be96d072202cc90de65d0b21cec6830f962020d1f483c3b5",
+      "role": "Current isolated garment; temporary MVP art"
+    },
+    {
+      "file": "original-prompts/top-male-rounded.txt",
+      "source": "assets/sprites/autosprite/basic-clothing-fit-r3/male-overweight-top/prompt.txt",
+      "sha256": "ad85b2f186fd5f5d9bb9ff43f5eb3c8ab5c446f01968fe7793ab8a4f21489df9",
+      "role": "Exact text supplied to the provider; historical record, not the new requirement"
+    },
+    {
+      "file": "objects/top-female-shaped.png",
+      "source": "assets/sprites/autosprite/basic-clothing-fit-r3/female-medium-top-r2/item.png",
+      "sha256": "4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+      "role": "Current isolated garment; temporary MVP art"
+    },
+    {
+      "file": "original-prompts/top-female-shaped.txt",
+      "source": "assets/sprites/autosprite/basic-clothing-fit-r3/female-medium-top-r2/prompt.txt",
+      "sha256": "2e47c11706a58b1fde58552b8f3a7a93c103de47c6c6dc58da5863cd95d4680e",
+      "role": "Exact text supplied to the provider; historical record, not the new requirement"
+    },
+    {
+      "file": "objects/shorts-heavier.png",
+      "source": "assets/sprites/autosprite/basic-clothing-fit-r3/male-heavy-shorts-r2/item.png",
+      "sha256": "424591e5fa4bd930043a2175ded27461c62bca5d454f7ffe5ccf7db5f0c6f6c5",
+      "role": "Current isolated garment; temporary MVP art"
+    },
+    {
+      "file": "original-prompts/shorts-heavier.txt",
+      "source": "assets/sprites/autosprite/basic-clothing-fit-r3/male-heavy-shorts-r2/prompt.txt",
+      "sha256": "71858b27d39f4a9a458f591d35523a019ef4406fd90fcb426768b3adee70eb42",
+      "role": "Exact text supplied to the provider; historical record, not the new requirement"
+    },
+    {
+      "file": "objects/top-female-fuller.png",
+      "source": "assets/sprites/autosprite/basic-clothing-fit-r3/female-fuller-top/item.png",
+      "sha256": "cf74b5a24329511ba7373153f141774030de4443f4264d7248a9467df8dffa67",
+      "role": "Current isolated garment; temporary MVP art"
+    },
+    {
+      "file": "original-prompts/top-female-fuller.txt",
+      "source": "assets/sprites/autosprite/basic-clothing-fit-r3/female-fuller-top/prompt.txt",
+      "sha256": "76d5a43e39bf205c067ce9b2d042df014ce2fba990452b6923c903c54b3a843c",
+      "role": "Exact text supplied to the provider; historical record, not the new requirement"
+    },
+    {
+      "file": "objects/top-male-muscular.png",
+      "source": "assets/sprites/autosprite/basic-clothing-fit-r3/male-muscular-top/item.png",
+      "sha256": "175c3aaa6feb8728806faa310b595730f0a2e46b720ade4fb12317400f66b7f5",
+      "role": "Current isolated garment; temporary MVP art"
+    },
+    {
+      "file": "original-prompts/top-male-muscular.txt",
+      "source": "assets/sprites/autosprite/basic-clothing-fit-r3/male-muscular-top/prompt.txt",
+      "sha256": "f5ba93adeb2533d23426d9b633a0dabcc2331ae58fb67002f577d7a71a9bc8ef",
+      "role": "Exact text supplied to the provider; historical record, not the new requirement"
+    },
+    {
+      "file": "objects/hair-close-crop.png",
+      "source": "assets/sprites/autosprite/hairstyles-front-r1/close-crop/item.png",
+      "sha256": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+      "role": "Approved isolated hairstyle"
+    },
+    {
+      "file": "original-prompts/hair-close-crop.txt",
+      "source": "assets/sprites/autosprite/hairstyles-front-r1/close-crop/prompt.txt",
+      "sha256": "3302de70042b62f3908c849e7492c763ba9bafab39940a658c593b3f2d12484d",
+      "role": "Exact provider prompt"
+    },
+    {
+      "file": "objects/hair-short-sweep.png",
+      "source": "assets/sprites/autosprite/hairstyles-front-r1/short-sweep/item.png",
+      "sha256": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+      "role": "Approved isolated hairstyle"
+    },
+    {
+      "file": "original-prompts/hair-short-sweep.txt",
+      "source": "assets/sprites/autosprite/hairstyles-front-r1/short-sweep/prompt.txt",
+      "sha256": "1654b332305cd443425fc676408741d3dc689fb54daeb0dc97518b63df0b18a6",
+      "role": "Exact provider prompt"
+    },
+    {
+      "file": "objects/gloves-prototype.png",
+      "source": "assets/sprites/autosprite/boxer-basic-equipment-proof-r1/gloves-layer.png",
+      "sha256": "283395ada984808002347a5a63bb9fafaa300930c0046b6d572360b9b476d742",
+      "role": "Older isolated glove prototype; not fitted to the current eight bases"
+    },
+    {
+      "file": "original-prompts/gloves-prototype.txt",
+      "source": "assets/sprites/autosprite/boxer-basic-equipment-proof-r1/gloves-layer-prompt.txt",
+      "sha256": "59122ba4ee8d0fe48eb3686bc698c650c55103b877e7ddde60dc87b4894a6cbe",
+      "role": "Historical reference-edit prompt; superseded production workflow"
+    },
+    {
+      "file": "bodies/female-slim.png",
+      "source": "assets/sprites/autosprite/body-bases-hairfree-r1/female-slim/body.png",
+      "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+      "role": "Approved fixed 1024x1024 wearer reference, with minimal baked underwear"
+    },
+    {
+      "file": "bodies/female-medium.png",
+      "source": "assets/sprites/autosprite/body-bases-hairfree-r1/female-medium/body.png",
+      "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+      "role": "Approved fixed 1024x1024 wearer reference, with minimal baked underwear"
+    },
+    {
+      "file": "bodies/female-overweight.png",
+      "source": "assets/sprites/autosprite/body-bases-hairfree-r1/female-overweight/body.png",
+      "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+      "role": "Approved fixed 1024x1024 wearer reference, with minimal baked underwear"
+    },
+    {
+      "file": "bodies/female-muscular.png",
+      "source": "assets/sprites/autosprite/body-bases-hairfree-r1/female-muscular/body.png",
+      "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+      "role": "Approved fixed 1024x1024 wearer reference, with minimal baked underwear"
+    },
+    {
+      "file": "bodies/male-slim.png",
+      "source": "assets/sprites/autosprite/body-bases-hairfree-r1/male-slim/body.png",
+      "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+      "role": "Approved fixed 1024x1024 wearer reference, with minimal baked underwear"
+    },
+    {
+      "file": "bodies/male-medium.png",
+      "source": "assets/sprites/autosprite/body-bases-hairfree-r1/male-medium/body.png",
+      "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+      "role": "Approved fixed 1024x1024 wearer reference, with minimal baked underwear"
+    },
+    {
+      "file": "bodies/male-overweight.png",
+      "source": "assets/sprites/autosprite/body-bases-hairfree-r1/male-overweight/body.png",
+      "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+      "role": "Approved fixed 1024x1024 wearer reference, with minimal baked underwear"
+    },
+    {
+      "file": "bodies/male-muscular.png",
+      "source": "assets/sprites/autosprite/body-bases-hairfree-r1/male-muscular/body.png",
+      "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+      "role": "Approved fixed 1024x1024 wearer reference, with minimal baked underwear"
+    }
+  ],
+  "gloves": "objects/gloves-prototype.png",
+  "commonPrompt": "Use the attached images by role: (A) base-kit-concept.png = outfit identity, palette and illustration style only; (B) current isolated item, when provided = construction reference, with known defects to fix; (C) the named body PNG = exact wearer, pose, proportions and placement. Do not copy the old concept character anatomy or its baked clothes. Do not imitate a known defect just because it appears in reference B.\n\nCreate ONLY the requested clothing/accessory artwork as a static front-view game sprite. The wearer image is a fit guide, not part of the output. Preserve its camera, body scale, pose and coordinates. Use one approved master item design across the body fits. Crisp manhwa linework, restrained cel shading and the Base kit palette. No new character, body parts, skin, face, baked outfit, text, logo, hanger, mannequin, animation, glow or fantasy armor.\n\nPreferred output: transparent RGBA PNG, 1024 x 1024, on the SAME canvas as the supplied wearer. Keep the item in its wearing position, leaving everything else transparent. No tight crop, recentering, zoom, body stretching or contact shadow on the background. If the UI cannot keep a transparent background, export its best lossless source and use background removal before fitting. A prompt does not guarantee registration: check the overlay at native size before calling it finished.\n",
+  "knownLimitations": [
+    "Headband and boots have no isolated current-design sprite. Backpack has an inset concept, but no wearable rear/strap exports.",
+    "The historical glove pair is not fitted to the current bodies.",
+    "The current runtime renderer has only torso, legs and single-layer hair; other slots and rear/front hair/backpack parts need code integration."
+  ]
+}

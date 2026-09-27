@@ -1,0 +1,359 @@
+{
+  "version": 3,
+  "purpose": "one image per asset visual reference",
+  "autoSpriteCalls": 0,
+  "runtimeChanges": 0,
+  "fitVerified": false,
+  "entries": [
+    {
+      "id": "top__male-slim",
+      "kind": "top",
+      "gender": "male",
+      "build": "slim",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the TOP LEFT garment labeled MALE \u00b7 SLIM. Output ONLY that one combined tee-and-vest torso garment.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-male-belly-r2.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-7319b4d2-e73b-427a-b026-1ad40f3caa0c.png",
+      "file": "images/top__male-slim.png",
+      "sha256": "55043b18885e1b9387869e4c17d83e06e132e78136a35c0c8ecd5d8bb28814ee",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "top__male-medium",
+      "kind": "top",
+      "gender": "male",
+      "build": "medium",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the TOP RIGHT garment labeled MALE \u00b7 MEDIUM. Output ONLY that one combined tee-and-vest torso garment.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-male-belly-r2.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-2e5a0a2b-df92-4553-b936-c38f134253ff.png",
+      "file": "images/top__male-medium.png",
+      "sha256": "7c523e84eae556bd36a63de305d9ab7a9328d07b585854036c47fb276551dfea",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "top__male-overweight",
+      "kind": "top",
+      "gender": "male",
+      "build": "overweight",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the BOTTOM LEFT garment labeled MALE \u00b7 OVERWEIGHT. Output ONLY that one combined tee-and-vest torso garment.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. The broad rounded full belly and bowed open vest edges are essential; preserve them exactly.\nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-male-belly-r2.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-b3f08a3b-64eb-47f2-9791-1751e18d84f5.png",
+      "file": "images/top__male-overweight.png",
+      "sha256": "0819ec579be002c76662ef8fdd26a3d5d9336d717dea3f283c0ab5444fec60b2",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "top__male-muscular",
+      "kind": "top",
+      "gender": "male",
+      "build": "muscular",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the BOTTOM RIGHT garment labeled MALE \u00b7 MUSCULAR. Output ONLY that one combined tee-and-vest torso garment.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-male-belly-r2.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-c15284e0-73de-4782-9d7b-79a64f64ab6d.png",
+      "file": "images/top__male-muscular.png",
+      "sha256": "a640481ce070bd1eeb5f24a9385fc6e7d14f794e397eeebd0867b5baa1a864d9",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "top__female-slim",
+      "kind": "top",
+      "gender": "female",
+      "build": "slim",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the TOP LEFT garment labeled FEMALE \u00b7 SLIM. Output ONLY that one combined tee-and-vest torso garment.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-female-belly-r2.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-408ad7c5-d6cf-4cb4-b901-6844fdaeb625.png",
+      "file": "images/top__female-slim.png",
+      "sha256": "15d8e8405ab6275e949546b0acda5539320936b4a0e8503249734a8c7f6239df",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "top__female-medium",
+      "kind": "top",
+      "gender": "female",
+      "build": "medium",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the TOP RIGHT garment labeled FEMALE \u00b7 MEDIUM. Output ONLY that one combined tee-and-vest torso garment.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-female-belly-r2.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-36026931-bf3b-43ef-9abc-77ab02f0fc5b.png",
+      "file": "images/top__female-medium.png",
+      "sha256": "e390df9f3b2d567f54b53b4f146965815ecfb1bbb5c442b69ce086e4a7e88836",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "top__female-overweight",
+      "kind": "top",
+      "gender": "female",
+      "build": "overweight",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the BOTTOM LEFT garment labeled FEMALE \u00b7 OVERWEIGHT. Output ONLY that one combined tee-and-vest torso garment.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. The broad rounded full belly and bowed open vest edges are essential; preserve them exactly.\nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-female-belly-r2.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-06822374-d9c2-4630-a630-30b11d165f45.png",
+      "file": "images/top__female-overweight.png",
+      "sha256": "9466e6ecaf0445677e2107eeb7c6fc3c74a2fbeeadc34dd9907425ea3d19fa65",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "top__female-muscular",
+      "kind": "top",
+      "gender": "female",
+      "build": "muscular",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the BOTTOM RIGHT garment labeled FEMALE \u00b7 MUSCULAR. Output ONLY that one combined tee-and-vest torso garment.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/top-female-belly-r2.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-068ef72a-504e-4b33-8c09-8cfc9b032a8b.png",
+      "file": "images/top__female-muscular.png",
+      "sha256": "d4b54f1f261f6e5de17262dcd1d263fa97480abffeab6d58ef646a9fe2536e9a",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "shorts__male-slim",
+      "kind": "shorts",
+      "gender": "male",
+      "build": "slim",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the TOP LEFT garment labeled MALE \u00b7 SLIM. Output ONLY that one pair of boxing shorts, which is one clothing item.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/shorts-male.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-b55a804d-93f1-4945-a94e-585b869316c6.png",
+      "file": "images/shorts__male-slim.png",
+      "sha256": "c978f9febf535cd4506a52fed7ebab43e196a8b5232717c9cc04399dcf74bac5",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "shorts__male-medium",
+      "kind": "shorts",
+      "gender": "male",
+      "build": "medium",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the TOP RIGHT garment labeled MALE \u00b7 MEDIUM. Output ONLY that one pair of boxing shorts, which is one clothing item.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/shorts-male.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-d1539df0-c4b4-4094-a536-bd209ce95d8d.png",
+      "file": "images/shorts__male-medium.png",
+      "sha256": "9b8fbc4c9b100b9f182c890a271ceb1d89ec063ec1d2a3f82d0b1a891817192c",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "shorts__male-overweight",
+      "kind": "shorts",
+      "gender": "male",
+      "build": "overweight",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the BOTTOM LEFT garment labeled MALE \u00b7 OVERWEIGHT. Output ONLY that one pair of boxing shorts, which is one clothing item.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/shorts-male.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-aa5fa725-969d-46ca-bd05-74bc167170a4.png",
+      "file": "images/shorts__male-overweight.png",
+      "sha256": "c1f19a9852cc9e39682bcaafe8cc8a8ff1b3759080c72829fde4ec4330600063",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "shorts__male-muscular",
+      "kind": "shorts",
+      "gender": "male",
+      "build": "muscular",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the BOTTOM RIGHT garment labeled MALE \u00b7 MUSCULAR. Output ONLY that one pair of boxing shorts, which is one clothing item.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/shorts-male.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-6365d4d3-77a5-49b0-8813-dc7325cc6aeb.png",
+      "file": "images/shorts__male-muscular.png",
+      "sha256": "02088e75370c870bad9f70c6b9ba3152db261928cc9c86fc7421d2b2de5397cd",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "shorts__female-slim",
+      "kind": "shorts",
+      "gender": "female",
+      "build": "slim",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the TOP LEFT garment labeled FEMALE \u00b7 SLIM. Output ONLY that one pair of boxing shorts, which is one clothing item.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/shorts-female.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-67e063fd-6069-4fd2-8a87-975f73736bcc.png",
+      "file": "images/shorts__female-slim.png",
+      "sha256": "964394ec5550e5d34d6d8c80a598a0cb8d5f4d52d5382706f6cea86b9d0135f3",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "shorts__female-medium",
+      "kind": "shorts",
+      "gender": "female",
+      "build": "medium",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the TOP RIGHT garment labeled FEMALE \u00b7 MEDIUM. Output ONLY that one pair of boxing shorts, which is one clothing item.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/shorts-female.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-053da51e-68bc-4180-ac43-71323d9370ee.png",
+      "file": "images/shorts__female-medium.png",
+      "sha256": "02067876856a574a97b12d3a895334ca9385b3ba275d2cff1ace8dca6de7f44f",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "shorts__female-overweight",
+      "kind": "shorts",
+      "gender": "female",
+      "build": "overweight",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the BOTTOM LEFT garment labeled FEMALE \u00b7 OVERWEIGHT. Output ONLY that one pair of boxing shorts, which is one clothing item.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/shorts-female.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-ebf453d0-df07-4af4-98c8-f13ec4a609ab.png",
+      "file": "images/shorts__female-overweight.png",
+      "sha256": "afee0f97674094f90ab838b355069b9efb7ff45aef7005be662b32026f81f732",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "shorts__female-muscular",
+      "kind": "shorts",
+      "gender": "female",
+      "build": "muscular",
+      "prompt": "Use case: precise-object-edit. Extract exactly ONE existing isolated garment from this reference sheet into its OWN IMAGE: the BOTTOM RIGHT garment labeled FEMALE \u00b7 MUSCULAR. Output ONLY that one pair of boxing shorts, which is one clothing item.\nDo not output a contact sheet, grid, multiple garments, alternative sizes, comparison, text, label, border, person, body parts, mannequin, accessories or shadows.\nFaithfully retain the selected garment's exact silhouette, proportions, colors, folds, panels, trim, collar/waistband and seams from the source. No redesign, no new features, no narrowing the selected overweight belly, no muscularizing another fit. \nPlace the ONE garment centered with a clean 8% empty margin around its complete silhouette on a square canvas. Preserve aspect ratio. Clean white background suitable for use as an image reference. No transparency checkerboard, no cast shadow, no body, no hanger, no labels. High-quality manhwa illustration matching the supplied artwork. The result is a standalone visual reference for the same item and fit, not a new design or a registered body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/shorts-female.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-b2b86576-63c2-49f8-9662-303d8f333466.png",
+      "file": "images/shorts__female-muscular.png",
+      "sha256": "a044e3cf0c6becc5fde85d2a1913f7ae5d3aac24622afd58bdd30d0c69f4d2fb",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "backpack",
+      "kind": "backpack",
+      "prompt": "Use case: precise-object-edit. Extract only the LEFT backpack, showing its outer/front product face, from the supplied two-view reference. Output ONE backpack in ONE square image, centered with an 8% margin. Remove the right-hand view completely and all labels. Preserve the same compact navy bag, cream zipper piping, one muted-petrol zipped pocket, navy top carry loop and practical shoulder straps peeking behind the top and sides. Match its exact construction, proportions, cel-shaded manhwa style, seams and details without redesign. No extra view, comparison, grid, text, label, person, mannequin or other item. White background, no cast shadow. A standalone image reference of this same backpack, not an on-body overlay.",
+      "refs": [
+        "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/backpack.png"
+      ],
+      "source": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-9503eb66-3150-42df-9e4a-dd3722607082.png",
+      "file": "images/backpack.png",
+      "sha256": "f79fc8d3b975ba89e30b1623cb4616677730d535b7ff33fe03ae759f7c8803a1",
+      "method": "built-in imagegen isolation edit",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "gloves",
+      "kind": "gloves",
+      "file": "images/gloves.png",
+      "source": "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/gloves.png",
+      "method": "unchanged copy of existing standalone render",
+      "sha256": "f4ef2e17a309817ea9bc9d35e3f3ac62c05bcd75671ac6f279d2c6d11ec8d7b3"
+    },
+    {
+      "id": "boots",
+      "kind": "boots",
+      "file": "images/boots.png",
+      "source": "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/boots.png",
+      "method": "unchanged copy of existing standalone render",
+      "sha256": "6ba1d8f7fb48072d02377234013d21d87a1d6f62056e0189adf0ee03379152a1"
+    },
+    {
+      "id": "headband",
+      "kind": "headband",
+      "file": "images/headband.png",
+      "source": "/home/josue/Documents/ChatGPT/leveling fitness app 2/design/character-handoff/visual-design-r2/renders/headband.png",
+      "method": "unchanged copy of existing standalone render",
+      "sha256": "22a7239654053afb44f631957b86a6d4dad677ed0dce7002988b5ef01492fd8d"
+    }
+  ],
+  "imageCount": 20,
+  "builtInImagegenCalls": 17,
+  "existingStandaloneCopies": 3,
+  "comparisonSheetsIncluded": false,
+  "bodyCopies": 8
+}

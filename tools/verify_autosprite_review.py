@@ -33,7 +33,7 @@ def run(name, args, interactive=False):
                 smoke = json.loads(capture.with_suffix(".smoke.json").read_text())
                 assert smoke["passed"], f"{name}: smoke failed"
             text = log.read_text()
-            for error in ("NullReferenceException", "ArgumentException", "InvalidOperationException", "SOLOGYM_AUTOSPRITE_LOAD", "Shader error"):
+            for error in ("NullReferenceException", "ArgumentException", "InvalidOperationException", "SOLOGYM_AUTOSPRITE_LOAD", "SOLOGYM_MODULAR_LOAD", "Shader error"):
                 assert error not in text, f"{name}: {error}, see {log}"
             return dict(passed=True, capture=str(capture.relative_to(ROOT)), staysOpen=interactive)
         finally:
@@ -51,8 +51,8 @@ def main():
     cases = [
         ("studio-en-interactive", ["-sologym-window", "character", "-sologym-locale", "en", "-sologym-avatar-renderer", "autosprite"], True),
         ("home-en-interactive", ["-sologym-window", "home", "-sologym-locale", "en", "-sologym-avatar-renderer", "autosprite"], True),
-        ("legacy-studio", ["-sologym-window", "character", "-sologym-locale", "es", "-sologym-smoke"], False),
-        ("legacy-home", ["-sologym-window", "home", "-sologym-locale", "es", "-sologym-smoke"], False),
+        ("legacy-studio", ["-sologym-avatar-renderer", "legacy", "-sologym-window", "character", "-sologym-locale", "es", "-sologym-smoke"], False),
+        ("legacy-home", ["-sologym-avatar-renderer", "legacy", "-sologym-window", "home", "-sologym-locale", "es", "-sologym-smoke"], False),
     ]
     results = {}
     for name, args, interactive in cases:

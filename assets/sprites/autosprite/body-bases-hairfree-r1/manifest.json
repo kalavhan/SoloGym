@@ -1,0 +1,559 @@
+{
+  "schema": "sologym.hairfree-base-revision.v1",
+  "status": "approved_frozen_static_bases",
+  "approval": "approved",
+  "authorization": "Explicit user choice: Hair-free bases and separate hairstyles, 2026-09-27",
+  "sourceBatch": "assets/sprites/autosprite/body-bases-front-r1/manifest.json",
+  "originalApprovedFilesChanged": false,
+  "newClothingBakedIn": false,
+  "creditsUsed": 40,
+  "variants": [
+    {
+      "id": "male-slim",
+      "gender": "male",
+      "bodyType": "slim",
+      "sourceImage": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/male-slim/source.png",
+        "sha256": "499c5e0e2ac4a7486a114c79d2f8c840b402f211352fed46fb6922471dcc566e"
+      },
+      "referenceCharacterId": "cmujscfx50001cbsiqa1xlsj5",
+      "poseName": "Hairfree Male Slim R1",
+      "approval": "approved",
+      "status": "approved_frozen",
+      "estimatedCredits": 3,
+      "image": {
+        "path": "male-slim/source.png",
+        "sha256": "df9f773a1a45f8c82b7413111b3865fe6dd80d3bd94eca2e44033fc1522087fd",
+        "width": 1024,
+        "height": 1024
+      },
+      "poseId": "cmujsfncx000eiod91lv1fxjl",
+      "jobId": "cf_828d1b41-4be1-4d76-ad02-c61905292765",
+      "creditsUsed": 3,
+      "exportAssetId": "cmujskh8t0001iyj6hybk2m53",
+      "transparentExport": {
+        "path": "male-slim/body.png",
+        "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          342,
+          37,
+          682,
+          1002
+        ]
+      },
+      "backgroundRemovalCredits": 1,
+      "userReview": {
+        "id": "male-slim",
+        "decision": "changes_requested",
+        "notes": "the hair looks too big, as if it was a helmet",
+        "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c"
+      },
+      "reviewConcern": "Body approved in revision 2; previous hair-fit complaint resolved by separate explicit hair approval.",
+      "canonicalBaseFrozen": true,
+      "latestUserReview": {
+        "id": "male-slim",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c"
+      }
+    },
+    {
+      "id": "male-medium",
+      "gender": "male",
+      "bodyType": "medium",
+      "sourceImage": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/male-medium/source.png",
+        "sha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2"
+      },
+      "referenceCharacterId": "cmujfdjq7002qbashm8hmvz7s",
+      "poseName": "Hairfree Male Medium R1",
+      "approval": "approved",
+      "status": "approved_frozen",
+      "estimatedCredits": 3,
+      "image": {
+        "path": "male-medium/source.png",
+        "sha256": "7b33c9b94b8f38fb9f2be6ddd8f8dd92e02ef8e32b8a7d79d80ac43a15d941a4",
+        "width": 1024,
+        "height": 1024
+      },
+      "poseId": "cmujsfi6s000aiod90c2yd5yj",
+      "jobId": "cf_0edd7c59-7984-4ff3-a103-efd8e8c03461",
+      "creditsUsed": 3,
+      "exportAssetId": "cmujski690003iyj6musppavs",
+      "transparentExport": {
+        "path": "male-medium/body.png",
+        "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          338,
+          44,
+          687,
+          999
+        ]
+      },
+      "backgroundRemovalCredits": 1,
+      "userReview": {
+        "id": "male-medium",
+        "decision": "changes_requested",
+        "notes": "same issue with the hair, looks like a helmet",
+        "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994"
+      },
+      "reviewConcern": "Body approved in revision 2; previous hair-fit complaint resolved by separate explicit hair approval.",
+      "canonicalBaseFrozen": true,
+      "latestUserReview": {
+        "id": "male-medium",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994"
+      }
+    },
+    {
+      "id": "male-overweight",
+      "gender": "male",
+      "bodyType": "overweight",
+      "sourceImage": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/male-overweight/source.png",
+        "sha256": "be2213797ef18102dc81f468635064368b0491c4b1b9862ff8a18b4fd1ac00b8"
+      },
+      "referenceCharacterId": "cmujscgxp00019nq09nid1cev",
+      "poseName": "Hairfree Male Overweight R1",
+      "approval": "approved",
+      "status": "approved_frozen",
+      "estimatedCredits": 3,
+      "image": {
+        "path": "male-overweight/source.png",
+        "sha256": "329935c37c37f68346e11ac1f14457c5d8235ff370433936d72011f62947e7c8",
+        "width": 1024,
+        "height": 1024
+      },
+      "poseId": "cmujsfmvf0004n2jj8uxdla2p",
+      "jobId": "cf_5297b853-2e06-4aad-8d02-79008df23124",
+      "creditsUsed": 3,
+      "exportAssetId": "cmujskj2j0005iyj6rttb3edd",
+      "transparentExport": {
+        "path": "male-overweight/body.png",
+        "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          300,
+          47,
+          721,
+          1024
+        ]
+      },
+      "backgroundRemovalCredits": 1,
+      "userReview": {
+        "id": "male-overweight",
+        "decision": "changes_requested",
+        "notes": "same issue with the hair looking like a helmet",
+        "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673"
+      },
+      "reviewConcern": "Body approved in revision 2; previous hair-fit complaint resolved by separate explicit hair approval.",
+      "canonicalBaseFrozen": true,
+      "latestUserReview": {
+        "id": "male-overweight",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673"
+      }
+    },
+    {
+      "id": "male-obese",
+      "gender": "male",
+      "bodyType": "obese",
+      "sourceImage": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/male-obese/source.png",
+        "sha256": "05dc101f4c026a5999436cea2abb01e580a6752e33ac7c223266ce83a54a6504"
+      },
+      "referenceCharacterId": "cmujsci0b0004v65zi9vim728",
+      "poseName": "Hairfree Male Obese R1",
+      "approval": "approved",
+      "status": "approved_frozen",
+      "estimatedCredits": 3,
+      "image": {
+        "path": "male-obese/source.png",
+        "sha256": "e6901da45179cbf8cc2dbe1dd4a5e1a1159219791c5f686cfab1a7c866f67deb",
+        "width": 1024,
+        "height": 1024
+      },
+      "poseId": "cmujsfmra0012j7aahbsybcpk",
+      "jobId": "cf_0e4e5fb6-5a84-4b73-b93d-91a041f7c065",
+      "creditsUsed": 3,
+      "exportAssetId": "cmujskk9d00018xhhk1ooa933",
+      "transparentExport": {
+        "path": "male-obese/body.png",
+        "sha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          276,
+          29,
+          746,
+          1005
+        ]
+      },
+      "backgroundRemovalCredits": 1,
+      "userReview": {
+        "id": "male-obese",
+        "decision": "changes_requested",
+        "notes": "same helmet issue with the hair",
+        "sha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326"
+      },
+      "reviewConcern": "Body approved in revision 2; previous hair-fit complaint resolved by separate explicit hair approval.",
+      "canonicalBaseFrozen": true,
+      "latestUserReview": {
+        "id": "male-obese",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326"
+      }
+    },
+    {
+      "id": "male-muscular",
+      "gender": "male",
+      "bodyType": "muscular",
+      "sourceImage": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/male-muscular/source.png",
+        "sha256": "180691daddf8d9f9fd8fa2b4abdea4c7b733458fb2724be1b3a2f7da6c5ac60e"
+      },
+      "referenceCharacterId": "cmujscite0009cbsibs2u09h4",
+      "poseName": "Hairfree Male Muscular R1",
+      "approval": "approved",
+      "status": "approved_frozen",
+      "estimatedCredits": 3,
+      "image": {
+        "path": "male-muscular/source.png",
+        "sha256": "13dad6a6e639c55a99e6280392240ff9bdda4bc8800f998f72413d59de079c48",
+        "width": 1024,
+        "height": 1024
+      },
+      "poseId": "cmujsfpu200034vhpavqq0ptp",
+      "jobId": "cf_3bbe0ec7-c2db-4534-9f60-88562d1d6ead",
+      "creditsUsed": 3,
+      "exportAssetId": "cmujskl80000eam1jximalxix",
+      "transparentExport": {
+        "path": "male-muscular/body.png",
+        "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          319,
+          41,
+          705,
+          1000
+        ]
+      },
+      "backgroundRemovalCredits": 1,
+      "userReview": {
+        "id": "male-muscular",
+        "decision": "changes_requested",
+        "notes": "same hair like helmet issue",
+        "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632"
+      },
+      "reviewConcern": "Body approved in revision 2; previous hair-fit complaint resolved by separate explicit hair approval.",
+      "canonicalBaseFrozen": true,
+      "latestUserReview": {
+        "id": "male-muscular",
+        "decision": "approved",
+        "notes": "same hair like helmet issue",
+        "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632"
+      }
+    },
+    {
+      "id": "female-slim",
+      "gender": "female",
+      "bodyType": "slim",
+      "sourceImage": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/female-slim/source.png",
+        "sha256": "d17581c1d3f05b1e5948e01f8f1afa52ec5611de292d5dd4a3cb830afa976513"
+      },
+      "referenceCharacterId": "cmujscjkd0008v65zv1k3wyfv",
+      "poseName": "Hairfree Female Slim R1",
+      "approval": "approved",
+      "status": "approved_frozen",
+      "estimatedCredits": 3,
+      "image": {
+        "path": "female-slim/source.png",
+        "sha256": "e6495652a8d6a54f4341193348f8881affedb085d3c0ac2e5c9b7395c66b466a",
+        "width": 1024,
+        "height": 1024
+      },
+      "poseId": "cmujsfofz000432h3go5js1ob",
+      "jobId": "cf_ffcd2dd5-6a3b-489d-b225-b5e84675afaa",
+      "creditsUsed": 3,
+      "exportAssetId": "cmujskm36000gam1j9zr1jwvq",
+      "transparentExport": {
+        "path": "female-slim/body.png",
+        "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          351,
+          58,
+          663,
+          999
+        ]
+      },
+      "backgroundRemovalCredits": 1,
+      "userReview": {
+        "id": "female-slim",
+        "decision": "changes_requested",
+        "notes": "hair looks weird, is not aligned correctly, i can see the head side very much to the top, this should be aligned a little bit more to the right and/or reduced a little bit",
+        "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6"
+      },
+      "reviewConcern": "Body approved in revision 2; previous hair-fit complaint resolved by separate explicit hair approval.",
+      "canonicalBaseFrozen": true,
+      "latestUserReview": {
+        "id": "female-slim",
+        "decision": "approved",
+        "notes": "nice",
+        "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6"
+      }
+    },
+    {
+      "id": "female-medium",
+      "gender": "female",
+      "bodyType": "medium",
+      "sourceImage": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/female-medium/source.png",
+        "sha256": "6816c2b78964e896f6215311e7860a36eef4e84557d236121b275f9534d479fc"
+      },
+      "referenceCharacterId": "cmujfdkj1002ubashaviaaf7w",
+      "poseName": "Hairfree Female Medium R1",
+      "approval": "approved",
+      "status": "approved_frozen",
+      "estimatedCredits": 3,
+      "image": {
+        "path": "female-medium/source.png",
+        "sha256": "5001e85a28501a00c87724ce12bc0b016b20a6ef3ce8c450bd43b7b4bf4ac137",
+        "width": 1024,
+        "height": 1024
+      },
+      "poseId": "cmujs9f6z000l10cud4l8ui2k",
+      "jobId": "cf_a19d4c66-0353-4505-88cd-61b805d47092",
+      "creditsUsed": 3,
+      "exportAssetId": "cmujskn1w00038xhh94yxmrf2",
+      "transparentExport": {
+        "path": "female-medium/body.png",
+        "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          344,
+          34,
+          668,
+          993
+        ]
+      },
+      "backgroundRemovalCredits": 1,
+      "userReview": {
+        "id": "female-medium",
+        "decision": "changes_requested",
+        "notes": "hair is not fiting correctly, it looks like it has a lot of forehead, not sure if the bald designs were made with sprite tool",
+        "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15"
+      },
+      "reviewConcern": "Body approved in revision 2; previous hair-fit complaint resolved by separate explicit hair approval.",
+      "canonicalBaseFrozen": true,
+      "latestUserReview": {
+        "id": "female-medium",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15"
+      }
+    },
+    {
+      "id": "female-overweight",
+      "gender": "female",
+      "bodyType": "overweight",
+      "sourceImage": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/female-overweight/source.png",
+        "sha256": "58c8a5e551405b94fb5653d503e606222de43fa636f091912e26fc944f9e997b"
+      },
+      "referenceCharacterId": "cmujscke6000dcbsiw7lbay5a",
+      "poseName": "Hairfree Female Overweight R1",
+      "approval": "approved",
+      "status": "approved_frozen",
+      "estimatedCredits": 3,
+      "image": {
+        "path": "female-overweight/source.png",
+        "sha256": "b19ce20e3065a1cfa2c8cb8ebca7a278fc5f92c79d9d31d83b682edb6d4b3073",
+        "width": 1024,
+        "height": 1024
+      },
+      "poseId": "cmujsfsq70003v8iy0uy1hsca",
+      "jobId": "cf_54ebe3ae-fb5c-4a06-badd-0b6fee078355",
+      "creditsUsed": 3,
+      "exportAssetId": "cmujsknww00058xhhwv2jeqvp",
+      "transparentExport": {
+        "path": "female-overweight/body.png",
+        "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          314,
+          50,
+          701,
+          988
+        ]
+      },
+      "backgroundRemovalCredits": 1,
+      "userReview": {
+        "id": "female-overweight",
+        "decision": "changes_requested",
+        "notes": "again with the hair looks weird, as it the character bald was not made with the sprite tool and now we are fitting incompatible things",
+        "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf"
+      },
+      "reviewConcern": "Body approved in revision 2; previous hair-fit complaint resolved by separate explicit hair approval.",
+      "canonicalBaseFrozen": true,
+      "latestUserReview": {
+        "id": "female-overweight",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf"
+      }
+    },
+    {
+      "id": "female-obese",
+      "gender": "female",
+      "bodyType": "obese",
+      "sourceImage": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/female-obese/source.png",
+        "sha256": "45ec1fa669f56cde07154a9a54d23ec3686109f9673df3a7f975fa057b3f0c70"
+      },
+      "referenceCharacterId": "cmujscl8b000ov65z5gv4fmiv",
+      "poseName": "Hairfree Female Obese R1",
+      "approval": "approved",
+      "status": "approved_frozen",
+      "estimatedCredits": 3,
+      "image": {
+        "path": "female-obese/source.png",
+        "sha256": "d3bf5fe7206cd46f433087c480ea72d61e0df7971a261751867735674771e257",
+        "width": 1024,
+        "height": 1024
+      },
+      "poseId": "cmujsfnqu0018j7aaw2hybmtt",
+      "jobId": "cf_5f7ee687-bd42-4d40-af1c-2f49ab411a93",
+      "creditsUsed": 3,
+      "exportAssetId": "cmujskor800078xhhnq6cp7iu",
+      "transparentExport": {
+        "path": "female-obese/body.png",
+        "sha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          308,
+          47,
+          705,
+          997
+        ]
+      },
+      "backgroundRemovalCredits": 1,
+      "userReview": {
+        "id": "female-obese",
+        "decision": "changes_requested",
+        "notes": "same as the overweight",
+        "sha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e"
+      },
+      "reviewConcern": "Body approved in revision 2; previous hair-fit complaint resolved by separate explicit hair approval.",
+      "canonicalBaseFrozen": true,
+      "latestUserReview": {
+        "id": "female-obese",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e"
+      }
+    },
+    {
+      "id": "female-muscular",
+      "gender": "female",
+      "bodyType": "muscular",
+      "sourceImage": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/female-muscular/source.png",
+        "sha256": "532978e2a184731ef830b6df55bf63ccccce81641d7feb0e474552a6b0a68b8e"
+      },
+      "referenceCharacterId": "cmujscmbl0005b5hmdgxndk04",
+      "poseName": "Hairfree Female Muscular R1",
+      "approval": "approved",
+      "status": "approved_frozen",
+      "estimatedCredits": 3,
+      "image": {
+        "path": "female-muscular/source.png",
+        "sha256": "8eac3e54db3d21146569b97a8680cf7fe204cb3c8353aa0a8d15cc25e18e7c7f",
+        "width": 1024,
+        "height": 1024
+      },
+      "poseId": "cmujsfozw0008n2jj84qmvhbk",
+      "jobId": "cf_afcbdef6-b9cc-4ebc-bee5-ec6cb9e01d33",
+      "creditsUsed": 3,
+      "exportAssetId": "cmujskpnl00098xhh89dqmdnw",
+      "transparentExport": {
+        "path": "female-muscular/body.png",
+        "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          328,
+          35,
+          682,
+          996
+        ]
+      },
+      "backgroundRemovalCredits": 1,
+      "userReview": {
+        "id": "female-muscular",
+        "decision": "changes_requested",
+        "notes": "the same thing about the hair",
+        "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc"
+      },
+      "reviewConcern": "Body approved in revision 2; previous hair-fit complaint resolved by separate explicit hair approval.",
+      "canonicalBaseFrozen": true,
+      "latestUserReview": {
+        "id": "female-muscular",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc"
+      }
+    }
+  ],
+  "generationCreditsPlanned": 30,
+  "backgroundRemovalCreditsPlanned": 10,
+  "freeReferenceUploads": 8,
+  "sourceBodiesWillNotBePixelIdentical": true,
+  "generatedCount": 10,
+  "generationCreditsUsed": 30,
+  "backgroundRemovalCreditsUsed": 10,
+  "transparentExportCount": 10,
+  "canonicalBaseFrozen": true,
+  "reviewPage": "tools/review/modular-character-front-r2.html",
+  "runtimeIntegrated": false,
+  "reviewRecord": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-2026-09-27T130559Z.json",
+    "sha256": "1ed3edf0f4eb74992c477ebae0a6aa66ea60a39e5533638eed8ea3a46d730daf",
+    "reviewedAt": "2026-09-27T13:05:59.086Z"
+  },
+  "reviewStatusPath": "assets/sprites/autosprite/basic-clothing-front-r1/review-status.json",
+  "latestFitRevision": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/fitting-r2.json",
+    "status": "bodies_and_hair_approved_clothing_changes_required",
+    "additionalCreditsUsed": 0
+  },
+  "latestReviewRecord": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-r2-2026-09-27T170140Z.json",
+    "sha256": "29f3cae851cb048081225def792244964b470da2a1cf5dbb4141358bde0867b1",
+    "reviewedAt": "2026-09-27T17:01:40.374Z"
+  },
+  "latestReviewStatusPath": "assets/sprites/autosprite/basic-clothing-front-r1/review-status-r2.json",
+  "approvalRecord": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-r2-2026-09-27T170140Z.json",
+    "sha256": "29f3cae851cb048081225def792244964b470da2a1cf5dbb4141358bde0867b1",
+    "reviewedAt": "2026-09-27T17:01:40.374Z"
+  },
+  "approvedBaseHairLock": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/approved-base-hair-lock.json",
+    "sha256": "6130db512520de166c90596d8a0ff102f49baf0fa22b8f5cec4d609875ee1182"
+  }
+}
