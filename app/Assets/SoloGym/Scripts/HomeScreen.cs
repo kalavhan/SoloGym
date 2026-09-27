@@ -321,6 +321,18 @@ namespace SoloGym
 
         void Navigate(HomeNavigation destination)
         {
+            if (reviewMode && (destination.WindowId == "WIN-015" || destination.WindowId == "WIN-016") &&
+                string.IsNullOrEmpty(destination.SessionId))
+            {
+                CloseModal(); root.gameObject.SetActive(false);
+                var training = new GameObject("Training flow").AddComponent<TrainingScreen>();
+                training.Initialize(controller.Model.Language, () =>
+                {
+                    controller.SetLanguage(training.Language);
+                    Destroy(training.gameObject); root.gameObject.SetActive(true); FitSafeArea();
+                }, destination.WindowId == "WIN-016" ? "readiness" : "training");
+                return;
+            }
             if ((destination.WindowId == "WIN-014" || destination.WindowId == "WIN-032") && AutoSpriteSession.Requested)
             {
                 OpenAutoSpriteStudio();

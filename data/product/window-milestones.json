@@ -777,8 +777,10 @@
         "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "not_started",
-      "scope": "v1"
+      "stage": "local_review_implemented",
+      "scope": "v1",
+      "implementation_report": "docs/windows/WIN-015-017-implementation.md",
+      "implementation_scope": "Native EN/ES review flow using existing UI art and deterministic fictional training fixtures. User visual approval and production content/account integration remain pending."
     },
     {
       "id": "WIN-016",
@@ -813,8 +815,10 @@
         "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "not_started",
-      "scope": "v1"
+      "stage": "local_review_implemented",
+      "scope": "v1",
+      "implementation_report": "docs/windows/WIN-015-017-implementation.md",
+      "implementation_scope": "Native EN/ES review flow using existing UI art and deterministic fictional training fixtures. User visual approval and production content/account integration remain pending."
     },
     {
       "id": "WIN-017",
@@ -851,8 +855,10 @@
         "Complete G0 → G1 → G2 → G3 → G4 → G5 → G6 in order, with recorded user approval at every asset gate; record reuse approval or N/A explicitly.",
         "Verify English and Spanish copy, small mobile screens, readable text, touch controls, and the relevant teen/adult state."
       ],
-      "stage": "not_started",
-      "scope": "v1"
+      "stage": "local_review_implemented",
+      "scope": "v1",
+      "implementation_report": "docs/windows/WIN-015-017-implementation.md",
+      "implementation_scope": "Native EN/ES review flow using existing UI art and deterministic fictional training fixtures. User visual approval and production content/account integration remain pending."
     },
     {
       "id": "WIN-018",
