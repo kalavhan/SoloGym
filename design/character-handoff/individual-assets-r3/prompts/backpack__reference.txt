@@ -1,0 +1,9 @@
+SOLOGYM / BASE / Backpack · Shared design
+
+Use backpack.png as the sole item-design reference. Reproduce the pictured item, preserving its silhouette, colors, seams, panels and trim. Do not invent another design.
+
+One compact navy gym backpack with petrol front pocket, cream zipper trim, carrying loop and padded shoulder straps. Preserve this single product design. Wearable rear bag and front strap layers are a later fitting step.
+
+Render only this equipment item. Clean frontal game illustration with crisp outlines and restrained cel shading. No character, mannequin, skin, text, labels, grid, extra items, glow or animation. Export an isolated PNG with a clean transparent background.
+
+For the front-facing game character, the bag sits behind the body and shoulder straps in front. Do not place the full product-front illustration on the chest.

@@ -1,0 +1,31 @@
+{
+  "status": "technical_checks_passed_visual_candidates_pending_user_review",
+  "reviewPage": "tools/review/garment-fit-r3.html",
+  "fittingSha256": "c040437450183a86a98479dc5e73a3d26db6af657d63765c6feb7d0c1585572b",
+  "checks": [
+    "verify_static_body_bases.py: PASS",
+    "verify_modular_character_assets.py: PASS",
+    "verify_fitted_clothing_r3.py: PASS",
+    "Review JavaScript node --check: PASS",
+    "git diff --check: PASS"
+  ],
+  "visualInspection": {
+    "allEightRevisedFits": "Inspected at full-body scale in the local browser.",
+    "closeUps": [
+      "female-medium neckline and waist",
+      "female-muscular neckline and waist",
+      "female-obese neckline and waist",
+      "male-muscular neckline, shoulders and waist",
+      "male-overweight and male-obese shorts, with top hidden for coverage"
+    ],
+    "beforeView": "Verified exact r2 female-medium comparison and disabled review controls while before is shown.",
+    "retainedApproval": "Male-medium decision and original note stay approved/read-only. Source verifier confirms both accepted male fits unchanged.",
+    "userDecisionsModified": false
+  },
+  "confirmedCreditsUsed": 12,
+  "possibleAdditionalTimeoutCharge": 1,
+  "bodyAndHairChanges": 0,
+  "newGarmentExports": 5,
+  "runtimeIntegrated": false,
+  "remaining": "User review of eight garment fits and five new asset designs. Text-only generation produced some fold/trim differences; design consistency is part of review."
+}

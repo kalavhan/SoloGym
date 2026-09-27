@@ -1,0 +1,12 @@
+SOLOGYM / BASE / Cloth headband / wearer: Male · Medium
+
+Use the attached images by role: (A) base-kit-concept.png = outfit identity, palette and illustration style only; (B) current isolated item, when provided = construction reference, with known defects to fix; (C) the named body PNG = exact wearer, pose, proportions and placement. Do not copy the old concept character anatomy or its baked clothes. Do not imitate a known defect just because it appears in reference B.
+
+Create ONLY the requested clothing/accessory artwork as a static front-view game sprite. The wearer image is a fit guide, not part of the output. Preserve its camera, body scale, pose and coordinates. Use one approved master item design across the body fits. Crisp manhwa linework, restrained cel shading and the Base kit palette. No new character, body parts, skin, face, baked outfit, text, logo, hanger, mannequin, animation, glow or fantasy armor.
+
+Preferred output: transparent RGBA PNG, 1024 x 1024, on the SAME canvas as the supplied wearer. Keep the item in its wearing position, leaving everything else transparent. No tight crop, recentering, zoom, body stretching or contact shadow on the background. If the UI cannot keep a transparent background, export its best lossless source and use background removal before fitting. A prompt does not guarantee registration: check the overlay at native size before calling it finished.
+
+ITEM: A plain dark petrol cloth boxing headband, soft fabric tension, narrow and readable across the forehead. A small knot/tail is optional only if it fits the same neutral frontal design.
+FIT: Fit forehead curvature without changing the face or head. Check it with no hair, short crop and side sweep. Decide whether it passes under the fringe or needs a small front layer.
+DELIVERY: Front band; optional rear knot/tails on a separate layer only when necessary. Hair remains an independent cosmetic.
+OUTPUT NAME: head__male-medium__base__front_v1.png

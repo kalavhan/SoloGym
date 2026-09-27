@@ -1,0 +1,18 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmuk509se00049c66z6h0mycb",
+  "creditsUsed": 1,
+  "export": {
+    "path": "male-muscular-top/item.png",
+    "sha256": "175c3aaa6feb8728806faa310b595730f0a2e46b720ade4fb12317400f66b7f5",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      57,
+      30,
+      961,
+      984
+    ]
+  },
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmuk509se00049c66z6h0mycb/base-nobg"
+}

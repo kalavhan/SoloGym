@@ -1,0 +1,18 @@
+{
+  "provider": "AutoSprite",
+  "tool": "generate_pose",
+  "characterId": "cmujfdkj1002ubashaviaaf7w",
+  "poseId": "cmujff1ow000nhqkz4shn4kmb",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujfdkj1002ubashaviaaf7w/1790489814879_206b2b77-7d93-4c3a-91be-35bbcc4376d0_custom-pose-frame-1790489814879.png",
+  "output": {
+    "path": "female-slim/source.png",
+    "sha256": "d17581c1d3f05b1e5948e01f8f1afa52ec5611de292d5dd4a3cb830afa976513",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      255,
+      255
+    ]
+  }
+}

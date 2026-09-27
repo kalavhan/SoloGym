@@ -1,0 +1,60 @@
+{
+  "schema": "sologym.static-equipment-review.v1",
+  "status": "passed_static_fit",
+  "canvas": {
+    "width": 1024,
+    "height": 1024
+  },
+  "base": {
+    "file": "wrapped-base.png"
+  },
+  "layers": [
+    {
+      "id": "viewer_left_glove",
+      "slot": "hands",
+      "file": "gloves-layer.png",
+      "sourceRect": {
+        "x": 276,
+        "y": 392,
+        "width": 156,
+        "height": 257
+      },
+      "destinationRect": {
+        "x": 308,
+        "y": 429,
+        "width": 91,
+        "height": 149
+      }
+    },
+    {
+      "id": "viewer_right_glove",
+      "slot": "hands",
+      "file": "gloves-layer.png",
+      "sourceRect": {
+        "x": 583,
+        "y": 392,
+        "width": 163,
+        "height": 257
+      },
+      "destinationRect": {
+        "x": 582,
+        "y": 429,
+        "width": 95,
+        "height": 149
+      }
+    }
+  ],
+  "registration": {
+    "origin": "top_left_pixels",
+    "method": "Manual measured source regions and placement, constrained to preserve glove aspect ratio within rounding. No body deformation.",
+    "providerSuppliedAnchors": false,
+    "frameCount": 1
+  },
+  "notes": [
+    "Historical glove-only prototype. Its dressed base is not eligible as the canonical production body.",
+    "Only the gloves are separate here. The corrected workflow authors every clothing/accessory slot as an asset, then composes the outfit locally.",
+    "The existing glove art may be reused after fit checks on the canonical body.",
+    "Static fit evidence only; no animation or game integration."
+  ],
+  "productionEligible": false
+}

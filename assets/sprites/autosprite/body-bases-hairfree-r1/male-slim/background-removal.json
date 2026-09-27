@@ -1,0 +1,19 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmujskh8t0001iyj6hybk2m53",
+  "creditsUsed": 1,
+  "cached": false,
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujskh8t0001iyj6hybk2m53/base-nobg",
+  "export": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/male-slim/body.png",
+    "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      342,
+      37,
+      682,
+      1002
+    ]
+  }
+}

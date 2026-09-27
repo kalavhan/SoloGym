@@ -1,0 +1,43 @@
+{
+  "schema": "sologym.static-equipment-validation.v1",
+  "status": "passed_static_fit",
+  "validatedScope": "Equipping and removing one pair of gloves on one frozen frontal female covered Basic base.",
+  "manualVisualChecks": [
+    {
+      "check": "Coverage correction",
+      "result": "pass",
+      "evidence": "Crew-neck top, sleeves and longer shorts; chest and midriff covered."
+    },
+    {
+      "check": "100 percent wrist fit",
+      "result": "pass",
+      "evidence": "Both cuffs meet forearms; gloves cover wrapped fists with no fingers or stray body fragments visible."
+    },
+    {
+      "check": "Equip/remove toggle",
+      "result": "pass",
+      "evidence": "Browser toggle shows separate gloves or wrapped hands; body, outfit and pose remain fixed."
+    },
+    {
+      "check": "Alpha on dark and light backgrounds",
+      "result": "pass",
+      "evidence": "No opaque rectangular backing; glove edges and wrist attachment inspected at 100%."
+    },
+    {
+      "check": "Fit and native-resolution views",
+      "result": "pass",
+      "evidence": "Both controls inspected in the in-app browser."
+    }
+  ],
+  "dataChecks": {
+    "sourceHashes": "pass",
+    "transparentAlpha": "0..255 for both exports",
+    "rectanglesWithinImageAndCanvas": "pass",
+    "aspectRatioPreservedWithinPixelRounding": "pass"
+  },
+  "runtimeIntegrated": false,
+  "animationVerified": false,
+  "allSlotsModular": false,
+  "proofJsonSha256": "4554609b2d340098576c820be5d5abd23c377464426ce90a4ed9a2027900f11f",
+  "productionBaseEligible": false
+}

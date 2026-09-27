@@ -1,0 +1,12 @@
+{
+  "tool": "generate_asset_preview",
+  "quality": "ultra",
+  "creditsUsed": 1,
+  "image": {
+    "path": "male-overweight-top/source.png",
+    "sha256": "e018f1b061c3093255686605c85fdaeec4d2fbf911d0f474e35eeb6c2160ea16",
+    "width": 1024,
+    "height": 1024
+  },
+  "sourceUrl": "https://im.runware.ai/image/os/a07dlim3/ws/4/ii/1825660d-451c-43ca-8c09-841cdd6f2311.png"
+}

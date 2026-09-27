@@ -1,0 +1,12 @@
+{
+  "tool": "generate_asset_preview",
+  "quality": "ultra",
+  "creditsUsed": 1,
+  "image": {
+    "path": "female-medium-top/source.png",
+    "sha256": "ea8f4b5a1e079b2e6fabcfdbaa48398cc5158fdc728f9a2753a79c377f23abf3",
+    "width": 1024,
+    "height": 1024
+  },
+  "sourceUrl": "https://im.runware.ai/image/os/a07dlim3/ws/4/ii/f82a8625-9d1a-4b5d-af09-728d3b114c4f.png"
+}

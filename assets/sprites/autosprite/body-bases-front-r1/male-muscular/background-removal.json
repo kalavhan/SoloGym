@@ -1,0 +1,52 @@
+{
+  "assetId": "cmujrp6at0002ajlojznzp39t",
+  "tool": "remove_asset_background",
+  "cached": false,
+  "creditsUsed": 1,
+  "sourceSha256": "180691daddf8d9f9fd8fa2b4abdea4c7b733458fb2724be1b3a2f7da6c5ac60e",
+  "sourceImage": "male-muscular/source.png",
+  "export": {
+    "path": "male-muscular/body.png",
+    "sha256": "122f19e2b127abe4de2ca2e7906c72faadfd2b72ac4403aed98f8c392c5b0d49",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "contentBounds": [
+      319,
+      29,
+      706,
+      1000
+    ],
+    "coordinateOrigin": "top-left",
+    "trimmed": false,
+    "resized": false,
+    "sourceSha256": "180691daddf8d9f9fd8fa2b4abdea4c7b733458fb2724be1b3a2f7da6c5ac60e",
+    "provider": "AutoSprite",
+    "tool": "remove_asset_background",
+    "assetId": "cmujrp6at0002ajlojznzp39t",
+    "creditsUsed": 1,
+    "qa": {
+      "dimensionsUnchanged": true,
+      "sourceChecksumUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "opaquePixelCount": 8929,
+      "opaqueRgbChangedPixelCount": 0,
+      "opaqueRgbMaxChannelDifference": 0,
+      "opaqueRgbMeanChannelDifference": 0.0,
+      "contentBoundsAlpha128": [
+        320,
+        32,
+        704,
+        998
+      ]
+    }
+  },
+  "downloadUrlWithoutQuery": "https://www.autosprite.io/api/files/assets/cmujrp6at0002ajlojznzp39t/base-nobg"
+}

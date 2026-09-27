@@ -2,7 +2,7 @@
 
 Mobile fitness RPG for Android and iOS, ages 15+, in English and Spanish. This repository contains native Unity Welcome, age/region, privacy/consent and Home interfaces, approved manhua System references, research, training data, an offline generation reference and the window milestone plan.
 
-**Current character checkpoint: frontal AutoSprite idle in configuration and Home.** [Review, cleanup and limits](docs/design/character-autosprite-checkpoint.md). The next sprite plan uses five body types per gender while preserving all 14 approved illustrated references. Body variants and separate equipment swaps remain future work.
+**Current character checkpoint: static modular MVP in customization and Home.** [Integration and checks](docs/design/character-modular-mvp.md). Four builds per gender, separate hair and garments, and local appearance saving. Obese is retired from selection; art polish is deferred so work can return to the fitness app.
 
 **WIN-010 Goals / Experience** provides native three-step UI in the Linux review player with focused smoke checks. [Implementation and captures](docs/windows/WIN-010-implementation.md). G0 flow and step-1 targets are approved; production profile save remains unavailable.
 
@@ -21,7 +21,7 @@ The training data shape and milestone plan are accepted for continued design; ex
 | Deliverable | Contents |
 | --- | --- |
 | [Frontal AutoSprite checkpoint](docs/design/character-autosprite-checkpoint.md) | Character/Home idle preview, preserved art, cleanup decisions and verification |
-| [Five body types per gender](docs/design/character-sprite-v1-plan.md) | Future sprite scope and exact mapping to all fourteen preserved appearance references |
+| [Four MVP builds per gender](docs/design/character-sprite-v1-plan.md) | Active sprite scope and preserved appearance references |
 | [Layered UI implementation and avatar proof](docs/engineering/layered-ui-and-avatar-implementation.md) | Migrated windows, interactive previews, captures, verification and remaining art work |
 | [Layered UI and avatar architecture](docs/engineering/layered-ui-and-avatar-architecture.md) | Shared code components, background separation, migration order and interchangeable character parts |
 | [Private profile implementation](docs/windows/WIN-009-implementation.md) | Optional measurements, feet/inches and lb conversion, staged privacy/readiness, native captures and focused checks |
@@ -52,7 +52,7 @@ Work follows the currently approved window or explicitly grouped iteration. Cont
 
 The approved Home target's exact PNGs, prompts, dimensions and hashes are retained in [the reference manifest](design/reference-manifests/WIN-001-system-home-v2.json). The full-screen comparison preserves remaining differences from native fonts, reconstructed glass and the shared artwork across locales. The user has accepted the installed Home's appearance; the source renders and measured differences have not been replaced or relabeled as byte-identical. Approval state is recorded in [the ledger](design/approval-ledger.json).
 
-The Home preview uses Unity 6000.3.24f1. The AutoSprite review flag enables the new frontal idle in configuration and Home; the default historical Home still uses its static portrait. New character sprites and animations use AutoSprite MCP and versioned exports under `assets/sprites/`. Read each JSON atlas before changing playback. The older layered/3D experiments remain for existing route compatibility and historical review, and are not the chosen asset-production pipeline. The [sprite plan](docs/design/character-sprite-v1-plan.md) defines body references and the next equipment-fit test.
+The app uses Unity 6000.3.24f1. Static modular characters are the default in customization and Home. AutoSprite source assets and their checksums are retained under `assets/sprites/`; `tools/sync_modular_avatar.py` verifies the Unity package. Body/hair/clothing stay separate. Previous idle, layered and 3D experiments remain historical references; no character animation is part of the MVP.
 
 ## Inspect the training reference
 

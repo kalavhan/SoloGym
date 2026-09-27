@@ -1,0 +1,52 @@
+{
+  "assetId": "cmujrpagq0001inqkvh6jm22c",
+  "tool": "remove_asset_background",
+  "cached": false,
+  "creditsUsed": 1,
+  "sourceSha256": "58c8a5e551405b94fb5653d503e606222de43fa636f091912e26fc944f9e997b",
+  "sourceImage": "female-overweight/source.png",
+  "export": {
+    "path": "female-overweight/body.png",
+    "sha256": "b9145aaee2589cac8280394a389f33fe7f8d67987e35fed2e57abd95ffc3dbe5",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "contentBounds": [
+      314,
+      15,
+      702,
+      987
+    ],
+    "coordinateOrigin": "top-left",
+    "trimmed": false,
+    "resized": false,
+    "sourceSha256": "58c8a5e551405b94fb5653d503e606222de43fa636f091912e26fc944f9e997b",
+    "provider": "AutoSprite",
+    "tool": "remove_asset_background",
+    "assetId": "cmujrpagq0001inqkvh6jm22c",
+    "creditsUsed": 1,
+    "qa": {
+      "dimensionsUnchanged": true,
+      "sourceChecksumUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "opaquePixelCount": 7919,
+      "opaqueRgbChangedPixelCount": 0,
+      "opaqueRgbMaxChannelDifference": 0,
+      "opaqueRgbMeanChannelDifference": 0.0,
+      "contentBoundsAlpha128": [
+        315,
+        18,
+        700,
+        985
+      ]
+    }
+  },
+  "downloadUrlWithoutQuery": "https://www.autosprite.io/api/files/assets/cmujrpagq0001inqkvh6jm22c/base-nobg"
+}

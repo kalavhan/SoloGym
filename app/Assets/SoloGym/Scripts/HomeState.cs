@@ -146,6 +146,8 @@ namespace SoloGym
             Refresh();
         }
 
+        public void SetFemalePresentation(bool female) { snapshot.FemalePresentation = female; Refresh(); }
+
         public void ToggleLanguage() { SetLanguage(language == "en" ? "es" : "en"); }
 
         public void SetMode(HomeMode mode)

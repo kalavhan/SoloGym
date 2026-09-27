@@ -1,0 +1,8 @@
+{
+  "tool": "generate_pose",
+  "arguments": {
+    "character_id": "cmujscl8b000ov65z5gv4fmiv",
+    "prompt": "Edit only the hair of this exact approved adult female frontal body base. Remove ALL scalp hair: no ponytail, bun, bangs, side locks, stray strands, stubble, shadow or hair texture. Show a naturally shaped completely bald scalp matching her existing face and skin shading. Keep eyebrows and eyelashes intact. Preserve her exact face, eye shape, expression, skin tone, ears, head size and position. Reveal the ears, neck and shoulder skin previously hidden by hair. Everything below the neck must stay exactly as the reference: same obese body proportions, arms and hand pose, waist, hips, legs, plain charcoal sports bra and boxer bottoms, bare hands and feet. Do NOT redraw the body into another pose or change anatomy, clothing or identity. Same full-body straight front view, same 1024x1024 canvas, same scale and placement, feet fully visible. Static clean manhwa cel shading matching reference. No equipment, accessories, outer clothing, text or additional panels. Pure white background with no shadow.",
+    "name": "Hairfree Female Obese R1"
+  }
+}

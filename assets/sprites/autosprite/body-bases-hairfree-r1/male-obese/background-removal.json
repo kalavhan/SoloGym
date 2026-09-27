@@ -1,0 +1,19 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmujskk9d00018xhhk1ooa933",
+  "creditsUsed": 1,
+  "cached": false,
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujskk9d00018xhhk1ooa933/base-nobg",
+  "export": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/male-obese/body.png",
+    "sha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      276,
+      29,
+      746,
+      1005
+    ]
+  }
+}

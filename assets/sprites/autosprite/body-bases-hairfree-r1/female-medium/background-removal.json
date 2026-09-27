@@ -1,0 +1,19 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmujskn1w00038xhh94yxmrf2",
+  "creditsUsed": 1,
+  "cached": false,
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujskn1w00038xhh94yxmrf2/base-nobg",
+  "export": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/female-medium/body.png",
+    "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      344,
+      34,
+      668,
+      993
+    ]
+  }
+}

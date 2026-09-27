@@ -1,0 +1,18 @@
+{
+  "provider": "AutoSprite",
+  "tool": "generate_pose",
+  "characterId": "cmujfdjq7002qbashm8hmvz7s",
+  "poseId": "cmujff1ia000jhqkz7e11uvid",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujfdjq7002qbashm8hmvz7s/1790489813325_5cecd9d5-fd37-4374-95ed-ec94b9058d5f_custom-pose-frame-1790489813325.png",
+  "output": {
+    "path": "male-obese/source.png",
+    "sha256": "05dc101f4c026a5999436cea2abb01e580a6752e33ac7c223266ce83a54a6504",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      255,
+      255
+    ]
+  }
+}

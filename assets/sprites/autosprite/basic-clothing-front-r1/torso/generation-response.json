@@ -1,0 +1,13 @@
+{
+  "tool": "generate_asset_preview",
+  "quality": "ultra",
+  "creditsUsed": 1,
+  "image": {
+    "path": "source.png",
+    "sha256": "e6c3949a1b5369fd661ca4da5d16a24ec6d1e965695f73861194b698d4aeb3bd",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA"
+  },
+  "sourceUrl": "https://im.runware.ai/image/os/a01d21/ws/4/ii/00b86b24-22bb-427f-b005-813307048d45.png"
+}

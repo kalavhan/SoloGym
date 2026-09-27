@@ -1,0 +1,36 @@
+{
+  "schema": "sologym.mvp-art-adoption.v1",
+  "source": "explicit_user_message_2026-09-27",
+  "status": "accepted_for_mvp_with_known_issues",
+  "bodyTypes": [
+    "slim",
+    "medium",
+    "overweight",
+    "muscular"
+  ],
+  "activeBodyIds": [
+    "female-slim",
+    "female-medium",
+    "female-overweight",
+    "female-muscular",
+    "male-slim",
+    "male-medium",
+    "male-overweight",
+    "male-muscular"
+  ],
+  "removedFromSelection": [
+    "female-obese",
+    "male-obese"
+  ],
+  "removalReason": "Obese and overweight are too similar; obese looks zoomed in.",
+  "knownIssues": [
+    "Sleeves look odd on muscular male and female and most female cuts.",
+    "Some male variants differ in garment design."
+  ],
+  "direction": "Use the existing art now; defer polish and further generation so work can return to the fitness app.",
+  "qualityApproval": false,
+  "additionalGenerationCredits": 0,
+  "sourceFittingSha256": "c040437450183a86a98479dc5e73a3d26db6af657d63765c6feb7d0c1585572b",
+  "runtimeCatalog": "app/Assets/SoloGym/Resources/AvatarAutoSprite/modular-front-v1/catalog.json",
+  "preserveHistoricalArtAndReviews": true
+}

@@ -1,0 +1,14 @@
+{
+  "poseId": "cmujsfi6s000aiod90c2yd5yj",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujfdjq7002qbashm8hmvz7s/1790511672436_165ba16b-b565-443b-b03f-8f000df1fc34_custom-pose-frame-1790511672436.png",
+  "image": {
+    "path": "male-medium/source.png",
+    "sha256": "7b33c9b94b8f38fb9f2be6ddd8f8dd92e02ef8e32b8a7d79d80ac43a15d941a4",
+    "width": 1024,
+    "height": 1024
+  },
+  "originalSource": {
+    "path": "assets/sprites/autosprite/body-bases-front-r1/male-medium/source.png",
+    "sha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2"
+  }
+}

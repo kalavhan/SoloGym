@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "scope": "static modular MVP integration",
+  "activePresets": 8,
+  "retiredPresets": [
+    "female-obese",
+    "male-obese"
+  ],
+  "artPolishDeferred": true,
+  "additionalGenerationCredits": 0,
+  "linuxBuild": "Unity 6000.3.24f1 success",
+  "runtimeCatalogSha256": "5b52d805a3531249cdb211a98e03b6fec7dab0c3a28d8d6796785ac2fcd33aca",
+  "checks": {
+    "spanishFlow": {
+      "passed": true,
+      "checks": [
+        "PASS configuration loads the static modular sprites",
+        "PASS retired female obese maps to overweight",
+        "PASS retired male obese maps to overweight",
+        "PASS invalid saved choices recover safely",
+        "PASS select male-slim",
+        "PASS select male-medium",
+        "PASS select male-overweight",
+        "PASS select male-muscular",
+        "PASS select female-slim",
+        "PASS select female-medium",
+        "PASS select female-overweight",
+        "PASS select female-muscular",
+        "PASS independent hair choice none",
+        "PASS independent hair choice short-sweep",
+        "PASS independent hair choice close-crop",
+        "PASS unequip clothes leaves only the unchanged body and hair",
+        "PASS reequip restores separate clothing and occlusion layers",
+        "PASS draft edits do not save before Continue",
+        "PASS Continue opens real Home",
+        "PASS Home shows saved body and hairstyle",
+        "PASS confirmed appearance survives preference reload",
+        "PASS Home exposes automatic language",
+        "PASS Home reopens saved customization",
+        "PASS Back discards the unsaved draft",
+        "PASS unchanged studio language preserves automatic preference",
+        "PASS Home edit saves another body, no hair, and both empty equipment slots"
+      ]
+    },
+    "englishPhoneFlow": {
+      "passed": true,
+      "checks": [
+        "PASS configuration loads the static modular sprites",
+        "PASS retired female obese maps to overweight",
+        "PASS retired male obese maps to overweight",
+        "PASS invalid saved choices recover safely",
+        "PASS select male-slim",
+        "PASS select male-medium",
+        "PASS select male-overweight",
+        "PASS select male-muscular",
+        "PASS select female-slim",
+        "PASS select female-medium",
+        "PASS select female-overweight",
+        "PASS select female-muscular",
+        "PASS independent hair choice none",
+        "PASS independent hair choice short-sweep",
+        "PASS independent hair choice close-crop",
+        "PASS unequip clothes leaves only the unchanged body and hair",
+        "PASS reequip restores separate clothing and occlusion layers",
+        "PASS draft edits do not save before Continue",
+        "PASS Continue opens real Home",
+        "PASS Home shows saved body and hairstyle",
+        "PASS confirmed appearance survives preference reload",
+        "PASS Home exposes automatic language",
+        "PASS Home reopens saved customization",
+        "PASS Back discards the unsaved draft",
+        "PASS unchanged studio language preserves automatic preference",
+        "PASS Home edit saves another body, no hair, and both empty equipment slots"
+      ]
+    },
+    "onboarding": {
+      "passed": true,
+      "checks": [
+        "schedule state checks",
+        "day selection",
+        "setup to next window"
+      ]
+    },
+    "interactive": {
+      "passed": true,
+      "defaultRenderer": "static_modular",
+      "captureKeepsAppOpen": true,
+      "capture": "artifacts/visual/ModularMVP/studio-current.png"
+    }
+  },
+  "assetVerification": [
+    "8 preset runtime package and unchanged PNG copies",
+    "approved body/hair lock",
+    "r1/r2 review source preservation",
+    "r3 MVP adoption and original fitting hashes"
+  ],
+  "visualInspection": [
+    "es/studio-front.png",
+    "es/home-front.png",
+    "en-phone/studio-front.png",
+    "studio-current.png"
+  ],
+  "limitations": [
+    "Existing sleeves/design inconsistencies retained per user request.",
+    "Local cosmetic preferences only; no account synchronization.",
+    "Linux tested; Android was not rebuilt.",
+    "Workout screens beyond existing Home/onboarding remain future work."
+  ]
+}

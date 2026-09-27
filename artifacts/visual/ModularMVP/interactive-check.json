@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "defaultRenderer": "static_modular",
+  "captureKeepsAppOpen": true,
+  "capture": "artifacts/visual/ModularMVP/studio-current.png"
+}

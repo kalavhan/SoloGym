@@ -1,0 +1,104 @@
+{
+  "schema": "sologym.autosprite-outfit-concept.v1",
+  "status": "generated_coverage_revision",
+  "approval": "coverage_revision_under_existing_user_direction",
+  "tier": "basic",
+  "tierOrder": [
+    "basic",
+    "rare",
+    "ultra_rare"
+  ],
+  "sourceReference": {
+    "path": "assets/sprites/autosprite/boxer-basic-r2/basic-backpack-concept.png",
+    "sha256": "8a9b82bb00c8687cd1655291d9989a125941a621730ee8335dfafd616bc48c5b"
+  },
+  "request": "request.json",
+  "prompt": "prompt.txt",
+  "scope": "Static frontal Basic boxer with covered torso, sleeves, longer shorts, and backpack inset",
+  "animated": false,
+  "emissiveEffects": false,
+  "runtimeIntegrated": false,
+  "independentEquipmentLayersVerified": false,
+  "items": [
+    {
+      "slot": "head",
+      "id": "basic_cloth_headband",
+      "name": "Cloth headband",
+      "tier": "basic",
+      "status": "concept_revision_requested"
+    },
+    {
+      "slot": "torso",
+      "id": "basic_training_jacket",
+      "name": "Full-length crew-neck training top and vest",
+      "tier": "basic",
+      "status": "concept_revision_requested"
+    },
+    {
+      "slot": "hands",
+      "id": "basic_boxing_gloves",
+      "name": "Padded boxing gloves",
+      "tier": "basic",
+      "status": "concept_revision_requested"
+    },
+    {
+      "slot": "legs",
+      "id": "basic_boxing_trunks",
+      "name": "Relaxed above-knee boxing trunks",
+      "tier": "basic",
+      "status": "concept_revision_requested"
+    },
+    {
+      "slot": "feet",
+      "id": "basic_boxing_boots",
+      "name": "Lightweight boxing boots",
+      "tier": "basic",
+      "status": "concept_revision_requested"
+    },
+    {
+      "slot": "back",
+      "id": "basic_gym_backpack",
+      "name": "Canvas boxing-gym backpack",
+      "tier": "basic",
+      "status": "concept_revision_requested"
+    }
+  ],
+  "estimatedCredits": 3,
+  "supersedes": "assets/sprites/autosprite/boxer-basic-r2/manifest.json",
+  "userDirection": "Overall r2 direction accepted; mandatory clothing coverage changes requested; continuation to one equipment swap proof authorized.",
+  "characterId": "cmujcu8l3000o70vv06xihlhz",
+  "sourceUpload": {
+    "tool": "upload_character",
+    "status": "confirmed_in_gallery_after_response_timeout",
+    "name": "SoloGym Basic outfit reference R2",
+    "characterId": "cmujcu8l3000o70vv06xihlhz",
+    "creditsUsed": 0
+  },
+  "jobId": "cf_b18dc5c7-9d75-416c-b749-d244c403c330",
+  "creditsUsed": 3,
+  "poseId": "cmujcxfuq0007hr8fo2q4j3ry",
+  "image": {
+    "path": "basic-covered-concept.png",
+    "sha256": "35d7d6687df495ce307474a5691ed11b7bd99e807fdb34d3198fef02fa9e0282",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA"
+  },
+  "visualReview": {
+    "status": "coverage_requirements_met",
+    "observed": [
+      "Opaque crew neck covers upper chest.",
+      "Short sleeves cover shoulders and upper arms.",
+      "Full-length torso garments cover abdomen and waistband.",
+      "Relaxed boxing shorts finish near the knees.",
+      "Original palette, identity, headband, gloves, boots and backpack retained."
+    ],
+    "notes": [
+      "User approved the overall direction with these coverage changes and authorized the next proof.",
+      "This is a static flattened concept, not modular equipment."
+    ]
+  },
+  "productionRole": "historical_outfit_concept_reference_only",
+  "canonicalBaseEligible": false,
+  "equipmentProductionWorkflow": "superseded_by_body_base_then_isolated_assets_then_local_composition"
+}

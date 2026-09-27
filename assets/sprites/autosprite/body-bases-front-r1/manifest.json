@@ -1,0 +1,1157 @@
+{
+  "schema": "sologym.autosprite-body-bases.v1",
+  "status": "approved_static_bases_ready_for_equipment_fitting",
+  "approval": "approved",
+  "view": "front",
+  "animated": false,
+  "runtimeIntegrated": false,
+  "baseGarments": {
+    "male": "plain charcoal boxer briefs; no top",
+    "female": "plain charcoal boxer-style bottoms and opaque sports bra"
+  },
+  "baseGarmentsIncludedByExplicitUserRequest": true,
+  "additionalEquipmentBakedIn": false,
+  "plannedCount": 10,
+  "estimatedGenerationCredits": 30,
+  "backgroundRemovalDeferredUntilReview": false,
+  "variants": [
+    {
+      "id": "male-slim",
+      "gender": "male",
+      "bodyType": "slim",
+      "status": "approved_static_base_ready_for_fitting",
+      "approval": "approved",
+      "prompt": "male-slim/prompt.txt",
+      "bodyShapeReference": {
+        "path": "design/character-2-5d/approval-r1/images/male-skinny-r3.png",
+        "sha256": "e55c909213627e5abf0a3ce0f4d1a6fe717d066bbe8c74a58364fcbfe26aee87",
+        "bytes": 1757888,
+        "width": 1536,
+        "height": 1024
+      },
+      "provider": "AutoSprite",
+      "generationTool": "generate_pose",
+      "estimatedCredits": 3,
+      "referenceCharacterId": "cmujfdjq7002qbashm8hmvz7s",
+      "imageReference": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/male-medium/source.png",
+        "sha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2",
+        "use": "Same-gender medium identity/pose master; body shape guided by the preserved reference catalog"
+      },
+      "jobId": "cf_18c2ed58-0b40-4e2d-973f-8ae59e08c311",
+      "creditsUsed": 3,
+      "image": {
+        "path": "male-slim/source.png",
+        "sha256": "499c5e0e2ac4a7486a114c79d2f8c840b402f211352fed46fb6922471dcc566e",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          255,
+          255
+        ]
+      },
+      "poseId": "cmujff05x0003hqkznivipytn",
+      "providerCharacterId": "cmujfdjq7002qbashm8hmvz7s",
+      "generatorModel": null,
+      "seed": null,
+      "visualReview": {
+        "status": "user_approved",
+        "frontal": true,
+        "fullBodyVisible": true,
+        "baseGarmentsOnly": true,
+        "bareHandsAndFeet": true,
+        "notes": [
+          "Slimmer limbs and softer definition than medium."
+        ]
+      },
+      "canonicalBaseFrozen": true,
+      "equipmentFitVerified": false,
+      "transparentBackground": true,
+      "sourceArtworkFrozen": true,
+      "approvedAt": "2026-09-27T06:27:15.112Z",
+      "approvalRecord": "reviews/user-approval-all-10.json",
+      "transparentExportAssetId": "cmujrp1w3000dbnyvnxpi61ml",
+      "transparentExport": {
+        "path": "male-slim/body.png",
+        "sha256": "a6db6948b3d8b5cff67fe26c5db7cd7122ea1e81a1c812cbdde9190594bfd08e",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "contentBounds": [
+          342,
+          17,
+          682,
+          1002
+        ],
+        "coordinateOrigin": "top-left",
+        "trimmed": false,
+        "resized": false,
+        "sourceSha256": "499c5e0e2ac4a7486a114c79d2f8c840b402f211352fed46fb6922471dcc566e",
+        "provider": "AutoSprite",
+        "tool": "remove_asset_background",
+        "assetId": "cmujrp1w3000dbnyvnxpi61ml",
+        "creditsUsed": 1,
+        "qa": {
+          "dimensionsUnchanged": true,
+          "sourceChecksumUnchanged": true,
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "opaquePixelCount": 5342,
+          "opaqueRgbChangedPixelCount": 0,
+          "opaqueRgbMaxChannelDifference": 0,
+          "opaqueRgbMeanChannelDifference": 0.0,
+          "contentBoundsAlpha128": [
+            343,
+            21,
+            680,
+            1000
+          ]
+        },
+        "visualInspection": {
+          "status": "checked",
+          "backdrop": "dark",
+          "fullBodyVisible": true,
+          "noDetachedBodyParts": true,
+          "inspectedOn": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "male-medium",
+      "gender": "male",
+      "bodyType": "medium",
+      "status": "approved_static_base_ready_for_fitting",
+      "approval": "approved",
+      "prompt": "male-medium/prompt.txt",
+      "bodyShapeReference": {
+        "path": "design/character-2-5d/approval-r1/images/male-normal-r2.png",
+        "sha256": "8312e04bf8742f4e7e45a7e671cee6ba1828a1b94f84612e997cb0807896ac8c",
+        "bytes": 1847391,
+        "width": 1536,
+        "height": 1024
+      },
+      "provider": "AutoSprite",
+      "generationTool": "generate_pose",
+      "estimatedCredits": 3,
+      "referenceCharacterId": "cmujf85ko000591y2hdttqeaj",
+      "imageReference": {
+        "path": "design/character-2-5d/approval-r1/images/male-normal-r2.png",
+        "sha256": "8312e04bf8742f4e7e45a7e671cee6ba1828a1b94f84612e997cb0807896ac8c",
+        "use": "Male identity and body reference; output must discard board panels and equipment"
+      },
+      "jobId": "cf_76aa76e9-bcd1-4eb7-9923-d199a0095afe",
+      "creditsUsed": 3,
+      "image": {
+        "path": "male-medium/source.png",
+        "sha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          255,
+          255
+        ]
+      },
+      "poseId": "cmujf9gs3000810jismi14k5o",
+      "providerCharacterId": "cmujf85ko000591y2hdttqeaj",
+      "generatorModel": null,
+      "seed": null,
+      "visualReview": {
+        "status": "user_approved",
+        "frontal": true,
+        "fullBodyVisible": true,
+        "baseGarmentsOnly": true,
+        "bareHandsAndFeet": true,
+        "notes": [
+          "Medium retains athletic contours; review the desired softness."
+        ]
+      },
+      "baseCharacterId": "cmujfdjq7002qbashm8hmvz7s",
+      "canonicalBaseFrozen": true,
+      "equipmentFitVerified": false,
+      "transparentBackground": true,
+      "sourceArtworkFrozen": true,
+      "approvedAt": "2026-09-27T06:27:15.112Z",
+      "approvalRecord": "reviews/user-approval-all-10.json",
+      "transparentExportAssetId": "cmujrp2uv0008icxm830irt7o",
+      "transparentExport": {
+        "path": "male-medium/body.png",
+        "sha256": "8502a4d3b135facd1a49f52bb6765ef3909354ab814c63effa9c6d4fb6c62ba2",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "contentBounds": [
+          338,
+          29,
+          687,
+          999
+        ],
+        "coordinateOrigin": "top-left",
+        "trimmed": false,
+        "resized": false,
+        "sourceSha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2",
+        "provider": "AutoSprite",
+        "tool": "remove_asset_background",
+        "assetId": "cmujrp2uv0008icxm830irt7o",
+        "creditsUsed": 1,
+        "qa": {
+          "dimensionsUnchanged": true,
+          "sourceChecksumUnchanged": true,
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "opaquePixelCount": 5636,
+          "opaqueRgbChangedPixelCount": 0,
+          "opaqueRgbMaxChannelDifference": 0,
+          "opaqueRgbMeanChannelDifference": 0.0,
+          "contentBoundsAlpha128": [
+            340,
+            32,
+            685,
+            997
+          ]
+        },
+        "visualInspection": {
+          "status": "checked",
+          "backdrop": "dark",
+          "fullBodyVisible": true,
+          "noDetachedBodyParts": true,
+          "inspectedOn": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "male-overweight",
+      "gender": "male",
+      "bodyType": "overweight",
+      "status": "approved_static_base_ready_for_fitting",
+      "approval": "approved",
+      "prompt": "male-overweight/prompt.txt",
+      "bodyShapeReference": {
+        "path": "design/character-2-5d/approval-r1/images/male-chubby-r3.png",
+        "sha256": "e2a19b5e181a15b167fcee40ae2be8fe060a6e08eeb1471f7ce7b2daa334b378",
+        "bytes": 1776385,
+        "width": 1536,
+        "height": 1024
+      },
+      "provider": "AutoSprite",
+      "generationTool": "generate_pose",
+      "estimatedCredits": 3,
+      "referenceCharacterId": "cmujfdjq7002qbashm8hmvz7s",
+      "imageReference": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/male-medium/source.png",
+        "sha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2",
+        "use": "Same-gender medium identity/pose master; body shape guided by the preserved reference catalog"
+      },
+      "jobId": "cf_4d6f7e70-ae32-464a-9b74-33dcae5636bf",
+      "creditsUsed": 3,
+      "image": {
+        "path": "male-overweight/source.png",
+        "sha256": "be2213797ef18102dc81f468635064368b0491c4b1b9862ff8a18b4fd1ac00b8",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          255,
+          255
+        ]
+      },
+      "poseId": "cmujff177000dhqkz90j21rhz",
+      "providerCharacterId": "cmujfdjq7002qbashm8hmvz7s",
+      "generatorModel": null,
+      "seed": null,
+      "visualReview": {
+        "status": "user_approved",
+        "frontal": true,
+        "fullBodyVisible": true,
+        "baseGarmentsOnly": true,
+        "bareHandsAndFeet": true,
+        "notes": [
+          "Fuller soft waist and torso; compare with the obese preset."
+        ]
+      },
+      "canonicalBaseFrozen": true,
+      "equipmentFitVerified": false,
+      "transparentBackground": true,
+      "sourceArtworkFrozen": true,
+      "approvedAt": "2026-09-27T06:27:15.112Z",
+      "approvalRecord": "reviews/user-approval-all-10.json",
+      "transparentExportAssetId": "cmujrp401000aicxmimkw1tkm",
+      "transparentExport": {
+        "path": "male-overweight/body.png",
+        "sha256": "8c82d267fcf960761d504381d09bd86fe8481d6912474cbae7b553e100fd7eb2",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "contentBounds": [
+          300,
+          29,
+          722,
+          1024
+        ],
+        "coordinateOrigin": "top-left",
+        "trimmed": false,
+        "resized": false,
+        "sourceSha256": "be2213797ef18102dc81f468635064368b0491c4b1b9862ff8a18b4fd1ac00b8",
+        "provider": "AutoSprite",
+        "tool": "remove_asset_background",
+        "assetId": "cmujrp401000aicxmimkw1tkm",
+        "creditsUsed": 1,
+        "qa": {
+          "dimensionsUnchanged": true,
+          "sourceChecksumUnchanged": true,
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "opaquePixelCount": 14227,
+          "opaqueRgbChangedPixelCount": 0,
+          "opaqueRgbMaxChannelDifference": 0,
+          "opaqueRgbMeanChannelDifference": 0.0,
+          "contentBoundsAlpha128": [
+            302,
+            32,
+            720,
+            1003
+          ],
+          "bottomEdgeResidualAlphaMax": 1
+        },
+        "visualInspection": {
+          "status": "checked",
+          "backdrop": "dark",
+          "fullBodyVisible": true,
+          "noDetachedBodyParts": true,
+          "inspectedOn": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "male-obese",
+      "gender": "male",
+      "bodyType": "obese",
+      "status": "approved_static_base_ready_for_fitting",
+      "approval": "approved",
+      "prompt": "male-obese/prompt.txt",
+      "bodyShapeReference": {
+        "path": "design/character-2-5d/approval-r1/images/male-fat-r3.png",
+        "sha256": "078a4887a9eca5e5604ec8bc57e57f313fd47449836e2c07f446760ac30ca29f",
+        "bytes": 1809893,
+        "width": 1536,
+        "height": 1024
+      },
+      "provider": "AutoSprite",
+      "generationTool": "generate_pose",
+      "estimatedCredits": 3,
+      "referenceCharacterId": "cmujfdjq7002qbashm8hmvz7s",
+      "imageReference": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/male-medium/source.png",
+        "sha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2",
+        "use": "Same-gender medium identity/pose master; body shape guided by the preserved reference catalog"
+      },
+      "jobId": "cf_1ef907b7-59f7-4fc7-950e-ce2fd185bcb3",
+      "creditsUsed": 3,
+      "image": {
+        "path": "male-obese/source.png",
+        "sha256": "05dc101f4c026a5999436cea2abb01e580a6752e33ac7c223266ce83a54a6504",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          255,
+          255
+        ]
+      },
+      "poseId": "cmujff1ia000jhqkz7e11uvid",
+      "providerCharacterId": "cmujfdjq7002qbashm8hmvz7s",
+      "generatorModel": null,
+      "seed": null,
+      "visualReview": {
+        "status": "user_approved",
+        "frontal": true,
+        "fullBodyVisible": true,
+        "baseGarmentsOnly": true,
+        "bareHandsAndFeet": true,
+        "notes": [
+          "Broad torso and prominent rounded belly."
+        ]
+      },
+      "canonicalBaseFrozen": true,
+      "equipmentFitVerified": false,
+      "transparentBackground": true,
+      "sourceArtworkFrozen": true,
+      "approvedAt": "2026-09-27T06:27:15.112Z",
+      "approvalRecord": "reviews/user-approval-all-10.json",
+      "transparentExportAssetId": "cmujrp57f000cicxmk5fa0f25",
+      "transparentExport": {
+        "path": "male-obese/body.png",
+        "sha256": "efe0aff4d744d65f79d415cc6705a822d07b2304bf918022d0568d5390a7cefb",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "contentBounds": [
+          276,
+          18,
+          746,
+          1024
+        ],
+        "coordinateOrigin": "top-left",
+        "trimmed": false,
+        "resized": false,
+        "sourceSha256": "05dc101f4c026a5999436cea2abb01e580a6752e33ac7c223266ce83a54a6504",
+        "provider": "AutoSprite",
+        "tool": "remove_asset_background",
+        "assetId": "cmujrp57f000cicxmk5fa0f25",
+        "creditsUsed": 1,
+        "qa": {
+          "dimensionsUnchanged": true,
+          "sourceChecksumUnchanged": true,
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "opaquePixelCount": 17046,
+          "opaqueRgbChangedPixelCount": 0,
+          "opaqueRgbMaxChannelDifference": 0,
+          "opaqueRgbMeanChannelDifference": 0.0,
+          "contentBoundsAlpha128": [
+            278,
+            20,
+            744,
+            1002
+          ],
+          "bottomEdgeResidualAlphaMax": 1
+        },
+        "visualInspection": {
+          "status": "checked",
+          "backdrop": "dark",
+          "fullBodyVisible": true,
+          "noDetachedBodyParts": true,
+          "inspectedOn": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "male-muscular",
+      "gender": "male",
+      "bodyType": "muscular",
+      "status": "approved_static_base_ready_for_fitting",
+      "approval": "approved",
+      "prompt": "male-muscular/prompt.txt",
+      "bodyShapeReference": {
+        "path": "design/character-2-5d/approval-r1/images/male-muscular.png",
+        "sha256": "3d75e4291972c6fdb9a8c38c61fc02fcd407e6c3cfba2480366614bd68d2233c",
+        "bytes": 1861914,
+        "width": 1536,
+        "height": 1024
+      },
+      "provider": "AutoSprite",
+      "generationTool": "generate_pose",
+      "estimatedCredits": 3,
+      "referenceCharacterId": "cmujfdjq7002qbashm8hmvz7s",
+      "imageReference": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/male-medium/source.png",
+        "sha256": "d5d3924580575462521e0321efe65935d375da70c2a0e93e704860e3849afcb2",
+        "use": "Same-gender medium identity/pose master; body shape guided by the preserved reference catalog"
+      },
+      "jobId": "cf_f49568e7-3484-45e7-9867-f13757f9e580",
+      "creditsUsed": 3,
+      "image": {
+        "path": "male-muscular/source.png",
+        "sha256": "180691daddf8d9f9fd8fa2b4abdea4c7b733458fb2724be1b3a2f7da6c5ac60e",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          255,
+          255
+        ]
+      },
+      "poseId": "cmujff1040007hqkzs0qwteah",
+      "providerCharacterId": "cmujfdjq7002qbashm8hmvz7s",
+      "generatorModel": null,
+      "seed": null,
+      "visualReview": {
+        "status": "user_approved",
+        "frontal": true,
+        "fullBodyVisible": true,
+        "baseGarmentsOnly": true,
+        "bareHandsAndFeet": true,
+        "notes": [
+          "Broader shoulders and visible muscle definition."
+        ]
+      },
+      "canonicalBaseFrozen": true,
+      "equipmentFitVerified": false,
+      "transparentBackground": true,
+      "sourceArtworkFrozen": true,
+      "approvedAt": "2026-09-27T06:27:15.112Z",
+      "approvalRecord": "reviews/user-approval-all-10.json",
+      "transparentExportAssetId": "cmujrp6at0002ajlojznzp39t",
+      "transparentExport": {
+        "path": "male-muscular/body.png",
+        "sha256": "122f19e2b127abe4de2ca2e7906c72faadfd2b72ac4403aed98f8c392c5b0d49",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "contentBounds": [
+          319,
+          29,
+          706,
+          1000
+        ],
+        "coordinateOrigin": "top-left",
+        "trimmed": false,
+        "resized": false,
+        "sourceSha256": "180691daddf8d9f9fd8fa2b4abdea4c7b733458fb2724be1b3a2f7da6c5ac60e",
+        "provider": "AutoSprite",
+        "tool": "remove_asset_background",
+        "assetId": "cmujrp6at0002ajlojznzp39t",
+        "creditsUsed": 1,
+        "qa": {
+          "dimensionsUnchanged": true,
+          "sourceChecksumUnchanged": true,
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "opaquePixelCount": 8929,
+          "opaqueRgbChangedPixelCount": 0,
+          "opaqueRgbMaxChannelDifference": 0,
+          "opaqueRgbMeanChannelDifference": 0.0,
+          "contentBoundsAlpha128": [
+            320,
+            32,
+            704,
+            998
+          ]
+        },
+        "visualInspection": {
+          "status": "checked",
+          "backdrop": "dark",
+          "fullBodyVisible": true,
+          "noDetachedBodyParts": true,
+          "inspectedOn": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "female-slim",
+      "gender": "female",
+      "bodyType": "slim",
+      "status": "approved_static_base_ready_for_fitting",
+      "approval": "approved",
+      "prompt": "female-slim/prompt.txt",
+      "bodyShapeReference": {
+        "path": "design/character-2-5d/approval-r1/images/female-skinny.png",
+        "sha256": "d57f6d8da224ab5d820a4550bba348da12103f47fe9c7d6c0ccdea4af83e25fc",
+        "bytes": 1844686,
+        "width": 1536,
+        "height": 1024
+      },
+      "provider": "AutoSprite",
+      "generationTool": "generate_pose",
+      "estimatedCredits": 3,
+      "referenceCharacterId": "cmujfdkj1002ubashaviaaf7w",
+      "imageReference": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/female-medium/source.png",
+        "sha256": "6816c2b78964e896f6215311e7860a36eef4e84557d236121b275f9534d479fc",
+        "use": "Same-gender medium identity/pose master; body shape guided by the preserved reference catalog"
+      },
+      "jobId": "cf_8c084db3-32ba-4e19-b73d-c0348ebf685f",
+      "creditsUsed": 3,
+      "image": {
+        "path": "female-slim/source.png",
+        "sha256": "d17581c1d3f05b1e5948e01f8f1afa52ec5611de292d5dd4a3cb830afa976513",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          255,
+          255
+        ]
+      },
+      "poseId": "cmujff1ow000nhqkz4shn4kmb",
+      "providerCharacterId": "cmujfdkj1002ubashaviaaf7w",
+      "generatorModel": null,
+      "seed": null,
+      "visualReview": {
+        "status": "user_approved",
+        "frontal": true,
+        "fullBodyVisible": true,
+        "baseGarmentsOnly": true,
+        "bareHandsAndFeet": true,
+        "notes": [
+          "Review slim/medium separation, especially thighs and waist."
+        ]
+      },
+      "canonicalBaseFrozen": true,
+      "equipmentFitVerified": false,
+      "transparentBackground": true,
+      "sourceArtworkFrozen": true,
+      "approvedAt": "2026-09-27T06:27:15.112Z",
+      "approvalRecord": "reviews/user-approval-all-10.json",
+      "transparentExportAssetId": "cmujrp7ai0004ajloxel5zxcd",
+      "transparentExport": {
+        "path": "female-slim/body.png",
+        "sha256": "6cc1d5c74532df7b8fd2b1fe8566fc1c99ec7e59926d58d746575186d55c9976",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "contentBounds": [
+          351,
+          11,
+          663,
+          998
+        ],
+        "coordinateOrigin": "top-left",
+        "trimmed": false,
+        "resized": false,
+        "sourceSha256": "d17581c1d3f05b1e5948e01f8f1afa52ec5611de292d5dd4a3cb830afa976513",
+        "provider": "AutoSprite",
+        "tool": "remove_asset_background",
+        "assetId": "cmujrp7ai0004ajloxel5zxcd",
+        "creditsUsed": 1,
+        "qa": {
+          "dimensionsUnchanged": true,
+          "sourceChecksumUnchanged": true,
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "opaquePixelCount": 192,
+          "opaqueRgbChangedPixelCount": 0,
+          "opaqueRgbMaxChannelDifference": 0,
+          "opaqueRgbMeanChannelDifference": 0.0,
+          "contentBoundsAlpha128": [
+            353,
+            15,
+            661,
+            997
+          ]
+        },
+        "visualInspection": {
+          "status": "checked",
+          "backdrop": "dark",
+          "fullBodyVisible": true,
+          "noDetachedBodyParts": true,
+          "inspectedOn": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "female-medium",
+      "gender": "female",
+      "bodyType": "medium",
+      "status": "approved_static_base_ready_for_fitting",
+      "approval": "approved",
+      "prompt": "female-medium/prompt.txt",
+      "bodyShapeReference": {
+        "path": "design/character-2-5d/approval-r1/images/female-normal.png",
+        "sha256": "aaa34922d2b967d3eef06c435634e0f25010cecc6c02d03d5d01d7a6d5500667",
+        "bytes": 1909357,
+        "width": 1536,
+        "height": 1024
+      },
+      "provider": "AutoSprite",
+      "generationTool": "generate_pose",
+      "estimatedCredits": 3,
+      "jobId": "cf_7d8a8527-a1fe-4cb6-b6f9-275faef698f0",
+      "creditsUsed": 3,
+      "referenceCharacterId": "cmuj70eg8000910qlnap76av1",
+      "imageReference": {
+        "path": "assets/sprites/autosprite/female-studio-home-r1/female-front-source.png",
+        "use": "AutoSprite female identity/style; historical preset boards guide body-shape descriptions",
+        "sha256": "9a169b724d44f13017667731e5ac1d3c752d80340d1b603b5c2377eb485e9308"
+      },
+      "image": {
+        "path": "female-medium/source.png",
+        "sha256": "6816c2b78964e896f6215311e7860a36eef4e84557d236121b275f9534d479fc",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          255,
+          255
+        ]
+      },
+      "poseId": "cmujf70qi000el95buhs9abmc",
+      "providerCharacterId": "cmuj70eg8000910qlnap76av1",
+      "generatorModel": null,
+      "seed": null,
+      "visualReview": {
+        "status": "user_approved",
+        "frontal": true,
+        "fullBodyVisible": true,
+        "baseGarmentsOnly": true,
+        "bareHandsAndFeet": true,
+        "notes": [
+          "Moderate silhouette; compare with slim and muscular."
+        ]
+      },
+      "baseCharacterId": "cmujfdkj1002ubashaviaaf7w",
+      "canonicalBaseFrozen": true,
+      "equipmentFitVerified": false,
+      "transparentBackground": true,
+      "sourceArtworkFrozen": true,
+      "approvedAt": "2026-09-27T06:27:15.112Z",
+      "approvalRecord": "reviews/user-approval-all-10.json",
+      "transparentExportAssetId": "cmujrp8dn000j6zs62ca8b86c",
+      "transparentExport": {
+        "path": "female-medium/body.png",
+        "sha256": "0898b25822e7091c0a8cf642f1121d928d8deea4a108385c65b8ab161cc32c47",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "contentBounds": [
+          348,
+          15,
+          664,
+          986
+        ],
+        "coordinateOrigin": "top-left",
+        "trimmed": false,
+        "resized": false,
+        "sourceSha256": "6816c2b78964e896f6215311e7860a36eef4e84557d236121b275f9534d479fc",
+        "provider": "AutoSprite",
+        "tool": "remove_asset_background",
+        "assetId": "cmujrp8dn000j6zs62ca8b86c",
+        "creditsUsed": 1,
+        "qa": {
+          "dimensionsUnchanged": true,
+          "sourceChecksumUnchanged": true,
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "opaquePixelCount": 212,
+          "opaqueRgbChangedPixelCount": 0,
+          "opaqueRgbMaxChannelDifference": 0,
+          "opaqueRgbMeanChannelDifference": 0.0,
+          "contentBoundsAlpha128": [
+            349,
+            18,
+            662,
+            984
+          ]
+        },
+        "visualInspection": {
+          "status": "checked",
+          "backdrop": "dark",
+          "fullBodyVisible": true,
+          "noDetachedBodyParts": true,
+          "inspectedOn": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "female-overweight",
+      "gender": "female",
+      "bodyType": "overweight",
+      "status": "approved_static_base_ready_for_fitting",
+      "approval": "approved",
+      "prompt": "female-overweight/prompt.txt",
+      "bodyShapeReference": {
+        "path": "design/character-2-5d/approval-r1/images/female-chubby-r2.png",
+        "sha256": "fd12d81ceb5864be80c17e11e60234002b3e8b7cdbc2529772ac6b26a54f04b5",
+        "bytes": 1829131,
+        "width": 1536,
+        "height": 1024
+      },
+      "provider": "AutoSprite",
+      "generationTool": "generate_pose",
+      "estimatedCredits": 3,
+      "referenceCharacterId": "cmujfdkj1002ubashaviaaf7w",
+      "imageReference": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/female-medium/source.png",
+        "sha256": "6816c2b78964e896f6215311e7860a36eef4e84557d236121b275f9534d479fc",
+        "use": "Same-gender medium identity/pose master; body shape guided by the preserved reference catalog"
+      },
+      "jobId": "cf_9694815e-6456-4829-bb6b-fe0ddcb7ab9f",
+      "creditsUsed": 3,
+      "image": {
+        "path": "female-overweight/source.png",
+        "sha256": "58c8a5e551405b94fb5653d503e606222de43fa636f091912e26fc944f9e997b",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          255,
+          255
+        ]
+      },
+      "poseId": "cmujff9h40003wvxxe3khfmhi",
+      "providerCharacterId": "cmujfdkj1002ubashaviaaf7w",
+      "generatorModel": null,
+      "seed": null,
+      "visualReview": {
+        "status": "user_approved",
+        "frontal": true,
+        "fullBodyVisible": true,
+        "baseGarmentsOnly": true,
+        "bareHandsAndFeet": true,
+        "notes": [
+          "Soft rounded waist and fuller thighs."
+        ]
+      },
+      "canonicalBaseFrozen": true,
+      "equipmentFitVerified": false,
+      "transparentBackground": true,
+      "sourceArtworkFrozen": true,
+      "approvedAt": "2026-09-27T06:27:15.112Z",
+      "approvalRecord": "reviews/user-approval-all-10.json",
+      "transparentExportAssetId": "cmujrpagq0001inqkvh6jm22c",
+      "transparentExport": {
+        "path": "female-overweight/body.png",
+        "sha256": "b9145aaee2589cac8280394a389f33fe7f8d67987e35fed2e57abd95ffc3dbe5",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "contentBounds": [
+          314,
+          15,
+          702,
+          987
+        ],
+        "coordinateOrigin": "top-left",
+        "trimmed": false,
+        "resized": false,
+        "sourceSha256": "58c8a5e551405b94fb5653d503e606222de43fa636f091912e26fc944f9e997b",
+        "provider": "AutoSprite",
+        "tool": "remove_asset_background",
+        "assetId": "cmujrpagq0001inqkvh6jm22c",
+        "creditsUsed": 1,
+        "qa": {
+          "dimensionsUnchanged": true,
+          "sourceChecksumUnchanged": true,
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "opaquePixelCount": 7919,
+          "opaqueRgbChangedPixelCount": 0,
+          "opaqueRgbMaxChannelDifference": 0,
+          "opaqueRgbMeanChannelDifference": 0.0,
+          "contentBoundsAlpha128": [
+            315,
+            18,
+            700,
+            985
+          ]
+        },
+        "visualInspection": {
+          "status": "checked",
+          "backdrop": "dark",
+          "fullBodyVisible": true,
+          "noDetachedBodyParts": true,
+          "inspectedOn": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "female-obese",
+      "gender": "female",
+      "bodyType": "obese",
+      "status": "approved_static_base_ready_for_fitting",
+      "approval": "approved",
+      "prompt": "female-obese/prompt.txt",
+      "bodyShapeReference": {
+        "path": "design/character-2-5d/approval-r1/images/female-fat-r4.png",
+        "sha256": "9982dac6bdba5a2a2c0285c0eb17a052ef4d0912eb08da318b473d886e1f1dc5",
+        "bytes": 1788673,
+        "width": 1536,
+        "height": 1024
+      },
+      "provider": "AutoSprite",
+      "generationTool": "generate_pose",
+      "estimatedCredits": 3,
+      "referenceCharacterId": "cmujfdkj1002ubashaviaaf7w",
+      "imageReference": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/female-medium/source.png",
+        "sha256": "6816c2b78964e896f6215311e7860a36eef4e84557d236121b275f9534d479fc",
+        "use": "Same-gender medium identity/pose master; body shape guided by the preserved reference catalog"
+      },
+      "jobId": "cf_aae47337-6bf4-47be-942b-ad88fa90f8b1",
+      "creditsUsed": 3,
+      "image": {
+        "path": "female-obese/source.png",
+        "sha256": "45ec1fa669f56cde07154a9a54d23ec3686109f9673df3a7f975fa057b3f0c70",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          255,
+          255
+        ]
+      },
+      "poseId": "cmujff17u000fhqkz5j086dpg",
+      "providerCharacterId": "cmujfdkj1002ubashaviaaf7w",
+      "generatorModel": null,
+      "seed": null,
+      "visualReview": {
+        "status": "user_approved",
+        "frontal": true,
+        "fullBodyVisible": true,
+        "baseGarmentsOnly": true,
+        "bareHandsAndFeet": true,
+        "notes": [
+          "Fuller belly, waist and thighs than overweight."
+        ]
+      },
+      "canonicalBaseFrozen": true,
+      "equipmentFitVerified": false,
+      "transparentBackground": true,
+      "sourceArtworkFrozen": true,
+      "approvedAt": "2026-09-27T06:27:15.112Z",
+      "approvalRecord": "reviews/user-approval-all-10.json",
+      "transparentExportAssetId": "cmujrpcee0006ajlowi3dtqwb",
+      "transparentExport": {
+        "path": "female-obese/body.png",
+        "sha256": "a3c7f8d9999ca54160a30ef9b782e811baddf1cad80051bc1dad420a0de658b6",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "contentBounds": [
+          308,
+          14,
+          705,
+          997
+        ],
+        "coordinateOrigin": "top-left",
+        "trimmed": false,
+        "resized": false,
+        "sourceSha256": "45ec1fa669f56cde07154a9a54d23ec3686109f9673df3a7f975fa057b3f0c70",
+        "provider": "AutoSprite",
+        "tool": "remove_asset_background",
+        "assetId": "cmujrpcee0006ajlowi3dtqwb",
+        "creditsUsed": 1,
+        "qa": {
+          "dimensionsUnchanged": true,
+          "sourceChecksumUnchanged": true,
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "opaquePixelCount": 12856,
+          "opaqueRgbChangedPixelCount": 0,
+          "opaqueRgbMaxChannelDifference": 0,
+          "opaqueRgbMeanChannelDifference": 0.0,
+          "contentBoundsAlpha128": [
+            310,
+            18,
+            704,
+            995
+          ]
+        },
+        "visualInspection": {
+          "status": "checked",
+          "backdrop": "dark",
+          "fullBodyVisible": true,
+          "noDetachedBodyParts": true,
+          "inspectedOn": "2026-09-27"
+        }
+      }
+    },
+    {
+      "id": "female-muscular",
+      "gender": "female",
+      "bodyType": "muscular",
+      "status": "approved_static_base_ready_for_fitting",
+      "approval": "approved",
+      "prompt": "female-muscular/prompt.txt",
+      "bodyShapeReference": {
+        "path": "design/character-2-5d/approval-r1/images/female-muscular-r3.png",
+        "sha256": "5ed3163722014d33684cfde07be1d3ed6b25789b6ecc52d8a35eb76410261e5b",
+        "bytes": 1832278,
+        "width": 1536,
+        "height": 1024
+      },
+      "provider": "AutoSprite",
+      "generationTool": "generate_pose",
+      "estimatedCredits": 3,
+      "referenceCharacterId": "cmujfdkj1002ubashaviaaf7w",
+      "imageReference": {
+        "path": "assets/sprites/autosprite/body-bases-front-r1/female-medium/source.png",
+        "sha256": "6816c2b78964e896f6215311e7860a36eef4e84557d236121b275f9534d479fc",
+        "use": "Same-gender medium identity/pose master; body shape guided by the preserved reference catalog"
+      },
+      "jobId": "cf_b73f21f8-3e00-4abb-8db2-1c5ebda22130",
+      "creditsUsed": 3,
+      "image": {
+        "path": "female-muscular/source.png",
+        "sha256": "532978e2a184731ef830b6df55bf63ccccce81641d7feb0e474552a6b0a68b8e",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          255,
+          255
+        ]
+      },
+      "poseId": "cmujff1rm000rhqkznfkdva8s",
+      "providerCharacterId": "cmujfdkj1002ubashaviaaf7w",
+      "generatorModel": null,
+      "seed": null,
+      "visualReview": {
+        "status": "user_approved",
+        "frontal": true,
+        "fullBodyVisible": true,
+        "baseGarmentsOnly": true,
+        "bareHandsAndFeet": true,
+        "notes": [
+          "Defined arms and core with less bulk than the male counterpart."
+        ]
+      },
+      "canonicalBaseFrozen": true,
+      "equipmentFitVerified": false,
+      "transparentBackground": true,
+      "sourceArtworkFrozen": true,
+      "approvedAt": "2026-09-27T06:27:15.112Z",
+      "approvalRecord": "reviews/user-approval-all-10.json",
+      "transparentExportAssetId": "cmujrpdk4000eicxmrjsezbbx",
+      "transparentExport": {
+        "path": "female-muscular/body.png",
+        "sha256": "2a3a26bf6a87066e15a65f9de3d230f4c74eee0518562fe994c60cbab5af1b6c",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "contentBounds": [
+          330,
+          15,
+          680,
+          995
+        ],
+        "coordinateOrigin": "top-left",
+        "trimmed": false,
+        "resized": false,
+        "sourceSha256": "532978e2a184731ef830b6df55bf63ccccce81641d7feb0e474552a6b0a68b8e",
+        "provider": "AutoSprite",
+        "tool": "remove_asset_background",
+        "assetId": "cmujrpdk4000eicxmrjsezbbx",
+        "creditsUsed": 1,
+        "qa": {
+          "dimensionsUnchanged": true,
+          "sourceChecksumUnchanged": true,
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "opaquePixelCount": 661,
+          "opaqueRgbChangedPixelCount": 0,
+          "opaqueRgbMaxChannelDifference": 0,
+          "opaqueRgbMeanChannelDifference": 0.0,
+          "contentBoundsAlpha128": [
+            332,
+            18,
+            678,
+            993
+          ]
+        },
+        "visualInspection": {
+          "status": "checked",
+          "backdrop": "dark",
+          "fullBodyVisible": true,
+          "noDetachedBodyParts": true,
+          "inspectedOn": "2026-09-27"
+        }
+      }
+    }
+  ],
+  "originalIllustrationReferencesPreserved": true,
+  "referenceUploads": [
+    {
+      "name": "SoloGym male body identity reference",
+      "characterId": "cmujf85ko000591y2hdttqeaj",
+      "creditsUsed": 0,
+      "purpose": "Body-base authoring from preserved male identity, not equipment creation"
+    },
+    {
+      "name": "SoloGym Male Medium Body Base R1",
+      "characterId": "cmujfdjq7002qbashm8hmvz7s",
+      "creditsUsed": 0,
+      "purpose": "Shared body identity/pose master for this gender; no outer equipment baked in"
+    },
+    {
+      "name": "SoloGym Female Medium Body Base R1",
+      "characterId": "cmujfdkj1002ubashaviaaf7w",
+      "creditsUsed": 0,
+      "purpose": "Shared body identity/pose master for this gender; no outer equipment baked in"
+    }
+  ],
+  "creditsUsed": 40,
+  "generatedCount": 10,
+  "reviewPage": "tools/review/body-bases-front.html",
+  "productionReady": false,
+  "limitations": [
+    "Equipment attachment positions and garment fit are not yet established for these bases.",
+    "Runtime selector integration remains pending.",
+    "Provider alpha has faint edge residue; visible bodies remain fully inside the canvas."
+  ],
+  "createdOn": "2026-09-27",
+  "approvalRecord": {
+    "path": "reviews/user-approval-all-10.json",
+    "sha256": "f51438424d9144ffb150f234f184a8c21b63278a4adcdd7e9b7a96609308cccb",
+    "reviewedAt": "2026-09-27T06:27:15.112Z",
+    "approvedCount": 10
+  },
+  "approvedCount": 10,
+  "backgroundRemovalCreditsUsed": 10,
+  "generationCreditsUsed": 30,
+  "transparentExportCount": 10,
+  "canonicalBasesFrozen": true,
+  "equipmentFitVerified": false,
+  "coordinateContract": {
+    "canvas": {
+      "width": 1024,
+      "height": 1024
+    },
+    "origin": "top-left",
+    "cropScaleOrRepositionBase": false,
+    "equipmentMustReferenceBaseSha256": true,
+    "boundsUse": "inspection only; do not trim",
+    "attachmentCalibration": "pending per body and item"
+  }
+}

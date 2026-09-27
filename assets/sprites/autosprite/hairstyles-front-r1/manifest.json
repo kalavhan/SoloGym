@@ -1,0 +1,164 @@
+{
+  "schema": "sologym.hairstyle-assets.v1",
+  "status": "all_ten_hair_fits_approved_design_decisions_pending",
+  "independentOfHeadEquipmentSlot": true,
+  "animated": false,
+  "creditsUsed": 4,
+  "items": [
+    {
+      "id": "close-crop",
+      "name": "Close crop",
+      "slot": "hairstyle",
+      "tier": "base",
+      "approval": "pending_review",
+      "assetId": "cmujskeu70009am1j42sb94sv",
+      "export": {
+        "path": "close-crop/item.png",
+        "sha256": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          133,
+          74,
+          893,
+          767
+        ]
+      },
+      "generationCredits": 1,
+      "backgroundRemovalCredits": 1,
+      "containsCharacter": false,
+      "userDesignReview": {
+        "id": "close-crop",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b"
+      }
+    },
+    {
+      "id": "short-sweep",
+      "name": "Short sweep",
+      "slot": "hairstyle",
+      "tier": "base",
+      "approval": "pending_review",
+      "assetId": "cmujskfub000cam1jqzq10yvs",
+      "export": {
+        "path": "short-sweep/item.png",
+        "sha256": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          130,
+          32,
+          901,
+          860
+        ]
+      },
+      "generationCredits": 1,
+      "backgroundRemovalCredits": 1,
+      "containsCharacter": false,
+      "userDesignReview": {
+        "id": "short-sweep",
+        "decision": "pending",
+        "notes": "",
+        "sha256": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24"
+      }
+    }
+  ],
+  "reviewPage": "tools/review/modular-character-front-r2.html",
+  "runtimeIntegrated": false,
+  "approval": "pending_review",
+  "reviewRecord": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-2026-09-27T130559Z.json",
+    "sha256": "1ed3edf0f4eb74992c477ebae0a6aa66ea60a39e5533638eed8ea3a46d730daf",
+    "reviewedAt": "2026-09-27T13:05:59.086Z"
+  },
+  "reviewStatusPath": "assets/sprites/autosprite/basic-clothing-front-r1/review-status.json",
+  "latestFitRevision": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/fitting-r2.json",
+    "status": "bodies_and_hair_approved_clothing_changes_required",
+    "additionalCreditsUsed": 0
+  },
+  "latestReviewRecord": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-r2-2026-09-27T170140Z.json",
+    "sha256": "29f3cae851cb048081225def792244964b470da2a1cf5dbb4141358bde0867b1",
+    "reviewedAt": "2026-09-27T17:01:40.374Z"
+  },
+  "latestReviewStatusPath": "assets/sprites/autosprite/basic-clothing-front-r1/review-status-r2.json",
+  "fitApproval": "approved",
+  "approvedBaseHairLock": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/approved-base-hair-lock.json",
+    "sha256": "6130db512520de166c90596d8a0ff102f49baf0fa22b8f5cec4d609875ee1182"
+  },
+  "approvedFits": [
+    {
+      "id": "female-slim",
+      "baseSha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "83bda31d62c74242da75274267e15b3e2c5bdc6096dda25665bb1febb8d795a9"
+    },
+    {
+      "id": "female-medium",
+      "baseSha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "701b34c85e019a5a30b9e7613e36811d0b0d9563da144d091b57e68622a2a64b"
+    },
+    {
+      "id": "female-overweight",
+      "baseSha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "2d463cb15c7d948e47f633a0832bfafee4a17fc1d3bf4c6d69a53da8dcdbdf75"
+    },
+    {
+      "id": "female-obese",
+      "baseSha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "6213f39ca1cac94889a12747a288a4f8ea93ca3240cc2fe01d26cbcfcd5a9699"
+    },
+    {
+      "id": "female-muscular",
+      "baseSha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "9f4afb3c616dc455eb2fab6d048ea9dfb1c3669984ad402500a833419461e53c"
+    },
+    {
+      "id": "male-slim",
+      "baseSha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "fb7faa1a23766ef09bdcd0fce578dfd40b321f223bec4b368a90958bec52dea3"
+    },
+    {
+      "id": "male-medium",
+      "baseSha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "2b1f80a7802084b7c416734a4f628b4197c39f7a247e5a10c9913d921071fda0"
+    },
+    {
+      "id": "male-overweight",
+      "baseSha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "bd44b9285c72f01db1e8a40f2fc962b9873713af66c0e36a794dee0ec3255f2a"
+    },
+    {
+      "id": "male-obese",
+      "baseSha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "21da6df6c5c1acf13e711f1976d5692e17bc3df2db315eda2da4fd1148af2192"
+    },
+    {
+      "id": "male-muscular",
+      "baseSha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+      "decision": "approved",
+      "notes": "",
+      "sha256": "5b80f910687cd87ac77dbbfeba17c2729e5e2e84296234d4c592e5abcd405851"
+    }
+  ]
+}

@@ -28,6 +28,9 @@ artifacts/visual/UI-migration/final/motion/
 artifacts/visual/IllustratedCharacterProof/
 *.blend1
 
+# Download bundles duplicate the versioned character reference folders.
+design/character-handoff/*.zip
+
 # Reproducible official Firebase SDK: tools/install_firebase_unity.py (not vendored).
 app/Assets/Firebase/
 app/Assets/Firebase.meta

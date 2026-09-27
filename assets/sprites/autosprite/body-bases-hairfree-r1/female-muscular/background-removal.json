@@ -1,0 +1,19 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmujskpnl00098xhh89dqmdnw",
+  "creditsUsed": 1,
+  "cached": false,
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujskpnl00098xhh89dqmdnw/base-nobg",
+  "export": {
+    "path": "assets/sprites/autosprite/body-bases-hairfree-r1/female-muscular/body.png",
+    "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      328,
+      35,
+      682,
+      996
+    ]
+  }
+}

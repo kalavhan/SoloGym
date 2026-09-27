@@ -22,6 +22,7 @@ namespace SoloGym
         EquipmentScreen equipment;
         ScheduleScreen schedule;
         CharacterStudioScreen character;
+        AutoSpriteStudioScreen modularCharacter;
         int profileReturnFrame = -1;
         InputField ageInput;
         Text status, countryValue, regionValue, privacyCheck, termsCheck, continueText;
@@ -190,6 +191,22 @@ namespace SoloGym
             if (goals != null) goals.gameObject.SetActive(false);
             if (profile != null) profile.gameObject.SetActive(false);
             root.gameObject.SetActive(false);
+            if (AutoSpriteSession.Requested)
+            {
+                if (modularCharacter != null) return;
+                var studioNode = new GameObject("MVP character customization");
+                studioNode.transform.SetParent(transform, false);
+                modularCharacter = studioNode.AddComponent<AutoSpriteStudioScreen>();
+                modularCharacter.Initialize(controller.Model.Language, () =>
+                {
+                    Destroy(modularCharacter.gameObject); modularCharacter = null;
+                    profileReturnFrame = Time.frameCount;
+                    if (schedule != null) schedule.gameObject.SetActive(true);
+                    else root.gameObject.SetActive(true);
+                }, () => UnityEngine.SceneManagement.SceneManager.LoadScene("SystemHome"),
+                    capturePath ?? (Argument("-sologym-window") == "character" ? capture : null));
+                return;
+            }
             if (character != null)
             {
                 character.Resume(PlayerPrefs.GetString("SoloGym.Home.Language.v1", "auto"));
@@ -419,7 +436,7 @@ namespace SoloGym
 
         void Update()
         {
-            if(root==null||(profile!=null&&profile.gameObject.activeSelf)||(schedule!=null&&schedule.gameObject.activeSelf)||(character!=null&&character.gameObject.activeSelf)||Time.frameCount==profileReturnFrame)return;
+            if(root==null||modularCharacter!=null||(profile!=null&&profile.gameObject.activeSelf)||(schedule!=null&&schedule.gameObject.activeSelf)||(character!=null&&character.gameObject.activeSelf)||Time.frameCount==profileReturnFrame)return;
             if(lastSize.x!=Screen.width||lastSize.y!=Screen.height||lastSafe!=Screen.safeArea||lastKeyboard!=TouchScreenKeyboard.visible||lastKeyboardHeight!=TouchScreenKeyboard.area.height)Fit();
             if(Input.GetKeyDown(KeyCode.Escape)){if(controller.Model.Step==OnboardingStep.Document){if(documentOnly)Exit();else controller.Back();}else if(modal!=null)CloseModal();else controller.Back();}
         }

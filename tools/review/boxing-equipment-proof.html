@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoloGym · Static equipment fit</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; color: #edf1ee; background: #080f18; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 300px; }
+    main { width: min(1060px, 100%); margin: auto; padding: 20px; }
+    header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+    .eyebrow { margin: 0 0 5px; color: #9cbaac; font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+    h1 { margin: 0; font-size: clamp(19px, 4vw, 26px); letter-spacing: .02em; }
+    #status { max-width: 100%; padding: 8px 12px; border: 1px solid #66715f; color: #e0d2a6; font-size: 12px; overflow-wrap: anywhere; }
+    #status[data-passed="true"] { border-color: #588870; color: #b0ddc4; }
+    .stage { height: min(72vh, 800px); min-height: 300px; display: grid; place-items: center; position: relative; padding: 18px; border: 1px solid #364653; background: #111d2a; overflow: hidden; }
+    .stage[data-background="light"] { background: #e7e8e2; }
+    .stage[data-background="checker"] { background: conic-gradient(#c9cfc9 25%, #edf0e9 0 50%, #c9cfc9 0 75%, #edf0e9 0) 0 0 / 28px 28px; }
+    .stage[data-zoom="native"] { display: block; overflow: auto; }
+    .stage[data-zoom="native"] canvas { max-width: none; max-height: none; }
+    canvas { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
+    #loading { position: absolute; margin: 20px; text-align: center; color: #b9c6cd; }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 15px 0; border-bottom: 1px solid #2e3d49; }
+    label { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; }
+    input { accent-color: #a8cbb1; width: 17px; height: 17px; }
+    button, select { font: inherit; font-size: 12px; color: #e8eeea; background: #1c2b38; border: 1px solid #536474; border-radius: 2px; padding: 8px 10px; cursor: pointer; }
+    button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid #c3d2aa; outline-offset: 4px; }
+    button:disabled, input:disabled { opacity: .45; cursor: default; }
+    #zoom { color: #b8c7ce; font-size: 12px; }
+    .meta { color: #becad0; font-size: 13px; line-height: 1.6; }
+    .meta p { margin: 12px 0 0; }
+    .meta ul { margin: 6px 0 0; padding-left: 20px; }
+    #error { color: #ffc6b8; white-space: pre-wrap; }
+    .guide-note { color: #92a9b6; }
+    [hidden] { display: none !important; }
+    @media (max-width: 480px) { main { padding: 12px; } .stage { height: 64vh; padding: 10px; } .controls { gap: 12px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div><p class="eyebrow">SOLOGYM / BASIC EQUIPMENT</p><h1>Boxing glove fit</h1></div>
+      <span id="status" role="status">Loading proof…</span>
+    </header>
+    <section class="stage" id="stage" data-background="dark" aria-label="Static character equipment preview">
+      <canvas id="preview" hidden aria-label="Frozen character with optional glove layer"></canvas>
+      <p id="loading">Loading the exported artwork…</p>
+    </section>
+    <div class="controls">
+      <label><input type="checkbox" id="equipped" disabled>Gloves equipped</label>
+      <label>Background <select id="background"><option value="dark">Dark</option><option value="light">Light</option><option value="checker">Checker</option></select></label>
+      <label><input type="checkbox" id="guides" disabled>Fit guides</label>
+      <button id="fit" type="button" aria-pressed="true" disabled>Fit character</button>
+      <button id="native" type="button" aria-pressed="false" disabled>100% pixels</button>
+      <span id="zoom"></span>
+    </div>
+    <div class="meta">
+      <p><strong>Static fit proof · not animation/game integration.</strong></p>
+      <p id="mode">The base stays fixed while the separate glove artwork is toggled.</p>
+      <p class="guide-note" id="guide-note" hidden>Guides show each layer’s destination rectangle and its center for registration. They are not anatomical anchors.</p>
+      <ul id="notes"></ul>
+      <p id="error" role="alert" hidden></p>
+    </div>
+  </main>
+  <script type="module">
+    const manifestURL = new URL('../../assets/sprites/autosprite/boxer-basic-equipment-proof-r1/proof.json', location.href);
+    const rootURL = new URL('.', manifestURL);
+    const $ = id => document.getElementById(id);
+    const canvas = $('preview');
+    const context = canvas.getContext('2d');
+    const stage = $('stage');
+    let proof, base, layers = [];
+
+    function dimension(value, label) {
+      if (!Number.isInteger(value) || value <= 0 || value > 16384) throw new Error(`${label} must be a positive pixel dimension (maximum 16384).`);
+      return value;
+    }
+    function rectangle(rect, label) {
+      if (!rect || !Number.isInteger(rect.x) || !Number.isInteger(rect.y) || rect.x < 0 || rect.y < 0) throw new Error(`${label} requires nonnegative integer x and y.`);
+      dimension(rect.width, `${label}.width`);
+      dimension(rect.height, `${label}.height`);
+      return rect;
+    }
+    function assetURL(file) {
+      if (typeof file !== 'string' || !file.trim()) throw new Error('Missing asset filename.');
+      const url = new URL(file, rootURL);
+      if (url.origin !== rootURL.origin || !url.pathname.startsWith(rootURL.pathname)) throw new Error('Asset files must be inside the proof directory.');
+      return url;
+    }
+    function loadImage(file) {
+      return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.onload = () => resolve(image);
+        image.onerror = () => reject(new Error(`Could not load exported image: ${file}`));
+        image.src = assetURL(file).href;
+      });
+    }
+    function fit() {
+      if (!proof) return;
+      if (stage.dataset.zoom === 'native') {
+        canvas.style.width = `${canvas.width}px`;
+        canvas.style.height = `${canvas.height}px`;
+        $('zoom').textContent = '100% · scroll to inspect';
+        return;
+      }
+      const style = getComputedStyle(stage);
+      const availableWidth = stage.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      const availableHeight = stage.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+      const scale = Math.min(availableWidth / canvas.width, availableHeight / canvas.height);
+      canvas.style.width = `${canvas.width * scale}px`;
+      canvas.style.height = `${canvas.height * scale}px`;
+      $('zoom').textContent = `Fit · ${Math.round(scale * 100)}%`;
+    }
+    function setZoom(mode) {
+      stage.dataset.zoom = mode;
+      $('fit').setAttribute('aria-pressed', String(mode === 'fit'));
+      $('native').setAttribute('aria-pressed', String(mode === 'native'));
+      fit();
+      stage.scrollTo(0, 0);
+    }
+    function draw() {
+      if (!base) return;
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(base, 0, 0);
+      if ($('equipped').checked) {
+        for (const layer of layers) {
+          const s = layer.sourceRect, d = layer.destinationRect;
+          context.drawImage(layer.image, s.x, s.y, s.width, s.height, d.x, d.y, d.width, d.height);
+        }
+      }
+      if ($('guides').checked) {
+        context.save();
+        context.strokeStyle = '#f5a957';
+        context.lineWidth = Math.max(1, canvas.width / 600);
+        context.setLineDash([canvas.width / 100, canvas.width / 160]);
+        for (const layer of layers) {
+          const d = layer.destinationRect;
+          context.strokeRect(d.x, d.y, d.width, d.height);
+          const x = d.x + d.width / 2, y = d.y + d.height / 2, r = canvas.width / 120;
+          context.beginPath(); context.moveTo(x - r, y); context.lineTo(x + r, y); context.moveTo(x, y - r); context.lineTo(x, y + r); context.stroke();
+        }
+        context.restore();
+      }
+      $('mode').textContent = $('equipped').checked
+        ? 'Gloves equipped: the separate raster layer is drawn over the frozen base.'
+        : 'Gloves removed: only the frozen base is drawn.';
+    }
+    $('background').addEventListener('change', event => { stage.dataset.background = event.target.value; });
+    $('equipped').addEventListener('change', draw);
+    $('guides').addEventListener('change', () => { $('guide-note').hidden = !$('guides').checked; draw(); });
+    $('fit').addEventListener('click', () => setZoom('fit'));
+    $('native').addEventListener('click', () => setZoom('native'));
+    new ResizeObserver(fit).observe(stage);
+
+    async function initialize() {
+      const response = await fetch(manifestURL, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Proof manifest is unavailable (HTTP ${response.status}). Serve this repository over local HTTP and provide ${manifestURL.pathname}.`);
+      const data = await response.json();
+      dimension(data.canvas?.width, 'canvas.width');
+      dimension(data.canvas?.height, 'canvas.height');
+      if (typeof data.status !== 'string' || !data.status.trim()) throw new Error('The proof requires an explicit status.');
+      if (!Array.isArray(data.layers) || !data.layers.length) throw new Error('The proof requires at least one separate glove layer.');
+      if (!Array.isArray(data.notes) || data.notes.some(note => typeof note !== 'string')) throw new Error('notes must be an array of strings.');
+      const ids = new Set();
+      const checked = data.layers.map(layer => {
+        if (layer.slot !== 'hands') throw new Error('This proof supports the hands slot only.');
+        if (typeof layer.id !== 'string' || !layer.id || ids.has(layer.id)) throw new Error('Each layer requires a unique id.');
+        ids.add(layer.id);
+        const s = rectangle(layer.sourceRect, `${layer.id}.sourceRect`);
+        const d = rectangle(layer.destinationRect, `${layer.id}.destinationRect`);
+        if (d.x + d.width > data.canvas.width || d.y + d.height > data.canvas.height) throw new Error(`${layer.id} extends outside the base canvas.`);
+        return { ...layer, sourceRect: s, destinationRect: d };
+      });
+      const images = await Promise.all([loadImage(data.base?.file), ...checked.map(layer => loadImage(layer.file))]);
+      if (images[0].naturalWidth !== data.canvas.width || images[0].naturalHeight !== data.canvas.height) throw new Error('Base image dimensions must exactly match the declared canvas; no implicit resizing is applied.');
+      checked.forEach((layer, index) => {
+        const image = images[index + 1], s = layer.sourceRect;
+        if (s.x + s.width > image.naturalWidth || s.y + s.height > image.naturalHeight) throw new Error(`${layer.id}.sourceRect extends outside its image.`);
+        layer.image = image;
+      });
+      proof = data; base = images[0]; layers = checked;
+      canvas.width = data.canvas.width; canvas.height = data.canvas.height;
+      const passed = data.status === 'passed_static_fit';
+      $('status').textContent = data.status;
+      $('status').dataset.passed = String(passed);
+      $('equipped').checked = passed;
+      for (const id of ['equipped', 'guides', 'fit', 'native']) $(id).disabled = false;
+      $('notes').replaceChildren(...data.notes.map(note => { const li = document.createElement('li'); li.textContent = note; return li; }));
+      $('loading').hidden = true; canvas.hidden = false;
+      fit(); draw();
+    }
+    initialize().catch(error => {
+      $('loading').textContent = 'Artwork unavailable';
+      $('status').textContent = 'Proof could not load';
+      $('error').textContent = error.message;
+      $('error').hidden = false;
+      console.error(error);
+    });
+  </script>
+</body>
+</html>

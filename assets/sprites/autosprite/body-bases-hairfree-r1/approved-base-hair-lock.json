@@ -1,0 +1,645 @@
+{
+  "schema": "sologym.approved-modular-base-lock.v1",
+  "status": "approved_frozen",
+  "sourceReview": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/user-review-r2-2026-09-27T170140Z.json",
+    "sha256": "29f3cae851cb048081225def792244964b470da2a1cf5dbb4141358bde0867b1",
+    "reviewedAt": "2026-09-27T17:01:40.374Z"
+  },
+  "reviewedFitting": {
+    "path": "assets/sprites/autosprite/basic-clothing-front-r1/reviews/fitting-reviewed-r2-2026-09-27T170140Z.json",
+    "sha256": "a233121b70630dd0c8c576416374957f54388357a10788785a31f177de18121e"
+  },
+  "canvas": {
+    "width": 1024,
+    "height": 1024,
+    "origin": "top-left"
+  },
+  "bodyMutationAllowed": false,
+  "hairFitMutationAllowed": false,
+  "hairstyles": [
+    {
+      "id": "close-crop",
+      "image": {
+        "path": "hairstyles-front-r1/close-crop/item.png",
+        "sha256": "7c43bc98874a23e681efc9cd6c26c263b162236e1fcbd9606b46856e4991029b",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          133,
+          74,
+          893,
+          767
+        ]
+      }
+    },
+    {
+      "id": "short-sweep",
+      "image": {
+        "path": "hairstyles-front-r1/short-sweep/item.png",
+        "sha256": "0d43c637c24ad74df23ed2739a3de892fa24b131e7e75ba481518b051dc16d24",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          130,
+          32,
+          901,
+          860
+        ]
+      }
+    }
+  ],
+  "bodies": [
+    {
+      "id": "female-slim",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-slim/body.png",
+        "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          351,
+          58,
+          663,
+          999
+        ]
+      },
+      "bodyApproval": {
+        "id": "female-slim",
+        "decision": "approved",
+        "notes": "nice",
+        "sha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 460,
+            "y": 51,
+            "width": 106,
+            "height": 99
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 456,
+            "y": 47,
+            "width": 113,
+            "height": 111
+          }
+        }
+      },
+      "hairFitSha256": "83bda31d62c74242da75274267e15b3e2c5bdc6096dda25665bb1febb8d795a9",
+      "hairApproval": {
+        "id": "female-slim",
+        "baseSha256": "f86c825e3d506d41681b68492ced07cde7bc92e7f6d8ef51e9dd8e630fa6d1c6",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "83bda31d62c74242da75274267e15b3e2c5bdc6096dda25665bb1febb8d795a9"
+      }
+    },
+    {
+      "id": "female-medium",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-medium/body.png",
+        "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          344,
+          34,
+          668,
+          993
+        ]
+      },
+      "bodyApproval": {
+        "id": "female-medium",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 453,
+            "y": 28,
+            "width": 112,
+            "height": 101
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 450,
+            "y": 23,
+            "width": 118,
+            "height": 123
+          }
+        }
+      },
+      "hairFitSha256": "701b34c85e019a5a30b9e7613e36811d0b0d9563da144d091b57e68622a2a64b",
+      "hairApproval": {
+        "id": "female-medium",
+        "baseSha256": "305b4dc0f0cd4b48cd0b368099e3b9c3b51e1adbd0e01d571a283dea764cdc15",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "701b34c85e019a5a30b9e7613e36811d0b0d9563da144d091b57e68622a2a64b"
+      }
+    },
+    {
+      "id": "female-overweight",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-overweight/body.png",
+        "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          314,
+          50,
+          701,
+          988
+        ]
+      },
+      "bodyApproval": {
+        "id": "female-overweight",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 450,
+            "y": 43,
+            "width": 114,
+            "height": 102
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 447,
+            "y": 40,
+            "width": 120,
+            "height": 123
+          }
+        }
+      },
+      "hairFitSha256": "2d463cb15c7d948e47f633a0832bfafee4a17fc1d3bf4c6d69a53da8dcdbdf75",
+      "hairApproval": {
+        "id": "female-overweight",
+        "baseSha256": "23c3e12acc1374ad5b1bd614a741c4b3e1abb61cc5437013829bc1a90b17bdbf",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "2d463cb15c7d948e47f633a0832bfafee4a17fc1d3bf4c6d69a53da8dcdbdf75"
+      }
+    },
+    {
+      "id": "female-obese",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-obese/body.png",
+        "sha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          308,
+          47,
+          705,
+          997
+        ]
+      },
+      "bodyApproval": {
+        "id": "female-obese",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 451,
+            "y": 40,
+            "width": 119,
+            "height": 102
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 448,
+            "y": 37,
+            "width": 124,
+            "height": 123
+          }
+        }
+      },
+      "hairFitSha256": "6213f39ca1cac94889a12747a288a4f8ea93ca3240cc2fe01d26cbcfcd5a9699",
+      "hairApproval": {
+        "id": "female-obese",
+        "baseSha256": "291ca2b427198c7dc3289bb126069454e3e5f3f6465bf4e0c1069db6e419e92e",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "6213f39ca1cac94889a12747a288a4f8ea93ca3240cc2fe01d26cbcfcd5a9699"
+      }
+    },
+    {
+      "id": "female-muscular",
+      "image": {
+        "path": "body-bases-hairfree-r1/female-muscular/body.png",
+        "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          328,
+          35,
+          682,
+          996
+        ]
+      },
+      "bodyApproval": {
+        "id": "female-muscular",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 452,
+            "y": 29,
+            "width": 112,
+            "height": 101
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 449,
+            "y": 24,
+            "width": 117,
+            "height": 123
+          }
+        }
+      },
+      "hairFitSha256": "9f4afb3c616dc455eb2fab6d048ea9dfb1c3669984ad402500a833419461e53c",
+      "hairApproval": {
+        "id": "female-muscular",
+        "baseSha256": "47912a2e56da0b38eb94aac860f59884dea198eac0befb2cd446dfd8e9da0cdc",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "9f4afb3c616dc455eb2fab6d048ea9dfb1c3669984ad402500a833419461e53c"
+      }
+    },
+    {
+      "id": "male-slim",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-slim/body.png",
+        "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          342,
+          37,
+          682,
+          1002
+        ]
+      },
+      "bodyApproval": {
+        "id": "male-slim",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 458,
+            "y": 30,
+            "width": 109,
+            "height": 95
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 455,
+            "y": 26,
+            "width": 114,
+            "height": 113
+          }
+        }
+      },
+      "hairFitSha256": "fb7faa1a23766ef09bdcd0fce578dfd40b321f223bec4b368a90958bec52dea3",
+      "hairApproval": {
+        "id": "male-slim",
+        "baseSha256": "01c3de2e5646a0cbe633ffaeee288d117df0526ba4bdd532c7db02b6febcc99c",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "fb7faa1a23766ef09bdcd0fce578dfd40b321f223bec4b368a90958bec52dea3"
+      }
+    },
+    {
+      "id": "male-medium",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-medium/body.png",
+        "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          338,
+          44,
+          687,
+          999
+        ]
+      },
+      "bodyApproval": {
+        "id": "male-medium",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 456,
+            "y": 37,
+            "width": 112,
+            "height": 96
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 453,
+            "y": 33,
+            "width": 117,
+            "height": 114
+          }
+        }
+      },
+      "hairFitSha256": "2b1f80a7802084b7c416734a4f628b4197c39f7a247e5a10c9913d921071fda0",
+      "hairApproval": {
+        "id": "male-medium",
+        "baseSha256": "17f3d9700a590a8c0525c2628dffd292f7b7b43b4790a9ce2bfa57533eec3994",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "2b1f80a7802084b7c416734a4f628b4197c39f7a247e5a10c9913d921071fda0"
+      }
+    },
+    {
+      "id": "male-overweight",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-overweight/body.png",
+        "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          300,
+          47,
+          721,
+          1024
+        ]
+      },
+      "bodyApproval": {
+        "id": "male-overweight",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 455,
+            "y": 40,
+            "width": 112,
+            "height": 97
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 452,
+            "y": 36,
+            "width": 117,
+            "height": 115
+          }
+        }
+      },
+      "hairFitSha256": "bd44b9285c72f01db1e8a40f2fc962b9873713af66c0e36a794dee0ec3255f2a",
+      "hairApproval": {
+        "id": "male-overweight",
+        "baseSha256": "d8c20f00c6670c46691562be03ab45919faf3909d924f839588f0450361a7673",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "bd44b9285c72f01db1e8a40f2fc962b9873713af66c0e36a794dee0ec3255f2a"
+      }
+    },
+    {
+      "id": "male-obese",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-obese/body.png",
+        "sha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          276,
+          29,
+          746,
+          1005
+        ]
+      },
+      "bodyApproval": {
+        "id": "male-obese",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 454,
+            "y": 22,
+            "width": 115,
+            "height": 97
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 451,
+            "y": 18,
+            "width": 120,
+            "height": 115
+          }
+        }
+      },
+      "hairFitSha256": "21da6df6c5c1acf13e711f1976d5692e17bc3df2db315eda2da4fd1148af2192",
+      "hairApproval": {
+        "id": "male-obese",
+        "baseSha256": "01f3e32a0890fe397a95c0b79dbc5c63aff35072a78bfd739032ecae249ec326",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "21da6df6c5c1acf13e711f1976d5692e17bc3df2db315eda2da4fd1148af2192"
+      }
+    },
+    {
+      "id": "male-muscular",
+      "image": {
+        "path": "body-bases-hairfree-r1/male-muscular/body.png",
+        "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "width": 1024,
+        "height": 1024,
+        "alphaBounds": [
+          319,
+          41,
+          705,
+          1000
+        ]
+      },
+      "bodyApproval": {
+        "id": "male-muscular",
+        "decision": "approved",
+        "notes": "same hair like helmet issue",
+        "sha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632"
+      },
+      "hairFits": {
+        "close-crop": {
+          "sourceRect": {
+            "x": 133,
+            "y": 74,
+            "width": 760,
+            "height": 693
+          },
+          "destinationRect": {
+            "x": 457,
+            "y": 34,
+            "width": 110,
+            "height": 97
+          }
+        },
+        "short-sweep": {
+          "sourceRect": {
+            "x": 130,
+            "y": 32,
+            "width": 771,
+            "height": 828
+          },
+          "destinationRect": {
+            "x": 454,
+            "y": 30,
+            "width": 115,
+            "height": 115
+          }
+        }
+      },
+      "hairFitSha256": "5b80f910687cd87ac77dbbfeba17c2729e5e2e84296234d4c592e5abcd405851",
+      "hairApproval": {
+        "id": "male-muscular",
+        "baseSha256": "41985293cd3c19da81fb5c1c2f809938ad7b6f9dd5261fbca0e5f48936db7632",
+        "decision": "approved",
+        "notes": "",
+        "sha256": "5b80f910687cd87ac77dbbfeba17c2729e5e2e84296234d4c592e5abcd405851"
+      }
+    }
+  ],
+  "scope": "Approved body PNGs and hair placement only. Equipment artwork/fit is reviewed independently; no runtime integration or standalone asset-design approval is implied."
+}

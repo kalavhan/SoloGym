@@ -1,0 +1,14 @@
+{
+  "poseId": "cmujsfmvf0004n2jj8uxdla2p",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujscgxp00019nq09nid1cev/1790511673086_29cb9a7f-61c8-44bb-9fee-b1c779ae1555_custom-pose-frame-1790511673086.png",
+  "image": {
+    "path": "male-overweight/source.png",
+    "sha256": "329935c37c37f68346e11ac1f14457c5d8235ff370433936d72011f62947e7c8",
+    "width": 1024,
+    "height": 1024
+  },
+  "originalSource": {
+    "path": "assets/sprites/autosprite/body-bases-front-r1/male-overweight/source.png",
+    "sha256": "be2213797ef18102dc81f468635064368b0491c4b1b9862ff8a18b4fd1ac00b8"
+  }
+}

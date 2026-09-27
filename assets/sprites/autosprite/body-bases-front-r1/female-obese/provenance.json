@@ -1,0 +1,18 @@
+{
+  "provider": "AutoSprite",
+  "tool": "generate_pose",
+  "characterId": "cmujfdkj1002ubashaviaaf7w",
+  "poseId": "cmujff17u000fhqkz5j086dpg",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujfdkj1002ubashaviaaf7w/1790489816252_d235ff50-8905-4bc1-92c6-f22d58bf368d_custom-pose-frame-1790489816252.png",
+  "output": {
+    "path": "female-obese/source.png",
+    "sha256": "45ec1fa669f56cde07154a9a54d23ec3686109f9673df3a7f975fa057b3f0c70",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      255,
+      255
+    ]
+  }
+}

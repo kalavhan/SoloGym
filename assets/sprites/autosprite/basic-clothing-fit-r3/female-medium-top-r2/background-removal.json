@@ -1,0 +1,18 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmuk4gt7p0001ib0kiihvo03s",
+  "creditsUsed": 1,
+  "export": {
+    "path": "female-medium-top-r2/item.png",
+    "sha256": "4d2a5f09bbc5dfd86cd723f48f9d5b01c36571d69d24e3534e963dcdb53802f7",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      127,
+      34,
+      897,
+      986
+    ]
+  },
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmuk4gt7p0001ib0kiihvo03s/base-nobg"
+}

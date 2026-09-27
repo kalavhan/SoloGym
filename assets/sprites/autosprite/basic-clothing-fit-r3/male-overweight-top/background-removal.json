@@ -1,0 +1,18 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmuk4d7v3000iuhuposxb05h1",
+  "creditsUsed": 1,
+  "export": {
+    "path": "male-overweight-top/item.png",
+    "sha256": "94f7596b18f4f151be96d072202cc90de65d0b21cec6830f962020d1f483c3b5",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      61,
+      6,
+      962,
+      1005
+    ]
+  },
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmuk4d7v3000iuhuposxb05h1/base-nobg"
+}

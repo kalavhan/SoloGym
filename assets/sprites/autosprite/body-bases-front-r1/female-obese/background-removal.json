@@ -1,0 +1,52 @@
+{
+  "assetId": "cmujrpcee0006ajlowi3dtqwb",
+  "tool": "remove_asset_background",
+  "cached": false,
+  "creditsUsed": 1,
+  "sourceSha256": "45ec1fa669f56cde07154a9a54d23ec3686109f9673df3a7f975fa057b3f0c70",
+  "sourceImage": "female-obese/source.png",
+  "export": {
+    "path": "female-obese/body.png",
+    "sha256": "a3c7f8d9999ca54160a30ef9b782e811baddf1cad80051bc1dad420a0de658b6",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "contentBounds": [
+      308,
+      14,
+      705,
+      997
+    ],
+    "coordinateOrigin": "top-left",
+    "trimmed": false,
+    "resized": false,
+    "sourceSha256": "45ec1fa669f56cde07154a9a54d23ec3686109f9673df3a7f975fa057b3f0c70",
+    "provider": "AutoSprite",
+    "tool": "remove_asset_background",
+    "assetId": "cmujrpcee0006ajlowi3dtqwb",
+    "creditsUsed": 1,
+    "qa": {
+      "dimensionsUnchanged": true,
+      "sourceChecksumUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "opaquePixelCount": 12856,
+      "opaqueRgbChangedPixelCount": 0,
+      "opaqueRgbMaxChannelDifference": 0,
+      "opaqueRgbMeanChannelDifference": 0.0,
+      "contentBoundsAlpha128": [
+        310,
+        18,
+        704,
+        995
+      ]
+    }
+  },
+  "downloadUrlWithoutQuery": "https://www.autosprite.io/api/files/assets/cmujrpcee0006ajlowi3dtqwb/base-nobg"
+}

@@ -1,0 +1,18 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmujsz2o000018bfjcwwgb1bq",
+  "creditsUsed": 1,
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmujsz2o000018bfjcwwgb1bq/base-nobg",
+  "export": {
+    "path": "legs-r2/item.png",
+    "sha256": "56ae38ddddb46ca40281d743ef16422ba3a6bf19bcb8eeee9c8a4140ce139650",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      93,
+      63,
+      930,
+      953
+    ]
+  }
+}

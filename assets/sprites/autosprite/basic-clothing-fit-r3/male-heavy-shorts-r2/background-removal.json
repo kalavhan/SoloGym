@@ -1,0 +1,18 @@
+{
+  "tool": "remove_asset_background",
+  "assetId": "cmuk4gu390003ib0kxflxv0ox",
+  "creditsUsed": 1,
+  "export": {
+    "path": "male-heavy-shorts-r2/item.png",
+    "sha256": "424591e5fa4bd930043a2175ded27461c62bca5d454f7ffe5ccf7db5f0c6f6c5",
+    "width": 1024,
+    "height": 1024,
+    "alphaBounds": [
+      20,
+      107,
+      999,
+      838
+    ]
+  },
+  "sourceUrl": "https://www.autosprite.io/api/files/assets/cmuk4gu390003ib0kxflxv0ox/base-nobg"
+}

@@ -1,0 +1,7 @@
+SOLOGYM / BASE / Boots · Shared design
+
+Use boots.png as the sole item-design reference. Reproduce the pictured item, preserving its silhouette, colors, seams, panels and trim. Do not invent another design.
+
+Matched slim navy mid-calf boxing boots with cream crossed laces, cream side stripe and a thin flexible sole. One feet-slot item contains the pair. Preserve the pictured construction.
+
+Render only this equipment item. Clean frontal game illustration with crisp outlines and restrained cel shading. No character, mannequin, skin, text, labels, grid, extra items, glow or animation. Export an isolated PNG with a clean transparent background.

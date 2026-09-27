@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SoloGym · Frontal body bases</title>
+  <style>
+    :root{color-scheme:dark;font-family:system-ui,sans-serif;color:#edf0ed;background:#0b111a}
+    *{box-sizing:border-box}body{margin:0}main{max-width:1500px;margin:auto;padding:24px}
+    .eyebrow{color:#95b6ba;font-size:11px;letter-spacing:.16em;font-weight:700;margin:0 0 6px}
+    h1{margin:0;font-size:clamp(24px,4vw,36px)}header p{color:#bac5cc;max-width:850px;line-height:1.55}
+    .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:20px 0}
+    button,select,textarea{font:inherit;color:inherit;background:#1c2938;border:1px solid #536374;border-radius:3px}
+    button{padding:9px 14px;cursor:pointer}button:hover{background:#2c4053}button[aria-pressed=true]{border-color:#a4cebe;color:#d3efdf;background:#233d3a}
+    button:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #e6cc91;outline-offset:3px}
+    #progress{margin-left:auto;color:#c9d7cd;font-size:13px}.subtle{font-size:12px;color:#a4b4bf}
+    .group h2{font-size:18px;border-bottom:1px solid #354350;padding-bottom:10px;margin-top:30px}
+    .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+    .card{background:#131e2b;border:1px solid #354350;border-radius:4px;overflow:hidden}
+    .image-button{display:block;border:0;border-radius:0;padding:0;width:100%;background:#fff;aspect-ratio:3/5;overflow:hidden}
+    .image-button:hover{background:#fff}.image-button img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    body[data-export=transparent] .image-button,body[data-export=transparent] #large-image{background-color:var(--preview-bg,#263344);background-image:var(--preview-pattern,none);background-size:24px 24px}
+    body[data-background=light]{--preview-bg:#e2e6e9}body[data-background=checker]{--preview-bg:#273343;--preview-pattern:conic-gradient(#415168 25%,transparent 0 50%,#415168 0 75%,transparent 0)}
+    .export-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:10px 0}.export-controls select{padding:7px;margin-left:6px}
+    .details{padding:12px}.details h3{font-size:16px;margin:0 0 9px}.details select{width:100%;padding:7px;margin:3px 0 8px;font-size:12px}
+    .details textarea{display:block;width:100%;padding:8px;min-height:68px;resize:vertical;font-size:12px;background:#0c1622}
+    .card[data-review=approved]{border-color:#78b59a}.card[data-review=changes_requested]{border-color:#d1a374}
+    .qa{font-size:11px;line-height:1.4;color:#bcc7ce;margin:8px 0 0}.pending{aspect-ratio:3/5;display:grid;place-items:center;color:#adb9c4}
+    footer{margin-top:28px;border-top:1px solid #354350;padding-top:12px;color:#a4b4bf;font-size:12px;line-height:1.6}
+    #error{color:#ffbaa8}dialog{width:min(1120px,96vw);max-height:96vh;padding:16px;background:#111c29;border:1px solid #627486;color:#edf0ed}
+    dialog::backdrop{background:#030810df}.modal-bar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px}
+    #large-image{display:block;width:100%;height:min(73vh,1024px);object-fit:contain;background:#fff}#modal-title{margin:0;font-size:19px}
+    .modal-nav{display:flex;gap:8px}.hidden,[hidden]{display:none!important}
+    @media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:620px){main{padding:14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}#progress{margin-left:0;width:100%}.details{padding:9px}.modal-bar{flex-wrap:wrap}}
+  </style>
+</head>
+<body><main>
+  <header><p class="eyebrow">SOLOGYM / BODY BASE REVIEW</p><h1>Frontal body bases</h1>
+    <p>Five body types per gender. Men wear plain boxer bottoms; women wear matching bottoms and a sports bra. All views are static, with bare hands and feet. Tap a character to inspect it at a larger size.</p>
+  </header>
+  <div class="toolbar" aria-label="Review controls">
+    <button type="button" data-filter="all" aria-pressed="true">All 10</button>
+    <button type="button" data-filter="female" aria-pressed="false">Women</button>
+    <button type="button" data-filter="male" aria-pressed="false">Men</button>
+    <button type="button" id="download">Download review JSON</button><span id="progress" role="status">Loading…</span>
+  </div>
+  <div class="export-controls">
+    <label>Image<select id="image-mode"><option value="source">Approved original</option><option value="transparent">Transparent export</option></select></label>
+    <label>Backdrop<select id="background-mode"><option value="dark">Dark</option><option value="light">Light</option><option value="checker">Checkerboard</option></select></label>
+  </div>
+  <p class="subtle" id="batch-note"></p><p id="error" role="alert" hidden></p><div id="groups"></div>
+  <footer id="review-help">Review face/hairstyle consistency, distinct silhouettes, a straight frontal pose, and clean hands/feet. Notes stay in this browser until you download the review. No animation is being created.</footer>
+</main>
+<dialog id="viewer" aria-labelledby="modal-title"><div class="modal-bar"><h2 id="modal-title"></h2><div class="modal-nav"><button id="previous" type="button">Previous</button><button id="next" type="button">Next</button><button id="close" type="button">Close</button></div></div><img id="large-image" alt=""><p id="modal-note" class="subtle"></p></dialog>
+<script type="module">
+const manifestURL=new URL('../../assets/sprites/autosprite/body-bases-front-r1/manifest.json',location.href);
+const assetRoot=new URL('.',manifestURL), storageKey='sologym-body-bases-front-r1-review';
+const labels={slim:'Slim',medium:'Medium',overweight:'Overweight',obese:'Obese',muscular:'Muscular'};
+const $=id=>document.getElementById(id);let manifest,variants=[],review={},activeIndex=0,imageMode='source';
+try{review=JSON.parse(localStorage.getItem(storageKey)||'{}')}catch{review={}}
+function element(tag,text,className){const e=document.createElement(tag);if(text)e.textContent=text;if(className)e.className=className;return e}
+function imageURL(file){const u=new URL(file,assetRoot);if(u.origin!==assetRoot.origin||!u.pathname.startsWith(assetRoot.pathname))throw new Error('Image outside the batch directory');return u.href}
+function itemReview(v){const r=review[v.id];return r&&r.sha256===v.image?.sha256?r:{decision:v.approval==='approved'?'approved':'pending',notes:'',sha256:v.image?.sha256||null}}
+function displayedImage(v){return imageMode==='transparent'&&v.transparentExport?v.transparentExport:v.image}
+function previewNote(v){return v.approval==='approved'?'Artwork approved. Transparent export preserves the original canvas and pose. Equipment fit remains to be verified.':v.visualReview?.notes?.join(' ')||'New static body-base candidate. Review at full size.'}
+function refreshImages(){document.body.dataset.export=imageMode;for(const img of document.querySelectorAll('[data-variant]')){const v=variants.find(v=>v.id===img.dataset.variant);img.src=imageURL(displayedImage(v).path)}if($('viewer').open)show(activeIndex)}
+function save(v,decision,notes){review[v.id]={decision,notes,sha256:v.image?.sha256||null};try{localStorage.setItem(storageKey,JSON.stringify(review))}catch{$('error').hidden=false;$('error').textContent='Browser storage is unavailable. Download the review to keep your notes.'}progress()}
+function progress(){const ready=variants.filter(v=>v.image).length,approved=variants.filter(v=>itemReview(v).decision==='approved').length,changes=variants.filter(v=>itemReview(v).decision==='changes_requested').length;$('progress').textContent=`${ready}/${variants.length} images · ${approved} approved · ${changes} need changes`}
+function show(index){activeIndex=(index+variants.length)%variants.length;const v=variants[activeIndex];if(!v.image)return;$('modal-title').textContent=`${v.gender==='female'?'Woman':'Man'} · ${labels[v.bodyType]}`;$('large-image').src=imageURL(displayedImage(v).path);$('large-image').alt=$('modal-title').textContent;$('modal-note').textContent=previewNote(v);if(!$('viewer').open)$('viewer').showModal()}
+function card(v,index){const r=itemReview(v),c=element('article',null,'card');c.dataset.review=r.decision;
+  if(v.image){const b=element('button',null,'image-button');b.type='button';b.setAttribute('aria-label',`Inspect ${v.gender} ${v.bodyType}`);const im=element('img');im.src=imageURL(displayedImage(v).path);im.dataset.variant=v.id;im.alt=`${v.gender} ${v.bodyType} frontal body base`;im.loading='lazy';b.append(im);b.addEventListener('click',()=>show(index));c.append(b)}else{c.append(element('div','Awaiting image','pending'))}
+  const d=element('div',null,'details');d.append(element('h3',labels[v.bodyType]));const select=element('select');select.setAttribute('aria-label',`Decision for ${v.gender} ${v.bodyType}`);for(const [value,label]of [['pending','Pending review'],['approved','Approve'],['changes_requested','Request changes']]){const o=element('option',label);o.value=value;select.append(o)}select.value=r.decision;select.disabled=!v.image;
+  const notes=element('textarea');notes.placeholder='Notes for this body';notes.setAttribute('aria-label',`Notes for ${v.gender} ${v.bodyType}`);notes.value=r.notes;select.addEventListener('change',()=>{c.dataset.review=select.value;save(v,select.value,notes.value)});notes.addEventListener('input',()=>save(v,select.value,notes.value));d.append(select,notes);
+  d.append(element('p',previewNote(v),'qa'));c.append(d);return c}
+function render(){for(const gender of ['female','male']){const section=element('section',null,'group');section.dataset.gender=gender;section.append(element('h2',gender==='female'?'Women':'Men'));const grid=element('div',null,'grid');variants.forEach((v,i)=>{if(v.gender===gender)grid.append(card(v,i))});section.append(grid);$('groups').append(section)}progress()}
+for(const b of document.querySelectorAll('[data-filter]'))b.addEventListener('click',()=>{for(const other of document.querySelectorAll('[data-filter]'))other.setAttribute('aria-pressed',String(other===b));for(const g of document.querySelectorAll('.group'))g.hidden=b.dataset.filter!=='all'&&g.dataset.gender!==b.dataset.filter});
+$('close').addEventListener('click',()=>$('viewer').close());$('previous').addEventListener('click',()=>show(activeIndex-1));$('next').addEventListener('click',()=>show(activeIndex+1));
+$('image-mode').addEventListener('change',()=>{imageMode=$('image-mode').value;refreshImages()});$('background-mode').addEventListener('change',()=>{document.body.dataset.background=$('background-mode').value});
+$('download').addEventListener('click',()=>{if(!manifest)return;const out={schema:'sologym.body-base-review.v1',batch:'body-bases-front-r1',reviewedAt:new Date().toISOString(),variants:variants.map(v=>({id:v.id,gender:v.gender,bodyType:v.bodyType,image:v.image?.path||null,...itemReview(v)}))};const u=URL.createObjectURL(new Blob([JSON.stringify(out,null,2)+'\n'],{type:'application/json'}));const a=element('a');a.href=u;a.download=`sologym-body-bases-front-r1-review-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)});
+try{const response=await fetch(manifestURL,{cache:'no-store'});if(!response.ok)throw new Error(`Manifest HTTP ${response.status}`);manifest=await response.json();variants=manifest.variants?.slice().sort((a,b)=>((a.gender==='female'?0:1)-(b.gender==='female'?0:1))||(Object.keys(labels).indexOf(a.bodyType)-Object.keys(labels).indexOf(b.bodyType)));if(!Array.isArray(variants)||variants.length!==10)throw new Error('Expected ten planned body bases');const exportsReady=variants.every(v=>v.transparentExport);$('image-mode').options[1].disabled=!exportsReady;if(exportsReady){imageMode='transparent';$('image-mode').value=imageMode}document.body.dataset.export=imageMode;$('batch-note').textContent=`${manifest.generationCreditsUsed??30} generation credits + ${manifest.backgroundRemovalCreditsUsed??0} export credits · ${manifest.approval==='approved'?'All 10 artwork approvals recorded':'Review required'} · ${exportsReady?'10 transparent exports':'Exports pending'}`;if(manifest.approval==='approved')$('review-help').textContent='All ten original designs are approved and preserved. Switch between originals and transparent exports, and use light/dark/checkerboard backdrops to inspect edges. Equipment fitting and runtime integration remain separate work. New notes are saved locally until downloaded.';render()}catch(e){$('error').hidden=false;$('error').textContent=e.message;$('progress').textContent='Could not load batch'}
+</script></body></html>

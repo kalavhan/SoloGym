@@ -1,0 +1,14 @@
+{
+  "poseId": "cmujsfnqu0018j7aaw2hybmtt",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmujscl8b000ov65z5gv4fmiv/1790511677328_0074fa5c-07c9-4859-b576-a31da5e10f6b_custom-pose-frame-1790511677328.png",
+  "image": {
+    "path": "female-obese/source.png",
+    "sha256": "d3bf5fe7206cd46f433087c480ea72d61e0df7971a261751867735674771e257",
+    "width": 1024,
+    "height": 1024
+  },
+  "originalSource": {
+    "path": "assets/sprites/autosprite/body-bases-front-r1/female-obese/source.png",
+    "sha256": "45ec1fa669f56cde07154a9a54d23ec3686109f9673df3a7f975fa057b3f0c70"
+  }
+}

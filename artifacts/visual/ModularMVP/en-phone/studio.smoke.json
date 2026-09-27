@@ -1,0 +1,31 @@
+{
+    "passed": true,
+    "checks": [
+        "PASS configuration loads the static modular sprites",
+        "PASS retired female obese maps to overweight",
+        "PASS retired male obese maps to overweight",
+        "PASS invalid saved choices recover safely",
+        "PASS select male-slim",
+        "PASS select male-medium",
+        "PASS select male-overweight",
+        "PASS select male-muscular",
+        "PASS select female-slim",
+        "PASS select female-medium",
+        "PASS select female-overweight",
+        "PASS select female-muscular",
+        "PASS independent hair choice none",
+        "PASS independent hair choice short-sweep",
+        "PASS independent hair choice close-crop",
+        "PASS unequip clothes leaves only the unchanged body and hair",
+        "PASS reequip restores separate clothing and occlusion layers",
+        "PASS draft edits do not save before Continue",
+        "PASS Continue opens real Home",
+        "PASS Home shows saved body and hairstyle",
+        "PASS confirmed appearance survives preference reload",
+        "PASS Home exposes automatic language",
+        "PASS Home reopens saved customization",
+        "PASS Back discards the unsaved draft",
+        "PASS unchanged studio language preserves automatic preference",
+        "PASS Home edit saves another body, no hair, and both empty equipment slots"
+    ]
+}

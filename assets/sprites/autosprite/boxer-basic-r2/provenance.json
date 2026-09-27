@@ -1,0 +1,16 @@
+{
+  "provider": "AutoSprite",
+  "tool": "generate_pose",
+  "characterId": "cmuj70eg8000910qlnap76av1",
+  "poseId": "cmujbld07000zc06dj0c1obrj",
+  "label": "Basic Backpack R2",
+  "sourceUrl": "https://a91037593e6b852513235b7d3b6851f0.r2.cloudflarestorage.com/spritesheet/users/cmuj6vhdl0005qw6i7c4cl48j/characters/cmuj70eg8000910qlnap76av1/1790483386043_a6bd7775-665f-4847-b6fe-1dcfe746e6bc_custom-pose-frame-1790483386043.png",
+  "output": {
+    "path": "basic-backpack-concept.png",
+    "sha256": "8a9b82bb00c8687cd1655291d9989a125941a621730ee8335dfafd616bc48c5b",
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA"
+  },
+  "hasSignedDownloadUrlStored": false
+}
