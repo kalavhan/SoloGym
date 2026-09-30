@@ -2,6 +2,15 @@
 
 This is the proposed implementation approach for the [confirmed product direction](../product/fantasy-mvp-direction.md), recorded 2026-09-29. The user requested complete visual references first, then **one component per PR/MR**, with each component matching the chosen style. No runtime changes are implemented by this plan.
 
+## Current Home priority
+
+The user approved `design/fantasy-home-r2/home-approved.png` on 2026-09-30.
+Its `IMPLEMENTATION.md` requires matching the assembled Home composition with
+separate architecture, exterior, props, character and live interface. Continue
+component-sized PRs **inside that Home composition**, ahead of unrelated galleries.
+The [room-shell iteration](pixel-home-room.md) starts this work. The ring/room-object
+component follows; the remaining HUD and props are still pending.
+
 ## Screen references before component production
 
 Seven rendered landscape Spanish concepts were prepared in separate local work under `design/fantasy-mvp-r1/`. The render pack is not included in the primary-button PR. They await screen review; none is an approved screen implementation. Their names are:
@@ -64,7 +73,7 @@ The first character viewport supports full static appearances and fixed source c
 
 ## One component per PR/MR
 
-The **primary pixel button** was merged in PR #12. The [framed content panel](pixel-content-panel.md) was merged in PR #13. The [labeled form field](pixel-form-field.md) was merged in PR #14. The [secondary and text actions](pixel-secondary-action.md) were merged in PR #15. The [icon buttons](pixel-icon-button.md) were merged in PR #16. The [single-choice control](pixel-choice-control.md) was merged in PR #17, including the requirement that difficulty remains editable during a boss routine. The [static character viewport](pixel-character-viewport.md) was merged in PR #18 with all eight user-created Barbarians. Component 08 adds [navigation tabs](pixel-navigation-tabs.md), with caller-confirmed current state and optional adult-only fasting visibility. Each delivery remains an isolated reusable component and its landscape review fixture; integrating the full product screens follows the accepted components.
+The **primary pixel button** was merged in PR #12. The [framed content panel](pixel-content-panel.md) was merged in PR #13. The [labeled form field](pixel-form-field.md) was merged in PR #14. The [secondary and text actions](pixel-secondary-action.md) were merged in PR #15. The [icon buttons](pixel-icon-button.md) were merged in PR #16. The [single-choice control](pixel-choice-control.md) was merged in PR #17, including the requirement that difficulty remains editable during a boss routine. The [static character viewport](pixel-character-viewport.md) was merged in PR #18 with all eight user-created Barbarians. The [navigation tabs](pixel-navigation-tabs.md) were merged in PR #19, with caller-confirmed current state and optional adult-only fasting visibility. Further components remain reviewable individually, but their visual fixture now belongs inside the approved Home composition.
 
 Each component PR includes:
 
@@ -90,7 +99,8 @@ Each numbered row is one component-sized candidate PR. Large domain features suc
 | 06 | Choice control | Selected state for body/presentation/difficulty, keyboard/touch support and wrapping; difficulty remains changeable during the boss-battle routine |
 | 07 | Static character viewport | Exact user sources, transparent derivative when ready, feet anchor and consistent scale |
 | 08 | Navigation tab | Selected/current state, label/icon reuse and optional adult-only fasting visibility |
-| 09 | Room-object slot | Stable asset identity, anchor, draw order and serialization; one room prop fixture |
+| 09a | Room shell / exterior | Independent artwork, uniform landscape composition and exact character in context; see [Home room](pixel-home-room.md) |
+| 09b | Room-object slot | Stable asset identity, anchor, draw order and serialization; one room prop fixture |
 | 10 | Routine summary row | Current/completed/missed/rest state, clear status and edit entry without punitive wording |
 | 11 | Week selector | Dates, selected day and routine status; workout area |
 | 12 | Exercise prescription card | Sets/reps/time, per-side semantics, equipment and substitution action |

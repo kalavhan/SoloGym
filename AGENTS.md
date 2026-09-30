@@ -30,6 +30,12 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
 
 ## Art and UI pipeline
 
+- Home visual target approved on 2026-09-30: `design/fantasy-home-r2/home-approved.png`.
+  Follow `design/fantasy-home-r2/IMPLEMENTATION.md`; match the assembled Home
+  composition before more unrelated component galleries. Keep room shell, props,
+  character, sprite skins, icons and live UI/text separate. Never ship the
+  flattened reference as the screen/background.
+
 - Preserve exact user-created AutoSprite exports and manifest in
   `assets/sprites/autosprite/barbarian-user-r1/`. Transparent derivatives live in
   `assets/sprites/autosprite/barbarian-viewport-r1/`; the viewport review fixture
