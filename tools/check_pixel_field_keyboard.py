@@ -11,16 +11,19 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def run():
+    actions = "--actions" in sys.argv
+    fixture = "action" if actions else "field"
     # Always create an isolated display; never inject events into the user's desktop.
     if "--isolated-child" not in sys.argv:
         return subprocess.call(["xvfb-run", "-a", "-s", "-screen 0 1920x1080x24",
-                                sys.executable, str(Path(__file__).resolve()), "--isolated-child"],
+                                sys.executable, str(Path(__file__).resolve()), "--isolated-child",
+                                *(["--actions"] if actions else [])],
                                env={**os.environ, "SOLOGYM_ISOLATED_FIELD_TEST": "1"})
     if os.environ.get("SOLOGYM_ISOLATED_FIELD_TEST") != "1":
         raise RuntimeError("Run without --isolated-child to create a private display.")
     local = ROOT / "artifacts/local"
     local.mkdir(parents=True, exist_ok=True)
-    marker = local / "field-keyboard"
+    marker = local / (fixture + "-keyboard")
     for suffix in (".ready", ".done"):
         Path(str(marker) + suffix).unlink(missing_ok=True)
     x11 = c.CDLL("libX11.so.6")
@@ -68,13 +71,14 @@ def run():
             name, shift = symbols.get(char, (char.lower(), char.isupper()))
             key(name, shift)
 
-    env = {**os.environ, "XDG_CONFIG_HOME": str(local / "field-keyboard-prefs")}
-    command = [str(ROOT / "app/Builds/FantasyField/SoloGymField.x86_64"),
+    env = {**os.environ, "XDG_CONFIG_HOME": str(local / (fixture + "-keyboard-prefs"))}
+    binary = "FantasyAction/SoloGymAction" if actions else "FantasyField/SoloGymField"
+    command = [str(ROOT / ("app/Builds/" + binary + ".x86_64")),
                "-screen-fullscreen", "0", "-screen-width", "1280", "-screen-height", "720",
                "-sologym-locale", "en", "-sologym-keyboard-probe", str(marker),
-               "-sologym-capture", str(local / "field-keyboard.png"),
-               "-logFile", str(local / "field-keyboard-player.log")]
-    with (local / "field-keyboard-stdout.log").open("w") as output:
+               "-sologym-capture", str(local / (fixture + "-keyboard.png")),
+               "-logFile", str(local / (fixture + "-keyboard-player.log"))]
+    with (local / (fixture + "-keyboard-stdout.log")).open("w") as output:
         player = subprocess.Popen(command, cwd=ROOT, env=env, stdout=output, stderr=output)
         try:
             deadline = time.monotonic() + 20
@@ -102,13 +106,21 @@ def run():
             x11.XSetInputFocus(display, window, 2, 0)
             x11.XFlush(display)
             time.sleep(.4)
-            text("hero+fit@example.com")
-            key("Tab"); time.sleep(.3)
-            text("Trial9pass")
-            key("Tab"); time.sleep(.3)
-            key("Return"); time.sleep(.3)
-            key("Tab", shift=True); time.sleep(.3)
-            key("Return"); time.sleep(.3)
+            if actions:
+                # Back -> primary -> recovery -> email -> Back -> recovery.
+                # Then reverse once, skip the two unavailable samples, and change locale.
+                for name, shift in [("Tab", False), ("Tab", False), ("Return", False),
+                                    ("Tab", False), ("Return", False), ("Tab", True),
+                                    ("Tab", False), ("Tab", False), ("Tab", False), ("Return", False)]:
+                    key(name, shift); time.sleep(.3)
+            else:
+                text("hero+fit@example.com")
+                key("Tab"); time.sleep(.3)
+                text("Trial9pass")
+                key("Tab"); time.sleep(.3)
+                key("Return"); time.sleep(.3)
+                key("Tab", shift=True); time.sleep(.3)
+                key("Return"); time.sleep(.3)
             Path(str(marker) + ".done").write_text("done")
             result = player.wait(timeout=15)
             print("OS keyboard probe:", "PASS" if result == 0 else "FAIL")

@@ -64,7 +64,7 @@ The first character viewport supports full static appearances and fixed source c
 
 ## One component per PR/MR
 
-The **primary pixel button** was merged in PR #12. The [framed content panel](pixel-content-panel.md) was merged in PR #13. Component 03 adds the [labeled form field and its review fixture](pixel-form-field.md), reusing both. See the button’s [component contract and verification status](pixel-primary-button.md). Include only the minimal landscape fixture, theme values and import setup necessary to display and verify that button. This is not a blanket application conversion. The fixture uses the chosen reference palette with short/long English and Spanish labels, two useful sizes, and normal/pressed/focus/disabled/loading states.
+The **primary pixel button** was merged in PR #12. The [framed content panel](pixel-content-panel.md) was merged in PR #13. The [labeled form field](pixel-form-field.md) was merged in PR #14. Component 04 adds [secondary and text actions](pixel-secondary-action.md), reusing the existing controls in an offline account fixture. See the button’s [component contract and verification status](pixel-primary-button.md). Include only the minimal landscape fixture, theme values and import setup necessary to display and verify that button. This is not a blanket application conversion. The fixture uses the chosen reference palette with short/long English and Spanish labels, two useful sizes, and normal/pressed/focus/disabled/loading states.
 
 Each component PR includes:
 
