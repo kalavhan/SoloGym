@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "asset_id": "secondary-action-r1",
+  "status": "component_review_candidate",
+  "provider": "AutoSprite",
+  "provider_asset_id": "cmuo5x70q000n1ynln6x97acj",
+  "created_at": "2026-09-30T13:50:15.242Z",
+  "generation": {
+    "description": "One blank wide fantasy RPG secondary button, charcoal stone inset, thin muted aged-brass rim, raised pixel corners. 16-bit pixel art, front view, 4:1. No text, icons, glow or shadow. Transparent.",
+    "description_characters": 195,
+    "category": "item",
+    "style": "pixel",
+    "quality": "ultra"
+  },
+  "costs": {
+    "unit": "AutoSprite credit",
+    "generation": 1,
+    "background_removal": 1,
+    "total": 2
+  },
+  "files": {
+    "original": {
+      "path": "assets/sprites/autosprite/secondary-action-r1/original.png",
+      "bytes": 794460,
+      "sha256": "8c900f551665a095e4467c0949566d4b60a0a49e84b3a1598a1d5a4ad7fbeeaa"
+    },
+    "transparent": {
+      "path": "assets/sprites/autosprite/secondary-action-r1/transparent.png",
+      "bytes": 576983,
+      "sha256": "449e107ae4122b65efeea215bd27aaafd4e8690065a71249b8035a6f75786ebf"
+    },
+    "runtime": {
+      "path": "app/Assets/SoloGym/Resources/UI/Pixel/SecondaryAction.png",
+      "bytes": 576983,
+      "sha256": "449e107ae4122b65efeea215bd27aaafd4e8690065a71249b8035a6f75786ebf"
+    }
+  },
+  "image": {
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA"
+  },
+  "preservation": {
+    "runtime_byte_identical_to_transparent_export": true,
+    "image_redraw": false,
+    "crop_method": "Unity metadata only"
+  },
+  "runtime_import": {
+    "resource": "UI/Pixel/SecondaryAction",
+    "sprite_mode": "multiple",
+    "sprite_name": "SecondaryAction",
+    "crop_coordinate_system": "Unity texture pixels; bottom-left origin",
+    "crop": {
+      "x": 24,
+      "y": 384,
+      "width": 976,
+      "height": 258
+    },
+    "border": {
+      "left": 64,
+      "bottom": 64,
+      "right": 64,
+      "top": 64
+    },
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "pixels_per_unit": 400,
+    "filter_mode": "Point",
+    "texture_compression": "Uncompressed",
+    "mipmaps": false,
+    "wrap_mode": "Clamp",
+    "ui_image_type": "Sliced"
+  },
+  "verification": {
+    "hashes": "passed",
+    "unity_build": "passed: Unity 6000.3.24f1 Linux Standalone Mono",
+    "native_smoke": "119/119 passed per profile: 1280x720 ES; 1844x853 EN inset64; 854x480 ES inset32",
+    "os_keyboard": "53/53 passed: actual X11 Tab, Shift+Tab and Enter in a private Xvfb display",
+    "visual_review": "all three native captures inspected; user visual approval pending",
+    "evidence_directory": "artifacts/visual/SecondaryAction"
+  }
+}
