@@ -1,0 +1,224 @@
+{
+    "width": 1280,
+    "height": 720,
+    "passed": 54,
+    "failed": 0,
+    "checks": [
+        {
+            "name": "ring is an independent prop behind the character",
+            "passed": true
+        },
+        {
+            "name": "ring keeps point-filtered artwork",
+            "passed": true
+        },
+        {
+            "name": "removing the ring leaves the room and character intact",
+            "passed": true
+        },
+        {
+            "name": "saved visibility round-trips without removing the placement",
+            "passed": true
+        },
+        {
+            "name": "restoring a save and binding a variant preserve identity and anchor",
+            "passed": true
+        },
+        {
+            "name": "callers cannot mutate the saved footprint through the returned array",
+            "passed": true
+        },
+        {
+            "name": "invalid save is rejected atomically: {\"version\":2,\"roomId\":\"home.refuge.r1\",\"objectId\":\"home.training-ring\",\"slotId\":\"ring.floor\",\"variantId\":\"base\",\"visible\":true}",
+            "passed": true
+        },
+        {
+            "name": "invalid save is rejected atomically: {\"version\":1,\"roomId\":\"other-room\",\"objectId\":\"home.training-ring\",\"slotId\":\"ring.floor\",\"variantId\":\"base\",\"visible\":true}",
+            "passed": true
+        },
+        {
+            "name": "invalid save is rejected atomically: {\"version\":1,\"roomId\":\"home.refuge.r1\",\"objectId\":\"other-item\",\"slotId\":\"ring.floor\",\"variantId\":\"base\",\"visible\":true}",
+            "passed": true
+        },
+        {
+            "name": "invalid save is rejected atomically: {\"version\":1,\"roomId\":\"home.refuge.r1\",\"objectId\":\"home.training-ring\",\"slotId\":\"hero.feet\",\"variantId\":\"base\",\"visible\":true}",
+            "passed": true
+        },
+        {
+            "name": "invalid save is rejected atomically: {\"version\":1,\"roomId\":\"home.refuge.r1\",\"objectId\":\"home.training-ring\",\"slotId\":\"ring.floor\",\"variantId\":\"unapproved-winter\",\"visible\":true}",
+            "passed": true
+        },
+        {
+            "name": "unknown seasonal art is not silently substituted or regenerated",
+            "passed": true
+        },
+        {
+            "name": "duplicate room identities and occupied slots fail before creating a second object",
+            "passed": true
+        },
+        {
+            "name": "initial: full room stays inside the safe landscape viewport",
+            "passed": true
+        },
+        {
+            "name": "initial: architecture keeps its aspect ratio",
+            "passed": true
+        },
+        {
+            "name": "initial: character's actual boots stay on the room anchor",
+            "passed": true
+        },
+        {
+            "name": "initial: character is never stretched to fill the room",
+            "passed": true
+        },
+        {
+            "name": "initial: ring retains its floor pivot and uniform authored size after layout changes",
+            "passed": true
+        },
+        {
+            "name": "initial: ring does not stretch independently along either axis",
+            "passed": true
+        },
+        {
+            "name": "exterior, architecture and occupants use separate ordered layers",
+            "passed": true
+        },
+        {
+            "name": "Exterior — replaceable behind window does not intercept future interface input",
+            "passed": true
+        },
+        {
+            "name": "Architecture — empty shell only does not intercept future interface input",
+            "passed": true
+        },
+        {
+            "name": "home.training-ring does not intercept future interface input",
+            "passed": true
+        },
+        {
+            "name": "Exact authored appearance does not intercept future interface input",
+            "passed": true
+        },
+        {
+            "name": "environment artwork keeps nearest-neighbor sampling",
+            "passed": true
+        },
+        {
+            "name": "live interface is independent of the room's art scaling",
+            "passed": true
+        },
+        {
+            "name": "female-skinny reuses an existing source",
+            "passed": true
+        },
+        {
+            "name": "female-skinny preserves body proportions and feet position",
+            "passed": true
+        },
+        {
+            "name": "female-medium reuses an existing source",
+            "passed": true
+        },
+        {
+            "name": "female-medium preserves body proportions and feet position",
+            "passed": true
+        },
+        {
+            "name": "female-fat reuses an existing source",
+            "passed": true
+        },
+        {
+            "name": "female-fat preserves body proportions and feet position",
+            "passed": true
+        },
+        {
+            "name": "female-muscular reuses an existing source",
+            "passed": true
+        },
+        {
+            "name": "female-muscular preserves body proportions and feet position",
+            "passed": true
+        },
+        {
+            "name": "male-skinny reuses an existing source",
+            "passed": true
+        },
+        {
+            "name": "male-skinny preserves body proportions and feet position",
+            "passed": true
+        },
+        {
+            "name": "male-medium reuses an existing source",
+            "passed": true
+        },
+        {
+            "name": "male-medium preserves body proportions and feet position",
+            "passed": true
+        },
+        {
+            "name": "male-fat reuses an existing source",
+            "passed": true
+        },
+        {
+            "name": "male-fat preserves body proportions and feet position",
+            "passed": true
+        },
+        {
+            "name": "male-muscular reuses an existing source",
+            "passed": true
+        },
+        {
+            "name": "male-muscular preserves body proportions and feet position",
+            "passed": true
+        },
+        {
+            "name": "hiding the character leaves the environment intact",
+            "passed": true
+        },
+        {
+            "name": "hiding the exterior does not replace the room",
+            "passed": true
+        },
+        {
+            "name": "exterior remains separately renderable",
+            "passed": true
+        },
+        {
+            "name": "a mismatched exterior aspect ratio is rejected without mutation",
+            "passed": true
+        },
+        {
+            "name": "missing placement IDs fail explicitly instead of silently moving objects",
+            "passed": true
+        },
+        {
+            "name": "after parent resize: full room stays inside the safe landscape viewport",
+            "passed": true
+        },
+        {
+            "name": "after parent resize: architecture keeps its aspect ratio",
+            "passed": true
+        },
+        {
+            "name": "after parent resize: character's actual boots stay on the room anchor",
+            "passed": true
+        },
+        {
+            "name": "after parent resize: character is never stretched to fill the room",
+            "passed": true
+        },
+        {
+            "name": "after parent resize: ring retains its floor pivot and uniform authored size after layout changes",
+            "passed": true
+        },
+        {
+            "name": "after parent resize: ring does not stretch independently along either axis",
+            "passed": true
+        },
+        {
+            "name": "prop visibility does not change the architecture pixel grid after resizing",
+            "passed": true
+        }
+    ]
+}

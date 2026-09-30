@@ -22,6 +22,40 @@ namespace SoloGym.UI
             if (PixelButtonGallery.HasArgument("-sologym-smoke"))
             {
                 var room = review.Room;
+                var ring = review.Ring;
+                string savedRing = ring.SaveState();
+                var ringPosition = ((RectTransform)ring.transform).anchoredPosition;
+                var footprint = ring.FootprintInRoom();
+                Check(ring.transform.parent == room.BackObjects && room.BackObjects.GetSiblingIndex() < room.Objects.GetSiblingIndex(),
+                    "ring is an independent prop behind the character");
+                Check(ring.Artwork.sprite.texture.filterMode == FilterMode.Point, "ring keeps point-filtered artwork");
+                ring.SetVisible(false);
+                Check(!ring.Artwork.enabled && room.Architecture.enabled && review.Character.HasCharacter,
+                    "removing the ring leaves the room and character intact");
+                string hiddenState = ring.SaveState();
+                ring.SetVisible(true); ring.RestoreState(hiddenState);
+                Check(!ring.Visible && !ring.Artwork.enabled, "saved visibility round-trips without removing the placement");
+                ring.RestoreState(savedRing); ring.SetVariant("base");
+                Check(ring.SaveState() == savedRing && ((RectTransform)ring.transform).anchoredPosition == ringPosition,
+                    "restoring a save and binding a variant preserve identity and anchor");
+                var copiedFootprint = ring.FootprintInRoom(); copiedFootprint[0] = Vector2.zero;
+                Check(ring.FootprintInRoom()[0] == footprint[0], "callers cannot mutate the saved footprint through the returned array");
+                foreach (string invalid in new[] { savedRing.Replace("\"version\":1", "\"version\":2"),
+                    savedRing.Replace("home.refuge.r1", "other-room"), savedRing.Replace("home.training-ring", "other-item"),
+                    savedRing.Replace("ring.floor", "hero.feet"), savedRing.Replace("\"base\"", "\"unapproved-winter\"") })
+                {
+                    bool invalidRejected = false;
+                    try { ring.RestoreState(invalid); } catch (ArgumentException) { invalidRejected = true; }
+                    Check(invalidRejected && ring.SaveState() == savedRing, "invalid save is rejected atomically: " + invalid);
+                }
+                bool variantRejected = false;
+                try { ring.SetVariant("unapproved-winter"); } catch (ArgumentException) { variantRejected = true; }
+                Check(variantRejected && ring.SaveState() == savedRing, "unknown seasonal art is not silently substituted or regenerated");
+                int oldCount = room.GetComponentsInChildren<PixelRoomObject>(true).Length;
+                bool duplicateRejected = false;
+                try { PixelRoomObject.Create(room, "Rooms/Props/TrainingRingR1/item", savedRing); } catch (ArgumentException) { duplicateRejected = true; }
+                Check(duplicateRejected && room.GetComponentsInChildren<PixelRoomObject>(true).Length == oldCount,
+                    "duplicate room identities and occupied slots fail before creating a second object");
                 CheckLayout("initial");
                 Check(room.Exterior.transform.GetSiblingIndex() < room.Architecture.transform.GetSiblingIndex()
                     && room.Architecture.transform.GetSiblingIndex() < room.Objects.GetSiblingIndex(), "exterior, architecture and occupants use separate ordered layers");
@@ -64,7 +98,17 @@ namespace SoloGym.UI
                 Canvas.ForceUpdateCanvases(); room.RefreshLayout(); CheckLayout("after parent resize");
                 area.offsetMax = oldMax; review.Relayout();
             }
-            yield return Capture("");
+            // Capture the pair at one settled viewport state, after the resize exercise.
+            // Otherwise nearest-neighbor rounding between layouts can obscure the visibility comparison.
+            bool finalVisibility = review.Ring.Visible;
+            Canvas.ForceUpdateCanvases();
+            var roomVertices = review.Room.Architecture.canvasRenderer.GetMesh().vertices;
+            review.Ring.SetVisible(false); yield return Capture("ring-hidden");
+            review.Ring.SetVisible(finalVisibility); yield return Capture("");
+            var finalVertices = review.Room.Architecture.canvasRenderer.GetMesh().vertices;
+            bool stableVertices = roomVertices.Length == finalVertices.Length;
+            for (int i = 0; stableVertices && i < roomVertices.Length; i++) stableVertices &= Vector3.Distance(roomVertices[i], finalVertices[i]) < .0001f;
+            Check(stableVertices, "prop visibility does not change the architecture pixel grid after resizing");
             int failed = checks.FindAll(c => !c.passed).Count;
             var report = new Report { width = Screen.width, height = Screen.height, passed = checks.Count - failed, failed = failed, checks = checks };
             if (!string.IsNullOrEmpty(capture)) File.WriteAllText(Path.ChangeExtension(capture, ".json"), JsonUtility.ToJson(report, true));
@@ -87,12 +131,23 @@ namespace SoloGym.UI
             var hero = review.Character.CharacterImage.rectTransform;
             Check(Mathf.Abs(hero.rect.width / hero.rect.height - (float)review.Character.Character.width / review.Character.Character.height) < .001f,
                 state + ": character is never stretched to fill the room");
+            var ring = review.Ring;
+            var ringRect = (RectTransform)ring.transform;
+            var ringAnchor = room.AnchorPoint(ring.SlotId);
+            var ringExpected = room.Plane.TransformPoint(new Vector3(ringAnchor.x - room.ReferenceSize.x / 2, room.ReferenceSize.y / 2 - ringAnchor.y, 0));
+            Check(Vector3.Distance(ringExpected, ring.transform.position) < 1 && ringRect.sizeDelta == ring.DisplaySize,
+                state + ": ring retains its floor pivot and uniform authored size after layout changes");
+            Check(Mathf.Abs(ringRect.rect.width / ringRect.rect.height - ring.Artwork.sprite.rect.width / ring.Artwork.sprite.rect.height) < .001f,
+                state + ": ring does not stretch independently along either axis");
         }
         void Check(bool passed, string name)
         { checks.Add(new CheckResult { name = name, passed = passed }); if (!passed) Debug.LogError("HOME ROOM: " + name); }
         IEnumerator Capture(string suffix)
         {
             if (string.IsNullOrEmpty(capture)) yield break;
+            // A prior capture can resume this coroutine at end-of-frame; allow a complete
+            // layout/render cycle after subsequent visibility or parent-size changes.
+            yield return null;
             yield return new WaitForEndOfFrame();
             string path = suffix == "" ? capture : Path.Combine(Path.GetDirectoryName(capture), Path.GetFileNameWithoutExtension(capture) + "-" + suffix + ".png");
             Directory.CreateDirectory(Path.GetDirectoryName(path));

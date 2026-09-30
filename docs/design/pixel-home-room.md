@@ -12,7 +12,7 @@ to the safe area; a separate live-interface root is outside the scaled art plane
 The current art is crisp-filtered raster reference work, not an asserted fixed
 native pixel grid. Fractional downscaling remains subject to physical phone review.
 
-The draw order is exterior → architecture → occupants/furniture → foreground.
+The draw order is exterior → architecture → back props → occupants → foreground.
 All room Images are non-raycasting. The architecture's real alpha opening reveals
 the independently imported exterior. Hiding the character leaves both intact;
 hiding the architecture exposes just the rectangular exterior. Buttons and text
@@ -58,8 +58,9 @@ the character hidden. Automated captures accept the established `-sologym-smoke`
 `-sologym-capture /absolute/path.png`, `-sologym-safe-inset` and locale arguments.
 The smoke run writes JSON and separate-layer captures before restoring the scene.
 
-The next Home iteration should add the independent training ring using the room
-object contract. Remaining props, HUD, routine binding, navigation styling and
+PR #20 delivered this room shell. The [next iteration](pixel-room-object.md) adds
+the independent training ring and its room-object contract. Remaining props,
+HUD, routine binding, navigation styling and
 product routing still need implementation against the approved target. None of
 the old isolated galleries counts as final Home visual approval.
 
