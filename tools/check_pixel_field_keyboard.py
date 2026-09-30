@@ -15,14 +15,15 @@ def run():
     icons = "--icons" in sys.argv
     choices = "--choices" in sys.argv
     characters = "--characters" in sys.argv
-    if sum((actions, icons, choices, characters)) > 1:
-        raise ValueError("Choose one fixture: --actions, --icons, --choices or --characters.")
-    fixture = "character" if characters else "choice" if choices else "icon" if icons else "action" if actions else "field"
+    navigation = "--navigation" in sys.argv
+    if sum((actions, icons, choices, characters, navigation)) > 1:
+        raise ValueError("Choose one fixture: --actions, --icons, --choices, --characters or --navigation.")
+    fixture = "navigation" if navigation else "character" if characters else "choice" if choices else "icon" if icons else "action" if actions else "field"
     # Always create an isolated display; never inject events into the user's desktop.
     if "--isolated-child" not in sys.argv:
         return subprocess.call(["xvfb-run", "-a", "-s", "-screen 0 1920x1080x24",
                                 sys.executable, str(Path(__file__).resolve()), "--isolated-child",
-                                *(["--characters"] if characters else ["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
+                                *(["--navigation"] if navigation else ["--characters"] if characters else ["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
                                env={**os.environ, "SOLOGYM_ISOLATED_FIELD_TEST": "1"})
     if os.environ.get("SOLOGYM_ISOLATED_FIELD_TEST") != "1":
         raise RuntimeError("Run without --isolated-child to create a private display.")
@@ -77,7 +78,7 @@ def run():
             key(name, shift)
 
     env = {**os.environ, "XDG_CONFIG_HOME": str(local / (fixture + "-keyboard-prefs"))}
-    binary = {"character": "FantasyCharacter/SoloGymCharacter", "choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
+    binary = {"navigation": "FantasyNavigation/SoloGymNavigation", "character": "FantasyCharacter/SoloGymCharacter", "choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
               "action": "FantasyAction/SoloGymAction", "field": "FantasyField/SoloGymField"}[fixture]
     command = [str(ROOT / ("app/Builds/" + binary + ".x86_64")),
                "-screen-fullscreen", "0", "-screen-width", "1280", "-screen-height", "720",
@@ -112,7 +113,13 @@ def run():
             x11.XSetInputFocus(display, window, 2, 0)
             x11.XFlush(display)
             time.sleep(.4)
-            if characters:
+            if navigation:
+                # Adult opt-in, three accepted routes, locale, then teen removes the current fasting route.
+                sequence = [(name, False) for name in ["Right", "Return", "Tab", "Right", "Return", "Right", "Return", "Right", "Return", "Tab", "Return"]]
+                sequence += [("Tab", True)] * 5 + [("Left", False), ("Left", False), ("Return", False)]
+                for name, shift in sequence:
+                    key(name, shift); time.sleep(.3)
+            elif characters:
                 # Male, Skinny, Muscular; then locale. Focus alone never changes the sprite.
                 for name in ["Right", "Return", "Tab", "Return", "Right", "Right", "Right", "Return", "Tab", "Return"]:
                     key(name); time.sleep(.3)
