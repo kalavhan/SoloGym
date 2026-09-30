@@ -1,0 +1,42 @@
+{
+  "id": "home.training-bottle",
+  "roomId": "home.refuge.r1",
+  "layer": "foreground",
+  "supportedSlots": [
+    "bottle.bench"
+  ],
+  "drawOrder": 220,
+  "sourceSize": {
+    "x": 1024,
+    "y": 1536
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.08723958333333337
+  },
+  "sourceScale": 0.06408094435075885,
+  "footprint": [
+    {
+      "x": 245,
+      "y": 1290
+    },
+    {
+      "x": 779,
+      "y": 1290
+    },
+    {
+      "x": 779,
+      "y": 1403
+    },
+    {
+      "x": 245,
+      "y": 1403
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/TrainingBottleR1/Base"
+    }
+  ]
+}

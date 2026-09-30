@@ -19,6 +19,10 @@
     { "id": "lantern.hook", "point": { "x": 575, "y": 30 } },
     { "id": "torch.wall", "point": { "x": 225, "y": 255 } },
     { "id": "banner.wall", "point": { "x": 410, "y": 130 } },
-    { "id": "plant.floor", "point": { "x": 100, "y": 865 } }
+    { "id": "plant.floor", "point": { "x": 100, "y": 865 } },
+    { "id": "trophy.shelf", "point": { "x": 685, "y": 188 } },
+    { "id": "book.desk", "point": { "x": 1545, "y": 449 } },
+    { "id": "bottle.bench", "point": { "x": 517, "y": 690 } },
+    { "id": "towel.bench", "point": { "x": 424, "y": 697 } }
   ]
 }

@@ -70,5 +70,7 @@ capture uses the existing female-fat Barbarian. All three assembled views were
 inspected; all twelve new-object shown/hidden comparisons pass. The new source
 audit and both prior furniture-batch audits pass.
 
-Visual approval, physical mobile testing, the alignment editor, desk/shelf contents
-and the live Home interface remain pending.
+PR #25 was merged. The [second decoration batch](pixel-home-decor-r2.md) adds the
+trophy, open book, training bottle and towel. Visual approval, perspective
+correction, physical mobile testing, the alignment editor and live Home interface
+remain pending. Prioritize the editor after these core accents.

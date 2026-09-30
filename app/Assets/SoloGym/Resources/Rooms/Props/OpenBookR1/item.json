@@ -1,0 +1,42 @@
+{
+  "id": "home.open-book",
+  "roomId": "home.refuge.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "book.desk"
+  ],
+  "drawOrder": 150,
+  "sourceSize": {
+    "x": 1024,
+    "y": 1536
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.40104166666666663
+  },
+  "sourceScale": 0.11328527291452112,
+  "footprint": [
+    {
+      "x": 292,
+      "y": 548
+    },
+    {
+      "x": 1012,
+      "y": 681
+    },
+    {
+      "x": 883,
+      "y": 1108
+    },
+    {
+      "x": 41,
+      "y": 924
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/OpenBookR1/Base"
+    }
+  ]
+}

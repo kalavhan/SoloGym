@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    packs = {"r1": "home-furniture-r1", "r2": "home-furniture-r2", "decor-r1": "home-decor-r1"}
+    packs = {"r1": "home-furniture-r1", "r2": "home-furniture-r2",
+             "decor-r1": "home-decor-r1", "decor-r2": "home-decor-r2"}
     parser.add_argument("--batch", choices=tuple(packs), default="r1")
     args = parser.parse_args()
     pack_name = packs[args.batch]
@@ -23,12 +24,16 @@ def main():
            "bed": [(900, 920)], "chest": [(200, 500)],
            "desk": [(750, 700)], "stool": [(600, 550)], "shelf": [(768, 500)], "rug": [(200, 200)],
            "lantern": [(500, 325), (200, 1000)], "torch": [(475, 900), (700, 100)],
-           "banner": [(512, 310), (200, 1000)], "plant": [(800, 1100), (200, 1000)]}
+           "banner": [(512, 310), (200, 1000)], "plant": [(800, 1100), (200, 1000)],
+           "trophy": [(150, 600), (880, 600)], "book": [(500, 450), (500, 1200)],
+           "bottle": [(750, 350), (200, 1000)], "towel": [(800, 1000), (100, 800)]}
     solid = {"rack": [(100, 500), (400, 265), (760, 290)], "bench": [(700, 600), (200, 600)],
              "bed": [(700, 500)], "chest": [(700, 500)], "desk": [(700, 350)],
              "stool": [(700, 350)], "shelf": [(700, 350), (700, 700)], "rug": [(768, 600)],
              "lantern": [(512, 768), (512, 1300)], "torch": [(512, 768), (300, 800)],
-             "banner": [(512, 768)], "plant": [(512, 1300), (500, 325)]}
+             "banner": [(512, 768)], "plant": [(512, 1300), (500, 325)],
+             "trophy": [(512, 700), (512, 1300)], "book": [(500, 750)],
+             "bottle": [(512, 900)], "towel": [(500, 800), (500, 500)]}
     guids = set()
     for item in manifest["sprites"]:
         key = item["key"]

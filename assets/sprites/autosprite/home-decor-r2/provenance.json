@@ -1,0 +1,254 @@
+{
+  "id": "home-decor-r2",
+  "date": "2026-09-30",
+  "scope": "Four independent static Home accents: trophy, open book, training bottle and draped towel.",
+  "approval": "pending visual review; existing furniture perspectives need a separate art correction pass; placements remain provisional",
+  "source": "Built-in imagegen artwork saved and exported through AutoSprite MCP. No redraw or background removal.",
+  "imagegenCalls": 4,
+  "autospriteCreditsUsed": 0,
+  "supportNote": "supportObjectId records intended surface only; runtime slots remain independent room coordinates, without parenting or automatic following.",
+  "references": [
+    {
+      "path": "app/Assets/SoloGym/Resources/Rooms/RefugeR1/RoomShell.png",
+      "sha256": "8734fae5eec157fca1ef2ab402f89d005b5fe628e5864646800a415b145060db"
+    },
+    {
+      "path": "design/fantasy-home-r2/home-approved.png",
+      "sha256": "832b77b23b811095d84ee8c4c7c27c5d77b4cf3ab5d3272b0b502cd8b630aa2c"
+    },
+    {
+      "path": "app/Assets/SoloGym/Resources/Rooms/Props/WritingDeskR1/Base.png",
+      "sha256": "4a4158f063a3b6e789e072cca32127117e1124ade20f4e950e1b89a315a94be4"
+    },
+    {
+      "path": "app/Assets/SoloGym/Resources/Rooms/Props/TrainingBenchR1/Base.png",
+      "sha256": "f4748f95ce47cca86075af69ec8afb36db2aa6b6f9628c9d03c48e570b831b62"
+    }
+  ],
+  "sprites": [
+    {
+      "key": "trophy",
+      "id": "home.trophy",
+      "resource": "TrophyR1",
+      "slot": "trophy.shelf",
+      "layer": "behind-character",
+      "order": 55,
+      "pivot": [
+        512,
+        1372
+      ],
+      "width": 70,
+      "boundsWidth": 988,
+      "footprint": [
+        [
+          263,
+          1288
+        ],
+        [
+          763,
+          1288
+        ],
+        [
+          763,
+          1373
+        ],
+        [
+          263,
+          1373
+        ]
+      ],
+      "supportObjectId": "home.wall-shelf",
+      "assetId": "cmuois4n60005oznknbjp7wxa",
+      "createdAt": "2026-09-30T19:50:13.891Z",
+      "original": "trophy/original.png",
+      "export": "trophy/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/TrophyR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "trophy/original.png",
+          "bytes": 1161077,
+          "sha256": "8d223c8bc48bf9ab822d55f362388b2e03b021a034ecdafb80eca004b02b8c7c"
+        },
+        {
+          "path": "trophy/export.png",
+          "bytes": 1161077,
+          "sha256": "8d223c8bc48bf9ab822d55f362388b2e03b021a034ecdafb80eca004b02b8c7c"
+        }
+      ],
+      "size": {
+        "width": 1024,
+        "height": 1536
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    },
+    {
+      "key": "book",
+      "id": "home.open-book",
+      "resource": "OpenBookR1",
+      "slot": "book.desk",
+      "layer": "behind-character",
+      "order": 150,
+      "pivot": [
+        512,
+        920
+      ],
+      "width": 110,
+      "boundsWidth": 971,
+      "footprint": [
+        [
+          292,
+          548
+        ],
+        [
+          1012,
+          681
+        ],
+        [
+          883,
+          1108
+        ],
+        [
+          41,
+          924
+        ]
+      ],
+      "supportObjectId": "home.writing-desk",
+      "assetId": "cmuoisj700007oznkso9z3pi6",
+      "createdAt": "2026-09-30T19:50:32.748Z",
+      "original": "book/original.png",
+      "export": "book/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/OpenBookR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "book/original.png",
+          "bytes": 1176120,
+          "sha256": "7aa4b6e520ed398c1eeda80a1762b432ad6fc30f550ae2e84ee4b736fe08be99"
+        },
+        {
+          "path": "book/export.png",
+          "bytes": 1176120,
+          "sha256": "7aa4b6e520ed398c1eeda80a1762b432ad6fc30f550ae2e84ee4b736fe08be99"
+        }
+      ],
+      "size": {
+        "width": 1024,
+        "height": 1536
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    },
+    {
+      "key": "bottle",
+      "id": "home.training-bottle",
+      "resource": "TrainingBottleR1",
+      "slot": "bottle.bench",
+      "layer": "foreground",
+      "order": 220,
+      "pivot": [
+        512,
+        1402
+      ],
+      "width": 38,
+      "boundsWidth": 593,
+      "footprint": [
+        [
+          245,
+          1290
+        ],
+        [
+          779,
+          1290
+        ],
+        [
+          779,
+          1403
+        ],
+        [
+          245,
+          1403
+        ]
+      ],
+      "supportObjectId": "home.training-bench",
+      "assetId": "cmuoisx9o000ob7zdecl5wh74",
+      "createdAt": "2026-09-30T19:50:50.988Z",
+      "original": "bottle/original.png",
+      "export": "bottle/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/TrainingBottleR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "bottle/original.png",
+          "bytes": 1050462,
+          "sha256": "4b0492e63b3ca3b15793ca5de9d6962bc116ab2715025beb4a91dac324cd9513"
+        },
+        {
+          "path": "bottle/export.png",
+          "bytes": 1050462,
+          "sha256": "4b0492e63b3ca3b15793ca5de9d6962bc116ab2715025beb4a91dac324cd9513"
+        }
+      ],
+      "size": {
+        "width": 1024,
+        "height": 1536
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    },
+    {
+      "key": "towel",
+      "id": "home.training-towel",
+      "resource": "TrainingTowelR1",
+      "slot": "towel.bench",
+      "layer": "foreground",
+      "order": 210,
+      "pivot": [
+        390,
+        630
+      ],
+      "width": 100,
+      "boundsWidth": 824,
+      "footprint": [
+        [
+          119,
+          431
+        ],
+        [
+          943,
+          431
+        ],
+        [
+          943,
+          1278
+        ],
+        [
+          119,
+          1278
+        ]
+      ],
+      "supportObjectId": "home.training-bench",
+      "assetId": "cmuoithdq0002mo9nfaesoz4n",
+      "createdAt": "2026-09-30T19:51:17.055Z",
+      "original": "towel/original.png",
+      "export": "towel/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/TrainingTowelR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "towel/original.png",
+          "bytes": 1037055,
+          "sha256": "8373c371c32a82046640ab73c80f872f17edc25a29f2d7b3ca3e00553b8f9588"
+        },
+        {
+          "path": "towel/export.png",
+          "bytes": 1037055,
+          "sha256": "8373c371c32a82046640ab73c80f872f17edc25a29f2d7b3ca3e00553b8f9588"
+        }
+      ],
+      "size": {
+        "width": 1024,
+        "height": 1536
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    }
+  ]
+}

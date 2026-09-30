@@ -1,0 +1,202 @@
+{
+  "trophy": [
+    {
+      "capture": "1280x720-es",
+      "changedRegion": [
+        498,
+        89,
+        551,
+        144
+      ],
+      "allowedRegion": [
+        495,
+        87,
+        554,
+        146
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "854x480-es",
+      "changedRegion": [
+        342,
+        78,
+        373,
+        111
+      ],
+      "allowedRegion": [
+        339,
+        75,
+        376,
+        113
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "1844x853-en",
+      "changedRegion": [
+        779,
+        154,
+        833,
+        209
+      ],
+      "allowedRegion": [
+        776,
+        152,
+        835,
+        211
+      ],
+      "channelTolerance": 10
+    }
+  ],
+  "book": [
+    {
+      "capture": "1280x720-es",
+      "changedRegion": [
+        1142,
+        312,
+        1226,
+        360
+      ],
+      "allowedRegion": [
+        1139,
+        309,
+        1228,
+        362
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "854x480-es",
+      "changedRegion": [
+        728,
+        211,
+        778,
+        240
+      ],
+      "allowedRegion": [
+        725,
+        208,
+        781,
+        242
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "1844x853-en",
+      "changedRegion": [
+        1428,
+        378,
+        1512,
+        427
+      ],
+      "allowedRegion": [
+        1425,
+        375,
+        1514,
+        429
+      ],
+      "channelTolerance": 10
+    }
+  ],
+  "bottle": [
+    {
+      "capture": "1280x720-es",
+      "changedRegion": [
+        383,
+        468,
+        412,
+        528
+      ],
+      "allowedRegion": [
+        380,
+        465,
+        414,
+        530
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "854x480-es",
+      "changedRegion": [
+        272,
+        305,
+        290,
+        341
+      ],
+      "allowedRegion": [
+        270,
+        302,
+        293,
+        343
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "1844x853-en",
+      "changedRegion": [
+        663,
+        535,
+        693,
+        595
+      ],
+      "allowedRegion": [
+        660,
+        533,
+        695,
+        598
+      ],
+      "channelTolerance": 10
+    }
+  ],
+  "towel": [
+    {
+      "capture": "1280x720-es",
+      "changedRegion": [
+        300,
+        515,
+        376,
+        593
+      ],
+      "allowedRegion": [
+        297,
+        512,
+        379,
+        596
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "854x480-es",
+      "changedRegion": [
+        223,
+        333,
+        268,
+        380
+      ],
+      "allowedRegion": [
+        220,
+        330,
+        271,
+        383
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "1844x853-en",
+      "changedRegion": [
+        579,
+        582,
+        656,
+        662
+      ],
+      "allowedRegion": [
+        577,
+        580,
+        659,
+        664
+      ],
+      "channelTolerance": 10
+    }
+  ]
+}

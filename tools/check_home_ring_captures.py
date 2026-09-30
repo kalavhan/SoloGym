@@ -15,7 +15,8 @@ def main():
     resources = {"ring": "TrainingRingR1", "bag": "HangingBagR1", "rack": "WeightRackR1",
                  "bench": "TrainingBenchR1", "bed": "BedR1", "chest": "StorageChestR1",
                  "desk": "WritingDeskR1", "stool": "StoolR1", "shelf": "WallShelfR1", "rug": "FloorRugR1",
-                 "lantern": "HangingLanternR1", "torch": "WallTorchR1", "banner": "BannerR1", "plant": "PottedPlantR1"}
+                 "lantern": "HangingLanternR1", "torch": "WallTorchR1", "banner": "BannerR1", "plant": "PottedPlantR1",
+                 "trophy": "TrophyR1", "book": "OpenBookR1", "bottle": "TrainingBottleR1", "towel": "TrainingTowelR1"}
     parser.add_argument("--prop", choices=tuple(resources), default="ring")
     parser.add_argument("--captures", type=Path, default=ROOT / "artifacts/visual/HomeRing")
     args = parser.parse_args()

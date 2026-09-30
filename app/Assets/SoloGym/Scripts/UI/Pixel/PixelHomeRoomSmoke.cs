@@ -44,11 +44,24 @@ namespace SoloGym.UI
                         item.ObjectId + ": independent hidden state round-trips with the same artwork");
                     item.RestoreState(savedProps[item]);
                     bool front = item.SlotId == "rack.floor" || item.SlotId == "bench.floor"
-                        || item.SlotId == "stool.floor" || item.SlotId == "plant.floor";
+                        || item.SlotId == "stool.floor" || item.SlotId == "plant.floor"
+                        || item.SlotId == "bottle.bench" || item.SlotId == "towel.bench";
                     Check(item.transform.parent == (front ? room.Foreground : room.BackObjects)
                         && sprite.texture.filterMode == FilterMode.Point,
                         item.ObjectId + ": correct character depth layer and pixel filtering");
                 }
+                bool accentsAboveSupports = true;
+                foreach (var pair in new[] {
+                    new[] { "home.trophy", "home.wall-shelf" }, new[] { "home.open-book", "home.writing-desk" },
+                    new[] { "home.training-bottle", "home.training-bench" }, new[] { "home.training-towel", "home.training-bench" },
+                    new[] { "home.training-bottle", "home.training-towel" } })
+                {
+                    var accent = Array.Find(allProps, item => item.ObjectId == pair[0]);
+                    var support = Array.Find(allProps, item => item.ObjectId == pair[1]);
+                    accentsAboveSupports &= accent != null && support != null && accent.transform.parent == support.transform.parent
+                        && accent.transform.GetSiblingIndex() > support.transform.GetSiblingIndex();
+                }
+                Check(accentsAboveSupports, "shelf/desk/bench accents draw over their supports and the bottle draws over the towel");
                 var rug = Array.Find(allProps, item => item.ObjectId == "home.floor-rug");
                 bool rugBehindProps = rug != null && rug.transform.parent == room.BackObjects;
                 foreach (var item in allProps)

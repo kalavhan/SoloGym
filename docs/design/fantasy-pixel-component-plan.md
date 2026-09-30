@@ -13,9 +13,11 @@ component](pixel-room-object.md) was merged in PR #21 after the room shell (PR #
 The [hanging bag](pixel-home-bag.md) was merged in PR #22, followed by the
 [rack, bench, bed and chest batch](pixel-home-furniture.md) in PR #23.
 The [second furniture batch](pixel-home-furniture-r2.md) added desk, stool, shelf
-and rug in merged PR #24. The [first decoration batch](pixel-home-decor-r1.md) adds
-four separate static sprites: lantern, torch, banner and potted plant. Desk/shelf
-contents and live Home UI are still pending.
+and rug in merged PR #24. The [first decoration batch](pixel-home-decor-r1.md) added
+lantern, torch, banner and potted plant in merged PR #25. The [second decoration
+batch](pixel-home-decor-r2.md) adds trophy, open book, training bottle and towel.
+With these core accents present, prioritize the user's alignment editor next;
+additional decor can wait. The live Home UI is still pending.
 
 The user will do a **manual alignment pass** after room items are present
 (2026-09-30). Add an editor at that stage for individual object selection,
@@ -130,6 +132,8 @@ or entitlement services remain separate tasks.
 | 09d | [Furniture batch](pixel-home-furniture.md) | Four independent sprites: rack, bench, bed and chest; independent visibility, shared placement contract |
 | 09e | [Second furniture batch](pixel-home-furniture-r2.md) | Four independent sprites: desk, stool, wall shelf and rug; empty surfaces for later decorations, rug behind occupants |
 | 09f | [First decoration batch](pixel-home-decor-r1.md) | Four independent static sprites: lantern, torch, banner and plant; room-based viewpoint references, rough placement |
+| 09g | [Second decoration batch](pixel-home-decor-r2.md) | Four independent static sprites: trophy, book, bottle and towel; separate shelf/desk/bench accents with reference-guided support planes |
+| 09h | Home alignment editor | Next: select individual objects, adjust position/uniform scale, compare reference, export/import a versioned layout; perspective correction remains a separate art task |
 | 10 | Routine summary row | Current/completed/missed/rest state, clear status and edit entry without punitive wording |
 | 11 | Week selector | Dates, selected day and routine status; workout area |
 | 12 | Exercise prescription card | Sets/reps/time, per-side semantics, equipment and substitution action |
