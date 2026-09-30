@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "asset_id": "primary-button-r1",
+  "status": "component_review_candidate",
+  "provider": "AutoSprite",
+  "provider_asset_id": "cmuo398u4000ah2ehbm10hjfe",
+  "generated_on": "2026-09-30",
+  "generation": {
+    "description": "Blank 4:1 pixel-art fantasy UI button, front view. Dark teal flat center, thin antique gold stepped border, small brass corners. No text, icons, gems, shadow or scene. Transparent background.",
+    "description_characters": 191,
+    "category": "texture",
+    "style": "pixel",
+    "quality": "ultra"
+  },
+  "costs": {
+    "unit": "AutoSprite credit",
+    "generation": 1,
+    "background_removal": 1,
+    "total": 2
+  },
+  "files": {
+    "original": {
+      "path": "assets/sprites/autosprite/primary-button-r1/original.png",
+      "bytes": 889849,
+      "sha256": "d46cd3cdc365cf1276b486c9fb16883b63ec9a6d5dfc5a4d58fcb095a65e1770"
+    },
+    "transparent": {
+      "path": "assets/sprites/autosprite/primary-button-r1/transparent.png",
+      "bytes": 669585,
+      "sha256": "724b3b16d684e2792f8eb2e8bb9fe8c9cfe450848010ac164244593fa21e9249"
+    },
+    "runtime": {
+      "path": "app/Assets/SoloGym/Resources/UI/Pixel/PrimaryButton.png",
+      "bytes": 669585,
+      "sha256": "724b3b16d684e2792f8eb2e8bb9fe8c9cfe450848010ac164244593fa21e9249"
+    }
+  },
+  "image": {
+    "width": 1024,
+    "height": 1024,
+    "mode": "RGBA"
+  },
+  "preservation": {
+    "original_unchanged": true,
+    "runtime_byte_identical_to_transparent_export": true,
+    "local_image_redraw": false,
+    "local_image_resizing": false,
+    "crop_method": "Unity sprite metadata; PNG bytes unchanged"
+  },
+  "runtime_import": {
+    "resource": "UI/Pixel/PrimaryButton",
+    "sprite_name": "PrimaryButton",
+    "sprite_mode": "multiple",
+    "crop_coordinate_system": "Unity texture pixels; bottom-left origin",
+    "crop": {
+      "x": 32,
+      "y": 372,
+      "width": 960,
+      "height": 278
+    },
+    "border": {
+      "left": 72,
+      "bottom": 72,
+      "right": 72,
+      "top": 72
+    },
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "pixels_per_unit": 400,
+    "filter_mode": "Point",
+    "texture_compression": "Uncompressed",
+    "mipmaps": false,
+    "wrap_mode": "Clamp",
+    "max_texture_size": 1024,
+    "ui_image_type": "Sliced",
+    "state_rendering": "Native button state logic tints the same sprite; focus outline and press offset are live UI, labels are not baked into the image."
+  },
+  "font": {
+    "family": "Pixelify Sans",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/pixelifysans/PixelifySans%5Bwght%5D.ttf",
+    "upstream_file": "PixelifySans[wght].ttf",
+    "format": "variable TrueType font",
+    "file": {
+      "path": "app/Assets/SoloGym/Resources/Fonts/PixelifySans.ttf",
+      "bytes": 79160,
+      "sha256": "9ba86cd010a4de309d263ceff8e8044092c9db7efda869620cb9ff1c4389e8a5"
+    },
+    "license": "SIL Open Font License 1.1",
+    "license_file": {
+      "path": "app/Assets/SoloGym/Resources/Fonts/PixelifySans-OFL.txt",
+      "bytes": 4394,
+      "sha256": "62247d172c6173c3deaa58dc9e5e77d7942977048281a40e68fd766c4168e582",
+      "upstream_sha256": "b66ba46f511a851ab09998b5a5a9fdbb102545a3864cb993095e1745996873a7",
+      "normalization": "LF line endings and trailing whitespace only; license wording unchanged"
+    }
+  },
+  "verification": {
+    "source_runtime_hash_check": "passed",
+    "unity_build": "passed: Unity 6000.3.24f1 Linux Standalone Mono",
+    "native_smoke": "passed: 118 checks at each of 1280x720 ES, 1844x853 EN inset 64, 854x480 ES inset 32",
+    "visual_review": "native captures inspected by Codex; user approval pending",
+    "evidence_directory": "artifacts/visual/PrimaryButton"
+  },
+  "scope": "One reusable primary button and landscape fixture; no new character, full-screen art, application screen migration, or animation."
+}
