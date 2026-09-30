@@ -64,7 +64,7 @@ The first character viewport supports full static appearances and fixed source c
 
 ## One component per PR/MR
 
-The first implementation PR delivers the **primary pixel button** as an isolated review candidate; see its [component contract and verification status](pixel-primary-button.md). Include only the minimal landscape fixture, theme values and import setup necessary to display and verify that button. This is not a blanket application conversion. The fixture uses the chosen reference palette with short/long English and Spanish labels, two useful sizes, and normal/pressed/focus/disabled/loading states.
+The **primary pixel button** was merged in PR #12. Component 02 adds the [framed content panel and its review fixture](pixel-content-panel.md), reusing that button. See the button’s [component contract and verification status](pixel-primary-button.md). Include only the minimal landscape fixture, theme values and import setup necessary to display and verify that button. This is not a blanket application conversion. The fixture uses the chosen reference palette with short/long English and Spanish labels, two useful sizes, and normal/pressed/focus/disabled/loading states.
 
 Each component PR includes:
 
