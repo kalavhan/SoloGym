@@ -52,6 +52,18 @@ namespace SoloGym
 
         void Awake()
         {
+            var trainingWindow = Argument("-sologym-window");
+            if (trainingWindow == "training" || trainingWindow == "readiness" || trainingWindow == "plan")
+            {
+                // Draft exercise content is never exposed as an authenticated plan.
+                if (!Application.isEditor && !HasArgument("-sologym-review"))
+                { Debug.LogError("Training preview requires -sologym-review."); Application.Quit(1); return; }
+                new GameObject("Training preview").AddComponent<TrainingScreen>().Initialize(
+                    Argument("-sologym-locale") ?? "auto", () => SceneManager.LoadScene("SystemHome"), trainingWindow,
+                    Argument("-sologym-capture"), HasArgument("-sologym-training-smoke"));
+                enabled = false;
+                return;
+            }
             if (Argument("-sologym-window") == "home")
             {
                 SceneManager.LoadScene("SystemHome");

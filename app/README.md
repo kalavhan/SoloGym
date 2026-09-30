@@ -70,6 +70,8 @@ Local builds with `SOLOGYM_REVIEW` expose the labeled sample Home and onboarding
 
 ## Focused verification
 
+Training Hub, readiness and plan review now have native EN/ES local previews using existing art. Open with `-sologym-review -sologym-window training`; direct capture routes are `readiness` and `plan`. Plans are explicit fictional fixtures, not personal prescriptions. Reviewed drafts save locally; workout logging is not yet connected. See [the training implementation report](../docs/windows/WIN-015-017-implementation.md) for scope and checks.
+
 After assembling the whole screen, capture Welcome with:
 
 ```bash

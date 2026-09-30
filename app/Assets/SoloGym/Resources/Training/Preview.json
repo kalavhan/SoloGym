@@ -1,0 +1,5244 @@
+{
+  "version": 1,
+  "content_status": "draft_pending_professional_and_youth_review",
+  "source_hashes": [
+    {
+      "path": "tools/training_reference.py",
+      "sha256": "009ad89186e1d39a0de3119c499441cd3166cb052eb808d84c1c13e151429b51"
+    },
+    {
+      "path": "data/training/example-profiles.json",
+      "sha256": "6130685d1e7f3831cd67333036436dba5024f39d8827e11bf82c66888267a34f"
+    },
+    {
+      "path": "data/training/exercises.json",
+      "sha256": "1268f7ae57a8e5a0d416a1dd113cfa0f4af55402ba2c72f94eca2865a47db694"
+    },
+    {
+      "path": "data/training/equipment.json",
+      "sha256": "5b0ebbfdc37dfd1f0ce1638611a83cf593fb6fa9c0cf3a59d1acd4801e74a5f7"
+    },
+    {
+      "path": "data/training/templates.json",
+      "sha256": "cc6e482018bbea2fcb72e7eed57e4f8bf74ec6d9cda2a2c60e48018e5b8f8977"
+    },
+    {
+      "path": "data/training/rules.json",
+      "sha256": "67f27933be732bc00333857d3529efa634c9d5d977d63efce9ff1231a786fac4"
+    },
+    {
+      "path": "data/training/sources.json",
+      "sha256": "c28e22f778a1ced64cb3a0d018af25150770038589ea7cc6edc8848578edbd0c"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "adult_home_beginner",
+      "name": {
+        "en": "Adult · Home · Beginner",
+        "es": "Adulto · Casa · Principiante"
+      },
+      "teen": false,
+      "equipment": [
+        {
+          "en": "Clear wall",
+          "es": "Pared despejada"
+        },
+        {
+          "en": "Stable chair",
+          "es": "Silla estable"
+        },
+        {
+          "en": "Stable support",
+          "es": "Apoyo estable"
+        }
+      ]
+    },
+    {
+      "id": "adult_gym_intermediate",
+      "name": {
+        "en": "Adult · Gym · Intermediate",
+        "es": "Adulto · Gimnasio · Intermedio"
+      },
+      "teen": false,
+      "equipment": [
+        {
+          "en": "Clear wall",
+          "es": "Pared despejada"
+        },
+        {
+          "en": "Stable support",
+          "es": "Apoyo estable"
+        },
+        {
+          "en": "Dumbbells",
+          "es": "Mancuernas"
+        },
+        {
+          "en": "Cable machine",
+          "es": "Máquina de poleas"
+        },
+        {
+          "en": "Lat pulldown machine",
+          "es": "Máquina de jalón al pecho"
+        },
+        {
+          "en": "Leg press",
+          "es": "Prensa de piernas"
+        },
+        {
+          "en": "Stationary bike",
+          "es": "Bicicleta fija"
+        },
+        {
+          "en": "Exercise bench",
+          "es": "Banco de ejercicio"
+        }
+      ]
+    },
+    {
+      "id": "teen_home_supervised",
+      "name": {
+        "en": "Teen · Home · Beginner",
+        "es": "Adolescente · Casa · Principiante"
+      },
+      "teen": true,
+      "equipment": [
+        {
+          "en": "Clear wall",
+          "es": "Pared despejada"
+        },
+        {
+          "en": "Stable chair",
+          "es": "Silla estable"
+        },
+        {
+          "en": "Stable support",
+          "es": "Apoyo estable"
+        },
+        {
+          "en": "Resistance band",
+          "es": "Banda de resistencia"
+        },
+        {
+          "en": "Rated band anchor",
+          "es": "Anclaje adecuado para banda"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "key": "adult_home_beginner:15:ready:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "2945548916374a4f",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 810,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 156
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [
+          "pull"
+        ],
+        "messages": [
+          {
+            "code": "pull_coverage_gap",
+            "text": {
+              "en": "This setup lacks an eligible resisted pull. Add suitable equipment or review the plan; mobility is not a substitute.",
+              "es": "Este equipo no permite un tirón con resistencia adecuado. Añade equipo apropiado o revisa el plan; la movilidad no lo sustituye."
+            }
+          },
+          {
+            "code": "time_adjustment",
+            "text": {
+              "en": "Work was reduced to fit the time budget while retaining rest and session structure.",
+              "es": "Se redujo el trabajo para respetar el tiempo disponible y conservar las pausas y la estructura."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:15:low_energy:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "1ec41ff65764a6ce",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "light",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 810,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 156
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [
+          "pull"
+        ],
+        "messages": [
+          {
+            "code": "difficulty_adjusted",
+            "text": {
+              "en": "Difficulty was reduced for readiness or training experience; reward value is unchanged.",
+              "es": "Se redujo la dificultad según tu preparación o experiencia; la recompensa no cambia."
+            }
+          },
+          {
+            "code": "pull_coverage_gap",
+            "text": {
+              "en": "This setup lacks an eligible resisted pull. Add suitable equipment or review the plan; mobility is not a substitute.",
+              "es": "Este equipo no permite un tirón con resistencia adecuado. Añade equipo apropiado o revisa el plan; la movilidad no lo sustituye."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:15:ill:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "e2afa891cb275b32",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:15:pain:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "b150c64431778216",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:15:injury:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "890bf978e67a2bf3",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:25:ready:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "6c83904c1722c710",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 1410,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 342
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [
+          "pull"
+        ],
+        "messages": [
+          {
+            "code": "pull_coverage_gap",
+            "text": {
+              "en": "This setup lacks an eligible resisted pull. Add suitable equipment or review the plan; mobility is not a substitute.",
+              "es": "Este equipo no permite un tirón con resistencia adecuado. Añade equipo apropiado o revisa el plan; la movilidad no lo sustituye."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:25:low_energy:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "0fb7d684a697d42d",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "light",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 810,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 156
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [
+          "pull"
+        ],
+        "messages": [
+          {
+            "code": "difficulty_adjusted",
+            "text": {
+              "en": "Difficulty was reduced for readiness or training experience; reward value is unchanged.",
+              "es": "Se redujo la dificultad según tu preparación o experiencia; la recompensa no cambia."
+            }
+          },
+          {
+            "code": "pull_coverage_gap",
+            "text": {
+              "en": "This setup lacks an eligible resisted pull. Add suitable equipment or review the plan; mobility is not a substitute.",
+              "es": "Este equipo no permite un tirón con resistencia adecuado. Añade equipo apropiado o revisa el plan; la movilidad no lo sustituye."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:25:ill:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "750644395d30a2a6",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:25:pain:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "425904139a96bf7a",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:25:injury:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "0598c34dd24b191e",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:40:ready:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "a9d7b3b12facfc30",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 1410,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 342
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [
+          "pull"
+        ],
+        "messages": [
+          {
+            "code": "pull_coverage_gap",
+            "text": {
+              "en": "This setup lacks an eligible resisted pull. Add suitable equipment or review the plan; mobility is not a substitute.",
+              "es": "Este equipo no permite un tirón con resistencia adecuado. Añade equipo apropiado o revisa el plan; la movilidad no lo sustituye."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:40:low_energy:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "5f8d59c65398289d",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "light",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 810,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 156
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [
+          "pull"
+        ],
+        "messages": [
+          {
+            "code": "difficulty_adjusted",
+            "text": {
+              "en": "Difficulty was reduced for readiness or training experience; reward value is unchanged.",
+              "es": "Se redujo la dificultad según tu preparación o experiencia; la recompensa no cambia."
+            }
+          },
+          {
+            "code": "pull_coverage_gap",
+            "text": {
+              "en": "This setup lacks an eligible resisted pull. Add suitable equipment or review the plan; mobility is not a substitute.",
+              "es": "Este equipo no permite un tirón con resistencia adecuado. Añade equipo apropiado o revisa el plan; la movilidad no lo sustituye."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:40:ill:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "d28fb8da6e1298af",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:40:pain:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "bcb3fc815c3a90a9",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_home_beginner:40:injury:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "cbf02fe72e4ad6d0",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:15:ready:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "b57ab7f24193c2f6",
+        "kind": "strength",
+        "status": "needs_changes",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 945,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "dumbbell_goblet_squat",
+            "name": {
+              "en": "Dumbbell goblet squat",
+              "es": "Sentadilla con mancuerna al pecho"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 115
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "dumbbell_romanian_deadlift",
+            "name": {
+              "en": "Dumbbell Romanian deadlift",
+              "es": "Peso muerto rumano con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 115
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "dumbbell_floor_press",
+            "name": {
+              "en": "Dumbbell floor press",
+              "es": "Press de pecho con mancuernas en el suelo"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 130
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "dumbbell_row",
+            "name": {
+              "en": "Bent-over dumbbell row",
+              "es": "Remo inclinado con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 115
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": true,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 140
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "insufficient_time",
+            "text": {
+              "en": "Choose more time or a different template; warm-up, rest and recovery have not been compressed.",
+              "es": "Elige más tiempo u otra plantilla; no se han reducido el calentamiento, las pausas ni la recuperación."
+            }
+          },
+          {
+            "code": "time_adjustment",
+            "text": {
+              "en": "Work was reduced to fit the time budget while retaining rest and session structure.",
+              "es": "Se redujo el trabajo para respetar el tiempo disponible y conservar las pausas y la estructura."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:15:low_energy:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "b991a5f93c0311e0",
+        "kind": "strength",
+        "status": "needs_changes",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "light",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 945,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "dumbbell_goblet_squat",
+            "name": {
+              "en": "Dumbbell goblet squat",
+              "es": "Sentadilla con mancuerna al pecho"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 115
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "dumbbell_romanian_deadlift",
+            "name": {
+              "en": "Dumbbell Romanian deadlift",
+              "es": "Peso muerto rumano con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 115
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "dumbbell_floor_press",
+            "name": {
+              "en": "Dumbbell floor press",
+              "es": "Press de pecho con mancuernas en el suelo"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 130
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "dumbbell_row",
+            "name": {
+              "en": "Bent-over dumbbell row",
+              "es": "Remo inclinado con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 115
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": true,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 140
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "difficulty_adjusted",
+            "text": {
+              "en": "Difficulty was reduced for readiness or training experience; reward value is unchanged.",
+              "es": "Se redujo la dificultad según tu preparación o experiencia; la recompensa no cambia."
+            }
+          },
+          {
+            "code": "insufficient_time",
+            "text": {
+              "en": "Choose more time or a different template; warm-up, rest and recovery have not been compressed.",
+              "es": "Elige más tiempo u otra plantilla; no se han reducido el calentamiento, las pausas ni la recuperación."
+            }
+          },
+          {
+            "code": "time_adjustment",
+            "text": {
+              "en": "Work was reduced to fit the time budget while retaining rest and session structure.",
+              "es": "Se redujo el trabajo para respetar el tiempo disponible y conservar las pausas y la estructura."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:15:ill:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "92febd4f2bffe5f4",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:15:pain:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "d43b2d69379729d7",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:15:injury:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "fa661e07774c5ec8",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "6283026b143b7899",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 1425,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "dumbbell_goblet_squat",
+            "name": {
+              "en": "Dumbbell goblet squat",
+              "es": "Sentadilla con mancuerna al pecho"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 275
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "dumbbell_romanian_deadlift",
+            "name": {
+              "en": "Dumbbell Romanian deadlift",
+              "es": "Peso muerto rumano con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 275
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "dumbbell_floor_press",
+            "name": {
+              "en": "Dumbbell floor press",
+              "es": "Press de pecho con mancuernas en el suelo"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 130
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "dumbbell_row",
+            "name": {
+              "en": "Bent-over dumbbell row",
+              "es": "Remo inclinado con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 275
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": true,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 140
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "time_adjustment",
+            "text": {
+              "en": "Work was reduced to fit the time budget while retaining rest and session structure.",
+              "es": "Se redujo el trabajo para respetar el tiempo disponible y conservar las pausas y la estructura."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "a4279053a537169d",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "light",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 1425,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "dumbbell_goblet_squat",
+            "name": {
+              "en": "Dumbbell goblet squat",
+              "es": "Sentadilla con mancuerna al pecho"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 275
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "dumbbell_romanian_deadlift",
+            "name": {
+              "en": "Dumbbell Romanian deadlift",
+              "es": "Peso muerto rumano con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 275
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "dumbbell_floor_press",
+            "name": {
+              "en": "Dumbbell floor press",
+              "es": "Press de pecho con mancuernas en el suelo"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 130
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "dumbbell_row",
+            "name": {
+              "en": "Bent-over dumbbell row",
+              "es": "Remo inclinado con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 275
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": true,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 140
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "difficulty_adjusted",
+            "text": {
+              "en": "Difficulty was reduced for readiness or training experience; reward value is unchanged.",
+              "es": "Se redujo la dificultad según tu preparación o experiencia; la recompensa no cambia."
+            }
+          },
+          {
+            "code": "time_adjustment",
+            "text": {
+              "en": "Work was reduced to fit the time budget while retaining rest and session structure.",
+              "es": "Se redujo el trabajo para respetar el tiempo disponible y conservar las pausas y la estructura."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:25:ill:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "67fdc7e9335952fa",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:25:pain:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "73451e04da7db000",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:25:injury:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "c722390b6f49e74c",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "20052abaaafaf4ac",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 2265,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "dumbbell_goblet_squat",
+            "name": {
+              "en": "Dumbbell goblet squat",
+              "es": "Sentadilla con mancuerna al pecho"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 3,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 435
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "dumbbell_romanian_deadlift",
+            "name": {
+              "en": "Dumbbell Romanian deadlift",
+              "es": "Peso muerto rumano con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 3,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 435
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "dumbbell_floor_press",
+            "name": {
+              "en": "Dumbbell floor press",
+              "es": "Press de pecho con mancuernas en el suelo"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 290
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "dumbbell_row",
+            "name": {
+              "en": "Bent-over dumbbell row",
+              "es": "Remo inclinado con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 3,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 435
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": true,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 340
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "time_adjustment",
+            "text": {
+              "en": "Work was reduced to fit the time budget while retaining rest and session structure.",
+              "es": "Se redujo el trabajo para respetar el tiempo disponible y conservar las pausas y la estructura."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "b728bcf12c3ac550",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "light",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 1785,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "dumbbell_goblet_squat",
+            "name": {
+              "en": "Dumbbell goblet squat",
+              "es": "Sentadilla con mancuerna al pecho"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 275
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "dumbbell_romanian_deadlift",
+            "name": {
+              "en": "Dumbbell Romanian deadlift",
+              "es": "Peso muerto rumano con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 275
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "dumbbell_floor_press",
+            "name": {
+              "en": "Dumbbell floor press",
+              "es": "Press de pecho con mancuernas en el suelo"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 290
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "dumbbell_row",
+            "name": {
+              "en": "Bent-over dumbbell row",
+              "es": "Remo inclinado con mancuernas"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": false,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 275
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 6,
+            "quantity_max": 10,
+            "per_side": true,
+            "rest_seconds": 120,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 340
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "difficulty_adjusted",
+            "text": {
+              "en": "Difficulty was reduced for readiness or training experience; reward value is unchanged.",
+              "es": "Se redujo la dificultad según tu preparación o experiencia; la recompensa no cambia."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:40:ill:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "2fa411e152c96c2e",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:40:pain:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "38291a901b53cc62",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "adult_gym_intermediate:40:injury:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "6caaf4936c37b0f8",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:15:ready:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "b19700c4df345721",
+        "kind": "strength",
+        "status": "needs_review",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "supervision_needed",
+            "text": {
+              "en": "Arrange appropriate supervision for this strength session. No workout has been prescribed.",
+              "es": "Organiza supervisión adecuada para esta sesión de fuerza. No se ha indicado un entrenamiento."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:15:ready:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "30bbaa1d702ca53b",
+        "kind": "strength",
+        "status": "needs_changes",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 978,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "resistance_band_row",
+            "name": {
+              "en": "Resistance-band row",
+              "es": "Remo con banda elástica"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 168
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 156
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "insufficient_time",
+            "text": {
+              "en": "Choose more time or a different template; warm-up, rest and recovery have not been compressed.",
+              "es": "Elige más tiempo u otra plantilla; no se han reducido el calentamiento, las pausas ni la recuperación."
+            }
+          },
+          {
+            "code": "time_adjustment",
+            "text": {
+              "en": "Work was reduced to fit the time budget while retaining rest and session structure.",
+              "es": "Se redujo el trabajo para respetar el tiempo disponible y conservar las pausas y la estructura."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:15:low_energy:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "6dbfda260367721d",
+        "kind": "strength",
+        "status": "needs_review",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "supervision_needed",
+            "text": {
+              "en": "Arrange appropriate supervision for this strength session. No workout has been prescribed.",
+              "es": "Organiza supervisión adecuada para esta sesión de fuerza. No se ha indicado un entrenamiento."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:15:low_energy:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "7b6d7e0eacc7d283",
+        "kind": "strength",
+        "status": "needs_changes",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "light",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 978,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "resistance_band_row",
+            "name": {
+              "en": "Resistance-band row",
+              "es": "Remo con banda elástica"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 168
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 0,
+            "estimated_seconds": 156
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "difficulty_adjusted",
+            "text": {
+              "en": "Difficulty was reduced for readiness or training experience; reward value is unchanged.",
+              "es": "Se redujo la dificultad según tu preparación o experiencia; la recompensa no cambia."
+            }
+          },
+          {
+            "code": "insufficient_time",
+            "text": {
+              "en": "Choose more time or a different template; warm-up, rest and recovery have not been compressed.",
+              "es": "Elige más tiempo u otra plantilla; no se han reducido el calentamiento, las pausas ni la recuperación."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:15:ill:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "2592a6fd71a3c867",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:15:ill:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "9fdab08f10e6ea00",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:15:pain:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "2025a7a5316c1909",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:15:pain:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "23c355f76a1df402",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:15:injury:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "df3033fc6298c1ff",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:15:injury:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "0d5afa36a269b670",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:25:ready:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "41ba47cd04328054",
+        "kind": "strength",
+        "status": "needs_review",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "supervision_needed",
+            "text": {
+              "en": "Arrange appropriate supervision for this strength session. No workout has been prescribed.",
+              "es": "Organiza supervisión adecuada para esta sesión de fuerza. No se ha indicado un entrenamiento."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "515245e21a0d6467",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 1392,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "resistance_band_row",
+            "name": {
+              "en": "Resistance-band row",
+              "es": "Remo con banda elástica"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 168
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 156
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "time_adjustment",
+            "text": {
+              "en": "Work was reduced to fit the time budget while retaining rest and session structure.",
+              "es": "Se redujo el trabajo para respetar el tiempo disponible y conservar las pausas y la estructura."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "e1d393dbf0c15bd4",
+        "kind": "strength",
+        "status": "needs_review",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "supervision_needed",
+            "text": {
+              "en": "Arrange appropriate supervision for this strength session. No workout has been prescribed.",
+              "es": "Organiza supervisión adecuada para esta sesión de fuerza. No se ha indicado un entrenamiento."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "8d0779be1b0fec0c",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "light",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 978,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "resistance_band_row",
+            "name": {
+              "en": "Resistance-band row",
+              "es": "Remo con banda elástica"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 168
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 156
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "difficulty_adjusted",
+            "text": {
+              "en": "Difficulty was reduced for readiness or training experience; reward value is unchanged.",
+              "es": "Se redujo la dificultad según tu preparación o experiencia; la recompensa no cambia."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:25:ill:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "26e95e124d5ac902",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:25:ill:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "ab1a987308334974",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:25:pain:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "0dace282535517a5",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:25:pain:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "94d0f91a840b5230",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:25:injury:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "d38137eb1b0296a9",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:25:injury:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "2f6e09d88dd6920d",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 1500,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:40:ready:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "f642e2c84254138c",
+        "kind": "strength",
+        "status": "needs_review",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "supervision_needed",
+            "text": {
+              "en": "Arrange appropriate supervision for this strength session. No workout has been prescribed.",
+              "es": "Organiza supervisión adecuada para esta sesión de fuerza. No se ha indicado un entrenamiento."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "2e78754920d6f683",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 1716,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 246
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "resistance_band_row",
+            "name": {
+              "en": "Resistance-band row",
+              "es": "Remo con banda elástica"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 306
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 2,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 342
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "4d42593bb0a0239e",
+        "kind": "strength",
+        "status": "needs_review",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "supervision_needed",
+            "text": {
+              "en": "Arrange appropriate supervision for this strength session. No workout has been prescribed.",
+              "es": "Organiza supervisión adecuada para esta sesión de fuerza. No se ha indicado un entrenamiento."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "357b9c7143ce848b",
+        "kind": "strength",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "light",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 978,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "squat",
+            "role": "main",
+            "exercise_id": "chair_squat",
+            "name": {
+              "en": "Chair squat",
+              "es": "Sentadilla a silla"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "squat"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "hinge",
+            "role": "main",
+            "exercise_id": "glute_bridge",
+            "name": {
+              "en": "Glute bridge",
+              "es": "Puente de glúteos"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "push",
+            "role": "main",
+            "exercise_id": "wall_pushup",
+            "name": {
+              "en": "Wall push-up",
+              "es": "Flexión contra la pared"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_push"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 108
+          },
+          {
+            "id": "pull",
+            "role": "main",
+            "exercise_id": "resistance_band_row",
+            "name": {
+              "en": "Resistance-band row",
+              "es": "Remo con banda elástica"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "horizontal_pull"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": false,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 168
+          },
+          {
+            "id": "core",
+            "role": "main",
+            "exercise_id": "dead_bug",
+            "name": {
+              "en": "Dead bug",
+              "es": "Extensión alternada en posición de insecto"
+            },
+            "category": "strength",
+            "allowed_patterns": [
+              "core"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "per_side": true,
+            "rest_seconds": 90,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 200,
+            "estimated_seconds": 156
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "difficulty_adjusted",
+            "text": {
+              "en": "Difficulty was reduced for readiness or training experience; reward value is unchanged.",
+              "es": "Se redujo la dificultad según tu preparación o experiencia; la recompensa no cambia."
+            }
+          }
+        ],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:40:ill:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "53372bbde78ed67f",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:40:ill:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "2f7c840529b8ca75",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:40:pain:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "8eb3ac40ca87bedf",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:40:pain:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "9eeac91a22c34059",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:40:injury:0",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "d7143abf24513c29",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "key": "teen_home_supervised:40:injury:1",
+      "session": {
+        "date": "2026-09-28",
+        "template_id": "foundation_a",
+        "name": {
+          "en": "Foundation A",
+          "es": "Base A"
+        },
+        "profile_signature": "356e4391318c273b",
+        "kind": "recovery",
+        "status": "recovery",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 2400,
+        "estimated_seconds": 0,
+        "blocks": [],
+        "coverage_gaps": [],
+        "messages": [
+          {
+            "code": "stop_for_readiness",
+            "text": {
+              "en": "Rest or stop; do not train through illness, pain or injury. Seek appropriate advice before resuming.",
+              "es": "Descansa o detente; no entrenes con enfermedad, dolor o lesión. Busca orientación adecuada antes de volver."
+            }
+          }
+        ],
+        "boss": null,
+        "consistency_protected_on_rest_or_stop": true
+      }
+    }
+  ]
+}
