@@ -1,0 +1,148 @@
+{
+  "characters": [
+    {
+      "id": "female-fat",
+      "presentation": "female",
+      "body": "fat",
+      "resource": "Characters/BarbarianR1/female-fat",
+      "width": 558,
+      "height": 1003,
+      "sourceRect": {
+        "x": 400,
+        "y": 188,
+        "width": 558,
+        "height": 1003
+      },
+      "feet": {
+        "x": 280.5,
+        "y": 2
+      }
+    },
+    {
+      "id": "female-medium",
+      "presentation": "female",
+      "body": "medium",
+      "resource": "Characters/BarbarianR1/female-medium",
+      "width": 443,
+      "height": 982,
+      "sourceRect": {
+        "x": 461,
+        "y": 195,
+        "width": 443,
+        "height": 982
+      },
+      "feet": {
+        "x": 222.5,
+        "y": 2
+      }
+    },
+    {
+      "id": "female-muscular",
+      "presentation": "female",
+      "body": "muscular",
+      "resource": "Characters/BarbarianR1/female-muscular",
+      "width": 430,
+      "height": 992,
+      "sourceRect": {
+        "x": 459,
+        "y": 187,
+        "width": 430,
+        "height": 992
+      },
+      "feet": {
+        "x": 215.0,
+        "y": 2
+      }
+    },
+    {
+      "id": "female-skinny",
+      "presentation": "female",
+      "body": "skinny",
+      "resource": "Characters/BarbarianR1/female-skinny",
+      "width": 404,
+      "height": 985,
+      "sourceRect": {
+        "x": 479,
+        "y": 189,
+        "width": 404,
+        "height": 985
+      },
+      "feet": {
+        "x": 201.5,
+        "y": 2
+      }
+    },
+    {
+      "id": "male-fat",
+      "presentation": "male",
+      "body": "fat",
+      "resource": "Characters/BarbarianR1/male-fat",
+      "width": 597,
+      "height": 985,
+      "sourceRect": {
+        "x": 387,
+        "y": 190,
+        "width": 597,
+        "height": 985
+      },
+      "feet": {
+        "x": 295.5,
+        "y": 2
+      }
+    },
+    {
+      "id": "male-medium",
+      "presentation": "male",
+      "body": "medium",
+      "resource": "Characters/BarbarianR1/male-medium",
+      "width": 456,
+      "height": 990,
+      "sourceRect": {
+        "x": 458,
+        "y": 197,
+        "width": 456,
+        "height": 990
+      },
+      "feet": {
+        "x": 224.5,
+        "y": 2
+      }
+    },
+    {
+      "id": "male-muscular",
+      "presentation": "male",
+      "body": "muscular",
+      "resource": "Characters/BarbarianR1/male-muscular",
+      "width": 464,
+      "height": 997,
+      "sourceRect": {
+        "x": 451,
+        "y": 190,
+        "width": 464,
+        "height": 997
+      },
+      "feet": {
+        "x": 230.5,
+        "y": 2
+      }
+    },
+    {
+      "id": "male-skinny",
+      "presentation": "male",
+      "body": "skinny",
+      "resource": "Characters/BarbarianR1/male-skinny",
+      "width": 394,
+      "height": 1000,
+      "sourceRect": {
+        "x": 490,
+        "y": 192,
+        "width": 394,
+        "height": 1000
+      },
+      "feet": {
+        "x": 192.5,
+        "y": 2
+      }
+    }
+  ]
+}

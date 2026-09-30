@@ -14,14 +14,15 @@ def run():
     actions = "--actions" in sys.argv
     icons = "--icons" in sys.argv
     choices = "--choices" in sys.argv
-    if sum((actions, icons, choices)) > 1:
-        raise ValueError("Choose one fixture: --actions, --icons or --choices.")
-    fixture = "choice" if choices else "icon" if icons else "action" if actions else "field"
+    characters = "--characters" in sys.argv
+    if sum((actions, icons, choices, characters)) > 1:
+        raise ValueError("Choose one fixture: --actions, --icons, --choices or --characters.")
+    fixture = "character" if characters else "choice" if choices else "icon" if icons else "action" if actions else "field"
     # Always create an isolated display; never inject events into the user's desktop.
     if "--isolated-child" not in sys.argv:
         return subprocess.call(["xvfb-run", "-a", "-s", "-screen 0 1920x1080x24",
                                 sys.executable, str(Path(__file__).resolve()), "--isolated-child",
-                                *(["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
+                                *(["--characters"] if characters else ["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
                                env={**os.environ, "SOLOGYM_ISOLATED_FIELD_TEST": "1"})
     if os.environ.get("SOLOGYM_ISOLATED_FIELD_TEST") != "1":
         raise RuntimeError("Run without --isolated-child to create a private display.")
@@ -76,7 +77,7 @@ def run():
             key(name, shift)
 
     env = {**os.environ, "XDG_CONFIG_HOME": str(local / (fixture + "-keyboard-prefs"))}
-    binary = {"choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
+    binary = {"character": "FantasyCharacter/SoloGymCharacter", "choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
               "action": "FantasyAction/SoloGymAction", "field": "FantasyField/SoloGymField"}[fixture]
     command = [str(ROOT / ("app/Builds/" + binary + ".x86_64")),
                "-screen-fullscreen", "0", "-screen-width", "1280", "-screen-height", "720",
@@ -111,7 +112,11 @@ def run():
             x11.XSetInputFocus(display, window, 2, 0)
             x11.XFlush(display)
             time.sleep(.4)
-            if choices:
+            if characters:
+                # Male, Skinny, Muscular; then locale. Focus alone never changes the sprite.
+                for name in ["Right", "Return", "Tab", "Return", "Right", "Right", "Right", "Return", "Tab", "Return"]:
+                    key(name); time.sleep(.3)
+            elif choices:
                 # Choose Hard, advance to rest, change appearance, advance to pause,
                 # then choose Medium and Easy without restarting the fictional routine.
                 sequence = [("Right", False), ("Return", False), ("Tab", False), ("Return", False),

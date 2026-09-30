@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "batch": "barbarian-viewport-r1",
+  "source_batch": "barbarian-user-r1",
+  "source_method": "Exact local originals uploaded as AutoSprite asset copies; remove_asset_background only",
+  "status": "component_review_candidate",
+  "new_character_generations": 0,
+  "art_regeneration_calls": 0,
+  "background_removal_calls": 8,
+  "credits_spent": 8,
+  "edits": "Provider alpha only; every RGB pixel unchanged. No local redraw, resizing, recoloring or pixel-grid conversion.",
+  "framing_rule": "Metadata crop with 2px padding, foot X midpoint of alpha>=128 boot extents in last 64 rows; foot Y full alpha bottom. Shared maximum half-width/height envelope across all eight; uniform scale, never normalize body width.",
+  "runtime_import": {
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "mipmaps": false,
+    "max_texture_size": 2048,
+    "pixels_per_unit": 100,
+    "mesh": "FullRect",
+    "sprite_mode": "Multiple",
+    "pivot": "Custom: feet / crop size"
+  },
+  "characters": [
+    {
+      "key": "female-fat",
+      "assetId": "cmuo8n8cp00205efi8x2veppd",
+      "cost": 1,
+      "character_id": "cmunhb3j500014xk27mrzetrw",
+      "source_path": "assets/sprites/autosprite/barbarian-user-r1/originals/female-fat.png",
+      "source_sha256": "2bf9573b3ef138abe5065e9e729d96132f0203c59f70e48a60ad48121ec91743",
+      "transparent_path": "assets/sprites/autosprite/barbarian-viewport-r1/transparent/female-fat.png",
+      "transparent_sha256": "9841d8a92c69f8ac4489dfacb149530c3ea1df7615c5d2edbd4469d8b9754a4c",
+      "runtime_path": "app/Assets/SoloGym/Resources/Characters/BarbarianR1/female-fat.png",
+      "runtime_sha256": "9841d8a92c69f8ac4489dfacb149530c3ea1df7615c5d2edbd4469d8b9754a4c",
+      "dimensions": [
+        1366,
+        1366
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "rgb_identical_to_original": true,
+      "alpha_bounds_top_left": [
+        402,
+        177,
+        956,
+        1176
+      ],
+      "framing": {
+        "id": "female-fat",
+        "presentation": "female",
+        "body": "fat",
+        "resource": "Characters/BarbarianR1/female-fat",
+        "width": 558,
+        "height": 1003,
+        "sourceRect": {
+          "x": 400,
+          "y": 188,
+          "width": 558,
+          "height": 1003
+        },
+        "feet": {
+          "x": 280.5,
+          "y": 2
+        }
+      },
+      "source_bytes_preserved": true,
+      "runtime_byte_identical_to_transparent": true
+    },
+    {
+      "key": "female-medium",
+      "assetId": "cmuo8mc5j000qf121qckokzai",
+      "cost": 1,
+      "character_id": "cmunh7ymb0001y6zf0a4qnrp2",
+      "source_path": "assets/sprites/autosprite/barbarian-user-r1/originals/female-medium.png",
+      "source_sha256": "623bd4719387797d7bdb0dbd316427decabdf536ea49818ac1b4ef956695e93f",
+      "transparent_path": "assets/sprites/autosprite/barbarian-viewport-r1/transparent/female-medium.png",
+      "transparent_sha256": "347f175feeff17a4fe4c4aa033d75c4f93cf04fb2ea1f3deb4adc467bd1c0f8a",
+      "runtime_path": "app/Assets/SoloGym/Resources/Characters/BarbarianR1/female-medium.png",
+      "runtime_sha256": "347f175feeff17a4fe4c4aa033d75c4f93cf04fb2ea1f3deb4adc467bd1c0f8a",
+      "dimensions": [
+        1366,
+        1366
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "rgb_identical_to_original": true,
+      "alpha_bounds_top_left": [
+        463,
+        191,
+        902,
+        1169
+      ],
+      "framing": {
+        "id": "female-medium",
+        "presentation": "female",
+        "body": "medium",
+        "resource": "Characters/BarbarianR1/female-medium",
+        "width": 443,
+        "height": 982,
+        "sourceRect": {
+          "x": 461,
+          "y": 195,
+          "width": 443,
+          "height": 982
+        },
+        "feet": {
+          "x": 222.5,
+          "y": 2
+        }
+      },
+      "source_bytes_preserved": true,
+      "runtime_byte_identical_to_transparent": true
+    },
+    {
+      "key": "female-muscular",
+      "assetId": "cmuo8nwu5001hi01uovdh9t9a",
+      "cost": 1,
+      "character_id": "cmunhd54f0003hn1rtmt78mlv",
+      "source_path": "assets/sprites/autosprite/barbarian-user-r1/originals/female-muscular.png",
+      "source_sha256": "c554590012d820affd5fa211b07ce7362b0eb18ff7289351187f152b931c69fa",
+      "transparent_path": "assets/sprites/autosprite/barbarian-viewport-r1/transparent/female-muscular.png",
+      "transparent_sha256": "56596443dc7cde2f8ab3547cff21f5272b2e9655c10edb8211098dd32fd3281c",
+      "runtime_path": "app/Assets/SoloGym/Resources/Characters/BarbarianR1/female-muscular.png",
+      "runtime_sha256": "56596443dc7cde2f8ab3547cff21f5272b2e9655c10edb8211098dd32fd3281c",
+      "dimensions": [
+        1366,
+        1366
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "rgb_identical_to_original": true,
+      "alpha_bounds_top_left": [
+        461,
+        189,
+        887,
+        1177
+      ],
+      "framing": {
+        "id": "female-muscular",
+        "presentation": "female",
+        "body": "muscular",
+        "resource": "Characters/BarbarianR1/female-muscular",
+        "width": 430,
+        "height": 992,
+        "sourceRect": {
+          "x": 459,
+          "y": 187,
+          "width": 430,
+          "height": 992
+        },
+        "feet": {
+          "x": 215.0,
+          "y": 2
+        }
+      },
+      "source_bytes_preserved": true,
+      "runtime_byte_identical_to_transparent": true
+    },
+    {
+      "key": "female-skinny",
+      "assetId": "cmuo8l6cf001a10z4lt2l6sa4",
+      "cost": 1,
+      "character_id": "cmunh64k00001b1dnmcp5k432",
+      "source_path": "assets/sprites/autosprite/barbarian-user-r1/originals/female-skinny.png",
+      "source_sha256": "8257555738b372313b2cc13a07d64aefe0c8c81e5116423d634e20e8ad526758",
+      "transparent_path": "assets/sprites/autosprite/barbarian-viewport-r1/transparent/female-skinny.png",
+      "transparent_sha256": "e8047f003c986430b7681b1eb2b18547d5c346e39c11b12922e30e9678aea637",
+      "runtime_path": "app/Assets/SoloGym/Resources/Characters/BarbarianR1/female-skinny.png",
+      "runtime_sha256": "e8047f003c986430b7681b1eb2b18547d5c346e39c11b12922e30e9678aea637",
+      "dimensions": [
+        1366,
+        1366
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "rgb_identical_to_original": true,
+      "alpha_bounds_top_left": [
+        481,
+        194,
+        881,
+        1175
+      ],
+      "framing": {
+        "id": "female-skinny",
+        "presentation": "female",
+        "body": "skinny",
+        "resource": "Characters/BarbarianR1/female-skinny",
+        "width": 404,
+        "height": 985,
+        "sourceRect": {
+          "x": 479,
+          "y": 189,
+          "width": 404,
+          "height": 985
+        },
+        "feet": {
+          "x": 201.5,
+          "y": 2
+        }
+      },
+      "source_bytes_preserved": true,
+      "runtime_byte_identical_to_transparent": true
+    },
+    {
+      "key": "male-fat",
+      "assetId": "cmuo8jsv8005b4oz46c9erv4k",
+      "cost": 1,
+      "character_id": "cmungybpz00143nxc86nw7s49",
+      "source_path": "assets/sprites/autosprite/barbarian-user-r1/originals/male-fat.png",
+      "source_sha256": "3417ca4259d7f62c219f09ca47b600e38db61ae1f6beef660e873d7f928cdebe",
+      "transparent_path": "assets/sprites/autosprite/barbarian-viewport-r1/transparent/male-fat.png",
+      "transparent_sha256": "65f5cd2c964105960fa1bf6c306db8c4849c6a71d04b2b54c8c4d3147991556e",
+      "runtime_path": "app/Assets/SoloGym/Resources/Characters/BarbarianR1/male-fat.png",
+      "runtime_sha256": "65f5cd2c964105960fa1bf6c306db8c4849c6a71d04b2b54c8c4d3147991556e",
+      "dimensions": [
+        1366,
+        1366
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "rgb_identical_to_original": true,
+      "alpha_bounds_top_left": [
+        389,
+        193,
+        982,
+        1174
+      ],
+      "framing": {
+        "id": "male-fat",
+        "presentation": "male",
+        "body": "fat",
+        "resource": "Characters/BarbarianR1/male-fat",
+        "width": 597,
+        "height": 985,
+        "sourceRect": {
+          "x": 387,
+          "y": 190,
+          "width": 597,
+          "height": 985
+        },
+        "feet": {
+          "x": 295.5,
+          "y": 2
+        }
+      },
+      "source_bytes_preserved": true,
+      "runtime_byte_identical_to_transparent": true
+    },
+    {
+      "key": "male-medium",
+      "assetId": "cmuo8gyb9002810ckq03ljyar",
+      "cost": 1,
+      "character_id": "cmungu617000rdntr6sfuv53t",
+      "source_path": "assets/sprites/autosprite/barbarian-user-r1/originals/male-medium.png",
+      "source_sha256": "bddc4b64db4257fd26f42bc731d9f5fe8d630dbbf2fd30c398ddc9f2b1d4088b",
+      "transparent_path": "assets/sprites/autosprite/barbarian-viewport-r1/transparent/male-medium.png",
+      "transparent_sha256": "9469ec9d40ede04a1f110aaa17e6150fd63461eb625fd52114a2acf3e316c026",
+      "runtime_path": "app/Assets/SoloGym/Resources/Characters/BarbarianR1/male-medium.png",
+      "runtime_sha256": "9469ec9d40ede04a1f110aaa17e6150fd63461eb625fd52114a2acf3e316c026",
+      "dimensions": [
+        1366,
+        1366
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "rgb_identical_to_original": true,
+      "alpha_bounds_top_left": [
+        460,
+        181,
+        912,
+        1167
+      ],
+      "framing": {
+        "id": "male-medium",
+        "presentation": "male",
+        "body": "medium",
+        "resource": "Characters/BarbarianR1/male-medium",
+        "width": 456,
+        "height": 990,
+        "sourceRect": {
+          "x": 458,
+          "y": 197,
+          "width": 456,
+          "height": 990
+        },
+        "feet": {
+          "x": 224.5,
+          "y": 2
+        }
+      },
+      "source_bytes_preserved": true,
+      "runtime_byte_identical_to_transparent": true
+    },
+    {
+      "key": "male-muscular",
+      "assetId": "cmuo8kf39000710z4jjaddxrs",
+      "cost": 1,
+      "character_id": "cmunh19j70001ebl6ctgs9cle",
+      "source_path": "assets/sprites/autosprite/barbarian-user-r1/originals/male-muscular.png",
+      "source_sha256": "fadf4c54b5b6a8021bb864c3f346bdf2114c338c7976a96b9ef40457fa05ec51",
+      "transparent_path": "assets/sprites/autosprite/barbarian-viewport-r1/transparent/male-muscular.png",
+      "transparent_sha256": "0cc737fa6ceb5aedffcbff1e72966460ddd56b7aaf39306165442169a8352ae5",
+      "runtime_path": "app/Assets/SoloGym/Resources/Characters/BarbarianR1/male-muscular.png",
+      "runtime_sha256": "0cc737fa6ceb5aedffcbff1e72966460ddd56b7aaf39306165442169a8352ae5",
+      "dimensions": [
+        1366,
+        1366
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "rgb_identical_to_original": true,
+      "alpha_bounds_top_left": [
+        453,
+        181,
+        913,
+        1174
+      ],
+      "framing": {
+        "id": "male-muscular",
+        "presentation": "male",
+        "body": "muscular",
+        "resource": "Characters/BarbarianR1/male-muscular",
+        "width": 464,
+        "height": 997,
+        "sourceRect": {
+          "x": 451,
+          "y": 190,
+          "width": 464,
+          "height": 997
+        },
+        "feet": {
+          "x": 230.5,
+          "y": 2
+        }
+      },
+      "source_bytes_preserved": true,
+      "runtime_byte_identical_to_transparent": true
+    },
+    {
+      "key": "male-skinny",
+      "assetId": "cmuo8j1eq000p4oz4rah6k8di",
+      "cost": 1,
+      "character_id": "cmungs11d0009bvfjhjpu1kyj",
+      "source_path": "assets/sprites/autosprite/barbarian-user-r1/originals/male-skinny.png",
+      "source_sha256": "d0cda96b8aab75577c0af36a10f57e34398447b59aaf902e9a59701dcdffa7b8",
+      "transparent_path": "assets/sprites/autosprite/barbarian-viewport-r1/transparent/male-skinny.png",
+      "transparent_sha256": "e251f92fa7146faff6aceea82b18fc3c7a214382dbba3f1b2ae77e507417ce57",
+      "runtime_path": "app/Assets/SoloGym/Resources/Characters/BarbarianR1/male-skinny.png",
+      "runtime_sha256": "e251f92fa7146faff6aceea82b18fc3c7a214382dbba3f1b2ae77e507417ce57",
+      "dimensions": [
+        1366,
+        1366
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "rgb_identical_to_original": true,
+      "alpha_bounds_top_left": [
+        492,
+        176,
+        882,
+        1172
+      ],
+      "framing": {
+        "id": "male-skinny",
+        "presentation": "male",
+        "body": "skinny",
+        "resource": "Characters/BarbarianR1/male-skinny",
+        "width": 394,
+        "height": 1000,
+        "sourceRect": {
+          "x": 490,
+          "y": 192,
+          "width": 394,
+          "height": 1000
+        },
+        "feet": {
+          "x": 192.5,
+          "y": 2
+        }
+      },
+      "source_bytes_preserved": true,
+      "runtime_byte_identical_to_transparent": true
+    }
+  ],
+  "verification": {
+    "date": "2026-09-30",
+    "unity_build": "Unity 6000.3.24f1 Linux Standalone passed",
+    "native_smoke": "223/223 each: 1280x720 ES, 1844x853 EN inset64, 854x480 ES inset32",
+    "keyboard": "39/39 using private Xvfb OS events",
+    "source_audit": "Eight original hashes, RGB-identical derivatives, runtime copies, alpha bounds and feet/crop metadata passed",
+    "visual_inspection": "All eight roster captures and three landscape profiles inspected",
+    "approval": "User visual approval and mobile device verification pending",
+    "evidence": "artifacts/visual/CharacterViewport"
+  }
+}
