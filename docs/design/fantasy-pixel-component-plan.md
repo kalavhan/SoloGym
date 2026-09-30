@@ -12,14 +12,23 @@ The [room-shell iteration](pixel-home-room.md) starts this work. The [ring/room-
 component](pixel-room-object.md) was merged in PR #21 after the room shell (PR #20).
 The [hanging bag](pixel-home-bag.md) was merged in PR #22, followed by the
 [rack, bench, bed and chest batch](pixel-home-furniture.md) in PR #23.
-The [second furniture batch](pixel-home-furniture-r2.md) adds desk, stool, shelf
-and rug. Decorations and live Home UI are still pending.
+The [second furniture batch](pixel-home-furniture-r2.md) added desk, stool, shelf
+and rug in merged PR #24. The [first decoration batch](pixel-home-decor-r1.md) adds
+four separate static sprites: lantern, torch, banner and potted plant. Desk/shelf
+contents and live Home UI are still pending.
 
 The user will do a **manual alignment pass** after room items are present
 (2026-09-30). Add an editor at that stage for individual object selection,
 position/scale adjustment, reference comparison and layout export/import.
 Current ring/bag placements are provisional; keep placement rough during asset
 integration instead of spending time matching coordinates before that pass.
+
+After PR #24 the user also flagged **inconsistent object perspectives**. Placement
+and art projection require separate fixes: the editor cannot repair incorrect
+visible faces or foreshortening baked into a sprite. Use the actual room shell as
+the camera/viewpoint reference, the approved Home concept for design/materials,
+and account for object height. Keep earlier furniture perspective correction
+pending; a merged PR is not visual approval of those mismatches.
 
 ## Screen references before component production
 
@@ -120,6 +129,7 @@ or entitlement services remain separate tasks.
 | 09c | [Hanging punching bag](pixel-home-bag.md) | Independent hook/chain/bag assembly, top attachment pivot and visibility; provisional placement outside the ring |
 | 09d | [Furniture batch](pixel-home-furniture.md) | Four independent sprites: rack, bench, bed and chest; independent visibility, shared placement contract |
 | 09e | [Second furniture batch](pixel-home-furniture-r2.md) | Four independent sprites: desk, stool, wall shelf and rug; empty surfaces for later decorations, rug behind occupants |
+| 09f | [First decoration batch](pixel-home-decor-r1.md) | Four independent static sprites: lantern, torch, banner and plant; room-based viewpoint references, rough placement |
 | 10 | Routine summary row | Current/completed/missed/rest state, clear status and edit entry without punitive wording |
 | 11 | Week selector | Dates, selected day and routine status; workout area |
 | 12 | Exercise prescription card | Sets/reps/time, per-side semantics, equipment and substitution action |

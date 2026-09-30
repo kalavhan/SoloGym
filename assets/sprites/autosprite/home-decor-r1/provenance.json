@@ -1,0 +1,241 @@
+{
+  "id": "home-decor-r1",
+  "date": "2026-09-30",
+  "scope": "Four independent static Home decorations: hanging lantern, wall torch, banner and potted plant.",
+  "approval": "pending visual review; existing furniture perspectives need a separate art correction pass; placements remain provisional",
+  "source": "Built-in imagegen artwork saved and exported through AutoSprite MCP. No redraw or background removal.",
+  "imagegenCalls": 4,
+  "autospriteCreditsUsed": 0,
+  "references": [
+    {
+      "path": "app/Assets/SoloGym/Resources/Rooms/RefugeR1/RoomShell.png",
+      "sha256": "8734fae5eec157fca1ef2ab402f89d005b5fe628e5864646800a415b145060db"
+    },
+    {
+      "path": "design/fantasy-home-r2/home-approved.png",
+      "sha256": "832b77b23b811095d84ee8c4c7c27c5d77b4cf3ab5d3272b0b502cd8b630aa2c"
+    }
+  ],
+  "sprites": [
+    {
+      "key": "lantern",
+      "id": "home.hanging-lantern",
+      "resource": "HangingLanternR1",
+      "slot": "lantern.hook",
+      "layer": "behind-character",
+      "order": 70,
+      "pivot": [
+        512,
+        111
+      ],
+      "width": 56,
+      "boundsWidth": 399,
+      "footprint": [
+        [
+          314,
+          111
+        ],
+        [
+          713,
+          111
+        ],
+        [
+          713,
+          1389
+        ],
+        [
+          314,
+          1389
+        ]
+      ],
+      "assetId": "cmuoi6pyy00015nu0zf89llvp",
+      "createdAt": "2026-09-30T19:33:35.098Z",
+      "original": "lantern/original.png",
+      "export": "lantern/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/HangingLanternR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "lantern/original.png",
+          "bytes": 1042309,
+          "sha256": "dd38ef7347ad0e6ef29fd2664b56d77d22f4ebe81a24c4ea34645381f0987cba"
+        },
+        {
+          "path": "lantern/export.png",
+          "bytes": 1042309,
+          "sha256": "dd38ef7347ad0e6ef29fd2664b56d77d22f4ebe81a24c4ea34645381f0987cba"
+        }
+      ],
+      "size": {
+        "width": 1024,
+        "height": 1536
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    },
+    {
+      "key": "torch",
+      "id": "home.wall-torch",
+      "resource": "WallTorchR1",
+      "slot": "torch.wall",
+      "layer": "behind-character",
+      "order": 60,
+      "pivot": [
+        365,
+        1000
+      ],
+      "width": 50,
+      "boundsWidth": 528,
+      "footprint": [
+        [
+          262,
+          75
+        ],
+        [
+          790,
+          75
+        ],
+        [
+          790,
+          1410
+        ],
+        [
+          262,
+          1410
+        ]
+      ],
+      "assetId": "cmuoi73gs000n530hkni73nfa",
+      "createdAt": "2026-09-30T19:33:52.588Z",
+      "original": "torch/original.png",
+      "export": "torch/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/WallTorchR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "torch/original.png",
+          "bytes": 1165027,
+          "sha256": "52cf038ed79d7da4267c015ae12c46eabb046b5af69653c6a67045326e35c14d"
+        },
+        {
+          "path": "torch/export.png",
+          "bytes": 1165027,
+          "sha256": "52cf038ed79d7da4267c015ae12c46eabb046b5af69653c6a67045326e35c14d"
+        }
+      ],
+      "size": {
+        "width": 1024,
+        "height": 1536
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    },
+    {
+      "key": "banner",
+      "id": "home.banner",
+      "resource": "BannerR1",
+      "slot": "banner.wall",
+      "layer": "behind-character",
+      "order": 40,
+      "pivot": [
+        512,
+        178
+      ],
+      "width": 100,
+      "boundsWidth": 658,
+      "footprint": [
+        [
+          183,
+          178
+        ],
+        [
+          841,
+          178
+        ],
+        [
+          841,
+          1286
+        ],
+        [
+          183,
+          1286
+        ]
+      ],
+      "assetId": "cmuoi7j690009lxj03m7kuwv0",
+      "createdAt": "2026-09-30T19:34:12.945Z",
+      "original": "banner/original.png",
+      "export": "banner/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/BannerR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "banner/original.png",
+          "bytes": 1168835,
+          "sha256": "48d6e9cabae9fee7480b90747c38f4fcb4d037189ac03dc550b57d9e87951947"
+        },
+        {
+          "path": "banner/export.png",
+          "bytes": 1168835,
+          "sha256": "48d6e9cabae9fee7480b90747c38f4fcb4d037189ac03dc550b57d9e87951947"
+        }
+      ],
+      "size": {
+        "width": 1024,
+        "height": 1536
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    },
+    {
+      "key": "plant",
+      "id": "home.potted-plant",
+      "resource": "PottedPlantR1",
+      "slot": "plant.floor",
+      "layer": "foreground",
+      "order": 400,
+      "pivot": [
+        512,
+        1426
+      ],
+      "width": 160,
+      "boundsWidth": 961,
+      "footprint": [
+        [
+          275,
+          1326
+        ],
+        [
+          514,
+          1426
+        ],
+        [
+          745,
+          1326
+        ],
+        [
+          521,
+          1240
+        ]
+      ],
+      "assetId": "cmuoi804f00016lpau8wj79q2",
+      "createdAt": "2026-09-30T19:34:34.910Z",
+      "original": "plant/original.png",
+      "export": "plant/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/PottedPlantR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "plant/original.png",
+          "bytes": 1432642,
+          "sha256": "1ecd28a83e198c6e8cbaa4db0e7636f6d5c4b5f09355017a9c7d84901044b8e7"
+        },
+        {
+          "path": "plant/export.png",
+          "bytes": 1432642,
+          "sha256": "1ecd28a83e198c6e8cbaa4db0e7636f6d5c4b5f09355017a9c7d84901044b8e7"
+        }
+      ],
+      "size": {
+        "width": 1024,
+        "height": 1536
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    }
+  ]
+}

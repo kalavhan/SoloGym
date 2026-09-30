@@ -73,3 +73,9 @@ provisional. Use rough placement now; do not repeatedly fine-tune positions.
 The later editor should select individual props, allow position/scale adjustment,
 compare with the reference, and export/import a saved layout. That editor and a
 versioned layout format extending the current fixed-slot state are future work.
+
+The user subsequently flagged inconsistent perspectives in the assembled props.
+Keep that art correction separate: moving or scaling a sprite cannot change its
+baked camera angle. Merged integrations do not certify perspective approval.
+New prop prompts should use the actual room shell for viewpoint and mounting
+height, with the approved furnished Home concept supplying design/materials.

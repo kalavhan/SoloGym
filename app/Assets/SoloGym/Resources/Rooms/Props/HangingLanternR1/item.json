@@ -1,0 +1,42 @@
+{
+  "id": "home.hanging-lantern",
+  "roomId": "home.refuge.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "lantern.hook"
+  ],
+  "drawOrder": 70,
+  "sourceSize": {
+    "x": 1024,
+    "y": 1536
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.927734375
+  },
+  "sourceScale": 0.14035087719298245,
+  "footprint": [
+    {
+      "x": 314,
+      "y": 111
+    },
+    {
+      "x": 713,
+      "y": 111
+    },
+    {
+      "x": 713,
+      "y": 1389
+    },
+    {
+      "x": 314,
+      "y": 1389
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/HangingLanternR1/Base"
+    }
+  ]
+}

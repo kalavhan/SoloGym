@@ -15,6 +15,10 @@
     { "id": "desk.floor", "point": { "x": 1504, "y": 575 } },
     { "id": "stool.floor", "point": { "x": 1410, "y": 650 } },
     { "id": "shelf.wall", "point": { "x": 730, "y": 280 } },
-    { "id": "rug.floor", "point": { "x": 891, "y": 813 } }
+    { "id": "rug.floor", "point": { "x": 891, "y": 813 } },
+    { "id": "lantern.hook", "point": { "x": 575, "y": 30 } },
+    { "id": "torch.wall", "point": { "x": 225, "y": 255 } },
+    { "id": "banner.wall", "point": { "x": 410, "y": 130 } },
+    { "id": "plant.floor", "point": { "x": 100, "y": 865 } }
   ]
 }
