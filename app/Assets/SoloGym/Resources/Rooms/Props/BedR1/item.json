@@ -1,0 +1,42 @@
+{
+  "id": "home.bed",
+  "roomId": "home.refuge.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "bed.floor"
+  ],
+  "drawOrder": 120,
+  "sourceSize": {
+    "x": 1536,
+    "y": 1024
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.0537109375
+  },
+  "sourceScale": 0.26022304832713755,
+  "footprint": [
+    {
+      "x": 101,
+      "y": 785
+    },
+    {
+      "x": 724,
+      "y": 969
+    },
+    {
+      "x": 1446,
+      "y": 682
+    },
+    {
+      "x": 857,
+      "y": 495
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/BedR1/Base"
+    }
+  ]
+}

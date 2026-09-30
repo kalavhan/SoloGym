@@ -59,4 +59,5 @@ changes to the toggled prop's projected bounds.
 Visual approval and physical mobile testing remain pending. In particular, the
 bag's hook and scale need the user's later placement pass; its current location
 is not a finished ceiling attachment. Further furniture, room objects and live
-Home UI remain separate work; the next prop is the weight rack.
+Home UI remain separate work. The next [four-sprite batch](pixel-home-furniture.md)
+contains the weight rack, bench, bed and chest under the user's updated MR size.

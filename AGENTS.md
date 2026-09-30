@@ -8,8 +8,10 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
 ## Scope
 
 - Landscape-only pixel-art fantasy fitness app in the existing Unity project.
-  Render targets first; implement one reusable component per PR/MR, with its
-  art, interaction states, integration fixture and focused verification.
+  Render targets first. Batch four independent room sprites per PR/MR
+  (user direction, 2026-09-30), reusing the room-object component. Other reusable
+  UI components retain component-sized PRs with art, interaction states,
+  integration fixtures and focused verification.
 - MVP: login/account creation, personal home gym, editable workouts/history,
   routine-driven dungeon bosses and optional adult fasting. Retain necessary
   onboarding, readiness and character-selection steps.

@@ -26,6 +26,28 @@ namespace SoloGym.UI
                 var bag = review.Bag;
                 string savedRing = ring.SaveState();
                 string savedBag = bag.SaveState();
+                var allProps = room.GetComponentsInChildren<PixelRoomObject>(true);
+                var savedProps = new Dictionary<PixelRoomObject, string>();
+                foreach (var prop in allProps) savedProps[prop] = prop.SaveState();
+                foreach (var item in review.Furniture)
+                {
+                    var sprite = item.Artwork.sprite;
+                    item.SetVisible(false);
+                    bool othersUnchanged = true;
+                    foreach (var other in allProps)
+                        if (other != item) othersUnchanged &= other.SaveState() == savedProps[other];
+                    Check(!item.Artwork.enabled && othersUnchanged && room.Architecture.enabled && review.Character.HasCharacter,
+                        item.ObjectId + ": hiding it preserves every other prop, room and character");
+                    string hidden = item.SaveState();
+                    item.SetVisible(true); item.RestoreState(hidden);
+                    Check(!item.Visible && !item.Artwork.enabled && item.Artwork.sprite == sprite,
+                        item.ObjectId + ": independent hidden state round-trips with the same artwork");
+                    item.RestoreState(savedProps[item]);
+                    bool front = item.SlotId == "rack.floor" || item.SlotId == "bench.floor";
+                    Check(item.transform.parent == (front ? room.Foreground : room.BackObjects)
+                        && sprite.texture.filterMode == FilterMode.Point,
+                        item.ObjectId + ": correct character depth layer and pixel filtering");
+                }
                 var bagSprite = bag.Artwork.sprite;
                 Check(bag.transform.parent == room.BackObjects && bag.transform.GetSiblingIndex() > ring.transform.GetSiblingIndex(),
                     "hanging bag shares the prop layer with independent ordered artwork");
@@ -125,7 +147,14 @@ namespace SoloGym.UI
             review.Ring.SetVisible(finalVisibility);
             bool finalBagVisibility = review.Bag.Visible;
             review.Bag.SetVisible(false); yield return Capture("bag-hidden");
-            review.Bag.SetVisible(finalBagVisibility); yield return Capture("");
+            review.Bag.SetVisible(finalBagVisibility);
+            foreach (var item in review.Furniture)
+            {
+                bool visible = item.Visible;
+                item.SetVisible(false); yield return Capture(item.SlotId.Split('.')[0] + "-hidden");
+                item.SetVisible(visible);
+            }
+            yield return Capture("");
             var finalVertices = review.Room.Architecture.canvasRenderer.GetMesh().vertices;
             bool stableVertices = roomVertices.Length == finalVertices.Length;
             for (int i = 0; stableVertices && i < roomVertices.Length; i++) stableVertices &= Vector3.Distance(roomVertices[i], finalVertices[i]) < .0001f;
@@ -168,6 +197,16 @@ namespace SoloGym.UI
                 state + ": bag keeps its top attachment pivot and uniform size after layout changes");
             Check(Mathf.Abs(bagRect.rect.width / bagRect.rect.height - bag.Artwork.sprite.rect.width / bag.Artwork.sprite.rect.height) < .001f,
                 state + ": hanging bag preserves its source aspect ratio");
+            foreach (var item in review.Furniture)
+            {
+                var rect = (RectTransform)item.transform;
+                var anchor = room.AnchorPoint(item.SlotId);
+                var floor = room.Plane.TransformPoint(new Vector3(anchor.x - room.ReferenceSize.x / 2, room.ReferenceSize.y / 2 - anchor.y, 0));
+                Check(Vector3.Distance(floor, item.transform.position) < 1 && rect.sizeDelta == item.DisplaySize,
+                    state + ": " + item.ObjectId + " retains its floor pivot and size after layout changes");
+                Check(Mathf.Abs(rect.rect.width / rect.rect.height - item.Artwork.sprite.rect.width / item.Artwork.sprite.rect.height) < .001f,
+                    state + ": " + item.ObjectId + " keeps its source proportions");
+            }
         }
         void Check(bool passed, string name)
         { checks.Add(new CheckResult { name = name, passed = passed }); if (!passed) Debug.LogError("HOME ROOM: " + name); }

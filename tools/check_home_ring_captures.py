@@ -12,14 +12,16 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--prop", choices=("ring", "bag"), default="ring")
+    resources = {"ring": "TrainingRingR1", "bag": "HangingBagR1", "rack": "WeightRackR1",
+                 "bench": "TrainingBenchR1", "bed": "BedR1", "chest": "StorageChestR1"}
+    parser.add_argument("--prop", choices=tuple(resources), default="ring")
     parser.add_argument("--captures", type=Path, default=ROOT / "artifacts/visual/HomeRing")
     args = parser.parse_args()
-    resource, pack = {"ring": ("TrainingRingR1", "home-ring-r1"), "bag": ("HangingBagR1", "home-bag-r1")}[args.prop]
+    resource = resources[args.prop]
     definition = json.loads((ROOT / f"app/Assets/SoloGym/Resources/Rooms/Props/{resource}/item.json").read_text())
     room = json.loads((ROOT / "app/Assets/SoloGym/Resources/Rooms/RefugeR1/room.json").read_text())
     slot = next(a["point"] for a in room["anchors"] if a["id"] == definition["supportedSlots"][0])
-    alpha = Image.open(ROOT / f"assets/sprites/autosprite/{pack}/transparent.png").getchannel("A")
+    alpha = Image.open(ROOT / f"app/Assets/SoloGym/Resources/Rooms/Props/{resource}/Base.png").getchannel("A")
     source_bounds = alpha.point(lambda value: 255 if value > 10 else 0).getbbox()
     art_scale = definition["sourceScale"]
     left = slot["x"] - definition["pivot"]["x"] * definition["sourceSize"]["x"] * art_scale

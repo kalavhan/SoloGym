@@ -1,6 +1,6 @@
 # Fantasy pixel UI: reusable components and delivery plan
 
-This is the proposed implementation approach for the [confirmed product direction](../product/fantasy-mvp-direction.md), recorded 2026-09-29. The user requested complete visual references first, then **one component per PR/MR**, with each component matching the chosen style. No runtime changes are implemented by this plan.
+This is the implementation approach for the [confirmed product direction](../product/fantasy-mvp-direction.md), first recorded 2026-09-29. The user requested complete visual references before implementation. On 2026-09-30 they changed room-art delivery to **four independent sprites per PR/MR**. Other reusable UI components retain component-sized PRs.
 
 ## Current Home priority
 
@@ -10,8 +10,9 @@ separate architecture, exterior, props, character and live interface. Continue
 component-sized PRs **inside that Home composition**, ahead of unrelated galleries.
 The [room-shell iteration](pixel-home-room.md) starts this work. The [ring/room-object
 component](pixel-room-object.md) was merged in PR #21 after the room shell (PR #20).
-The [hanging bag](pixel-home-bag.md) is the next independent prop. Remaining
-furniture, HUD and props are still pending.
+The [hanging bag](pixel-home-bag.md) was merged in PR #22. The next batch adds
+[four furniture sprites](pixel-home-furniture.md): rack, bench, bed and chest.
+Further furniture, HUD and props are still pending.
 
 The user will do a **manual alignment pass** after room items are present
 (2026-09-30). Add an editor at that stage for individual object selection,
@@ -71,7 +72,7 @@ Home is a personal space containing the selected character. Build it as a stable
 
 Each placeable item should declare an ID, placement anchor, footprint, draw-order rule, supported location and variant ID. Its winter treatment must retain the same object identity, scale, pivot and intended footprint: add snow to the existing ring, rather than generate an unrelated snow-themed ring in a newly composed room. A seasonal overlay must respect rope/post geometry and the item's silhouette. Inventory and placement save stable IDs/positions; decorations are not hardcoded into Home screenshots.
 
-**Implementation recommendation:** begin with a small set of placement slots and a few props, then expand after the first room works. Free placement, collision rules, large inventories and theme catalogs are later scope decisions. Each new object or its seasonal variation remains independently reviewable.
+**Implementation recommendation:** begin with a small set of placement slots and a few props, then expand after the first room works. Free placement, collision rules, large inventories and theme catalogs are later scope decisions. Review each object independently while delivering four sprites together per MR.
 
 ## Character source contract
 
@@ -79,11 +80,15 @@ The [static character viewport](pixel-character-viewport.md) imports the eight e
 
 The first character viewport supports full static appearances and fixed source colors. It does not include hair/skin/eye controls, garment fitting, breathing, rigging or per-item animation. Maintain clear differences in body and facial fullness, and preserve the user's authored clothing. Do not make every build occupy the same width through stretching. Future palette regions and selected-character exercise animations have separate authoring/review scope. Read a provider's atlas JSON before implementing any future sprite animation.
 
-## One component per PR/MR
+## Delivery batches
+
+Room-art MRs contain **four separate sprite assets** using the shared room-object
+component. Keep each object's source, prompt, export, identity and placement data
+separate within the batch. Other reusable UI components remain component-sized.
 
 The **primary pixel button** was merged in PR #12. The [framed content panel](pixel-content-panel.md) was merged in PR #13. The [labeled form field](pixel-form-field.md) was merged in PR #14. The [secondary and text actions](pixel-secondary-action.md) were merged in PR #15. The [icon buttons](pixel-icon-button.md) were merged in PR #16. The [single-choice control](pixel-choice-control.md) was merged in PR #17, including the requirement that difficulty remains editable during a boss routine. The [static character viewport](pixel-character-viewport.md) was merged in PR #18 with all eight user-created Barbarians. The [navigation tabs](pixel-navigation-tabs.md) were merged in PR #19, with caller-confirmed current state and optional adult-only fasting visibility. Further components remain reviewable individually, but their visual fixture now belongs inside the approved Home composition.
 
-Each component PR includes:
+Each component PR or four-sprite room batch includes:
 
 1. Its isolated artwork and provenance, reusable component/prefab, required state behavior and narrowly necessary support code.
 2. A small integration fixture showing it at its intended size and alongside an already accepted component where available.
@@ -95,7 +100,9 @@ Approval of a reference does not certify an implementation. Review the component
 
 ## Ordered component backlog
 
-Each numbered row is one component-sized candidate PR. Large domain features such as authentication, routine storage or entitlement services remain separate tasks, not hidden inside a visual component PR.
+Each numbered row identifies a reusable component. Bundle room sprites four per
+PR as requested. Large domain features such as authentication, routine storage
+or entitlement services remain separate tasks.
 
 | Order | Component | Acceptance focus / first consumer |
 | --- | --- | --- |
@@ -110,6 +117,7 @@ Each numbered row is one component-sized candidate PR. Large domain features suc
 | 09a | Room shell / exterior | Independent artwork, uniform landscape composition and exact character in context; see [Home room](pixel-home-room.md) |
 | 09b | [Room object / training ring](pixel-room-object.md) | Stable identity, supported slot, pivot/footprint, draw order and JSON state; first independent Home prop |
 | 09c | [Hanging punching bag](pixel-home-bag.md) | Independent hook/chain/bag assembly, top attachment pivot and visibility; provisional placement outside the ring |
+| 09d | [Furniture batch](pixel-home-furniture.md) | Four independent sprites: rack, bench, bed and chest; independent visibility, shared placement contract |
 | 10 | Routine summary row | Current/completed/missed/rest state, clear status and edit entry without punitive wording |
 | 11 | Week selector | Dates, selected day and routine status; workout area |
 | 12 | Exercise prescription card | Sets/reps/time, per-side semantics, equipment and substitution action |
@@ -119,7 +127,7 @@ Each numbered row is one component-sized candidate PR. Large domain features suc
 | 16 | Confirmation dialog | Clear action/cancel, unsaved changes and focus handling; routine edit/exit |
 | 17 | History entry row | Dates, neutral summaries and correction action; workouts, then adapted fasting history |
 | 18 | Empty/error/loading notice | Honest unavailable/offline states and retry, shared across completed screens |
-| 19 onward | Individual room props and seasonal overlays | One item/variant per PR using the approved room-object contract |
+| 19 onward | Room props and seasonal overlays | Four independent sprites per MR using the shared room-object contract |
 
 Integrate accepted components into the seven reference screens in small vertical steps. Preserve existing auth and training gates during migration. A workout timer and a fasting timer can share presentation without sharing eligibility, rewards or domain rules. Under-18 navigation must omit the fasting destination rather than merely gray out an entry.
 

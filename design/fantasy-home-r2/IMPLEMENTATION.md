@@ -58,8 +58,10 @@ No further isolated-component visual approval should be inferred from this rende
 
 ## Delivery focus
 
-Prioritize matching this Home window. Continue reviewable component-sized changes
-inside this scene, with one reusable component per PR as requested. First prepare
+Prioritize matching this Home window. The user updated room-art delivery on
+2026-09-30 to four independent sprites per MR. Other UI component changes remain
+component-sized. Keep object placement rough until the user's later manual pass
+with an alignment editor after room items exist. First prepare
 the room shell and establish the composition; then place independently exported
 props and the exact existing character, and fit the live HUD/actions/navigation.
 Use AutoSprite for production sprite work and separate review; the approved concept

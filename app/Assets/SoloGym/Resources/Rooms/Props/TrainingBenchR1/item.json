@@ -1,0 +1,42 @@
+{
+  "id": "home.training-bench",
+  "roomId": "home.refuge.r1",
+  "layer": "foreground",
+  "supportedSlots": [
+    "bench.floor"
+  ],
+  "drawOrder": 200,
+  "sourceSize": {
+    "x": 1536,
+    "y": 1024
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.1279296875
+  },
+  "sourceScale": 0.19923371647509577,
+  "footprint": [
+    {
+      "x": 146,
+      "y": 702
+    },
+    {
+      "x": 1138,
+      "y": 893
+    },
+    {
+      "x": 1380,
+      "y": 809
+    },
+    {
+      "x": 456,
+      "y": 657
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/TrainingBenchR1/Base"
+    }
+  ]
+}
