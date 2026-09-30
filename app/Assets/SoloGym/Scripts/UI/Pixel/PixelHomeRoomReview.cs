@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ namespace SoloGym.UI
         public PixelCharacterViewport Character { get; private set; }
         public PixelRoomObject Ring { get; private set; }
         public PixelRoomObject Bag { get; private set; }
+        public IReadOnlyList<PixelRoomObject> Furniture { get; private set; }
         public RectTransform InterfaceLayer { get; private set; }
         public bool Spanish { get; private set; }
         public Rect EffectiveSafeArea { get; private set; }
@@ -36,6 +38,14 @@ namespace SoloGym.UI
             Room = PixelHomeRoom.Create(roomArea);
             Ring = PixelRoomObject.Create(Room, "Rooms/Props/TrainingRingR1/item");
             Bag = PixelRoomObject.Create(Room, "Rooms/Props/HangingBagR1/item");
+            var furniture = new List<PixelRoomObject>();
+            foreach (string resource in new[] { "WeightRackR1", "TrainingBenchR1", "BedR1", "StorageChestR1" })
+            {
+                var item = PixelRoomObject.Create(Room, "Rooms/Props/" + resource + "/item");
+                item.SetVisible(!PixelButtonGallery.HasArgument("-sologym-hide-" + item.SlotId.Split('.')[0]));
+                furniture.Add(item);
+            }
+            Furniture = furniture.AsReadOnly();
             Character = PixelCharacterViewport.Create(Room.Objects);
             // Match the approved hero's height and feet position, while retaining the shared eight-body envelope.
             var feet = Room.AnchorPoint("hero.feet");
@@ -61,6 +71,9 @@ namespace SoloGym.UI
             if (Input.GetKeyDown(KeyCode.F4)) Room.Architecture.enabled = !Room.Architecture.enabled;
             if (Input.GetKeyDown(KeyCode.F5)) Ring.SetVisible(!Ring.Visible);
             if (Input.GetKeyDown(KeyCode.F6)) Bag.SetVisible(!Bag.Visible);
+            // F7 rack, F8 bench, F9 bed, F10 chest; keep artwork independent for review.
+            for (int i = 0; i < Furniture.Count; i++)
+                if (Input.GetKeyDown((KeyCode)((int)KeyCode.F7 + i))) Furniture[i].SetVisible(!Furniture[i].Visible);
         }
         public void Relayout()
         {

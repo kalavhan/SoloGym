@@ -1,0 +1,42 @@
+{
+  "id": "home.weight-rack",
+  "roomId": "home.refuge.r1",
+  "layer": "foreground",
+  "supportedSlots": [
+    "rack.floor"
+  ],
+  "drawOrder": 100,
+  "sourceSize": {
+    "x": 1536,
+    "y": 1024
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.0595703125
+  },
+  "sourceScale": 0.23876404494382023,
+  "footprint": [
+    {
+      "x": 55,
+      "y": 785
+    },
+    {
+      "x": 1240,
+      "y": 963
+    },
+    {
+      "x": 1479,
+      "y": 822
+    },
+    {
+      "x": 332,
+      "y": 646
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/WeightRackR1/Base"
+    }
+  ]
+}

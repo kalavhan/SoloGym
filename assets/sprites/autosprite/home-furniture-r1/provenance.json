@@ -1,0 +1,232 @@
+{
+  "id": "home-furniture-r1",
+  "date": "2026-09-30",
+  "scope": "Four independent static sprites: weight rack, bench, bed and storage chest.",
+  "approval": "pending visual review; rough placement for the user's later manual alignment pass",
+  "source": "Built-in imagegen artwork uploaded and saved through AutoSprite MCP. AutoSprite did not redraw or remove backgrounds.",
+  "imagegenCalls": 5,
+  "autospriteCreditsUsed": 0,
+  "sprites": [
+    {
+      "key": "rack",
+      "id": "home.weight-rack",
+      "resource": "WeightRackR1",
+      "layer": "foreground",
+      "order": 100,
+      "pivot": [
+        768,
+        963
+      ],
+      "width": 340,
+      "boundsWidth": 1424,
+      "footprint": [
+        [
+          55,
+          785
+        ],
+        [
+          1240,
+          963
+        ],
+        [
+          1479,
+          822
+        ],
+        [
+          332,
+          646
+        ]
+      ],
+      "assetId": "cmuofccd30001sbvnu3fn5hqm",
+      "createdAt": "2026-09-30T18:13:58.550Z",
+      "original": "rack/original.png",
+      "export": "rack/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/WeightRackR1/Base.png",
+      "imagegenCalls": 2,
+      "files": [
+        {
+          "path": "rack/export.png",
+          "bytes": 1851665,
+          "sha256": "4138ecbf2bcb885782e68ff3183fc8201b4927916e593d7f69b0cc2b46aaebb0"
+        },
+        {
+          "path": "rack/iterations/incorrect-dumbbells.png",
+          "bytes": 1897905,
+          "sha256": "ad25816c1237a037eab845ab1ae8c4c2516b6830c68247ed39d3d1e1ce7473e7"
+        },
+        {
+          "path": "rack/original.png",
+          "bytes": 1851665,
+          "sha256": "4138ecbf2bcb885782e68ff3183fc8201b4927916e593d7f69b0cc2b46aaebb0"
+        }
+      ],
+      "size": {
+        "width": 1536,
+        "height": 1024
+      },
+      "byteIdentity": "AutoSprite export and runtime sprite are byte-identical to original.png, preserving generated alpha without paid background removal."
+    },
+    {
+      "key": "bench",
+      "id": "home.training-bench",
+      "resource": "TrainingBenchR1",
+      "layer": "foreground",
+      "order": 200,
+      "pivot": [
+        768,
+        893
+      ],
+      "width": 260,
+      "boundsWidth": 1305,
+      "footprint": [
+        [
+          146,
+          702
+        ],
+        [
+          1138,
+          893
+        ],
+        [
+          1380,
+          809
+        ],
+        [
+          456,
+          657
+        ]
+      ],
+      "assetId": "cmuofdaut000osbvnlnov17pc",
+      "createdAt": "2026-09-30T18:14:43.253Z",
+      "original": "bench/original.png",
+      "export": "bench/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/TrainingBenchR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "bench/export.png",
+          "bytes": 1351313,
+          "sha256": "f4748f95ce47cca86075af69ec8afb36db2aa6b6f9628c9d03c48e570b831b62"
+        },
+        {
+          "path": "bench/original.png",
+          "bytes": 1351313,
+          "sha256": "f4748f95ce47cca86075af69ec8afb36db2aa6b6f9628c9d03c48e570b831b62"
+        }
+      ],
+      "size": {
+        "width": 1536,
+        "height": 1024
+      },
+      "byteIdentity": "AutoSprite export and runtime sprite are byte-identical to original.png, preserving generated alpha without paid background removal."
+    },
+    {
+      "key": "bed",
+      "id": "home.bed",
+      "resource": "BedR1",
+      "layer": "behind-character",
+      "order": 120,
+      "pivot": [
+        768,
+        969
+      ],
+      "width": 350,
+      "boundsWidth": 1345,
+      "footprint": [
+        [
+          101,
+          785
+        ],
+        [
+          724,
+          969
+        ],
+        [
+          1446,
+          682
+        ],
+        [
+          857,
+          495
+        ]
+      ],
+      "assetId": "cmuofdwu1000tpnannho06nnd",
+      "createdAt": "2026-09-30T18:15:11.725Z",
+      "original": "bed/original.png",
+      "export": "bed/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/BedR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "bed/export.png",
+          "bytes": 1563106,
+          "sha256": "3499a31371a622d4f09e1efb5d63b12d82a1a3876eb82e025cad5de0736e5bcf"
+        },
+        {
+          "path": "bed/original.png",
+          "bytes": 1563106,
+          "sha256": "3499a31371a622d4f09e1efb5d63b12d82a1a3876eb82e025cad5de0736e5bcf"
+        }
+      ],
+      "size": {
+        "width": 1536,
+        "height": 1024
+      },
+      "byteIdentity": "AutoSprite export and runtime sprite are byte-identical to original.png, preserving generated alpha without paid background removal."
+    },
+    {
+      "key": "chest",
+      "id": "home.storage-chest",
+      "resource": "StorageChestR1",
+      "layer": "behind-character",
+      "order": 130,
+      "pivot": [
+        776,
+        883
+      ],
+      "width": 190,
+      "boundsWidth": 980,
+      "footprint": [
+        [
+          286,
+          738
+        ],
+        [
+          1041,
+          883
+        ],
+        [
+          1266,
+          742
+        ],
+        [
+          510,
+          597
+        ]
+      ],
+      "assetId": "cmuofejkz00061331sk9ljbob",
+      "createdAt": "2026-09-30T18:15:41.220Z",
+      "original": "chest/original.png",
+      "export": "chest/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/StorageChestR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "chest/export.png",
+          "bytes": 1384263,
+          "sha256": "38862a2e79d951d971207244a4959e062c3412101dfb6e5efeb9cccab51440fb"
+        },
+        {
+          "path": "chest/original.png",
+          "bytes": 1384263,
+          "sha256": "38862a2e79d951d971207244a4959e062c3412101dfb6e5efeb9cccab51440fb"
+        }
+      ],
+      "size": {
+        "width": 1536,
+        "height": 1024
+      },
+      "byteIdentity": "AutoSprite export and runtime sprite are byte-identical to original.png, preserving generated alpha without paid background removal."
+    }
+  ]
+}
