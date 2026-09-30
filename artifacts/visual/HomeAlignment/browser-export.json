@@ -1,0 +1,289 @@
+{
+  "format": "sologym-home-layout",
+  "version": 1,
+  "roomId": "home.refuge.r1",
+  "referenceSize": {
+    "x": 1672,
+    "y": 941
+  },
+  "objects": [
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.training-ring",
+      "slotId": "ring.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 403.0210212867006,
+        "y": 553.7795460614336
+      },
+      "scale": 1.09,
+      "layer": "behind-character",
+      "drawOrder": 100
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.hanging-bag",
+      "slotId": "bag.hook",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 95,
+        "y": 100
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 110
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.weight-rack",
+      "slotId": "rack.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 172.50366358919018,
+        "y": 735.0357568383919
+      },
+      "scale": 1,
+      "layer": "foreground",
+      "drawOrder": 100
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.training-bench",
+      "slotId": "bench.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 315.22572652715775,
+        "y": 887.8995266439491
+      },
+      "scale": 1.1,
+      "layer": "foreground",
+      "drawOrder": 200
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.bed",
+      "slotId": "bed.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 1159.632675288652,
+        "y": 626.6979032304264
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 120
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.storage-chest",
+      "slotId": "chest.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 1056.088959614589,
+        "y": 682.8414048178278
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 130
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.writing-desk",
+      "slotId": "desk.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 1476.159225684486,
+        "y": 670.2637166303847
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 140
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.stool",
+      "slotId": "stool.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 1435.5651612995625,
+        "y": 701.1139114058204
+      },
+      "scale": 1,
+      "layer": "foreground",
+      "drawOrder": 300
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.wall-shelf",
+      "slotId": "shelf.wall",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 730,
+        "y": 280
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 50
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.floor-rug",
+      "slotId": "rug.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 770.2633942761155,
+        "y": 940.7714647981284
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 0
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.hanging-lantern",
+      "slotId": "lantern.hook",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 575,
+        "y": 30
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 70
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.wall-torch",
+      "slotId": "torch.wall",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 225,
+        "y": 255
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 60
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.banner",
+      "slotId": "banner.wall",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 410,
+        "y": 130
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 40
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.potted-plant",
+      "slotId": "plant.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 39.635718423834305,
+        "y": 860.366826684974
+      },
+      "scale": 1,
+      "layer": "foreground",
+      "drawOrder": 400
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.trophy",
+      "slotId": "trophy.shelf",
+      "variantId": "base",
+      "visible": false,
+      "position": {
+        "x": 685,
+        "y": 188
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 55
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.open-book",
+      "slotId": "book.desk",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 1517.159225684486,
+        "y": 544.2637166303847
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 150
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.training-bottle",
+      "slotId": "bottle.bench",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 387.82572652715777,
+        "y": 783.3995266439491
+      },
+      "scale": 1.1,
+      "layer": "foreground",
+      "drawOrder": 220
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.training-towel",
+      "slotId": "towel.bench",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 285.52572652715776,
+        "y": 791.0995266439492
+      },
+      "scale": 1.1,
+      "layer": "foreground",
+      "drawOrder": 210
+    }
+  ],
+  "character": {
+    "position": {
+      "x": 818,
+      "y": 716
+    },
+    "scale": 0.9,
+    "visible": true
+  }
+}

@@ -102,7 +102,7 @@ namespace SoloGym.UI
                     "restoring a save and binding a variant preserve identity and anchor");
                 var copiedFootprint = ring.FootprintInRoom(); copiedFootprint[0] = Vector2.zero;
                 Check(ring.FootprintInRoom()[0] == footprint[0], "callers cannot mutate the saved footprint through the returned array");
-                foreach (string invalid in new[] { savedRing.Replace("\"version\":1", "\"version\":2"),
+                foreach (string invalid in new[] { savedRing.Replace("\"version\":1", "\"version\":99"),
                     savedRing.Replace("home.refuge.r1", "other-room"), savedRing.Replace("home.training-ring", "other-item"),
                     savedRing.Replace("ring.floor", "hero.feet"), savedRing.Replace("\"base\"", "\"unapproved-winter\"") })
                 {

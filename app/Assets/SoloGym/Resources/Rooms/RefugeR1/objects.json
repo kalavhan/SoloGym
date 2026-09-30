@@ -1,0 +1,94 @@
+{
+  "objects": [
+    {
+      "resource": "Rooms/Props/TrainingRingR1/item",
+      "label": "Ring",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/HangingBagR1/item",
+      "label": "Saco de boxeo",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/WeightRackR1/item",
+      "label": "Pesas",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/TrainingBenchR1/item",
+      "label": "Banco",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/BedR1/item",
+      "label": "Cama",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/StorageChestR1/item",
+      "label": "Cofre",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/WritingDeskR1/item",
+      "label": "Escritorio",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/StoolR1/item",
+      "label": "Taburete",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/WallShelfR1/item",
+      "label": "Estante",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/FloorRugR1/item",
+      "label": "Alfombra",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/HangingLanternR1/item",
+      "label": "Farol",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/WallTorchR1/item",
+      "label": "Antorcha",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/BannerR1/item",
+      "label": "Estandarte",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/PottedPlantR1/item",
+      "label": "Planta",
+      "supportObjectId": ""
+    },
+    {
+      "resource": "Rooms/Props/TrophyR1/item",
+      "label": "Trofeo",
+      "supportObjectId": "home.wall-shelf"
+    },
+    {
+      "resource": "Rooms/Props/OpenBookR1/item",
+      "label": "Libro",
+      "supportObjectId": "home.writing-desk"
+    },
+    {
+      "resource": "Rooms/Props/TrainingBottleR1/item",
+      "label": "Botella",
+      "supportObjectId": "home.training-bench"
+    },
+    {
+      "resource": "Rooms/Props/TrainingTowelR1/item",
+      "label": "Toalla",
+      "supportObjectId": "home.training-bench"
+    }
+  ]
+}

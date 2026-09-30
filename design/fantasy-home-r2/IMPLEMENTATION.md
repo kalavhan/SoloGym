@@ -59,7 +59,8 @@ No further isolated-component visual approval should be inferred from this rende
 ## Delivery focus
 
 Prioritize matching this Home window. The user updated room-art delivery on
-2026-09-30 to four independent sprites per MR. Other UI component changes remain
+2026-09-30 to eight independent sprites per MR, superseding the earlier four-sprite
+batches. Other UI component changes remain
 component-sized. Keep object placement rough until the user's later manual pass
 with an alignment editor after room items exist. First prepare
 the room shell and establish the composition; then place independently exported

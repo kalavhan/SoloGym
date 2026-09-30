@@ -8,7 +8,7 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
 ## Scope
 
 - Landscape-only pixel-art fantasy fitness app in the existing Unity project.
-  Render targets first. Batch four independent room sprites per PR/MR
+  Render targets first. Batch eight independent room sprites per PR/MR
   (user direction, 2026-09-30), reusing the room-object component. Other reusable
   UI components retain component-sized PRs with art, interaction states,
   integration fixtures and focused verification.
@@ -41,6 +41,9 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
   provide an alignment editor so the user can do a manual placement pass.
   Until then, use rough placement and focus on independent assets/integration;
   do not spend iterations polishing alignment or treat current anchors as approved.
+  The local editor is now documented in `docs/design/pixel-home-alignment-editor.md`.
+  Preserve its exported layout files and apply the user's reviewed JSON; do not
+  replace a manual placement pass with newly guessed coordinates.
 - The user flagged inconsistent prop perspectives on 2026-09-30. Merged art is
   not camera/perspective approval. Use the actual room shell as the viewpoint
   reference and the approved Home concept for design/materials, accounting for

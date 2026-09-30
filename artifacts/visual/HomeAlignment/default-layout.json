@@ -1,0 +1,289 @@
+{
+  "format": "sologym-home-layout",
+  "version": 1,
+  "roomId": "home.refuge.r1",
+  "referenceSize": {
+    "x": 1672,
+    "y": 941
+  },
+  "objects": [
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.training-ring",
+      "slotId": "ring.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 438,
+        "y": 550
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 100
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.hanging-bag",
+      "slotId": "bag.hook",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 95,
+        "y": 100
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 110
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.weight-rack",
+      "slotId": "rack.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 205,
+        "y": 735
+      },
+      "scale": 1,
+      "layer": "foreground",
+      "drawOrder": 100
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.training-bench",
+      "slotId": "bench.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 451,
+        "y": 785
+      },
+      "scale": 1,
+      "layer": "foreground",
+      "drawOrder": 200
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.bed",
+      "slotId": "bed.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 1220,
+        "y": 557
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 120
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.storage-chest",
+      "slotId": "chest.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 1070,
+        "y": 569
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 130
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.writing-desk",
+      "slotId": "desk.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 1504,
+        "y": 575
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 140
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.stool",
+      "slotId": "stool.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 1410,
+        "y": 650
+      },
+      "scale": 1,
+      "layer": "foreground",
+      "drawOrder": 300
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.wall-shelf",
+      "slotId": "shelf.wall",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 730,
+        "y": 280
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 50
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.floor-rug",
+      "slotId": "rug.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 891,
+        "y": 813
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 0
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.hanging-lantern",
+      "slotId": "lantern.hook",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 575,
+        "y": 30
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 70
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.wall-torch",
+      "slotId": "torch.wall",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 225,
+        "y": 255
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 60
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.banner",
+      "slotId": "banner.wall",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 410,
+        "y": 130
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 40
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.potted-plant",
+      "slotId": "plant.floor",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 100,
+        "y": 865
+      },
+      "scale": 1,
+      "layer": "foreground",
+      "drawOrder": 400
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.trophy",
+      "slotId": "trophy.shelf",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 685,
+        "y": 188
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 55
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.open-book",
+      "slotId": "book.desk",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 1545,
+        "y": 449
+      },
+      "scale": 1,
+      "layer": "behind-character",
+      "drawOrder": 150
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.training-bottle",
+      "slotId": "bottle.bench",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 517,
+        "y": 690
+      },
+      "scale": 1,
+      "layer": "foreground",
+      "drawOrder": 220
+    },
+    {
+      "version": 2,
+      "roomId": "home.refuge.r1",
+      "objectId": "home.training-towel",
+      "slotId": "towel.bench",
+      "variantId": "base",
+      "visible": true,
+      "position": {
+        "x": 424,
+        "y": 697
+      },
+      "scale": 1,
+      "layer": "foreground",
+      "drawOrder": 210
+    }
+  ],
+  "character": {
+    "position": {
+      "x": 788,
+      "y": 716
+    },
+    "scale": 1,
+    "visible": true
+  }
+}
