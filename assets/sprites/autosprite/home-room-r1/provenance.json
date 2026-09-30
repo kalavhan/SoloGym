@@ -1,0 +1,33 @@
+{
+  "assets": [
+    {
+      "id": "home.refuge.shell",
+      "autospriteAssetId": "cmuoblvtq002r42elfpzpqh95",
+      "name": "SoloGym Home R2 Room Shell 20260930",
+      "createdAt": "2026-09-30T16:29:25.215Z",
+      "credits": 0,
+      "provenance": "Built-in imagegen reference, uploaded unchanged with AutoSprite MCP request_upload_url + create_asset, downloaded from saved asset. Not an AutoSprite-generated redraw.",
+      "approval": "pending review",
+      "file": "room-shell.png",
+      "sha256": "8734fae5eec157fca1ef2ab402f89d005b5fe628e5864646800a415b145060db",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/RefugeR1/RoomShell.png",
+      "importPreservesUploadedBytes": true
+    },
+    {
+      "id": "home.refuge.exterior.night",
+      "autospriteAssetId": "cmuobm3qi00091369kg5htf6p",
+      "name": "SoloGym Home R2 Castle Exterior 20260930",
+      "createdAt": "2026-09-30T16:29:35.467Z",
+      "credits": 0,
+      "provenance": "Built-in imagegen reference, uploaded unchanged with AutoSprite MCP request_upload_url + create_asset, downloaded from saved asset. Not an AutoSprite-generated redraw.",
+      "approval": "pending review",
+      "file": "castle-exterior.png",
+      "sha256": "806ecb4441b3b3f086a0a8aa73da5477e993404a4581c4e38850dfca1b4b4003",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/RefugeR1/CastleExterior.png",
+      "importPreservesUploadedBytes": true
+    }
+  ],
+  "imagegenCalls": 4,
+  "autospriteCreditsUsed": 0,
+  "costNote": "Four built-in imagegen calls; no dollar cost reported. AutoSprite uploads/save/download are free. No character generation or animation."
+}

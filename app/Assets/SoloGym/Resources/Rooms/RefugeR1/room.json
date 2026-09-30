@@ -1,0 +1,19 @@
+{
+  "id": "home.refuge.r1",
+  "referenceSize": { "x": 1672, "y": 941 },
+  "architecture": "Rooms/RefugeR1/RoomShell",
+  "exterior": "Rooms/RefugeR1/CastleExterior",
+  "exteriorRect": { "x": 860, "y": 44, "width": 256, "height": 384 },
+  "anchors": [
+    { "id": "hero.feet", "point": { "x": 788, "y": 716 } },
+    { "id": "ring.floor", "point": { "x": 438, "y": 550 } },
+    { "id": "bag.hook", "point": { "x": 95, "y": 100 } },
+    { "id": "rack.floor", "point": { "x": 205, "y": 735 } },
+    { "id": "bench.floor", "point": { "x": 451, "y": 785 } },
+    { "id": "bed.floor", "point": { "x": 1220, "y": 557 } },
+    { "id": "chest.floor", "point": { "x": 1070, "y": 569 } },
+    { "id": "desk.floor", "point": { "x": 1504, "y": 575 } },
+    { "id": "shelf.wall", "point": { "x": 730, "y": 280 } },
+    { "id": "rug.floor", "point": { "x": 891, "y": 813 } }
+  ]
+}

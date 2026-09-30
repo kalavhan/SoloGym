@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "screen": "home",
+  "revision": "r2",
+  "status": "visual_direction_approved",
+  "approved_at": "2026-09-30",
+  "approval_quote": "yeah, I like it. just make sure to make the background it's own thing. the buttons it's own thing. do not make it as a single image",
+  "generator": "built-in imagegen",
+  "scope": "Approved Home composition reference. This does not certify decomposed production assets or implemented screen parity.",
+  "production_character_generation_calls": 0,
+  "runtime_code_changed": false,
+  "ui_locale": "es",
+  "example_state": "adult with optional fasting enabled; sample name, level, progress and routine values are illustrative",
+  "files": [
+    {
+      "path": "home-approved.png",
+      "role": "approved visual target",
+      "bytes": 2401918,
+      "sha256": "832b77b23b811095d84ee8c4c7c27c5d77b4cf3ab5d3272b0b502cd8b630aa2c",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "iterations/home-initial.png",
+      "role": "superseded initial render",
+      "bytes": 2490424,
+      "sha256": "4aeaf3b31c6a6978e081e724c719dfe7904c75bb4b5d25fb47e5a674198fd792",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "prompts.json",
+      "role": "exact initial and refinement prompts",
+      "bytes": 6356,
+      "sha256": "f72cf0b1ed7294098e3a542f76bb4cbec0a7f43111d880663793c0d66d224116"
+    }
+  ],
+  "requirements": [
+    "Preserve the approved room-dominant composition, palette and compact UI hierarchy.",
+    "Never use this flattened reference as the runtime screen or as a background containing buttons/text/character.",
+    "Room shell, room props, character and UI are independent layers.",
+    "Native uGUI buttons and tabs with sprite skins, separate icons and live text.",
+    "Preserve exact user-created Barbarian source/runtime art. Concept rendering is not a replacement sprite.",
+    "Independent furniture/equipment/decoration assets retain IDs, pivots and footprints for seasonal variations.",
+    "Match the Home scene in context before continuing generic component galleries."
+  ]
+}
