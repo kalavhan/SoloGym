@@ -22,6 +22,8 @@ This replaces the active portrait/manhua presentation and the modular boxing-clo
 
 Character selection and fitness onboarding support these five areas; they are not additional game modes. Easy/Medium/Hard is the intended user-facing choice. The existing training foundation uses `light`/`medium`/`hard`; preserve its meaning and adjustments when mapping labels.
 
+**Confirmed 2026-09-30:** training difficulty remains selectable at any time during the boss-battle routine, including an exercise, rest and pause; it is not locked to onboarding or the pre-battle briefing. Keep the control available without restarting the routine. Existing readiness/experience eligibility still applies. Integration must preserve already-recorded work and bounded boss/reward progress; changing a selection must not rewrite completed logs or award progress. Applying an allowed change to remaining work requires the session controller and existing prescription rules, not the appearance selector.
+
 The separately prepared local render pack, `design/fantasy-mvp-r1/`, is not included in the primary-button PR. Its seven visual proposals cover login, create account, character selection, Home, workouts, boss workout and fasting. They are **concepts awaiting visual review**, not approved implementations. They show representative states rather than every recovery, privacy, empty, error or account-support state.
 
 ## Full product after the MVP
