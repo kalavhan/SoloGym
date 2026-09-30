@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SoloGym — independent hanging bag</title>
+<style>
+body{max-width:1100px;margin:40px auto;padding:0 24px;background:#181820;color:#f4e6cb;font:18px/1.5 system-ui}a{color:#72d9d2}img{max-width:100%;height:auto}button{padding:10px 18px;font:inherit}textarea{box-sizing:border-box;width:100%;padding:14px;font:inherit}figure{margin:24px 0;text-align:center}.alpha{background:repeating-conic-gradient(#4b535e 0% 25%,#68717c 0% 50%) 0 / 32px 32px}.asset{max-height:650px;object-fit:contain}small{display:block;margin:8px 0}
+</style>
+<h1>Hanging punching bag — one independent prop</h1>
+<p>Home iteration 3. Artwork authored with built-in imagegen; transparent derivative exported through AutoSprite. Pending visual review. Placement is provisional for the user's later manual alignment pass.</p>
+<figure class="alpha"><img class="asset" src="../../assets/sprites/autosprite/home-bag-r1/original.png" alt="Single hanging leather bag assembly, including hook and connected chains"></figure>
+<p><a href="../../assets/sprites/autosprite/home-bag-r1/original.png" download>Download original single-object reference</a></p>
+<h2>Short AutoSprite description</h2>
+<textarea id="description" rows="3" readonly>One hanging oxblood leather punching bag with connected hook and chains, iron bands and gold barbarian emblem. Match reference pixel style. Isolated prop, no room, floor, ring or text.</textarea>
+<small id="count"></small><button id="copy" type="button">Copy description</button><span id="status" role="status"></span>
+<h2>Detailed reference brief</h2>
+<p>One vertical oxblood leather punching bag, dark iron bands with brass studs and a gold barbarian emblem. Preserve the complete top hook and suspension connections. Match the warm pixel-art room reference. No ring, room, floor, character, cast background shadow, text or other props.</p>
+<p>Export one 1024×1536 RGBA PNG, keeping the canvas and top attachment pivot (512, 17) measured from the upper-left. Air around and between chains remains transparent. This is a static prop: no swing animation. Future decorative variants retain this assembly's silhouette and attachment.</p>
+<p>The component controls placement and uniform scale separately. Its rough starting location is outside the ring; the user will refine all room positions together once the alignment editor is available.</p>
+<h2>AutoSprite transparent export</h2>
+<figure class="alpha"><img class="asset" src="../../assets/sprites/autosprite/home-bag-r1/transparent.png" alt="Transparent bag export on a checkerboard inspection surface"></figure>
+<p><a href="../../artifacts/visual/HomeBag/1280x720-es.png">Actual Unity composition</a> · <a href="prompts.json">Exact prompts</a> · <a href="../../assets/sprites/autosprite/home-bag-r1/provenance.json">Source hashes and AutoSprite record</a></p>
+<script>
+const field=document.getElementById('description');document.getElementById('count').textContent=field.value.length+' / 200 characters';
+document.getElementById('copy').onclick=async()=>{try{await navigator.clipboard.writeText(field.value);document.getElementById('status').textContent=' Copied';}catch{field.focus();field.select();document.getElementById('status').textContent=' Selected — press Ctrl+C';}};
+</script></html>

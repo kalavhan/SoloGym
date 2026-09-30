@@ -35,6 +35,10 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
   composition before more unrelated component galleries. Keep room shell, props,
   character, sprite skins, icons and live UI/text separate. Never ship the
   flattened reference as the screen/background.
+- Room prop positions and sizes are provisional. After all room items are added,
+  provide an alignment editor so the user can do a manual placement pass.
+  Until then, use rough placement and focus on independent assets/integration;
+  do not spend iterations polishing alignment or treat current anchors as approved.
 
 - Preserve exact user-created AutoSprite exports and manifest in
   `assets/sprites/autosprite/barbarian-user-r1/`. Transparent derivatives live in

@@ -1,0 +1,50 @@
+[
+  {
+    "capture": "1280x720-es",
+    "changedRegion": [
+      39,
+      76,
+      106,
+      356
+    ],
+    "allowedRegion": [
+      37,
+      74,
+      109,
+      359
+    ],
+    "channelTolerance": 10
+  },
+  {
+    "capture": "854x480-es",
+    "changedRegion": [
+      66,
+      70,
+      106,
+      238
+    ],
+    "allowedRegion": [
+      64,
+      67,
+      109,
+      241
+    ],
+    "channelTolerance": 10
+  },
+  {
+    "capture": "1844x853-en",
+    "changedRegion": [
+      317,
+      141,
+      384,
+      423
+    ],
+    "allowedRegion": [
+      315,
+      138,
+      387,
+      426
+    ],
+    "channelTolerance": 10
+  }
+]

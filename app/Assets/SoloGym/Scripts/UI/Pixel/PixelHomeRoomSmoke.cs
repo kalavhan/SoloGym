@@ -23,7 +23,25 @@ namespace SoloGym.UI
             {
                 var room = review.Room;
                 var ring = review.Ring;
+                var bag = review.Bag;
                 string savedRing = ring.SaveState();
+                string savedBag = bag.SaveState();
+                var bagSprite = bag.Artwork.sprite;
+                Check(bag.transform.parent == room.BackObjects && bag.transform.GetSiblingIndex() > ring.transform.GetSiblingIndex(),
+                    "hanging bag shares the prop layer with independent ordered artwork");
+                Check(bag.Artwork.sprite.texture.filterMode == FilterMode.Point, "bag keeps point-filtered artwork");
+                bag.SetVisible(false);
+                string hiddenBag = bag.SaveState();
+                Check(!bag.Artwork.enabled && ring.SaveState() == savedRing && room.Architecture.enabled && review.Character.HasCharacter,
+                    "hiding the bag leaves the ring, architecture and character intact");
+                bag.SetVisible(true); bag.RestoreState(hiddenBag);
+                Check(!bag.Visible && !bag.Artwork.enabled && bag.Artwork.sprite == bagSprite,
+                    "bag visibility round-trips without replacing artwork");
+                bag.RestoreState(savedBag);
+                bool bagRejected = false;
+                try { bag.RestoreState(savedBag.Replace("bag.hook", "ring.floor")); } catch (ArgumentException) { bagRejected = true; }
+                Check(bagRejected && bag.SaveState() == savedBag && ring.SaveState() == savedRing,
+                    "a hanging bag cannot claim the ring floor slot or mutate either prop on failure");
                 var ringPosition = ((RectTransform)ring.transform).anchoredPosition;
                 var footprint = ring.FootprintInRoom();
                 Check(ring.transform.parent == room.BackObjects && room.BackObjects.GetSiblingIndex() < room.Objects.GetSiblingIndex(),
@@ -104,7 +122,10 @@ namespace SoloGym.UI
             Canvas.ForceUpdateCanvases();
             var roomVertices = review.Room.Architecture.canvasRenderer.GetMesh().vertices;
             review.Ring.SetVisible(false); yield return Capture("ring-hidden");
-            review.Ring.SetVisible(finalVisibility); yield return Capture("");
+            review.Ring.SetVisible(finalVisibility);
+            bool finalBagVisibility = review.Bag.Visible;
+            review.Bag.SetVisible(false); yield return Capture("bag-hidden");
+            review.Bag.SetVisible(finalBagVisibility); yield return Capture("");
             var finalVertices = review.Room.Architecture.canvasRenderer.GetMesh().vertices;
             bool stableVertices = roomVertices.Length == finalVertices.Length;
             for (int i = 0; stableVertices && i < roomVertices.Length; i++) stableVertices &= Vector3.Distance(roomVertices[i], finalVertices[i]) < .0001f;
@@ -139,6 +160,14 @@ namespace SoloGym.UI
                 state + ": ring retains its floor pivot and uniform authored size after layout changes");
             Check(Mathf.Abs(ringRect.rect.width / ringRect.rect.height - ring.Artwork.sprite.rect.width / ring.Artwork.sprite.rect.height) < .001f,
                 state + ": ring does not stretch independently along either axis");
+            var bag = review.Bag;
+            var bagRect = (RectTransform)bag.transform;
+            var hook = room.AnchorPoint(bag.SlotId);
+            var hookExpected = room.Plane.TransformPoint(new Vector3(hook.x - room.ReferenceSize.x / 2, room.ReferenceSize.y / 2 - hook.y, 0));
+            Check(Vector3.Distance(hookExpected, bag.transform.position) < 1 && bagRect.sizeDelta == bag.DisplaySize,
+                state + ": bag keeps its top attachment pivot and uniform size after layout changes");
+            Check(Mathf.Abs(bagRect.rect.width / bagRect.rect.height - bag.Artwork.sprite.rect.width / bag.Artwork.sprite.rect.height) < .001f,
+                state + ": hanging bag preserves its source aspect ratio");
         }
         void Check(bool passed, string name)
         { checks.Add(new CheckResult { name = name, passed = passed }); if (!passed) Debug.LogError("HOME ROOM: " + name); }
