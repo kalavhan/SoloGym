@@ -13,6 +13,9 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
 - MVP: login/account creation, personal home gym, editable workouts/history,
   routine-driven dungeon bosses and optional adult fasting. Retain necessary
   onboarding, readiness and character-selection steps.
+- Training difficulty remains changeable during the boss-battle routine, including
+  exercise, rest and pause. Preserve recorded work and existing eligibility/reward
+  limits; do not lock difficulty to onboarding or the pre-battle briefing.
 - Start with eight user-created Barbarians: male/female and skinny, medium, fat,
   muscular. Fixed skin/hair/eye colors for this version. Body choice is cosmetic.
 - Three free classes are the eventual goal; start with Barbarian and add two

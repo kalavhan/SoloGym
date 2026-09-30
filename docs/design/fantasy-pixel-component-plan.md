@@ -64,7 +64,7 @@ The first character viewport supports full static appearances and fixed source c
 
 ## One component per PR/MR
 
-The **primary pixel button** was merged in PR #12. The [framed content panel](pixel-content-panel.md) was merged in PR #13. The [labeled form field](pixel-form-field.md) was merged in PR #14. The [secondary and text actions](pixel-secondary-action.md) were merged in PR #15. Component 05 adds [icon buttons](pixel-icon-button.md), with independent Back/Settings art, native accessible names and a navigation fixture. See the button’s [component contract and verification status](pixel-primary-button.md). Include only the minimal landscape fixture, theme values and import setup necessary to display and verify that button. This is not a blanket application conversion. The fixture uses the chosen reference palette with short/long English and Spanish labels, two useful sizes, and normal/pressed/focus/disabled/loading states.
+The **primary pixel button** was merged in PR #12. The [framed content panel](pixel-content-panel.md) was merged in PR #13. The [labeled form field](pixel-form-field.md) was merged in PR #14. The [secondary and text actions](pixel-secondary-action.md) were merged in PR #15. The [icon buttons](pixel-icon-button.md) were merged in PR #16. Component 06 adds a [single-choice control](pixel-choice-control.md), with independent appearance and in-battle difficulty examples. See the button’s [component contract and verification status](pixel-primary-button.md). Include only the minimal landscape fixture, theme values and import setup necessary to display and verify that button. This is not a blanket application conversion. The fixture uses the chosen reference palette with short/long English and Spanish labels, two useful sizes, and normal/pressed/focus/disabled/loading states.
 
 Each component PR includes:
 
@@ -87,7 +87,7 @@ Each numbered row is one component-sized candidate PR. Large domain features suc
 | 03 | Labeled form field | Email/password types, keyboard, focus, validation and show/hide support; account screens |
 | 04 | Secondary/text action | Clear hierarchy, back/recovery action and disabled/focus state; account screens |
 | 05 | Icon button | Independent icon, accessible label, adequate touch target; Back/settings |
-| 06 | Choice control | Selected state for body/presentation/difficulty, keyboard/touch support and wrapping |
+| 06 | Choice control | Selected state for body/presentation/difficulty, keyboard/touch support and wrapping; difficulty remains changeable during the boss-battle routine |
 | 07 | Static character viewport | Exact user sources, transparent derivative when ready, feet anchor and consistent scale |
 | 08 | Navigation tab | Selected/current state, label/icon reuse and optional adult-only fasting visibility |
 | 09 | Room-object slot | Stable asset identity, anchor, draw order and serialization; one room prop fixture |

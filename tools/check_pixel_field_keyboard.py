@@ -13,14 +13,15 @@ ROOT = Path(__file__).resolve().parents[1]
 def run():
     actions = "--actions" in sys.argv
     icons = "--icons" in sys.argv
-    if actions and icons:
-        raise ValueError("Choose one fixture: --actions or --icons.")
-    fixture = "icon" if icons else "action" if actions else "field"
+    choices = "--choices" in sys.argv
+    if sum((actions, icons, choices)) > 1:
+        raise ValueError("Choose one fixture: --actions, --icons or --choices.")
+    fixture = "choice" if choices else "icon" if icons else "action" if actions else "field"
     # Always create an isolated display; never inject events into the user's desktop.
     if "--isolated-child" not in sys.argv:
         return subprocess.call(["xvfb-run", "-a", "-s", "-screen 0 1920x1080x24",
                                 sys.executable, str(Path(__file__).resolve()), "--isolated-child",
-                                *(["--icons"] if icons else ["--actions"] if actions else [])],
+                                *(["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
                                env={**os.environ, "SOLOGYM_ISOLATED_FIELD_TEST": "1"})
     if os.environ.get("SOLOGYM_ISOLATED_FIELD_TEST") != "1":
         raise RuntimeError("Run without --isolated-child to create a private display.")
@@ -75,7 +76,8 @@ def run():
             key(name, shift)
 
     env = {**os.environ, "XDG_CONFIG_HOME": str(local / (fixture + "-keyboard-prefs"))}
-    binary = "FantasyIcon/SoloGymIcon" if icons else "FantasyAction/SoloGymAction" if actions else "FantasyField/SoloGymField"
+    binary = {"choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
+              "action": "FantasyAction/SoloGymAction", "field": "FantasyField/SoloGymField"}[fixture]
     command = [str(ROOT / ("app/Builds/" + binary + ".x86_64")),
                "-screen-fullscreen", "0", "-screen-width", "1280", "-screen-height", "720",
                "-sologym-locale", "en", "-sologym-keyboard-probe", str(marker),
@@ -109,7 +111,17 @@ def run():
             x11.XSetInputFocus(display, window, 2, 0)
             x11.XFlush(display)
             time.sleep(.4)
-            if icons:
+            if choices:
+                # Choose Hard, advance to rest, change appearance, advance to pause,
+                # then choose Medium and Easy without restarting the fictional routine.
+                sequence = [("Right", False), ("Return", False), ("Tab", False), ("Return", False),
+                            ("Tab", False), ("Return", False), ("Right", False), ("Right", False), ("Return", False),
+                            ("Tab", True), ("Tab", True), ("Tab", True), ("Return", False),
+                            ("Tab", True), ("Return", False), ("Left", False), ("Return", False),
+                            ("Left", False), ("Return", False)]
+                for name, shift in sequence:
+                    key(name, shift); time.sleep(.3)
+            elif icons:
                 # Back -> Settings -> Normal/Back, reverse to locale, then skip Disabled to Large.
                 for name, shift in [("Tab", False), ("Return", False), ("Tab", False), ("Return", False),
                                     ("Tab", True), ("Return", False), ("Tab", False), ("Tab", False),
