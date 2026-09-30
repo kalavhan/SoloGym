@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Read-only preservation and transparency audit for the four Home furniture sprites."""
+"""Read-only preservation and transparency audit for a four-sprite Home furniture batch."""
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -7,23 +8,28 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-PACK = ROOT / "assets/sprites/autosprite/home-furniture-r1"
 
 
 def main():
-    manifest = json.loads((PACK / "provenance.json").read_text())
-    prompts = json.loads((ROOT / "design/fantasy-home-furniture-r1/prompts.json").read_text())
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--batch", choices=("r1", "r2"), default="r1")
+    args = parser.parse_args()
+    pack = ROOT / ("assets/sprites/autosprite/home-furniture-" + args.batch)
+    manifest = json.loads((pack / "provenance.json").read_text())
+    prompts = json.loads((ROOT / ("design/fantasy-home-furniture-" + args.batch) / "prompts.json").read_text())
     air = {"rack": [(700, 470), (590, 530), (500, 800)], "bench": [(700, 800)],
-           "bed": [(900, 920)], "chest": [(200, 500)]}
+           "bed": [(900, 920)], "chest": [(200, 500)],
+           "desk": [(750, 700)], "stool": [(600, 550)], "shelf": [(768, 500)], "rug": [(200, 200)]}
     solid = {"rack": [(100, 500), (400, 265), (760, 290)], "bench": [(700, 600), (200, 600)],
-             "bed": [(700, 500)], "chest": [(700, 500)]}
+             "bed": [(700, 500)], "chest": [(700, 500)], "desk": [(700, 350)],
+             "stool": [(700, 350)], "shelf": [(700, 350), (700, 700)], "rug": [(768, 600)]}
     guids = set()
     for item in manifest["sprites"]:
         key = item["key"]
         for source in item["files"]:
-            assert hashlib.sha256((PACK / source["path"]).read_bytes()).hexdigest() == source["sha256"]
+            assert hashlib.sha256((pack / source["path"]).read_bytes()).hexdigest() == source["sha256"]
         runtime = ROOT / item["runtime"]
-        assert runtime.read_bytes() == (PACK / item["export"]).read_bytes() == (PACK / item["original"]).read_bytes()
+        assert runtime.read_bytes() == (pack / item["export"]).read_bytes() == (pack / item["original"]).read_bytes()
         im = Image.open(runtime)
         assert im.mode == "RGBA" and im.size == (1536, 1024)
         assert im.getchannel("A").histogram()[0] > im.width * im.height * .1

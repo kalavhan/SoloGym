@@ -1,0 +1,231 @@
+{
+  "id": "home-furniture-r2",
+  "date": "2026-09-30",
+  "scope": "Four independent static sprites: writing desk, stool, wall shelf and floor rug.",
+  "approval": "pending visual review; rough placement for the user's later manual alignment pass",
+  "source": "Built-in imagegen artwork saved and exported through AutoSprite MCP. No redraw or background removal.",
+  "imagegenCalls": 4,
+  "autospriteCreditsUsed": 0,
+  "sprites": [
+    {
+      "key": "desk",
+      "id": "home.writing-desk",
+      "resource": "WritingDeskR1",
+      "slot": "desk.floor",
+      "layer": "behind-character",
+      "order": 140,
+      "pivot": [
+        775,
+        947
+      ],
+      "width": 310,
+      "boundsWidth": 1384,
+      "footprint": [
+        [
+          118,
+          729
+        ],
+        [
+          1100,
+          947
+        ],
+        [
+          1435,
+          759
+        ],
+        [
+          457,
+          625
+        ]
+      ],
+      "assetId": "cmuoha5lq0026vh6hwpcz0rau",
+      "createdAt": "2026-09-30T19:08:15.711Z",
+      "original": "desk/original.png",
+      "export": "desk/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/WritingDeskR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "desk/export.png",
+          "bytes": 1507784,
+          "sha256": "4a4158f063a3b6e789e072cca32127117e1124ade20f4e950e1b89a315a94be4"
+        },
+        {
+          "path": "desk/original.png",
+          "bytes": 1507784,
+          "sha256": "4a4158f063a3b6e789e072cca32127117e1124ade20f4e950e1b89a315a94be4"
+        }
+      ],
+      "size": {
+        "width": 1536,
+        "height": 1024
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    },
+    {
+      "key": "stool",
+      "id": "home.stool",
+      "resource": "StoolR1",
+      "slot": "stool.floor",
+      "layer": "foreground",
+      "order": 300,
+      "pivot": [
+        770,
+        894
+      ],
+      "width": 110,
+      "boundsWidth": 740,
+      "footprint": [
+        [
+          399,
+          784
+        ],
+        [
+          868,
+          894
+        ],
+        [
+          1140,
+          747
+        ],
+        [
+          718,
+          657
+        ]
+      ],
+      "assetId": "cmuohas9a000jhcnmxazytk0h",
+      "createdAt": "2026-09-30T19:08:45.070Z",
+      "original": "stool/original.png",
+      "export": "stool/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/StoolR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "stool/export.png",
+          "bytes": 1251145,
+          "sha256": "40ac790e09d22e7fdf18d5b3ed12c72fa0cccfdfe7003d0cef9f855baa449d9e"
+        },
+        {
+          "path": "stool/original.png",
+          "bytes": 1251145,
+          "sha256": "40ac790e09d22e7fdf18d5b3ed12c72fa0cccfdfe7003d0cef9f855baa449d9e"
+        }
+      ],
+      "size": {
+        "width": 1536,
+        "height": 1024
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    },
+    {
+      "key": "shelf",
+      "id": "home.wall-shelf",
+      "resource": "WallShelfR1",
+      "slot": "shelf.wall",
+      "layer": "behind-character",
+      "order": 50,
+      "pivot": [
+        768,
+        902
+      ],
+      "width": 220,
+      "boundsWidth": 1471,
+      "footprint": [
+        [
+          33,
+          133
+        ],
+        [
+          1504,
+          133
+        ],
+        [
+          1504,
+          902
+        ],
+        [
+          33,
+          902
+        ]
+      ],
+      "assetId": "cmuohbefc00055z64z0f67zif",
+      "createdAt": "2026-09-30T19:09:13.799Z",
+      "original": "shelf/original.png",
+      "export": "shelf/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/WallShelfR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "shelf/export.png",
+          "bytes": 1377588,
+          "sha256": "24580249d3e8a1b496baaba0171bc9b662668bf3524816da79ac0391c4b80558"
+        },
+        {
+          "path": "shelf/original.png",
+          "bytes": 1377588,
+          "sha256": "24580249d3e8a1b496baaba0171bc9b662668bf3524816da79ac0391c4b80558"
+        }
+      ],
+      "size": {
+        "width": 1536,
+        "height": 1024
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    },
+    {
+      "key": "rug",
+      "id": "home.floor-rug",
+      "resource": "FloorRugR1",
+      "slot": "rug.floor",
+      "layer": "behind-character",
+      "order": 0,
+      "pivot": [
+        773,
+        906
+      ],
+      "width": 850,
+      "boundsWidth": 1423,
+      "footprint": [
+        [
+          50,
+          538
+        ],
+        [
+          773,
+          906
+        ],
+        [
+          1473,
+          534
+        ],
+        [
+          732,
+          238
+        ]
+      ],
+      "assetId": "cmuohbysb0001n81njyd3ii3z",
+      "createdAt": "2026-09-30T19:09:40.186Z",
+      "original": "rug/original.png",
+      "export": "rug/export.png",
+      "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/FloorRugR1/Base.png",
+      "imagegenCalls": 1,
+      "files": [
+        {
+          "path": "rug/export.png",
+          "bytes": 1647985,
+          "sha256": "623c9fbffbc1fd1934bd85e598f7d9d6dcf559e42c50cd9b2c5394b8af96fe5c"
+        },
+        {
+          "path": "rug/original.png",
+          "bytes": 1647985,
+          "sha256": "623c9fbffbc1fd1934bd85e598f7d9d6dcf559e42c50cd9b2c5394b8af96fe5c"
+        }
+      ],
+      "size": {
+        "width": 1536,
+        "height": 1024
+      },
+      "byteIdentity": "Original, AutoSprite export and runtime PNG are byte-identical, preserving generated alpha."
+    }
+  ]
+}

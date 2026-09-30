@@ -1,0 +1,202 @@
+{
+  "desk": [
+    {
+      "capture": "1280x720-es",
+      "changedRegion": [
+        1032,
+        307,
+        1270,
+        440
+      ],
+      "allowedRegion": [
+        1030,
+        304,
+        1273,
+        442
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "854x480-es",
+      "changedRegion": [
+        662,
+        209,
+        805,
+        288
+      ],
+      "allowedRegion": [
+        660,
+        206,
+        808,
+        290
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "1844x853-en",
+      "changedRegion": [
+        1317,
+        374,
+        1556,
+        507
+      ],
+      "allowedRegion": [
+        1314,
+        371,
+        1559,
+        510
+      ],
+      "channelTolerance": 10
+    }
+  ],
+  "stool": [
+    {
+      "capture": "1280x720-es",
+      "changedRegion": [
+        1037,
+        419,
+        1121,
+        497
+      ],
+      "allowedRegion": [
+        1034,
+        416,
+        1124,
+        500
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "854x480-es",
+      "changedRegion": [
+        665,
+        275,
+        716,
+        322
+      ],
+      "allowedRegion": [
+        663,
+        273,
+        718,
+        325
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "1844x853-en",
+      "changedRegion": [
+        1322,
+        485,
+        1407,
+        565
+      ],
+      "allowedRegion": [
+        1319,
+        483,
+        1409,
+        567
+      ],
+      "channelTolerance": 10
+    }
+  ],
+  "shelf": [
+    {
+      "capture": "1280x720-es",
+      "changedRegion": [
+        475,
+        126,
+        643,
+        214
+      ],
+      "allowedRegion": [
+        472,
+        124,
+        646,
+        217
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "854x480-es",
+      "changedRegion": [
+        328,
+        100,
+        429,
+        153
+      ],
+      "allowedRegion": [
+        325,
+        97,
+        431,
+        155
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "1844x853-en",
+      "changedRegion": [
+        756,
+        191,
+        925,
+        280
+      ],
+      "allowedRegion": [
+        753,
+        188,
+        928,
+        282
+      ],
+      "channelTolerance": 10
+    }
+  ],
+  "rug": [
+    {
+      "capture": "1280x720-es",
+      "changedRegion": [
+        352,
+        321,
+        1003,
+        623
+      ],
+      "allowedRegion": [
+        349,
+        314,
+        1005,
+        625
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "854x480-es",
+      "changedRegion": [
+        254,
+        218,
+        644,
+        398
+      ],
+      "allowedRegion": [
+        251,
+        211,
+        647,
+        400
+      ],
+      "channelTolerance": 10
+    },
+    {
+      "capture": "1844x853-en",
+      "changedRegion": [
+        632,
+        394,
+        1287,
+        691
+      ],
+      "allowedRegion": [
+        629,
+        380,
+        1289,
+        693
+      ],
+      "channelTolerance": 10
+    }
+  ]
+}

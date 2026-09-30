@@ -1,0 +1,42 @@
+{
+  "id": "home.stool",
+  "roomId": "home.refuge.r1",
+  "layer": "foreground",
+  "supportedSlots": [
+    "stool.floor"
+  ],
+  "drawOrder": 300,
+  "sourceSize": {
+    "x": 1536,
+    "y": 1024
+  },
+  "pivot": {
+    "x": 0.5013020833333334,
+    "y": 0.126953125
+  },
+  "sourceScale": 0.14864864864864866,
+  "footprint": [
+    {
+      "x": 399,
+      "y": 784
+    },
+    {
+      "x": 868,
+      "y": 894
+    },
+    {
+      "x": 1140,
+      "y": 747
+    },
+    {
+      "x": 718,
+      "y": 657
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/StoolR1/Base"
+    }
+  ]
+}

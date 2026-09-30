@@ -10,9 +10,10 @@ separate architecture, exterior, props, character and live interface. Continue
 component-sized PRs **inside that Home composition**, ahead of unrelated galleries.
 The [room-shell iteration](pixel-home-room.md) starts this work. The [ring/room-object
 component](pixel-room-object.md) was merged in PR #21 after the room shell (PR #20).
-The [hanging bag](pixel-home-bag.md) was merged in PR #22. The next batch adds
-[four furniture sprites](pixel-home-furniture.md): rack, bench, bed and chest.
-Further furniture, HUD and props are still pending.
+The [hanging bag](pixel-home-bag.md) was merged in PR #22, followed by the
+[rack, bench, bed and chest batch](pixel-home-furniture.md) in PR #23.
+The [second furniture batch](pixel-home-furniture-r2.md) adds desk, stool, shelf
+and rug. Decorations and live Home UI are still pending.
 
 The user will do a **manual alignment pass** after room items are present
 (2026-09-30). Add an editor at that stage for individual object selection,
@@ -118,6 +119,7 @@ or entitlement services remain separate tasks.
 | 09b | [Room object / training ring](pixel-room-object.md) | Stable identity, supported slot, pivot/footprint, draw order and JSON state; first independent Home prop |
 | 09c | [Hanging punching bag](pixel-home-bag.md) | Independent hook/chain/bag assembly, top attachment pivot and visibility; provisional placement outside the ring |
 | 09d | [Furniture batch](pixel-home-furniture.md) | Four independent sprites: rack, bench, bed and chest; independent visibility, shared placement contract |
+| 09e | [Second furniture batch](pixel-home-furniture-r2.md) | Four independent sprites: desk, stool, wall shelf and rug; empty surfaces for later decorations, rug behind occupants |
 | 10 | Routine summary row | Current/completed/missed/rest state, clear status and edit entry without punitive wording |
 | 11 | Week selector | Dates, selected day and routine status; workout area |
 | 12 | Exercise prescription card | Sets/reps/time, per-side semantics, equipment and substitution action |

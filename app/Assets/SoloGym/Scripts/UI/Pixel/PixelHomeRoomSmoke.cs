@@ -43,11 +43,19 @@ namespace SoloGym.UI
                     Check(!item.Visible && !item.Artwork.enabled && item.Artwork.sprite == sprite,
                         item.ObjectId + ": independent hidden state round-trips with the same artwork");
                     item.RestoreState(savedProps[item]);
-                    bool front = item.SlotId == "rack.floor" || item.SlotId == "bench.floor";
+                    bool front = item.SlotId == "rack.floor" || item.SlotId == "bench.floor" || item.SlotId == "stool.floor";
                     Check(item.transform.parent == (front ? room.Foreground : room.BackObjects)
                         && sprite.texture.filterMode == FilterMode.Point,
                         item.ObjectId + ": correct character depth layer and pixel filtering");
                 }
+                var rug = Array.Find(allProps, item => item.ObjectId == "home.floor-rug");
+                bool rugBehindProps = rug != null && rug.transform.parent == room.BackObjects;
+                foreach (var item in allProps)
+                    if (rug != null && item != rug && item.transform.parent == room.BackObjects)
+                        rugBehindProps &= rug.transform.GetSiblingIndex() < item.transform.GetSiblingIndex();
+                Check(rugBehindProps && room.BackObjects.GetSiblingIndex() < room.Objects.GetSiblingIndex()
+                    && room.Objects.GetSiblingIndex() < room.Foreground.GetSiblingIndex(),
+                    "floor rug draws below other props and the character regardless of creation order");
                 var bagSprite = bag.Artwork.sprite;
                 Check(bag.transform.parent == room.BackObjects && bag.transform.GetSiblingIndex() > ring.transform.GetSiblingIndex(),
                     "hanging bag shares the prop layer with independent ordered artwork");
@@ -201,9 +209,9 @@ namespace SoloGym.UI
             {
                 var rect = (RectTransform)item.transform;
                 var anchor = room.AnchorPoint(item.SlotId);
-                var floor = room.Plane.TransformPoint(new Vector3(anchor.x - room.ReferenceSize.x / 2, room.ReferenceSize.y / 2 - anchor.y, 0));
-                Check(Vector3.Distance(floor, item.transform.position) < 1 && rect.sizeDelta == item.DisplaySize,
-                    state + ": " + item.ObjectId + " retains its floor pivot and size after layout changes");
+                var expectedAnchor = room.Plane.TransformPoint(new Vector3(anchor.x - room.ReferenceSize.x / 2, room.ReferenceSize.y / 2 - anchor.y, 0));
+                Check(Vector3.Distance(expectedAnchor, item.transform.position) < 1 && rect.sizeDelta == item.DisplaySize,
+                    state + ": " + item.ObjectId + " retains its placement pivot and size after layout changes");
                 Check(Mathf.Abs(rect.rect.width / rect.rect.height - item.Artwork.sprite.rect.width / item.Artwork.sprite.rect.height) < .001f,
                     state + ": " + item.ObjectId + " keeps its source proportions");
             }

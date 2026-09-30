@@ -1,0 +1,42 @@
+{
+  "id": "home.wall-shelf",
+  "roomId": "home.refuge.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "shelf.wall"
+  ],
+  "drawOrder": 50,
+  "sourceSize": {
+    "x": 1536,
+    "y": 1024
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.119140625
+  },
+  "sourceScale": 0.1495581237253569,
+  "footprint": [
+    {
+      "x": 33,
+      "y": 133
+    },
+    {
+      "x": 1504,
+      "y": 133
+    },
+    {
+      "x": 1504,
+      "y": 902
+    },
+    {
+      "x": 33,
+      "y": 902
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/WallShelfR1/Base"
+    }
+  ]
+}
