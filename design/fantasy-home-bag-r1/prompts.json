@@ -1,0 +1,11 @@
+{
+  "id": "home.hanging-bag",
+  "reference": "design/fantasy-home-r2/home-approved.png",
+  "mode": "built-in imagegen",
+  "imagegenPrompts": [
+    "Use case: stylized-concept.\nAsset type: one standalone pixel-art Home prop for a Unity fantasy fitness game.\nInput image: approved Home screen reference, only as design/style reference.\nPrimary request: recreate ONLY the hanging punching bag at the far left of the reference, as ONE isolated complete suspended assembly. Preserve its design: tall narrow oxblood-red worn leather cylindrical punching bag, small aged gold horned/barbarian emblem on front, dark iron studded bands near top and bottom, stitched rounded bottom, short connected brass/dark iron suspension chains meeting at one top hook. Show the entire hook and every chain connection clearly. Match reference's front-facing slight elevated view, warm light, crisp 16-bit-inspired pixel clusters, dark outline and restrained detail. The bag remains vertical, not swinging.\nComposition: portrait 1024x1536 canvas, single centered complete object, about 330px wide and 1230px tall including hook and chains, plenty of empty margin. Bag body is roughly 70% of total assembly height, remaining 30% is hook and suspension. Output on a completely uniform pure white background for asset extraction. No ring, floor, wall, beam, character, other objects, labels, shadows cast on background, collage, interface or border. One object per image. Do not redesign as a modern sports bag."
+  ],
+  "autospriteShortDescription": "One hanging oxblood leather punching bag with connected hook and chains, iron bands and gold barbarian emblem. Match reference pixel style. Isolated prop, no room, floor, ring or text.",
+  "detailedBrief": "One complete static hanging bag assembly, including hook and connected chains, based on the left-side bag in the approved Home concept. Tall oxblood leather body, gold emblem, dark metal bands and brass studs. Transparent export, one object only. Pivot at top attachment; hang outside the ring. Match room art style. Provisional location and size: the user will perform a manual alignment pass with an editor after room items are present. No new character, swing animation, UI or additional props.",
+  "approval": "pending review"
+}

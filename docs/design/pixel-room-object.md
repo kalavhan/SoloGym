@@ -1,7 +1,7 @@
 # Home iteration 2: training ring and room-object contract
 
 The Home review now places one independently exported training ring at the
-approved `ring.floor` anchor. It is drawn behind the character on its own Image,
+provisional `ring.floor` anchor. It is drawn behind the character on its own Image,
 without changing the architecture or exterior. F5 hides/shows the ring, and
 `-sologym-hide-ring` starts with it hidden. Other [Home review commands](pixel-home-room.md)
 still apply. This is the next component-sized Home iteration; the full Home
@@ -21,6 +21,10 @@ slots are rejected before creating another GameObject, including hidden items.
 This MVP component uses fixed supported slots, not a drag editor or arbitrary
 free placement. Footprints are exposed as copies for later placement logic;
 collision handling is not implemented here.
+
+For floor props the quadrilateral describes projected floor occupancy; for hanging
+props it describes the projected assembly envelope. It is placement metadata, not
+a physics collider or a claim that a suspended object rests on the floor.
 
 Variants share the same definition and must load sprites with the same canvas
 and pivot. Changing a variant leaves the room identity, placement and footprint
@@ -58,9 +62,14 @@ No global quality/filtering override or per-prop Canvas is needed.
 Visual approval and physical mobile testing remain pending. The ring is a
 reconstructed standalone object rather than a pixel-exact crop of the concept.
 
-## Next Home piece
+## Further Home work
 
-Add the hanging punching bag as another independent prop outside the ring,
-at `bag.hook`, reusing this room-object contract. Further furniture, lamps, rug
-and live UI remain separate work. Keep comparing the assembled Home against
-the approved reference as those objects arrive.
+The [hanging punching bag](pixel-home-bag.md) reuses this contract at `bag.hook`,
+outside the ring. Further furniture, lamps, rug and live UI remain separate work.
+
+On 2026-09-30 the user said the ring placement differs from the render and requested
+a manual alignment pass once all room items exist. Current anchors and scales are
+provisional. Use rough placement now; do not repeatedly fine-tune positions.
+The later editor should select individual props, allow position/scale adjustment,
+compare with the reference, and export/import a saved layout. That editor and a
+versioned layout format extending the current fixed-slot state are future work.

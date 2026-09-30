@@ -1,0 +1,42 @@
+{
+  "id": "home.hanging-bag",
+  "roomId": "home.refuge.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "bag.hook"
+  ],
+  "drawOrder": 110,
+  "sourceSize": {
+    "x": 1024,
+    "y": 1536
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.9889322916666666
+  },
+  "sourceScale": 0.24931693989071038,
+  "footprint": [
+    {
+      "x": 337,
+      "y": 17
+    },
+    {
+      "x": 687,
+      "y": 17
+    },
+    {
+      "x": 687,
+      "y": 1481
+    },
+    {
+      "x": 337,
+      "y": 1481
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/HangingBagR1/Base"
+    }
+  ]
+}

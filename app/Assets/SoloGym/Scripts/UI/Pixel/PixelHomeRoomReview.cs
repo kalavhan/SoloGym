@@ -4,12 +4,13 @@ using UnityEngine.UI;
 
 namespace SoloGym.UI
 {
-    /// <summary>Home composition: separate environment, slot-placed ring and exact existing character.</summary>
+    /// <summary>Home composition: separate environment, slot-placed props and exact existing character.</summary>
     public sealed class PixelHomeRoomReview : MonoBehaviour
     {
         public PixelHomeRoom Room { get; private set; }
         public PixelCharacterViewport Character { get; private set; }
         public PixelRoomObject Ring { get; private set; }
+        public PixelRoomObject Bag { get; private set; }
         public RectTransform InterfaceLayer { get; private set; }
         public bool Spanish { get; private set; }
         public Rect EffectiveSafeArea { get; private set; }
@@ -34,6 +35,7 @@ namespace SoloGym.UI
             roomArea = Child("Safe room composition", canvasRoot.transform);
             Room = PixelHomeRoom.Create(roomArea);
             Ring = PixelRoomObject.Create(Room, "Rooms/Props/TrainingRingR1/item");
+            Bag = PixelRoomObject.Create(Room, "Rooms/Props/HangingBagR1/item");
             Character = PixelCharacterViewport.Create(Room.Objects);
             // Match the approved hero's height and feet position, while retaining the shared eight-body envelope.
             var feet = Room.AnchorPoint("hero.feet");
@@ -43,6 +45,7 @@ namespace SoloGym.UI
             InterfaceLayer = Child("Independent live interface — next Home iteration", canvasRoot.transform);
             SetCharacterVisible(!PixelButtonGallery.HasArgument("-sologym-room-only"));
             Ring.SetVisible(!PixelButtonGallery.HasArgument("-sologym-hide-ring"));
+            Bag.SetVisible(!PixelButtonGallery.HasArgument("-sologym-hide-bag"));
             Relayout();
         }
         static RectTransform Child(string name, Transform parent)
@@ -57,6 +60,7 @@ namespace SoloGym.UI
             if (Input.GetKeyDown(KeyCode.F3)) Room.Exterior.enabled = !Room.Exterior.enabled;
             if (Input.GetKeyDown(KeyCode.F4)) Room.Architecture.enabled = !Room.Architecture.enabled;
             if (Input.GetKeyDown(KeyCode.F5)) Ring.SetVisible(!Ring.Visible);
+            if (Input.GetKeyDown(KeyCode.F6)) Bag.SetVisible(!Bag.Visible);
         }
         public void Relayout()
         {

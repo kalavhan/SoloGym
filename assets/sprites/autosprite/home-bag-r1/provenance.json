@@ -1,0 +1,25 @@
+{
+  "id": "home.hanging-bag",
+  "assetId": "cmuoels870005u7qe7oapqff5",
+  "source": "Built-in imagegen single-object artwork uploaded through AutoSprite MCP; transparent derivative from AutoSprite background removal.",
+  "createdAt": "2026-09-30T17:53:19.399Z",
+  "imagegenCalls": 1,
+  "autospriteCreditsUsed": 1,
+  "approval": "pending visual review; placement provisional for user manual pass",
+  "generationScope": "One static hook/chain/bag assembly; no characters or animations.",
+  "files": [
+    {
+      "path": "original.png",
+      "bytes": 1380644,
+      "sha256": "f9fdbe2fe21ee81029f04d8b104284706d673239e378cc978dc53d7c6fde6128"
+    },
+    {
+      "path": "transparent.png",
+      "bytes": 1366188,
+      "sha256": "4f7e67dda3766a98c040783d879813e805988bde647de7f87768f01cb612f0b3"
+    }
+  ],
+  "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/HangingBagR1/Base.png",
+  "runtimeByteIdenticalTo": "transparent.png",
+  "notes": "Original already contains alpha despite the white-background prompt. Preserve it unchanged. AutoSprite export refines alpha and retains RGB; background RGB under zero alpha is not visible."
+}
