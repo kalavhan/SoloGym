@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 namespace SoloGym.UI
 {
-    /// <summary>Home composition step 1: separate environment layers and exact existing character.</summary>
+    /// <summary>Home composition: separate environment, slot-placed ring and exact existing character.</summary>
     public sealed class PixelHomeRoomReview : MonoBehaviour
     {
         public PixelHomeRoom Room { get; private set; }
         public PixelCharacterViewport Character { get; private set; }
+        public PixelRoomObject Ring { get; private set; }
         public RectTransform InterfaceLayer { get; private set; }
         public bool Spanish { get; private set; }
         public Rect EffectiveSafeArea { get; private set; }
@@ -32,6 +33,7 @@ namespace SoloGym.UI
             var fill = matte.gameObject.AddComponent<Image>(); fill.color = new Color32(18, 17, 24, 255); fill.raycastTarget = false;
             roomArea = Child("Safe room composition", canvasRoot.transform);
             Room = PixelHomeRoom.Create(roomArea);
+            Ring = PixelRoomObject.Create(Room, "Rooms/Props/TrainingRingR1/item");
             Character = PixelCharacterViewport.Create(Room.Objects);
             // Match the approved hero's height and feet position, while retaining the shared eight-body envelope.
             var feet = Room.AnchorPoint("hero.feet");
@@ -40,6 +42,7 @@ namespace SoloGym.UI
             Character.Show(id, Spanish ? "Bárbaro de ejemplo" : "Example Barbarian", Spanish ? "Personaje no disponible" : "Character unavailable");
             InterfaceLayer = Child("Independent live interface — next Home iteration", canvasRoot.transform);
             SetCharacterVisible(!PixelButtonGallery.HasArgument("-sologym-room-only"));
+            Ring.SetVisible(!PixelButtonGallery.HasArgument("-sologym-hide-ring"));
             Relayout();
         }
         static RectTransform Child(string name, Transform parent)
@@ -53,6 +56,7 @@ namespace SoloGym.UI
             if (Input.GetKeyDown(KeyCode.F2)) SetCharacterVisible(!ShowCharacter);
             if (Input.GetKeyDown(KeyCode.F3)) Room.Exterior.enabled = !Room.Exterior.enabled;
             if (Input.GetKeyDown(KeyCode.F4)) Room.Architecture.enabled = !Room.Architecture.enabled;
+            if (Input.GetKeyDown(KeyCode.F5)) Ring.SetVisible(!Ring.Visible);
         }
         public void Relayout()
         {
@@ -69,6 +73,8 @@ namespace SoloGym.UI
                 rect.offsetMin = rect.offsetMax = Vector2.zero;
             }
             Canvas.ForceUpdateCanvases(); Room.RefreshLayout(); Character.RefreshLayout();
+            // Apply pixel-adjusted meshes at the final scale, not the intermediate parent size.
+            Canvas.ForceUpdateCanvases();
         }
         IEnumerator Start()
         {

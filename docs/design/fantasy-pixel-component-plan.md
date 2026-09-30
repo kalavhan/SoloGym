@@ -8,8 +8,9 @@ The user approved `design/fantasy-home-r2/home-approved.png` on 2026-09-30.
 Its `IMPLEMENTATION.md` requires matching the assembled Home composition with
 separate architecture, exterior, props, character and live interface. Continue
 component-sized PRs **inside that Home composition**, ahead of unrelated galleries.
-The [room-shell iteration](pixel-home-room.md) starts this work. The ring/room-object
-component follows; the remaining HUD and props are still pending.
+The [room-shell iteration](pixel-home-room.md) starts this work. The [ring/room-object
+component](pixel-room-object.md) follows the merged room shell (PR #20); the
+remaining HUD and props are still pending.
 
 ## Screen references before component production
 
@@ -100,7 +101,7 @@ Each numbered row is one component-sized candidate PR. Large domain features suc
 | 07 | Static character viewport | Exact user sources, transparent derivative when ready, feet anchor and consistent scale |
 | 08 | Navigation tab | Selected/current state, label/icon reuse and optional adult-only fasting visibility |
 | 09a | Room shell / exterior | Independent artwork, uniform landscape composition and exact character in context; see [Home room](pixel-home-room.md) |
-| 09b | Room-object slot | Stable asset identity, anchor, draw order and serialization; one room prop fixture |
+| 09b | [Room object / training ring](pixel-room-object.md) | Stable identity, supported slot, pivot/footprint, draw order and JSON state; first independent Home prop |
 | 10 | Routine summary row | Current/completed/missed/rest state, clear status and edit entry without punitive wording |
 | 11 | Week selector | Dates, selected day and routine status; workout area |
 | 12 | Exercise prescription card | Sets/reps/time, per-side semantics, equipment and substitution action |

@@ -1,0 +1,50 @@
+[
+  {
+    "capture": "1280x720-es",
+    "changedRegion": [
+      148,
+      244,
+      524,
+      421
+    ],
+    "allowedRegion": [
+      145,
+      241,
+      526,
+      424
+    ],
+    "channelTolerance": 10
+  },
+  {
+    "capture": "854x480-es",
+    "changedRegion": [
+      132,
+      170,
+      357,
+      277
+    ],
+    "allowedRegion": [
+      129,
+      168,
+      360,
+      279
+    ],
+    "channelTolerance": 10
+  },
+  {
+    "capture": "1844x853-en",
+    "changedRegion": [
+      427,
+      309,
+      797,
+      488
+    ],
+    "allowedRegion": [
+      424,
+      307,
+      807,
+      491
+    ],
+    "channelTolerance": 10
+  }
+]

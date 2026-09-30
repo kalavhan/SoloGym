@@ -1,0 +1,24 @@
+{
+  "id": "home.training-ring",
+  "assetId": "cmuocf7n80017jws2umfixson",
+  "source": "Built-in imagegen single-object reference; uploaded through AutoSprite MCP, then AutoSprite background removal.",
+  "createdAt": "2026-09-30T16:52:13.557Z",
+  "imagegenCalls": 2,
+  "autospriteCreditsUsed": 1,
+  "approval": "pending review",
+  "generationScope": "One static ring prop; no character or animation generation.",
+  "files": [
+    {
+      "path": "original.png",
+      "bytes": 1608145,
+      "sha256": "732772525baf67499f63dab9d7db387399ba954fcf50708c1d86f036ba14e925"
+    },
+    {
+      "path": "transparent.png",
+      "bytes": 1700419,
+      "sha256": "55893dee0827246cbe26430ff44587775cd7f084b7a4d6307d76a8a920df2659"
+    }
+  ],
+  "runtime": "app/Assets/SoloGym/Resources/Rooms/Props/TrainingRingR1/Base.png",
+  "runtimeByteIdenticalTo": "transparent.png"
+}

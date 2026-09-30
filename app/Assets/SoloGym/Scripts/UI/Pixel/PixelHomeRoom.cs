@@ -20,6 +20,7 @@ namespace SoloGym.UI
         public string RoomId { get; private set; }
         public Vector2 ReferenceSize { get; private set; }
         public RectTransform Plane { get; private set; }
+        public RectTransform BackObjects { get; private set; }
         public RectTransform Objects { get; private set; }
         public RectTransform Foreground { get; private set; }
         public Image Architecture { get; private set; }
@@ -51,6 +52,7 @@ namespace SoloGym.UI
             room.Exterior.preserveAspect = true;
             room.Architecture = Art("Architecture — empty shell only", room.Plane, architecture);
             Stretch(room.Architecture.rectTransform);
+            room.BackObjects = Rect("Independent furniture behind character", room.Plane); Stretch(room.BackObjects);
             room.Objects = Rect("Independent occupants and furniture", room.Plane); Stretch(room.Objects);
             room.Foreground = Rect("Independent foreground objects", room.Plane); Stretch(room.Foreground);
             room.RefreshLayout();
@@ -106,6 +108,9 @@ namespace SoloGym.UI
             var size = ((RectTransform)transform).rect.size;
             FitScale = Mathf.Max(0, Mathf.Min(size.x / ReferenceSize.x, size.y / ReferenceSize.y));
             Plane.localScale = new Vector3(FitScale, FitScale, 1);
+            // Pixel-adjusted local vertices depend on ancestor scale. Rebuild them now,
+            // rather than waiting for an unrelated prop visibility change to dirty the Canvas.
+            foreach (var graphic in Plane.GetComponentsInChildren<Graphic>(true)) graphic.SetVerticesDirty();
         }
         void OnRectTransformDimensionsChange() => RefreshLayout();
         static Image Art(string name, Transform parent, Sprite sprite)

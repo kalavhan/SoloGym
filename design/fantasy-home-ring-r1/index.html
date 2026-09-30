@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SoloGym — independent training ring</title>
+<style>
+body{max-width:1100px;margin:40px auto;padding:0 24px;background:#181820;color:#f4e6cb;font:18px/1.5 system-ui}a{color:#72d9d2}img{max-width:100%;height:auto}button{padding:10px 18px;font:inherit}textarea{box-sizing:border-box;width:100%;padding:14px;font:inherit}figure{margin:24px 0}.alpha{background:#4b535e}small{display:block;margin:8px 0}pre{white-space:pre-wrap}
+</style>
+<h1>Training ring — one independent prop</h1>
+<p>Home iteration 2. Reference authored with built-in imagegen; transparent export produced through AutoSprite. Pending visual review.</p>
+<figure><img src="../../assets/sprites/autosprite/home-ring-r1/original.png" alt="One complete ring on white: four posts, red mat and three ropes on each side"><figcaption>Single-object reference to upload, not a contact sheet.</figcaption></figure>
+<h2>Short AutoSprite description</h2>
+<textarea id="description" rows="3" readonly>Rustic fantasy training ring; red mat, timber platform, iron brackets, four padded posts, three tan ropes per side. Single prop. Preserve camera, floor footprint and pivot.</textarea>
+<small id="count"></small><button id="copy" type="button">Copy description</button><span id="status" role="status"></span>
+<h2>Detailed reference brief</h2>
+<p>Preserve this exact shallow three-quarter camera, wooden platform, oxblood red mat, gold edging and dark iron brackets. Four corner posts, with three continuous tan ropes per side. Keep the whole object, including all formerly hidden sections; no character, punching bag, room or interface. Empty air between ropes and around the platform must remain transparent.</p>
+<p>Export one 1536×1024 PNG. Preserve the canvas, floor pivot (768, 121) measured from the lower-left, and the projected floor footprint. Variants change decoration on this same ring. Do not invent a different camera, ring silhouette or attachment placement. The native room definition controls placement and scale.</p>
+<h2>Transparent export</h2>
+<figure class="alpha"><img src="../../assets/sprites/autosprite/home-ring-r1/transparent.png" alt="Transparent ring export against a gray inspection surface"></figure>
+<p><a href="../../artifacts/visual/HomeRing/1280x720-es.png">View actual Unity composition</a> · <a href="prompts.json">Exact prompts</a> · <a href="../../assets/sprites/autosprite/home-ring-r1/provenance.json">Source hashes and AutoSprite record</a></p>
+<script>
+const field=document.getElementById('description');document.getElementById('count').textContent=field.value.length+' / 200 characters';
+document.getElementById('copy').onclick=async()=>{try{await navigator.clipboard.writeText(field.value);document.getElementById('status').textContent=' Copied';}catch{field.focus();field.select();document.getElementById('status').textContent=' Selected — press Ctrl+C';}};
+</script></html>
