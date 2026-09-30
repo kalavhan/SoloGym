@@ -30,10 +30,11 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
 
 ## Art and UI pipeline
 
-- Preserve exact user-created AutoSprite exports and manifest when importing
-  `assets/sprites/autosprite/barbarian-user-r1/`. This source-preservation batch
-  exists in separate local work and is not included in the primary-button PR.
-  Its opaque originals are not transparent-export or runtime approval.
+- Preserve exact user-created AutoSprite exports and manifest in
+  `assets/sprites/autosprite/barbarian-user-r1/`. Transparent derivatives live in
+  `assets/sprites/autosprite/barbarian-viewport-r1/`; the viewport review fixture
+  preserves proportions and a shared feet anchor. Source preservation and
+  component verification are not final runtime-art or screen approval.
 - Built-in imagegen is authorized for requested screen concepts/references.
   Final character/sprite production uses AutoSprite MCP and its own review.
   Do not regenerate the user's characters to fit a screen.

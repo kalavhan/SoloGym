@@ -1,0 +1,9 @@
+PASS female-fat original/hash/RGB/alpha/runtime/framing
+PASS female-medium original/hash/RGB/alpha/runtime/framing
+PASS female-muscular original/hash/RGB/alpha/runtime/framing
+PASS female-skinny original/hash/RGB/alpha/runtime/framing
+PASS male-fat original/hash/RGB/alpha/runtime/framing
+PASS male-medium original/hash/RGB/alpha/runtime/framing
+PASS male-muscular original/hash/RGB/alpha/runtime/framing
+PASS male-skinny original/hash/RGB/alpha/runtime/framing
+PASS all eight appearances; 8 removal credits; no generated characters
