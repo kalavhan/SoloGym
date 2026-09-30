@@ -12,12 +12,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def run():
     actions = "--actions" in sys.argv
-    fixture = "action" if actions else "field"
+    icons = "--icons" in sys.argv
+    if actions and icons:
+        raise ValueError("Choose one fixture: --actions or --icons.")
+    fixture = "icon" if icons else "action" if actions else "field"
     # Always create an isolated display; never inject events into the user's desktop.
     if "--isolated-child" not in sys.argv:
         return subprocess.call(["xvfb-run", "-a", "-s", "-screen 0 1920x1080x24",
                                 sys.executable, str(Path(__file__).resolve()), "--isolated-child",
-                                *(["--actions"] if actions else [])],
+                                *(["--icons"] if icons else ["--actions"] if actions else [])],
                                env={**os.environ, "SOLOGYM_ISOLATED_FIELD_TEST": "1"})
     if os.environ.get("SOLOGYM_ISOLATED_FIELD_TEST") != "1":
         raise RuntimeError("Run without --isolated-child to create a private display.")
@@ -72,7 +75,7 @@ def run():
             key(name, shift)
 
     env = {**os.environ, "XDG_CONFIG_HOME": str(local / (fixture + "-keyboard-prefs"))}
-    binary = "FantasyAction/SoloGymAction" if actions else "FantasyField/SoloGymField"
+    binary = "FantasyIcon/SoloGymIcon" if icons else "FantasyAction/SoloGymAction" if actions else "FantasyField/SoloGymField"
     command = [str(ROOT / ("app/Builds/" + binary + ".x86_64")),
                "-screen-fullscreen", "0", "-screen-width", "1280", "-screen-height", "720",
                "-sologym-locale", "en", "-sologym-keyboard-probe", str(marker),
@@ -106,7 +109,13 @@ def run():
             x11.XSetInputFocus(display, window, 2, 0)
             x11.XFlush(display)
             time.sleep(.4)
-            if actions:
+            if icons:
+                # Back -> Settings -> Normal/Back, reverse to locale, then skip Disabled to Large.
+                for name, shift in [("Tab", False), ("Return", False), ("Tab", False), ("Return", False),
+                                    ("Tab", True), ("Return", False), ("Tab", False), ("Tab", False),
+                                    ("Tab", False), ("Tab", False), ("Return", False)]:
+                    key(name, shift); time.sleep(.3)
+            elif actions:
                 # Back -> primary -> recovery -> email -> Back -> recovery.
                 # Then reverse once, skip the two unavailable samples, and change locale.
                 for name, shift in [("Tab", False), ("Tab", False), ("Return", False),

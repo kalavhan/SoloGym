@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "provider": "AutoSprite",
+  "status": "component_review_candidate",
+  "assets": [
+    {
+      "id": "icon-back-r1",
+      "provider_asset_id": "cmuo6r38l0003p8gcko2i3zo0",
+      "created_at": "2026-09-30T14:13:30.021Z",
+      "generation": {
+        "description": "One isolated left-pointing back arrow UI icon, warm ivory with dark brown pixel outline, simple chunky 16-bit fantasy RPG pixels, front view. No button, text, border, shadow or glow. Transparent.",
+        "description_characters": 195,
+        "style": "pixel",
+        "category": "item",
+        "quality": "ultra"
+      },
+      "costs": {
+        "generation": 1,
+        "background_removal": 1
+      },
+      "files": {
+        "original": {
+          "path": "assets/sprites/autosprite/icon-button-r1/back/original.png",
+          "bytes": 805699,
+          "sha256": "f8c4c35ca1b05a090fd7b838a34a20dccb5b11323091c432b2174d9edb696070"
+        },
+        "transparent": {
+          "path": "assets/sprites/autosprite/icon-button-r1/back/transparent.png",
+          "bytes": 581372,
+          "sha256": "dc63d7ae78d2729d6f745b9dde7d49b9b0b9ea5d76d7a5d3929a1aadb0581671"
+        },
+        "runtime": {
+          "path": "app/Assets/SoloGym/Resources/UI/Pixel/IconBack.png",
+          "bytes": 581372,
+          "sha256": "dc63d7ae78d2729d6f745b9dde7d49b9b0b9ea5d76d7a5d3929a1aadb0581671"
+        }
+      },
+      "runtime_import": {
+        "resource": "UI/Pixel/IconBack",
+        "sprite_name": "IconBack",
+        "sprite_mode": "multiple",
+        "crop_bottom_left": {
+          "x": 198,
+          "y": 245,
+          "width": 638,
+          "height": 539
+        },
+        "border": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "pixels_per_unit": 400,
+        "filter_mode": "Point",
+        "mipmaps": false,
+        "texture_compression": "Uncompressed",
+        "wrap_mode": "Clamp",
+        "ui_image_type": "Simple",
+        "preserve_aspect": true
+      }
+    },
+    {
+      "id": "icon-settings-r1",
+      "provider_asset_id": "cmuo6rhig0006skcyfs2cvq7m",
+      "created_at": "2026-09-30T14:13:48.521Z",
+      "generation": {
+        "description": "One isolated settings cog UI icon, eight chunky brass teeth, clear round central hole, dark brown pixel outline, simple 16-bit fantasy RPG pixels. No button, text, glow or shadow. Transparent.",
+        "description_characters": 192,
+        "style": "pixel",
+        "category": "item",
+        "quality": "ultra"
+      },
+      "costs": {
+        "generation": 1,
+        "background_removal": 1
+      },
+      "files": {
+        "original": {
+          "path": "assets/sprites/autosprite/icon-button-r1/settings/original.png",
+          "bytes": 938134,
+          "sha256": "1fadc98ec0c38ac41c5a92121898134a9643028dbcedb1467d2e946152ceea0d"
+        },
+        "transparent": {
+          "path": "assets/sprites/autosprite/icon-button-r1/settings/transparent.png",
+          "bytes": 713821,
+          "sha256": "4d3c71cc7f0dfbdc2931c9b91b829f5832e3b964e82def650156901bfbc66602"
+        },
+        "runtime": {
+          "path": "app/Assets/SoloGym/Resources/UI/Pixel/IconSettings.png",
+          "bytes": 713821,
+          "sha256": "4d3c71cc7f0dfbdc2931c9b91b829f5832e3b964e82def650156901bfbc66602"
+        }
+      },
+      "runtime_import": {
+        "resource": "UI/Pixel/IconSettings",
+        "sprite_name": "IconSettings",
+        "sprite_mode": "multiple",
+        "crop_bottom_left": {
+          "x": 63,
+          "y": 63,
+          "width": 898,
+          "height": 908
+        },
+        "border": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "pixels_per_unit": 400,
+        "filter_mode": "Point",
+        "mipmaps": false,
+        "texture_compression": "Uncompressed",
+        "wrap_mode": "Clamp",
+        "ui_image_type": "Simple",
+        "preserve_aspect": true
+      }
+    }
+  ],
+  "credits_total": 4,
+  "preservation": {
+    "one_object_per_export": true,
+    "runtime_byte_identical_to_transparent_export": true,
+    "image_redraw": false,
+    "crop_method": "Unity metadata only"
+  },
+  "shared_skin": "assets/sprites/autosprite/secondary-action-r1/manifest.json",
+  "verification": {
+    "unity_build": "passed: Unity 6000.3.24f1 Linux Standalone Mono",
+    "native_smoke": "127/127 per profile: 1280x720 ES; 1844x853 EN inset64; 854x480 ES inset32",
+    "os_keyboard": "56/56 passed: real X11 Tab/Shift+Tab/Enter in private Xvfb",
+    "accessibility": "native labels, role, state, screen bounds, guarded activation path and hierarchy lifecycle verified; TalkBack/VoiceOver device validation pending",
+    "visual_review": "all three captures inspected; user visual approval pending",
+    "hashes": "passed",
+    "evidence_directory": "artifacts/visual/IconButton"
+  }
+}
