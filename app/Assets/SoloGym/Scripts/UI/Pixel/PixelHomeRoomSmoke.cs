@@ -43,7 +43,8 @@ namespace SoloGym.UI
                     Check(!item.Visible && !item.Artwork.enabled && item.Artwork.sprite == sprite,
                         item.ObjectId + ": independent hidden state round-trips with the same artwork");
                     item.RestoreState(savedProps[item]);
-                    bool front = item.SlotId == "rack.floor" || item.SlotId == "bench.floor" || item.SlotId == "stool.floor";
+                    bool front = item.SlotId == "rack.floor" || item.SlotId == "bench.floor"
+                        || item.SlotId == "stool.floor" || item.SlotId == "plant.floor";
                     Check(item.transform.parent == (front ? room.Foreground : room.BackObjects)
                         && sprite.texture.filterMode == FilterMode.Point,
                         item.ObjectId + ": correct character depth layer and pixel filtering");

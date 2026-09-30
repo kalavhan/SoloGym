@@ -1,0 +1,42 @@
+{
+  "id": "home.banner",
+  "roomId": "home.refuge.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "banner.wall"
+  ],
+  "drawOrder": 40,
+  "sourceSize": {
+    "x": 1024,
+    "y": 1536
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.8841145833333334
+  },
+  "sourceScale": 0.1519756838905775,
+  "footprint": [
+    {
+      "x": 183,
+      "y": 178
+    },
+    {
+      "x": 841,
+      "y": 178
+    },
+    {
+      "x": 841,
+      "y": 1286
+    },
+    {
+      "x": 183,
+      "y": 1286
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/BannerR1/Base"
+    }
+  ]
+}

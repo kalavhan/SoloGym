@@ -41,6 +41,11 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
   provide an alignment editor so the user can do a manual placement pass.
   Until then, use rough placement and focus on independent assets/integration;
   do not spend iterations polishing alignment or treat current anchors as approved.
+- The user flagged inconsistent prop perspectives on 2026-09-30. Merged art is
+  not camera/perspective approval. Use the actual room shell as the viewpoint
+  reference and the approved Home concept for design/materials, accounting for
+  each object's height. A placement editor cannot repair perspective baked into
+  a sprite; keep the existing furniture correction pass separate and pending.
 
 - Preserve exact user-created AutoSprite exports and manifest in
   `assets/sprites/autosprite/barbarian-user-r1/`. Transparent derivatives live in

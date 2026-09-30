@@ -48,5 +48,9 @@ compositions were visually inspected. Both furniture-batch source audits,
 the room source audit and all twelve new-prop shown/hidden comparisons pass.
 Visual approval, manual alignment and physical mobile testing remain pending.
 
-The next four-sprite batch is a hanging lantern, wall torch, banner and potted
-plant. Desk/shelf decorations and the live Home interface are also still pending.
+PR #24 was merged. The user then flagged mismatched object perspectives and
+positions. Existing furniture needs a separate art correction pass; the later
+alignment editor can adjust placement/scale but cannot repair baked perspective.
+The [next four-sprite batch](pixel-home-decor-r1.md) adds a hanging lantern, wall
+torch, banner and potted plant using the actual room shell as viewpoint reference.
+Desk/shelf decorations and the live Home interface are also still pending.

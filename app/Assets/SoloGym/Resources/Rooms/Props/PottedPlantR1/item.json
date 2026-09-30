@@ -1,0 +1,42 @@
+{
+  "id": "home.potted-plant",
+  "roomId": "home.refuge.r1",
+  "layer": "foreground",
+  "supportedSlots": [
+    "plant.floor"
+  ],
+  "drawOrder": 400,
+  "sourceSize": {
+    "x": 1024,
+    "y": 1536
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.07161458333333337
+  },
+  "sourceScale": 0.16649323621227888,
+  "footprint": [
+    {
+      "x": 275,
+      "y": 1326
+    },
+    {
+      "x": 514,
+      "y": 1426
+    },
+    {
+      "x": 745,
+      "y": 1326
+    },
+    {
+      "x": 521,
+      "y": 1240
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/PottedPlantR1/Base"
+    }
+  ]
+}

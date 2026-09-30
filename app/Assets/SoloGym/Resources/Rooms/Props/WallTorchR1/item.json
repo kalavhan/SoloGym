@@ -1,0 +1,42 @@
+{
+  "id": "home.wall-torch",
+  "roomId": "home.refuge.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "torch.wall"
+  ],
+  "drawOrder": 60,
+  "sourceSize": {
+    "x": 1024,
+    "y": 1536
+  },
+  "pivot": {
+    "x": 0.3564453125,
+    "y": 0.34895833333333337
+  },
+  "sourceScale": 0.0946969696969697,
+  "footprint": [
+    {
+      "x": 262,
+      "y": 75
+    },
+    {
+      "x": 790,
+      "y": 75
+    },
+    {
+      "x": 790,
+      "y": 1410
+    },
+    {
+      "x": 262,
+      "y": 1410
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/WallTorchR1/Base"
+    }
+  ]
+}
