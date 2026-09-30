@@ -1,0 +1,42 @@
+{
+  "id": "home.training-towel",
+  "roomId": "home.refuge.r1",
+  "layer": "foreground",
+  "supportedSlots": [
+    "towel.bench"
+  ],
+  "drawOrder": 210,
+  "sourceSize": {
+    "x": 1024,
+    "y": 1536
+  },
+  "pivot": {
+    "x": 0.380859375,
+    "y": 0.58984375
+  },
+  "sourceScale": 0.12135922330097088,
+  "footprint": [
+    {
+      "x": 119,
+      "y": 431
+    },
+    {
+      "x": 943,
+      "y": 431
+    },
+    {
+      "x": 943,
+      "y": 1278
+    },
+    {
+      "x": 119,
+      "y": 1278
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/TrainingTowelR1/Base"
+    }
+  ]
+}
