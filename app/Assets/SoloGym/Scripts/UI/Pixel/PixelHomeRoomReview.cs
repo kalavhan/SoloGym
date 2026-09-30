@@ -21,6 +21,8 @@ namespace SoloGym.UI
         Rect oldSafeArea;
         int oldWidth, oldHeight;
         float inset;
+        static readonly KeyCode[] FurnitureKeys = { KeyCode.F7, KeyCode.F8, KeyCode.F9, KeyCode.F10,
+            KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
 
         void Awake()
         {
@@ -39,7 +41,8 @@ namespace SoloGym.UI
             Ring = PixelRoomObject.Create(Room, "Rooms/Props/TrainingRingR1/item");
             Bag = PixelRoomObject.Create(Room, "Rooms/Props/HangingBagR1/item");
             var furniture = new List<PixelRoomObject>();
-            foreach (string resource in new[] { "WeightRackR1", "TrainingBenchR1", "BedR1", "StorageChestR1" })
+            foreach (string resource in new[] { "WeightRackR1", "TrainingBenchR1", "BedR1", "StorageChestR1",
+                "WritingDeskR1", "StoolR1", "WallShelfR1", "FloorRugR1" })
             {
                 var item = PixelRoomObject.Create(Room, "Rooms/Props/" + resource + "/item");
                 item.SetVisible(!PixelButtonGallery.HasArgument("-sologym-hide-" + item.SlotId.Split('.')[0]));
@@ -71,9 +74,9 @@ namespace SoloGym.UI
             if (Input.GetKeyDown(KeyCode.F4)) Room.Architecture.enabled = !Room.Architecture.enabled;
             if (Input.GetKeyDown(KeyCode.F5)) Ring.SetVisible(!Ring.Visible);
             if (Input.GetKeyDown(KeyCode.F6)) Bag.SetVisible(!Bag.Visible);
-            // F7 rack, F8 bench, F9 bed, F10 chest; keep artwork independent for review.
+            // F7–F10: rack/bench/bed/chest. 1–4: desk/stool/shelf/rug.
             for (int i = 0; i < Furniture.Count; i++)
-                if (Input.GetKeyDown((KeyCode)((int)KeyCode.F7 + i))) Furniture[i].SetVisible(!Furniture[i].Visible);
+                if (Input.GetKeyDown(FurnitureKeys[i])) Furniture[i].SetVisible(!Furniture[i].Visible);
         }
         public void Relayout()
         {

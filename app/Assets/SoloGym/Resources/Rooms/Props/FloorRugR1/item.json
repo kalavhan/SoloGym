@@ -1,0 +1,42 @@
+{
+  "id": "home.floor-rug",
+  "roomId": "home.refuge.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "rug.floor"
+  ],
+  "drawOrder": 0,
+  "sourceSize": {
+    "x": 1536,
+    "y": 1024
+  },
+  "pivot": {
+    "x": 0.5032552083333334,
+    "y": 0.115234375
+  },
+  "sourceScale": 0.5973295853829936,
+  "footprint": [
+    {
+      "x": 50,
+      "y": 538
+    },
+    {
+      "x": 773,
+      "y": 906
+    },
+    {
+      "x": 1473,
+      "y": 534
+    },
+    {
+      "x": 732,
+      "y": 238
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/Props/FloorRugR1/Base"
+    }
+  ]
+}

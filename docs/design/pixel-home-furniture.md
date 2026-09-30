@@ -50,5 +50,5 @@ comparisons pass. Larger pixel differences (over 10 RGB levels) stay within the
 independently toggled object's projected bounds.
 
 Visual approval and physical mobile testing remain pending. Live Home UI and
-further room objects are still separate work. The next four-sprite batch is
-desk, stool, shelf and rug.
+further room objects are still separate work. The next [four-sprite batch](pixel-home-furniture-r2.md)
+adds desk, stool, shelf and rug.

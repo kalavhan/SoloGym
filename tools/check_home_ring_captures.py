@@ -13,7 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     resources = {"ring": "TrainingRingR1", "bag": "HangingBagR1", "rack": "WeightRackR1",
-                 "bench": "TrainingBenchR1", "bed": "BedR1", "chest": "StorageChestR1"}
+                 "bench": "TrainingBenchR1", "bed": "BedR1", "chest": "StorageChestR1",
+                 "desk": "WritingDeskR1", "stool": "StoolR1", "shelf": "WallShelfR1", "rug": "FloorRugR1"}
     parser.add_argument("--prop", choices=tuple(resources), default="ring")
     parser.add_argument("--captures", type=Path, default=ROOT / "artifacts/visual/HomeRing")
     args = parser.parse_args()
