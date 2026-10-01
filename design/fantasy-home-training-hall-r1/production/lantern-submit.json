@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: d7aa6a9a-1f3e-4211-8559-2d81d5a8bb04\njob_id: d7aa6a9a-1f3e-4211-8559-2d81d5a8bb04\nmodel: pro\ndescription: ONE isolated game prop on TRUE TRANSPARENT background. ONE complete warm amber wall lantern with oak/black iron frame, glowing candle and short wall bracket/attachment ring. Match reference lantern. Self-contained static sprite, restrained warm light only inside glass, no background glow cloud, no wall. The supplied full gym image is the camera, color, lighting and pixel-density authority; the crop is the specific object design. Looking STRAIGHT into a room with modest one-point floor depth, NOT isometric or top-down. Re-create this object at its pictured camera angle, not a generic inventory icon. Crisp 16-bit-inspired pixel art, intentional pixel clusters and restrained outlines. Entire complete prop inside canvas with at least 8 empty transparent pixels around all edges. Reconstruct occluded edges. Exclude ALL neighboring props, character, floor, wall, UI, text, border, cast shadow and scenery. Exactly one isolated object, never a sheet.\nsize: 96x128px\ntransparent: True\ncandidates: 4\nreferences: 2\nseed: 9303107\nasset_id: 8d072d94-c0f2-57bf-8d02-1b3ff6b7a9d9\nasset_status: pending (saved when generation completes)\ncost: 20 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"d7aa6a9a-1f3e-4211-8559-2d81d5a8bb04\")"
+      }
+    ],
+    "isError": false
+  }
+}

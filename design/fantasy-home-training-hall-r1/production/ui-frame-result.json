@@ -1,0 +1,27 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: 0014ed7b-346d-49bd-8e4f-a0b5cd07103e\njob_id: 0014ed7b-346d-49bd-8e4f-a0b5cd07103e\nframes: 1\ntransparent: no \u2014 every pixel is opaque. If you asked for no_background, background removal did not find one; retry or describe the subject on a plain background.\nasset_id: aa27dcfa-6440-5e75-b3fa-e5c9f2a0f186\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ndownload: https://api.pixellab.ai/mcp/images/0014ed7b-346d-49bd-8e4f-a0b5cd07103e/download"
+      }
+    ],
+    "structuredContent": {
+      "job_id": "0014ed7b-346d-49bd-8e4f-a0b5cd07103e",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/0014ed7b-346d-49bd-8e4f-a0b5cd07103e/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/0014ed7b-346d-49bd-8e4f-a0b5cd07103e/download"
+      ],
+      "asset": {
+        "id": "aa27dcfa-6440-5e75-b3fa-e5c9f2a0f186",
+        "type": "image",
+        "status": "saved"
+      }
+    },
+    "isError": false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "before": {
+    "generations_remaining": 4737,
+    "generations_used": 263,
+    "generations_total": 5000
+  },
+  "after": {
+    "generations_remaining": 4408,
+    "generations_used": 591,
+    "generations_total": 5000
+  },
+  "quotedGenerationsForEight": 160,
+  "accountUsedDelta": 328,
+  "accountRemainingDelta": 329,
+  "attribution": "These are account-level snapshots. Attribution of the 328-used/329-remaining delta to this batch versus other jobs is unresolved; it must not be reported as the cost of these eight. Cancellation refunds were not confirmed. Provider final remaining and used fields differ by one from total."
+}

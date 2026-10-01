@@ -1,0 +1,42 @@
+{
+  "id": "home.step-box",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "step-box.anchor"
+  ],
+  "drawOrder": 10,
+  "sourceSize": {
+    "x": 128,
+    "y": 128
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.8208955223880597,
+  "footprint": [
+    {
+      "x": 11,
+      "y": 95
+    },
+    {
+      "x": 117,
+      "y": 95
+    },
+    {
+      "x": 117,
+      "y": 98
+    },
+    {
+      "x": 11,
+      "y": 98
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/step-box"
+    }
+  ]
+}

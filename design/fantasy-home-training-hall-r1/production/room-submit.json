@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 67f61c4f-96ab-444e-9bf0-1c6b4367b63f\njob_id: 67f61c4f-96ab-444e-9bf0-1c6b4367b63f\nmodel: pro\ndescription: Create only the EMPTY ARCHITECTURAL ROOM from the supplied approved gym concept. Match its STRAIGHT-ON front-facing stone back wall, parallel horizontal masonry courses, dark oak ceiling beams, warm amber side light and cool blue-grey palette. Match its composition exactly: floor-wall junction at 62 percent image height; arched castle-view window from x=56 to 81 percent, y=9 to 54 percent. Modest ONE-POINT shallow floor perspective looking straight into the room. NOT isometric, not a corner room. Keep complete orderly stone floor extending behind all props. REMOVE every character, pull-up frame, rings, weights, bench, rug, banner, lamps, cabinet, shelves, plant, box, towels, bottles, all HUD/panels/buttons/labels/text. Only fixed stone/timber architecture and castle night sky through the window. No movable objects baked in. Preserve the approved visual atmosphere, floor depth, window scale and cozy room proportions. Crisp game-ready native 640x360 pixel art. Do not zoom out or change the camera.\nsize: 640x360px\ntransparent: False\ncandidates: 1\nreferences: 1\nseed: 9303100\nasset_id: 0abd9776-6fce-5c70-9bb4-5f67bdd526f0\nasset_status: pending (saved when generation completes)\ncost: 40 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"67f61c4f-96ab-444e-9bf0-1c6b4367b63f\")"
+      }
+    ],
+    "isError": false
+  }
+}

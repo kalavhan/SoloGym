@@ -1,0 +1,22 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: 2f37a4da-fb30-4afa-9f91-84b59e86d9d0\njob_id: 2f37a4da-fb30-4afa-9f91-84b59e86d9d0\nframes: 1\ntransparent: yes\ndownload: https://api.pixellab.ai/mcp/images/2f37a4da-fb30-4afa-9f91-84b59e86d9d0/download"
+      }
+    ],
+    "structuredContent": {
+      "job_id": "2f37a4da-fb30-4afa-9f91-84b59e86d9d0",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/2f37a4da-fb30-4afa-9f91-84b59e86d9d0/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/2f37a4da-fb30-4afa-9f91-84b59e86d9d0/download"
+      ]
+    },
+    "isError": false
+  }
+}

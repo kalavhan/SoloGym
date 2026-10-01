@@ -58,6 +58,13 @@ namespace SoloGym
 
         void Awake()
         {
+            var requestedRenderer = Argument("-sologym-avatar-renderer");
+            if (!HasArgument("-sologym-legacy-home") && (requestedRenderer == null || requestedRenderer == "pixellab"))
+            {
+                gameObject.AddComponent<SoloGym.UI.PixelTrainingHallHome>();
+                enabled = false;
+                return;
+            }
             Application.targetFrameRate = 60;
             Screen.orientation = ScreenOrientation.Portrait;
             reviewMode = Application.isEditor || HasArgument("-sologym-review");

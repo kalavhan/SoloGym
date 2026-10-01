@@ -1,0 +1,122 @@
+{
+  "id": "home.training-hall.r1",
+  "referenceSize": {
+    "x": 640,
+    "y": 360
+  },
+  "architecture": "Rooms/TrainingHallR1/architecture",
+  "exterior": "Rooms/TrainingHallR1/exterior",
+  "exteriorRect": {
+    "x": 380,
+    "y": 32,
+    "width": 136,
+    "height": 176
+  },
+  "anchors": [
+    {
+      "id": "hero.feet",
+      "point": {
+        "x": 328,
+        "y": 288
+      }
+    },
+    {
+      "id": "exercise-rug.anchor",
+      "point": {
+        "x": 310.0,
+        "y": 315.6595744680851
+      }
+    },
+    {
+      "id": "pullup-station.anchor",
+      "point": {
+        "x": 147.13004484304932,
+        "y": 248.4170403587444
+      }
+    },
+    {
+      "id": "weight-rack.anchor",
+      "point": {
+        "x": 43.310810810810814,
+        "y": 260.97297297297297
+      }
+    },
+    {
+      "id": "bench.anchor",
+      "point": {
+        "x": 114.17391304347827,
+        "y": 301.8695652173913
+      }
+    },
+    {
+      "id": "cabinet.anchor",
+      "point": {
+        "x": 582.4137931034483,
+        "y": 254.89655172413794
+      }
+    },
+    {
+      "id": "wall-shelf.anchor",
+      "point": {
+        "x": 570.0,
+        "y": 147.0909090909091
+      }
+    },
+    {
+      "id": "banner.anchor",
+      "point": {
+        "x": 280.1284403669725,
+        "y": 177.58715596330276
+      }
+    },
+    {
+      "id": "lantern-left.anchor",
+      "point": {
+        "x": 38.78761061946903,
+        "y": 139.00884955752213
+      }
+    },
+    {
+      "id": "lantern-right.anchor",
+      "point": {
+        "x": 566.1238938053098,
+        "y": 120.91150442477877
+      }
+    },
+    {
+      "id": "step-box.anchor",
+      "point": {
+        "x": 496.0,
+        "y": 282.6268656716418
+      }
+    },
+    {
+      "id": "rolled-mat.anchor",
+      "point": {
+        "x": 553.0,
+        "y": 134.6969696969697
+      }
+    },
+    {
+      "id": "towels.anchor",
+      "point": {
+        "x": 556.0,
+        "y": 177.5
+      }
+    },
+    {
+      "id": "water-flask.anchor",
+      "point": {
+        "x": 593.4736842105264,
+        "y": 178.73684210526315
+      }
+    },
+    {
+      "id": "plant.anchor",
+      "point": {
+        "x": 608.7155963302753,
+        "y": 149.4954128440367
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "home.plant",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "plant.anchor"
+  ],
+  "drawOrder": 8,
+  "sourceSize": {
+    "x": 96,
+    "y": 128
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.6422018348623854,
+  "footprint": [
+    {
+      "x": 10,
+      "y": 118
+    },
+    {
+      "x": 90,
+      "y": 118
+    },
+    {
+      "x": 90,
+      "y": 121
+    },
+    {
+      "x": 10,
+      "y": 121
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/plant"
+    }
+  ]
+}

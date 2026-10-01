@@ -1,0 +1,40 @@
+{
+  "unity": "6000.3.24f1",
+  "target": "Linux Standalone, local Unity player via xvfb/llvmpipe",
+  "buildResult": "Succeeded",
+  "entryPoint": "HomeScreen -> PixelTrainingHallHome",
+  "assetCheck": "python3 tools/check_training_hall_assets.py: passed",
+  "reports": [
+    {
+      "report": "artifacts/visual/TrainingHall/home-en-wide-teen.smoke.json",
+      "passed": true,
+      "checks": 51
+    },
+    {
+      "report": "artifacts/visual/TrainingHall/home-es-1280.smoke.json",
+      "passed": true,
+      "checks": 53
+    },
+    {
+      "report": "artifacts/visual/TrainingHall/home-es-854.smoke.json",
+      "passed": true,
+      "checks": 51
+    },
+    {
+      "report": "artifacts/visual/TrainingHall/navigation-regression.smoke.json",
+      "passed": true,
+      "checks": 193
+    }
+  ],
+  "manualVisualInspection": [
+    "Spanish 1280x720 with adult review fasting entry",
+    "Spanish 854x480 female-fat without fasting",
+    "English 1600x720 female-muscular teen profile, 24px safe inset"
+  ],
+  "limits": [
+    "No mobile-device performance claim",
+    "Existing training screens retain earlier interface",
+    "No live account/plan service or working fasting tracker in this Home iteration",
+    "New prop assembly awaits user PR review"
+  ]
+}

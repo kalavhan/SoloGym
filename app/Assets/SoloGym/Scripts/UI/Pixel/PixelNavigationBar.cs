@@ -23,6 +23,17 @@ namespace SoloGym.UI
         AccessibilityHierarchy hierarchy;
         Selectable previous, next;
         const float MinimumWidth = 180, Gap = 12;
+        float minimumCellWidth = MinimumWidth, cellGap = Gap;
+
+        public void SetLayoutMetrics(float minimumWidth, float gap)
+        {
+            if (float.IsNaN(minimumWidth) || float.IsInfinity(minimumWidth) || minimumWidth < 100
+                || float.IsNaN(gap) || float.IsInfinity(gap) || gap < 0 || gap > 32)
+                throw new ArgumentOutOfRangeException(nameof(minimumWidth));
+            minimumCellWidth = minimumWidth; cellGap = gap;
+            foreach (var tab in tabs) tab.SetCompactLabel(minimumWidth < MinimumWidth);
+            RefreshLayout();
+        }
 
         public static PixelNavigationBar Create(Transform parent, string[] ids, string[] labels, string[] visibleIds, string currentId)
         {
@@ -114,9 +125,9 @@ namespace SoloGym.UI
         {
             if (layout == null) return;
             var visible = Visible(); if (visible.Count == 0) return;
-            float width = Mathf.Max(MinimumWidth, ((RectTransform)transform).rect.width);
-            Columns = Mathf.Clamp(Mathf.FloorToInt((width + Gap) / (MinimumWidth + Gap)), 1, visible.Count);
-            float cell = (width - Gap * (Columns - 1)) / Columns, y = 0;
+            float width = Mathf.Max(minimumCellWidth, ((RectTransform)transform).rect.width);
+            Columns = Mathf.Clamp(Mathf.FloorToInt((width + cellGap) / (minimumCellWidth + cellGap)), 1, visible.Count);
+            float cell = (width - cellGap * (Columns - 1)) / Columns, y = 0;
             for (int start = 0; start < visible.Count; start += Columns)
             {
                 float height = 64;
@@ -128,12 +139,12 @@ namespace SoloGym.UI
                 }
                 for (int i = start; i < Mathf.Min(visible.Count, start + Columns); ++i)
                 {
-                    var rect = (RectTransform)visible[i].transform; rect.anchoredPosition = new Vector2((i - start) * (cell + Gap), -y);
+                    var rect = (RectTransform)visible[i].transform; rect.anchoredPosition = new Vector2((i - start) * (cell + cellGap), -y);
                     rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
                 }
-                y += height + Gap;
+                y += height + cellGap;
             }
-            PreferredHeight = y - Gap; layout.minHeight = layout.preferredHeight = PreferredHeight;
+            PreferredHeight = y - cellGap; layout.minHeight = layout.preferredHeight = PreferredHeight;
         }
         public void BindAccessibility(AccessibilityHierarchy owner, string localizedLabel)
         {

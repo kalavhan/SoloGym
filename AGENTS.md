@@ -12,6 +12,19 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
   (user direction, 2026-09-30), reusing the room-object component. Other reusable
   UI components retain component-sized PRs with art, interaction states,
   integration fixtures and focused verification.
+- The current approved Home is the straight-on fantasy training hall in
+  `design/fantasy-home-training-hall-r1/`. The user approved it with "love this,
+  do it." It supersedes the boxing/bedroom and rejected isometric/orthographic
+  experiments. Deliver room, props and live Home UI together in this integration.
+- PixelLab MCP is authorized for the current Home room/props. The eight static
+  PixelLab Barbarians are approved in `design/pixellab-barbarian-eight-256-r1/`.
+  Keep every character's TOTAL source canvas at most 256x256, including margins.
+  Use the original Downloads references, not AutoSprite recolorings. Do not
+  regenerate characters to fit screens.
+- Eight user-created directional sets are preserved with provider metadata in
+  `assets/sprites/pixellab/barbarian-directions-r1/`. They passed canvas checks;
+  Home still uses the approved frontal exports. Directional visual approval and
+  future animation implementation are separate. Do not duplicate generations.
 - MVP: login/account creation, personal home gym, editable workouts/history,
   routine-driven dungeon bosses and optional adult fasting. Retain necessary
   onboarding, readiness and character-selection steps.
@@ -32,23 +45,16 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
 
 ## Art and UI pipeline
 
-- Home visual target approved on 2026-09-30: `design/fantasy-home-r2/home-approved.png`.
-  Follow `design/fantasy-home-r2/IMPLEMENTATION.md`; match the assembled Home
-  composition before more unrelated component galleries. Keep room shell, props,
-  character, sprite skins, icons and live UI/text separate. Never ship the
-  flattened reference as the screen/background.
-- Room prop positions and sizes are provisional. After all room items are added,
-  provide an alignment editor so the user can do a manual placement pass.
-  Until then, use rough placement and focus on independent assets/integration;
-  do not spend iterations polishing alignment or treat current anchors as approved.
-  The local editor is now documented in `docs/design/pixel-home-alignment-editor.md`.
-  Preserve its exported layout files and apply the user's reviewed JSON; do not
-  replace a manual placement pass with newly guessed coordinates.
-- The user flagged inconsistent prop perspectives on 2026-09-30. Merged art is
-  not camera/perspective approval. Use the actual room shell as the viewpoint
-  reference and the approved Home concept for design/materials, accounting for
-  each object's height. A placement editor cannot repair perspective baked into
-  a sprite; keep the existing furniture correction pass separate and pending.
+- Home uses `assets/sprites/pixellab/training-hall-r1/`: separate architecture,
+  window exterior, 14 placeable props, approved static characters and native
+  uGUI controls. Compare actual Unity captures to the approved concept.
+  Preserve the old room/boxing assets as evidence and legacy review resources.
+- Composition and perspective belong to the art. An alignment editor cannot
+  correct foreshortening baked into a sprite. Keep the straight-on view and
+  plausible prop scale; no boxing ring, punching bag or bedroom furnishings.
+- Local decoration saves belong to the room ID. The new hall uses its own
+  versioned layout and does not overwrite old alignment-editor exports. Preserve
+  user placement drafts. The rug's authored fabric and trim move as one object.
 
 - Preserve exact user-created AutoSprite exports and manifest in
   `assets/sprites/autosprite/barbarian-user-r1/`. Transparent derivatives live in
@@ -56,7 +62,8 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
   preserves proportions and a shared feet anchor. Source preservation and
   component verification are not final runtime-art or screen approval.
 - Built-in imagegen is authorized for requested screen concepts/references.
-  Final character/sprite production uses AutoSprite MCP and its own review.
+  Current Home/Barbarian production uses PixelLab MCP as scoped above; earlier
+  AutoSprite exports remain preserved. New generation batches need scope/review.
   Do not regenerate the user's characters to fit a screen.
 - The separately prepared local `design/fantasy-mvp-r1/` render pack contains
   review proposals, not decomposed production assets or approved implementations.
@@ -65,7 +72,7 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
 - Use native uGUI controls with pixel sprite skins. Borders, textures and icons
   are art; labels, values, states and layout are live components. Use nine-slice
   or tiled images where suitable. Do not bake screens/forms/text into buttons.
-- Separate room shell, ring, bag, bench, rack, furniture and decoration objects.
+- Separate room shell, training apparatus, bench, rack, furniture and decoration objects.
   Seasonal skins/overlays keep object IDs, footprints, pivots and placement.
   A flattened reference is not proof these independent assets exist.
 - One object per asset export, never a contact sheet as generation input.
@@ -78,9 +85,8 @@ clothing pipeline and per-window delivery workflow. Current requirements are in
 ## Preserve useful work
 
 - Keep auth, privacy/onboarding states, training data, generation logic, research
-  and tests. A training UI in separate local work uses fictional review fixtures;
-  it is not included in this component PR and does not establish live personal
-  plan generation or production reward issuance on main.
+  and tests. Current Home/training data is a fictional review fixture; this
+  integration does not establish live personal plans or production rewards.
 - Preserve researched readiness/recovery/youth requirements. Appearance does not
   prescribe training. Missed workouts create no punitive catch-up debt; extra
   reps or load must not farm unbounded damage/rewards.

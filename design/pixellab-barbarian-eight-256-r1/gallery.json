@@ -1,0 +1,296 @@
+{
+  "schema": 1,
+  "batch": "pixellab-barbarian-eight-256-r1",
+  "costSummary": "All eight are native PixelLab 256 \u00d7 256 exports; no post-generation resizing. Original Downloads references supply design and palette.",
+  "characters": [
+    {
+      "id": "male-skinny",
+      "label": "Male \u00b7 Skinny",
+      "width": 256,
+      "height": 256,
+      "file": "sprites/male-skinny.png",
+      "alphaBounds": [
+        79,
+        2,
+        180,
+        249
+      ],
+      "transparentMargins": [
+        79,
+        2,
+        76,
+        7
+      ],
+      "feetAnchorTopLeft": [
+        127.5,
+        248
+      ],
+      "sourceBounds": [
+        385,
+        9,
+        883,
+        1223
+      ],
+      "sourceSha256": "4c8d7954dac585aed2a853d590d2d6385c21ff118c06e2da4fe8606132760bec",
+      "spriteSha256": "200d5c0c6d5afd1f78695e9103d762c950a06cdcde224255597660bab693d3fb",
+      "jobId": "15dc14c9-fabd-4061-838a-6303f42b0fec",
+      "qaSummary": "256 \u00d7 256 \u00b7 transparent border \u00b7 complete silhouette checked",
+      "runtimeApproved": false,
+      "visualApproved": true
+    },
+    {
+      "id": "male-medium",
+      "label": "Male \u00b7 Medium",
+      "width": 256,
+      "height": 256,
+      "file": "sprites/male-medium.png",
+      "alphaBounds": [
+        71,
+        4,
+        187,
+        249
+      ],
+      "transparentMargins": [
+        71,
+        4,
+        69,
+        7
+      ],
+      "feetAnchorTopLeft": [
+        127.0,
+        248
+      ],
+      "sourceBounds": [
+        346,
+        21,
+        918,
+        1218
+      ],
+      "sourceSha256": "1bd4a12bf46c9781e4d86af10516f5b07b787a3f77590a920efa0bba0b6decd6",
+      "spriteSha256": "59c46eb13ea5b68fbb363b5c65450f621ca6f9556c5bf89fa02f7c5f4ca904a9",
+      "jobId": "135b0f94-1513-44b9-9a92-fc404accff4f",
+      "qaSummary": "256 \u00d7 256 \u00b7 transparent border \u00b7 complete silhouette checked",
+      "runtimeApproved": false,
+      "visualApproved": true
+    },
+    {
+      "id": "male-fat",
+      "label": "Male \u00b7 Fat",
+      "width": 256,
+      "height": 256,
+      "file": "sprites/male-fat.png",
+      "alphaBounds": [
+        54,
+        5,
+        203,
+        251
+      ],
+      "transparentMargins": [
+        54,
+        5,
+        53,
+        5
+      ],
+      "feetAnchorTopLeft": [
+        128.0,
+        250
+      ],
+      "sourceBounds": [
+        266,
+        27,
+        997,
+        1231
+      ],
+      "sourceSha256": "be8b1f0610ac74327eeb43fecdab0348b992add1e0d2c5b48e351eef07d325ba",
+      "spriteSha256": "58d6b15f0a77a5b30d1db4165b5cd0b36be44e496ef98906004434d9cb856e9f",
+      "jobId": "21e344fb-7f41-4af5-98a9-06a185816d89",
+      "qaSummary": "256 \u00d7 256 \u00b7 transparent border \u00b7 complete silhouette checked",
+      "runtimeApproved": false,
+      "visualApproved": true
+    },
+    {
+      "id": "male-muscular",
+      "label": "Male \u00b7 Muscular",
+      "width": 256,
+      "height": 256,
+      "file": "sprites/male-muscular.png",
+      "alphaBounds": [
+        70,
+        2,
+        187,
+        251
+      ],
+      "transparentMargins": [
+        70,
+        2,
+        69,
+        5
+      ],
+      "feetAnchorTopLeft": [
+        127.0,
+        250
+      ],
+      "sourceBounds": [
+        343,
+        12,
+        915,
+        1226
+      ],
+      "sourceSha256": "fc8516392ca134c4f1be66a9432cd085f5c008fb0dfeadc44004e821b81f4561",
+      "spriteSha256": "a78d381e55912a149d12eb29ba318e07f9e3e8aca6c8184d1d539fff79d5180b",
+      "jobId": "d5b5780e-40fd-4b9d-a878-7cc0e83257f6",
+      "qaSummary": "256 \u00d7 256 \u00b7 transparent border \u00b7 complete silhouette checked",
+      "runtimeApproved": false,
+      "visualApproved": true
+    },
+    {
+      "id": "female-skinny",
+      "label": "Female \u00b7 Skinny",
+      "width": 256,
+      "height": 256,
+      "file": "sprites/female-skinny.png",
+      "alphaBounds": [
+        78,
+        6,
+        178,
+        250
+      ],
+      "transparentMargins": [
+        78,
+        6,
+        78,
+        6
+      ],
+      "feetAnchorTopLeft": [
+        127.0,
+        249
+      ],
+      "sourceBounds": [
+        379,
+        30,
+        872,
+        1224
+      ],
+      "sourceSha256": "e1309ffe068fb112d192380568bd0835588f69a43f53e83e3ac7703c3da197fe",
+      "spriteSha256": "55a32dd68d383d3b0e5205f54d5a92b8fe9c127a271603af1ade5c226e1dc394",
+      "jobId": "59498519-fcc5-4f3a-92f2-b201b6273bb8",
+      "qaSummary": "256 \u00d7 256 \u00b7 transparent border \u00b7 complete silhouette checked",
+      "runtimeApproved": false,
+      "visualApproved": true
+    },
+    {
+      "id": "female-medium",
+      "label": "Female \u00b7 Medium",
+      "width": 256,
+      "height": 256,
+      "file": "sprites/female-medium.png",
+      "alphaBounds": [
+        71,
+        4,
+        183,
+        249
+      ],
+      "transparentMargins": [
+        71,
+        4,
+        73,
+        7
+      ],
+      "feetAnchorTopLeft": [
+        127.5,
+        248
+      ],
+      "sourceBounds": [
+        346,
+        20,
+        898,
+        1222
+      ],
+      "sourceSha256": "96f17a7bec3cbf49071446a38e5a7698c71076a352865a9c0352a20c468b1ee0",
+      "spriteSha256": "29ae4951e28fabeebb10421ad880e8ff8669faa0785a6cf035e321de88aedaff",
+      "jobId": "66c31a7b-aa79-4caa-a482-7c5cae947e46",
+      "qaSummary": "256 \u00d7 256 \u00b7 transparent border \u00b7 complete silhouette checked",
+      "runtimeApproved": false,
+      "visualApproved": true
+    },
+    {
+      "id": "female-fat",
+      "label": "Female \u00b7 Fat",
+      "width": 256,
+      "height": 256,
+      "file": "sprites/female-fat.png",
+      "alphaBounds": [
+        55,
+        2,
+        199,
+        252
+      ],
+      "transparentMargins": [
+        55,
+        2,
+        57,
+        4
+      ],
+      "feetAnchorTopLeft": [
+        126.5,
+        251
+      ],
+      "sourceBounds": [
+        271,
+        12,
+        975,
+        1235
+      ],
+      "sourceSha256": "07700210459e1fdf131de17a9bb78efab5955dbf53ed9d2804811805d6c602da",
+      "spriteSha256": "106a61a43b6828289243240013e70bb366f90250441f27547abf978940edc8c7",
+      "jobId": "c48b8df2-7244-41cc-bc2a-c62267b40125",
+      "qaSummary": "256 \u00d7 256 \u00b7 transparent border \u00b7 complete silhouette checked",
+      "runtimeApproved": false,
+      "visualApproved": true
+    },
+    {
+      "id": "female-muscular",
+      "label": "Female \u00b7 Muscular",
+      "width": 256,
+      "height": 256,
+      "file": "sprites/female-muscular.png",
+      "alphaBounds": [
+        76,
+        6,
+        179,
+        248
+      ],
+      "transparentMargins": [
+        76,
+        6,
+        77,
+        8
+      ],
+      "feetAnchorTopLeft": [
+        128.0,
+        247
+      ],
+      "sourceBounds": [
+        372,
+        28,
+        878,
+        1218
+      ],
+      "sourceSha256": "38babae4826badc5e4eec40c04493ffe2267ceddd2924f8da86d4b2af71134e9",
+      "spriteSha256": "c7e4b03f369209908a01b1450b3363ca4af150965c216b81f5451f5dbfc391f0",
+      "jobId": "6396e2f9-3db3-48df-a40b-586b2bdea687",
+      "qaSummary": "256 \u00d7 256 \u00b7 transparent border \u00b7 complete silhouette checked",
+      "runtimeApproved": false,
+      "visualApproved": true
+    }
+  ],
+  "userApproval": {
+    "status": "approved",
+    "recordedDate": "2026-09-30",
+    "source": "User message in this task",
+    "quote": "i like them. let's keep them, I have made some of them characters (with 8 directions) the others are in the go, what is next?",
+    "scope": "All eight static frontal PixelLab Barbarians, each complete PNG at most 256x256, retained as the approved character art set.",
+    "directionalExports": "User reports some eight-direction characters created and others in progress; exports have not yet been imported or validated.",
+    "runtimeIntegrationVerified": false
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "home.pullup-station",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "pullup-station.anchor"
+  ],
+  "drawOrder": 0,
+  "sourceSize": {
+    "x": 256,
+    "y": 256
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.8385650224215246,
+  "footprint": [
+    {
+      "x": 30,
+      "y": 237
+    },
+    {
+      "x": 240,
+      "y": 237
+    },
+    {
+      "x": 240,
+      "y": 240
+    },
+    {
+      "x": 30,
+      "y": 240
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/pullup-station"
+    }
+  ]
+}

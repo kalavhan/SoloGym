@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 18e44a6c-ad9f-459f-99db-af4da3823b29\njob_id: 18e44a6c-ad9f-459f-99db-af4da3823b29\nmodel: pro\ndescription: ONE isolated game prop on TRUE TRANSPARENT background. ONE complete oak-and-forged-iron pull-up station with two hanging gymnastic rings and complete straps. Four grounded braced support feet, stable vertical uprights, full high horizontal grip bar. Match this exact front-facing structure, proportions and human scale. Empty clear hanging space, transparent between bars/rings. No mat, weights, floor or wall. The supplied full gym image is the camera, color, lighting and pixel-density authority; the crop is the specific object design. Looking STRAIGHT into a room with modest one-point floor depth, NOT isometric or top-down. Re-create this object at its pictured camera angle, not a generic inventory icon. Crisp 16-bit-inspired pixel art, intentional pixel clusters and restrained outlines. Entire complete prop inside canvas with at least 8 empty transparent pixels around all edges. Reconstruct occluded edges. Exclude ALL neighboring props, character, floor, wall, UI, text, border, cast shadow and scenery. Exactly one isolated object, never a sheet.\nsize: 192x224px\ntransparent: True\ncandidates: 1\nreferences: 2\nseed: 9303101\nasset_id: bdbee5a7-db7f-55ed-9fe6-638ae644f839\nasset_status: pending (saved when generation completes)\ncost: 20 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"18e44a6c-ad9f-459f-99db-af4da3823b29\")"
+      }
+    ],
+    "isError": false
+  }
+}

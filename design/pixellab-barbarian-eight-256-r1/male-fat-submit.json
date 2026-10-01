@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 21e344fb-7f41-4af5-98a9-06a185816d89\njob_id: 21e344fb-7f41-4af5-98a9-06a185816d89\nmodel: pro\ndescription: ONE full-body adult male Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Obese/heavy adult man: visibly prominent ROUND BELLY with soft lower rolls, wide soft waist, plump chest and arms, full rounded cheeks, thick rounded thighs/calves with small soft rolls. No abs, no muscle definition, no slimming. Same curly brown hair and full beard; cream fur/leather shoulder piece on viewer RIGHT, diagonal brown harness, other pectoral and belly exposed. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nstyle_image: yes (color_palette)\nseed: 9302702\nasset_id: 6d6043fe-52d9-57ef-b70e-8240fcfd0f6a\nasset_status: pending (saved when generation completes)\ncost: 20 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"21e344fb-7f41-4af5-98a9-06a185816d89\")"
+      }
+    ],
+    "isError": false
+  }
+}

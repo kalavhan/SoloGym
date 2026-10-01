@@ -1,0 +1,42 @@
+{
+  "id": "home.rolled-mat",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "rolled-mat.anchor"
+  ],
+  "drawOrder": 7,
+  "sourceSize": {
+    "x": 128,
+    "y": 64
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.6060606060606061,
+  "footprint": [
+    {
+      "x": 7,
+      "y": 45
+    },
+    {
+      "x": 121,
+      "y": 45
+    },
+    {
+      "x": 121,
+      "y": 48
+    },
+    {
+      "x": 7,
+      "y": 48
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/rolled-mat"
+    }
+  ]
+}
