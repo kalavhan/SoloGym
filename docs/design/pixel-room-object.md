@@ -14,12 +14,16 @@ layer and draw order. The scene has explicit behind-character and foreground
 prop layers; ties within a layer sort by object ID. The ring uses the former.
 
 `SaveState` / `RestoreState` round-trip a versioned JSON value containing object,
-room, slot, variant and visibility. They do not write to the user's account,
+room, slot, variant and visibility. Version 2 also stores position, a uniform
+scale multiplier, layer and draw order. Version 1 still restores the slot's
+authored defaults. They do not write to the user's account,
 PlayerPrefs or an inventory. Unsupported versions/identities/slots/variants are
 rejected before mutating the displayed prop. Duplicate item IDs and occupied
 slots are rejected before creating another GameObject, including hidden items.
-This MVP component uses fixed supported slots, not a drag editor or arbitrary
-free placement. Footprints are exposed as copies for later placement logic;
+The original component used fixed supported slots. The
+[alignment editor](pixel-home-alignment-editor.md) now supplies bounded free
+placement overrides while retaining those stable slot identities. Footprints
+are returned as copies transformed by the current placement and scale;
 collision handling is not implemented here.
 
 For floor props the quadrilateral describes projected floor occupancy; for hanging
@@ -70,9 +74,10 @@ outside the ring. Further furniture, lamps, rug and live UI remain separate work
 On 2026-09-30 the user said the ring placement differs from the render and requested
 a manual alignment pass once all room items exist. Current anchors and scales are
 provisional. Use rough placement now; do not repeatedly fine-tune positions.
-The later editor should select individual props, allow position/scale adjustment,
-compare with the reference, and export/import a saved layout. That editor and a
-versioned layout format extending the current fixed-slot state are future work.
+The editor now selects individual props, adjusts position/scale, compares the
+reference and exports/imports a saved layout. See its linked guide for the
+portable document format and Unity review command. The current layout remains
+provisional until the user submits and approves their manual pass.
 
 The user subsequently flagged inconsistent perspectives in the assembled props.
 Keep that art correction separate: moving or scaling a sprite cannot change its

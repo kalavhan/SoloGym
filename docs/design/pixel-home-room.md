@@ -58,6 +58,12 @@ the character hidden. Automated captures accept the established `-sologym-smoke`
 `-sologym-capture /absolute/path.png`, `-sologym-safe-inset` and locale arguments.
 The smoke run writes JSON and separate-layer captures before restoring the scene.
 
+The [Home alignment editor](pixel-home-alignment-editor.md) can now export a
+complete room layout. Pass `-sologym-room-layout /absolute/path/layout.json` to
+load it in this review player. The default composition remains unchanged when
+that argument is absent. This authoring import does not save account/inventory
+data or change the selected character appearance.
+
 PR #20 delivered this room shell. The [next iteration](pixel-room-object.md) adds
 the independent training ring and its room-object contract. Remaining props,
 HUD, routine binding, navigation styling and

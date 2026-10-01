@@ -1,0 +1,242 @@
+{
+    "passed": 59,
+    "failed": 0,
+    "checks": [
+        {
+            "name": "default layout round-trips into explicit placements",
+            "passed": true
+        },
+        {
+            "name": "home.training-ring imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.hanging-bag imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.weight-rack imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.training-bench imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.bed imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.storage-chest imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.writing-desk imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.stool imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.wall-shelf imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.floor-rug imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.hanging-lantern imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.wall-torch imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.banner imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.potted-plant imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.trophy imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.open-book imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.training-bottle imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "home.training-towel imported placement/visibility/depth",
+            "passed": true
+        },
+        {
+            "name": "shared character framing imports without changing appearance",
+            "passed": true
+        },
+        {
+            "name": "female-fat keeps imported feet position",
+            "passed": true
+        },
+        {
+            "name": "male-skinny keeps imported feet position",
+            "passed": true
+        },
+        {
+            "name": "edited export round-trips exactly",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "invalid layout rejected without partial mutation",
+            "passed": true
+        },
+        {
+            "name": "legacy v1 save restores slot defaults",
+            "passed": true
+        },
+        {
+            "name": "variant rebinding preserves edited placement",
+            "passed": true
+        },
+        {
+            "name": "layer/order edits change actual Unity hierarchy",
+            "passed": true
+        },
+        {
+            "name": "home.floor-rug keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.banner keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.wall-shelf keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.trophy keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.wall-torch keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.hanging-lantern keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.training-ring keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.hanging-bag keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.bed keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.storage-chest keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.writing-desk keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.open-book keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.weight-rack keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.training-bench keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.training-towel keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.training-bottle keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.stool keeps imported anchor after resize",
+            "passed": true
+        },
+        {
+            "name": "home.potted-plant keeps imported anchor after resize",
+            "passed": true
+        }
+    ]
+}

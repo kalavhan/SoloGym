@@ -1,6 +1,6 @@
 # Fantasy pixel UI: reusable components and delivery plan
 
-This is the implementation approach for the [confirmed product direction](../product/fantasy-mvp-direction.md), first recorded 2026-09-29. The user requested complete visual references before implementation. On 2026-09-30 they changed room-art delivery to **four independent sprites per PR/MR**. Other reusable UI components retain component-sized PRs.
+This is the implementation approach for the [confirmed product direction](../product/fantasy-mvp-direction.md), first recorded 2026-09-29. The user requested complete visual references before implementation. Their latest direction on 2026-09-30 is **eight independent sprites per PR/MR**, replacing the earlier four-sprite batches to reduce review overhead. Other reusable UI components retain component-sized PRs.
 
 ## Current Home priority
 
@@ -15,9 +15,13 @@ The [hanging bag](pixel-home-bag.md) was merged in PR #22, followed by the
 The [second furniture batch](pixel-home-furniture-r2.md) added desk, stool, shelf
 and rug in merged PR #24. The [first decoration batch](pixel-home-decor-r1.md) added
 lantern, torch, banner and potted plant in merged PR #25. The [second decoration
-batch](pixel-home-decor-r2.md) adds trophy, open book, training bottle and towel.
-With these core accents present, prioritize the user's alignment editor next;
-additional decor can wait. The live Home UI is still pending.
+batch](pixel-home-decor-r2.md) added trophy, open book, training bottle and towel
+in merged PR #26. The [alignment editor](pixel-home-alignment-editor.md) now
+provides the user's manual placement pass for all 18 props and the character,
+with a portable layout that the Unity review player can load.
+Next, integrate the live Home interface against the approved composition;
+additional decor can wait. The user's saved placement and art perspective review
+remain separate from that UI integration.
 
 The user will do a **manual alignment pass** after room items are present
 (2026-09-30). Add an editor at that stage for individual object selection,
@@ -84,7 +88,7 @@ Home is a personal space containing the selected character. Build it as a stable
 
 Each placeable item should declare an ID, placement anchor, footprint, draw-order rule, supported location and variant ID. Its winter treatment must retain the same object identity, scale, pivot and intended footprint: add snow to the existing ring, rather than generate an unrelated snow-themed ring in a newly composed room. A seasonal overlay must respect rope/post geometry and the item's silhouette. Inventory and placement save stable IDs/positions; decorations are not hardcoded into Home screenshots.
 
-**Implementation recommendation:** begin with a small set of placement slots and a few props, then expand after the first room works. Free placement, collision rules, large inventories and theme catalogs are later scope decisions. Review each object independently while delivering four sprites together per MR.
+**Implementation recommendation:** begin with a small set of placement slots and a few props, then expand after the first room works. Free placement, collision rules, large inventories and theme catalogs are later scope decisions. Review each object independently while delivering eight sprites together per MR.
 
 ## Character source contract
 
@@ -94,13 +98,13 @@ The first character viewport supports full static appearances and fixed source c
 
 ## Delivery batches
 
-Room-art MRs contain **four separate sprite assets** using the shared room-object
+Room-art MRs contain **eight separate sprite assets** using the shared room-object
 component. Keep each object's source, prompt, export, identity and placement data
 separate within the batch. Other reusable UI components remain component-sized.
 
 The **primary pixel button** was merged in PR #12. The [framed content panel](pixel-content-panel.md) was merged in PR #13. The [labeled form field](pixel-form-field.md) was merged in PR #14. The [secondary and text actions](pixel-secondary-action.md) were merged in PR #15. The [icon buttons](pixel-icon-button.md) were merged in PR #16. The [single-choice control](pixel-choice-control.md) was merged in PR #17, including the requirement that difficulty remains editable during a boss routine. The [static character viewport](pixel-character-viewport.md) was merged in PR #18 with all eight user-created Barbarians. The [navigation tabs](pixel-navigation-tabs.md) were merged in PR #19, with caller-confirmed current state and optional adult-only fasting visibility. Further components remain reviewable individually, but their visual fixture now belongs inside the approved Home composition.
 
-Each component PR or four-sprite room batch includes:
+Each component PR or eight-sprite room batch includes:
 
 1. Its isolated artwork and provenance, reusable component/prefab, required state behavior and narrowly necessary support code.
 2. A small integration fixture showing it at its intended size and alongside an already accepted component where available.
@@ -112,7 +116,7 @@ Approval of a reference does not certify an implementation. Review the component
 
 ## Ordered component backlog
 
-Each numbered row identifies a reusable component. Bundle room sprites four per
+Each numbered row identifies a reusable component. Bundle room sprites eight per
 PR as requested. Large domain features such as authentication, routine storage
 or entitlement services remain separate tasks.
 
@@ -133,7 +137,7 @@ or entitlement services remain separate tasks.
 | 09e | [Second furniture batch](pixel-home-furniture-r2.md) | Four independent sprites: desk, stool, wall shelf and rug; empty surfaces for later decorations, rug behind occupants |
 | 09f | [First decoration batch](pixel-home-decor-r1.md) | Four independent static sprites: lantern, torch, banner and plant; room-based viewpoint references, rough placement |
 | 09g | [Second decoration batch](pixel-home-decor-r2.md) | Four independent static sprites: trophy, book, bottle and towel; separate shelf/desk/bench accents with reference-guided support planes |
-| 09h | Home alignment editor | Next: select individual objects, adjust position/uniform scale, compare reference, export/import a versioned layout; perspective correction remains a separate art task |
+| 09h | [Home alignment editor](pixel-home-alignment-editor.md) | Implemented for review: selection, position/uniform scale, optional furniture grouping, depth/visibility, reference comparison, undo/redo and versioned layout export/import into Unity; manual approval and perspective correction remain pending |
 | 10 | Routine summary row | Current/completed/missed/rest state, clear status and edit entry without punitive wording |
 | 11 | Week selector | Dates, selected day and routine status; workout area |
 | 12 | Exercise prescription card | Sets/reps/time, per-side semantics, equipment and substitution action |
@@ -143,7 +147,7 @@ or entitlement services remain separate tasks.
 | 16 | Confirmation dialog | Clear action/cancel, unsaved changes and focus handling; routine edit/exit |
 | 17 | History entry row | Dates, neutral summaries and correction action; workouts, then adapted fasting history |
 | 18 | Empty/error/loading notice | Honest unavailable/offline states and retry, shared across completed screens |
-| 19 onward | Room props and seasonal overlays | Four independent sprites per MR using the shared room-object contract |
+| 19 onward | Room props and seasonal overlays | Eight independent sprites per MR using the shared room-object contract |
 
 Integrate accepted components into the seven reference screens in small vertical steps. Preserve existing auth and training gates during migration. A workout timer and a fasting timer can share presentation without sharing eligibility, rewards or domain rules. Under-18 navigation must omit the fasting destination rather than merely gray out an entry.
 

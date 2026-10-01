@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SoloGym · Alinear mi refugio</title>
+<link rel="stylesheet" href="/tools/review/home-alignment-editor.css">
+</head>
+<body>
+<header><div><h1>Alinear mi refugio</h1><p>Arrastra los objetos. Ajusta su tamaño. Exporta tu distribución.</p></div>
+<div class="actions"><button id="undo" disabled>Deshacer</button><button id="redo" disabled>Rehacer</button>
+<button id="import" disabled>Importar JSON</button><button id="export" class="primary" disabled>Exportar JSON</button>
+<input id="file" type="file" accept=".json,application/json" hidden></div></header>
+<main>
+<section class="workspace">
+<div class="toolbar"><label>Vista <select id="view"><option value="edit">Editar</option><option value="overlay">Superponer referencia</option><option value="reference">Solo referencia</option></select></label>
+<label id="opacity-control" hidden>Referencia <input id="opacity" type="range" min="0" max="100" value="40"><output id="opacity-value">40%</output></label>
+<label><input id="guides" type="checkbox" checked> Guías</label><button id="fullscreen">Ampliar</button></div>
+<div id="stage"><canvas id="room" width="1672" height="941" tabindex="0" aria-label="Habitación editable. Selecciona un objeto de la lista y usa las flechas para moverlo."></canvas></div>
+<p class="hint">Flechas: 1 px · Mayús + flechas: 10 px · Ctrl/Cmd + Z: deshacer · Tamaño siempre proporcional.</p>
+<p id="status" role="status" aria-live="polite">Cargando sprites…</p>
+<p class="note">La perspectiva dibujada no cambia al mover o redimensionar. Esta herramienta prepara la distribución; no modifica los sprites.</p>
+</section>
+<aside><fieldset id="controls" disabled>
+<label>Objeto <select id="object"></select></label>
+<p id="identity" class="hint"></p>
+<div class="coordinates"><label>X <input id="x" type="number" step="1"></label><label>Y <input id="y" type="number" step="1"></label></div>
+<label>Tamaño (%) <input id="scale" type="number" min="25" max="300" step="1"></label>
+<div class="nudges"><button id="smaller">−5%</button><button id="larger">+5%</button></div>
+<label><input id="visible" type="checkbox"> Visible</label>
+<label><input id="contents" type="checkbox" checked> Mover con su contenido</label>
+<p class="hint">Banco: botella y toalla. Escritorio: libro. Estante: trofeo.</p>
+<label>Capa <select id="layer"><option value="behind-character">Detrás del personaje</option><option value="foreground">Delante del personaje</option></select></label>
+<label>Orden en la capa <input id="order" type="number" min="-10000" max="10000" step="1"></label>
+<p class="hint">Un número mayor se dibuja por encima.</p>
+<button id="reset-item">Restablecer objeto</button>
+<hr><label>Personaje de vista previa <select id="character"></select></label>
+<p class="hint">La distribución sirve para los ocho cuerpos. Cambiar esta vista no cambia tu personaje guardado.</p>
+<button id="reset-all">Restablecer distribución</button>
+</fieldset></aside>
+</main>
+<section id="json-panel" hidden aria-label="Distribución en JSON">
+<h2>Tu distribución</h2>
+<p>Si el navegador no descarga el archivo, copia este JSON y guárdalo como <code>mi-refugio.json</code>. También puedes pegar aquí una distribución para importarla.</p>
+<textarea id="json-text" aria-label="JSON de la distribución" spellcheck="false" rows="10"></textarea>
+<div class="actions"><button id="copy-json">Copiar JSON</button><button id="apply-json">Importar este JSON</button><button id="close-json">Cerrar JSON</button></div>
+</section>
+<footer>Se guarda un borrador en este navegador. Exporta JSON para conservarlo y compartirlo; no se publica en tu cuenta.</footer>
+<script type="module" src="/tools/review/home-alignment-editor.mjs"></script>
+</body></html>

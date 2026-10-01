@@ -17,6 +17,8 @@ namespace SoloGym.UI
         public bool Spanish { get; private set; }
         public Rect EffectiveSafeArea { get; private set; }
         public bool ShowCharacter { get; private set; } = true;
+        public Vector2 CharacterPosition { get; private set; }
+        public float CharacterScale { get; private set; } = 1;
         RectTransform roomArea;
         Rect oldSafeArea;
         int oldWidth, oldHeight;
@@ -40,23 +42,20 @@ namespace SoloGym.UI
             var fill = matte.gameObject.AddComponent<Image>(); fill.color = new Color32(18, 17, 24, 255); fill.raycastTarget = false;
             roomArea = Child("Safe room composition", canvasRoot.transform);
             Room = PixelHomeRoom.Create(roomArea);
-            Ring = PixelRoomObject.Create(Room, "Rooms/Props/TrainingRingR1/item");
-            Bag = PixelRoomObject.Create(Room, "Rooms/Props/HangingBagR1/item");
             var furniture = new List<PixelRoomObject>();
-            foreach (string resource in new[] { "WeightRackR1", "TrainingBenchR1", "BedR1", "StorageChestR1",
-                "WritingDeskR1", "StoolR1", "WallShelfR1", "FloorRugR1",
-                "HangingLanternR1", "WallTorchR1", "BannerR1", "PottedPlantR1",
-                "TrophyR1", "OpenBookR1", "TrainingBottleR1", "TrainingTowelR1" })
+            foreach (var entry in PixelHomeLayout.ObjectCatalog.objects)
             {
-                var item = PixelRoomObject.Create(Room, "Rooms/Props/" + resource + "/item");
+                var item = PixelRoomObject.Create(Room, entry.resource);
                 item.SetVisible(!PixelButtonGallery.HasArgument("-sologym-hide-" + item.SlotId.Split('.')[0]));
-                furniture.Add(item);
+                if (item.ObjectId == "home.training-ring") Ring = item;
+                else if (item.ObjectId == "home.hanging-bag") Bag = item;
+                else furniture.Add(item);
             }
             Furniture = furniture.AsReadOnly();
             Character = PixelCharacterViewport.Create(Room.Objects);
             // Match the approved hero's height and feet position, while retaining the shared eight-body envelope.
             var feet = Room.AnchorPoint("hero.feet");
-            PixelHomeRoom.Place((RectTransform)Character.transform, feet + new Vector2(0, 8), new Vector2(316, 516), new Vector2(.5f, 0));
+            SetCharacterPlacement(feet, 1);
             string id = PixelButtonGallery.Argument("-sologym-character", "male-medium");
             Character.Show(id, Spanish ? "Bárbaro de ejemplo" : "Example Barbarian", Spanish ? "Personaje no disponible" : "Character unavailable");
             InterfaceLayer = Child("Independent live interface — next Home iteration", canvasRoot.transform);
@@ -69,6 +68,13 @@ namespace SoloGym.UI
         { var r = new GameObject(name, typeof(RectTransform)).GetComponent<RectTransform>(); r.SetParent(parent, false); return r; }
         static void Stretch(RectTransform r) { r.anchorMin = Vector2.zero; r.anchorMax = Vector2.one; r.offsetMin = r.offsetMax = Vector2.zero; }
         public void SetCharacterVisible(bool visible) { ShowCharacter = visible; Character.gameObject.SetActive(visible); }
+        internal void SetCharacterPlacement(Vector2 feet, float scale)
+        {
+            CharacterPosition = feet; CharacterScale = scale;
+            PixelHomeRoom.Place((RectTransform)Character.transform, feet + new Vector2(0, 8),
+                new Vector2(300 * scale + 16, 500 * scale + 16), new Vector2(.5f, 0));
+            Character.RefreshLayout();
+        }
         void Update()
         {
             if (oldWidth != Screen.width || oldHeight != Screen.height || oldSafeArea != Screen.safeArea) Relayout();
@@ -82,7 +88,7 @@ namespace SoloGym.UI
             // 5–8: lantern/torch/banner/plant. All lights are static artwork.
             // 9, 0, -, =: trophy/book/bottle/towel.
             for (int i = 0; i < Furniture.Count; i++)
-                if (Input.GetKeyDown(FurnitureKeys[i])) Furniture[i].SetVisible(!Furniture[i].Visible);
+                if (i < FurnitureKeys.Length && Input.GetKeyDown(FurnitureKeys[i])) Furniture[i].SetVisible(!Furniture[i].Visible);
         }
         public void Relayout()
         {
@@ -105,6 +111,14 @@ namespace SoloGym.UI
         IEnumerator Start()
         {
             yield return null;
+            if (PixelButtonGallery.HasArgument("-sologym-layout-smoke"))
+            { gameObject.AddComponent<PixelHomeLayoutSmoke>().Run(this); yield break; }
+            string layoutPath = PixelButtonGallery.Argument("-sologym-room-layout", "");
+            if (!string.IsNullOrEmpty(layoutPath))
+            {
+                try { PixelHomeLayout.Apply(this, System.IO.File.ReadAllText(layoutPath)); }
+                catch (System.Exception error) { Debug.LogError("HOME LAYOUT: " + error.Message); Application.Quit(2); yield break; }
+            }
             if (PixelButtonGallery.HasArgument("-sologym-smoke") || PixelButtonGallery.HasArgument("-sologym-capture"))
                 gameObject.AddComponent<PixelHomeRoomSmoke>().Run(this);
         }

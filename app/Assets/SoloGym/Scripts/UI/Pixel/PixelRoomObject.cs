@@ -24,15 +24,23 @@ namespace SoloGym.UI
             public int version;
             public string roomId, objectId, slotId, variantId;
             public bool visible;
+            // Version 2 adds an authored placement override; version 1 keeps the slot defaults.
+            public Vector2 position;
+            public float scale;
+            public string layer;
+            public int drawOrder;
         }
         public Image Artwork { get; private set; }
         public string ObjectId => definition.id;
         public string SlotId => current.slotId;
         public string VariantId => current.variantId;
         public bool Visible => current.visible;
-        public int DrawOrder => definition.drawOrder;
+        public int DrawOrder => current.version == 2 ? current.drawOrder : definition.drawOrder;
+        public string Layer => current.version == 2 ? current.layer : definition.layer;
+        public Vector2 Position => current.version == 2 ? current.position : room.AnchorPoint(SlotId);
+        public float PlacementScale => current.version == 2 ? current.scale : 1;
         public Vector2 Pivot => definition.pivot;
-        public Vector2 DisplaySize => definition.sourceSize * definition.sourceScale;
+        public Vector2 DisplaySize => definition.sourceSize * definition.sourceScale * PlacementScale;
         Definition definition;
         State current;
         PixelHomeRoom room;
@@ -93,18 +101,23 @@ namespace SoloGym.UI
         }
         static void ValidateState(State state, Definition data, PixelHomeRoom room, PixelRoomObject self)
         {
-            if (state == null || state.version != 1 || state.roomId != room.RoomId || state.objectId != data.id
+            if (state == null || (state.version != 1 && state.version != 2) || state.roomId != room.RoomId || state.objectId != data.id
                 || Array.IndexOf(data.supportedSlots, state.slotId) < 0
                 || !Array.Exists(data.variants, variant => variant.id == state.variantId))
                 throw new ArgumentException("Room-object state has an unsupported version, identity, slot or variant.");
+            if (state.version == 2 && (!Finite(state.position) || !Finite(state.scale) || state.scale < .25f || state.scale > 3
+                || (state.layer != "behind-character" && state.layer != "foreground")
+                || state.drawOrder < -10000 || state.drawOrder > 10000))
+                throw new ArgumentException("Invalid placement, uniform scale (0.25–3), layer or order.");
             foreach (var other in room.GetComponentsInChildren<PixelRoomObject>(true))
                 if (other != self && (other.ObjectId == data.id || other.SlotId == state.slotId))
                     throw new ArgumentException("Room object identity or placement slot is already occupied.");
-            Vector2 anchor = room.AnchorPoint(state.slotId);
-            Vector2 topLeft = anchor - new Vector2(data.pivot.x, 1 - data.pivot.y) * data.sourceSize * data.sourceScale;
+            Vector2 anchor = state.version == 2 ? state.position : room.AnchorPoint(state.slotId);
+            float scale = data.sourceScale * (state.version == 2 ? state.scale : 1);
+            Vector2 topLeft = anchor - new Vector2(data.pivot.x, 1 - data.pivot.y) * data.sourceSize * scale;
             foreach (var p in data.footprint)
             {
-                Vector2 point = topLeft + p * data.sourceScale;
+                Vector2 point = topLeft + p * scale;
                 if (point.x < 0 || point.y < 0 || point.x > room.ReferenceSize.x || point.y > room.ReferenceSize.y)
                     throw new ArgumentException("The footprint would extend outside this room.");
             }
@@ -120,15 +133,25 @@ namespace SoloGym.UI
         void Apply(State state, Sprite sprite)
         {
             current = state; Artwork.sprite = sprite; Artwork.enabled = state.visible;
-            PixelHomeRoom.Place((RectTransform)transform, room.AnchorPoint(state.slotId), DisplaySize, definition.pivot);
+            transform.SetParent(Layer == "behind-character" ? room.BackObjects : room.Foreground, false);
+            PixelHomeRoom.Place((RectTransform)transform, Position, DisplaySize, definition.pivot);
+            SortSiblings();
         }
         public string SaveState() => JsonUtility.ToJson(current);
         public void RestoreState(string json)
+        { PrepareRestore(json)(); }
+        internal Action PrepareRestore(string json)
         {
             var state = ParseState(json);
             // Validate and resolve artwork before changing the live item, so invalid saves cannot corrupt it.
             ValidateState(state, definition, room, this); var sprite = LoadVariant(definition, state.variantId);
-            Apply(state, sprite);
+            return () => Apply(state, sprite);
+        }
+        public State PlacementState()
+        {
+            var state = ParseState(SaveState());
+            state.version = 2; state.position = Position; state.scale = PlacementScale;
+            state.layer = Layer; state.drawOrder = DrawOrder; return state;
         }
         public void SetVisible(bool visible) { current.visible = visible; Artwork.enabled = visible; }
         public void SetVariant(string id)
@@ -138,9 +161,9 @@ namespace SoloGym.UI
         }
         public Vector2[] FootprintInRoom()
         {
-            var topLeft = room.AnchorPoint(SlotId) - new Vector2(Pivot.x, 1 - Pivot.y) * DisplaySize;
+            var topLeft = Position - new Vector2(Pivot.x, 1 - Pivot.y) * DisplaySize;
             var points = new Vector2[definition.footprint.Length];
-            for (int i = 0; i < points.Length; i++) points[i] = topLeft + definition.footprint[i] * definition.sourceScale;
+            for (int i = 0; i < points.Length; i++) points[i] = topLeft + definition.footprint[i] * definition.sourceScale * PlacementScale;
             return points;
         }
         void SortSiblings()
