@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "unity": "6000.3.24f1 Linux Standalone",
+  "nativeScenarios": [
+    {
+      "report": "artifacts/visual/Fasting/window-es-1280.json",
+      "checks": 404,
+      "failures": 0,
+      "capture": "artifacts/visual/Fasting/window-es-1280.png"
+    },
+    {
+      "report": "artifacts/visual/Fasting/window-en-854.json",
+      "checks": 380,
+      "failures": 0,
+      "capture": "artifacts/visual/Fasting/window-en-854.png"
+    },
+    {
+      "report": "artifacts/visual/Fasting/window-es-teen-1600.json",
+      "checks": 48,
+      "failures": 0,
+      "capture": "artifacts/visual/Fasting/window-es-teen-1600.png"
+    },
+    {
+      "report": "artifacts/visual/Fasting/window-en-unknown.json",
+      "checks": 48,
+      "failures": 0,
+      "capture": "artifacts/visual/Fasting/window-en-unknown.png"
+    }
+  ],
+  "homeRegression": {
+    "report": "artifacts/visual/Fasting/window-es-1280.smoke.json",
+    "checks": 51,
+    "failures": 0
+  },
+  "trainingRegression": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "tests": 22,
+    "passed": true
+  },
+  "sourceArtIntegrity": {
+    "command": "python3 tools/check_fasting_assets.py",
+    "passed": true
+  },
+  "visualInspection": [
+    "Native Spanish main clock matches the approved left-clock/right-parchment composition.",
+    "English 854x480 with safe inset has legible, unclipped timer and control labels.",
+    "Setup, correction with seconds/UTC offset, history, guide and save-error captures inspected.",
+    "Excluded profiles show no fasting artwork or controls."
+  ],
+  "verifiedSources": [
+    {
+      "file": "app/Assets/SoloGym/Scripts/Fasting/FastingTracker.cs",
+      "sha256": "04c9c88d9d2c90a0afbfe4b0b7bef9c199995da751fb5715ec570b49ef4144af"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelFastingClock.cs",
+      "sha256": "94bb16162069800e34acfa2949ae2943484f05a28c10ca182c0d68ea2b5c74fb"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelFastingReview.cs",
+      "sha256": "2031a6da87523ee3e30cf4f27afd703bbd7f70baa348df287bcdb1c4821cec93"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelFastingSmoke.cs",
+      "sha256": "7de1bfe09568bf632d14775042bce6e14d06360feb01fb55e6fa0f600a9044db"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelFastingWindow.cs",
+      "sha256": "152c4a95894da908fe16fd9357ad2cb8c06219dd4f4172adce4d57cf6af0d47a"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelTrainingHallHome.cs",
+      "sha256": "e231773f457058f31f94f7cbeea02a82fae7d174b8eb2f87ebf2bc19ec59b3e1"
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Shaders/FastingRunes.shader",
+      "sha256": "65048cf7ee30983f3862ab289d86c8525701d599725a5df653a8e6e322a4e863"
+    }
+  ],
+  "limitations": [
+    "Single local profile; no account synchronization or encrypted health-record service.",
+    "No medical state inference, health-benefit unlocks or rewards.",
+    "Native clinical suitability copy needs clinical review before public release."
+  ]
+}

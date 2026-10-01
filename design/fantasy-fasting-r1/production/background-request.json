@@ -1,0 +1,13 @@
+{
+  "description": "LANDSCAPE 640x360 PIXEL ART GAME ROOM BACKGROUND ONLY. A peaceful private alcove inside the SAME medieval fantasy guild as the reference. Frontal camera looking STRAIGHT into the room, never isometric, at eye level. Keep reference pixel scale and material language: slate-blue cut stone, muted indigo shadows, quiet brass details. ONE coherent centered single-point perspective; upright pilasters; straight horizontal stone courses of consistent size; rectangular floor tiles recede correctly toward a single vanishing point. Back wall meets level floor near y=225. A tall arched window occupies the left quarter near x=95; clear muted blue-green sky and distant treetops outside, subtle soft daylight on the window sill and stone floor. Wide simple recessed wall panels through center and right. Calm restful room, dignified original SNES/16-bit RPG style with crisp deliberate pixel clusters, controlled palette, legible stone shapes. The center and right wall must remain visually quiet for two independent interface panels. Leave lower-left floor empty for a separate freestanding hourglass prop later. Entire source canvas is opaque. No UI, writing, numerals, labels, borders, HUD, characters, hourglass, clock, furniture, shelves, vases, loose objects, weapons, health potions, food, gym equipment, statues, glowing magic, sparkling effects or colored reward symbols. Architecture, window exterior and floor only; no distracting clutter. Do not reuse the gym apparatus or the exact window position from the reference. Consistent believable depth and floor geometry.",
+  "width": 640,
+  "height": 360,
+  "no_background": false,
+  "reference_images": [
+    {
+      "file": "assets/sprites/pixellab/training-hall-r1/native/room-0.png",
+      "sha256": "89d2c34f583a8701083f24ea2119925661cce47d2e572e2bd187de650455c6e9",
+      "usage": "Style reference for actual established PixelLab room palette, crisp pixel clusters and straight-on single-point perspective; create a quieter empty guild alcove with its window on the left."
+    }
+  ]
+}
