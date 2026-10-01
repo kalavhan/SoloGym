@@ -19,14 +19,15 @@ def run():
     login = "--login" in sys.argv
     account = "--account" in sys.argv
     onboarding = "--onboarding" in sys.argv
-    if sum((actions, icons, choices, characters, navigation, login, account, onboarding)) > 1:
+    consent = "--consent" in sys.argv
+    if sum((actions, icons, choices, characters, navigation, login, account, onboarding, consent)) > 1:
         raise ValueError("Choose one keyboard fixture, including --login or --account.")
-    fixture = "onboarding" if onboarding else "account" if account else "login" if login else "navigation" if navigation else "character" if characters else "choice" if choices else "icon" if icons else "action" if actions else "field"
+    fixture = "consent" if consent else "onboarding" if onboarding else "account" if account else "login" if login else "navigation" if navigation else "character" if characters else "choice" if choices else "icon" if icons else "action" if actions else "field"
     # Always create an isolated display; never inject events into the user's desktop.
     if "--isolated-child" not in sys.argv:
         return subprocess.call(["xvfb-run", "-a", "-s", "-screen 0 1920x1080x24",
                                 sys.executable, str(Path(__file__).resolve()), "--isolated-child",
-                                *(["--onboarding"] if onboarding else ["--account"] if account else ["--login"] if login else ["--navigation"] if navigation else ["--characters"] if characters else ["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
+                                *(["--consent"] if consent else ["--onboarding"] if onboarding else ["--account"] if account else ["--login"] if login else ["--navigation"] if navigation else ["--characters"] if characters else ["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
                                env={**os.environ, "SOLOGYM_ISOLATED_FIELD_TEST": "1"})
     if os.environ.get("SOLOGYM_ISOLATED_FIELD_TEST") != "1":
         raise RuntimeError("Run without --isolated-child to create a private display.")
@@ -81,13 +82,15 @@ def run():
             key(name, shift)
 
     env = {**os.environ, "XDG_CONFIG_HOME": str(local / (fixture + "-keyboard-prefs"))}
-    binary = {"onboarding": "Login/SoloGymLogin", "account": "Login/SoloGymLogin", "login": "Login/SoloGymLogin", "navigation": "FantasyNavigation/SoloGymNavigation", "character": "FantasyCharacter/SoloGymCharacter", "choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
+    binary = {"consent": "Login/SoloGymLogin", "onboarding": "Login/SoloGymLogin", "account": "Login/SoloGymLogin", "login": "Login/SoloGymLogin", "navigation": "FantasyNavigation/SoloGymNavigation", "character": "FantasyCharacter/SoloGymCharacter", "choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
               "action": "FantasyAction/SoloGymAction", "field": "FantasyField/SoloGymField"}[fixture]
     command = [str(ROOT / ("app/Builds/" + binary + ".x86_64")),
                "-screen-fullscreen", "0", "-screen-width", "1280", "-screen-height", "720",
                "-sologym-locale", "en", "-sologym-keyboard-probe", str(marker),
                "-sologym-capture", str(local / (fixture + "-keyboard.png")),
                "-logFile", str(local / (fixture + "-keyboard-player.log"))]
+    if consent:
+        command += ["-sologym-consent-keyboard"]
     if onboarding:
         command += ["-sologym-window", "onboarding"]
     if account:
@@ -120,7 +123,16 @@ def run():
             x11.XSetInputFocus(display, window, 2, 0)
             x11.XFlush(display)
             time.sleep(.4)
-            if onboarding:
+            if consent:
+                key("Tab"); key("Return"); time.sleep(.4)  # Reader, Back focused
+                key("Tab"); key("Page_Down"); key("Tab"); key("Return"); time.sleep(.4)
+                for _ in range(3):
+                    key("Tab"); time.sleep(.1)
+                key("space"); time.sleep(.2)  # Privacy choice
+                key("Tab"); key("Return"); time.sleep(.2)  # Terms choice
+                key("Tab"); key("Return"); time.sleep(.4)  # Registration preview
+                key("Return"); time.sleep(.4)  # Back to decisions
+            elif onboarding:
                 text("21")
                 key("Return"); time.sleep(.4)  # Country control
                 key("Return"); time.sleep(.4)  # Search

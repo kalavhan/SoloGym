@@ -2,7 +2,7 @@ using System;
 
 namespace SoloGym
 {
-    public enum GuildSetupStep { AgeCountry, Character, PrivacyPending }
+    public enum GuildSetupStep { AgeCountry, Character, Consent }
 
     /// <summary>A private, memory-only preparation draft. It never issues eligibility or registration permits.</summary>
     public sealed class GuildSetupController : IDisposable
@@ -17,17 +17,21 @@ namespace SoloGym
         public string ErrorKey { get; private set; } = "";
         public event Action Changed;
         public event Action ExitRequested;
+        public event Action EligibilityChanged;
         public GuildSetupController() { origin.Changed += _ => Changed?.Invoke(); }
         public void SetLanguage(string language) => origin.SetLanguage(language);
         public void SetAge(string value)
         {
             if (Step != GuildSetupStep.AgeCountry) return;
+            if (Origin.AgeText != (value ?? "")) EligibilityChanged?.Invoke();
             ErrorKey = ""; origin.SetAge(value);
         }
         public void SelectCountry(string code)
         {
             if (Step != GuildSetupStep.AgeCountry) return;
+            string before = Origin.CountryCode;
             ErrorKey = ""; origin.SelectCountry(code);
+            if (before != Origin.CountryCode) EligibilityChanged?.Invoke();
         }
         public bool ChooseGender(string value)
         {
@@ -41,12 +45,12 @@ namespace SoloGym
         }
         public void Continue(bool appearanceAvailable)
         {
-            if (Step == GuildSetupStep.PrivacyPending) return;
+            if (Step == GuildSetupStep.Consent) return;
             ErrorKey = origin.ValidateDraft();
             if (ErrorKey.Length != 0) { Step = GuildSetupStep.AgeCountry; Changed?.Invoke(); return; }
             if (Step == GuildSetupStep.AgeCountry) Step = GuildSetupStep.Character;
             else if (!appearanceAvailable) ErrorKey = "appearance_unavailable";
-            else Step = GuildSetupStep.PrivacyPending;
+            else Step = GuildSetupStep.Consent;
             Changed?.Invoke();
         }
         public void Back()
@@ -59,8 +63,8 @@ namespace SoloGym
         public void Discard()
         {
             Step = GuildSetupStep.AgeCountry; Gender = "male"; Body = "medium"; ErrorKey = "";
-            origin.Decline(); Changed?.Invoke();
+            origin.Decline(); EligibilityChanged?.Invoke(); Changed?.Invoke();
         }
-        public void Dispose() { origin.Dispose(); Changed = null; ExitRequested = null; }
+        public void Dispose() { origin.Dispose(); Changed = null; ExitRequested = null; EligibilityChanged = null; }
     }
 }

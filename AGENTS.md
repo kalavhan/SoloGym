@@ -11,7 +11,12 @@ clothing pipeline. Current requirements are in
   for terms and privacy until the final text is supplied. Use clearly identified,
   replaceable review documents; do not make final copy a prerequisite for the
   render or review-flow implementation. Concepts and ES/EN placeholder fixtures
-  are in `design/fantasy-consent-r1/`, pending visual review. Review checkbox
+  are in `design/fantasy-consent-r1/`; the user approved them with “implement.”
+  The native consent/reader now replaces the pending message. Both review choices
+  enable a registration preview; its valid submission makes no service calls and
+  clears secrets. Signed-in users reach the pending profile step instead. Keep
+  missing-document states, draft/reader returns and age/country decision resets.
+  Review checkbox
   decisions are not production legal receipts or registration permits. Reuse
   the existing PixelLab guild background and native controls; no new art batch.
 
@@ -23,9 +28,9 @@ clothing pipeline. Current requirements are in
   exports, with fixed colors/clothing; no cosmetic editor or new character art.
   Both renders were approved (“great, love it, build it”) and implemented in the
   guild login shell. Create account and trusted WIN-006 enter an empty private
-  draft. Final Continue stops at privacy/consent pending; no enrollment permit,
-  profile save or Home entry. The account credential form remains an isolated
-  review route until trusted consent/eligibility is connected.
+  draft. Final Continue now opens the provisional consent screen described above;
+  no enrollment permit, profile save or Home entry is established. The account
+  form retains its trusted preflight outside the explicit provisional preview.
   Choosing a character must not bypass consent, trusted eligibility or private
   fitness setup. References: `design/fantasy-onboarding-r1/`.
 

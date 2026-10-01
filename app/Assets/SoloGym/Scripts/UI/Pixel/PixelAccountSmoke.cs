@@ -126,12 +126,12 @@ namespace SoloGym.UI
             Check(f.Controller.ErrorKey == "unknown" && !f.Status.text.Contains("Injected"), "Provider exception after submission is redacted and uncertain");
             Fill(f); Click(w.Privacy); yield return new WaitForEndOfFrame(); yield return null;
             Check(w.Page == "privacy" && w.LastNavigation.ReadOnly && f.Password.Input.text == "", "Privacy is read-only and clears secrets");
-            Check(w.Language.GetComponent<PixelFieldTabNavigation>().Move(false) && EventSystem.current.currentSelectedGameObject == w.Return.gameObject, "Document locale Tab reaches return action");
-            Click(w.Return); yield return new WaitForEndOfFrame(); yield return null;
+            Check(w.Language.GetComponent<PixelFieldTabNavigation>().Move(false) && EventSystem.current.currentSelectedGameObject == w.Consent.Back.gameObject, "Document locale Tab reaches return action");
+            Click(w.Consent.ReaderReturn); yield return new WaitForEndOfFrame(); yield return null;
             Check(w.Page == "account" && f.Email.Input.text == "hero+review@example.com", "Document return preserves email and account route");
             Click(w.Terms); yield return new WaitForEndOfFrame(); yield return null;
             Check(w.Page == "terms" && w.LastNavigation.ReadOnly, "Terms remain read-only");
-            Click(w.Return); yield return new WaitForEndOfFrame(); yield return null;
+            Click(w.Consent.ReaderReturn); yield return new WaitForEndOfFrame(); yield return null;
             Fill(f); f.SubmitAccount(); yield return null; service.Permit(9); yield return null;
             service.Finish(RegistrationStatus.Created); yield return null; yield return null;
             Check(f.Controller.Created && !f.Submit.gameObject.activeSelf && f.Password.Input.text == "", "Trusted completion shows receipt and clears secrets");

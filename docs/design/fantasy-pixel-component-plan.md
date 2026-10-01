@@ -6,8 +6,9 @@ This is the implementation approach for the [confirmed product direction](../pro
 
 **Next window, after merged PR #34:** Privacy & Consent and its document reader.
 The user authorized Lorem ipsum in both documents for now; the provisional copy
-is in `design/fantasy-consent-r1/document-placeholders.json`. The two full-screen
-concepts reuse the guild entrance and are ready for visual review. Final document
+is in `design/fantasy-consent-r1/document-placeholders.json`. The user approved both renders with “implement.” The native screens now reuse
+the guild entrance, with replaceable text, independent choices, a shared reader
+and registration preview. Signed-in users continue to pending profile setup. Final document
 copy does not block UI/review-flow work. Any preview continuation must remain
 separate from production receipts, eligibility and account-creation permits.
 
@@ -20,7 +21,7 @@ Both renders were approved with “great, love it, build it”. The connected na
 steps are implemented in `design/fantasy-onboarding-r1/`, including country search,
 all eight unchanged sprites, preserved drafts, localization and keyboard support.
 Create account and trusted WIN-006 sign-in now enter this flow. Final Continue
-stops at unavailable privacy/consent setup; it does not enroll or save a profile.
+opens the provisional consent screen above; it does not enroll or save a profile.
 
 **Current delivery:** PR #31 (Fasting) is merged. The login render was approved
 with “go” and its complete native window is implemented in

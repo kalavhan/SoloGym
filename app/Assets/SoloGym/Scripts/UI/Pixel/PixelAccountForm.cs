@@ -23,17 +23,18 @@ namespace SoloGym.UI
         Text title, subtitle, hint;
         string language = "es", lastError;
         bool wasBusy;
-        Action exit;
+        Action exit, back;
+        bool previewOnly;
 
         public void Initialize(Transform panel, IAccountRegistrationService service, Action exitAction,
-            Selectable privacy, Selectable languageControl)
+            Selectable privacy, Selectable languageControl, Action backAction = null)
         {
             transform.SetParent(panel, false);
             var root = gameObject.GetComponent<RectTransform>();
             PixelJournalUI.Stretch(root);
-            exit = exitAction;
+            exit = exitAction; back = backAction ?? exitAction;
             Controller = new AccountRegistrationController(service);
-            Back = LinkButton(root, "", Leave); Place(Back, new Rect(20, 10, 112, 52));
+            Back = LinkButton(root, "", GoBack); Place(Back, new Rect(20, 10, 112, 52));
             title = PixelJournalUI.Text(root, new Rect(28, 48, 514, 48), "", 38, false, TextAnchor.MiddleCenter);
             PixelJournalUI.Rule(root, 62, 94, 446);
             subtitle = PixelJournalUI.Text(root, new Rect(28, 99, 514, 38), "", 24, false, TextAnchor.MiddleCenter);
@@ -84,9 +85,9 @@ namespace SoloGym.UI
             if (language == locale) return;
             language = locale; Render();
         }
-        public void Open(string email, string locale)
+        public void Open(string email, string locale, bool review = false)
         {
-            language = locale;
+            language = locale; previewOnly = review;
             Email.SetValueWithoutNotify(email);
             Controller.Reset(); Render();
             Scroll.StopMovement(); content.anchoredPosition = Vector2.zero;
@@ -96,7 +97,7 @@ namespace SoloGym.UI
             if (!gameObject.activeInHierarchy || !Controller.CanSubmit) return;
             string email = Email.Input.text.Trim(); Email.SetValueWithoutNotify(email);
             ReleaseKeyboard();
-            _ = Controller.RegisterAsync(email, Password.Input.text, Confirmation.Input.text);
+            _ = Controller.RegisterAsync(email, Password.Input.text, Confirmation.Input.text, previewOnly);
         }
         public void ClearSecrets()
         {
@@ -114,6 +115,7 @@ namespace SoloGym.UI
             if (Controller.Busy || !gameObject.activeInHierarchy) return;
             f.Input.Select(); f.Input.ActivateInputField();
         }
+        void GoBack() { Controller.Cancel(); ReleaseKeyboard(); back?.Invoke(); }
         void Leave() { Controller.Cancel(); ReleaseKeyboard(); exit?.Invoke(); }
         public void Backgrounded() { Controller.Cancel(); ReleaseKeyboard(); }
 
@@ -121,7 +123,7 @@ namespace SoloGym.UI
         {
             bool busy = Controller.Busy, created = Controller.Created;
             title.text = created ? L("ACCOUNT CREATED", "CUENTA CREADA") : L("CREATE ACCOUNT", "CREAR CUENTA");
-            subtitle.text = created ? "" : L("Email registration", "Registro por correo");
+            subtitle.text = created ? "" : previewOnly ? L("Preview · Email registration", "Vista previa · Registro por correo") : L("Email registration", "Registro por correo");
             Back.SetLabel(L("Back", "Volver")); Back.interactable = !busy;
             Email.SetLocalizedText(L("Email address", "Correo electrónico"), L("you@email.com", "tu@correo.com"), "", "", "");
             Password.SetLocalizedText(L("Password", "Contraseña"), "********", "", L("Show", "Mostrar"), L("Hide", "Ocultar"));
@@ -163,6 +165,7 @@ namespace SoloGym.UI
                 case "required_confirmation": return L("Repeat your password.", "Repite tu contraseña.");
                 case "mismatch": return L("The passwords do not match.", "Las contraseñas no coinciden.");
                 case "policy": return L("This password does not meet the account policy.", "Esta contraseña no cumple la política de la cuenta.");
+                case "provisional": return L("These documents are placeholders. Live registration is not available yet. No account was created.", "Los textos son provisionales. El registro real aún no está disponible. No se creó ninguna cuenta.");
                 case "setup": return L("Age and consent setup is not available yet. No account was created.", "La configuración de edad y consentimiento aún no está disponible. No se creó ninguna cuenta.");
                 case "offline": return L("No connection. Reconnect to try again.", "Sin conexión. Reconéctate para volver a intentar.");
                 case "rate": return L("Please wait before trying again.", "Espera antes de volver a intentar.") + " (" + Controller.RetrySeconds + " s)";
