@@ -7,6 +7,18 @@ clothing pipeline. Current requirements are in
 
 ## Scope
 
+- Goals & Experience (WIN-010) follows merged PR #36. The user approved all three
+  landscape renders in `design/fantasy-goals-r1/` with “good, do it.” The native
+  goal, experience and summary/edit states now connect from the profile checkpoint
+  in one complete-window PR. Reuse the original PixelLab guild entrance and controls.
+  Keep catalog IDs, empty initial choices, explicit beginner confirmation, teen
+  filtering and upstream age/consent/readiness gates. Unknown age cannot enter
+  this review. Experience is separate from battle difficulty; appearance never
+  determines it. Back/readers/locale retain choices; exit or eligibility/consent
+  changes discard them. Available equipment (WIN-011), then schedule, is next;
+  the current equipment destination is an honest pending checkpoint. This flow
+  saves no profile, creates no workout and grants no production authorization.
+
 - Next window after merged PR #35: private fitness profile (WIN-009), with notice,
   optional measurements and readiness in one complete window. Landscape concepts
   and exact prompts are in `design/fantasy-profile-r1/`; the user approved with

@@ -254,6 +254,13 @@ namespace SoloGym
             return id;
         }
 
+        public void Reset()
+        {
+            if (disposed) return;
+            ResetDraft();
+            Refresh();
+        }
+
         void ResetDraft()
         {
             goalId = experienceId = errorKey = "";

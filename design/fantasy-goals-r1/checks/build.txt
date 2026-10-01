@@ -1,0 +1,3 @@
+Unity 6000.3.24f1 · Linux standalone
+SoloGym Guild Login built: /home/josue/Documents/ChatGPT/leveling fitness app 2/.worktrees/fantasy-goals-window/app/Builds/Login/SoloGymLogin.x86_64
+Exiting batchmode successfully now!
