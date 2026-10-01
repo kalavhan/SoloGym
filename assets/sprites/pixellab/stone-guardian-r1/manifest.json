@@ -1,0 +1,14 @@
+{
+  "provider": "PixelLab MCP create_image_pro",
+  "jobId": "d4bd4e73-e3a6-47ab-9ca3-1e34bc1bbc10",
+  "assetId": "72bdc952-2da4-5b9f-8f72-475c7e059dff",
+  "costGenerations": 20,
+  "canvas": [
+    256,
+    256
+  ],
+  "file": "native/guardian.png",
+  "sha256": "923ef190bdc20e1f279f53f66eadcf46f5f80c67910929624d33c744ca4a491a",
+  "prompt": "design/fantasy-boss-r1/production/guardian-prompt.txt",
+  "scope": "Single static guardian derived from approved boss-window render; no animation."
+}

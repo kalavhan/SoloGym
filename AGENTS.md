@@ -15,6 +15,11 @@ clothing pipeline. Current requirements are in
   This supersedes component-only PRs and four/eight-sprite delivery batches.
   Reuse existing components within the window; do not generate new artwork
   for controls that already match the accepted style.
+- The boss-dungeon render in `design/fantasy-boss-r1/` was approved with
+  "it is okay for now, let's go". Its complete native window follows merged
+  PR #29: explicit reviewed entry, local set records, rest, difficulty changes,
+  pause/resume and completed/stopped history. One static PixelLab stone guardian
+  is in scope; existing Barbarians stay unchanged. No animation batch.
 - Workouts/Rutinas is the approved complete journal window, with current/completed/missed sessions,
   routine review/editing, and a readiness entry before training. The proposed
   visual is a fantasy guild training journal. Its reference and implementation pack is
@@ -26,7 +31,7 @@ clothing pipeline. Current requirements are in
   do it." It supersedes the boxing/bedroom and rejected isometric/orthographic
   experiments. Deliver room, props and live Home UI together in this integration.
 - PixelLab MCP is the first choice for new window backgrounds, and is authorized
-  for the scoped Home/Workouts artwork. The eight static
+  for scoped window backgrounds and the approved Home/Workouts artwork. The eight static
   PixelLab Barbarians are approved in `design/pixellab-barbarian-eight-256-r1/`.
   Keep every character's TOTAL source canvas at most 256x256, including margins.
   Use the original Downloads references, not AutoSprite recolorings. Do not

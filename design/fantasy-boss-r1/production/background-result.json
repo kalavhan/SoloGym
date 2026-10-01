@@ -1,0 +1,32 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: 31e58dd3-7a80-481f-b187-b68db8fec9e0\njob_id: 31e58dd3-7a80-481f-b187-b68db8fec9e0\nframes: 1\ntransparent: no \u2014 every pixel is opaque. If you asked for no_background, background removal did not find one; retry or describe the subject on a plain background.\nasset_id: ad9bdcac-7a5b-545a-9c1a-f20c3b4c5f4e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ndownload: https://api.pixellab.ai/mcp/images/31e58dd3-7a80-481f-b187-b68db8fec9e0/download"
+      },
+      {
+        "type": "image",
+        "mimeType": "image/png",
+        "saved": "assets/sprites/pixellab/boss-chamber-r1/native/chamber.png"
+      }
+    ],
+    "structuredContent": {
+      "job_id": "31e58dd3-7a80-481f-b187-b68db8fec9e0",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/31e58dd3-7a80-481f-b187-b68db8fec9e0/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/31e58dd3-7a80-481f-b187-b68db8fec9e0/download"
+      ],
+      "asset": {
+        "id": "ad9bdcac-7a5b-545a-9c1a-f20c3b4c5f4e",
+        "type": "image",
+        "status": "saved"
+      }
+    },
+    "isError": false
+  }
+}

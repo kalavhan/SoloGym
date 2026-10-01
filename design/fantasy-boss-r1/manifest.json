@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "status": "implemented; native review complete",
+  "window": "Routine-driven boss workout / Mazmorra",
+  "delivery": "PixelLab background first, complete render review, then one full Unity window PR",
+  "sourceInstruction": "great, PR merged. we can move into the next",
+  "mergedBase": {
+    "pr": 29,
+    "commit": "c90a41843f9f807112f0e383356fa1ae914bb11f"
+  },
+  "background": {
+    "file": "assets/sprites/pixellab/boss-chamber-r1/native/chamber.png",
+    "size": [
+      640,
+      360
+    ],
+    "sha256": "1c59c1384933ab61a8207aa45e2a44a5d79210b584e7421874ca51d6685936bb",
+    "provider": "PixelLab MCP create_image_pro",
+    "jobId": "31e58dd3-7a80-481f-b187-b68db8fec9e0",
+    "galleryAssetId": "ad9bdcac-7a5b-545a-9c1a-f20c3b4c5f4e",
+    "quotedGenerations": 40
+  },
+  "render": {
+    "file": "design/fantasy-boss-r1/boss-workout-concept.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "603316236f2415a9c0efa0e44a9decce3a2a5e6ca16d3b16feb33e183f5c61fe",
+    "provider": "built-in image_gen",
+    "prompt": "screen-prompt.txt",
+    "promptSha256": "36c6fcc84554d25294ba58a503cb87033cb0e4a1d0ccb66ac1ec4c4bdf0ff029"
+  },
+  "references": [
+    {
+      "file": "assets/sprites/pixellab/boss-chamber-r1/native/chamber.png",
+      "size": [
+        640,
+        360
+      ],
+      "sha256": "1c59c1384933ab61a8207aa45e2a44a5d79210b584e7421874ca51d6685936bb",
+      "role": "Actual new PixelLab room background"
+    },
+    {
+      "file": "artifacts/visual/Workouts/window-es-1280.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "8779bf289b78e9f2d35054d725b5aac1f4c49f6a34f1532c6d39cadf5a68d4ff",
+      "role": "Approved native UI styles"
+    },
+    {
+      "file": "assets/sprites/pixellab/barbarian-256-r1/native/male-medium.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "59c46eb13ea5b68fbb363b5c65450f621ca6f9556c5bf89fa02f7c5f4ca904a9",
+      "role": "Approved existing character appearance"
+    }
+  ],
+  "runtimeCodeChanged": true,
+  "implementationApproved": true,
+  "newBackgroundJobs": 1,
+  "quotedPixelLabGenerations": 60,
+  "sourceArtManifest": "assets/sprites/pixellab/boss-chamber-r1/manifest.json",
+  "windowScope": "window-scope.json",
+  "componentMap": "component-map.json",
+  "visualReview": {
+    "inspected": true,
+    "findings": [
+      "Frontal dungeon with coherent encounter staging, readable floor contact, a substantial existing Barbarian and one larger proposed guardian.",
+      "One set-entry panel, clear boss progress, separate pause/end actions and selected Medium difficulty.",
+      "All requested Spanish labels and values are readable; the optional load remains blank.",
+      "No player HP, timed enemy pressure, reward-value promises, exercise animation or unrelated equipment screens.",
+      "The concept is flattened for review only; production keeps room, hero, boss, controls and text independent."
+    ],
+    "caveat": "The render is a composition reference. Runtime uses the original PixelLab room and selected Barbarian plus one separately generated 256x256 static guardian, shared sprite skins and live controls."
+  },
+  "approvalQuote": "it is okay for now, let's go",
+  "newStaticBossJobs": 1,
+  "guardianManifest": "assets/sprites/pixellab/stone-guardian-r1/manifest.json",
+  "newPlayableCharacterJobs": 0,
+  "newAnimationJobs": 0
+}

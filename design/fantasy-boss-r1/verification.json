@@ -1,0 +1,59 @@
+{
+  "unity": "6000.3.24f1",
+  "platform": "Linux x86_64 native player under Xvfb",
+  "status": "passed",
+  "bossRuns": [
+    {
+      "report": "artifacts/visual/Boss/window-es-1280.json",
+      "checks": 452,
+      "locale": "es",
+      "size": [
+        1280,
+        720
+      ],
+      "profile": "adult_gym_intermediate",
+      "capture": "artifacts/visual/Boss/window-es-1280.png",
+      "captureSha256": "17586aaf6d84a317e352dd6da4cb94a696d247cd4db37b6f211033300cd5889e"
+    },
+    {
+      "report": "artifacts/visual/Boss/window-en-854.json",
+      "checks": 450,
+      "locale": "en",
+      "size": [
+        854,
+        480
+      ],
+      "profile": "adult_home_beginner",
+      "capture": "artifacts/visual/Boss/window-en-854.png",
+      "captureSha256": "0e5ee95bd9f353e6a9c2d7d683b3aa932c35279ea2180bb61cbff0e914be1ecb"
+    },
+    {
+      "report": "artifacts/visual/Boss/window-teen-1600.json",
+      "checks": 459,
+      "locale": "es",
+      "size": [
+        1600,
+        720
+      ],
+      "profile": "teen_home_supervised",
+      "capture": "artifacts/visual/Boss/window-teen-1600.png",
+      "captureSha256": "741aef3d42c9191583e74cb9dd250ae864adc2e7dd24cdc903cbeadd8e7f7ec5"
+    }
+  ],
+  "journalRegression": {
+    "report": "artifacts/visual/Boss/journal-regression.smoke.json",
+    "checks": 513
+  },
+  "pythonTrainingTests": 22,
+  "fixtureExports": {
+    "training": 60,
+    "journalSubstitutions": 162,
+    "bossContexts": 42
+  },
+  "artValidation": "tools/check_boss_assets.py",
+  "limits": [
+    "Local fictional records, no live backend or production rewards",
+    "Static sprites, no new animations",
+    "Render approved; assembled native window ready for user PR review"
+  ]
+}

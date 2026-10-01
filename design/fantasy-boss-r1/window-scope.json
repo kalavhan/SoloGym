@@ -1,0 +1,65 @@
+{
+  "window": "Routine-driven dungeon / Mazmorra",
+  "status": "Approved render implemented as complete native Unity window",
+  "base": "c90a41843f9f807112f0e383356fa1ae914bb11f",
+  "delivery": "One complete Unity window PR after the render is reviewed",
+  "conceptState": {
+    "locale": "es",
+    "profile": "adult_gym_intermediate",
+    "routine": "Base A",
+    "exerciseId": "dumbbell_goblet_squat",
+    "currentSet": 2,
+    "plannedSets": 2,
+    "targetReps": [
+      6,
+      10
+    ],
+    "enteredReps": 8,
+    "enteredLoadKg": null,
+    "bossRemaining": 900,
+    "bossMaximum": 1000,
+    "explanation": "Fictional illustration after one of two squat sets earned 100 of that block's fixed 200-point share. The current set is not yet submitted."
+  },
+  "art": {
+    "background": "One PixelLab 640x360 opaque architecture/floor export; frontal, coherent single-point perspective",
+    "hero": "Existing approved 256x256 male-medium frontal sprite as reference; no new character generation",
+    "boss": "Separate static PixelLab stone guardian, 256x256 transparent source, 20 quoted generations",
+    "controls": "Reuse native uGUI controls and pixel skins from Home/Workouts; no baked labels",
+    "animation": "Not required for this static MVP pass; no animation jobs authorized"
+  },
+  "implementationStates": [
+    "Readiness-reviewed session entry and explicit start",
+    "Warm-up, active exercise and set logging, rest, cooldown",
+    "Always-available difficulty choice during exercise, rest and pause",
+    "Pause/resume, safe stop and saved-session recovery",
+    "Routine overview and corrections to manual logs",
+    "Completion versus stopped/incomplete summary and return to journal",
+    "Local persistence failures and incompatible saved-session recovery"
+  ],
+  "domainRequirements": [
+    "Use existing structured prescription and eligibility rules; do not infer dosing from appearance or painted concept labels.",
+    "Connect the selected journal entry and its reviewed prescription to a local active session; no independent random sample routine.",
+    "A difficulty change validates the remaining prescription and explains reductions for readiness/experience; it preserves completed logs and does not itself award damage.",
+    "Keep fixed per-exercise and overall progress budgets with a stable ledger; duplicate submissions, corrections, extra reps/load and difficulty toggles cannot farm rewards.",
+    "Use correct reps/seconds/minutes and per-side semantics; equipment load is optional user input and is never inferred or prescribed by the avatar.",
+    "No timed enemy attacks, character-health loss, real-time combat input, punitive missed-workout debt or pressure to rush rest.",
+    "Pain, injury and illness stop the prescription; retain teen supervision and hard-difficulty limits.",
+    "Retain the no-equipment pulling-gap disclosure. A character illustration is not an exercise demonstration.",
+    "The local example namespace stays separate from real account records and production economy; exercise-professional/youth content review remains pending."
+  ],
+  "outOfScope": [
+    "Character or exercise animation batches",
+    "New character classes, skins or color customization",
+    "Production cloud training, anti-cheat or trusted reward issuance",
+    "MOBA gameplay and multiplayer",
+    "Fasting, billing, ads or activity-provider integration"
+  ],
+  "verificationAfterImplementation": [
+    "Compare actual native Unity captures to the approved composition at multiple landscape sizes and safe insets",
+    "Manual logging, retry idempotency, corrections, stop/completion and restart persistence",
+    "Difficulty changes during active/rest/paused states preserve logs and capped progress",
+    "Fresh readiness and teen/experience eligibility; no automatic workout on entering the window",
+    "Readable English/Spanish controls, pointer/keyboard input, pause/exit gating and honest failure states"
+  ],
+  "approvalQuote": "it is okay for now, let's go"
+}

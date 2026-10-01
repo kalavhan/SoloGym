@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: d4bd4e73-e3a6-47ab-9ca3-1e34bc1bbc10\njob_id: d4bd4e73-e3a6-47ab-9ca3-1e34bc1bbc10\nmodel: pro\ndescription: Single full-body stone guardian golem sprite, frontal view, centered on a transparent 256x256 canvas with clear margin above head and below both feet. Reproduce ONLY the large central guardian from the approved screen reference: broad squat slate-gray stone body, distinct cracked angular rock plates, large shoulders and fists, bronze ring joints, tiny moss patches, one cyan glowing chest rune and cyan eyes. Calm stationary stance with both hands down, legs slightly apart. Both boots fully visible. No weapon. Authentic polished 16-bit fantasy RPG pixel art, crisp deliberate pixel clusters, limited ramps, dark outlines, lighting upper left. Same frontal camera and art style as the supplied Barbarian. No floor, shadow plane, background, hero, UI, letters or multiple poses. One guardian only. Whole sprite within 240x240 of total 256x256 canvas.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 2\nasset_id: 72bdc952-2da4-5b9f-8f72-475c7e059dff\nasset_status: pending (saved when generation completes)\ncost: 20 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"d4bd4e73-e3a6-47ab-9ca3-1e34bc1bbc10\")"
+      }
+    ],
+    "isError": false
+  }
+}

@@ -20,7 +20,9 @@ namespace SoloGym
     {
         public string id, role, exercise_id, unit;
         public TrainingText name;
-        public int sets, quantity_min, quantity_max, rest_seconds;
+        public int sets, quantity_min, quantity_max, rest_seconds, boss_share, estimated_seconds, additional_set_seconds;
+        public string category, load_entry;
+        public int[] aerobic_effort_0_to_10;
         public bool per_side;
     }
     [Serializable] public sealed class TrainingMessage { public string code; public TrainingText text; }

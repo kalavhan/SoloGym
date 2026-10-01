@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "provider": "PixelLab MCP create_image_pro",
+  "jobId": "31e58dd3-7a80-481f-b187-b68db8fec9e0",
+  "galleryAssetId": "ad9bdcac-7a5b-545a-9c1a-f20c3b4c5f4e",
+  "source": "native/chamber.png",
+  "size": [
+    640,
+    360
+  ],
+  "sha256": "1c59c1384933ab61a8207aa45e2a44a5d79210b584e7421874ca51d6685936bb",
+  "quotedGenerations": 40,
+  "productionRecords": "design/fantasy-boss-r1/production/",
+  "status": "background-for-screen-concept-review",
+  "runtimeIntegrated": false,
+  "separateLayers": "Architecture/floor only. Hero, boss, HUD, controls, text and effects are separate later implementation assets.",
+  "reference": "assets/sprites/pixellab/training-hall-r1/native/room-0.png"
+}
