@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-01",
+  "unity": "6000.3.24f1",
+  "platform": "Linux standalone, private Xvfb displays",
+  "passed": true,
+  "total_reported_checks": 724,
+  "reports": [
+    {
+      "file": "artifacts/visual/Consent/window-en-854.smoke.json",
+      "result": {
+        "passed": true,
+        "checks": 101,
+        "width": 854,
+        "height": 480,
+        "locale": "en",
+        "failures": []
+      }
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1280.smoke.json",
+      "result": {
+        "passed": true,
+        "checks": 101,
+        "width": 1280,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1600.smoke.json",
+      "result": {
+        "passed": true,
+        "checks": 101,
+        "width": 1600,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-consent-r1/checks/keyboard.json",
+      "result": {
+        "passed": true,
+        "checks": 4,
+        "width": 1280,
+        "height": 720,
+        "locale": "en",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-consent-r1/checks/login-regression.json",
+      "result": {
+        "passed": true,
+        "checks": 122,
+        "locale": "es",
+        "width": 1280,
+        "height": 720,
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-consent-r1/checks/account-regression.json",
+      "result": {
+        "passed": true,
+        "checks": 91,
+        "locale": "en",
+        "width": 854,
+        "height": 480,
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-consent-r1/checks/onboarding-regression.json",
+      "result": {
+        "passed": true,
+        "checks": 204,
+        "width": 1280,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    }
+  ],
+  "art_integrity": {
+    "eight_original_characters_unchanged": true,
+    "concepts_prompts_and_native_background_hashes_unchanged": true,
+    "new_art_generations": 0
+  },
+  "runtime_placeholder_matches_approved_fixture": true,
+  "runtime_document": {
+    "file": "app/Assets/SoloGym/Resources/Onboarding/ReviewDocuments.json",
+    "sha256": "43db93f13d4c36c1f4b6adb2612a798fa786dadd0f35bd84343f7a5d26e2ef6f"
+  },
+  "screens": [
+    {
+      "file": "artifacts/visual/Consent/window-en-854-missing-documents.png",
+      "sha256": "19a8f14e3797acc588d6056a9fb9c05e281fc38653e90a63b2e1ec4cda37d252"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-en-854-privacy.png",
+      "sha256": "3df7f1f575061f53120f2d61e98161885a8cdc8a51d73c429ce870064aa8bf25"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-en-854-registration-preview.png",
+      "sha256": "3f4ecc3626db473840611b0f898568645a3548a0149b5cbce77be450cdc1be76"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-en-854.png",
+      "sha256": "b0112f8c7d2cd84559abfb2266fc21c6b1e3f0ad75223f148ac21f68a04166ec"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1280-checked.png",
+      "sha256": "6b6d21286078c9a47f1ab9c2e88728bc5aad5cbba47a81abd82e2b45696a7b58"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1280-long-document.png",
+      "sha256": "2f9c9f2b28237b8528da9a255af1e5bf9ae688d5fb70083b3105d452cd7ef821"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1280-missing-documents.png",
+      "sha256": "ec6e83f7b64227736af7a21c174d397978755d51bf848f0ee3dd36b21f4c8ab4"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1280-privacy.png",
+      "sha256": "0f35fb937af3d688059c2e82d9dd4b136707b0f2281d272185a40d0938206fcd"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1280-registration-preview.png",
+      "sha256": "2c9116ebd7c1060dd9efed9c8849ead0f36cc8c772b95d390242aab3cb6cbd0d"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1280-signed-in-checkpoint.png",
+      "sha256": "09cc435ba61a00173d9016036cddd68004bbc793f7a150ebe3d148e0fed7300d"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1280.png",
+      "sha256": "13c0759f15fa115c942cfdfe1ba1e843d1726c3651859cbad5c68e6c54497ee0"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1600-privacy.png",
+      "sha256": "a3e4690b0aefa70ba1824bbf58d17a624239210815815e2ecb758aa2e022da4d"
+    },
+    {
+      "file": "artifacts/visual/Consent/window-es-1600.png",
+      "sha256": "f0830459fa46a04cf9b930f3aafcc706de1507a5ea638854275e4b9df89718dd"
+    }
+  ],
+  "limits": [
+    "Lorem ipsum remains explicitly provisional; checkbox decisions are memory-only.",
+    "Preview registration sends no credentials to a service and creates no account.",
+    "No production policy receipts, eligibility, cloud profile persistence or Home entry.",
+    "Android/iOS keyboard and touch behavior still require device testing."
+  ]
+}

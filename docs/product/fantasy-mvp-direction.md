@@ -97,10 +97,13 @@ and one of the eight existing PixelLab appearances. Body choice stays cosmetic;
 colors, equipment and animation remain fixed. Draft navigation and localization
 preserve choices without storing age/country or replacing Home's saved appearance.
 
-Final Continue stops at the unavailable privacy/consent setup checkpoint. This
-window does not satisfy regional/guardian policy, accept documents, issue an
-account-creation permit or save a personal profile. The prior credential form
-remains available for isolated review. See
+Final Continue now opens the approved consent screen with user-authorized Lorem
+ipsum documents. Independent review choices enable the existing registration form
+as a preview; valid submission makes no service calls and clears secrets. Signed-in
+players continue to pending profile setup instead. The reader works from all access
+screens and preserves draft navigation. These provisional choices do not satisfy
+regional/guardian policy, create real receipts or save a personal profile. See
+[consent implementation](../../design/fantasy-consent-r1/README.md). See
 [implementation and verification](../../design/fantasy-onboarding-r1/README.md).
 
 ## Decisions still open

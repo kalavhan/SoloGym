@@ -73,16 +73,16 @@ namespace SoloGym.UI
             Check(w.Page=="privacy" && w.LastNavigation.ReadOnly && !f.Hero.gameObject.activeInHierarchy,"Read-only document hides hero");
             Click(w.Terms); yield return Ready();
             Check(w.Page=="terms" && w.LastNavigation.ReadOnly,"Switch documents while preserving return route");
-            Check(Click(w.Return),"Native return from document"); yield return Ready();
+            Check(Click(w.Consent.ReaderReturn),"Native return from document"); yield return Ready();
             Check(w.Page=="onboarding" && c.Step==GuildSetupStep.Character && c.CharacterId=="female-medium" && f.Hero.gameObject.activeInHierarchy,"Document returns to same draft step");
-            Click(w.Terms); yield return Ready(); Click(w.Return); yield return Ready();
+            Click(w.Terms); yield return Ready(); Click(w.Consent.ReaderReturn); yield return Ready();
             f.GoBack(); Check(c.Step==GuildSetupStep.AgeCountry && !f.Hero.gameObject.activeSelf && c.Origin.AgeText=="21","Back retains origin and hides hero");
             f.Advance(); Check(c.CharacterId=="female-medium","Forward retains selected character");
             f.Advance(); yield return Ready();
-            Check(c.Step==GuildSetupStep.PrivacyPending && !c.Origin.PrivacyAcknowledged && !c.Origin.TermsAccepted && !w.Account.Controller.Created,"Final Continue cannot accept consent or create account");
+            Check(c.Step==GuildSetupStep.Consent && !c.Origin.PrivacyAcknowledged && !c.Origin.TermsAccepted && !w.Account.Controller.Created,"Final Continue cannot accept consent or create account");
             Check(FindFirstObjectByType<PixelTrainingHallHome>()==null && PlayerPrefs.GetString(homeKey)==original && PlayerPrefs.HasKey(homeKey)==hadHome,"No Home entry or committed appearance");
-            TextFits(f,"checkpoint"); yield return Shot(w,"privacy-pending");
-            f.GoBack(); f.GoBack(); f.Age.Input.Select(); w.ReviewKeyboard(Screen.height*.45f); yield return Ready();
+            yield return Shot(w,"consent");
+            Click(w.Consent.Back); yield return Ready(); f.GoBack(); f.Age.Input.Select(); w.ReviewKeyboard(Screen.height*.45f); yield return Ready();
             Check(f.Scroll.viewport.rect.height<472,"Keyboard reduces origin viewport");
             var corners=new Vector3[4]; ((RectTransform)f.Age.Input.transform).GetWorldCorners(corners);
             Check(corners[0].y>=Screen.height*.45f-1,"Age stays above keyboard"); yield return Shot(w,"keyboard"); w.ReviewKeyboard(0);
@@ -105,7 +105,7 @@ namespace SoloGym.UI
             { countryFocus|=EventSystem.current.currentSelectedGameObject==f.Country.gameObject; picker|=f.CountryOpen; character|=f.Controller.Step==GuildSetupStep.Character; yield return null; }
             Check(File.Exists(marker+".done"),"OS input completed"); Check(f.Controller.Origin.AgeText=="21" && f.Controller.Origin.CountryCode=="MX","OS input selects age and country");
             Check(countryFocus && picker && character,"OS Return traverses both screens"); Check(f.Controller.CharacterId=="female-muscular","OS keyboard selects gender and final card");
-            Check(f.Controller.Step==GuildSetupStep.PrivacyPending && !f.Controller.Origin.TermsAccepted,"OS final Continue stops at consent boundary");
+            Check(f.Controller.Step==GuildSetupStep.Consent && !f.Controller.Origin.TermsAccepted,"OS final Continue stops at consent boundary");
             Save(w,marker+".report.json");
         }
         void TextFits(PixelOnboardingFlow f,string state)

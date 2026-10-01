@@ -108,12 +108,12 @@ namespace SoloGym.UI
             Check(w.Page == "onboarding" && service.Count == before, "Create-account entry makes no fake account");
             TextFits(w, "create"); yield return Shot(w, "create-account"); Click(w.Onboarding.Back); yield return new WaitForEndOfFrame(); yield return null;
             Click(w.Privacy); yield return null;
-            Check(w.Page == "privacy" && w.LastNavigation.ReadOnly && w.NoticeBody.text.Length > 0, "Privacy opens actual read-only document availability");
-            string document = w.NoticeBody.text; Click(w.Language); yield return null;
-            Check(w.NoticeBody.text != document && w.Page == "privacy", "Document availability localizes without accepting anything");
-            TextFits(w, "privacy"); w.Controller.SetLanguage(locale); Click(w.Return); yield return new WaitForEndOfFrame(); yield return null;
+            Check(w.Page == "privacy" && w.LastNavigation.ReadOnly && w.Consent.DocumentBody.text.Length > 0, "Privacy opens actual read-only document availability");
+            string document = w.Consent.Controller.Language; Click(w.Language); yield return null;
+            Check(w.Consent.Controller.Language != document && w.Page == "privacy", "Document availability localizes without accepting anything");
+            TextFits(w, "privacy"); w.Controller.SetLanguage(locale); Click(w.Consent.ReaderReturn); yield return new WaitForEndOfFrame(); yield return null;
             Click(w.Terms); yield return null;
-            Check(w.Page == "terms" && w.LastNavigation.ReadOnly, "Terms are read-only"); Click(w.Return); yield return new WaitForEndOfFrame(); yield return null;
+            Check(w.Page == "terms" && w.LastNavigation.ReadOnly, "Terms are read-only"); Click(w.Consent.ReaderReturn); yield return new WaitForEndOfFrame(); yield return null;
             // Simulate platform keyboard geometry at the same input/layout boundary without a real mobile IME.
             w.Password.Input.Select(); w.ReviewKeyboard(Screen.height * .45f); yield return null; yield return null;
             Check(w.FormScroll.viewport.rect.height < 516 && w.Composition.localScale.x > 0, "Keyboard shortens scroll viewport, not font scale");

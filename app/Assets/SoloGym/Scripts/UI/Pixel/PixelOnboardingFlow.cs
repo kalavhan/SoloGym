@@ -25,12 +25,12 @@ namespace SoloGym.UI
         public bool CountryOpen => picker != null && picker.gameObject.activeSelf;
         public IReadOnlyList<PixelSecondaryAction> CountryResults => visibleCountries;
         public event Action StateChanged;
+        public event Action ConsentRequested;
         readonly List<PixelSecondaryAction> visibleCountries = new List<PixelSecondaryAction>();
         readonly Dictionary<string, PixelSecondaryAction> countryButtons = new Dictionary<string, PixelSecondaryAction>();
         readonly string[] bodyIds = { "skinny", "medium", "fat", "muscular" };
-        RectTransform body, viewport, ageGroup, characterGroup, pendingGroup, picker, results;
-        Text title, subtitle, countryLabel, countryError, privateNote, guidance, genderLabel, bodyLabel, cosmeticNote, pendingText, pickerTitle, noResults;
-        PixelSecondaryAction leave;
+        RectTransform body, viewport, ageGroup, characterGroup, picker, results;
+        Text title, subtitle, countryLabel, countryError, privateNote, guidance, genderLabel, bodyLabel, cosmeticNote, pickerTitle, noResults;
         Selectable privacy, locale;
         Action exit;
         string language = "";
@@ -67,9 +67,6 @@ namespace SoloGym.UI
             Bodies.UseSpriteCards(); Place(Bodies, new Rect(0, 148, 502, 208));
             Bodies.onValueChanged.AddListener(value => Controller.ChooseBody(value));
             cosmeticNote = PixelJournalUI.Text(characterGroup, new Rect(0, 366, 502, 32), "", 21, false, TextAnchor.MiddleCenter);
-            pendingGroup = PixelJournalUI.Rect("Privacy setup checkpoint", body, new Rect(0, 0, 502, 370));
-            pendingText = PixelJournalUI.Text(pendingGroup, new Rect(0, 16, 502, 270), "", 25, false, TextAnchor.UpperLeft);
-            leave = Action(pendingGroup, "", Leave); Place(leave, new Rect(0, 314, 502, 64));
             Status = PixelJournalUI.Text(body, new Rect(), "", 21, false); Status.color = countryError.color;
             Continue = PixelPrimaryButton.Create(body, "", Advance); Continue.SetFontSize(30); Continue.Background.pixelsPerUnitMultiplier = 2;
             Hero = PixelJournalUI.Rect("Original PixelLab hero", composition, new Rect()).gameObject.AddComponent<Image>(); Hero.raycastTarget = false;
@@ -113,6 +110,7 @@ namespace SoloGym.UI
             if (!gameObject.activeInHierarchy || CountryOpen) return;
             ReleaseKeyboard(); Controller.Continue(PixelLabRoster.TryFind(Controller.CharacterId, out _));
             ResetScroll();
+            if (Controller.Step == GuildSetupStep.Consent) { ConsentRequested?.Invoke(); return; }
             if (Controller.ErrorKey.Length > 0) { if (Age.Error.Length > 0) Age.Input.Select(); else Country.Select(); }
             else Back.Select();
         }
@@ -163,7 +161,7 @@ namespace SoloGym.UI
         void Render()
         {
             var step = Controller.Step; bool age = step == GuildSetupStep.AgeCountry, character = step == GuildSetupStep.Character;
-            ageGroup.gameObject.SetActive(age); characterGroup.gameObject.SetActive(character); pendingGroup.gameObject.SetActive(!age && !character);
+            ageGroup.gameObject.SetActive(age); characterGroup.gameObject.SetActive(character);
             Continue.gameObject.SetActive(age || character);
             title.text = age ? L("YOUR ORIGIN", "TU ORIGEN") : character ? L("CHOOSE YOUR CHARACTER", "ELIGE TU PERSONAJE") : L("PRIVACY & CONSENT", "PRIVACIDAD Y CONSENTIMIENTO");
             title.fontSize = !age && !character ? 28 : 34;
@@ -195,8 +193,6 @@ namespace SoloGym.UI
             PixelLabRoster.Place(Hero, Controller.CharacterId, new Vector2(336, 653), 1.95f);
             Hero.gameObject.SetActive(character && gameObject.activeInHierarchy);
             cosmeticNote.text = L("Only changes your appearance.", "Solo cambia la apariencia.");
-            pendingText.text = L("Your choices are ready for the next step.\n\nPrivacy, consent and eligibility setup are not available yet in this version.\n\nNo account or profile has been saved.", "Tus elecciones están listas para el siguiente paso.\n\nLa configuración de privacidad, consentimiento y elegibilidad aún no está disponible en esta versión.\n\nNo se guardó ninguna cuenta ni perfil.");
-            leave.SetLabel(L("Return to sign in", "Volver al inicio"));
             Status.text = key.Length > 0 && !ageError && countryError.text.Length == 0 ? error : "";
             Status.gameObject.SetActive(Status.text.Length > 0);
             pickerTitle.text = countryLabel.text; CloseCountries.SetLabel(L("Close", "Cerrar"));
@@ -212,9 +208,9 @@ namespace SoloGym.UI
             { Link(Back, locale, Age.Input); Age.SetTraversal(Back, Country); Link(Country, Age.Input, Continue); Link(Continue, Country, privacy); }
             else if (Controller.Step == GuildSetupStep.Character)
             { Link(Back, locale, Gender.Options[0]); Gender.SetTraversal(Back, Bodies.Options[0]); Bodies.SetTraversal(Gender.Options[1], Continue); Link(Continue, Bodies.Options[3], privacy); }
-            else { Link(Back, locale, leave); Link(leave, Back, privacy); }
+
         }
-        public Selectable LastControl => Controller.Step == GuildSetupStep.PrivacyPending ? (Selectable)leave : Continue;
+        public Selectable LastControl => Continue;
         void Layout()
         {
             float y = 0;

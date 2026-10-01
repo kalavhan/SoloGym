@@ -56,7 +56,7 @@ namespace SoloGym
         public AccountRegistrationController(IAccountRegistrationService service = null)
         { this.service = service ?? new UnconfiguredAccountRegistrationService(); }
 
-        public Task RegisterAsync(string email, string password, string confirmation)
+        public Task RegisterAsync(string email, string password, string confirmation, bool previewOnly = false)
         {
             if (!CanSubmit) return Task.CompletedTask;
             email = (email ?? "").Trim();
@@ -70,6 +70,8 @@ namespace SoloGym
             if (string.IsNullOrEmpty(password)) return Invalid("required_password");
             if (string.IsNullOrEmpty(confirmation)) return Invalid("required_confirmation");
             if (!string.Equals(password, confirmation, StringComparison.Ordinal)) return Invalid("mismatch");
+            // Placeholder choices only unlock UI review, even when a real adapter is injected.
+            if (previewOnly) { SecretsCleared?.Invoke(); return Invalid("provisional"); }
             return RegisterValidatedAsync(email, password);
         }
 

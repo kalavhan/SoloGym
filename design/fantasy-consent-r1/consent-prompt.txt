@@ -1,0 +1,12 @@
+Use case: ui-mockup
+Asset type: SoloGym native Unity landscape consent screen, one complete 16:9 screen concept.
+Input images: Image 1 is the native approved age/country window, the edit target for its composition and UI. Image 2 is the original PixelLab guild entrance, an invariant art reference.
+Change only the content inside the right-hand form panel of image 1. Preserve its full landscape composition, original straight-on PixelLab guild doorway on the left, wooden beams and stone floor, SOLOGYM wordmark, GREMIO DE ENTRENAMIENTO subtitle, dark slate right panel, thin aged-brass pixel borders, ivory pixel typography, teal primary button and footer links. Keep the background geometry and perspective. Do not add a character or props.
+Inside the same right panel, small underlined “Volver” at upper left, centered heading “TUS DECISIONES”, subtitle “Antes de crear tu cuenta”. Below that a small subdued label “Textos provisionales · Vista previa”.
+Two wide, neatly separated framed document rows using the existing pixel control style: first “Política de privacidad” with a right-aligned “LEER”; second “Términos de uso” with a right-aligned “LEER”.
+Below these, two separate empty square checkboxes with left-aligned readable labels: “He leído la política de privacidad.” and “Acepto los términos de uso.” Both unchecked. Wrap only if needed and leave adequate space.
+Below the choices, small clear supporting copy “Esta vista previa no registra aceptación.”
+At the bottom of the panel, a full-width primary button “CONTINUAR” in the existing teal and gold style, slightly muted to indicate it is currently unavailable until choices are made in the prototype. Nothing claims account creation or eligibility.
+Keep bottom links “Privacidad”, “Términos” and “ES / EN” in their original positions.
+Style: crisp 16-bit fantasy pixel-art game interface matching the reference; restrained warm wood, dark slate, ivory and aged brass. No web layout, white cards, browser chrome, extra panels, gradients from a different design system, fancy particles, scroll props, icons or new art. All copy is Spanish and spelled exactly. One complete screen, no multi-panel contact sheet.
+This is a flattened concept reference, not a production asset. Runtime will reuse independent original background and live native controls. The actual document bodies will contain user-authorized Lorem ipsum in a separate reader view. No final legal claims.
