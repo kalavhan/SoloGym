@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "status": "Implementation handoff for review; no runtime changes",
+  "status": "Implemented with independent assets and live uGUI controls",
   "parts": [
     {
       "part": "Dungeon architecture/floor",
       "source": "assets/sprites/pixellab/boss-chamber-r1/native/chamber.png",
-      "status": "New PixelLab background, awaiting assembled-screen review",
+      "status": "Approved room source used unchanged",
       "implementation": "One point-filtered background image",
       "sha256": "1c59c1384933ab61a8207aa45e2a44a5d79210b584e7421874ca51d6685936bb"
     },
@@ -18,30 +18,31 @@
     },
     {
       "part": "Boss",
-      "source": null,
-      "status": "Proposed only inside the full-screen render",
-      "implementation": "After screen review, obtain one separate static boss export; no animation batch"
+      "source": "assets/sprites/pixellab/stone-guardian-r1/native/guardian.png",
+      "status": "Separate PixelLab static export",
+      "implementation": "Point-filtered full 256x256 source canvas, no animation",
+      "sha256": "923ef190bdc20e1f279f53f66eadcf46f5f80c67910929624d33c744ca4a491a"
     },
     {
       "part": "Primary record-set action",
-      "source": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelPrimaryButton.cs",
-      "status": "Reuse",
+      "source": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelJournalUI.cs",
+      "status": "Reused shared native controls and sprite skins",
       "implementation": "Existing sprite skin and native Button with live localized label",
-      "sha256": "3e4ad4c19c8c746ae6eb04ce282cab32c032d67c95a0d0a506a21ae6aa213fd4"
+      "sha256": "e2e9c39188e1edb2d4ce5ebba6e1c681feb497aff7830acd5a8a0b693d4025a1"
     },
     {
       "part": "Pause/end and routine actions",
-      "source": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelSecondaryAction.cs",
-      "status": "Reuse",
+      "source": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelJournalUI.cs",
+      "status": "Reused shared native controls and sprite skins",
       "implementation": "Native actions; end confirms preservation of the current session",
-      "sha256": "dec7d9097f338ff3d86e0adf0aff6e430c369449462224355f510ae1b4879806"
+      "sha256": "e2e9c39188e1edb2d4ce5ebba6e1c681feb497aff7830acd5a8a0b693d4025a1"
     },
     {
       "part": "Difficulty choice",
-      "source": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelChoiceControl.cs",
-      "status": "Reuse with session binding",
+      "source": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelJournalUI.cs",
+      "status": "Reused shared native controls and sprite skins",
       "implementation": "Easy/Medium/Hard always reachable in active/rest/paused states; controller applies existing eligibility",
-      "sha256": "8eb22b94c6eb78c78357d98d1a56f54b688e55280a4958766083d81b3d14cca2"
+      "sha256": "e2e9c39188e1edb2d4ce5ebba6e1c681feb497aff7830acd5a8a0b693d4025a1"
     },
     {
       "part": "Rep/time/load fields",
@@ -52,15 +53,15 @@
     },
     {
       "part": "Logging panel and HUD borders",
-      "source": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelContentPanel.cs",
-      "status": "Reuse",
+      "source": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelJournalUI.cs",
+      "status": "Reused shared native controls and sprite skins",
       "implementation": "Existing nine-sliced sprite frame, independent fill and live text",
-      "sha256": "4e01e6ec88c6342e855b57e17e5f1e799bea0e62c312765ebe100697ac73eacf"
+      "sha256": "e2e9c39188e1edb2d4ce5ebba6e1c681feb497aff7830acd5a8a0b693d4025a1"
     },
     {
       "part": "Boss progress bar",
-      "source": null,
-      "status": "New binding using existing frame art",
+      "source": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelBossWindow.cs",
+      "status": "Implemented bounded live fill and label",
       "implementation": "Native filled Image plus live numeric label, driven by capped ledger; no baked numbers"
     }
   ]

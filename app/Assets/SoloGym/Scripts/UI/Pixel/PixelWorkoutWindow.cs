@@ -23,6 +23,7 @@ namespace SoloGym.UI
         public string View { get; private set; } = "loading";
         public bool HasModal => modal != null;
         public Action Exited;
+        public PixelBossWindow BossWindow { get; private set; }
         RectTransform canvasRoot, safe, page, modal;
         CanvasGroup pageGate;
         GameObject beforeModal;
@@ -63,7 +64,7 @@ namespace SoloGym.UI
         }
         IEnumerator Start()
         {
-            if (!initialized) Initialize(Arg("-sologym-locale", "es"), Arg("-sologym-character", "male-medium"), Has("-sologym-teen"), OpenStandaloneHome);
+            if (!initialized) Initialize(Arg("-sologym-locale", "es"), Arg("-sologym-character", "male-medium"), Has("-sologym-teen"), OpenStandaloneHome, openReadiness: Arg("-sologym-window") == "boss");
             while (View == "loading") yield return null;
             for (int i = 0; i < 6; i++) yield return null;
             if (AutomaticReview && Has("-sologym-smoke")) yield return gameObject.AddComponent<PixelWorkoutSmoke>().Run(this);
@@ -102,7 +103,7 @@ namespace SoloGym.UI
         }
         void Update()
         {
-            if (!initialized) return;
+            if (!initialized || !Composition.gameObject.activeSelf) return;
             if (lastWidth != Screen.width || lastHeight != Screen.height || lastSafe != Screen.safeArea) Relayout();
             if (Input.GetKeyDown(KeyCode.Tab) && !HasModal && EventSystem.current.currentSelectedGameObject == null) traversal.FirstOrDefault(s => s != null && s.IsInteractable())?.Select();
             if (Input.GetKeyDown(KeyCode.Escape)) { if (HasModal) CloseModal(); else LeaveToHub(); }
@@ -207,7 +208,7 @@ namespace SoloGym.UI
             Button(page, "full", new Rect(729, 450, 342, 47), L("View full routine >", "Ver rutina completa >"), () => { View = "full"; Render(); }, false, false, 21);
             bool editable = Journal.CanEdit(entry);
             Button(page, "edit", new Rect(679, 517, 213, 57), editable ? L("EDIT ROUTINE", "EDITAR RUTINA") : L("NEW DRAFT", "NUEVO BORRADOR"), () => { if (editable) Journal.BeginEdit(); else Journal.BeginCreate(Journal.Today, true); OpenEditor(); }, true, false, 21);
-            var prepare = Button(page, "prepare", new Rect(906, 517, 224, 57), L("PREPARE SESSION", "PREPARAR SESIÓN"), Prepare, true, true, 21); prepare.interactable = Journal.CanPrepare;
+            var prepare = Button(page, "prepare", new Rect(906, 517, 224, 57), (Journal.ActiveSession != null ? L("RESUME SESSION", "RETOMAR SESIÓN") : L("PREPARE SESSION", "PREPARAR SESIÓN")), Prepare, true, true, 21); prepare.interactable = Journal.CanPrepare || Journal.ActiveSession != null;
         }
         void OpenEditor() { editError = null; View = "edit"; Render(); }
         void BuildEditor()
@@ -255,6 +256,7 @@ namespace SoloGym.UI
         }
         public void Prepare()
         {
+            if (Journal?.ActiveSession != null) { OpenBoss(); return; }
             if (Journal == null || !Journal.Loaded || !Journal.CanPrepare) { Notice(L("Choose today's pending routine first.", "Selecciona primero la rutina pendiente de hoy.")); return; }
             Journal.BeginPrepare(); View = "readiness"; Render();
         }
@@ -280,7 +282,7 @@ namespace SoloGym.UI
         {
             var plan = Journal.PreparedPlan; bool ready = plan?.status == "draft_ready";
             Heading(170, ready ? L("REVIEW YOUR PLAN", "REVISA TU RUTINA") : L("TAKE CARE", "CUIDA TU SALUD"));
-            string copy = Journal.Reviewed ? L("Review saved locally. No workout was started and no completion or reward was recorded.", "Revisión guardada localmente. No se inició un entrenamiento ni se registraron finalización o recompensas.") : ready ? L("Review the full routine and any equipment limits before saving this local review. No workout starts here.", "Revisa la rutina completa y las limitaciones de equipo antes de guardar esta revisión local. Aquí no se inicia un entrenamiento.") : L("This result does not prescribe a training session. Rest or address the review requirements before trying again.", "Este resultado no indica una sesión de entrenamiento. Descansa o atiende los requisitos de revisión antes de volver a intentarlo.");
+            string copy = Journal.Reviewed ? L("Review saved locally. No workout was started and no completion or reward was recorded.", "Revisión guardada localmente. No se inició un entrenamiento ni se registraron finalización o recompensas.") : ready ? L("Review the full routine and any equipment limits before entering the dungeon. Training starts only when you choose ENTER.", "Revisa la rutina completa y las limitaciones de equipo antes de entrar a la mazmorra. Solo inicias al elegir ENTRAR.") : L("This result does not prescribe a training session. Rest or address the review requirements before trying again.", "Este resultado no indica una sesión de entrenamiento. Descansa o atiende los requisitos de revisión antes de volver a intentarlo.");
             Text(page, new Rect(166, 226, 430, 154), copy, 23);
             if (Journal.ReadinessAdjusted) Text(page, new Rect(166, 386, 430, 90), L("Your readiness changed the eligible exercises. Review this updated plan.", "Tu estado cambió los ejercicios disponibles. Revisa esta propuesta actualizada."), 21);
             if (ready && !Journal.Reviewed)
@@ -290,8 +292,28 @@ namespace SoloGym.UI
             var scroll = Scroll(page, new Rect(675, 225, 458, 284), PlanHeight(plan)); DrawPlan(scroll, plan, 426);
             if (ready && !Journal.Reviewed)
             {
-                var save = Button(page, "save-review", new Rect(682, 530, 445, 54), L("SAVE REVIEW", "GUARDAR REVISIÓN"), () => { if (!Journal.SaveReview(out var error)) { Debug.LogWarning(error); Notice(L("Could not save. Please retry; no workout was started.", "No se pudo guardar. Reintenta; no se inició un entrenamiento.")); } else Render(); }, true, true); save.interactable = Journal.CanSaveReview;
+                var save = Button(page, "save-review", new Rect(682, 530, 215, 54), L("SAVE REVIEW", "GUARDAR REVISIÓN"), () => { if (!Journal.SaveReview(out var error)) { Debug.LogWarning(error); Notice(L("Could not save. Please retry; no workout was started.", "No se pudo guardar. Reintenta; no se inició un entrenamiento.")); } else Render(); }, true, true); save.Label.fontSize = 19; save.interactable = Journal.CanSaveReview;
+                var start = Button(page, "start-dungeon", new Rect(909, 530, 217, 54), L("ENTER DUNGEON", "ENTRAR"), OpenBoss, true, true, 20); start.interactable = Journal.CanSaveReview;
             }
+        }
+        public void OpenBoss()
+        {
+            bool restored = Journal.ActiveSession != null;
+            try
+            {
+                if (!restored)
+                {
+                    var rules = JsonUtility.FromJson<BossCatalog>(Resources.Load<TextAsset>("Training/BossOptions").text);
+                    Journal.SaveBoss(BossController.Create(Journal, rules));
+                }
+                Journal.ClearGate(); Composition.gameObject.SetActive(false);
+                BossWindow = new GameObject("Routine dungeon").AddComponent<PixelBossWindow>();
+                BossWindow.Initialize(Journal, Language, character, () => {
+                    var old = BossWindow; BossWindow = null; old.gameObject.SetActive(false); Destroy(old.gameObject);
+                    Composition.gameObject.SetActive(true); View = "hub"; Render();
+                }, restored);
+            }
+            catch (Exception e) { Debug.LogWarning(e.Message); Notice(L("The session could not be saved. Your review is kept; please retry.", "No se pudo guardar la sesión. Conservamos tu revisión; reintenta.")); }
         }
         void BuildSettings()
         {
@@ -332,7 +354,7 @@ namespace SoloGym.UI
         string Name(JournalEntry entry, TrainingPlan plan) => string.IsNullOrWhiteSpace(entry.title) ? plan.name.Get(Language) : entry.title;
         string WeekCaption() => Journal.WeekStart.ToString("d MMM", CultureInfo.GetCultureInfo(Language)) + " – " + Journal.WeekStart.AddDays(6).ToString("d MMM", CultureInfo.GetCultureInfo(Language));
         string DayCaption(string date) => WorkoutJournal.ParseDate(date).ToString("ddd d", CultureInfo.GetCultureInfo(Language)).ToUpperInvariant();
-        string StatusLabel(string status) => status == "completed" ? L("Completed", "Completada") : status == "missed" ? L("Not done", "No realizada") : L("Pending", "Pendiente");
+        string StatusLabel(string status) => status == "completed" ? L("Completed", "Completada") : status == "stopped" ? L("Stopped", "Interrumpida") : status == "missed" ? L("Not done", "No realizada") : L("Pending", "Pendiente");
         string ShortName(TrainingBlock b)
         {
             if (b.role == "warmup") return L("Warm-up", "Calentamiento");
@@ -348,7 +370,8 @@ namespace SoloGym.UI
                 scaleFactor = 1, generationExtents = new Vector2(412, 0), horizontalOverflow = HorizontalWrapMode.Wrap, verticalOverflow = VerticalWrapMode.Overflow };
             return Mathf.Max(54, new TextGenerator().GetPreferredHeight(message.text.Get(Language), settings) + 12);
         }
-        float PlanHeight(TrainingPlan plan) => (plan?.messages ?? Array.Empty<TrainingMessage>()).Sum(m => MessageHeight(m) + 10) + (plan?.blocks?.Length ?? 0) * 108 + 68;
+        float PlanHeight(TrainingPlan plan) => (plan?.messages ?? Array.Empty<TrainingMessage>()).Sum(m => MessageHeight(m) + 10) + (plan?.blocks?.Length ?? 0) * 108 + 68 + (SavedLogs.Length > 0 ? 60 + SavedLogs.Length * 112 : 0);
+        BossLog[] SavedLogs => View == "full" ? Journal.Selected?.session?.logs ?? Array.Empty<BossLog>() : Array.Empty<BossLog>();
         void DrawPlan(Transform parent, TrainingPlan plan, float width)
         {
             if (plan == null) return;
@@ -360,6 +383,19 @@ namespace SoloGym.UI
                 Text(parent, new Rect(4, y + 58, width - 8, 43), Dose(block, false), 20); Rule(parent, 4, y + 105, width - 8); y += 108;
             }
             Text(parent, new Rect(4, y + 8, width - 8, 58), L("Manual records. Content pending professional review.", "Registro manual. Contenido pendiente de revisión profesional."), 18);
+            if (SavedLogs.Length > 0)
+            {
+                y += 80; Text(parent, new Rect(4, y, width - 8, 38), L("SAVED RECORDS", "REGISTROS GUARDADOS"), 24); y += 40;
+                foreach (var log in SavedLogs)
+                {
+                    Text(parent, new Rect(4, y, width - 8, 54), log.prescription.name.Get(Language) + " · " + (log.index + 1), 21);
+                    string unit = log.prescription.unit == "minutes" ? "min" : log.prescription.unit == "seconds" ? "s" : "reps";
+                    Text(parent, new Rect(4, y + 55, width - 8, 50), log.quantity.ToString("0.##", CultureInfo.InvariantCulture) + " " + unit
+                        + (log.prescription.per_side ? L(" / side (lower count)", " / lado (menor cantidad)") : "")
+                        + (log.hasLoad ? " · " + log.loadKg.ToString("0.##", CultureInfo.InvariantCulture) + " kg" : ""), 20);
+                    Rule(parent, 4, y + 108, width - 8); y += 112;
+                }
+            }
         }
         PixelJournalAction Button(Transform parent, string id, Rect bounds, string label, Action action, bool frame = true, bool selected = false, int size = 22)
         { var b = PixelJournalUI.Action(parent, bounds, label, action, frame, selected, size); Register(id, b); return b; }

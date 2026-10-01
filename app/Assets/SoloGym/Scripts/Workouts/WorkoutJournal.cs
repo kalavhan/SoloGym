@@ -14,6 +14,7 @@ namespace SoloGym
         public int minutes = 25;
         public JournalSwap[] swaps = Array.Empty<JournalSwap>();
         public TrainingPlan completedPlan;
+        public BossSession session;
     }
     [Serializable] public sealed class JournalReview
     {
@@ -26,6 +27,7 @@ namespace SoloGym
         public string context = "review-fixtures-only", profileId;
         public JournalEntry[] entries;
         public JournalReview lastReview;
+        public BossSession activeSession;
     }
     [Serializable] public sealed class JournalOption { public string key; public TrainingBlock block; public int secondsDelta; }
     [Serializable] public sealed class JournalMobility { public string profileId; public TrainingPlan plan; }
@@ -77,6 +79,7 @@ namespace SoloGym
         public JournalEntry Selected => Clone(document?.entries.FirstOrDefault(x => x.id == SelectedId));
         public JournalEntry[] Entries => document == null ? Array.Empty<JournalEntry>() : document.entries.Select(x => Clone(x)).ToArray();
         public JournalReview LastReview => Clone(document?.lastReview);
+        public BossSession ActiveSession => Clone(document?.activeSession);
         public static T Clone<T>(T value)
         {
             if (value == null) return default;
@@ -86,11 +89,16 @@ namespace SoloGym
         }
         static void Normalize(object value)
         {
-            if (value is JournalEntry entry && string.IsNullOrEmpty(entry.completedPlan?.status)) entry.completedPlan = null;
+            if (value is JournalEntry entry)
+            {
+                if (string.IsNullOrEmpty(entry.completedPlan?.status)) entry.completedPlan = null;
+                if (string.IsNullOrEmpty(entry.session?.id)) entry.session = null;
+            }
             if (value is JournalDocument data)
             {
                 foreach (var row in data.entries ?? Array.Empty<JournalEntry>()) Normalize(row);
                 if (string.IsNullOrEmpty(data.lastReview?.entryId)) data.lastReview = null;
+                if (string.IsNullOrEmpty(data.activeSession?.id)) data.activeSession = null;
             }
         }
         public static string Date(DateTime date) => date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
@@ -132,9 +140,9 @@ namespace SoloGym
             }
             return new JournalDocument { profileId = ProfileId, entries = entries.ToArray() };
         }
-        public string Status(JournalEntry entry) => entry.status == "completed" ? "completed" : ParseDate(entry.date) < Today ? "missed" : "planned";
-        public bool CanEdit(JournalEntry entry) => entry != null && Status(entry) == "planned";
-        public bool CanPrepare => Selected != null && Status(Selected) == "planned" && Selected.date == Date(Today) && Draft == null;
+        public string Status(JournalEntry entry) => entry.status == "completed" ? "completed" : entry.status == "stopped" ? "stopped" : ParseDate(entry.date) < Today ? "missed" : "planned";
+        public bool CanEdit(JournalEntry entry) => entry != null && Status(entry) == "planned" && document?.activeSession?.entryId != entry.id;
+        public bool CanPrepare => Selected != null && Status(Selected) == "planned" && Selected.date == Date(Today) && Draft == null && document?.activeSession == null;
         public void MoveWeek(int delta)
         {
             var next = WeekStart.AddDays(delta * 7);
@@ -160,7 +168,7 @@ namespace SoloGym
                 .OrderBy(e => e.id == SelectedId ? 0 : 1).ThenBy(e => e.date);
             return query.ToArray();
         }
-        public TrainingPlan Plan(JournalEntry entry) => entry.status == "completed" ? Clone(entry.completedPlan) : Resolve(entry, Key(entry.minutes));
+        public TrainingPlan Plan(JournalEntry entry) => (entry.status == "completed" || entry.status == "stopped") ? Clone(entry.completedPlan) : Resolve(entry, Key(entry.minutes));
         TrainingPlan Resolve(JournalEntry entry, string key)
         {
             var basePlan = catalog.entries.FirstOrDefault(x => x.key == key)?.session;
@@ -191,7 +199,7 @@ namespace SoloGym
             if (day.Date < Today) throw new ArgumentException("New plans cannot be backdated.");
             var selected = Selected;
             Draft = copySelected && selected != null && selected.status != "completed" ? selected : new JournalEntry();
-            Draft.id = Guid.NewGuid().ToString("N"); Draft.status = "planned"; Draft.completedPlan = null; Draft.date = Date(day);
+            Draft.id = Guid.NewGuid().ToString("N"); Draft.status = "planned"; Draft.completedPlan = null; Draft.session = null; Draft.date = Date(day);
             ClearGate();
         }
         public void SetDuration(int minutes)
@@ -257,6 +265,25 @@ namespace SoloGym
         public bool CanSaveReview => Gate != null && Gate.CanAccept && PreparedPlan?.status == "draft_ready"
             && preparedKey == Gate.Key && preparedEntryId == SelectedId && ReferenceEquals(reviewedGatePlan, Gate.Plan);
         public void ClearGate() { Gate = null; PreparedPlan = null; preparedKey = preparedEntryId = null; reviewedGatePlan = null; Reviewed = false; ReadinessAdjusted = false; }
+        public void SaveBoss(BossSession session)
+        {
+            if (!Loaded || session == null || session.profile != ProfileId) throw new ArgumentException("Invalid session profile.");
+            if (document.activeSession == null)
+            {
+                if (!CanSaveReview || session.entryId != SelectedId || session.date != Date(Today)) throw new InvalidOperationException("A fresh acknowledged review is required.");
+            }
+            else if (document.activeSession.id != session.id || document.activeSession.entryId != session.entryId) throw new InvalidOperationException("Another session is already saved.");
+            var next = Clone(document); next.activeSession = Clone(session); Validate(next); Persist(next);
+        }
+        public void ArchiveBoss()
+        {
+            var active = document?.activeSession;
+            if (active == null) return; // Retry after a successful return is idempotent.
+            if (active.state == "active") throw new InvalidOperationException("Pause or finish the active session first.");
+            var next = Clone(document); var entry = next.entries.First(x => x.id == active.entryId);
+            entry.status = active.state; entry.completedPlan = Clone(active.plan); entry.session = Clone(active);
+            next.activeSession = null; next.lastReview = null; Validate(next); Persist(next); Select(entry.id);
+        }
         public string Export() => JsonUtility.ToJson(document, true);
         void Persist(JournalDocument next) { storage.Write(JsonUtility.ToJson(next, true)); document = next; }
         JournalDocument Deserialize(string text)
@@ -287,12 +314,18 @@ namespace SoloGym
                     || !new[] { 15, 25, 40 }.Contains(entry.minutes) || entry.swaps == null || entry.swaps.Length > 12)
                     throw new ArgumentException("Invalid journal entry.");
                 var day = ParseDate(entry.date); if (day.Year < 2000 || day.Year > 2100) throw new ArgumentException("Date outside supported calendar.");
-                if (entry.status == "completed")
+                if (entry.status == "completed" || entry.status == "stopped")
                 {
                     ValidateSnapshot(entry.completedPlan);
+                    if (entry.session != null) BossSession.Validate(entry.session);
                 }
                 else if (entry.status == "planned" && entry.completedPlan == null) Resolve(entry, Key(entry.minutes));
                 else throw new ArgumentException("Unknown journal status.");
+            }
+            if (data.activeSession != null)
+            {
+                BossSession.Validate(data.activeSession);
+                if (data.activeSession.profile != ProfileId || !data.entries.Any(e => e.id == data.activeSession.entryId && e.status == "planned")) throw new ArgumentException("Orphaned active session.");
             }
             if (data.lastReview != null && (!ids.Contains(data.lastReview.entryId) || data.lastReview.plan?.status != "draft_ready"))
                 throw new ArgumentException("Invalid saved review.");

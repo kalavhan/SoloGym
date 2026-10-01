@@ -15,10 +15,11 @@ clothing pipeline. Current requirements are in
   This supersedes component-only PRs and four/eight-sprite delivery batches.
   Reuse existing components within the window; do not generate new artwork
   for controls that already match the accepted style.
-- Next window: routine-driven boss dungeon, following merged PR #29. Prepare a
-  PixelLab background and complete landscape render in `design/fantasy-boss-r1/`
-  for visual review before implementing it. Existing characters stay unchanged;
-  a boss in the concept is a proposed design, not a production sprite approval.
+- The boss-dungeon render in `design/fantasy-boss-r1/` was approved with
+  "it is okay for now, let's go". Its complete native window follows merged
+  PR #29: explicit reviewed entry, local set records, rest, difficulty changes,
+  pause/resume and completed/stopped history. One static PixelLab stone guardian
+  is in scope; existing Barbarians stay unchanged. No animation batch.
 - Workouts/Rutinas is the approved complete journal window, with current/completed/missed sessions,
   routine review/editing, and a readiness entry before training. The proposed
   visual is a fantasy guild training journal. Its reference and implementation pack is

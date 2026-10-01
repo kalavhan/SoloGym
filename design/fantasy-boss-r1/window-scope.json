@@ -1,6 +1,6 @@
 {
   "window": "Routine-driven dungeon / Mazmorra",
-  "status": "render-first; implementation awaits visual review",
+  "status": "Approved render implemented as complete native Unity window",
   "base": "c90a41843f9f807112f0e383356fa1ae914bb11f",
   "delivery": "One complete Unity window PR after the render is reviewed",
   "conceptState": {
@@ -10,7 +10,10 @@
     "exerciseId": "dumbbell_goblet_squat",
     "currentSet": 2,
     "plannedSets": 2,
-    "targetReps": [6, 10],
+    "targetReps": [
+      6,
+      10
+    ],
     "enteredReps": 8,
     "enteredLoadKg": null,
     "bossRemaining": 900,
@@ -20,7 +23,7 @@
   "art": {
     "background": "One PixelLab 640x360 opaque architecture/floor export; frontal, coherent single-point perspective",
     "hero": "Existing approved 256x256 male-medium frontal sprite as reference; no new character generation",
-    "boss": "Stone guardian proposed only inside the full-screen concept; separate production artwork needs the reviewed screen scope",
+    "boss": "Separate static PixelLab stone guardian, 256x256 transparent source, 20 quoted generations",
     "controls": "Reuse native uGUI controls and pixel skins from Home/Workouts; no baked labels",
     "animation": "Not required for this static MVP pass; no animation jobs authorized"
   },
@@ -57,5 +60,6 @@
     "Difficulty changes during active/rest/paused states preserve logs and capped progress",
     "Fresh readiness and teen/experience eligibility; no automatic workout on entering the window",
     "Readable English/Spanish controls, pointer/keyboard input, pause/exit gating and honest failure states"
-  ]
+  ],
+  "approvalQuote": "it is okay for now, let's go"
 }

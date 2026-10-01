@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "awaiting-user-visual-review",
+  "status": "implemented; native review complete",
   "window": "Routine-driven boss workout / Mazmorra",
   "delivery": "PixelLab background first, complete render review, then one full Unity window PR",
   "sourceInstruction": "great, PR merged. we can move into the next",
@@ -60,11 +60,10 @@
       "role": "Approved existing character appearance"
     }
   ],
-  "runtimeCodeChanged": false,
-  "implementationApproved": false,
-  "newCharacterOrAnimationProductionJobs": 0,
+  "runtimeCodeChanged": true,
+  "implementationApproved": true,
   "newBackgroundJobs": 1,
-  "quotedPixelLabGenerations": 40,
+  "quotedPixelLabGenerations": 60,
   "sourceArtManifest": "assets/sprites/pixellab/boss-chamber-r1/manifest.json",
   "windowScope": "window-scope.json",
   "componentMap": "component-map.json",
@@ -77,6 +76,11 @@
       "No player HP, timed enemy pressure, reward-value promises, exercise animation or unrelated equipment screens.",
       "The concept is flattened for review only; production keeps room, hero, boss, controls and text independent."
     ],
-    "caveat": "Built-in imagegen is a composition reference, not a pixel-exact placement of native sprites. The hero and UI source files remain unchanged. The guardian appears only inside this proposal and still needs a separate reviewed production asset."
-  }
+    "caveat": "The render is a composition reference. Runtime uses the original PixelLab room and selected Barbarian plus one separately generated 256x256 static guardian, shared sprite skins and live controls."
+  },
+  "approvalQuote": "it is okay for now, let's go",
+  "newStaticBossJobs": 1,
+  "guardianManifest": "assets/sprites/pixellab/stone-guardian-r1/manifest.json",
+  "newPlayableCharacterJobs": 0,
+  "newAnimationJobs": 0
 }

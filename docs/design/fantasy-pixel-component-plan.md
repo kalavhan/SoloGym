@@ -12,7 +12,7 @@ This is the implementation approach for the [confirmed product direction](../pro
 
 The approved **Rutinas / Workouts** window is implemented as a complete landscape journal. The render pack is `design/fantasy-workouts-r1/`. It uses a guild training journal: weekly context and current/completed/missed entries on the left, selected routine and review/edit/preparation actions on the right, with the same live HUD/navigation language as Home. Empty/loading/error states, local routine edits, immutable example history and readiness routing ship together; see `design/fantasy-workouts-r1/README.md`. These remain labelled fictional fixtures, not live personal plans. Difficulty remains adjustable in the boss session; this screen must not lock it or start exercise before readiness review. Missed sessions never create punitive catch-up debt.
 
-PR #29 merged the Workouts window and the accepted Home into main. The next complete window is the routine-driven boss dungeon: `design/fantasy-boss-r1/`. Its full render must be reviewed before implementation. Existing training data still uses local fixtures; sample history is not a live workout-history service.
+PR #29 merged the Workouts window and the accepted Home into main. The next complete window is the routine-driven boss dungeon: `design/fantasy-boss-r1/`. Its render was approved with “it is okay for now, let's go” and the complete native window is implemented; see its README for flows, checks and limitations. Existing training data still uses local fixtures; sample history is not a live workout-history service.
 
 ## Current Home priority
 
@@ -26,7 +26,7 @@ Decorar adjusts each prop's position, scale and visibility. Cancel restores the 
 
 The room and props are authored sprites; text, actions, routing and layout remain live controls. The compact HUD reuses the existing button/navigation skins and nine-slice gold panel border over a separate dark teal fill. It does not display a flattened mockup. Source prompts, candidates, rejected repairs, selected hashes and available cost quotes are in `design/fantasy-home-training-hall-r1/production/` and the source asset manifests.
 
-Home retains readiness rechecks, saved-session gating, illness/recovery routing, teen supervision and loading behavior. **Its plan summary remains a fictional review fixture.** Workout/readiness destinations now open the landscape journal delivered in PR #29; active boss-session execution remains the next window. Fasting is omitted by default and always absent for teens. `-sologym-adult-fasting` demonstrates only a review navigation entry and an honest unconnected-area notice; it is not a fasting tracker.
+Home retains readiness rechecks, saved-session gating, illness/recovery routing, teen supervision and loading behavior. **Its plan summary remains a fictional review fixture.** Workout/readiness destinations now open the landscape journal delivered in PR #29; explicit reviewed entry now opens the boss dungeon and restores saved local sessions through a fresh readiness check. Fasting is omitted by default and always absent for teens. `-sologym-adult-fasting` demonstrates only a review navigation entry and an honest unconnected-area notice; it is not a fasting tracker.
 
 ### Build and review
 
