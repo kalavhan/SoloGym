@@ -4,6 +4,13 @@ This is the implementation approach for the [confirmed product direction](../pro
 
 ## Window delivery workflow
 
+**Next window, after merged PR #34:** Privacy & Consent and its document reader.
+The user authorized Lorem ipsum in both documents for now; the provisional copy
+is in `design/fantasy-consent-r1/document-placeholders.json`. The two full-screen
+concepts reuse the guild entrance and are ready for visual review. Final document
+copy does not block UI/review-flow work. Any preview continuation must remain
+separate from production receipts, eligibility and account-creation permits.
+
 **Current batch, 2026-10-01:** after account PR #33 merged, the user requested
 age/country and character selection in one PR to reduce delivery overhead. Use
 two connected steps with full renders, existing PixelLab Barbarians and fixed

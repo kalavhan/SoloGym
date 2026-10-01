@@ -1,0 +1,14 @@
+Use case: ui-mockup
+Asset type: SoloGym native Unity landscape privacy document reader, one complete 16:9 screen concept.
+Input images: Image 1 is the native approved age/country window, the edit target for its composition and UI. Image 2 is the original PixelLab guild entrance, an invariant art reference.
+Change only the content inside the right-hand panel. Preserve the full landscape native game layout, unchanged guild doorway/background geometry, SOLOGYM and GREMIO DE ENTRENAMIENTO wordmarks on the left, dark slate panel, ivory pixel typography, thin brass border and footer “Privacidad”, “Términos”, “ES / EN”. Do not add people, props or new scenery.
+Panel: small underlined “Volver” upper left. Centered heading “POLÍTICA DE PRIVACIDAD”, sized to fit cleanly on one line. Subheading “Texto provisional · Lorem ipsum”.
+Main body: a readable scrollable document area inside the same panel, with a quiet narrow vertical scroll indicator on its right. Use three medium-length paragraphs of visible Latin placeholder text, no real policy language. Text exactly:
+“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
+“Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”
+“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.”
+Use legible ivory pixel text, left aligned with comfortable line spacing and margins. Let the scroll affordance indicate more document space, but do not clip text at the bottom.
+Under the document, small helper “Documento de muestra, sin validez legal.”
+Bottom button “VOLVER A MIS DECISIONES”, teal and gold, long label fitted cleanly. This is a read-only document reader; do not show acceptance checkboxes or an accept button here.
+The terms reader will use the same component and visual layout with a different title, not a separate design.
+Crisp 16-bit fantasy pixel-art game UI matching reference. No webpage, giant parchment scroll illustration, icons, new decoration, bloom or magical effects. One full screen only. All non-Latin UI text Spanish spelled exactly. This concept is a review target; live runtime text and independent background will be separate.

@@ -1,0 +1,63 @@
+{
+  "id": "fantasy-consent-r1",
+  "date": "2026-10-01",
+  "base_commit": "5a51285a800754852953c92147af9deded4dff2a",
+  "status": "concepts_ready_for_visual_review",
+  "user_instruction": "for now use lore ipusm for the term and policies, they will be filled out later on.",
+  "provider": "built-in imagegen",
+  "runtime_implemented": false,
+  "pixellab_generations_added": 0,
+  "new_character_assets_generated": false,
+  "originals": {
+    "consent-concept.png": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-e38601df-dbda-484e-9f38-b546e8fae8ea.png",
+    "privacy-reader-concept.png": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-15abe358-a128-4b59-88e1-b982abf26a1d.png"
+  },
+  "files": [
+    {
+      "file": "design/fantasy-consent-r1/consent-concept.png",
+      "sha256": "18da1909547895a510aa2e8416476c96c2cf144d3a548883259ece0c856f8922",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "design/fantasy-consent-r1/privacy-reader-concept.png",
+      "sha256": "ef2a9f97f032e704d525f0687cd5ad6f9bc8070264eeecb3f1aaf6d449901745",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "design/fantasy-consent-r1/consent-prompt.txt",
+      "sha256": "1139967770410e956e358a47b8630c38531f10b6351ef4eeb770c80e964368f8"
+    },
+    {
+      "file": "design/fantasy-consent-r1/reader-prompt.txt",
+      "sha256": "9b7374e5ad43fe54e0829d59d40e1334592a33ffd97223c033f4d8f2cd4584e5"
+    },
+    {
+      "file": "design/fantasy-consent-r1/document-placeholders.json",
+      "sha256": "43db93f13d4c36c1f4b6adb2612a798fa786dadd0f35bd84343f7a5d26e2ef6f"
+    }
+  ],
+  "references": [
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-origin.png",
+      "sha256": "963346ad7909464a1b14065c0ff52f835658c167412fcc6cf35e74306b837d31",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Rooms/LoginR1/entrance.png",
+      "sha256": "a9b079c146380121777e1af59005a0ad30ac7c45827be1f7ddac77333f31c790",
+      "size": [
+        640,
+        360
+      ]
+    }
+  ]
+}

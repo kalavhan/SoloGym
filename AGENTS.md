@@ -7,6 +7,14 @@ clothing pipeline. Current requirements are in
 
 ## Scope
 
+- Next consent window (2026-10-01): the user explicitly authorized Lorem ipsum
+  for terms and privacy until the final text is supplied. Use clearly identified,
+  replaceable review documents; do not make final copy a prerequisite for the
+  render or review-flow implementation. Concepts and ES/EN placeholder fixtures
+  are in `design/fantasy-consent-r1/`, pending visual review. Review checkbox
+  decisions are not production legal receipts or registration permits. Reuse
+  the existing PixelLab guild background and native controls; no new art batch.
+
 - Latest batch instruction (2026-10-01): deliver age/country and character
   selection together in ONE onboarding PR. Prepare both complete renders first,
   then implement the connected steps as a unit after visual review. This batch
