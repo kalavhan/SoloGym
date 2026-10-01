@@ -4,12 +4,17 @@ This is the implementation approach for the [confirmed product direction](../pro
 
 ## Window delivery workflow
 
-**Next window, after merged PR #36:** Goals & Experience (WIN-010).
-The three landscape proposals in `design/fantasy-goals-r1/` cover goal selection,
-experience and summary/edit. They await visual review before the complete-window
-implementation PR. Reuse the guild entrance and existing catalog/controller.
-Preserve explicit beginner confirmation for uncertainty, teen goal filtering,
-upstream readiness pauses and adjustable battle difficulty. No new character art.
+**Current approved window, after merged PR #36:** Goals & Experience (WIN-010).
+The three renders in `design/fantasy-goals-r1/` were approved with “good, do it.”
+The connected native goal, experience, uncertainty and summary/edit states reuse
+the guild entrance and existing catalog. Reviewed age/country, consent and ready
+or low-energy profile checkpoints precede entry. Teen filtering remains active;
+unknown age cannot silently become an adult. Reader returns, locale and editing
+preserve selections; exit, age/country changes and consent revocation reset them.
+Difficulty remains adjustable in battle. No new art or animation generation.
+Continue currently reaches the available-equipment pending checkpoint; the next
+complete window is **Equipment (WIN-011)**, followed by schedule/session length.
+Production profile saving and workout generation remain separate work.
 
 **Current approved window, after merged PR #35:** Private Fitness Profile (WIN-009).
 Three connected landscape references cover the notice, optional measurements and

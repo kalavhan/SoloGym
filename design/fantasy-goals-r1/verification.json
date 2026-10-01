@@ -1,0 +1,213 @@
+{
+  "date": "2026-10-01",
+  "unity": "6000.3.24f1",
+  "platform": "Linux standalone, private Xvfb displays and isolated review preferences",
+  "passed": true,
+  "total_reported_checks": 1403,
+  "reports": [
+    {
+      "file": "artifacts/visual/Goals/window-en-854.smoke.json",
+      "sha256": "3bc0a9a55107ff4f6c2ec4d6b8309394f42da97dc5318a83fe121b10c67a2095",
+      "result": {
+        "passed": true,
+        "checks": 233,
+        "width": 854,
+        "height": 480,
+        "locale": "en",
+        "failures": []
+      }
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1280.smoke.json",
+      "sha256": "4ac83ae71e00d095fff6f174aecdb7aa93d128b28d0e28de7df610d93072066f",
+      "result": {
+        "passed": true,
+        "checks": 233,
+        "width": 1280,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1600.smoke.json",
+      "sha256": "12e782caaf70a2c149e06620299e4c8d5dc80974636d15167d6cec33f4626d6e",
+      "result": {
+        "passed": true,
+        "checks": 233,
+        "width": 1600,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-goals-r1/checks/account-regression.json",
+      "sha256": "75e41e701e536e1be3d78182a91170bdc9b1ae53f90777a556567d8da5c9d732",
+      "result": {
+        "passed": true,
+        "checks": 91,
+        "locale": "en",
+        "width": 854,
+        "height": 480,
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-goals-r1/checks/consent-regression.json",
+      "sha256": "caab4bfc893075d9f5345dc97e3dd5e703fffcbadd5580d9be324c71130e9f4f",
+      "result": {
+        "passed": true,
+        "checks": 101,
+        "width": 1280,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-goals-r1/checks/keyboard.json",
+      "sha256": "75472547339a9cd9fa970ab64d786fd6d2ccaa6315743fb30e518b61edba0542",
+      "result": {
+        "passed": true,
+        "checks": 4,
+        "width": 1280,
+        "height": 720,
+        "locale": "en",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-goals-r1/checks/login-regression.json",
+      "sha256": "fb50fb9b6c337f80bc0272094f84d0c552f0a92a0269bf09a340e9c6da03cc0e",
+      "result": {
+        "passed": true,
+        "checks": 122,
+        "locale": "es",
+        "width": 1280,
+        "height": 720,
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-goals-r1/checks/onboarding-regression.json",
+      "sha256": "2e5c5cdac235a6fd0fb224e6f8ccd02b245530030f45fcf49b150fe411eb0d53",
+      "result": {
+        "passed": true,
+        "checks": 204,
+        "width": 1280,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-goals-r1/checks/profile-regression.json",
+      "sha256": "00e58b0b508e6461e5527e4322623ebb7ce8833cdf4c46828567027a5360032f",
+      "result": {
+        "passed": true,
+        "checks": 182,
+        "width": 1280,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    }
+  ],
+  "build": {
+    "file": "design/fantasy-goals-r1/checks/build.txt",
+    "sha256": "878a53d454e1ebca3c767ed898ffeeee6fd44f65eba1785f714ef7327291719b",
+    "exit_code": 0
+  },
+  "native_captures": [
+    {
+      "file": "artifacts/visual/Goals/window-en-854-equipment-pending.png",
+      "sha256": "5a65271905992735cfd7449aa028cd30096c1495fbd8aae1d1fbf50c698199f7"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-en-854-experience.png",
+      "sha256": "ec57a97620c93bb661f8636fe747ccca66813750ad11955b525d872201d961b5"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-en-854-summary.png",
+      "sha256": "3b47072d90be982cdac1c4b5f7eb4dc180bfd39c133614712c7a28dd6a7d5cb7"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-en-854-teen.png",
+      "sha256": "f8ca54b83647838977bf3c1ab45e1cbc11908033fe5082bf793eb52fd5bf8f98"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-en-854-uncertainty.png",
+      "sha256": "0bd71d73c0f6864af86a1b785025e7f5812d53d6cf65db7180e10b3fd2e6bd0d"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-en-854.png",
+      "sha256": "437fd14af1a889c96d0e5e50bb8747610d95a65510c5032bc169d72fb6226a79"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1280-empty.png",
+      "sha256": "3a0940dd7ec45483241e7b9f9476f1f036d64bd38f4ffd82307e689f13e6da4a"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1280-equipment-pending.png",
+      "sha256": "491b60c37ce4495c8e324853675dde2b751087dd710da486c4379c4817c00294"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1280-experience.png",
+      "sha256": "924cbf44b18daaeb6b81f5745403823123bb89bab22e84f9883470d031660264"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1280-intermediate-summary.png",
+      "sha256": "1af567881a83a491d50dac88e584abba57281ed72b60f87e5df043b7ca9b789e"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1280-summary.png",
+      "sha256": "945c84e7d83516736cb701a596618f1b6e55341bf0ab7421aa36ca23542b5055"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1280-teen.png",
+      "sha256": "bcb82ffcadf5887651ac8fa030bdef5cbaddb5bf8bd2cd5a63b0026689df9484"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1280-uncertainty.png",
+      "sha256": "00c688b4d17385f65ff60f37e151b5c1447c03a5c5027bee740add8c7b0172f7"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1280.png",
+      "sha256": "18fa85d3c68ea42c2afaa2ede7533fe7605c1b917016209e6005029f58ebbbe6"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1600-summary.png",
+      "sha256": "3d07ba413daf16c64161dcb015984e06c7d8caa86f90087c197c4eda91446cdf"
+    },
+    {
+      "file": "artifacts/visual/Goals/window-es-1600.png",
+      "sha256": "b386c6a72bbda32cdac203a3466e48785af18c4499e9cf0d2284641f8cb7466e"
+    }
+  ],
+  "unchanged_sources": [
+    {
+      "file": "assets/sprites/pixellab/guild-entrance-r1/native/entrance.png",
+      "sha256": "a9b079c146380121777e1af59005a0ad30ac7c45827be1f7ddac77333f31c790"
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Rooms/LoginR1/entrance.png",
+      "sha256": "a9b079c146380121777e1af59005a0ad30ac7c45827be1f7ddac77333f31c790"
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/GoalsExperience/Catalog.json",
+      "sha256": "99adaefcad234aac926fdf8f502c7b07c5f80eff00832ca87b2b0d440e8bbbf3"
+    }
+  ],
+  "visual_review": [
+    "Compared actual Unity goal, experience and summary captures to all three approved concepts. Background stays independent and unchanged.",
+    "Inspected native Spanish normal/wide and English compact states, including first-open confirmation and teen copy.",
+    "Fixed zero-width text measurement before layout; final checks cover text bounds, visible confirmation/checkpoint actions and pointer hit targets.",
+    "Kept longer experience labels readable in the summary; no displayed copy overlap or clipping found in the reviewed captures."
+  ],
+  "scope_limits": [
+    "Fictional review only; no profile or workout is persisted.",
+    "Equipment is a pending checkpoint, with Back and exit; its complete window and schedule follow next.",
+    "No new art, characters, animation, difficulty policy or training prescription changes."
+  ]
+}

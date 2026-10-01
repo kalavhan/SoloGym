@@ -23,6 +23,8 @@ namespace SoloGym.UI
         AccessibilityHierarchy hierarchy;
         bool readerFocus;
         PixelChoiceControl owner;
+        float labelLeft=46, labelRight=12;
+        internal void SetLabelInsets(float left,float right) { labelLeft=left; labelRight=right; RefreshVisual(); }
 
         internal static PixelChoiceOption Create(Transform parent, string id, string label, ToggleGroup group, PixelChoiceControl owner)
         {
@@ -93,7 +95,7 @@ namespace SoloGym.UI
             if (Preview == null)
             {
                 Checkmark.rectTransform.anchoredPosition = new Vector2(30, pressed ? -2 : 0);
-                Stretch(Label.rectTransform, new Vector2(46, pressed ? 10 : 12), new Vector2(-12, pressed ? -14 : -12));
+                Stretch(Label.rectTransform, new Vector2(labelLeft, pressed ? 10 : 12), new Vector2(-labelRight, pressed ? -14 : -12));
             }
             else
             {

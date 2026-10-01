@@ -21,14 +21,15 @@ def run():
     onboarding = "--onboarding" in sys.argv
     consent = "--consent" in sys.argv
     profile = "--profile" in sys.argv
-    if sum((actions, icons, choices, characters, navigation, login, account, onboarding, consent, profile)) > 1:
+    goals = "--goals" in sys.argv
+    if sum((actions, icons, choices, characters, navigation, login, account, onboarding, consent, profile, goals)) > 1:
         raise ValueError("Choose one keyboard fixture, including --login or --account.")
-    fixture = "profile" if profile else "consent" if consent else "onboarding" if onboarding else "account" if account else "login" if login else "navigation" if navigation else "character" if characters else "choice" if choices else "icon" if icons else "action" if actions else "field"
+    fixture = "goals" if goals else "profile" if profile else "consent" if consent else "onboarding" if onboarding else "account" if account else "login" if login else "navigation" if navigation else "character" if characters else "choice" if choices else "icon" if icons else "action" if actions else "field"
     # Always create an isolated display; never inject events into the user's desktop.
     if "--isolated-child" not in sys.argv:
         return subprocess.call(["xvfb-run", "-a", "-s", "-screen 0 1920x1080x24",
                                 sys.executable, str(Path(__file__).resolve()), "--isolated-child",
-                                *(["--profile"] if profile else ["--consent"] if consent else ["--onboarding"] if onboarding else ["--account"] if account else ["--login"] if login else ["--navigation"] if navigation else ["--characters"] if characters else ["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
+                                *(["--goals"] if goals else ["--profile"] if profile else ["--consent"] if consent else ["--onboarding"] if onboarding else ["--account"] if account else ["--login"] if login else ["--navigation"] if navigation else ["--characters"] if characters else ["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
                                env={**os.environ, "SOLOGYM_ISOLATED_FIELD_TEST": "1"})
     if os.environ.get("SOLOGYM_ISOLATED_FIELD_TEST") != "1":
         raise RuntimeError("Run without --isolated-child to create a private display.")
@@ -83,13 +84,15 @@ def run():
             key(name, shift)
 
     env = {**os.environ, "XDG_CONFIG_HOME": str(local / (fixture + "-keyboard-prefs"))}
-    binary = {"profile": "Login/SoloGymLogin", "consent": "Login/SoloGymLogin", "onboarding": "Login/SoloGymLogin", "account": "Login/SoloGymLogin", "login": "Login/SoloGymLogin", "navigation": "FantasyNavigation/SoloGymNavigation", "character": "FantasyCharacter/SoloGymCharacter", "choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
+    binary = {"goals": "Login/SoloGymLogin", "profile": "Login/SoloGymLogin", "consent": "Login/SoloGymLogin", "onboarding": "Login/SoloGymLogin", "account": "Login/SoloGymLogin", "login": "Login/SoloGymLogin", "navigation": "FantasyNavigation/SoloGymNavigation", "character": "FantasyCharacter/SoloGymCharacter", "choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
               "action": "FantasyAction/SoloGymAction", "field": "FantasyField/SoloGymField"}[fixture]
     command = [str(ROOT / ("app/Builds/" + binary + ".x86_64")),
                "-screen-fullscreen", "0", "-screen-width", "1280", "-screen-height", "720",
                "-sologym-locale", "en", "-sologym-keyboard-probe", str(marker),
                "-sologym-capture", str(local / (fixture + "-keyboard.png")),
                "-logFile", str(local / (fixture + "-keyboard-player.log"))]
+    if goals:
+        command += ["-sologym-goals-keyboard"]
     if profile:
         command += ["-sologym-profile-keyboard"]
     if consent:
@@ -126,7 +129,20 @@ def run():
             x11.XSetInputFocus(display, window, 2, 0)
             x11.XFlush(display)
             time.sleep(.4)
-            if profile:
+            if goals:
+                def tabs(count):
+                    for _ in range(count):
+                        key("Tab"); time.sleep(.12)
+                def submit():
+                    key("Return"); time.sleep(.35)
+                tabs(1); submit(); tabs(5); submit()  # General fitness -> experience
+                tabs(2); submit(); tabs(1); submit()  # Intermediate -> uncertainty
+                tabs(1); submit()  # Cancel
+                tabs(3); submit(); tabs(2); submit()  # Confirm beginner -> summary
+                tabs(1); submit(); tabs(2); submit()  # Edit goal -> Strength
+                tabs(4); submit(); tabs(4); submit()  # Experience -> summary
+                tabs(3); submit(); submit()  # Equipment checkpoint -> Back
+            elif profile:
                 def replace_input(value):
                     event("Control_L", True); key("a"); event("Control_L", False)
                     text(value)

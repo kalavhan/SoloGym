@@ -123,4 +123,10 @@ measurements, metric/imperial units, current readiness and pause. Appearance sta
 independent. Profile drafts remain memory-only; this window establishes neither
 production health-data authorization nor a saved profile or live workout.
 See `design/fantasy-profile-r1/` for the approved renders, native captures and
-checks. Goals/experience, equipment and schedule remain subsequent setup windows.
+checks. Goals/experience now follows as a connected memory-only review with five
+adult goals, two teen goals, explicit experience choice, beginner confirmation
+and summary editing. Its approved references and evidence are in
+`design/fantasy-goals-r1/`. Entry retains known-age, consent and readiness gates;
+body appearance/measurements never infer the choices or battle difficulty.
+Equipment and schedule remain subsequent setup windows. Nothing in these
+reviews persists a live profile or generates a training prescription.

@@ -82,7 +82,7 @@ namespace SoloGym.UI
                 Check(c.Model.Step==(i<2?ProfileStep.Checkpoint:ProfileStep.Paused),"Readiness route respects existing domain "+i);
                 if(i==0) { TextFits(f,"checkpoint"); yield return Shot(w,"checkpoint"); }
                 if(i==3) { TextFits(f,"paused"); yield return Shot(w,"paused"); }
-                f.Advance(); yield return Ready(); Check(c.Model.Step==ProfileStep.Readiness,"Can change the response after checkpoint/pause "+i);
+                f.GoBack(); yield return Ready(); Check(c.Model.Step==ProfileStep.Readiness,"Can change the response after checkpoint/pause "+i);
             }
             Check(Click(f.Secondary),"Explicit pause does not require a selected option"); yield return Ready();
             Check(c.Model.Step==ProfileStep.Paused && c.Model.Readiness=="unsure","Pause action uses the uncertainty route");

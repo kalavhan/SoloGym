@@ -2,8 +2,8 @@
   "id": "fantasy-goals-r1",
   "date": "2026-10-01",
   "base_commit": "5dc264e78a01175c453997388ef642f09110a25c",
-  "status": "awaiting_visual_review",
-  "runtime_implemented": false,
+  "status": "approved_and_implemented",
+  "runtime_implemented": true,
   "provider": "built-in imagegen, not CLI",
   "scope": "Goals, experience and review together as one complete window after merged PR #36.",
   "pixellab_generations_added": 0,
@@ -103,5 +103,12 @@
     "Review data stays in memory; no profile save, workout generation or Home entry is established.",
     "Back, document visits and locale changes preserve the draft; exit/reset discards it.",
     "Next destination is available equipment, then schedule/session length."
-  ]
+  ],
+  "approval": {
+    "date": "2026-10-01",
+    "quote": "good, do it.",
+    "scope": "All three connected states in one complete-window PR."
+  },
+  "verification": "design/fantasy-goals-r1/verification.json",
+  "reference_hash_context": "Hashes captured before implementation, at base_commit. Art and catalog remain unchanged; controller is a historical snapshot."
 }

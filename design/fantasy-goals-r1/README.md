@@ -1,63 +1,84 @@
-# Goals & Experience — fantasy landscape proposal
+# Goals & Experience — fantasy landscape window
 
-Status: **awaiting visual review**, 2026-10-01. Follows merged PR #36.
-One complete window contains the goal, experience and review steps. Render
-approval precedes native implementation and verification in a single PR.
+The user approved all three renders with **“good, do it.”** on 2026-10-01.
+This complete native Unity window follows merged PR #36. It connects focus,
+experience, beginner confirmation, summary editing and the pending equipment
+checkpoint to the existing profile review.
 
-## Proposed screens
+## Native result
 
-![Training goal](01-goal-concept.png)
+![Native goal selection](../../artifacts/visual/Goals/window-es-1280.png)
 
-![Experience](02-experience-concept.png)
+![Native experience](../../artifacts/visual/Goals/window-es-1280-experience.png)
 
-![Review and edit](03-review-concept.png)
+![Native summary](../../artifacts/visual/Goals/window-es-1280-summary.png)
 
-The three concepts use a fictional adult choosing general fitness and a beginner
-starting point. Real initial selections remain empty. The summary reflects the
-same example choices. No real profile or routine has been created.
+Approved concepts: [goal](01-goal-concept.png),
+[experience](02-experience-concept.png), [summary](03-review-concept.png).
+Exact imagegen prompts and original output hashes remain in [manifest.json](manifest.json).
+The concepts' selections are fictional; actual initial choices are empty.
 
-The backdrop is the existing PixelLab guild entrance. Typography, selectable
-rows, frame, selected checkmark and primary action match the actual private
-profile window from PR #36. No new background, character or animation generation
-is needed. Native implementation must retain the original independent background
-and live controls, not use these flattened images as screen textures.
+The original PixelLab entrance remains a separate background. Native uGUI
+choices, text, actions and focus states reuse the existing sprite skins. No
+background or character generation, sprite recoloring or animation was added.
 
-## Existing behavior and data
+## Connected behavior
 
-Use the unchanged [catalog](../../app/Assets/SoloGym/Resources/GoalsExperience/Catalog.json)
-and [controller](../../app/Assets/SoloGym/Scripts/GoalsExperienceState.cs).
-The [existing window specification](../../docs/windows/WIN-010-goals-experience-g0.md)
-remains the functional reference; this landscape proposal replaces its old
-portrait styling only after approval.
+- Ready or low-energy profile checkpoints continue into this window. Unknown or
+  invalid age/country, incomplete consent and paused readiness cannot enter it.
+- Adults receive all five existing catalog goals. Teen review receives only
+  general fitness and mobility. Hidden adult choices remain invalid for teens.
+- Focus alone does not select anything. Each step requires an explicit choice.
+  Uncertainty opens a separate confirmation state; only confirming selects the
+  beginner base. Back/cancel preserves the previous choice, including no choice.
+- Summary actions reopen either choice. Back returns through experience and goal
+  to readiness. Document visits and language changes preserve the current state,
+  including an open confirmation or pending equipment checkpoint.
+- Leaving setup, changing age/country or revoking consent clears dependent drafts.
+  Appearance and optional measurements never infer goal, experience or difficulty.
+  Selecting regular training does not unlock Hard; battle difficulty retains its
+  existing adjustable behavior and limits.
+- Continue from summary currently shows the pending **Equipment (WIN-011)** step.
+  Equipment and schedule/session length remain subsequent window work.
+- This is a memory-only review. It creates no account, saves no profile, generates
+  no workout and issues no rewards or production authorization.
 
-- Adult goals: general fitness, strength, muscle growth, endurance and mobility.
-- Experience: starting/returning or regular training with basic-movement knowledge.
-- “I'm not sure” opens the existing beginner confirmation. Confirming chooses the
-  beginner starting point; cancelling preserves the draft. Reuse the same panel
-  and native actions for this conditional state, with the existing EN/ES copy.
-- The teen review presents only general fitness and mobility under current
-  product rules. Unknown age must not establish adult eligibility.
-- Appearance and private body measurements do not infer training experience,
-  goal or difficulty. Intermediate does not grant automatic Hard access.
-- Easy/Medium/Hard remains changeable during a routine within existing rules.
-  This setup step selects experience, not a locked difficulty.
-- Review lets the player edit either choice. Continue leads to available
-  equipment; schedule/session length still follows before preparing sessions.
-- Back, reader visits and locale changes retain the draft; exit/reset discards it.
-  Preserve upstream readiness pauses, age/consent and production authorization.
-- No production profile persistence, routine generation, rewards or Home entry
-  is established by this review UI.
+The existing [catalog](../../app/Assets/SoloGym/Resources/GoalsExperience/Catalog.json)
+retains its IDs and bytes. The domain controller gained a reset method for
+parent-flow invalidation; its training rules are unchanged. The old
+[functional specification](../../docs/windows/WIN-010-goals-experience-g0.md)
+remains applicable to behavior, with its portrait presentation superseded here.
 
-## References and handoff
+## Verification and local review
 
-Generated with **built-in imagegen**, not the CLI. Exact prompts:
-[goal](01-goal-prompt.txt), [experience](02-experience-prompt.txt),
-[review](03-review-prompt.txt). [manifest.json](manifest.json) records original
-outputs, dimensions, SHA-256 hashes and native/catalog references.
+[verification.json](verification.json) records the final build, native smoke
+reports, keyboard probe, regressions and preserved source hashes. Native captures
+cover ES 1280×720, EN 854×480 with a 12px inset and ES 1600×720 with a 24px inset.
+The smoke checks include real pointer hit targets, text bounds and first-open
+confirmation actions; the keyboard driver uses an isolated Xvfb display.
 
-All three images were inspected for composition, Spanish text, agreement between
-example selections and summary, and control spacing. They are 1672×941.
-No code or imported production assets changed, and no build/runtime tests were
-run for this concept-only step. After approval, validate the native window at
-standard, small and wide landscape sizes, including uncertainty confirmation,
-teen choices, edit/back paths, keyboard navigation and unchanged profile gates.
+From this worktree, build and open an explicitly fictional adult review:
+
+```bash
+/home/josue/Unity/Hub/Editor/6000.3.24f1/Editor/Unity \
+  -batchmode -nographics -quit -projectPath "$PWD/app" \
+  -executeMethod SoloGym.Editor.PixelLoginBuild.BuildLinux \
+  -logFile /tmp/sologym-goals-build.log
+
+app/Builds/Login/SoloGymLogin.x86_64 \
+  -screen-fullscreen 0 -screen-width 1280 -screen-height 720 \
+  -sologym-locale es -sologym-window goals -sologym-review \
+  -sologym-review-age 21
+```
+
+Use review age `17` for teen choices. Missing/invalid age stops at onboarding;
+the shortcut cannot infer adult eligibility. Normal startup remains login.
+For the connected path, complete age/country, character and provisional consent,
+open the registration form's explicit profile preview, complete readiness and
+continue to goals. No credentials or live service are required for that preview.
+
+Keyboard regression:
+
+```bash
+python3 tools/check_pixel_field_keyboard.py --goals
+```

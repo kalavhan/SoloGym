@@ -34,6 +34,7 @@ namespace SoloGym.UI
         public PixelOnboardingFlow Onboarding { get; private set; }
         public PixelConsentWindow Consent { get; private set; }
         public PixelPrivateProfileWindow Profile { get; private set; }
+        public PixelGoalsWindow Goals { get; private set; }
         string profileReturnPage = "login";
         bool accountFromConsent, identitySetup;
         IAccountRegistrationService registrationService;
@@ -56,7 +57,7 @@ namespace SoloGym.UI
             if (initialized) return;
             initialized = true;
             registrationService = registration;
-            smoke = PixelWorkoutWindow.Has("-sologym-smoke") || PixelWorkoutWindow.Has("-sologym-account-smoke") || PixelWorkoutWindow.Has("-sologym-onboarding-smoke") || PixelWorkoutWindow.Has("-sologym-consent-smoke") || PixelWorkoutWindow.Has("-sologym-profile-smoke");
+            smoke = PixelWorkoutWindow.Has("-sologym-smoke") || PixelWorkoutWindow.Has("-sologym-account-smoke") || PixelWorkoutWindow.Has("-sologym-onboarding-smoke") || PixelWorkoutWindow.Has("-sologym-consent-smoke") || PixelWorkoutWindow.Has("-sologym-profile-smoke") || PixelWorkoutWindow.Has("-sologym-goals-smoke");
             hadLanguage = PlayerPrefs.HasKey(LanguageKey); originalLanguage = PlayerPrefs.GetString(LanguageKey);
             Application.targetFrameRate = 60;
             Screen.orientation = ScreenOrientation.LandscapeLeft;
@@ -166,6 +167,12 @@ namespace SoloGym.UI
             Onboarding.Controller.EligibilityChanged += Profile.Reset;
             Account.ProfilePreviewRequested += OpenProfileReview;
             Profile.gameObject.SetActive(false);
+            Goals = new GameObject("Goals and experience review",typeof(RectTransform)).AddComponent<PixelGoalsWindow>();
+            Goals.Initialize(Panel,BackFromGoals,ExitProfile,CanReviewGoals,Privacy,Language);
+            Goals.StateChanged += GoalsStateChanged;
+            Profile.GoalsRequested += OpenGoalsReview;
+            Onboarding.Controller.EligibilityChanged += Goals.Reset;
+            Goals.gameObject.SetActive(false);
         }
 
         Button ProviderButton(Transform parent)
@@ -201,7 +208,7 @@ namespace SoloGym.UI
         void ConsentStateChanged()
         {
             if (Consent == null || (Page != "consent" && Page != "privacy" && Page != "terms")) return;
-            if(Page == "consent" && Profile != null && !Consent.Controller.CanContinue) Profile.Reset();
+            if(Page == "consent" && Profile != null && !Consent.Controller.CanContinue) { Profile.Reset(); Goals?.Reset(); }
             Link(Privacy, Consent.LastControl, Terms); Link(Language, Terms, Consent.Back);
         }
         void ProfileStateChanged()
@@ -209,7 +216,12 @@ namespace SoloGym.UI
             if(Page != "profile" || Profile == null) return;
             Link(Privacy,Profile.LastControl,Terms); Link(Language,Terms,Profile.Back);
         }
-        string DocumentReturnLabel => documentReturnPage == "profile" ? L("BACK TO MY PROFILE", "VOLVER A MI PERFIL")
+        void GoalsStateChanged()
+        {
+            if(Page != "goals" || Goals == null) return;
+            Link(Privacy,Goals.LastControl,Terms); Link(Language,Terms,Goals.Back);
+        }
+        string DocumentReturnLabel => documentReturnPage == "goals" ? L("BACK TO MY CHOICES","VOLVER A MIS ELECCIONES") : documentReturnPage == "profile" ? L("BACK TO MY PROFILE", "VOLVER A MI PERFIL")
             : documentReturnPage == "consent" ? L("BACK TO MY CHOICES", "VOLVER A MIS DECISIONES")
             : documentReturnPage == "account" ? L("BACK TO REGISTRATION", "VOLVER AL REGISTRO")
             : documentReturnPage == "onboarding" ? L("BACK TO SETUP", "VOLVER A LA CONFIGURACIÓN")
@@ -244,7 +256,7 @@ namespace SoloGym.UI
             if (!model.IsBusy && wasBusy && Page == "login") Submit.Select();
             wasBusy = model.IsBusy;
             if (Page == "login") title.text = model.Copy("email_title");
-            else if (Page != "account" && Page != "onboarding" && Page != "consent" && Page != "privacy" && Page != "terms" && Page != "profile" && languageChanged) PopulateNotice();
+            else if (Page != "account" && Page != "onboarding" && Page != "consent" && Page != "privacy" && Page != "terms" && Page != "profile" && Page != "goals" && languageChanged) PopulateNotice();
             if (Account != null)
             {
                 Account.SetLocale(model.Language); Account.Controller.SetOnline(!model.IsOffline);
@@ -253,6 +265,7 @@ namespace SoloGym.UI
             if (Onboarding != null) { Onboarding.SetLocale(model.Language); OnboardingStateChanged(); }
             if (Consent != null) { Consent.SetLocale(model.Language, DocumentReturnLabel); ConsentStateChanged(); }
             if (Profile != null) { Profile.SetLocale(model.Language); ProfileStateChanged(); }
+            if (Goals != null) { Goals.SetLocale(model.Language); GoalsStateChanged(); }
             LayoutForm();
             if (renderedError != model.ErrorKey) { renderedError = model.ErrorKey; FormScroll.verticalNormalizedPosition = 1; }
         }
@@ -298,7 +311,7 @@ namespace SoloGym.UI
         public void OpenAccount(bool fromConsent = false)
         {
             if (fromConsent && (Onboarding.Controller.Step != GuildSetupStep.Consent || !Consent.Controller.CanContinue)) return;
-            accountFromConsent = fromConsent; Profile.gameObject.SetActive(false);
+            accountFromConsent = fromConsent; Goals.gameObject.SetActive(false); Profile.gameObject.SetActive(false);
             Consent.gameObject.SetActive(false);
             Controller.CancelAuthentication(); ReleaseKeyboard();
             Onboarding.gameObject.SetActive(false);
@@ -311,8 +324,8 @@ namespace SoloGym.UI
         }
         public void OpenOnboarding(bool reset = true, bool verifiedIdentity = false)
         {
-            if (reset) { identitySetup = verifiedIdentity; accountFromConsent = false; Consent.Reset(); Profile.Reset(); }
-            Profile.gameObject.SetActive(false);
+            if (reset) { identitySetup = verifiedIdentity; accountFromConsent = false; Consent.Reset(); Profile.Reset(); Goals.Reset(); }
+            Goals.gameObject.SetActive(false); Profile.gameObject.SetActive(false);
             Consent.gameObject.SetActive(false);
             Controller.CancelAuthentication(); ReleaseKeyboard();
             Page = "onboarding"; documentReturnPage = "login";
@@ -324,7 +337,7 @@ namespace SoloGym.UI
         public void OpenConsent()
         {
             if (Onboarding.Controller.Step != GuildSetupStep.Consent) return;
-            Profile.gameObject.SetActive(false); ReleaseKeyboard(); Page = "consent";
+            Goals.gameObject.SetActive(false); Profile.gameObject.SetActive(false); ReleaseKeyboard(); Page = "consent";
             viewport.gameObject.SetActive(false); notice.gameObject.SetActive(false); title.gameObject.SetActive(false); loginRule.gameObject.SetActive(false);
             Account.gameObject.SetActive(false); Onboarding.gameObject.SetActive(false);
             Consent.BeforeAccount = !identitySetup; Consent.gameObject.SetActive(true); Consent.OpenDecisions(Controller.Model.Language);
@@ -353,12 +366,33 @@ namespace SoloGym.UI
         }
         void ShowProfile()
         {
-            ReleaseKeyboard(); Account.ClearSecrets();
+            ReleaseKeyboard(); Account.ClearSecrets(); Goals.gameObject.SetActive(false);
+            Profile.SetGoalsAvailable(HasReviewedSetup());
             Account.gameObject.SetActive(false); Onboarding.gameObject.SetActive(false); Consent.gameObject.SetActive(false);
             viewport.gameObject.SetActive(false); notice.gameObject.SetActive(false); title.gameObject.SetActive(false); loginRule.gameObject.SetActive(false);
             Page="profile"; Profile.gameObject.SetActive(true); Profile.Open(Controller.Model.Language);
             Privacy.interactable=Terms.interactable=Language.interactable=true;
             ProfileStateChanged(); Relayout(); Profile.Back.Select();
+        }
+        bool HasReviewedSetup() => Onboarding.Controller.Step==GuildSetupStep.Consent && Onboarding.Controller.TryGetReviewAudience(out _)
+            && Consent.Controller.CanContinue && (identitySetup || accountFromConsent);
+        bool CanReviewGoals() => HasReviewedSetup() && Profile.Controller.Model.ReviewMode
+            && Profile.Controller.Model.Step==ProfileStep.Checkpoint
+            && (Profile.Controller.Model.Readiness=="ready" || Profile.Controller.Model.Readiness=="low_energy");
+        public void OpenGoalsReview() { if(Page=="profile") ShowGoals(); }
+        void ShowGoals()
+        {
+            if(!CanReviewGoals() || !Onboarding.Controller.TryGetReviewAudience(out bool teen)) return;
+            ReleaseKeyboard(); Profile.ReleaseKeyboard(); Account.ClearSecrets();
+            Account.gameObject.SetActive(false); Onboarding.gameObject.SetActive(false); Consent.gameObject.SetActive(false); Profile.gameObject.SetActive(false);
+            viewport.gameObject.SetActive(false); notice.gameObject.SetActive(false); title.gameObject.SetActive(false); loginRule.gameObject.SetActive(false);
+            Page="goals"; Goals.gameObject.SetActive(true); Goals.Open(Controller.Model.Language,teen);
+            Privacy.interactable=Terms.interactable=Language.interactable=true;
+            GoalsStateChanged(); Relayout(); Goals.Back.Select();
+        }
+        void BackFromGoals()
+        {
+            Profile.Controller.Back(); ShowProfile();
         }
         void BackFromProfile()
         {
@@ -369,7 +403,7 @@ namespace SoloGym.UI
         void ExitProfile() { Page="profile"; BackToLogin(); }
         void RestoreAccount()
         {
-            Profile.gameObject.SetActive(false); Consent.gameObject.SetActive(false);
+            Goals.gameObject.SetActive(false); Profile.gameObject.SetActive(false); Consent.gameObject.SetActive(false);
             Page="account"; notice.gameObject.SetActive(false); title.gameObject.SetActive(false); loginRule.gameObject.SetActive(false);
             Account.gameObject.SetActive(true); Account.SetLocale(Controller.Model.Language);
             Link(Privacy,Account.PreviewProfile.gameObject.activeSelf ? Account.PreviewProfile : Account.SignIn,Terms); AccountStateChanged();
@@ -380,7 +414,7 @@ namespace SoloGym.UI
             if (destination.Context == "create_email_account" || (destination.AuthorizedByBackend && destination.WindowId == "WIN-006"))
             { LastNavigation = destination; OpenOnboarding(true, destination.AuthorizedByBackend); return; }
             if (Page != "privacy" && Page != "terms") documentReturnPage = Page;
-            Onboarding.gameObject.SetActive(false); Account.gameObject.SetActive(false); Profile.gameObject.SetActive(false);
+            Onboarding.gameObject.SetActive(false); Account.gameObject.SetActive(false); Profile.gameObject.SetActive(false); Goals.gameObject.SetActive(false);
             LastNavigation = destination; ReleaseKeyboard();
             Page = destination.AuthorizedByBackend ? "checkpoint" : destination.Context == "privacy" || destination.Context == "terms" ? destination.Context : destination.WindowId == "WIN-005" ? "recovery" : "create";
             viewport.gameObject.SetActive(false);
@@ -418,6 +452,7 @@ namespace SoloGym.UI
         {
             bool document = Page == "privacy" || Page == "terms";
             if (document && documentReturnPage == "consent") { OpenConsent(); return; }
+            if (document && documentReturnPage == "goals" && CanReviewGoals()) { ShowGoals(); return; }
             if (document && documentReturnPage == "profile") { ShowProfile(); return; }
             Consent.gameObject.SetActive(false);
             if ((Page == "privacy" || Page == "terms") && documentReturnPage == "onboarding")
@@ -427,6 +462,7 @@ namespace SoloGym.UI
                 RestoreAccount(); return;
             }
             if (Page == "account") Controller.SetEmail(Account.Email.Input.text);
+            Goals.gameObject.SetActive(false); Goals.Reset();
             Profile.gameObject.SetActive(false); Profile.Reset(); profileReturnPage="login";
             Page = "login"; accountFromConsent = identitySetup = false; Consent.Reset(); Onboarding.Controller.Discard(); Onboarding.gameObject.SetActive(false);
             Privacy.interactable = Terms.interactable = Language.interactable = true; Account.gameObject.SetActive(false);
@@ -455,6 +491,7 @@ namespace SoloGym.UI
             {
                 if (Page == "account" && Account.Controller.Busy) Account.Controller.Cancel();
                 else if (Page == "account") AccountBack();
+                else if (Page == "goals") Goals.GoBack();
                 else if (Page == "profile") Profile.GoBack();
                 else if (Page == "consent") BackFromConsent();
                 else if (Page == "onboarding") Onboarding.GoBack();
@@ -488,7 +525,7 @@ namespace SoloGym.UI
             ((RectTransform)noticeContent.parent).sizeDelta = new Vector2(514, Mathf.Max(70, notice.rect.height - 82));
             Place(Return, new Rect(0, notice.rect.height - 70, 502, 64));
             Privacy.gameObject.SetActive(previousKeyboard <= 0); Terms.gameObject.SetActive(previousKeyboard <= 0); Language.gameObject.SetActive(previousKeyboard <= 0);
-            LayoutForm(); Account.Relayout(Panel.rect.height, previousKeyboard > 0); Onboarding.Relayout(Panel.rect.height, previousKeyboard > 0); Consent.Relayout(Panel.rect.height); Profile.Relayout(Panel.rect.height,previousKeyboard>0); Canvas.ForceUpdateCanvases();
+            LayoutForm(); Account.Relayout(Panel.rect.height, previousKeyboard > 0); Onboarding.Relayout(Panel.rect.height, previousKeyboard > 0); Consent.Relayout(Panel.rect.height); Profile.Relayout(Panel.rect.height,previousKeyboard>0); Goals.Relayout(Panel.rect.height); Canvas.ForceUpdateCanvases();
             if (previousKeyboard > 0)
             {
                 var selected = EventSystem.current?.currentSelectedGameObject;
@@ -513,6 +550,7 @@ namespace SoloGym.UI
         IEnumerator Start()
         {
             var testService = PixelWorkoutWindow.Has("-sologym-smoke") ? new PixelLoginSmoke.Service() : null;
+            bool goalsReview = PixelWorkoutWindow.Has("-sologym-goals-smoke");
             bool profileReview = PixelWorkoutWindow.Has("-sologym-profile-smoke");
             bool consentReview = PixelWorkoutWindow.Has("-sologym-consent-smoke");
             bool onboardingReview = PixelWorkoutWindow.Has("-sologym-onboarding-smoke");
@@ -522,17 +560,20 @@ namespace SoloGym.UI
             if (PixelWorkoutWindow.Arg("-sologym-window") == "account") OpenAccount();
             if (PixelWorkoutWindow.Arg("-sologym-window") == "onboarding") OpenOnboarding();
             if (PixelWorkoutWindow.Arg("-sologym-window") == "profile" && PixelWorkoutWindow.Has("-sologym-review")) { profileReturnPage="login"; ShowProfile(); }
+            if (PixelWorkoutWindow.Arg("-sologym-window")=="goals" && PixelWorkoutWindow.Has("-sologym-review")) PixelGoalsSmoke.Enter(this,PixelWorkoutWindow.Arg("-sologym-review-age"),true);
             if (!AutomaticReview) yield break;
             for (int i=0; i<8; i++) yield return null;
             int exitCode = 0;
-            if (profileReview) { var checks = gameObject.AddComponent<PixelProfileSmoke>(); yield return checks.Run(this); exitCode=checks.Passed?0:2; }
+            if (goalsReview) { var checks=gameObject.AddComponent<PixelGoalsSmoke>(); yield return checks.Run(this); exitCode=checks.Passed?0:2; }
+            else if (profileReview) { var checks = gameObject.AddComponent<PixelProfileSmoke>(); yield return checks.Run(this); exitCode=checks.Passed?0:2; }
             else if (consentReview) { var checks = gameObject.AddComponent<PixelConsentSmoke>(); yield return checks.Run(this); exitCode = checks.Passed ? 0 : 2; }
             else if (onboardingReview) { var checks = gameObject.AddComponent<PixelOnboardingSmoke>(); yield return checks.Run(this); exitCode = checks.Passed ? 0 : 2; }
             else if (accountReview) { var checks = gameObject.AddComponent<PixelAccountSmoke>(); yield return checks.Run(this, accountService); exitCode = checks.Passed ? 0 : 2; }
             else if (smoke) { var checks = gameObject.AddComponent<PixelLoginSmoke>(); yield return checks.Run(this, testService); exitCode = checks.Passed ? 0 : 2; }
             else if (!string.IsNullOrEmpty(PixelWorkoutWindow.Arg("-sologym-keyboard-probe")))
             {
-                if (PixelWorkoutWindow.Has("-sologym-profile-keyboard")) { var checks=gameObject.AddComponent<PixelProfileSmoke>(); yield return checks.KeyboardProbe(this); exitCode=checks.Passed?0:2; }
+                if (PixelWorkoutWindow.Has("-sologym-goals-keyboard")) { var checks=gameObject.AddComponent<PixelGoalsSmoke>(); yield return checks.KeyboardProbe(this); exitCode=checks.Passed?0:2; }
+                else if (PixelWorkoutWindow.Has("-sologym-profile-keyboard")) { var checks=gameObject.AddComponent<PixelProfileSmoke>(); yield return checks.KeyboardProbe(this); exitCode=checks.Passed?0:2; }
                 else if (PixelWorkoutWindow.Has("-sologym-consent-keyboard")) { var checks = gameObject.AddComponent<PixelConsentSmoke>(); yield return checks.KeyboardProbe(this); exitCode = checks.Passed ? 0 : 2; }
                 else if (Page == "onboarding") { var checks = gameObject.AddComponent<PixelOnboardingSmoke>(); yield return checks.KeyboardProbe(this); exitCode = checks.Passed ? 0 : 2; }
                 else if (Page == "account") { var checks = gameObject.AddComponent<PixelAccountSmoke>(); yield return checks.KeyboardProbe(this); exitCode = checks.Passed ? 0 : 2; }

@@ -43,6 +43,13 @@ namespace SoloGym
             if (Step != GuildSetupStep.Character || (value != "skinny" && value != "medium" && value != "fat" && value != "muscular")) return false;
             Body = value; ErrorKey = ""; Changed?.Invoke(); return true;
         }
+        public bool TryGetReviewAudience(out bool teen)
+        {
+            teen = false;
+            if (origin.ValidateDraft().Length != 0) return false;
+            teen = origin.IsTeenAudience();
+            return true;
+        }
         public void Continue(bool appearanceAvailable)
         {
             if (Step == GuildSetupStep.Consent) return;

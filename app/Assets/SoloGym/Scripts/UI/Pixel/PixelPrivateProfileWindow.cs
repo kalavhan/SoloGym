@@ -22,6 +22,9 @@ namespace SoloGym.UI
         public ScrollRect Scroll { get; private set; }
         public Text Status { get; private set; }
         public event Action StateChanged;
+        public event Action GoalsRequested;
+        bool goalsAvailable;
+        public void SetGoalsAvailable(bool value) { goalsAvailable=value; Render(Controller.Model); }
         public Selectable LastControl => Continue.gameObject.activeSelf && Continue.IsInteractable() ? (Selectable)Continue : Secondary;
         RectTransform content, viewport, measurementGroup, readinessGroup;
         Text title, progress, review, heading, noticeCopy, helper, detail, readinessHint;
@@ -111,7 +114,8 @@ namespace SoloGym.UI
                 case ProfileStep.Notice: Controller.ContinueNotice(); break;
                 case ProfileStep.Measurements: Controller.ContinueMeasurements(); break;
                 case ProfileStep.Readiness: Controller.ContinueReadiness(); break;
-                case ProfileStep.Paused: case ProfileStep.Checkpoint: Controller.Back(); break;
+                case ProfileStep.Paused: Controller.Back(); break;
+                case ProfileStep.Checkpoint: if(goalsAvailable) GoalsRequested?.Invoke(); break;
             }
         }
         void SecondaryAction()
@@ -149,14 +153,15 @@ namespace SoloGym.UI
                 }
                 detail.gameObject.SetActive(paused||checkpoint);
                 detail.text=paused ? L("Training stays paused for now. You can change your response or leave.\n\nThis screen does not assess or diagnose your condition.","Por ahora dejamos el entrenamiento en pausa. Puedes cambiar tu respuesta o salir.\n\nEsta pantalla no evalúa ni diagnostica tu condición.")
-                    : L("Next: goals and training experience.\n\nThis preview has not saved a profile or generated a workout. Connected setup is still pending.","Siguiente: objetivos y experiencia.\n\nEsta vista previa no guardó un perfil ni generó una rutina. La configuración conectada sigue pendiente.");
+                    : L("Next: goals and training experience.\n\nChoose your focus and starting experience next. This preview has not saved a profile or generated a workout.","Siguiente: objetivos y experiencia.\n\nAhora elegirás tu enfoque y experiencia inicial. Esta vista previa no guardó un perfil ni generó una rutina.");
+                if(checkpoint && !goalsAvailable) detail.text=L("Return to setup to enter age and country before reviewing training choices. Nothing has been saved.","Vuelve a la configuración para indicar edad y país antes de revisar las opciones de entrenamiento. No se guardaron datos.");
                 helper.text=notice ? L("Review with example data.\nNo profile is saved.","Revisión con datos de ejemplo.\nNo se guarda un perfil.") : measurements ? L("You can leave both fields empty.\nExample values · Not saved.","Puedes dejar ambos campos vacíos.\nValores de ejemplo · No se guardan.") : readiness ? L("If you feel unwell or unsure,\nyou can pause here.","Si tienes molestias o dudas,\npuedes pausar aquí.") : "";
                 Status.text=m.Error.Length>0 ? m.Error : measurements && !m.CanContinue ? L("Check the numbers or leave the fields empty.","Revisa los números o deja los campos vacíos.") : "";
                 Status.gameObject.SetActive(Status.text.Length>0);
                 Secondary.SetLabel(readiness ? L("Pause for now","Pausar por ahora") : notice ? L("Not now","Ahora no") : L("Leave preview","Salir de vista previa"));
                 Secondary.gameObject.SetActive(!measurements);
-                Continue.SetLabel(paused ? L("CHANGE RESPONSE","CAMBIAR RESPUESTA") : checkpoint ? L("REVIEW MY ANSWERS","REVISAR MIS RESPUESTAS") : L("CONTINUE","CONTINUAR"));
-                Continue.interactable=m.CanContinue||paused||checkpoint;
+                Continue.SetLabel(paused ? L("CHANGE RESPONSE","CAMBIAR RESPUESTA") : L("CONTINUE","CONTINUAR"));
+                Continue.interactable=checkpoint ? goalsAvailable : m.CanContinue||paused;
                 Layout(); ConfigureNavigation();
                 if(lastStep!=m.Step) { lastStep=m.Step; Scroll.StopMovement(); content.anchoredPosition=Vector2.zero; if(gameObject.activeInHierarchy) Back.Select(); }
             }
