@@ -16,6 +16,8 @@ namespace SoloGym.UI
         public AccessibilityNode AccessibilityNode { get; private set; }
         public bool ShowsFocus => focus != null && focus.enabled;
         public string VisualState { get; private set; }
+        public Image Preview { get; private set; }
+        Image cardBorder;
         Outline focus;
         Sprite selectedSkin, normalSkin;
         AccessibilityHierarchy hierarchy;
@@ -46,6 +48,20 @@ namespace SoloGym.UI
             option.Label.raycastTarget = false; option.Label.horizontalOverflow = HorizontalWrapMode.Wrap; option.Label.verticalOverflow = VerticalWrapMode.Truncate;
             option.SetLabel(label); return option;
         }
+        internal void UseSpriteCard()
+        {
+            normalSkin = Resources.LoadAll<Sprite>("UI/Pixel/FormField")[0];
+            selectedSkin = normalSkin;
+            Background.pixelsPerUnitMultiplier = 2;
+            Preview = Child("Unchanged character preview", transform).gameObject.AddComponent<Image>();
+            Preview.raycastTarget = false;
+            var border = Child("Selected card border", transform); Stretch(border, Vector2.zero, Vector2.zero);
+            cardBorder = border.gameObject.AddComponent<Image>();
+            cardBorder.sprite = Resources.LoadAll<Sprite>("UI/Pixel/PrimaryButton")[0];
+            cardBorder.type = Image.Type.Sliced; cardBorder.fillCenter = false; cardBorder.pixelsPerUnitMultiplier = 2; cardBorder.raycastTarget = false;
+            Checkmark.transform.SetAsLastSibling(); Label.transform.SetAsLastSibling();
+            Label.fontSize = 20; RefreshVisual();
+        }
         public void SetLabel(string value)
         {
             if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("A localized choice label is required.", nameof(value));
@@ -74,8 +90,19 @@ namespace SoloGym.UI
             Background.color = unavailable ? new Color32(110, 116, 118, 255) : pressed ? new Color32(166, 168, 160, 255) : Color.white;
             Label.color = unavailable ? new Color32(151, 153, 151, 255) : new Color32(255, 240, 202, 255);
             Checkmark.enabled = isOn; Checkmark.color = Label.color;
-            Checkmark.rectTransform.anchoredPosition = new Vector2(30, pressed ? -2 : 0);
-            Stretch(Label.rectTransform, new Vector2(46, pressed ? 10 : 12), new Vector2(-12, pressed ? -14 : -12));
+            if (Preview == null)
+            {
+                Checkmark.rectTransform.anchoredPosition = new Vector2(30, pressed ? -2 : 0);
+                Stretch(Label.rectTransform, new Vector2(46, pressed ? 10 : 12), new Vector2(-12, pressed ? -14 : -12));
+            }
+            else
+            {
+                cardBorder.enabled = isOn;
+                var mark = Checkmark.rectTransform; mark.anchorMin = mark.anchorMax = new Vector2(1, 1);
+                mark.anchoredPosition = new Vector2(-19, -19); mark.sizeDelta = new Vector2(18, 18);
+                var label = Label.rectTransform; label.anchorMin = new Vector2(0, 0); label.anchorMax = new Vector2(1, 0);
+                label.pivot = new Vector2(.5f, 0); label.anchoredPosition = new Vector2(0, 7); label.sizeDelta = new Vector2(-8, 30);
+            }
             focus.enabled = focused && !pressed; SyncAccessibility();
         }
         internal void BindAccessibility(AccessibilityHierarchy owner, AccessibilityNode parent)

@@ -251,6 +251,9 @@ namespace SoloGym
         }
         void Fail(string key) { errorKey = key; Refresh(); }
 
+        /// <summary>Draft validation only; never authorizes enrollment or persists consent.</summary>
+        public string ValidateDraft() => ValidateAgeAndCountry();
+
         string ValidateAgeAndCountry()
         {
             if (ageText.Length == 0) return "required_age";

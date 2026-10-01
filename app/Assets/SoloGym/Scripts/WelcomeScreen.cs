@@ -53,7 +53,7 @@ namespace SoloGym
         void Awake()
         {
             string entry = Argument("-sologym-window");
-            if (string.IsNullOrEmpty(entry) || entry == "login" || entry == "account")
+            if (string.IsNullOrEmpty(entry) || entry == "login" || entry == "account" || entry == "onboarding")
             { new GameObject("Guild login").AddComponent<SoloGym.UI.PixelLoginWindow>(); Destroy(gameObject); return; }
             if (Argument("-sologym-window") == "fasting")
             { new GameObject("Optional fasting").AddComponent<SoloGym.UI.PixelFastingReview>(); Destroy(gameObject); return; }

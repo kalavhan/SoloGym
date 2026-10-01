@@ -7,6 +7,20 @@ clothing pipeline. Current requirements are in
 
 ## Scope
 
+- Latest batch instruction (2026-10-01): deliver age/country and character
+  selection together in ONE onboarding PR. Prepare both complete renders first,
+  then implement the connected steps as a unit after visual review. This batch
+  supersedes the one-window-per-PR limit below. Selection means choosing a whole
+  approved male/female Barbarian appearance from the eight existing PixelLab
+  exports, with fixed colors/clothing; no cosmetic editor or new character art.
+  Both renders were approved (“great, love it, build it”) and implemented in the
+  guild login shell. Create account and trusted WIN-006 enter an empty private
+  draft. Final Continue stops at privacy/consent pending; no enrollment permit,
+  profile save or Home entry. The account credential form remains an isolated
+  review route until trusted consent/eligibility is connected.
+  Choosing a character must not bypass consent, trusted eligibility or private
+  fitness setup. References: `design/fantasy-onboarding-r1/`.
+
 - Landscape-only pixel-art fantasy fitness app in the existing Unity project.
   Latest delivery workflow (2026-09-30): ONE COMPLETE WINDOW per PR/MR, after
   its full-screen render. Produce the background with PixelLab first, then

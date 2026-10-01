@@ -4,6 +4,17 @@ This is the implementation approach for the [confirmed product direction](../pro
 
 ## Window delivery workflow
 
+**Current batch, 2026-10-01:** after account PR #33 merged, the user requested
+age/country and character selection in one PR to reduce delivery overhead. Use
+two connected steps with full renders, existing PixelLab Barbarians and fixed
+colors/clothing. This batch supersedes the earlier one-window-per-PR limit.
+Character choice is a draft appearance, never proof of eligibility or consent.
+Both renders were approved with “great, love it, build it”. The connected native
+steps are implemented in `design/fantasy-onboarding-r1/`, including country search,
+all eight unchanged sprites, preserved drafts, localization and keyboard support.
+Create account and trusted WIN-006 sign-in now enter this flow. Final Continue
+stops at unavailable privacy/consent setup; it does not enroll or save a profile.
+
 **Current delivery:** PR #31 (Fasting) is merged. The login render was approved
 with “go” and its complete native window is implemented in
 `design/fantasy-login-r1/`. It uses the separate PixelLab entrance and existing

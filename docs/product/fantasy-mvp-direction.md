@@ -88,6 +88,21 @@ Component 07 imports the user's eight AutoSprite sources at `assets/sprites/auto
 
 Repository Markdown is the source of truth and can be opened in Obsidian. No separate vault or external documentation workspace is needed. See the [window delivery plan](../design/fantasy-pixel-component-plan.md): PixelLab background first, complete screen render, then implement and verify one full window per PR (latest user direction, 2026-09-30).
 
+## Combined origin and character setup (2026-10-01)
+
+The approved age/country and character screens are implemented together in the
+guild login shell. Create account and a trusted WIN-006 sign-in destination open
+the same private, empty draft. Players explicitly choose country, character gender
+and one of the eight existing PixelLab appearances. Body choice stays cosmetic;
+colors, equipment and animation remain fixed. Draft navigation and localization
+preserve choices without storing age/country or replacing Home's saved appearance.
+
+Final Continue stops at the unavailable privacy/consent setup checkpoint. This
+window does not satisfy regional/guardian policy, accept documents, issue an
+account-creation permit or save a personal profile. The prior credential form
+remains available for isolated review. See
+[implementation and verification](../../design/fantasy-onboarding-r1/README.md).
+
 ## Decisions still open
 
 1. Visual approval of the seven proposals and the overall production pixel grid. The first primary-button fixture targets landscape viewports from 854×480, uses Pixelify Sans for its labels, and has its own review and validation; this does not settle every screen’s typography or minimum layout.

@@ -1,0 +1,143 @@
+{
+  "id": "fantasy-onboarding-r1",
+  "date": "2026-10-01",
+  "base_commit": "c5ae581c62d94923fc572d9632e734a2080fe3b3",
+  "status": "approved_and_implemented",
+  "scope": "Age/country and fixed Barbarian selection together in one PR, as requested.",
+  "runtime_implemented": true,
+  "provider": "built-in imagegen, not CLI",
+  "pixellab_generations_added": 0,
+  "new_character_assets_generated": false,
+  "originals": {
+    "age-country-concept.png": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-deb33a01-e8ec-4e62-b7f1-e36f0f2ce20b.png",
+    "character-concept.png": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-35984280-38db-4a3d-b333-e8a5a15cf5b0.png"
+  },
+  "files": [
+    {
+      "file": "design/fantasy-onboarding-r1/age-country-concept.png",
+      "sha256": "d3004b9040daf0fa14e716069069b32e88c5a2815162e5daf25841526a00c190",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "design/fantasy-onboarding-r1/character-concept.png",
+      "sha256": "3bfa16986bdaeebad9f73ae470799fb4d30a790dd36b714335d2eae3c38be5aa",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "design/fantasy-onboarding-r1/age-country-prompt.txt",
+      "sha256": "aa653341d3bfd88598a0ec56eb938e682b4e01f1ca67a218d59ca28e00879b65"
+    },
+    {
+      "file": "design/fantasy-onboarding-r1/character-prompt.txt",
+      "sha256": "f096f3ee7f6c798ba1f2c36c02e14929e0deb0228ab276746315771bbac23965"
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1280.png",
+      "sha256": "0708787e3987876245a0d59053ccd9546cfab5a310c52b1d5986656f78e84838",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "assets/sprites/pixellab/guild-entrance-r1/native/entrance.png",
+      "sha256": "a9b079c146380121777e1af59005a0ad30ac7c45827be1f7ddac77333f31c790",
+      "size": [
+        640,
+        360
+      ]
+    }
+  ],
+  "unchanged_runtime_characters": [
+    {
+      "id": "female-fat",
+      "file": "app/Assets/SoloGym/Resources/Characters/PixelLabR1/female-fat.png",
+      "sha256": "106a61a43b6828289243240013e70bb366f90250441f27547abf978940edc8c7",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "female-medium",
+      "file": "app/Assets/SoloGym/Resources/Characters/PixelLabR1/female-medium.png",
+      "sha256": "29ae4951e28fabeebb10421ad880e8ff8669faa0785a6cf035e321de88aedaff",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "female-muscular",
+      "file": "app/Assets/SoloGym/Resources/Characters/PixelLabR1/female-muscular.png",
+      "sha256": "c7e4b03f369209908a01b1450b3363ca4af150965c216b81f5451f5dbfc391f0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "female-skinny",
+      "file": "app/Assets/SoloGym/Resources/Characters/PixelLabR1/female-skinny.png",
+      "sha256": "55a32dd68d383d3b0e5205f54d5a92b8fe9c127a271603af1ade5c226e1dc394",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "male-fat",
+      "file": "app/Assets/SoloGym/Resources/Characters/PixelLabR1/male-fat.png",
+      "sha256": "58d6b15f0a77a5b30d1db4165b5cd0b36be44e496ef98906004434d9cb856e9f",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "male-medium",
+      "file": "app/Assets/SoloGym/Resources/Characters/PixelLabR1/male-medium.png",
+      "sha256": "59c46eb13ea5b68fbb363b5c65450f621ca6f9556c5bf89fa02f7c5f4ca904a9",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "male-muscular",
+      "file": "app/Assets/SoloGym/Resources/Characters/PixelLabR1/male-muscular.png",
+      "sha256": "a78d381e55912a149d12eb29ba318e07f9e3e8aca6c8184d1d539fff79d5180b",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "male-skinny",
+      "file": "app/Assets/SoloGym/Resources/Characters/PixelLabR1/male-skinny.png",
+      "sha256": "200d5c0c6d5afd1f78695e9103d762c950a06cdcde224255597660bab693d3fb",
+      "size": [
+        256,
+        256
+      ]
+    }
+  ],
+  "visual_review": [
+    "Age/country and character selector each occupy a separate full landscape screen.",
+    "Consistent entrance architecture, panel placement, palette and button language.",
+    "Age 21/Mexico are illustrative draft values only; real form starts empty.",
+    "Four male variants shown; female selection uses the other four approved originals.",
+    "Concept character pixels and background softness are illustrative, not production replacements. Native renderer must use original point-filtered source assets unchanged."
+  ],
+  "approval": {
+    "date": "2026-10-01",
+    "user_quote": "great, love it, build it",
+    "scope": "Both proposed screens together, using the eight existing PixelLab Barbarians."
+  }
+}
