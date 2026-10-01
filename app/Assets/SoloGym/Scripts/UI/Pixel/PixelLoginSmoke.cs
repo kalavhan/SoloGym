@@ -105,8 +105,8 @@ namespace SoloGym.UI
             Check(w.Page == "recovery" && service.Count == before, "Recovery entry makes no false sent-email claim");
             TextFits(w, "recovery"); yield return Shot(w, "recovery"); Click(w.Return); yield return new WaitForEndOfFrame(); yield return null;
             Click(w.CreateAccount); yield return null;
-            Check(w.Page == "create" && service.Count == before, "Create-account entry makes no fake account");
-            TextFits(w, "create"); yield return Shot(w, "create-account"); Click(w.Return); yield return new WaitForEndOfFrame(); yield return null;
+            Check(w.Page == "account" && service.Count == before, "Create-account entry makes no fake account");
+            TextFits(w, "create"); yield return Shot(w, "create-account"); Click(w.Account.Back); yield return new WaitForEndOfFrame(); yield return null;
             Click(w.Privacy); yield return null;
             Check(w.Page == "privacy" && w.LastNavigation.ReadOnly && w.NoticeBody.text.Length > 0, "Privacy opens actual read-only document availability");
             string document = w.NoticeBody.text; Click(w.Language); yield return null;

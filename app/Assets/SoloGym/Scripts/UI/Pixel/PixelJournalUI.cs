@@ -42,8 +42,8 @@ namespace SoloGym.UI
             var r = Rect(label, parent, b); var hit = r.gameObject.AddComponent<Image>(); hit.color = Color.clear; hit.canvasRenderer.cullTransparentMesh = false;
             var action = r.gameObject.AddComponent<PixelJournalAction>(); action.Initialize(label, callback, framed, selected, size); return action;
         }
-        public static void Rule(Transform p, float x, float y, float width)
-        { var i = Rect("Live separator", p, new Rect(x, y, width, 1)).gameObject.AddComponent<Image>(); i.color = new Color32(129, 91, 50, 125); i.raycastTarget = false; }
+        public static Image Rule(Transform p, float x, float y, float width)
+        { var i = Rect("Live separator", p, new Rect(x, y, width, 1)).gameObject.AddComponent<Image>(); i.color = new Color32(129, 91, 50, 125); i.raycastTarget = false; return i; }
         public static RectTransform Scroll(Transform p, Rect bounds, float contentHeight)
         {
             var outer = Rect("Journal scroll", p, bounds); var hit = outer.gameObject.AddComponent<Image>(); hit.color = Color.clear; hit.canvasRenderer.cullTransparentMesh = false;

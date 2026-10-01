@@ -1,10 +1,10 @@
 {
   "id": "fantasy-account-r1",
   "created": "2026-10-01",
-  "status": "concept_pending_user_review",
+  "status": "concept_approved_native_form_implemented",
   "base_commit": "434c1628d94823a21ad83108d5a9555a637a605c",
   "window": "email_account_creation",
-  "runtime_implemented": false,
+  "runtime_implemented": true,
   "provider": "built-in imagegen, not CLI",
   "pixellab_generations_used": 0,
   "background_reused_from": "guild-entrance-r1",
@@ -47,7 +47,7 @@
     }
   ],
   "visual_review": {
-    "result": "ready_for_user_review",
+    "result": "concept_approved",
     "checks": [
       "One landscape screen; source room and left-logo composition retained.",
       "Three readable credential fields and separate visibility controls.",
@@ -59,5 +59,7 @@
       "Readability at small landscape sizes and mobile keyboard behavior require native verification.",
       "Visual review does not approve connected registration, eligibility, legal documents or trusted profiles."
     ]
-  }
+  },
+  "approval": "User: good, do it",
+  "production_registration_connected": false
 }

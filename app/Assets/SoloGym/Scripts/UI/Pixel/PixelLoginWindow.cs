@@ -30,6 +30,10 @@ namespace SoloGym.UI
         public RectTransform Composition { get; private set; }
         public RectTransform Panel { get; private set; }
         public bool AutomaticReview = true;
+        public PixelAccountForm Account { get; private set; }
+        IAccountRegistrationService registrationService;
+        string documentReturnPage = "login";
+        RectTransform loginRule;
 
         RectTransform safe, form, viewport, notice, noticeContent, background;
         Text title, subtitle, googleLabel, accountHint, divider;
@@ -42,11 +46,12 @@ namespace SoloGym.UI
         const string LanguageKey = "SoloGym.Home.Language.v1";
         string originalLanguage; bool hadLanguage;
 
-        public void Initialize(IWelcomeAuthService service = null, string locale = null)
+        public void Initialize(IWelcomeAuthService service = null, string locale = null, IAccountRegistrationService registration = null)
         {
             if (initialized) return;
             initialized = true;
-            smoke = PixelWorkoutWindow.Has("-sologym-smoke");
+            registrationService = registration;
+            smoke = PixelWorkoutWindow.Has("-sologym-smoke") || PixelWorkoutWindow.Has("-sologym-account-smoke");
             hadLanguage = PlayerPrefs.HasKey(LanguageKey); originalLanguage = PlayerPrefs.GetString(LanguageKey);
             Application.targetFrameRate = 60;
             Screen.orientation = ScreenOrientation.LandscapeLeft;
@@ -90,7 +95,7 @@ namespace SoloGym.UI
             Panel = PixelJournalUI.Frame(Composition, new Rect(674, 44, 570, 632), "Separate sign-in panel");
             panelEdge = Panel.GetComponentsInChildren<Image>()[1]; PixelJournalUI.Stretch(panelEdge.rectTransform);
             title = PixelJournalUI.Text(Panel, new Rect(26, 20, 518, 60), "", 38, false, TextAnchor.MiddleCenter);
-            PixelJournalUI.Rule(Panel, 62, 84, 446);
+            loginRule = PixelJournalUI.Rule(Panel, 62, 84, 446).rectTransform;
             form = PixelJournalUI.Scroll(Panel, new Rect(28, 100, 514, 516), 520);
             viewport = (RectTransform)form.parent; FormScroll = viewport.GetComponent<ScrollRect>();
             FormScroll.verticalScrollbarVisibility = ScrollRect.ScrollbarVisibility.AutoHide;
@@ -134,7 +139,11 @@ namespace SoloGym.UI
             noticeContent = PixelJournalUI.Scroll(notice, new Rect(0, 0, 514, 430), 430);
             NoticeBody = PixelJournalUI.Text(noticeContent, new Rect(0, 0, 494, 420), "", 24, false, TextAnchor.UpperLeft);
             Return = TextAction(notice, "", BackToLogin); Place(Return, new Rect(0, 446, 502, 64));
-            Link(Return, Language, Language); notice.gameObject.SetActive(false);
+            Link(Return, Language, Privacy); notice.gameObject.SetActive(false);
+            Account = new GameObject("Email account form", typeof(RectTransform)).AddComponent<PixelAccountForm>();
+            Account.Initialize(Panel, registrationService, BackToLogin, Privacy, Language);
+            Account.StateChanged += AccountStateChanged;
+            Account.gameObject.SetActive(false);
         }
 
         Button ProviderButton(Transform parent)
@@ -149,6 +158,14 @@ namespace SoloGym.UI
             googleLabel = PixelJournalUI.Text(rect, new Rect(84, 0, 398, 64), "", 24, true, TextAnchor.MiddleCenter);
             googleLabel.font = Resources.Load<Font>("Fonts/GoogleSans-Medium"); googleLabel.color = new Color32(31, 31, 31, 255);
             button.onClick.AddListener(SubmitGoogle); return button;
+        }
+
+        void AccountStateChanged()
+        {
+            if (Account == null || Page != "account") return;
+            Privacy.interactable = Terms.interactable = !Account.Controller.Busy;
+            Link(Language, Account.Controller.Busy ? Account.Cancel : Terms,
+                Account.Controller.Busy ? Account.Cancel : Account.Back);
         }
 
         void Render(WelcomeViewModel model)
@@ -167,7 +184,7 @@ namespace SoloGym.UI
             Privacy.SetLabel(model.Copy("privacy")); Terms.SetLabel(model.Copy("terms"));
             Privacy.interactable = Terms.interactable = !model.IsBusy;
             Language.SetLabel(model.Language == "es" ? "ES / EN" : "EN / ES");
-            Cancel.SetLabel(model.Copy("cancel")); Return.SetLabel(L("Back to sign in", "Volver al inicio"));
+            Cancel.SetLabel(model.Copy("cancel")); Return.SetLabel(documentReturnPage == "account" ? L("Back to registration", "Volver al registro") : L("Back to sign in", "Volver al inicio"));
             Cancel.gameObject.SetActive(model.IsBusy && Page == "login");
             Recovery.gameObject.SetActive(!model.IsBusy);
             Status.text = model.ErrorText;
@@ -180,7 +197,12 @@ namespace SoloGym.UI
             if (!model.IsBusy && wasBusy && Page == "login") Submit.Select();
             wasBusy = model.IsBusy;
             if (Page == "login") title.text = model.Copy("email_title");
-            else if (languageChanged) PopulateNotice();
+            else if (Page != "account" && languageChanged) PopulateNotice();
+            if (Account != null)
+            {
+                Account.SetLocale(model.Language); Account.Controller.SetOnline(!model.IsOffline);
+                AccountStateChanged();
+            }
             LayoutForm();
             if (renderedError != model.ErrorKey) { renderedError = model.ErrorKey; FormScroll.verticalNormalizedPosition = 1; }
         }
@@ -223,14 +245,31 @@ namespace SoloGym.UI
             Email.Input.DeactivateInputField(); Password.Input.DeactivateInputField();
             EventSystem.current?.SetSelectedGameObject(null);
         }
+        public void OpenAccount()
+        {
+            Controller.CancelAuthentication(); ReleaseKeyboard();
+            Page = "account"; documentReturnPage = "login";
+            viewport.gameObject.SetActive(false); notice.gameObject.SetActive(false);
+            title.gameObject.SetActive(false); loginRule.gameObject.SetActive(false);
+            Account.gameObject.SetActive(true); Account.Open(Controller.Model.Email, Controller.Model.Language);
+            Link(Privacy, Account.SignIn, Terms); Link(Language, Terms, Account.Back);
+            Relayout(); Account.Back.Select();
+        }
         void Navigate(WelcomeNavigation destination)
         {
+            if (destination.Context == "create_email_account") { LastNavigation = destination; OpenAccount(); return; }
+            documentReturnPage = Page == "account" ? "account" : "login";
+            Account.gameObject.SetActive(false);
+            title.gameObject.SetActive(true); loginRule.gameObject.SetActive(true);
             LastNavigation = destination; ReleaseKeyboard();
             Page = destination.AuthorizedByBackend ? "checkpoint" : destination.Context == "privacy" || destination.Context == "terms" ? destination.Context : destination.WindowId == "WIN-005" ? "recovery" : "create";
-            viewport.gameObject.SetActive(false); notice.gameObject.SetActive(true); PopulateNotice(); Return.Select(); Relayout();
+            viewport.gameObject.SetActive(false); notice.gameObject.SetActive(true);
+            Link(Privacy, Return, Terms); Link(Language, Terms, Return);
+            PopulateNotice(); Return.Select(); Relayout();
         }
         void PopulateNotice()
         {
+            Return.SetLabel(documentReturnPage == "account" ? L("Back to registration", "Volver al registro") : L("Back to sign in", "Volver al inicio"));
             if (Page == "privacy" || Page == "terms")
             {
                 using (var documents = new OnboardingController())
@@ -257,7 +296,20 @@ namespace SoloGym.UI
         }
         public void BackToLogin()
         {
-            Page = "login"; notice.gameObject.SetActive(false); viewport.gameObject.SetActive(true);
+            if ((Page == "privacy" || Page == "terms") && documentReturnPage == "account")
+            {
+                Page = "account"; notice.gameObject.SetActive(false);
+                title.gameObject.SetActive(false); loginRule.gameObject.SetActive(false);
+                Account.gameObject.SetActive(true); Account.SetLocale(Controller.Model.Language);
+                Link(Privacy, Account.SignIn, Terms); AccountStateChanged();
+                Relayout(); Account.Back.Select(); return;
+            }
+            if (Page == "account") Controller.SetEmail(Account.Email.Input.text);
+            Page = "login"; Account.gameObject.SetActive(false);
+            title.gameObject.SetActive(true); loginRule.gameObject.SetActive(true);
+            Link(Privacy, CreateAccount, Terms); Link(Language, Terms, Email.Input);
+            documentReturnPage = "login";
+            notice.gameObject.SetActive(false); viewport.gameObject.SetActive(true);
             Controller.OpenEmail(); if (Controller.Model.IsOffline) Controller.SetOnline(false);
             Relayout(); FormScroll.StopMovement(); FormScroll.verticalNormalizedPosition = 1; form.anchoredPosition = Vector2.zero; Email.Input.Select();
         }
@@ -273,10 +325,12 @@ namespace SoloGym.UI
                 bool nowOnline = Application.internetReachability != NetworkReachability.NotReachable;
                 if (!smoke && online != nowOnline) { online = nowOnline; Controller.SetOnline(online); }
                 else Controller.Refresh();
+                Account.Controller.Refresh();
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (Page != "login") BackToLogin(); else if (Controller.Model.IsBusy) Controller.CancelAuthentication(); else { ReleaseKeyboard(); Password.HidePassword(); }
+                if (Page == "account" && Account.Controller.Busy) Account.Controller.Cancel();
+                else if (Page != "login") BackToLogin(); else if (Controller.Model.IsBusy) Controller.CancelAuthentication(); else { ReleaseKeyboard(); Password.HidePassword(); }
             }
         }
         float KeyboardPixels => keyboardOverride > 0 ? keyboardOverride : TouchScreenKeyboard.visible ? Mathf.Max(TouchScreenKeyboard.area.height, Screen.height * .4f) : 0;
@@ -306,7 +360,7 @@ namespace SoloGym.UI
             ((RectTransform)noticeContent.parent).sizeDelta = new Vector2(514, Mathf.Max(70, notice.rect.height - 82));
             Place(Return, new Rect(0, notice.rect.height - 70, 502, 64));
             Privacy.gameObject.SetActive(previousKeyboard <= 0); Terms.gameObject.SetActive(previousKeyboard <= 0); Language.gameObject.SetActive(previousKeyboard <= 0);
-            LayoutForm(); Canvas.ForceUpdateCanvases();
+            LayoutForm(); Account.Relayout(Panel.rect.height, previousKeyboard > 0); Canvas.ForceUpdateCanvases();
             if (previousKeyboard > 0)
             {
                 var selected = EventSystem.current?.currentSelectedGameObject;
@@ -319,10 +373,10 @@ namespace SoloGym.UI
             }
         }
 
-        public void Backgrounded() { if (Controller == null) return; Controller.OnBackground(); ReleaseKeyboard(); }
+        public void Backgrounded() { if (Controller == null) return; Controller.OnBackground(); Account?.Backgrounded(); ReleaseKeyboard(); }
         void OnApplicationPause(bool paused) { if (paused) Backgrounded(); }
         void OnApplicationFocus(bool focused) { if (!focused) Backgrounded(); }
-        void OnDisable() { if (Controller != null) Controller.CancelAuthentication(); }
+        void OnDisable() { if (Controller != null) Controller.CancelAuthentication(); Account?.Backgrounded(); }
         void OnDestroy()
         {
             Controller?.Dispose();
@@ -331,13 +385,20 @@ namespace SoloGym.UI
         IEnumerator Start()
         {
             var testService = PixelWorkoutWindow.Has("-sologym-smoke") ? new PixelLoginSmoke.Service() : null;
-            if (!initialized) Initialize(testService, PixelWorkoutWindow.Arg("-sologym-locale"));
+            bool accountReview = PixelWorkoutWindow.Has("-sologym-account-smoke");
+            var accountService = accountReview ? new PixelAccountSmoke.Service() : null;
+            if (!initialized) Initialize(testService, PixelWorkoutWindow.Arg("-sologym-locale"), accountService);
+            if (PixelWorkoutWindow.Arg("-sologym-window") == "account") OpenAccount();
             if (!AutomaticReview) yield break;
             for (int i=0; i<8; i++) yield return null;
             int exitCode = 0;
-            if (smoke) { var checks = gameObject.AddComponent<PixelLoginSmoke>(); yield return checks.Run(this, testService); exitCode = checks.Passed ? 0 : 2; }
+            if (accountReview) { var checks = gameObject.AddComponent<PixelAccountSmoke>(); yield return checks.Run(this, accountService); exitCode = checks.Passed ? 0 : 2; }
+            else if (smoke) { var checks = gameObject.AddComponent<PixelLoginSmoke>(); yield return checks.Run(this, testService); exitCode = checks.Passed ? 0 : 2; }
             else if (!string.IsNullOrEmpty(PixelWorkoutWindow.Arg("-sologym-keyboard-probe")))
-            { var checks = gameObject.AddComponent<PixelLoginSmoke>(); yield return checks.KeyboardProbe(this); exitCode = checks.Passed ? 0 : 2; }
+            {
+                if (Page == "account") { var checks = gameObject.AddComponent<PixelAccountSmoke>(); yield return checks.KeyboardProbe(this); exitCode = checks.Passed ? 0 : 2; }
+                else { var checks = gameObject.AddComponent<PixelLoginSmoke>(); yield return checks.KeyboardProbe(this); exitCode = checks.Passed ? 0 : 2; }
+            }
             string path = PixelWorkoutWindow.Arg("-sologym-capture");
             if (!string.IsNullOrEmpty(path)) { yield return new WaitForEndOfFrame(); Capture(path); }
             if ((smoke || !string.IsNullOrEmpty(path)) && !PixelWorkoutWindow.Has("-sologym-stay-open")) Application.Quit(exitCode);

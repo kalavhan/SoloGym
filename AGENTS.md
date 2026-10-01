@@ -34,10 +34,18 @@ clothing pipeline. Current requirements are in
   guild entrance, existing form/button controls, email/Google service adapter,
   cancellation/retry, localization and keyboard handling. The default Welcome
   route now opens it. Identity success still requires connected onboarding;
-  account creation/recovery and final legal documents remain explicitly
+  production registration/recovery and final legal documents remain explicitly
   unavailable. Never route successful identity to fictional Home or imply that
   a screen redesign establishes trusted profiles. No new character art or
   animations were generated. Deliver this complete window in one PR.
+- The account-creation render in `design/fantasy-account-r1/` was approved with
+  "good, do it". The login shell now contains its native email/password/confirmation
+  form. Registration preflight must authorize age/region/consent before credentials
+  reach any creation adapter; the current default explicitly reports missing setup
+  and creates nothing. The form is available for review, not proof of connected
+  registration or completed onboarding. Keep password drafts memory-only, preserve
+  ambiguous completion after interrupted submission, and never open sample Home.
+  All background/control assets are reused; no new art generation.
 - Workouts/Rutinas is the approved complete journal window, with current/completed/missed sessions,
   routine review/editing, and a readiness entry before training. The proposed
   visual is a fantasy guild training journal. Its reference and implementation pack is
