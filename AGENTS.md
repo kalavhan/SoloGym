@@ -20,7 +20,7 @@ clothing pipeline. Current requirements are in
   PR #29: explicit reviewed entry, local set records, rest, difficulty changes,
   pause/resume and completed/stopped history. One static PixelLab stone guardian
   is in scope; existing Barbarians stay unchanged. No animation batch.
-- PR #30 is merged. The next complete window is optional adult fasting, with
+- Optional adult fasting is delivered in merged PR #31, with
   its approved render in `design/fantasy-fasting-r1/` ("i like it. do it."). The user explicitly
   requested a fantasy magic clock with restrained animation and a time-stage
   indication. PixelLab room/clock art and one clock animation proof are in scope;
@@ -29,6 +29,14 @@ clothing pipeline. Current requirements are in
   The complete native window includes adult opt-in, local persistence, correction,
   history/deletion, Home navigation and reduced motion. Preserve the original
   static clock and restrict animated frames to the dim rune annulus.
+- Next is the login/account-entry window. The user authorized its render-first
+  workflow with "do it". `design/fantasy-login-r1/` contains the new PixelLab
+  guild-entrance background and complete landscape concept awaiting visual
+  review. Reuse existing form/button components, keep background and controls
+  separate, and preserve identity/onboarding gates. No new characters or
+  animations; no claim that account creation/recovery/profile services are
+  connected by a visual redesign. Implement after the user's render review,
+  then deliver one complete window PR.
 - Workouts/Rutinas is the approved complete journal window, with current/completed/missed sessions,
   routine review/editing, and a readiness entry before training. The proposed
   visual is a fantasy guild training journal. Its reference and implementation pack is

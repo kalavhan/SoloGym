@@ -1,0 +1,30 @@
+Use case: ui-mockup / compositing
+Create ONE finished landscape 16:9 login-screen concept for SoloGym, the pixel-art medieval fantasy fitness game. Target a 1280x720 logical landscape layout; render at 1536x864 or another exact 16:9 output. This is a visual target for approval before native Unity implementation.
+
+REFERENCE ROLES
+Image 1 is the actual PixelLab-generated guild entrance background. Preserve that exact architectural composition, materials, door shapes, lighting, coherent perspective and pixel clusters. Use it as the full-bleed backdrop, scaling uniformly. Do not repaint it as a different room. Keep the open doorway on the left visible.
+Image 2 is the actual accepted native Home screenshot. It establishes the reusable UI language: thin aged-brass frames, dark slate/forest-teal surfaces, warm ivory readable pixel typography, restrained square corners. Take only the interface styling, NOT its furniture, character, portrait, HUD, navigation, currency, or workout text.
+
+COMPOSITION AND STYLE
+An inviting game entrance, composed as a single intentional scene, not a web dashboard. The beautiful doorway occupies the left half. The right half has ONE tall rectangular dark slate panel with a thin aged-brass pixel border and tiny corner details, approximately x=686..1238 and y=42..670 in the 1280x720 layout. Panel interior must be calm opaque dark blue-teal so labels remain readable. Plain framed fields and modest brass ornament, no intricate new carved frame or huge crest. Use only the established reusable component language. Large type and comfortable controls; no tiny filler. Preserve crisp pixel forms, not soft illustrated gradients or photorealism.
+
+LEFT AREA
+At x=64, y=42, a warm ivory pixel wordmark reading exactly "SOLOGYM", about 48px at logical resolution, with a subtle dark shadow so it reads against the room. Under it, a smaller line "GREMIO DE ENTRENAMIENTO". Do not place the lettering on a giant sign or box. Keep the remainder of the left area open to show the inviting architectural entrance. NO new character, mascot, equipment or prop.
+
+LOGIN PANEL — exact Spanish text
+Generous horizontal padding. Heading centered at y=86: "INICIAR SESIÓN". Thin restrained separator below heading.
+At y=150, left-aligned label "Correo electrónico".
+At y=184, a dark inset, brass-edged single-line input about 460x58 containing the placeholder "tu@correo.com" in subdued readable ivory-gray.
+At y=261, left-aligned label "Contraseña".
+At y=295, a matching password field with eight asterisks; a separate compact text button "Mostrar" sits to its right on the same row, with comfortable padding. Both fit within the same 460px content width. No eye illustration necessary.
+At y=376, a readable right-aligned text action "¿Olvidaste tu contraseña?".
+At y=414, a wide forest-teal primary button with a thin brass frame, about 460x58, centered label "ENTRAR" in warm ivory.
+At y=495, small centered "o" between two short muted rules.
+At y=524, one clearly separate light-neutral Google sign-in button about 460x56. Use the recognizable small multicolor Google G and the label "Continuar con Google" in dark readable standard type. Preserve Google's recognizable branding; do not turn its mark into a rune or crest. This button is the one understated provider-brand exception to the fantasy pixel controls.
+At y=620, centered line "¿No tienes cuenta?" followed by a distinct brighter text action "Crear cuenta". Make the spacing comfortable. Do not add any extra button or promotional copy.
+
+BOTTOM EDGE
+Outside the panel, small legible footer text actions along bottom-left: "Privacidad" and "Términos". At bottom-right a compact language text action "ES / EN". No navigation dock because the user has not entered an account yet.
+
+QUALITY / LIMITS
+One screen, one image; readable exact accents and punctuation. No browser chrome, mobile device frame, popup stack, rounded SaaS cards, large glows, neon lights, illustrations inside inputs, fake email/user details, profile stats, rewards, fasting elements, banners, ads, guest button, social/chat link or extra registration fields. This is a normal sign-in state, not loading/error, and not proof that account services already work. All text, input fields, buttons, the panel frame and the PixelLab background remain independent elements in the eventual implementation; never use this flattened reference as a runtime screen. Do not generate assets for existing native controls. Match the actual background closely enough that implementation can reproduce this composition.
