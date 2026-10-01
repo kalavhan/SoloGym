@@ -1,0 +1,42 @@
+{
+  "id": "home.water-flask",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "water-flask.anchor"
+  ],
+  "drawOrder": 7,
+  "sourceSize": {
+    "x": 64,
+    "y": 96
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.42105263157894735,
+  "footprint": [
+    {
+      "x": 12,
+      "y": 77
+    },
+    {
+      "x": 45,
+      "y": 77
+    },
+    {
+      "x": 45,
+      "y": 80
+    },
+    {
+      "x": 12,
+      "y": 80
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/water-flask"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "home.wall-shelf",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "wall-shelf.anchor"
+  ],
+  "drawOrder": 6,
+  "sourceSize": {
+    "x": 192,
+    "y": 64
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.6363636363636364,
+  "footprint": [
+    {
+      "x": 14,
+      "y": 53
+    },
+    {
+      "x": 178,
+      "y": 53
+    },
+    {
+      "x": 178,
+      "y": 56
+    },
+    {
+      "x": 14,
+      "y": 56
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/wall-shelf"
+    }
+  ]
+}

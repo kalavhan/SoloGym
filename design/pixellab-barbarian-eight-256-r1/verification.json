@@ -1,0 +1,82 @@
+{
+  "characters": [
+    {
+      "id": "male-skinny",
+      "exact256Square": true,
+      "transparentAllFourEdges": true,
+      "minTransparentMargin": 2,
+      "finalBytesEqualNative": true,
+      "sourceMatchesDownloads": true,
+      "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+    },
+    {
+      "id": "male-medium",
+      "exact256Square": true,
+      "transparentAllFourEdges": true,
+      "minTransparentMargin": 4,
+      "finalBytesEqualNative": true,
+      "sourceMatchesDownloads": true,
+      "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+    },
+    {
+      "id": "male-fat",
+      "exact256Square": true,
+      "transparentAllFourEdges": true,
+      "minTransparentMargin": 5,
+      "finalBytesEqualNative": true,
+      "sourceMatchesDownloads": true,
+      "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+    },
+    {
+      "id": "male-muscular",
+      "exact256Square": true,
+      "transparentAllFourEdges": true,
+      "minTransparentMargin": 2,
+      "finalBytesEqualNative": true,
+      "sourceMatchesDownloads": true,
+      "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+    },
+    {
+      "id": "female-skinny",
+      "exact256Square": true,
+      "transparentAllFourEdges": true,
+      "minTransparentMargin": 6,
+      "finalBytesEqualNative": true,
+      "sourceMatchesDownloads": true,
+      "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+    },
+    {
+      "id": "female-medium",
+      "exact256Square": true,
+      "transparentAllFourEdges": true,
+      "minTransparentMargin": 4,
+      "finalBytesEqualNative": true,
+      "sourceMatchesDownloads": true,
+      "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+    },
+    {
+      "id": "female-fat",
+      "exact256Square": true,
+      "transparentAllFourEdges": true,
+      "minTransparentMargin": 2,
+      "finalBytesEqualNative": true,
+      "sourceMatchesDownloads": true,
+      "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+    },
+    {
+      "id": "female-muscular",
+      "exact256Square": true,
+      "transparentAllFourEdges": true,
+      "minTransparentMargin": 6,
+      "finalBytesEqualNative": true,
+      "sourceMatchesDownloads": true,
+      "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+    }
+  ],
+  "summary": "Eight of eight pass size, transparency, border, source-hash and native-export checks.",
+  "browserReview": {
+    "status": "awaiting-origin-permission",
+    "url": "http://127.0.0.1:8907/",
+    "reason": "Automatic approval review requires permission for this new localhost origin."
+  }
+}

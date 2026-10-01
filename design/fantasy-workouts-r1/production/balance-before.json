@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 3940\ngenerations_used: 1059\ngenerations_total: 5000\nsubscription: active (Tier 2: Pixel Artisan)\ngenerations_reset: 2026-10-30\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  }
+}

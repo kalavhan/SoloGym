@@ -1,0 +1,31 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: 60e5b01a-7ec7-4f27-a554-ff3ce2c22fe1\njob_id: 60e5b01a-7ec7-4f27-a554-ff3ce2c22fe1\nframes: 1\ntransparent: no \u2014 every pixel is opaque. If you asked for no_background, background removal did not find one; retry or describe the subject on a plain background.\nasset_id: edbfb57e-e881-5826-9870-3af5be4a9833\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ndownload: https://api.pixellab.ai/mcp/images/60e5b01a-7ec7-4f27-a554-ff3ce2c22fe1/download"
+      },
+      {
+        "type": "image",
+        "saved": "assets/sprites/pixellab/workouts-room-r1/native/journal.png"
+      }
+    ],
+    "structuredContent": {
+      "job_id": "60e5b01a-7ec7-4f27-a554-ff3ce2c22fe1",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/60e5b01a-7ec7-4f27-a554-ff3ce2c22fe1/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/60e5b01a-7ec7-4f27-a554-ff3ce2c22fe1/download"
+      ],
+      "asset": {
+        "id": "edbfb57e-e881-5826-9870-3af5be4a9833",
+        "type": "image",
+        "status": "saved"
+      }
+    },
+    "isError": false
+  }
+}

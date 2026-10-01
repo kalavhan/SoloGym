@@ -1,0 +1,36 @@
+{
+  "group_id": "e62e3dce-7531-4557-8a3b-4ca28dfdfdaa",
+  "states": [
+    {
+      "character": {
+        "id": "64109351-9110-41d8-b43c-43acb3d5405c",
+        "name": "Idle",
+        "prompt": "ONE full-body adult male Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Muscular adult man: developed shoulders/chest/arms, visible abdominal definition and strongly defined thigh and calf muscles. Preserve reference proportions and medium-face identity; do not enlarge the whole body. Same curly brown hair and full beard; cream fur/leather shoulder piece on viewer RIGHT, diagonal brown harness, other pectoral and belly exposed. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.",
+        "size": {
+          "width": 256,
+          "height": 256
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-01T02:12:49.061174+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-01T02:41:07.062071"
+}

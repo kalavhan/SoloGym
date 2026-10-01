@@ -1,0 +1,40 @@
+Use case: ui-mockup / compositing
+Create ONE finished landscape 16:9 screenshot concept for the RUTINAS (Workouts) window of SoloGym, a polished pixel-art medieval fantasy fitness GAME. This is a complete window for visual review before Unity implementation.
+
+REFERENCE ROLES:
+Image 1 is the actual new PixelLab architecture background. Preserve its blue-gray stone room, oak top lintel, straight rear wall, coherent floor and small arched night window at the right edge. Use this supplied room as the visible backdrop; do not invent another room or change to isometric. Scale it as crisp pixel art.
+Image 2 is the implemented Home screen. It is the exact UI style authority: sparse dark teal and aged-gold frames, ivory pixel labels, restrained ornaments, readable typography, same top-right Barbarian portrait/profile and same bottom navigation. Do NOT bring over the Home props, standing character, rug or routine card.
+
+COMPOSITION:
+Near-front view, 1280x720 logical landscape composition. At upper left a compact dark teal/gold title plaque reading "RUTINAS". At upper right retain the same small portrait/profile plaque, reading "Aventurero" and "Bárbaro", with a small gold settings gear. A wide, beautiful open leather-bound training journal occupies the middle 88 percent of the canvas, roughly x=70..1210, y=125..597. Two flat, readable warm ivory parchment pages, thin dark leather edges, subtle gold corner clasps and a restrained central spine. It must feel like a single intentional RPG journal interface, not a grid of separate web cards. Keep pages almost parallel to the screen for legible live text; no tilted unreadable book. A little stone room remains visible around it. The journal is an independent UI artwork layer, not a new physical object baked into the architecture. Use rich, carefully controlled pixel clusters and the same native-scale pixel density as the room.
+
+JOURNAL CONTENT — large readable Spanish labels, exact spelling, dark ink on parchment, no tiny filler:
+At the top edge of the journal, two small integrated bookmark tabs: "SEMANA" selected, "HISTORIAL" secondary.
+LEFT PAGE (about 40 percent of the journal):
+Heading "TU SEMANA".
+Week heading with small previous/next arrows: "28 SEP – 4 OCT".
+One evenly spaced row of seven day/date tokens: "L 28", "M 29", "X 30", "J 1", "V 2", "S 3", "D 4". Highlight X 30 in muted teal with an ivory date, not a red warning.
+Below, three generously spaced clickable journal entries separated by thin ink rules rather than card boxes:
+"HOY · BASE A" with status "Pendiente" — selected using a slim teal marker.
+"LUN 28 · MOVILIDAD" with status "Completada" and a small check.
+"MAR 29 · BASE A" with status "No realizada" and a neutral small dash.
+Small calm text near the bottom: "Descansar también es parte del plan."
+RIGHT PAGE (about 60 percent):
+Heading "BASE A".
+Subtitle "Hoy · 24 min · 7 bloques".
+Under that, a spacious four-row preview with left aligned names and right aligned doses, not separate cards:
+"Calentamiento" — "3 min"
+"Sentadilla con mancuerna" — "2 × 6–10"
+"Peso muerto rumano" — "2 × 6–10"
+"Press de pecho en el suelo" — "1 × 6–10"
+A clear text action under the list: "Ver rutina completa".
+At the bottom of this page, TWO comfortable side-by-side rectangular buttons using the existing Home gold/pixel geometry: secondary brown/ink "EDITAR RUTINA", primary forest teal "PREPARAR SESIÓN". The primary prepares readiness review; do not label it as starting a battle.
+
+OUTSIDE THE JOURNAL:
+Centered below the book a readable short ivory hint: "Puedes ajustar la dificultad durante la sesión."
+Bottom center a single compact dark teal/gold navigation dock identical in language to Home, with three labels "Hogar", "Rutinas", "Mazmorra". Highlight only "Rutinas". No fasting entry in this default state.
+Small unobtrusive footer at lower left: "Datos de ejemplo".
+
+QUALITY AND LIMITS:
+One image, one full screen. Polished game composition with strong hierarchy and generous spacing, crisp pixel type, medium-size touch controls. Preserve the approved Home colors and existing portrait appearance; do not generate a new character design. Keep the background architectural, the journal visually separate, and all labels/buttons visually separate from the background. This is a concept, not proof that live workout data or controls already exist.
+No new large character, monsters, ring, punching bags, weapons, workout demo animations, skin/hair controls, extra HUD currencies, stamina/XP rewards, punishment, subscription/advertising banners, glassmorphism, glossy 3D, rounded SaaS cards, browser chrome or photo textures. No unreadable decorative paragraphs. Do not add more columns or pop-up dialogs.

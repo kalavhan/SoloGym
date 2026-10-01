@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 4bc84fdf-d433-481f-b07f-fbf6faaa4dbb\njob_id: 4bc84fdf-d433-481f-b07f-fbf6faaa4dbb\nmodel: pro\ndescription: ONE isolated game prop on TRUE TRANSPARENT background. ONE complete low oak storage cabinet with two closed doors, dark forged-iron hinges, handles and short complete feet, exactly frontal with a narrow visible top plane. Empty flat top. NO shelves, towels, flasks, plant or wall. Match reference cabinet design and amber lighting. The supplied full gym image is the camera, color, lighting and pixel-density authority; the crop is the specific object design. Looking STRAIGHT into a room with modest one-point floor depth, NOT isometric or top-down. Re-create this object at its pictured camera angle, not a generic inventory icon. Crisp 16-bit-inspired pixel art, intentional pixel clusters and restrained outlines. Entire complete prop inside canvas with at least 8 empty transparent pixels around all edges. Reconstruct occluded edges. Exclude ALL neighboring props, character, floor, wall, UI, text, border, cast shadow and scenery. Exactly one isolated object, never a sheet.\nsize: 160x128px\ntransparent: True\ncandidates: 4\nreferences: 2\nseed: 9303104\nasset_id: 0f2408ab-8613-55e2-9da0-50c3a98541d4\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"4bc84fdf-d433-481f-b07f-fbf6faaa4dbb\")"
+      }
+    ],
+    "isError": false
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "characters": [
+    {
+      "id": "female-fat",
+      "resource": "Characters/PixelLabR1/female-fat",
+      "en": "Woman \u00b7 Heavy",
+      "es": "Mujer \u00b7 Robusto",
+      "feet": {
+        "x": 127.0,
+        "y": 4
+      },
+      "portraitRect": {
+        "x": 103.0,
+        "y": 194,
+        "width": 48,
+        "height": 60
+      },
+      "sha256": "106a61a43b6828289243240013e70bb366f90250441f27547abf978940edc8c7"
+    },
+    {
+      "id": "female-medium",
+      "resource": "Characters/PixelLabR1/female-medium",
+      "en": "Woman \u00b7 Medium",
+      "es": "Mujer \u00b7 Medio",
+      "feet": {
+        "x": 127.0,
+        "y": 7
+      },
+      "portraitRect": {
+        "x": 103.0,
+        "y": 192,
+        "width": 48,
+        "height": 60
+      },
+      "sha256": "29ae4951e28fabeebb10421ad880e8ff8669faa0785a6cf035e321de88aedaff"
+    },
+    {
+      "id": "female-muscular",
+      "resource": "Characters/PixelLabR1/female-muscular",
+      "en": "Woman \u00b7 Muscular",
+      "es": "Mujer \u00b7 Muscular",
+      "feet": {
+        "x": 127.5,
+        "y": 8
+      },
+      "portraitRect": {
+        "x": 103.5,
+        "y": 190,
+        "width": 48,
+        "height": 60
+      },
+      "sha256": "c7e4b03f369209908a01b1450b3363ca4af150965c216b81f5451f5dbfc391f0"
+    },
+    {
+      "id": "female-skinny",
+      "resource": "Characters/PixelLabR1/female-skinny",
+      "en": "Woman \u00b7 Skinny",
+      "es": "Mujer \u00b7 Delgado",
+      "feet": {
+        "x": 128.0,
+        "y": 6
+      },
+      "portraitRect": {
+        "x": 104.0,
+        "y": 190,
+        "width": 48,
+        "height": 60
+      },
+      "sha256": "55a32dd68d383d3b0e5205f54d5a92b8fe9c127a271603af1ade5c226e1dc394"
+    },
+    {
+      "id": "male-fat",
+      "resource": "Characters/PixelLabR1/male-fat",
+      "en": "Man \u00b7 Heavy",
+      "es": "Hombre \u00b7 Robusto",
+      "feet": {
+        "x": 128.5,
+        "y": 5
+      },
+      "portraitRect": {
+        "x": 104.5,
+        "y": 191,
+        "width": 48,
+        "height": 60
+      },
+      "sha256": "58d6b15f0a77a5b30d1db4165b5cd0b36be44e496ef98906004434d9cb856e9f"
+    },
+    {
+      "id": "male-medium",
+      "resource": "Characters/PixelLabR1/male-medium",
+      "en": "Man \u00b7 Medium",
+      "es": "Hombre \u00b7 Medio",
+      "feet": {
+        "x": 129.0,
+        "y": 7
+      },
+      "portraitRect": {
+        "x": 105.0,
+        "y": 192,
+        "width": 48,
+        "height": 60
+      },
+      "sha256": "59c46eb13ea5b68fbb363b5c65450f621ca6f9556c5bf89fa02f7c5f4ca904a9"
+    },
+    {
+      "id": "male-muscular",
+      "resource": "Characters/PixelLabR1/male-muscular",
+      "en": "Man \u00b7 Muscular",
+      "es": "Hombre \u00b7 Muscular",
+      "feet": {
+        "x": 128.5,
+        "y": 5
+      },
+      "portraitRect": {
+        "x": 104.5,
+        "y": 194,
+        "width": 48,
+        "height": 60
+      },
+      "sha256": "a78d381e55912a149d12eb29ba318e07f9e3e8aca6c8184d1d539fff79d5180b"
+    },
+    {
+      "id": "male-skinny",
+      "resource": "Characters/PixelLabR1/male-skinny",
+      "en": "Man \u00b7 Skinny",
+      "es": "Hombre \u00b7 Delgado",
+      "feet": {
+        "x": 129.5,
+        "y": 7
+      },
+      "portraitRect": {
+        "x": 105.5,
+        "y": 194,
+        "width": 48,
+        "height": 60
+      },
+      "sha256": "200d5c0c6d5afd1f78695e9103d762c950a06cdcde224255597660bab693d3fb"
+    }
+  ]
+}

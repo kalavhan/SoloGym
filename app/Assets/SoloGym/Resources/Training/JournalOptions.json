@@ -1,0 +1,5094 @@
+{
+  "version": 1,
+  "context": "review-fixtures-only",
+  "previewSha256": "7ceb125ac0acc3fcd8f2e2d03a4580895b911071d8b773e10f5065adeec516f1",
+  "options": [
+    {
+      "key": "adult_home_beginner:15:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "chair_squat",
+        "name": {
+          "en": "Chair squat",
+          "es": "Sentadilla a silla"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:ready:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "chair_squat",
+        "name": {
+          "en": "Chair squat",
+          "es": "Sentadilla a silla"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:low_energy:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:15:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "chair_squat",
+        "name": {
+          "en": "Chair squat",
+          "es": "Sentadilla a silla"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:ready:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 342
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 342
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 342
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "chair_squat",
+        "name": {
+          "en": "Chair squat",
+          "es": "Sentadilla a silla"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:low_energy:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:25:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "chair_squat",
+        "name": {
+          "en": "Chair squat",
+          "es": "Sentadilla a silla"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:ready:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 342
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 342
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 342
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "chair_squat",
+        "name": {
+          "en": "Chair squat",
+          "es": "Sentadilla a silla"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:low_energy:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_home_beginner:40:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 250,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -15
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "dumbbell_goblet_squat",
+        "name": {
+          "en": "Dumbbell goblet squat",
+          "es": "Sentadilla con mancuerna al pecho"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 275
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "leg_press",
+        "name": {
+          "en": "Leg press",
+          "es": "Prensa de piernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 320
+      },
+      "secondsDelta": 45
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -15
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "dumbbell_romanian_deadlift",
+        "name": {
+          "en": "Dumbbell Romanian deadlift",
+          "es": "Peso muerto rumano con mancuernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 275
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "single_leg_glute_bridge",
+        "name": {
+          "en": "Single-leg glute bridge",
+          "es": "Puente de glúteos a una pierna"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 340
+      },
+      "secondsDelta": 65
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 100
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 100
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 100
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "pushup",
+        "name": {
+          "en": "Push-up",
+          "es": "Flexión de brazos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 100
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "dumbbell_floor_press",
+        "name": {
+          "en": "Dumbbell floor press",
+          "es": "Press de pecho con mancuernas en el suelo"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 130
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "dumbbell_row",
+        "name": {
+          "en": "Bent-over dumbbell row",
+          "es": "Remo inclinado con mancuernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 275
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "seated_cable_row",
+        "name": {
+          "en": "Seated cable row",
+          "es": "Remo sentado en polea"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 305
+      },
+      "secondsDelta": 30
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 140
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 140
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 140
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -15
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "dumbbell_goblet_squat",
+        "name": {
+          "en": "Dumbbell goblet squat",
+          "es": "Sentadilla con mancuerna al pecho"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 275
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "leg_press",
+        "name": {
+          "en": "Leg press",
+          "es": "Prensa de piernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 320
+      },
+      "secondsDelta": 45
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -15
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "dumbbell_romanian_deadlift",
+        "name": {
+          "en": "Dumbbell Romanian deadlift",
+          "es": "Peso muerto rumano con mancuernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 275
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "single_leg_glute_bridge",
+        "name": {
+          "en": "Single-leg glute bridge",
+          "es": "Puente de glúteos a una pierna"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 340
+      },
+      "secondsDelta": 65
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 100
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 100
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 100
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "pushup",
+        "name": {
+          "en": "Push-up",
+          "es": "Flexión de brazos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 100
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "dumbbell_floor_press",
+        "name": {
+          "en": "Dumbbell floor press",
+          "es": "Press de pecho con mancuernas en el suelo"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 130
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "dumbbell_row",
+        "name": {
+          "en": "Bent-over dumbbell row",
+          "es": "Remo inclinado con mancuernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 275
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "seated_cable_row",
+        "name": {
+          "en": "Seated cable row",
+          "es": "Remo sentado en polea"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 305
+      },
+      "secondsDelta": 30
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 140
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 140
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:25:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 140
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 3,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 420
+      },
+      "secondsDelta": -15
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "dumbbell_goblet_squat",
+        "name": {
+          "en": "Dumbbell goblet squat",
+          "es": "Sentadilla con mancuerna al pecho"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 3,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 435
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "leg_press",
+        "name": {
+          "en": "Leg press",
+          "es": "Prensa de piernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 3,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 480
+      },
+      "secondsDelta": 45
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 3,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 420
+      },
+      "secondsDelta": -15
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "dumbbell_romanian_deadlift",
+        "name": {
+          "en": "Dumbbell Romanian deadlift",
+          "es": "Peso muerto rumano con mancuernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 3,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 435
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "single_leg_glute_bridge",
+        "name": {
+          "en": "Single-leg glute bridge",
+          "es": "Puente de glúteos a una pierna"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 3,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 540
+      },
+      "secondsDelta": 105
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "pushup",
+        "name": {
+          "en": "Push-up",
+          "es": "Flexión de brazos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "dumbbell_floor_press",
+        "name": {
+          "en": "Dumbbell floor press",
+          "es": "Press de pecho con mancuernas en el suelo"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 290
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "dumbbell_row",
+        "name": {
+          "en": "Bent-over dumbbell row",
+          "es": "Remo inclinado con mancuernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 3,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 435
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "seated_cable_row",
+        "name": {
+          "en": "Seated cable row",
+          "es": "Remo sentado en polea"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 3,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 465
+      },
+      "secondsDelta": 30
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 340
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 340
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:ready:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 340
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -15
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "dumbbell_goblet_squat",
+        "name": {
+          "en": "Dumbbell goblet squat",
+          "es": "Sentadilla con mancuerna al pecho"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 275
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "leg_press",
+        "name": {
+          "en": "Leg press",
+          "es": "Prensa de piernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 320
+      },
+      "secondsDelta": 45
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -15
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "dumbbell_romanian_deadlift",
+        "name": {
+          "en": "Dumbbell Romanian deadlift",
+          "es": "Peso muerto rumano con mancuernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 275
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "single_leg_glute_bridge",
+        "name": {
+          "en": "Single-leg glute bridge",
+          "es": "Puente de glúteos a una pierna"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 340
+      },
+      "secondsDelta": 65
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "pushup",
+        "name": {
+          "en": "Push-up",
+          "es": "Flexión de brazos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 260
+      },
+      "secondsDelta": -30
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "dumbbell_floor_press",
+        "name": {
+          "en": "Dumbbell floor press",
+          "es": "Press de pecho con mancuernas en el suelo"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 290
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "dumbbell_row",
+        "name": {
+          "en": "Bent-over dumbbell row",
+          "es": "Remo inclinado con mancuernas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 275
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "seated_cable_row",
+        "name": {
+          "en": "Seated cable row",
+          "es": "Remo sentado en polea"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": false,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 305
+      },
+      "secondsDelta": 30
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 340
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 340
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "adult_gym_intermediate:40:low_energy:0",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 6,
+        "quantity_max": 10,
+        "per_side": true,
+        "rest_seconds": 120,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 340
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "chair_squat",
+        "name": {
+          "en": "Chair squat",
+          "es": "Sentadilla a silla"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "resistance_band_row",
+        "name": {
+          "en": "Resistance-band row",
+          "es": "Remo con banda elástica"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 168
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:ready:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "band_pallof_press",
+        "name": {
+          "en": "Band anti-rotation press",
+          "es": "Press antirrotación con banda"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 216
+      },
+      "secondsDelta": 60
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "chair_squat",
+        "name": {
+          "en": "Chair squat",
+          "es": "Sentadilla a silla"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "resistance_band_row",
+        "name": {
+          "en": "Resistance-band row",
+          "es": "Remo con banda elástica"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 168
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:25:low_energy:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "band_pallof_press",
+        "name": {
+          "en": "Band anti-rotation press",
+          "es": "Press antirrotación con banda"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 216
+      },
+      "secondsDelta": 60
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "chair_squat",
+        "name": {
+          "en": "Chair squat",
+          "es": "Sentadilla a silla"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 246
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "resistance_band_row",
+        "name": {
+          "en": "Resistance-band row",
+          "es": "Remo con banda elástica"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 306
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 342
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 342
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 342
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:ready:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "band_pallof_press",
+        "name": {
+          "en": "Band anti-rotation press",
+          "es": "Press antirrotación con banda"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 2,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 402
+      },
+      "secondsDelta": 60
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "chair_squat",
+        "name": {
+          "en": "Chair squat",
+          "es": "Sentadilla a silla"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "squat",
+        "role": "main",
+        "exercise_id": "bodyweight_squat",
+        "name": {
+          "en": "Bodyweight squat",
+          "es": "Sentadilla sin peso"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "squat"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "hinge",
+        "role": "main",
+        "exercise_id": "glute_bridge",
+        "name": {
+          "en": "Glute bridge",
+          "es": "Puente de glúteos"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "hinge"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "wall_pushup",
+        "name": {
+          "en": "Wall push-up",
+          "es": "Flexión contra la pared"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "incline_pushup",
+        "name": {
+          "en": "Incline push-up",
+          "es": "Flexión con manos elevadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "push",
+        "role": "main",
+        "exercise_id": "knee_pushup",
+        "name": {
+          "en": "Knee push-up",
+          "es": "Flexión con rodillas apoyadas"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_push"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 108
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "pull",
+        "role": "main",
+        "exercise_id": "resistance_band_row",
+        "name": {
+          "en": "Resistance-band row",
+          "es": "Remo con banda elástica"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "horizontal_pull"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": false,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 168
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "dead_bug",
+        "name": {
+          "en": "Dead bug",
+          "es": "Extensión alternada en posición de insecto"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "bird_dog",
+        "name": {
+          "en": "Bird dog",
+          "es": "Extensión alternada en cuadrupedia"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "heel_slide",
+        "name": {
+          "en": "Supine heel slide",
+          "es": "Deslizamiento de talón acostado"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 156
+      },
+      "secondsDelta": 0
+    },
+    {
+      "key": "teen_home_supervised:40:low_energy:1",
+      "block": {
+        "id": "core",
+        "role": "main",
+        "exercise_id": "band_pallof_press",
+        "name": {
+          "en": "Band anti-rotation press",
+          "es": "Press antirrotación con banda"
+        },
+        "category": "strength",
+        "allowed_patterns": [
+          "core"
+        ],
+        "unit": "reps",
+        "sets": 1,
+        "quantity_min": 8,
+        "quantity_max": 12,
+        "per_side": true,
+        "rest_seconds": 90,
+        "load_kg": null,
+        "load_entry": "user_selected_if_applicable",
+        "aerobic_effort_0_to_10": null,
+        "boss_share": 200,
+        "estimated_seconds": 216
+      },
+      "secondsDelta": 60
+    }
+  ],
+  "mobility": [
+    {
+      "profileId": "adult_home_beginner",
+      "plan": {
+        "date": "2026-09-28",
+        "template_id": "mobility_reset",
+        "name": {
+          "en": "Movement practice",
+          "es": "Práctica de movimiento"
+        },
+        "profile_signature": "956744ece265ae6e",
+        "kind": "mobility",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 709,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "shoulders",
+            "role": "main",
+            "exercise_id": "shoulder_circles",
+            "name": {
+              "en": "Shoulder circles",
+              "es": "Círculos de hombros"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "mobility"
+            ],
+            "unit": "seconds",
+            "sets": 1,
+            "quantity_min": 30,
+            "quantity_max": 30,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 70
+          },
+          {
+            "id": "hinge_practice",
+            "role": "main",
+            "exercise_id": "hip_hinge_drill",
+            "name": {
+              "en": "Hip hinge practice",
+              "es": "Práctica de bisagra de cadera"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 6,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 84
+          },
+          {
+            "id": "calves",
+            "role": "main",
+            "exercise_id": "standing_calf_stretch",
+            "name": {
+              "en": "Standing calf stretch",
+              "es": "Estiramiento de pantorrilla de pie"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "mobility"
+            ],
+            "unit": "seconds",
+            "sets": 1,
+            "quantity_min": 30,
+            "quantity_max": 30,
+            "per_side": true,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 105
+          },
+          {
+            "id": "balance",
+            "role": "main",
+            "exercise_id": "supported_tandem_stance",
+            "name": {
+              "en": "Supported tandem balance",
+              "es": "Equilibrio en línea con apoyo"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "mobility"
+            ],
+            "unit": "seconds",
+            "sets": 1,
+            "quantity_min": 30,
+            "quantity_max": 30,
+            "per_side": true,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 120
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "profileId": "adult_gym_intermediate",
+      "plan": {
+        "date": "2026-09-28",
+        "template_id": "mobility_reset",
+        "name": {
+          "en": "Movement practice",
+          "es": "Práctica de movimiento"
+        },
+        "profile_signature": "a6d5153a73b294d5",
+        "kind": "mobility",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 709,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "shoulders",
+            "role": "main",
+            "exercise_id": "shoulder_circles",
+            "name": {
+              "en": "Shoulder circles",
+              "es": "Círculos de hombros"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "mobility"
+            ],
+            "unit": "seconds",
+            "sets": 1,
+            "quantity_min": 30,
+            "quantity_max": 30,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 70
+          },
+          {
+            "id": "hinge_practice",
+            "role": "main",
+            "exercise_id": "hip_hinge_drill",
+            "name": {
+              "en": "Hip hinge practice",
+              "es": "Práctica de bisagra de cadera"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 6,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 84
+          },
+          {
+            "id": "calves",
+            "role": "main",
+            "exercise_id": "standing_calf_stretch",
+            "name": {
+              "en": "Standing calf stretch",
+              "es": "Estiramiento de pantorrilla de pie"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "mobility"
+            ],
+            "unit": "seconds",
+            "sets": 1,
+            "quantity_min": 30,
+            "quantity_max": 30,
+            "per_side": true,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 105
+          },
+          {
+            "id": "balance",
+            "role": "main",
+            "exercise_id": "supported_tandem_stance",
+            "name": {
+              "en": "Supported tandem balance",
+              "es": "Equilibrio en línea con apoyo"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "mobility"
+            ],
+            "unit": "seconds",
+            "sets": 1,
+            "quantity_min": 30,
+            "quantity_max": 30,
+            "per_side": true,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 120
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    },
+    {
+      "profileId": "teen_home_supervised",
+      "plan": {
+        "date": "2026-09-28",
+        "template_id": "mobility_reset",
+        "name": {
+          "en": "Movement practice",
+          "es": "Práctica de movimiento"
+        },
+        "profile_signature": "5c2628353df81a70",
+        "kind": "mobility",
+        "status": "draft_ready",
+        "difficulty_requested": "medium",
+        "difficulty_effective": "medium",
+        "readiness_recheck_required": true,
+        "budget_seconds": 900,
+        "estimated_seconds": 709,
+        "blocks": [
+          {
+            "id": "warmup",
+            "role": "warmup",
+            "exercise_id": "marching_in_place",
+            "name": {
+              "en": "Marching in place",
+              "es": "Marcha en el sitio"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 3,
+            "quantity_max": 3,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 195
+          },
+          {
+            "id": "shoulders",
+            "role": "main",
+            "exercise_id": "shoulder_circles",
+            "name": {
+              "en": "Shoulder circles",
+              "es": "Círculos de hombros"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "mobility"
+            ],
+            "unit": "seconds",
+            "sets": 1,
+            "quantity_min": 30,
+            "quantity_max": 30,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 70
+          },
+          {
+            "id": "hinge_practice",
+            "role": "main",
+            "exercise_id": "hip_hinge_drill",
+            "name": {
+              "en": "Hip hinge practice",
+              "es": "Práctica de bisagra de cadera"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "hinge"
+            ],
+            "unit": "reps",
+            "sets": 1,
+            "quantity_min": 6,
+            "quantity_max": 6,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 84
+          },
+          {
+            "id": "calves",
+            "role": "main",
+            "exercise_id": "standing_calf_stretch",
+            "name": {
+              "en": "Standing calf stretch",
+              "es": "Estiramiento de pantorrilla de pie"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "mobility"
+            ],
+            "unit": "seconds",
+            "sets": 1,
+            "quantity_min": 30,
+            "quantity_max": 30,
+            "per_side": true,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 105
+          },
+          {
+            "id": "balance",
+            "role": "main",
+            "exercise_id": "supported_tandem_stance",
+            "name": {
+              "en": "Supported tandem balance",
+              "es": "Equilibrio en línea con apoyo"
+            },
+            "category": "mobility",
+            "allowed_patterns": [
+              "mobility"
+            ],
+            "unit": "seconds",
+            "sets": 1,
+            "quantity_min": 30,
+            "quantity_max": 30,
+            "per_side": true,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": null,
+            "boss_share": 250,
+            "estimated_seconds": 120
+          },
+          {
+            "id": "cooldown",
+            "role": "cooldown",
+            "exercise_id": "easy_walk",
+            "name": {
+              "en": "Easy walk",
+              "es": "Caminata suave"
+            },
+            "category": "cardio",
+            "allowed_patterns": [
+              "cardio"
+            ],
+            "unit": "minutes",
+            "sets": 1,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "per_side": false,
+            "rest_seconds": 0,
+            "load_kg": null,
+            "load_entry": "user_selected_if_applicable",
+            "aerobic_effort_0_to_10": [
+              2,
+              3
+            ],
+            "boss_share": 0,
+            "estimated_seconds": 135
+          }
+        ],
+        "coverage_gaps": [],
+        "messages": [],
+        "boss": {
+          "max_health": 1000,
+          "mapping": "manual_planned_set_completion",
+          "reward_budget": {
+            "fitness_xp": 100,
+            "coins": 60
+          },
+          "rewards_are_placeholders": true
+        },
+        "consistency_protected_on_rest_or_stop": true
+      }
+    }
+  ]
+}

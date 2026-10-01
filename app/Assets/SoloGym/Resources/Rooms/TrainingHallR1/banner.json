@@ -1,0 +1,42 @@
+{
+  "id": "home.banner",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "banner.anchor"
+  ],
+  "drawOrder": 0,
+  "sourceSize": {
+    "x": 96,
+    "y": 160
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.9357798165137615,
+  "footprint": [
+    {
+      "x": 11,
+      "y": 135
+    },
+    {
+      "x": 89,
+      "y": 135
+    },
+    {
+      "x": 89,
+      "y": 138
+    },
+    {
+      "x": 11,
+      "y": 138
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/banner"
+    }
+  ]
+}

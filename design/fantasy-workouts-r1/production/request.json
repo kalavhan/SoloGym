@@ -1,0 +1,11 @@
+{
+  "tool": "create_image_pro",
+  "width": 640,
+  "height": 360,
+  "no_background": false,
+  "seed": 9303511,
+  "prompt": "background-prompt.txt",
+  "reference": "assets/sprites/pixellab/training-hall-r1/native/room-0.png",
+  "referenceSha256": "89d2c34f583a8701083f24ea2119925661cce47d2e572e2bd187de650455c6e9",
+  "scope": "One PixelLab architecture background before the complete screen render; no new characters, animations or production journal UI."
+}

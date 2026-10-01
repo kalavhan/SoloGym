@@ -1,0 +1,1095 @@
+{
+  "source": "User-created PixelLab eight-direction characters, downloaded via MCP-provided URLs",
+  "metadataRead": true,
+  "animationImplementation": false,
+  "characters": [
+    {
+      "id": "female-fat",
+      "providerId": "3fb100df-6191-43c4-a6f1-6780458d1074",
+      "metadata": "3fb100df-6191-43c4-a6f1-6780458d1074/metadata.json",
+      "rotations": [
+        {
+          "direction": "east",
+          "file": "3fb100df-6191-43c4-a6f1-6780458d1074/Idle/rotations/east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            89,
+            4,
+            167,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "9b29a60bfe3f00ff34c5a5328bc368098cb596fe7c3b386d161e6be776d6921e"
+        },
+        {
+          "direction": "north-east",
+          "file": "3fb100df-6191-43c4-a6f1-6780458d1074/Idle/rotations/north-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            76,
+            4,
+            184,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "660bd9f52fd87f58921fc0d952ab72f555683ea5a1c44c511de23fdc4e8e9e0a"
+        },
+        {
+          "direction": "north-west",
+          "file": "3fb100df-6191-43c4-a6f1-6780458d1074/Idle/rotations/north-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            66,
+            4,
+            177,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "f1bc5480fca230ee412a2c2614428fa1e384cdcf7628f434deb77fa525be35e8"
+        },
+        {
+          "direction": "north",
+          "file": "3fb100df-6191-43c4-a6f1-6780458d1074/Idle/rotations/north.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            58,
+            4,
+            196,
+            248
+          ],
+          "edgeTouches": false,
+          "sha256": "f6936c3ff01c3bcd0fda958e6d151f2d7588d058107dd1284d7b627ebce2d101"
+        },
+        {
+          "direction": "south-east",
+          "file": "3fb100df-6191-43c4-a6f1-6780458d1074/Idle/rotations/south-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            70,
+            4,
+            189,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "8a35b8b610bd719adb79c98a501c35a15ad5fbab720aca5e805173b5d16837fb"
+        },
+        {
+          "direction": "south-west",
+          "file": "3fb100df-6191-43c4-a6f1-6780458d1074/Idle/rotations/south-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            66,
+            4,
+            183,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "0a6a4de67db09b97510c61312d1cf26fbd1f5ed04b77fe682a8133eb458c9c94"
+        },
+        {
+          "direction": "south",
+          "file": "3fb100df-6191-43c4-a6f1-6780458d1074/Idle/rotations/south.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            55,
+            2,
+            199,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "106a61a43b6828289243240013e70bb366f90250441f27547abf978940edc8c7"
+        },
+        {
+          "direction": "west",
+          "file": "3fb100df-6191-43c4-a6f1-6780458d1074/Idle/rotations/west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            88,
+            4,
+            164,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "c557bdc44d2bfb30170df0b1f4f9440c79b3dc5ac532e4397aa975d70c2e20ff"
+        }
+      ],
+      "runtimeUse": "Preserved for directional review. Home uses the separately approved original frontal sprite."
+    },
+    {
+      "id": "female-skinny",
+      "providerId": "464fb22e-3631-4e0c-9936-df1ac86a4ace",
+      "metadata": "464fb22e-3631-4e0c-9936-df1ac86a4ace/metadata.json",
+      "rotations": [
+        {
+          "direction": "east",
+          "file": "464fb22e-3631-4e0c-9936-df1ac86a4ace/Idle/rotations/east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            106,
+            7,
+            155,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "d15e34f6beb84c0364702734a4c6060ac195abbc4ec0c334d8d69ea40da86e39"
+        },
+        {
+          "direction": "north-east",
+          "file": "464fb22e-3631-4e0c-9936-df1ac86a4ace/Idle/rotations/north-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            91,
+            5,
+            170,
+            249
+          ],
+          "edgeTouches": false,
+          "sha256": "ae231f6efc484ebaba4cdfb903d0f296d7641490ac62ed41a9de90f5a72fc1da"
+        },
+        {
+          "direction": "north-west",
+          "file": "464fb22e-3631-4e0c-9936-df1ac86a4ace/Idle/rotations/north-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            86,
+            5,
+            160,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "6c0fc8b912fd7d19fa7913cc8e76555172398080b1a6ce0f88bc2505f1fa912d"
+        },
+        {
+          "direction": "north",
+          "file": "464fb22e-3631-4e0c-9936-df1ac86a4ace/Idle/rotations/north.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            76,
+            6,
+            177,
+            248
+          ],
+          "edgeTouches": false,
+          "sha256": "bb3be67402133babfc9d40ab2db9bc2c5d5e954d339932072e866dc7422cd49b"
+        },
+        {
+          "direction": "south-east",
+          "file": "464fb22e-3631-4e0c-9936-df1ac86a4ace/Idle/rotations/south-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            88,
+            5,
+            171,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "3030328abbefcaf1c8d7ac8dd817c5fb826c9d3d2e5a1e81073dd07628944348"
+        },
+        {
+          "direction": "south-west",
+          "file": "464fb22e-3631-4e0c-9936-df1ac86a4ace/Idle/rotations/south-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            82,
+            5,
+            170,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "5e816911f643aeadcbc4fe4820de4e3df500bb54821e80e78263c3dded32fb66"
+        },
+        {
+          "direction": "south",
+          "file": "464fb22e-3631-4e0c-9936-df1ac86a4ace/Idle/rotations/south.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            78,
+            6,
+            178,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "324b0550960bd9079b09defdbcf78ebebc0e306da948a7b8000150f8920d299e"
+        },
+        {
+          "direction": "west",
+          "file": "464fb22e-3631-4e0c-9936-df1ac86a4ace/Idle/rotations/west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            102,
+            7,
+            150,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "35815fc3117b694026de253afb49ba839c44ce3acc15c5a422e7a51ae778afcb"
+        }
+      ],
+      "runtimeUse": "Preserved for directional review. Home uses the separately approved original frontal sprite."
+    },
+    {
+      "id": "male-muscular",
+      "providerId": "64109351-9110-41d8-b43c-43acb3d5405c",
+      "metadata": "64109351-9110-41d8-b43c-43acb3d5405c/metadata.json",
+      "rotations": [
+        {
+          "direction": "east",
+          "file": "64109351-9110-41d8-b43c-43acb3d5405c/Idle/rotations/east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            101,
+            5,
+            157,
+            254
+          ],
+          "edgeTouches": false,
+          "sha256": "85c00e71653c54a028b244a31f13bc61f215663c7cfdfe2410541efe3752dc3f"
+        },
+        {
+          "direction": "north-east",
+          "file": "64109351-9110-41d8-b43c-43acb3d5405c/Idle/rotations/north-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            82,
+            3,
+            176,
+            251
+          ],
+          "edgeTouches": false,
+          "sha256": "ce7ce82c8fb2655c014ca1ccb54020378885d7fd5393e437053b4665441c34de"
+        },
+        {
+          "direction": "north-west",
+          "file": "64109351-9110-41d8-b43c-43acb3d5405c/Idle/rotations/north-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            81,
+            4,
+            174,
+            251
+          ],
+          "edgeTouches": false,
+          "sha256": "c7f4d3dbec21157bdba2bf8e37c40a67b88f4525c3b4b7682a571a15b41904a5"
+        },
+        {
+          "direction": "north",
+          "file": "64109351-9110-41d8-b43c-43acb3d5405c/Idle/rotations/north.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            70,
+            3,
+            184,
+            249
+          ],
+          "edgeTouches": false,
+          "sha256": "14ecac6e31bd81d92de05dae4dc9c8f9e56bf7e0d4d325970f7177abaf26b0c2"
+        },
+        {
+          "direction": "south-east",
+          "file": "64109351-9110-41d8-b43c-43acb3d5405c/Idle/rotations/south-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            76,
+            4,
+            179,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "b4c4c68c3fb71c0db9af7d0697a1596e45c4b0e08e30c11b54bd0625e81c8836"
+        },
+        {
+          "direction": "south-west",
+          "file": "64109351-9110-41d8-b43c-43acb3d5405c/Idle/rotations/south-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            78,
+            4,
+            175,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "95e6fcec0c0b6f3ab68005dcde35655a089dfab425e488a31bd58680ac4adbc0"
+        },
+        {
+          "direction": "south",
+          "file": "64109351-9110-41d8-b43c-43acb3d5405c/Idle/rotations/south.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            70,
+            2,
+            187,
+            251
+          ],
+          "edgeTouches": false,
+          "sha256": "319e51103ec6bec17079530b1bfb9680d2020d14b67a2b3094099646de7d2122"
+        },
+        {
+          "direction": "west",
+          "file": "64109351-9110-41d8-b43c-43acb3d5405c/Idle/rotations/west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            99,
+            5,
+            155,
+            254
+          ],
+          "edgeTouches": false,
+          "sha256": "be3e802bf032d9f7468b8ce60342baeab6977915c6331a82315dd4077947a9d4"
+        }
+      ],
+      "runtimeUse": "Preserved for directional review. Home uses the separately approved original frontal sprite."
+    },
+    {
+      "id": "female-muscular",
+      "providerId": "7f1c76dc-3389-42cc-bdd2-7d52de059ee8",
+      "metadata": "7f1c76dc-3389-42cc-bdd2-7d52de059ee8/metadata.json",
+      "rotations": [
+        {
+          "direction": "east",
+          "file": "7f1c76dc-3389-42cc-bdd2-7d52de059ee8/Idle/rotations/east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            102,
+            8,
+            157,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "c1dcfcfedb32d71f0a2a35142c14a02fc74b53aa4a51ba01ba870e38e878d330"
+        },
+        {
+          "direction": "north-east",
+          "file": "7f1c76dc-3389-42cc-bdd2-7d52de059ee8/Idle/rotations/north-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            90,
+            6,
+            174,
+            249
+          ],
+          "edgeTouches": false,
+          "sha256": "e6a3a58a315cf79ce9489c0bbdaf9df46a7dc981d9f823555bd79b32429c2f15"
+        },
+        {
+          "direction": "north-west",
+          "file": "7f1c76dc-3389-42cc-bdd2-7d52de059ee8/Idle/rotations/north-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            85,
+            6,
+            168,
+            249
+          ],
+          "edgeTouches": false,
+          "sha256": "f028ccf6a93004b970163d03f493a10bf646ffda32a3b6b0ad6c1cfe705de131"
+        },
+        {
+          "direction": "north",
+          "file": "7f1c76dc-3389-42cc-bdd2-7d52de059ee8/Idle/rotations/north.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            77,
+            6,
+            179,
+            248
+          ],
+          "edgeTouches": false,
+          "sha256": "e1079630be55623f01399f61492b7d4f88a0629c8a170941fb0afc4d19d38deb"
+        },
+        {
+          "direction": "south-east",
+          "file": "7f1c76dc-3389-42cc-bdd2-7d52de059ee8/Idle/rotations/south-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            83,
+            7,
+            175,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "85ee456a3f6295d390b7cd317c382d2a08c37027315d13d4d6fd4b3012af48ad"
+        },
+        {
+          "direction": "south-west",
+          "file": "7f1c76dc-3389-42cc-bdd2-7d52de059ee8/Idle/rotations/south-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            78,
+            7,
+            176,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "00a732a2695da87d09c3ee964a9b167f2826226b52531777dda1375bf0d64f51"
+        },
+        {
+          "direction": "south",
+          "file": "7f1c76dc-3389-42cc-bdd2-7d52de059ee8/Idle/rotations/south.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            76,
+            6,
+            179,
+            248
+          ],
+          "edgeTouches": false,
+          "sha256": "9fde1b82316744b7ac79458d1ae73b879f33f5fb678661c45cbce1cd750950d1"
+        },
+        {
+          "direction": "west",
+          "file": "7f1c76dc-3389-42cc-bdd2-7d52de059ee8/Idle/rotations/west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            100,
+            7,
+            158,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "e1090a5f2bfb5f6b700465fc56ce2054c6801c3d7a79a34b6b8161c6a264bc50"
+        }
+      ],
+      "runtimeUse": "Preserved for directional review. Home uses the separately approved original frontal sprite."
+    },
+    {
+      "id": "male-skinny",
+      "providerId": "86ab973b-8bd7-4b76-be90-f94622fb246a",
+      "metadata": "86ab973b-8bd7-4b76-be90-f94622fb246a/metadata.json",
+      "rotations": [
+        {
+          "direction": "east",
+          "file": "86ab973b-8bd7-4b76-be90-f94622fb246a/Idle/rotations/east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            106,
+            4,
+            155,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "c4386068acb98e9c06a3ba9b92dc3165490950b71696e169cbec226e877fc3b0"
+        },
+        {
+          "direction": "north-east",
+          "file": "86ab973b-8bd7-4b76-be90-f94622fb246a/Idle/rotations/north-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            92,
+            4,
+            172,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "330be11b29e30599dbc0a1a17cb9cf233fe3ce731e1e13930e02ea4726d7c2a0"
+        },
+        {
+          "direction": "north-west",
+          "file": "86ab973b-8bd7-4b76-be90-f94622fb246a/Idle/rotations/north-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            82,
+            3,
+            165,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "f19fcafb2348dd8828a228822b2dcd158009bff7a811de44886f52c931610885"
+        },
+        {
+          "direction": "north",
+          "file": "86ab973b-8bd7-4b76-be90-f94622fb246a/Idle/rotations/north.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            76,
+            4,
+            175,
+            251
+          ],
+          "edgeTouches": false,
+          "sha256": "49f46de8952e7e629a81c89edb8a663dea82c88027cb8859abd4a05a1408e96f"
+        },
+        {
+          "direction": "south-east",
+          "file": "86ab973b-8bd7-4b76-be90-f94622fb246a/Idle/rotations/south-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            88,
+            4,
+            170,
+            254
+          ],
+          "edgeTouches": false,
+          "sha256": "1ebf2104c07580e2ac4821ed8285ef9684139eea4885d600827f2843b359b939"
+        },
+        {
+          "direction": "south-west",
+          "file": "86ab973b-8bd7-4b76-be90-f94622fb246a/Idle/rotations/south-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            85,
+            3,
+            166,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "4305ec29b5aed2704ede2fe27537528f64c52da46d5da6c7eec6d82e50c97ac4"
+        },
+        {
+          "direction": "south",
+          "file": "86ab973b-8bd7-4b76-be90-f94622fb246a/Idle/rotations/south.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            79,
+            2,
+            180,
+            249
+          ],
+          "edgeTouches": false,
+          "sha256": "000c576b0effa68c64f98f34c3c2c76ea34c6473c43497717b20644903aa0b11"
+        },
+        {
+          "direction": "west",
+          "file": "86ab973b-8bd7-4b76-be90-f94622fb246a/Idle/rotations/west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            102,
+            4,
+            151,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "bf31eb39dd5d16711d7d6e51b4728c53e8221b835fdbf13ec4fe23f8f30e6fd0"
+        }
+      ],
+      "runtimeUse": "Preserved for directional review. Home uses the separately approved original frontal sprite."
+    },
+    {
+      "id": "male-fat",
+      "providerId": "9f00433b-48ae-41a7-8a73-ec9927bba442",
+      "metadata": "9f00433b-48ae-41a7-8a73-ec9927bba442/metadata.json",
+      "rotations": [
+        {
+          "direction": "east",
+          "file": "9f00433b-48ae-41a7-8a73-ec9927bba442/Idle/rotations/east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            96,
+            6,
+            172,
+            254
+          ],
+          "edgeTouches": false,
+          "sha256": "7d47346f30d4039ed0be37788e43cf6c21b1fccd307dd98ee63dac4609e424e9"
+        },
+        {
+          "direction": "north-east",
+          "file": "9f00433b-48ae-41a7-8a73-ec9927bba442/Idle/rotations/north-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            68,
+            6,
+            188,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "2a9be507a7765bf65c37cff04deeb204488b56477b6db0de9cd353d830818fdd"
+        },
+        {
+          "direction": "north-west",
+          "file": "9f00433b-48ae-41a7-8a73-ec9927bba442/Idle/rotations/north-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            70,
+            6,
+            182,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "1ead00b50fec61e52c64b0bf968f0a2c97f9dd60c359b6fda437bd5636c51f27"
+        },
+        {
+          "direction": "north",
+          "file": "9f00433b-48ae-41a7-8a73-ec9927bba442/Idle/rotations/north.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            52,
+            7,
+            200,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "6b64880fd6f039eec8358d9fd0c83b5d7264564a43aaef448f3ac46d2b8a984c"
+        },
+        {
+          "direction": "south-east",
+          "file": "9f00433b-48ae-41a7-8a73-ec9927bba442/Idle/rotations/south-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            67,
+            6,
+            192,
+            254
+          ],
+          "edgeTouches": false,
+          "sha256": "93ef249fe8dee5e517e9c57146f63523647ca37ff3b7c25f6f12d080e0d39407"
+        },
+        {
+          "direction": "south-west",
+          "file": "9f00433b-48ae-41a7-8a73-ec9927bba442/Idle/rotations/south-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            63,
+            5,
+            191,
+            254
+          ],
+          "edgeTouches": false,
+          "sha256": "a6f5428ff50a8b75d05daefddf84d900d1e85e89aea80bc960ed44c3cd005314"
+        },
+        {
+          "direction": "south",
+          "file": "9f00433b-48ae-41a7-8a73-ec9927bba442/Idle/rotations/south.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            54,
+            5,
+            203,
+            251
+          ],
+          "edgeTouches": false,
+          "sha256": "2bc36bac6c87a350dd7fe64ae3261099413ff35e69f885ad80a24827411b6420"
+        },
+        {
+          "direction": "west",
+          "file": "9f00433b-48ae-41a7-8a73-ec9927bba442/Idle/rotations/west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            88,
+            5,
+            164,
+            254
+          ],
+          "edgeTouches": false,
+          "sha256": "eed8e2061a902f3e42f61195419a33abbc556f7177fedc62e5034126b569309d"
+        }
+      ],
+      "runtimeUse": "Preserved for directional review. Home uses the separately approved original frontal sprite."
+    },
+    {
+      "id": "female-medium",
+      "providerId": "b9efb2f8-57a2-46ee-b005-4eac54ae10fb",
+      "metadata": "b9efb2f8-57a2-46ee-b005-4eac54ae10fb/metadata.json",
+      "rotations": [
+        {
+          "direction": "east",
+          "file": "b9efb2f8-57a2-46ee-b005-4eac54ae10fb/Idle/rotations/east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            89,
+            6,
+            163,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "62da3310c3c835da96da1142d65f553aaab6a38b8859c0ffb1140b76ec6cf623"
+        },
+        {
+          "direction": "north-east",
+          "file": "b9efb2f8-57a2-46ee-b005-4eac54ae10fb/Idle/rotations/north-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            88,
+            4,
+            170,
+            249
+          ],
+          "edgeTouches": false,
+          "sha256": "681bcd32740238a6fc45858038be9f676750cac72062e7c064eb74563ca9d565"
+        },
+        {
+          "direction": "north-west",
+          "file": "b9efb2f8-57a2-46ee-b005-4eac54ae10fb/Idle/rotations/north-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            81,
+            4,
+            171,
+            249
+          ],
+          "edgeTouches": false,
+          "sha256": "ec9c562098107a368c5baccff1775b4fe567daae743992d4b9e47ed651bd3cea"
+        },
+        {
+          "direction": "north",
+          "file": "b9efb2f8-57a2-46ee-b005-4eac54ae10fb/Idle/rotations/north.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            75,
+            2,
+            181,
+            246
+          ],
+          "edgeTouches": false,
+          "sha256": "6fa5120d5e01305c52a8ebb9d6d27b2dedee6c44417740b27514a7a1c4cfaacf"
+        },
+        {
+          "direction": "south-east",
+          "file": "b9efb2f8-57a2-46ee-b005-4eac54ae10fb/Idle/rotations/south-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            82,
+            4,
+            173,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "75e72df46ad4f4793e9dee021a401fc4d83ada46001c4e760629936cf3600bc3"
+        },
+        {
+          "direction": "south-west",
+          "file": "b9efb2f8-57a2-46ee-b005-4eac54ae10fb/Idle/rotations/south-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            83,
+            3,
+            170,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "bb027576de7f10bee15e96b716554b53dac545828f13ad1cbc9d88d3d77a9480"
+        },
+        {
+          "direction": "south",
+          "file": "b9efb2f8-57a2-46ee-b005-4eac54ae10fb/Idle/rotations/south.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            71,
+            4,
+            183,
+            249
+          ],
+          "edgeTouches": false,
+          "sha256": "2bd02e60c519a78c4be8d86e1f705c45e1d7134589d3e3e54f900ccb49037c35"
+        },
+        {
+          "direction": "west",
+          "file": "b9efb2f8-57a2-46ee-b005-4eac54ae10fb/Idle/rotations/west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            94,
+            6,
+            164,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "4b559a5002754fdca979ab3889f66e7efbf22a82750352ea1192918bc3811528"
+        }
+      ],
+      "runtimeUse": "Preserved for directional review. Home uses the separately approved original frontal sprite."
+    },
+    {
+      "id": "male-medium",
+      "providerId": "e0731c62-8758-43c9-b5a7-40c30cfe2653",
+      "metadata": "e0731c62-8758-43c9-b5a7-40c30cfe2653/metadata.json",
+      "rotations": [
+        {
+          "direction": "east",
+          "file": "e0731c62-8758-43c9-b5a7-40c30cfe2653/Idle/rotations/east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            104,
+            7,
+            158,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "6863536bcf7e47d4eab5c768aac4aa29c81d0b212c790a42d0165a22a7f7917f"
+        },
+        {
+          "direction": "north-east",
+          "file": "e0731c62-8758-43c9-b5a7-40c30cfe2653/Idle/rotations/north-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            80,
+            5,
+            178,
+            250
+          ],
+          "edgeTouches": false,
+          "sha256": "b2b2e6a5349f55a208ae2c1f8ae743ee324a1bd699a71382cd5afda3b11791a8"
+        },
+        {
+          "direction": "north-west",
+          "file": "e0731c62-8758-43c9-b5a7-40c30cfe2653/Idle/rotations/north-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            79,
+            5,
+            172,
+            251
+          ],
+          "edgeTouches": false,
+          "sha256": "e5fbcf02c5484e2de232b8d4388bd65da5307e54d147ae400094a80a14c9ad6d"
+        },
+        {
+          "direction": "north",
+          "file": "e0731c62-8758-43c9-b5a7-40c30cfe2653/Idle/rotations/north.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            68,
+            3,
+            183,
+            247
+          ],
+          "edgeTouches": false,
+          "sha256": "f48429189e2845e165d025dc8a0a89a54dfe21e8bca9aee2c4218fe9c2624478"
+        },
+        {
+          "direction": "south-east",
+          "file": "e0731c62-8758-43c9-b5a7-40c30cfe2653/Idle/rotations/south-east.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            82,
+            5,
+            179,
+            252
+          ],
+          "edgeTouches": false,
+          "sha256": "303f61366d3c432379dab55596f34b55db9da481cf3688ef00e200944fe4a881"
+        },
+        {
+          "direction": "south-west",
+          "file": "e0731c62-8758-43c9-b5a7-40c30cfe2653/Idle/rotations/south-west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            73,
+            4,
+            174,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "eec0d321101c9b9d7b4136658b4e244b8178141c8b5386a2a1b5f3590f951726"
+        },
+        {
+          "direction": "south",
+          "file": "e0731c62-8758-43c9-b5a7-40c30cfe2653/Idle/rotations/south.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            71,
+            4,
+            187,
+            249
+          ],
+          "edgeTouches": false,
+          "sha256": "e704eeca4dbfa502b64fe0be7ce2af565df0f2f0bddb142e7e64380b19b1f355"
+        },
+        {
+          "direction": "west",
+          "file": "e0731c62-8758-43c9-b5a7-40c30cfe2653/Idle/rotations/west.png",
+          "size": [
+            256,
+            256
+          ],
+          "alphaBounds": [
+            99,
+            7,
+            155,
+            253
+          ],
+          "edgeTouches": false,
+          "sha256": "f33d8cd5d72badfb2b0c0578a8bbb4ac2573670435d923db1f810f1dc9188695"
+        }
+      ],
+      "runtimeUse": "Preserved for directional review. Home uses the separately approved original frontal sprite."
+    }
+  ]
+}

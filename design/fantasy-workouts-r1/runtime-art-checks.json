@@ -1,0 +1,56 @@
+[
+  {
+    "source": "assets/sprites/pixellab/workouts-room-r1/native/room.png",
+    "runtime": "app/Assets/SoloGym/Resources/Rooms/WorkoutsR1/background.png",
+    "size": [
+      640,
+      360
+    ],
+    "sha256": "3a147e88c6455f4a83f784d8f18559c8f996cfbbf781881b07d9300b0843111c",
+    "exactSourceBytes": true,
+    "pointFiltered": true,
+    "uncompressed": true,
+    "noMipmaps": true,
+    "fullRect": true,
+    "alphaExtrema": [
+      255,
+      255
+    ]
+  },
+  {
+    "source": "assets/sprites/pixellab/workouts-room-r1/native/journal.png",
+    "runtime": "app/Assets/SoloGym/Resources/Rooms/WorkoutsR1/journal.png",
+    "size": [
+      640,
+      300
+    ],
+    "sha256": "b52c0d213853f89c072daaf787ed3963a0a761b2a54998d82109afd7e3326899",
+    "exactSourceBytes": true,
+    "pointFiltered": true,
+    "uncompressed": true,
+    "noMipmaps": true,
+    "fullRect": true,
+    "alphaExtrema": [
+      255,
+      255
+    ]
+  },
+  {
+    "source": "assets/sprites/pixellab/workouts-room-r1/native/journal-rejected-transparent-pages.png",
+    "runtime": "app/Assets/SoloGym/Resources/Rooms/WorkoutsR1/journal-border.png",
+    "size": [
+      640,
+      300
+    ],
+    "sha256": "d651a74e10338a52c3768564c02f87018ae83e3ca080c8778cca4b01501d8132",
+    "exactSourceBytes": true,
+    "pointFiltered": true,
+    "uncompressed": true,
+    "noMipmaps": true,
+    "fullRect": true,
+    "alphaExtrema": [
+      0,
+      255
+    ]
+  }
+]

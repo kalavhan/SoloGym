@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 7e76819e-fabe-4a28-94ce-cc6046599991\njob_id: 7e76819e-fabe-4a28-94ce-cc6046599991\nmodel: pro\ndescription: ONE isolated game prop on TRUE TRANSPARENT background. ONE rolled exercise mat, dark teal fabric with a crimson inner spiral and two simple gold retaining straps. Horizontal roll on a shelf, left end slightly visible; match reference. One roll only, no shelf or wall. The supplied full gym image is the camera, color, lighting and pixel-density authority; the crop is the specific object design. Looking STRAIGHT into a room with modest one-point floor depth, NOT isometric or top-down. Re-create this object at its pictured camera angle, not a generic inventory icon. Crisp 16-bit-inspired pixel art, intentional pixel clusters and restrained outlines. Entire complete prop inside canvas with at least 8 empty transparent pixels around all edges. Reconstruct occluded edges. Exclude ALL neighboring props, character, floor, wall, UI, text, border, cast shadow and scenery. Exactly one isolated object, never a sheet.\nsize: 128x64px\ntransparent: True\ncandidates: 4\nreferences: 2\nseed: 9303110\nasset_id: 2912efd1-2cc9-5f3c-89ba-e838916f1c62\nasset_status: pending (saved when generation completes)\ncost: 20 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"7e76819e-fabe-4a28-94ce-cc6046599991\")"
+      }
+    ],
+    "isError": false
+  }
+}

@@ -1,0 +1,416 @@
+{
+  "provider": "PixelLab MCP",
+  "approvedReference": "design/fantasy-home-training-hall-r1/home-training-hall-concept.png",
+  "room": {
+    "native": "native/room-0.png",
+    "nativeSha256": "89d2c34f583a8701083f24ea2119925661cce47d2e572e2bd187de650455c6e9",
+    "architectureSha256": "d627b389fed1802904df8cdc440bdb2f9d91b321ee65ee28a00f81c224a2dd37",
+    "exteriorSha256": "affb5b6a1c79e1662a32fe7c2ce8739c9f851b769d6882e70aa2c621d377e303",
+    "windowCutoutPolygon": [
+      [
+        395,
+        195
+      ],
+      [
+        395,
+        101
+      ],
+      [
+        397,
+        89
+      ],
+      [
+        401,
+        78
+      ],
+      [
+        409,
+        66
+      ],
+      [
+        420,
+        55
+      ],
+      [
+        435,
+        47
+      ],
+      [
+        450,
+        44
+      ],
+      [
+        464,
+        48
+      ],
+      [
+        477,
+        56
+      ],
+      [
+        487,
+        68
+      ],
+      [
+        495,
+        82
+      ],
+      [
+        499,
+        97
+      ],
+      [
+        501,
+        113
+      ],
+      [
+        501,
+        195
+      ]
+    ],
+    "decompositionPixelExact": true,
+    "exteriorRect": [
+      380,
+      32,
+      136,
+      176
+    ]
+  },
+  "objects": [
+    {
+      "id": "exercise-rug",
+      "source": "native/exercise-rug-repair.png",
+      "file": "sprites/exercise-rug.png",
+      "sha256": "f9ffce852d18457b20addaaa8168cc6af24ee0b0826771e7608633593ab2f95d",
+      "sourceSize": [
+        384,
+        112
+      ],
+      "alphaBounds": [
+        9,
+        9,
+        375,
+        103
+      ],
+      "scale": 0.851063829787234,
+      "anchor": {
+        "x": 310.0,
+        "y": 315.6595744680851
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "pullup-station",
+      "source": "native/pullup-final-repair.png",
+      "file": "sprites/pullup-station.png",
+      "sha256": "e5cc839377c9e967413ed9ec6a8156a8a5dc197ba1e9120c19c81ba260ee92d5",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "alphaBounds": [
+        30,
+        17,
+        240,
+        240
+      ],
+      "scale": 0.8385650224215246,
+      "anchor": {
+        "x": 147.13004484304932,
+        "y": 248.4170403587444
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "weight-rack",
+      "source": "native/weight-rack-1.png",
+      "file": "sprites/weight-rack.png",
+      "sha256": "6d1c98f2538972ae4beafd634d7c05c0632297eba18ae0f663553ed8bb1e5d74",
+      "sourceSize": [
+        128,
+        160
+      ],
+      "alphaBounds": [
+        2,
+        4,
+        125,
+        152
+      ],
+      "scale": 0.6216216216216216,
+      "anchor": {
+        "x": 43.310810810810814,
+        "y": 260.97297297297297
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "bench",
+      "source": "native/bench-0.png",
+      "file": "sprites/bench.png",
+      "sha256": "620e8ac09282aadd6e4190fdca31deb1e64a601dcf4951291e05a6feadb6e9b8",
+      "sourceSize": [
+        192,
+        128
+      ],
+      "alphaBounds": [
+        27,
+        18,
+        167,
+        110
+      ],
+      "scale": 0.8260869565217391,
+      "anchor": {
+        "x": 114.17391304347827,
+        "y": 301.8695652173913
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "cabinet",
+      "source": "native/cabinet-0.png",
+      "file": "sprites/cabinet.png",
+      "sha256": "e50b320eb5a173ce1ed9dcad97852a559ad3016d91ecb6c4cf4ae858f0f50906",
+      "sourceSize": [
+        160,
+        128
+      ],
+      "alphaBounds": [
+        20,
+        20,
+        134,
+        107
+      ],
+      "scale": 0.8045977011494253,
+      "anchor": {
+        "x": 582.4137931034483,
+        "y": 254.89655172413794
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "wall-shelf",
+      "source": "native/wall-shelf-0.png",
+      "file": "sprites/wall-shelf.png",
+      "sha256": "66041c6c89aef08f7a8d1f8be900d64cf794ef6047c77fe82476140f1d63f44f",
+      "sourceSize": [
+        192,
+        64
+      ],
+      "alphaBounds": [
+        14,
+        12,
+        178,
+        56
+      ],
+      "scale": 0.6363636363636364,
+      "anchor": {
+        "x": 570.0,
+        "y": 147.0909090909091
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "banner",
+      "source": "native/banner-0.png",
+      "file": "sprites/banner.png",
+      "sha256": "d5bada572a327a894b6d8cd34e1384f6faaa3c608a5f8e49a6b04de5e9166765",
+      "sourceSize": [
+        96,
+        160
+      ],
+      "alphaBounds": [
+        11,
+        29,
+        89,
+        138
+      ],
+      "scale": 0.9357798165137615,
+      "anchor": {
+        "x": 280.1284403669725,
+        "y": 177.58715596330276
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "lantern-left",
+      "source": "native/lantern-repair.png",
+      "file": "sprites/lantern-left.png",
+      "sha256": "7a0d92797ac743c7bb78f384406e80b888873b4f04deaf79263b88608c5b9ded",
+      "sourceSize": [
+        128,
+        160
+      ],
+      "alphaBounds": [
+        39,
+        16,
+        108,
+        129
+      ],
+      "scale": 0.5486725663716814,
+      "anchor": {
+        "x": 38.78761061946903,
+        "y": 139.00884955752213
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "lantern-right",
+      "source": "native/lantern-repair.png",
+      "file": "sprites/lantern-right.png",
+      "sha256": "7a0d92797ac743c7bb78f384406e80b888873b4f04deaf79263b88608c5b9ded",
+      "sourceSize": [
+        128,
+        160
+      ],
+      "alphaBounds": [
+        39,
+        16,
+        108,
+        129
+      ],
+      "scale": 0.5132743362831859,
+      "anchor": {
+        "x": 566.1238938053098,
+        "y": 120.91150442477877
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "step-box",
+      "source": "native/step-box-0.png",
+      "file": "sprites/step-box.png",
+      "sha256": "af9a6a18d406a477abba8eef1516eebb4903ae14301b7ea743f86a315848f19a",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "alphaBounds": [
+        11,
+        31,
+        117,
+        98
+      ],
+      "scale": 0.8208955223880597,
+      "anchor": {
+        "x": 496.0,
+        "y": 282.6268656716418
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "rolled-mat",
+      "source": "native/rolled-mat-0.png",
+      "file": "sprites/rolled-mat.png",
+      "sha256": "a3515f909b8689964458ef5d1d5619c3067db4c1ac47a9ad69f5447d6795ce40",
+      "sourceSize": [
+        128,
+        64
+      ],
+      "alphaBounds": [
+        7,
+        15,
+        121,
+        48
+      ],
+      "scale": 0.6060606060606061,
+      "anchor": {
+        "x": 553.0,
+        "y": 134.6969696969697
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "towels",
+      "source": "native/towels-0.png",
+      "file": "sprites/towels.png",
+      "sha256": "bfff33a92d00c4c89490111e3d03cac019972cbbf15fca4757ef595a61458acf",
+      "sourceSize": [
+        96,
+        64
+      ],
+      "alphaBounds": [
+        6,
+        11,
+        82,
+        51
+      ],
+      "scale": 0.5,
+      "anchor": {
+        "x": 556.0,
+        "y": 177.5
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "water-flask",
+      "source": "native/water-flask-0.png",
+      "file": "sprites/water-flask.png",
+      "sha256": "bdc0269583386de06445aeac3e3ffce95f99efcec62ee92074cc43bc3964ee0d",
+      "sourceSize": [
+        64,
+        96
+      ],
+      "alphaBounds": [
+        12,
+        4,
+        45,
+        80
+      ],
+      "scale": 0.42105263157894735,
+      "anchor": {
+        "x": 593.4736842105264,
+        "y": 178.73684210526315
+      },
+      "edgesTransparent": true
+    },
+    {
+      "id": "plant",
+      "source": "native/plant-0.png",
+      "file": "sprites/plant.png",
+      "sha256": "5d939d9e03f4f071476b5465b8f7fd6e7021411ca9e8debb1d3f6d6707bdb60c",
+      "sourceSize": [
+        96,
+        128
+      ],
+      "alphaBounds": [
+        10,
+        12,
+        90,
+        121
+      ],
+      "scale": 0.6422018348623854,
+      "anchor": {
+        "x": 608.7155963302753,
+        "y": 149.4954128440367
+      },
+      "edgesTransparent": true
+    }
+  ],
+  "pending": [],
+  "status": "integrated-for-Unity-review",
+  "runtimeRoom": "app/Assets/SoloGym/Resources/Rooms/TrainingHallR1",
+  "rugAssembly": {
+    "base": "sprites/exercise-rug.png",
+    "baseTintRGBA": [
+      0.58,
+      0.45,
+      0.55,
+      1
+    ],
+    "overlay": "sprites/exercise-rug-trim.png",
+    "overlaySource": "native/exercise-rug-0.png",
+    "overlaySha256": "d03cf7fda2bfb9712b86ca3c436e91e3b0344460fc21201b6240627f0836d255",
+    "reason": "Provider background removal erased the fabric center. Use the opaque repaired fabric beneath the original complete gold trim; keep both authored layers attached to the same object. No runtime recoloring of the characters."
+  },
+  "uiFill": {
+    "file": "sprites/ui-frame.png",
+    "sha256": "75be67d5024632aca983fa98e8ffb6e750dc6cf31d699a1caeb59008c9c3a5e8",
+    "actualOutput": "Uniform opaque dark teal fill only. The requested border was missing; runtime reuses the existing nine-slice ContentPanel border as a separate layer.",
+    "borderResource": "UI/Pixel/ContentPanel",
+    "fillCenter": false
+  },
+  "rejectedOutputs": {
+    "native/rug-final-repair.png": "Background removal erased center again; not used.",
+    "native/pullup-station-repair.png": "Incomplete support tip; replaced with final repair."
+  }
+}

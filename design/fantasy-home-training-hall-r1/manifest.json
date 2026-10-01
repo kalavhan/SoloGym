@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "status": "user-approved-concept",
+  "tool": "built-in image_gen",
+  "prompt": "prompt.txt",
+  "promptSha256": "2296e93e51dfcbb568b3debdb286f4fe6d9b593d383d9ae8782d20404f5d3d15",
+  "output": "home-training-hall-concept.png",
+  "size": [
+    1672,
+    941
+  ],
+  "sha256": "1016da7646a48979658c854f97a07ab127acff146dd7efddb3dbf1c518a07177",
+  "references": [
+    {
+      "path": "design/fantasy-home-pixellab-r2/home-frontal-ring-scale-r2.png",
+      "sha256": "36655ffae92b3db3550d7e5e289de6cd7554f8ec830d105be5e95addf9d736e8"
+    },
+    {
+      "path": "assets/sprites/pixellab/barbarian-256-r1/sprites/male-medium.png",
+      "sha256": "59c46eb13ea5b68fbb363b5c65450f621ca6f9556c5bf89fa02f7c5f4ca904a9"
+    }
+  ],
+  "userDirection": "A room with a boxing ring does not make sense. Change the setting to general training, exercise, calisthenics and gym rather than boxing.",
+  "composition": "Straight-on fantasy personal training hall, open central floor with prominent approved Barbarian, pull-up/ring station, free weights, bench, mats, storage and step box. Ring, punching bag and bedroom furniture removed.",
+  "runtimeChanges": true,
+  "productionAssets": "Independent exports and selections are recorded in assets/sprites/pixellab/training-hall-r1/manifest.json. Runtime uses separate architecture, exterior, equipment, approved frontal character, sprite frames and live controls.",
+  "review": "Concept approved by user. Assembled Unity capture is ready for PR review; this is not a claim of final user approval of every prop.",
+  "approval": {
+    "quote": "love this, do it.",
+    "recordedDate": "2026-09-30",
+    "scope": "Implement the frontal fantasy training hall as separate room, equipment, character and live UI in one Home integration PR."
+  }
+}

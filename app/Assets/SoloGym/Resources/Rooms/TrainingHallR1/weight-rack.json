@@ -1,0 +1,42 @@
+{
+  "id": "home.weight-rack",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "weight-rack.anchor"
+  ],
+  "drawOrder": 10,
+  "sourceSize": {
+    "x": 128,
+    "y": 160
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.6216216216216216,
+  "footprint": [
+    {
+      "x": 2,
+      "y": 149
+    },
+    {
+      "x": 125,
+      "y": 149
+    },
+    {
+      "x": 125,
+      "y": 152
+    },
+    {
+      "x": 2,
+      "y": 152
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/weight-rack"
+    }
+  ]
+}

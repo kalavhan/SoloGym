@@ -52,6 +52,8 @@ namespace SoloGym
 
         void Awake()
         {
+            if (Argument("-sologym-window") == "workouts")
+            { new GameObject("Workout journal").AddComponent<SoloGym.UI.PixelWorkoutWindow>(); Destroy(gameObject); return; }
             var trainingWindow = Argument("-sologym-window");
             if (trainingWindow == "training" || trainingWindow == "readiness" || trainingWindow == "plan")
             {

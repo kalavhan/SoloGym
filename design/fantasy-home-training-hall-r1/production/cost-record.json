@@ -1,0 +1,107 @@
+{
+  "scope": "Training hall production only; earlier character batches have their own records.",
+  "entries": [
+    {
+      "record": "rug-final-repair-submit.json",
+      "jobId": "68d67a81-39c3-4687-a3f9-4a5e4aeea1d8",
+      "quotedGenerations": null
+    },
+    {
+      "record": "banner-submit.json",
+      "jobId": "55b4e67d-77f4-471d-9de5-da245b78ade6",
+      "quotedGenerations": 25
+    },
+    {
+      "record": "towels-submit.json",
+      "jobId": "8164bd8a-af25-45da-9a1e-d861d69d4409",
+      "quotedGenerations": 20
+    },
+    {
+      "record": "exercise-rug-submit.json",
+      "jobId": "027dfb84-8f56-4b86-9c42-38bae1d976d6",
+      "quotedGenerations": 40
+    },
+    {
+      "record": "step-box-submit.json",
+      "jobId": "b217f906-05d3-4d53-9bee-a8b8eb291635",
+      "quotedGenerations": 20
+    },
+    {
+      "record": "lantern-repair-submit.json",
+      "jobId": "2f37a4da-fb30-4afa-9f91-84b59e86d9d0",
+      "quotedGenerations": null
+    },
+    {
+      "record": "pullup-station-submit.json",
+      "jobId": "18e44a6c-ad9f-459f-99db-af4da3823b29",
+      "quotedGenerations": 20
+    },
+    {
+      "record": "lantern-submit.json",
+      "jobId": "d7aa6a9a-1f3e-4211-8559-2d81d5a8bb04",
+      "quotedGenerations": 20
+    },
+    {
+      "record": "pullup-final-repair-submit.json",
+      "jobId": "db5ce493-5a98-49c1-ba59-2b3cafe6acc8",
+      "quotedGenerations": null
+    },
+    {
+      "record": "exercise-rug-repair-submit.json",
+      "jobId": "aa92570a-22f9-4962-9202-34604b02b9c3",
+      "quotedGenerations": null
+    },
+    {
+      "record": "rolled-mat-submit.json",
+      "jobId": "7e76819e-fabe-4a28-94ce-cc6046599991",
+      "quotedGenerations": 20
+    },
+    {
+      "record": "room-submit.json",
+      "jobId": "67f61c4f-96ab-444e-9bf0-1c6b4367b63f",
+      "quotedGenerations": 40
+    },
+    {
+      "record": "water-flask-submit.json",
+      "jobId": "fd3c9b1b-794e-485b-849b-7fbd58d6fa50",
+      "quotedGenerations": 20
+    },
+    {
+      "record": "weight-rack-submit.json",
+      "jobId": "978ce0bc-de6d-4034-a865-62d55a8541b1",
+      "quotedGenerations": 25
+    },
+    {
+      "record": "wall-shelf-submit.json",
+      "jobId": "9775d9f3-10e8-4aef-be7f-527293cd430b",
+      "quotedGenerations": 20
+    },
+    {
+      "record": "plant-submit.json",
+      "jobId": "4dfe01e5-544d-4f37-aff7-2cf8770894ca",
+      "quotedGenerations": 20
+    },
+    {
+      "record": "ui-frame-submit.json",
+      "jobId": "0014ed7b-346d-49bd-8e4f-a0b5cd07103e",
+      "quotedGenerations": 25
+    },
+    {
+      "record": "pullup-station-repair-submit.json",
+      "jobId": "56622048-5c56-4dc2-a046-3c3d7a143daa",
+      "quotedGenerations": null
+    },
+    {
+      "record": "bench-submit.json",
+      "jobId": "8fad7510-87d5-41be-b5a1-01d0c40bf6ed",
+      "quotedGenerations": 20
+    },
+    {
+      "record": "cabinet-submit.json",
+      "jobId": "4bc84fdf-d433-481f-b07f-fbf6faaa4dbb",
+      "quotedGenerations": 25
+    }
+  ],
+  "sumOfAvailableIntegerQuotes": 360,
+  "note": "These are provider submission quotes, not a billing reconciliation. Some Flash edit results omit cost. User activity shares this account, so balance differences are not attributed solely to this task."
+}

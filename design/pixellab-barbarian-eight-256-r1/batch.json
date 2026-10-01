@@ -1,0 +1,430 @@
+{
+  "schema": 1,
+  "status": "user-approved-static-set",
+  "scope": "Eight static frontal Barbarians from original Downloads references. Entire PNG, including transparent margins, must be at most 256x256. No animations, rotations or runtime replacements.",
+  "provider": "PixelLab MCP",
+  "generationCalls": 8,
+  "characters": [
+    {
+      "id": "male-skinny",
+      "status": "user-approved-static-sprite",
+      "originalDownload": "/home/josue/Downloads/barbarian-skinny.png",
+      "reference": "assets/sprites/pixellab/barbarian-originals-r1/references/male-skinny.png",
+      "referenceSha256": "4c8d7954dac585aed2a853d590d2d6385c21ff118c06e2da4fe8606132760bec",
+      "argsFile": "/tmp/pixellab-eight-256-male-skinny-args.json",
+      "tool": "create_image_pro",
+      "nativeCanvas": [
+        256,
+        256
+      ],
+      "request": {
+        "description": "ONE full-body adult male Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Very skinny adult man: narrow unmuscular arms and shoulders, subtle visible flesh-covered ribs, flat narrow torso, lean face, very thin bony-looking thighs/calves and small angular knees. No athletic abs or muscle bulges. Same curly brown hair and full beard; cream fur/leather shoulder piece on viewer RIGHT, diagonal brown harness, other pectoral and belly exposed. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "style_copy": [
+          "color_palette"
+        ],
+        "seed": 9302700
+      },
+      "jobId": "15dc14c9-fabd-4061-838a-6303f42b0fec",
+      "quotedGenerations": 20,
+      "assetId": "c0ec2230-95be-5f2a-8a29-410a748a1ff4",
+      "rawFile": "assets/sprites/pixellab/barbarian-256-r1/native/male-skinny.png",
+      "rawSha256": "200d5c0c6d5afd1f78695e9103d762c950a06cdcde224255597660bab693d3fb",
+      "actualSize": [
+        256,
+        256
+      ],
+      "alphaBounds": [
+        79,
+        2,
+        180,
+        249
+      ],
+      "finalFile": "assets/sprites/pixellab/barbarian-256-r1/sprites/male-skinny.png",
+      "finalSha256": "200d5c0c6d5afd1f78695e9103d762c950a06cdcde224255597660bab693d3fb",
+      "qa": {
+        "id": "male-skinny",
+        "exact256Square": true,
+        "transparentAllFourEdges": true,
+        "minTransparentMargin": 2,
+        "finalBytesEqualNative": true,
+        "sourceMatchesDownloads": true,
+        "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+      }
+    },
+    {
+      "id": "male-medium",
+      "status": "user-approved-static-sprite",
+      "originalDownload": "/home/josue/Downloads/barbarian-medium.png",
+      "reference": "assets/sprites/pixellab/barbarian-originals-r1/references/male-medium.png",
+      "referenceSha256": "1bd4a12bf46c9781e4d86af10516f5b07b787a3f77590a920efa0bba0b6decd6",
+      "argsFile": "/tmp/pixellab-eight-256-male-medium-args.json",
+      "tool": "create_image_pro",
+      "nativeCanvas": [
+        256,
+        256
+      ],
+      "request": {
+        "description": "ONE full-body adult male Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Ordinary untrained adult man: soft small belly, natural unsculpted chest and arms, average soft thighs/calves. NO six-pack, defined pectorals, strong bodybuilder arms or athletic leg definition. Not fat and not skinny. Same curly brown hair and full beard; cream fur/leather shoulder piece on viewer RIGHT, diagonal brown harness, other pectoral and belly exposed. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "style_copy": [
+          "color_palette"
+        ],
+        "seed": 9302701
+      },
+      "jobId": "135b0f94-1513-44b9-9a92-fc404accff4f",
+      "quotedGenerations": 20,
+      "assetId": "8e91dbdc-7075-52dd-831f-3fde4be355a4",
+      "rawFile": "assets/sprites/pixellab/barbarian-256-r1/native/male-medium.png",
+      "rawSha256": "59c46eb13ea5b68fbb363b5c65450f621ca6f9556c5bf89fa02f7c5f4ca904a9",
+      "actualSize": [
+        256,
+        256
+      ],
+      "alphaBounds": [
+        71,
+        4,
+        187,
+        249
+      ],
+      "finalFile": "assets/sprites/pixellab/barbarian-256-r1/sprites/male-medium.png",
+      "finalSha256": "59c46eb13ea5b68fbb363b5c65450f621ca6f9556c5bf89fa02f7c5f4ca904a9",
+      "qa": {
+        "id": "male-medium",
+        "exact256Square": true,
+        "transparentAllFourEdges": true,
+        "minTransparentMargin": 4,
+        "finalBytesEqualNative": true,
+        "sourceMatchesDownloads": true,
+        "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+      }
+    },
+    {
+      "id": "male-fat",
+      "status": "user-approved-static-sprite",
+      "originalDownload": "/home/josue/Downloads/barbarian-fat.png",
+      "reference": "assets/sprites/pixellab/barbarian-originals-r1/references/male-fat.png",
+      "referenceSha256": "be8b1f0610ac74327eeb43fecdab0348b992add1e0d2c5b48e351eef07d325ba",
+      "argsFile": "/tmp/pixellab-eight-256-male-fat-args.json",
+      "tool": "create_image_pro",
+      "nativeCanvas": [
+        256,
+        256
+      ],
+      "request": {
+        "description": "ONE full-body adult male Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Obese/heavy adult man: visibly prominent ROUND BELLY with soft lower rolls, wide soft waist, plump chest and arms, full rounded cheeks, thick rounded thighs/calves with small soft rolls. No abs, no muscle definition, no slimming. Same curly brown hair and full beard; cream fur/leather shoulder piece on viewer RIGHT, diagonal brown harness, other pectoral and belly exposed. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "style_copy": [
+          "color_palette"
+        ],
+        "seed": 9302702
+      },
+      "jobId": "21e344fb-7f41-4af5-98a9-06a185816d89",
+      "quotedGenerations": 20,
+      "assetId": "6d6043fe-52d9-57ef-b70e-8240fcfd0f6a",
+      "rawFile": "assets/sprites/pixellab/barbarian-256-r1/native/male-fat.png",
+      "rawSha256": "58d6b15f0a77a5b30d1db4165b5cd0b36be44e496ef98906004434d9cb856e9f",
+      "actualSize": [
+        256,
+        256
+      ],
+      "alphaBounds": [
+        54,
+        5,
+        203,
+        251
+      ],
+      "finalFile": "assets/sprites/pixellab/barbarian-256-r1/sprites/male-fat.png",
+      "finalSha256": "58d6b15f0a77a5b30d1db4165b5cd0b36be44e496ef98906004434d9cb856e9f",
+      "qa": {
+        "id": "male-fat",
+        "exact256Square": true,
+        "transparentAllFourEdges": true,
+        "minTransparentMargin": 5,
+        "finalBytesEqualNative": true,
+        "sourceMatchesDownloads": true,
+        "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+      }
+    },
+    {
+      "id": "male-muscular",
+      "status": "user-approved-static-sprite",
+      "originalDownload": "/home/josue/Downloads/barbarian-muscular.png",
+      "reference": "assets/sprites/pixellab/barbarian-originals-r1/references/male-muscular.png",
+      "referenceSha256": "fc8516392ca134c4f1be66a9432cd085f5c008fb0dfeadc44004e821b81f4561",
+      "argsFile": "/tmp/pixellab-eight-256-male-muscular-args.json",
+      "tool": "create_image_pro",
+      "nativeCanvas": [
+        256,
+        256
+      ],
+      "request": {
+        "description": "ONE full-body adult male Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Muscular adult man: developed shoulders/chest/arms, visible abdominal definition and strongly defined thigh and calf muscles. Preserve reference proportions and medium-face identity; do not enlarge the whole body. Same curly brown hair and full beard; cream fur/leather shoulder piece on viewer RIGHT, diagonal brown harness, other pectoral and belly exposed. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "style_copy": [
+          "color_palette"
+        ],
+        "seed": 9302703
+      },
+      "jobId": "d5b5780e-40fd-4b9d-a878-7cc0e83257f6",
+      "quotedGenerations": 20,
+      "assetId": "485b10b6-26f0-587f-b544-320f825ece32",
+      "rawFile": "assets/sprites/pixellab/barbarian-256-r1/native/male-muscular.png",
+      "rawSha256": "a78d381e55912a149d12eb29ba318e07f9e3e8aca6c8184d1d539fff79d5180b",
+      "actualSize": [
+        256,
+        256
+      ],
+      "alphaBounds": [
+        70,
+        2,
+        187,
+        251
+      ],
+      "finalFile": "assets/sprites/pixellab/barbarian-256-r1/sprites/male-muscular.png",
+      "finalSha256": "a78d381e55912a149d12eb29ba318e07f9e3e8aca6c8184d1d539fff79d5180b",
+      "qa": {
+        "id": "male-muscular",
+        "exact256Square": true,
+        "transparentAllFourEdges": true,
+        "minTransparentMargin": 2,
+        "finalBytesEqualNative": true,
+        "sourceMatchesDownloads": true,
+        "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+      }
+    },
+    {
+      "id": "female-skinny",
+      "status": "user-approved-static-sprite",
+      "originalDownload": "/home/josue/Downloads/barbarian-skinny-female.png",
+      "reference": "assets/sprites/pixellab/barbarian-originals-r1/references/female-skinny.png",
+      "referenceSha256": "e1309ffe068fb112d192380568bd0835588f69a43f53e83e3ac7703c3da197fe",
+      "argsFile": "/tmp/pixellab-eight-256-female-skinny-args.json",
+      "tool": "create_image_pro",
+      "nativeCanvas": [
+        256,
+        256
+      ],
+      "request": {
+        "description": "ONE full-body adult female Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Very skinny adult woman: narrow unmuscular arms, subtle visible flesh-covered ribs, lean face, very thin bony-looking thighs/calves and small angular knees. No athletic abs or toned leg muscle bulges; no exposed literal bones. Same brown hairstyle and braids, opaque red/gold fantasy crop top and fur/leather shoulder piece on viewer RIGHT, exposed belly. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Same coverage as source, not a skirt or bikini. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "style_copy": [
+          "color_palette"
+        ],
+        "seed": 9302704
+      },
+      "jobId": "59498519-fcc5-4f3a-92f2-b201b6273bb8",
+      "quotedGenerations": 20,
+      "assetId": "ac80e479-6aed-5452-9f27-88ac29d2e8e3",
+      "rawFile": "assets/sprites/pixellab/barbarian-256-r1/native/female-skinny.png",
+      "rawSha256": "55a32dd68d383d3b0e5205f54d5a92b8fe9c127a271603af1ade5c226e1dc394",
+      "actualSize": [
+        256,
+        256
+      ],
+      "alphaBounds": [
+        78,
+        6,
+        178,
+        250
+      ],
+      "finalFile": "assets/sprites/pixellab/barbarian-256-r1/sprites/female-skinny.png",
+      "finalSha256": "55a32dd68d383d3b0e5205f54d5a92b8fe9c127a271603af1ade5c226e1dc394",
+      "qa": {
+        "id": "female-skinny",
+        "exact256Square": true,
+        "transparentAllFourEdges": true,
+        "minTransparentMargin": 6,
+        "finalBytesEqualNative": true,
+        "sourceMatchesDownloads": true,
+        "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+      }
+    },
+    {
+      "id": "female-medium",
+      "status": "user-approved-static-sprite",
+      "originalDownload": "/home/josue/Downloads/barbarian-medium-female.png",
+      "reference": "assets/sprites/pixellab/barbarian-originals-r1/references/female-medium.png",
+      "referenceSha256": "96f17a7bec3cbf49071446a38e5a7698c71076a352865a9c0352a20c468b1ee0",
+      "argsFile": "/tmp/pixellab-eight-256-female-medium-args.json",
+      "tool": "create_image_pro",
+      "nativeCanvas": [
+        256,
+        256
+      ],
+      "request": {
+        "description": "ONE full-body adult female Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Ordinary untrained adult woman: natural soft belly and arms, everyday average thighs/calves with gentle curves. NO six-pack, defined quadriceps, athletic calf bulges or muscular arms. Not fat and not skinny. Same brown hairstyle and braids, opaque red/gold fantasy crop top and fur/leather shoulder piece on viewer RIGHT, exposed belly. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Same coverage as source, not a skirt or bikini. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "style_copy": [
+          "color_palette"
+        ],
+        "seed": 9302705
+      },
+      "jobId": "66c31a7b-aa79-4caa-a482-7c5cae947e46",
+      "quotedGenerations": 20,
+      "assetId": "795613f5-a58e-5f78-bfcb-c3fb831f4ff0",
+      "rawFile": "assets/sprites/pixellab/barbarian-256-r1/native/female-medium.png",
+      "rawSha256": "29ae4951e28fabeebb10421ad880e8ff8669faa0785a6cf035e321de88aedaff",
+      "actualSize": [
+        256,
+        256
+      ],
+      "alphaBounds": [
+        71,
+        4,
+        183,
+        249
+      ],
+      "finalFile": "assets/sprites/pixellab/barbarian-256-r1/sprites/female-medium.png",
+      "finalSha256": "29ae4951e28fabeebb10421ad880e8ff8669faa0785a6cf035e321de88aedaff",
+      "qa": {
+        "id": "female-medium",
+        "exact256Square": true,
+        "transparentAllFourEdges": true,
+        "minTransparentMargin": 4,
+        "finalBytesEqualNative": true,
+        "sourceMatchesDownloads": true,
+        "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+      }
+    },
+    {
+      "id": "female-fat",
+      "status": "user-approved-static-sprite",
+      "originalDownload": "/home/josue/Downloads/barbarian-fat-female.png",
+      "reference": "assets/sprites/pixellab/barbarian-originals-r1/references/female-fat.png",
+      "referenceSha256": "07700210459e1fdf131de17a9bb78efab5955dbf53ed9d2804811805d6c602da",
+      "argsFile": "/tmp/pixellab-eight-256-female-fat-args.json",
+      "tool": "create_image_pro",
+      "nativeCanvas": [
+        256,
+        256
+      ],
+      "request": {
+        "description": "ONE full-body adult female Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Obese/heavy adult woman: visibly rounded exposed belly with soft lower rolls, broad soft waist, full rounded face and cheeks, soft plump arms, thick round thighs/calves with small rolls. Preserve substantial body volume, no slimming or abs. Same brown hairstyle and braids, opaque red/gold fantasy crop top and fur/leather shoulder piece on viewer RIGHT, exposed belly. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Same coverage as source, not a skirt or bikini. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "style_copy": [
+          "color_palette"
+        ],
+        "seed": 9302706
+      },
+      "jobId": "c48b8df2-7244-41cc-bc2a-c62267b40125",
+      "quotedGenerations": 20,
+      "assetId": "5aecdf9b-d433-5735-aa56-0b2ee89576b4",
+      "rawFile": "assets/sprites/pixellab/barbarian-256-r1/native/female-fat.png",
+      "rawSha256": "106a61a43b6828289243240013e70bb366f90250441f27547abf978940edc8c7",
+      "actualSize": [
+        256,
+        256
+      ],
+      "alphaBounds": [
+        55,
+        2,
+        199,
+        252
+      ],
+      "finalFile": "assets/sprites/pixellab/barbarian-256-r1/sprites/female-fat.png",
+      "finalSha256": "106a61a43b6828289243240013e70bb366f90250441f27547abf978940edc8c7",
+      "qa": {
+        "id": "female-fat",
+        "exact256Square": true,
+        "transparentAllFourEdges": true,
+        "minTransparentMargin": 2,
+        "finalBytesEqualNative": true,
+        "sourceMatchesDownloads": true,
+        "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+      }
+    },
+    {
+      "id": "female-muscular",
+      "status": "user-approved-static-sprite",
+      "originalDownload": "/home/josue/Downloads/barbarian-muscular-female.png",
+      "reference": "assets/sprites/pixellab/barbarian-originals-r1/references/female-muscular.png",
+      "referenceSha256": "38babae4826badc5e4eec40c04493ffe2267ceddd2924f8da86d4b2af71134e9",
+      "argsFile": "/tmp/pixellab-eight-256-female-muscular-args.json",
+      "tool": "create_image_pro",
+      "nativeCanvas": [
+        256,
+        256
+      ],
+      "request": {
+        "description": "ONE full-body adult female Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Muscular adult woman: clear abdominal definition and defined thighs/calves, moderate proportional shoulder/arm muscles SMALLER than the male muscular counterpart. Preserve her reference head/body scale and face; no oversized arms. Same brown hairstyle and braids, opaque red/gold fantasy crop top and fur/leather shoulder piece on viewer RIGHT, exposed belly. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Same coverage as source, not a skirt or bikini. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "style_copy": [
+          "color_palette"
+        ],
+        "seed": 9302707
+      },
+      "jobId": "6396e2f9-3db3-48df-a40b-586b2bdea687",
+      "quotedGenerations": 20,
+      "assetId": "5210199b-990f-5e1c-a337-d85a89914130",
+      "rawFile": "assets/sprites/pixellab/barbarian-256-r1/native/female-muscular.png",
+      "rawSha256": "c7e4b03f369209908a01b1450b3363ca4af150965c216b81f5451f5dbfc391f0",
+      "actualSize": [
+        256,
+        256
+      ],
+      "alphaBounds": [
+        76,
+        6,
+        179,
+        248
+      ],
+      "finalFile": "assets/sprites/pixellab/barbarian-256-r1/sprites/female-muscular.png",
+      "finalSha256": "c7e4b03f369209908a01b1450b3363ca4af150965c216b81f5451f5dbfc391f0",
+      "qa": {
+        "id": "female-muscular",
+        "exact256Square": true,
+        "transparentAllFourEdges": true,
+        "minTransparentMargin": 6,
+        "finalBytesEqualNative": true,
+        "sourceMatchesDownloads": true,
+        "visualReview": "Full head/hair, both hands, both complete boots and body-type cues visible."
+      }
+    }
+  ],
+  "acceptance": [
+    "ENTIRE final PNG is 256x256 maximum, including all transparent margins. No larger delivered character sprite.",
+    "Complete curls, hands, shoulder fur and both boots with transparent margins.",
+    "Body type remains distinct: skinny ribs/bony legs; medium soft/untrained; fat prominent belly/soft round legs; muscular defined legs/abs and moderate female arms.",
+    "Skin palette follows ORIGINAL Downloads references; AutoSprite exports are not the color authority.",
+    "Exactly one independent transparent PNG per character.",
+    "Preserve source bytes and raw provider exports; record any repairs and shared-canvas placements."
+  ],
+  "runtimeReplacement": false,
+  "latestConstraint": "256x256 maximum for entire sprite including margins",
+  "supersedes": "design/pixellab-barbarian-eight-r1/batch.json",
+  "maxTotalImageSize": [
+    256,
+    256
+  ],
+  "deliveredSpriteCount": 8,
+  "finalCanvas": [
+    256,
+    256
+  ],
+  "userApproval": {
+    "status": "approved",
+    "recordedDate": "2026-09-30",
+    "source": "User message in this task",
+    "quote": "i like them. let's keep them, I have made some of them characters (with 8 directions) the others are in the go, what is next?",
+    "scope": "All eight static frontal PixelLab Barbarians, each complete PNG at most 256x256, retained as the approved character art set.",
+    "directionalExports": "User reports some eight-direction characters created and others in progress; exports have not yet been imported or validated.",
+    "runtimeIntegrationVerified": false
+  }
+}

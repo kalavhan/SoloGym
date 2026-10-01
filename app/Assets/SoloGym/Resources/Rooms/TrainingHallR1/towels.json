@@ -1,0 +1,42 @@
+{
+  "id": "home.towels",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "towels.anchor"
+  ],
+  "drawOrder": 7,
+  "sourceSize": {
+    "x": 96,
+    "y": 64
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.5,
+  "footprint": [
+    {
+      "x": 6,
+      "y": 48
+    },
+    {
+      "x": 82,
+      "y": 48
+    },
+    {
+      "x": 82,
+      "y": 51
+    },
+    {
+      "x": 6,
+      "y": 51
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/towels"
+    }
+  ]
+}

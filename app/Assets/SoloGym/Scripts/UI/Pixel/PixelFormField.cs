@@ -19,6 +19,8 @@ namespace SoloGym.UI
         public string Error { get; private set; } = "";
         public string VisualState { get; private set; }
         public Kind FieldKind { get; private set; }
+        Color labelColor = new Color32(251, 224, 166, 255);
+        public void SetLabelColor(Color value) { labelColor = value; Refresh(); }
         Outline outline;
         LayoutElement layoutElement;
         public float PreferredHeight => layoutElement == null ? 130 : layoutElement.preferredHeight;
@@ -153,7 +155,7 @@ namespace SoloGym.UI
             Background.color = enabled ? Color.white : new Color32(132, 130, 129, 255);
             outline.enabled = enabled && (focused || invalid);
             outline.effectColor = invalid ? new Color32(235, 139, 121, 255) : new Color32(251, 224, 166, 255);
-            Label.color = enabled ? new Color32(251, 224, 166, 255) : new Color32(170, 164, 155, 255);
+            Label.color = enabled ? labelColor : new Color32(170, 164, 155, 255);
             Input.textComponent.color = enabled ? new Color32(255, 240, 202, 255) : new Color32(170, 164, 155, 255);
             Message.text = invalid ? "! " + Error : helper;
             RefreshLayout();

@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: c48b8df2-7244-41cc-bc2a-c62267b40125\njob_id: c48b8df2-7244-41cc-bc2a-c62267b40125\nmodel: pro\ndescription: ONE full-body adult female Barbarian game sprite. Re-create the supplied ORIGINAL character as polished native 16-bit fantasy RPG pixel art, clear intentional pixel clusters, selective dark outlines, restrained readable shading. Straight FRONT VIEW facing viewer, relaxed stance, entire body visible. Preserve identity, proportions, body build and costume. Obese/heavy adult woman: visibly rounded exposed belly with soft lower rolls, broad soft waist, full rounded face and cheeks, soft plump arms, thick round thighs/calves with small rolls. Preserve substantial body volume, no slimming or abs. Same brown hairstyle and braids, opaque red/gold fantasy crop top and fur/leather shoulder piece on viewer RIGHT, exposed belly. Same red sash, gold/turquoise buckle, red gold-trimmed mid-thigh training SHORTS, short leather hip tabs, bracers and low ankle boots. Same coverage as source, not a skirt or bikini. Both knees and full calves visible. COLOR AUTHORITY IS THE ORIGINAL REFERENCE: match its skin complexion, brown hair/eyes, red fabric, cream fur and leather exactly. Do not tan, darken, lighten or orange-shift the skin; same complexion on face, chest, hands and legs. Do not redesign the outfit. IMPORTANT FRAMING: TOTAL IMAGE IS 256x256 pixels, square transparent canvas. Character only about 208 pixels tall, centered, with at least 24 EMPTY transparent pixels above ALL hair and below BOTH COMPLETE boot soles. Keep hands and shoulder fur comfortably away from side edges. Do NOT fill the canvas with the body or crop boot toes, soles, curls or hands. Both boot soles share a baseline. Exactly one figure, not a sheet. No floor, cast-shadow blob, scene, frame, palette swatches, text, UI, weapon, rotation or extra pose.\nsize: 256x256px\ntransparent: True\ncandidates: 1\nreferences: 1\nstyle_image: yes (color_palette)\nseed: 9302706\nasset_id: 5aecdf9b-d433-5735-aa56-0b2ee89576b4\nasset_status: pending (saved when generation completes)\ncost: 20 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"c48b8df2-7244-41cc-bc2a-c62267b40125\")"
+      }
+    ],
+    "isError": false
+  }
+}

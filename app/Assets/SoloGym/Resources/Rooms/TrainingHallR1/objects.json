@@ -1,0 +1,74 @@
+{
+  "objects": [
+    {
+      "resource": "Rooms/TrainingHallR1/exercise-rug",
+      "en": "Exercise mat",
+      "es": "Tapete de ejercicio"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/pullup-station",
+      "en": "Pull-up station",
+      "es": "Estaci\u00f3n de dominadas"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/weight-rack",
+      "en": "Weight rack",
+      "es": "Pesas"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/bench",
+      "en": "Training bench",
+      "es": "Banco de ejercicio"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/cabinet",
+      "en": "Storage cabinet",
+      "es": "Gabinete"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/wall-shelf",
+      "en": "Wall shelf",
+      "es": "Repisa"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/banner",
+      "en": "Gym banner",
+      "es": "Estandarte"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/lantern-left",
+      "en": "Left lantern",
+      "es": "Farol izquierdo"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/lantern-right",
+      "en": "Right lantern",
+      "es": "Farol derecho"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/step-box",
+      "en": "Step-up box",
+      "es": "Caj\u00f3n de ejercicio"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/rolled-mat",
+      "en": "Rolled mat",
+      "es": "Tapete enrollado"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/towels",
+      "en": "Towels",
+      "es": "Toallas"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/water-flask",
+      "en": "Water flask",
+      "es": "Botella de agua"
+    },
+    {
+      "resource": "Rooms/TrainingHallR1/plant",
+      "en": "Plant",
+      "es": "Planta"
+    }
+  ]
+}
