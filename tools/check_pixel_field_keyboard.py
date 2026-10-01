@@ -18,14 +18,15 @@ def run():
     navigation = "--navigation" in sys.argv
     login = "--login" in sys.argv
     account = "--account" in sys.argv
-    if sum((actions, icons, choices, characters, navigation, login, account)) > 1:
+    onboarding = "--onboarding" in sys.argv
+    if sum((actions, icons, choices, characters, navigation, login, account, onboarding)) > 1:
         raise ValueError("Choose one keyboard fixture, including --login or --account.")
-    fixture = "account" if account else "login" if login else "navigation" if navigation else "character" if characters else "choice" if choices else "icon" if icons else "action" if actions else "field"
+    fixture = "onboarding" if onboarding else "account" if account else "login" if login else "navigation" if navigation else "character" if characters else "choice" if choices else "icon" if icons else "action" if actions else "field"
     # Always create an isolated display; never inject events into the user's desktop.
     if "--isolated-child" not in sys.argv:
         return subprocess.call(["xvfb-run", "-a", "-s", "-screen 0 1920x1080x24",
                                 sys.executable, str(Path(__file__).resolve()), "--isolated-child",
-                                *(["--account"] if account else ["--login"] if login else ["--navigation"] if navigation else ["--characters"] if characters else ["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
+                                *(["--onboarding"] if onboarding else ["--account"] if account else ["--login"] if login else ["--navigation"] if navigation else ["--characters"] if characters else ["--choices"] if choices else ["--icons"] if icons else ["--actions"] if actions else [])],
                                env={**os.environ, "SOLOGYM_ISOLATED_FIELD_TEST": "1"})
     if os.environ.get("SOLOGYM_ISOLATED_FIELD_TEST") != "1":
         raise RuntimeError("Run without --isolated-child to create a private display.")
@@ -80,13 +81,15 @@ def run():
             key(name, shift)
 
     env = {**os.environ, "XDG_CONFIG_HOME": str(local / (fixture + "-keyboard-prefs"))}
-    binary = {"account": "Login/SoloGymLogin", "login": "Login/SoloGymLogin", "navigation": "FantasyNavigation/SoloGymNavigation", "character": "FantasyCharacter/SoloGymCharacter", "choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
+    binary = {"onboarding": "Login/SoloGymLogin", "account": "Login/SoloGymLogin", "login": "Login/SoloGymLogin", "navigation": "FantasyNavigation/SoloGymNavigation", "character": "FantasyCharacter/SoloGymCharacter", "choice": "FantasyChoice/SoloGymChoice", "icon": "FantasyIcon/SoloGymIcon",
               "action": "FantasyAction/SoloGymAction", "field": "FantasyField/SoloGymField"}[fixture]
     command = [str(ROOT / ("app/Builds/" + binary + ".x86_64")),
                "-screen-fullscreen", "0", "-screen-width", "1280", "-screen-height", "720",
                "-sologym-locale", "en", "-sologym-keyboard-probe", str(marker),
                "-sologym-capture", str(local / (fixture + "-keyboard.png")),
                "-logFile", str(local / (fixture + "-keyboard-player.log"))]
+    if onboarding:
+        command += ["-sologym-window", "onboarding"]
     if account:
         command += ["-sologym-window", "account"]
     with (local / (fixture + "-keyboard-stdout.log")).open("w") as output:
@@ -117,7 +120,20 @@ def run():
             x11.XSetInputFocus(display, window, 2, 0)
             x11.XFlush(display)
             time.sleep(.4)
-            if account:
+            if onboarding:
+                text("21")
+                key("Return"); time.sleep(.4)  # Country control
+                key("Return"); time.sleep(.4)  # Search
+                text("mex")
+                key("Return"); time.sleep(.4)  # First result focus
+                key("Return"); time.sleep(.4)  # Select MX, return to country
+                key("Tab"); key("Return"); time.sleep(.5)  # Character step, Back focused
+                key("Tab"); key("Right"); key("Return"); time.sleep(.3)  # Female
+                for _ in range(4):
+                    key("Tab"); time.sleep(.1)
+                key("Return"); time.sleep(.3)  # Muscular
+                key("Tab"); key("Return"); time.sleep(.4)  # Pending consent
+            elif account:
                 text("hero+fit@example.com")
                 key("Return"); time.sleep(.4)
                 text("Trial9pass")

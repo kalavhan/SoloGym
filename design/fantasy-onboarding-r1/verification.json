@@ -1,0 +1,327 @@
+{
+  "date": "2026-10-01",
+  "unity": "6000.3.24f1",
+  "platform": "Linux standalone, private Xvfb displays",
+  "passed": true,
+  "reports": [
+    {
+      "file": "artifacts/visual/Onboarding/window-en-854.smoke.json",
+      "result": {
+        "passed": true,
+        "checks": 209,
+        "width": 854,
+        "height": 480,
+        "locale": "en",
+        "failures": []
+      }
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280.smoke.json",
+      "result": {
+        "passed": true,
+        "checks": 209,
+        "width": 1280,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1600.smoke.json",
+      "result": {
+        "passed": true,
+        "checks": 209,
+        "width": 1600,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-onboarding-r1/checks/keyboard.json",
+      "result": {
+        "passed": true,
+        "checks": 5,
+        "width": 1280,
+        "height": 720,
+        "locale": "en",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-onboarding-r1/checks/login-regression.json",
+      "result": {
+        "passed": true,
+        "checks": 119,
+        "locale": "es",
+        "width": 1280,
+        "height": 720,
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-onboarding-r1/checks/account-regression.json",
+      "result": {
+        "passed": true,
+        "checks": 91,
+        "locale": "en",
+        "width": 854,
+        "height": 480,
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-onboarding-r1/checks/choice-regression.json",
+      "result": {
+        "passed": true,
+        "screenWidth": 1280,
+        "screenHeight": 720,
+        "locale": "es",
+        "safeArea": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1280.0,
+          "height": 720.0
+        },
+        "checks": [
+          "PASS initial binding selects exactly the requested value",
+          "PASS the full padded target selects Easy and emits one change",
+          "PASS clicking/submitting the selected option cannot clear it or duplicate a change",
+          "PASS focus can move without silently changing difficulty",
+          "PASS held pointer has a distinct press state",
+          "PASS right click cannot change a choice",
+          "PASS native keyboard submit selects a new value once",
+          "PASS unavailable options block pointer, submit and accessible activation",
+          "PASS arrow navigation skips an unavailable option",
+          "PASS Tab uses the same availability-aware order",
+          "PASS Down follows the wrapped row while leaving selection unchanged",
+          "PASS Up returns to the same column in the previous row",
+          "PASS binding existing data updates the whole group without issuing a user event",
+          "PASS disabled selection retains its marker and accessible selected/disabled state",
+          "PASS an inherited CanvasGroup also gates selection",
+          "PASS hidden choices cannot activate and are hidden from accessibility",
+          "PASS reopening keeps the choice without stale keyboard focus",
+          "PASS unknown stable IDs are rejected without losing the current selection",
+          "PASS body appearance cannot prescribe or change difficulty",
+          "PASS localization preserves stable values and emits no selection event",
+          "PASS single-choice group has exactly one selected option",
+          "PASS light is inside the safe area",
+          "PASS light retains a 48px captured target",
+          "PASS light fits inside its allocated group",
+          "PASS light communicates selection with art and a checkmark",
+          "PASS light exposes its localized native accessibility selection",
+          "PASS medium is inside the safe area",
+          "PASS medium retains a 48px captured target",
+          "PASS medium fits inside its allocated group",
+          "PASS medium communicates selection with art and a checkmark",
+          "PASS medium exposes its localized native accessibility selection",
+          "PASS hard is inside the safe area",
+          "PASS hard retains a 48px captured target",
+          "PASS hard fits inside its allocated group",
+          "PASS hard communicates selection with art and a checkmark",
+          "PASS hard exposes its localized native accessibility selection",
+          "PASS single-choice group has exactly one selected option",
+          "PASS skinny is inside the safe area",
+          "PASS skinny retains a 48px captured target",
+          "PASS skinny fits inside its allocated group",
+          "PASS skinny communicates selection with art and a checkmark",
+          "PASS skinny exposes its localized native accessibility selection",
+          "PASS medium is inside the safe area",
+          "PASS medium retains a 48px captured target",
+          "PASS medium fits inside its allocated group",
+          "PASS medium communicates selection with art and a checkmark",
+          "PASS medium exposes its localized native accessibility selection",
+          "PASS fat is inside the safe area",
+          "PASS fat retains a 48px captured target",
+          "PASS fat fits inside its allocated group",
+          "PASS fat communicates selection with art and a checkmark",
+          "PASS fat exposes its localized native accessibility selection",
+          "PASS muscular is inside the safe area",
+          "PASS muscular retains a 48px captured target",
+          "PASS muscular fits inside its allocated group",
+          "PASS muscular communicates selection with art and a checkmark",
+          "PASS muscular exposes its localized native accessibility selection",
+          "PASS Fixture title fits localized text without truncation",
+          "PASS Fixture instructions fits localized text without truncation",
+          "PASS Difficulty heading fits localized text without truncation",
+          "PASS Current battle phase fits localized text without truncation",
+          "PASS Selected difficulty fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized label fits localized text without truncation",
+          "PASS Appearance heading fits localized text without truncation",
+          "PASS Appearance explanation fits localized text without truncation",
+          "PASS Selected appearance fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized action label fits localized text without truncation",
+          "PASS Localized action label fits localized text without truncation",
+          "PASS difficulty can change during Exercise without restarting the example or changing its recorded work",
+          "PASS difficulty can change during Rest without restarting the example or changing its recorded work",
+          "PASS difficulty can change during Pause without restarting the example or changing its recorded work",
+          "PASS difficulty can change during Warmup without restarting the example or changing its recorded work",
+          "PASS wide choice controls place all four options in one row",
+          "PASS narrow choices wrap and request extra height for a long label",
+          "PASS wrapped labels retain their readable font and full text",
+          "PASS a cleared screen hierarchy safely detaches surviving options",
+          "PASS single-choice group has exactly one selected option",
+          "PASS light is inside the safe area",
+          "PASS light retains a 48px captured target",
+          "PASS light fits inside its allocated group",
+          "PASS light communicates selection with art and a checkmark",
+          "PASS light exposes its localized native accessibility selection",
+          "PASS medium is inside the safe area",
+          "PASS medium retains a 48px captured target",
+          "PASS medium fits inside its allocated group",
+          "PASS medium communicates selection with art and a checkmark",
+          "PASS medium exposes its localized native accessibility selection",
+          "PASS hard is inside the safe area",
+          "PASS hard retains a 48px captured target",
+          "PASS hard fits inside its allocated group",
+          "PASS hard communicates selection with art and a checkmark",
+          "PASS hard exposes its localized native accessibility selection",
+          "PASS single-choice group has exactly one selected option",
+          "PASS skinny is inside the safe area",
+          "PASS skinny retains a 48px captured target",
+          "PASS skinny fits inside its allocated group",
+          "PASS skinny communicates selection with art and a checkmark",
+          "PASS skinny exposes its localized native accessibility selection",
+          "PASS medium is inside the safe area",
+          "PASS medium retains a 48px captured target",
+          "PASS medium fits inside its allocated group",
+          "PASS medium communicates selection with art and a checkmark",
+          "PASS medium exposes its localized native accessibility selection",
+          "PASS fat is inside the safe area",
+          "PASS fat retains a 48px captured target",
+          "PASS fat fits inside its allocated group",
+          "PASS fat communicates selection with art and a checkmark",
+          "PASS fat exposes its localized native accessibility selection",
+          "PASS muscular is inside the safe area",
+          "PASS muscular retains a 48px captured target",
+          "PASS muscular fits inside its allocated group",
+          "PASS muscular communicates selection with art and a checkmark",
+          "PASS muscular exposes its localized native accessibility selection",
+          "PASS Fixture title fits localized text without truncation",
+          "PASS Fixture instructions fits localized text without truncation",
+          "PASS Difficulty heading fits localized text without truncation",
+          "PASS Current battle phase fits localized text without truncation",
+          "PASS Selected difficulty fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized label fits localized text without truncation",
+          "PASS Appearance heading fits localized text without truncation",
+          "PASS Appearance explanation fits localized text without truncation",
+          "PASS Selected appearance fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized choice label fits localized text without truncation",
+          "PASS Localized action label fits localized text without truncation",
+          "PASS Localized action label fits localized text without truncation",
+          "PASS focus and selected value are visually and behaviorally distinct"
+        ]
+      }
+    }
+  ],
+  "art_integrity": {
+    "eight_original_source_runtime_sha256_matches": true,
+    "max_character_canvas": [
+      256,
+      256
+    ],
+    "original_guild_background_matches": true,
+    "concepts_and_prompts_hashes_unchanged": true
+  },
+  "screens": [
+    {
+      "file": "artifacts/visual/Onboarding/window-en-854-female-fat.png",
+      "sha256": "850f21a157e90f36d03d25a6179b5b6419d63cf3a9966ca99405bc2cbe96d56b"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-en-854-keyboard.png",
+      "sha256": "b38bff7fc9894359f9b2a84e2a949dcbb283a2ae6ed7008b679fab39fe694038"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-en-854-origin.png",
+      "sha256": "d336c25f2995423c010c35952c3be370b8ca339c4fe656ab9d0855586d37601b"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-en-854.png",
+      "sha256": "69e7f0eb5dc3d73defccac077860af1cd3f89d4028fbeef8e4a85bc91a566947"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-countries.png",
+      "sha256": "d5217fd6442ff2eb6f6322b528600dcb664966562286fffb2ca53ba5f27a0eae"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-female-fat.png",
+      "sha256": "947aca0376edc7af3c9abc0319a8cc9055f3e05056340b4bc3cdccea25f4ef28"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-female-medium.png",
+      "sha256": "09a2380a8df63f9eb70f301623a10541c58785ef769fe53c6fe0b70c3d8bfede"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-female-muscular.png",
+      "sha256": "5fdffcf37499f15db023c51751fa7af47dc7c8a05e038938ebe4e452a9d4ea55"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-female-skinny.png",
+      "sha256": "769a16bac2ac5e04fb2f3de4fba2feb7928bd80fc48bc8c4c29a4abb775c0b24"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-keyboard.png",
+      "sha256": "04c75fe0333c8f943c988851c4e4a1c1a6a5492ffe74bc13727a2488a70546c3"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-male-fat.png",
+      "sha256": "6c0fa314a689d969f788fc3ff0e81393949ee1dd0a6ceaf5851b8bb931fb6587"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-male-medium.png",
+      "sha256": "54f363955c1e8e98f3957c8775b207fdd2e290eaac938f9c1be4ff42411e8554"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-male-muscular.png",
+      "sha256": "f616e577b208eb8f8e25dfb92ff03f5045154391027610cbc790c8ed1a3c73ca"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-male-skinny.png",
+      "sha256": "fa562bf474ffb37677275aab090e653efca4030a42cf1f40de335a9b3698cdcb"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-origin.png",
+      "sha256": "963346ad7909464a1b14065c0ff52f835658c167412fcc6cf35e74306b837d31"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280-privacy-pending.png",
+      "sha256": "586539dd3e9af93a83ffca91feaf1be17d0795a8b153fd29132687132fb54521"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1280.png",
+      "sha256": "c27c20b378522c3bab40e12ef5c289a5a0106f6b0e5812fdcd89fc98a4bb88b0"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1600-female-muscular.png",
+      "sha256": "1d3bae5f22de7f7f07d7866bf3fba280b77dd31ba2bbba9a9adcad498705a297"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1600-origin.png",
+      "sha256": "f7529311ccd52cae3f04b062d03388be41550fec8cdf90957bb51cca595e1004"
+    },
+    {
+      "file": "artifacts/visual/Onboarding/window-es-1600.png",
+      "sha256": "c65bfc2dd0563dbeba0136ca9a17558a159075b40674eabaa6683e7242eddb70"
+    }
+  ],
+  "limitations": [
+    "No live enrollment, consent receipts, guardian policy or profile persistence.",
+    "Appearance remains a memory-only draft; no Home or fitness prescription integration.",
+    "Keyboard interaction verified on Linux; mobile occlusion simulated, Android/iOS IMEs require device testing."
+  ]
+}

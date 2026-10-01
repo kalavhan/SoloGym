@@ -39,7 +39,9 @@ namespace SoloGym.UI
             var f = w.Account;
             Check(service != null, "Explicit fixture service"); if (service == null) yield break;
             Check(w.Page == "login", "Normal startup remains login");
-            Check(Click(w.CreateAccount), "Native login entry opens registration"); yield return new WaitForEndOfFrame(); yield return null;
+            Check(Click(w.CreateAccount), "Native login entry opens preparation"); yield return new WaitForEndOfFrame(); yield return null;
+            Check(w.Page == "onboarding", "Registration entry starts private age/country draft");
+            w.OpenAccount(); yield return new WaitForEndOfFrame(); yield return null;
             Check(w.Page == "account" && f.gameObject.activeInHierarchy, "Complete account form replaces login panel contents");
             Check(f.Email.Input.text == "" && f.Password.Input.text == "" && f.Confirmation.Input.text == "", "No seeded credentials");
             Check(Click(f.Submit), "Native account action is reachable"); yield return null;
@@ -137,7 +139,7 @@ namespace SoloGym.UI
             yield return Shot(w, "created-fixture"); TextFits(f, "receipt");
             Click(f.SignIn); yield return new WaitForEndOfFrame(); yield return null;
             Check(w.Page == "login" && w.Email.Input.text == "hero+review@example.com" && w.Password.Input.text == "", "Sign-in return transfers only email");
-            Click(w.CreateAccount); yield return new WaitForEndOfFrame(); yield return null;
+            w.OpenAccount(); yield return new WaitForEndOfFrame(); yield return null;
             Fill(f); f.Confirmation.Input.Select(); w.ReviewKeyboard(Screen.height * .45f); yield return null; yield return null;
             Check(f.Scroll.viewport.rect.height < 472, "Keyboard reduces scroll region");
             var corners = new Vector3[4]; ((RectTransform)f.Confirmation.Input.transform).GetWorldCorners(corners);

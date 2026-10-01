@@ -2,9 +2,9 @@
   "id": "fantasy-onboarding-r1",
   "date": "2026-10-01",
   "base_commit": "c5ae581c62d94923fc572d9632e734a2080fe3b3",
-  "status": "two_concepts_pending_visual_review",
+  "status": "approved_and_implemented",
   "scope": "Age/country and fixed Barbarian selection together in one PR, as requested.",
-  "runtime_implemented": false,
+  "runtime_implemented": true,
   "provider": "built-in imagegen, not CLI",
   "pixellab_generations_added": 0,
   "new_character_assets_generated": false,
@@ -134,5 +134,10 @@
     "Age 21/Mexico are illustrative draft values only; real form starts empty.",
     "Four male variants shown; female selection uses the other four approved originals.",
     "Concept character pixels and background softness are illustrative, not production replacements. Native renderer must use original point-filtered source assets unchanged."
-  ]
+  ],
+  "approval": {
+    "date": "2026-10-01",
+    "user_quote": "great, love it, build it",
+    "scope": "Both proposed screens together, using the eight existing PixelLab Barbarians."
+  }
 }

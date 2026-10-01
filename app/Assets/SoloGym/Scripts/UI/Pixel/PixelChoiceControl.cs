@@ -24,6 +24,13 @@ namespace SoloGym.UI
         AccessibilityHierarchy hierarchy;
         AccessibilityNode container;
         const float MinimumOptionWidth = 180, Gap = 12;
+        float minimumWidth = MinimumOptionWidth, fixedHeight;
+        public void UseSpriteCards()
+        {
+            minimumWidth = 112; fixedHeight = 208; layout.minWidth = minimumWidth;
+            foreach (var option in options) option.UseSpriteCard();
+            RefreshLayout();
+        }
 
         public static PixelChoiceControl Create(Transform parent, string[] ids, string[] labels, string initialValue)
         {
@@ -99,18 +106,18 @@ namespace SoloGym.UI
         public void RefreshLayout()
         {
             if (options.Count == 0 || layout == null) return;
-            float width = Mathf.Max(MinimumOptionWidth, ((RectTransform)transform).rect.width);
-            Columns = Mathf.Clamp(Mathf.FloorToInt((width + Gap) / (MinimumOptionWidth + Gap)), 1, options.Count);
+            float width = Mathf.Max(minimumWidth, ((RectTransform)transform).rect.width);
+            Columns = Mathf.Clamp(Mathf.FloorToInt((width + Gap) / (minimumWidth + Gap)), 1, options.Count);
             float cell = (width - Gap * (Columns - 1)) / Columns, y = 0;
             for (int start = 0; start < options.Count; start += Columns)
             {
-                float rowHeight = 64;
+                float rowHeight = Mathf.Max(64, fixedHeight);
                 for (int i = start; i < Mathf.Min(options.Count, start + Columns); ++i)
                 {
                     var rect = (RectTransform)options[i].transform;
                     rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0, 1);
                     rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, cell);
-                    rowHeight = Mathf.Max(rowHeight, PixelPrimaryButton.MeasureWrappedLabel(options[i].Label).y + 24);
+                    if (fixedHeight == 0) rowHeight = Mathf.Max(rowHeight, PixelPrimaryButton.MeasureWrappedLabel(options[i].Label).y + 24);
                 }
                 for (int i = start; i < Mathf.Min(options.Count, start + Columns); ++i)
                 {
