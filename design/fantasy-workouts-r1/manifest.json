@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "status": "awaiting-user-visual-review",
+  "window": "Workouts / Rutinas",
+  "delivery": "One full window PR after render review, implementation and functional/visual verification",
+  "sourceInstruction": "perfect. PR merged. now let's go with the next and let's do it like this, a full window after a render and then we make sure it works, for bg use first pixel lab, just as we did here.",
+  "background": {
+    "provider": "PixelLab MCP",
+    "file": "assets/sprites/pixellab/workouts-room-r1/native/room.png",
+    "size": [
+      640,
+      360
+    ],
+    "sha256": "3a147e88c6455f4a83f784d8f18559c8f996cfbbf781881b07d9300b0843111c",
+    "quotedGenerations": 40,
+    "jobId": "81bea74b-81dc-4f20-b91a-9ff05f064a5d"
+  },
+  "render": {
+    "provider": "built-in image_gen",
+    "file": "workouts-concept.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "747a622e99fe7ee946089dd4fa550f33c29a77c05b02f8d881761db05aad265c",
+    "prompt": "screen-prompt.txt",
+    "promptSha256": "b18b1176c1612f25aaa192f918b12f8c9b5bef1a2f99cf77260b4ccf69c96676",
+    "references": [
+      {
+        "file": "assets/sprites/pixellab/workouts-room-r1/native/room.png",
+        "sha256": "3a147e88c6455f4a83f784d8f18559c8f996cfbbf781881b07d9300b0843111c"
+      },
+      {
+        "file": "artifacts/visual/TrainingHall/home-es-1280.png",
+        "sha256": "e847eebaeeede2b132c15b5bed6eebb5ef331ab32a2fa172a86a8ad2232ca50a"
+      }
+    ]
+  },
+  "visualReview": {
+    "inspected": true,
+    "findings": [
+      "Landscape frontal room with the accepted Home palette and HUD.",
+      "Single readable two-page journal with week/history navigation; no stack of disconnected dialogs.",
+      "Current, completed and missed example entries are distinguishable by text/symbols.",
+      "Selected routine preview has edit and prepare actions plus a complete-routine entry.",
+      "Difficulty is described as adjustable during the session; no fixed selector here.",
+      "Default navigation has Home, Workouts and Dungeon; no fasting entry."
+    ],
+    "caveat": "The built-in render is an illustrated composition reference, not a pixel-exact overlay or a functional Unity capture. Runtime must use the preserved native PixelLab background and separate journal/control layers."
+  },
+  "runtimeCodeChanged": false,
+  "implementationApproved": false,
+  "uiData": "Illustrative history; routine preview values taken from existing adult_gym_intermediate:25:ready:0 fixture, not a new personal training prescription.",
+  "preservedMainIntegration": {
+    "mainAtStart": "32ddc8d8f559d87054bfc15376ca524482e8e380",
+    "mergedHomeOnDependencyBranch": "9c20c1a147236981dae2fb0889c3ae5347016df4",
+    "workingBranch": "codex/fantasy-workouts-window",
+    "note": "PR #28 merged into its dependency branch after #27 reached main. This branch merges both histories; the eventual window PR will target main."
+  }
+}

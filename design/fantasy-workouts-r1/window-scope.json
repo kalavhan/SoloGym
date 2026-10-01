@@ -1,0 +1,37 @@
+{
+  "window": "workouts",
+  "reviewFirst": true,
+  "screensInThisWindow": [
+    "weekly workout overview",
+    "completed/missed history",
+    "selected full routine",
+    "edit routine draft and save/cancel",
+    "empty/loading/error states"
+  ],
+  "implementationRequirements": [
+    "Use existing PixelLab Home palette, shared pixel controls and safe-area landscape foundation.",
+    "Keep background, journal art and text/controls separate.",
+    "Bind week and history to one explicit local data model; fixture history must be labelled and kept separate from real records.",
+    "Routine edits preserve IDs and completed logs; invalid changes must not corrupt the saved plan.",
+    "Prepare session routes through readiness; no exercise or reward begins on this window.",
+    "Difficulty remains adjustable during the subsequent boss session, with recorded work preserved.",
+    "No punitive missed-workout debt, reward farming or appearance-driven prescription.",
+    "English and Spanish, persistent local draft/state, and return navigation to Home."
+  ],
+  "verificationPlan": [
+    "Compare complete Unity window with the reviewed render, including smaller landscape and safe insets.",
+    "Week navigation, history filters and selection stay coherent.",
+    "Valid edits save; cancel and invalid edits preserve the last accepted routine.",
+    "Persistence roundtrip; incompatible/corrupt data has a recoverable state.",
+    "Prepare action preserves readiness, illness/recovery and teen supervision gates.",
+    "Native keyboard/pointer focus and modal gating, text fitting, and honest empty/loading/error states."
+  ],
+  "outOfScope": [
+    "new character or exercise animation generation",
+    "production workout cloud service",
+    "new fitness/reward formula",
+    "boss-battle window implementation",
+    "fasting tracker implementation",
+    "subscription entitlements"
+  ]
+}

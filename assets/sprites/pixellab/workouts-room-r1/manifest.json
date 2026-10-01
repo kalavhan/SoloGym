@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "provider": "PixelLab MCP create_image_pro",
+  "jobId": "81bea74b-81dc-4f20-b91a-9ff05f064a5d",
+  "galleryAssetId": "7e7d5407-3595-5aa7-8502-3dcca361d48d",
+  "source": "native/room.png",
+  "size": [
+    640,
+    360
+  ],
+  "sha256": "3a147e88c6455f4a83f784d8f18559c8f996cfbbf781881b07d9300b0843111c",
+  "quotedGenerations": 40,
+  "productionRecords": "design/fantasy-workouts-r1/production/",
+  "status": "background-for-screen-concept-review",
+  "runtimeIntegrated": false,
+  "separateLayers": "Architecture only. Journal, labels, buttons, icons, navigation and any movable decoration must remain separate in the final Unity window.",
+  "reference": "assets/sprites/pixellab/training-hall-r1/native/room-0.png"
+}

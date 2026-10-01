@@ -1,6 +1,18 @@
 # Fantasy pixel UI: reusable components and delivery plan
 
-This is the implementation approach for the [confirmed product direction](../product/fantasy-mvp-direction.md), first recorded 2026-09-29. The user requested complete visual references before implementation. Their latest direction on 2026-09-30 is **eight independent sprites per PR/MR**, replacing the earlier four-sprite batches to reduce review overhead. Other reusable UI components retain component-sized PRs.
+This is the implementation approach for the [confirmed product direction](../product/fantasy-mvp-direction.md). The latest user instruction (2026-09-30, after the Home PR) is **one complete window per PR**, starting with a complete render and then verifying the implementation. It supersedes the earlier component-only and eight-sprite PR cadence.
+
+## Window delivery workflow
+
+1. Read the window's actual product states and preserve existing safety/domain behavior.
+2. Generate its background with **PixelLab first**, referencing accepted native art. Preserve originals, prompts, source hashes and available cost quotes.
+3. Render the complete landscape window using that actual background and the established Home palette/components. Review the assembled result before committing to a different visual direction.
+4. Implement the whole reviewed window in Unity: independent background, props and character; reusable sprite-skinned native controls; live localized text, state and navigation. A concept image is not a runtime screen.
+5. Verify the window's real interactions and meaningful failure states, compare native player captures at different landscape sizes, then open **one PR for the complete window**. Focused components remain useful internally; they no longer require their own delivery PR.
+
+The next window is **Rutinas / Workouts**. The render pack is `design/fantasy-workouts-r1/`. It proposes a guild training journal: weekly context and current/completed/missed entries on the left, selected routine and review/edit/preparation actions on the right, with the same live HUD/navigation language as Home. Empty/loading/error states, routine edits, history persistence and readiness routing belong to its implementation scope, not separate visual component PRs. Difficulty remains adjustable in the boss session; this screen must not lock it or start exercise before readiness review. Missed sessions never create punitive catch-up debt.
+
+The new render remains a proposal until reviewed. Existing `TrainingScreen` and `TrainingController` use local fixtures; showing sample history in a render does not establish a live workout-history service.
 
 ## Current Home priority
 
@@ -31,7 +43,7 @@ app/Builds/TrainingHall/SoloGymTrainingHall.x86_64 \
 
 Use `-sologym-character female-fat` (or another catalog ID) to inspect an appearance. Add `-sologym-smoke -sologym-capture "$PWD/artifacts/visual/TrainingHall/home.png"` for the focused Unity checks and an actual player capture; the player exits after capture. `-sologym-safe-inset 24` tests safe-area fitting. Run `python3 tools/check_training_hall_assets.py` for source/alpha/canvas/room-decomposition checks (Pillow required).
 
-The earlier [alignment editor](pixel-home-alignment-editor.md) remains in PR #27. The training-hall PR stacks on that branch because it reuses its atomic placement validation. Earlier room/furniture assets remain preserved. Next migrate the workout area within the established landscape visual language; do not add more Home props or character animation as a prerequisite.
+The [alignment editor](pixel-home-alignment-editor.md) was merged in PR #27. Home PR #28 was subsequently merged into its dependency branch after #27 reached main. The next-window branch carries that accepted Home merge together with current main history, so its eventual PR also brings the approved Home into main. Earlier room/furniture assets remain preserved. Next migrate the workout area within the established landscape visual language; do not add more Home props or character animation as a prerequisite.
 
 ## Screen references before component production
 
@@ -77,31 +89,30 @@ Home is a personal space containing the selected character. Build it as a stable
 | Layer | Independent content |
 | --- | --- |
 | Room shell | Floor, walls, window/arch and stable architectural trim |
-| Training props | Ring, bench, punching bag and weight rack as separate objects |
+| Training props | Pull-up station with gymnastic rings, bench, weight rack and step box as separate objects |
 | Home props | Chest, rug, lights, shelves and collectible decorations |
 | Character | Selected full-body appearance with stable feet anchor and independent shadow if needed |
 | Seasonal treatment | Snow caps, garland, lights and themed overlays or paired variants of the same object |
 | Interface | HUD, navigation and dialogs, separate from all scene artwork |
 
-Each placeable item should declare an ID, placement anchor, footprint, draw-order rule, supported location and variant ID. Its winter treatment must retain the same object identity, scale, pivot and intended footprint: add snow to the existing ring, rather than generate an unrelated snow-themed ring in a newly composed room. A seasonal overlay must respect rope/post geometry and the item's silhouette. Inventory and placement save stable IDs/positions; decorations are not hardcoded into Home screenshots.
+Each placeable item should declare an ID, placement anchor, footprint, draw-order rule, supported location and variant ID. Its winter treatment must retain the same object identity, scale, pivot and intended footprint: add seasonal detail to the existing apparatus, rather than generate an unrelated replacement in a newly composed room. A seasonal overlay must respect the item's geometry and silhouette. Inventory and placement save stable IDs/positions; decorations are not hardcoded into Home screenshots.
 
-**Implementation recommendation:** begin with a small set of placement slots and a few props, then expand after the first room works. Free placement, collision rules, large inventories and theme catalogs are later scope decisions. Review each object independently while delivering eight sprites together per MR.
+**Implementation recommendation:** begin with a small set of placement slots and a few props, then expand after the first room works. Free placement, collision rules, large inventories and theme catalogs are later scope decisions. Review each object independently while delivering it with the complete window that uses it.
 
 ## Character source contract
 
-The [static character viewport](pixel-character-viewport.md) imports the eight exact user-created sources under `assets/sprites/autosprite/barbarian-user-r1/` and preserves their original manifest and hashes. Its separate `barbarian-viewport-r1` derivatives use AutoSprite background removal only. The component fixture demonstrates transparency, shared framing and stable feet placement; final art/screen approval remains separate.
+The active roster is the eight approved frontal PixelLab Barbarians in `assets/sprites/pixellab/barbarian-256-r1/`, each with a complete source canvas no larger than 256×256. Home uses those exact sprite bytes. The user-created directional sets are preserved in `barbarian-directions-r1/` with provider metadata for later review. Earlier [static character viewport](pixel-character-viewport.md) AutoSprite sources and transparent derivatives remain historical evidence; they are not the active Home roster.
 
 The first character viewport supports full static appearances and fixed source colors. It does not include hair/skin/eye controls, garment fitting, breathing, rigging or per-item animation. Maintain clear differences in body and facial fullness, and preserve the user's authored clothing. Do not make every build occupy the same width through stretching. Future palette regions and selected-character exercise animations have separate authoring/review scope. Read a provider's atlas JSON before implementing any future sprite animation.
 
 ## Delivery batches
 
-Room-art MRs contain **eight separate sprite assets** using the shared room-object
-component. Keep each object's source, prompt, export, identity and placement data
-separate within the batch. Other reusable UI components remain component-sized.
+Deliver one complete reviewed window per PR. Keep each asset's source, prompt,
+export, identity and placement data separate inside the window batch.
 
-The **primary pixel button** was merged in PR #12. The [framed content panel](pixel-content-panel.md) was merged in PR #13. The [labeled form field](pixel-form-field.md) was merged in PR #14. The [secondary and text actions](pixel-secondary-action.md) were merged in PR #15. The [icon buttons](pixel-icon-button.md) were merged in PR #16. The [single-choice control](pixel-choice-control.md) was merged in PR #17, including the requirement that difficulty remains editable during a boss routine. The [static character viewport](pixel-character-viewport.md) was merged in PR #18 with all eight user-created Barbarians. The [navigation tabs](pixel-navigation-tabs.md) were merged in PR #19, with caller-confirmed current state and optional adult-only fasting visibility. Further components remain reviewable individually, but their visual fixture now belongs inside the approved Home composition.
+The **primary pixel button** was merged in PR #12. The [framed content panel](pixel-content-panel.md) was merged in PR #13. The [labeled form field](pixel-form-field.md) was merged in PR #14. The [secondary and text actions](pixel-secondary-action.md) were merged in PR #15. The [icon buttons](pixel-icon-button.md) were merged in PR #16. The [single-choice control](pixel-choice-control.md) was merged in PR #17, including the requirement that difficulty remains editable during a boss routine. The [static character viewport](pixel-character-viewport.md) was merged in PR #18 with all eight user-created Barbarians. The [navigation tabs](pixel-navigation-tabs.md) were merged in PR #19, with caller-confirmed current state and optional adult-only fasting visibility. Further components are implemented and reviewed inside their complete window.
 
-Each component PR or eight-sprite room batch includes:
+Each window PR includes:
 
 1. Its isolated artwork and provenance, reusable component/prefab, required state behavior and narrowly necessary support code.
 2. A small integration fixture showing it at its intended size and alongside an already accepted component where available.
@@ -113,9 +124,8 @@ Approval of a reference does not certify an implementation. Review the component
 
 ## Ordered component backlog
 
-Each numbered row identifies a reusable component. Bundle room sprites eight per
-PR as requested. Large domain features such as authentication, routine storage
-or entitlement services remain separate tasks.
+Each numbered row identifies a reusable component to include in its consuming
+window when needed. Large domain services and entitlements require explicit scope.
 
 | Order | Component | Acceptance focus / first consumer |
 | --- | --- | --- |
@@ -144,7 +154,7 @@ or entitlement services remain separate tasks.
 | 16 | Confirmation dialog | Clear action/cancel, unsaved changes and focus handling; routine edit/exit |
 | 17 | History entry row | Dates, neutral summaries and correction action; workouts, then adapted fasting history |
 | 18 | Empty/error/loading notice | Honest unavailable/offline states and retry, shared across completed screens |
-| 19 onward | Room props and seasonal overlays | Eight independent sprites per MR using the shared room-object contract |
+| 19 onward | Room props and seasonal overlays | Independent sprites delivered inside the complete window using the shared room-object contract |
 
 Integrate accepted components into the seven reference screens in small vertical steps. Preserve existing auth and training gates during migration. A workout timer and a fasting timer can share presentation without sharing eligibility, rewards or domain rules. Under-18 navigation must omit the fasting destination rather than merely gray out an entry.
 

@@ -38,7 +38,7 @@ The separately prepared local render pack, `design/fantasy-mvp-r1/`, is not incl
 | Rankings | Separate MOBA standings, weekly running-distance standings and routine-consistency standings | Eligibility, privacy, seasons, corrections, fraud handling and provider permission |
 | Activity themes | Later thematic bonuses, such as swimming for an Atlantis-themed warrior | Supported activity evidence and balanced bonus design |
 | Social | Moderated chat and an intergalactic gym as a shared meeting place | Moderation operations, reporting/blocking, teen controls and live-presence infrastructure |
-| Personal space | Earn/acquire objects, arrange the home gym and apply themes | Inventory, placement rules, sync and economy; the same ring must remain recognizable in its winter version |
+| Personal space | Earn/acquire objects, arrange the home gym and apply themes | Inventory, placement rules, sync and economy; the same apparatus and furniture must remain recognizable in their seasonal variants |
 
 **Recommendation, not an approved formula:** cap and balance fitness-derived speed/strength, protect planned rest and illness, and offer meaningful matches for newcomers and people with different abilities. Unlimited kilometers or extra sets should not create unlimited competitive advantage. Paid classes should offer balanced alternatives rather than a direct power purchase. The user has confirmed the activity-to-stat direction, not its numeric balance.
 
@@ -75,11 +75,11 @@ Strava is a candidate, not a selected unrestricted backend. Its policy limits di
 
 ## Existing implementation and asset status
 
-The app is Unity 6000.3.24f1 with uGUI 2.0.0. Reuse auth boundaries, localization, onboarding state, data validation and training rules. The existing Firebase adapter implements identity sign-in; account creation/recovery and trusted profile persistence are incomplete. Existing Home uses fictional data. A training review UI exists in separate local work; it selects fictional fixtures and stores an accepted fixture key locally. That flow is not included in this component PR and must not be assumed to exist on main or to provide a live personal training service. The existing application screens remain portrait; the first component adds an isolated landscape review fixture. No completed product-screen migration is claimed here.
+The app is Unity 6000.3.24f1 with uGUI 2.0.0. Reuse auth boundaries, localization, onboarding state, data validation and training rules. The existing Firebase adapter implements identity sign-in; account creation/recovery and trusted profile persistence are incomplete. Existing Home uses fictional data. A training review UI exists in separate local work; it selects fictional fixtures and stores an accepted fixture key locally. That flow is not included in this component PR and must not be assumed to exist on main or to provide a live personal training service. Home has now been migrated to the approved landscape PixelLab training hall with live uGUI controls. Other legacy screens still use their earlier presentation. The next window is Workouts/Rutinas; its complete render precedes implementation.
 
 Component 07 imports the user's eight AutoSprite sources at `assets/sprites/autosprite/barbarian-user-r1/`, including their preserved source manifest with exact bytes, IDs and hashes. They are 1366×1366 opaque RGB exports; retain these originals. The component-07 review fixture adds separately recorded AutoSprite transparent derivatives and a shared scale/feet anchor. It preserves every RGB pixel and does not regenerate characters. Pixel-grid production decisions, final display approval and integration with a saved profile/Home remain separate work.
 
-Repository Markdown is the source of truth and can be opened in Obsidian. No separate vault or external documentation workspace is needed. See the [component plan](../design/fantasy-pixel-component-plan.md) for one-component-per-PR delivery.
+Repository Markdown is the source of truth and can be opened in Obsidian. No separate vault or external documentation workspace is needed. See the [window delivery plan](../design/fantasy-pixel-component-plan.md): PixelLab background first, complete screen render, then implement and verify one full window per PR (latest user direction, 2026-09-30).
 
 ## Decisions still open
 

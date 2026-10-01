@@ -1,22 +1,31 @@
 # SoloGym: active direction
 
 The user's 2026-09-29 fantasy pivot supersedes the manhua/boxing UI, modular
-clothing pipeline and per-window delivery workflow. Current requirements are in
+clothing pipeline. Current requirements are in
 `docs/product/fantasy-mvp-direction.md`; component work follows
 `docs/design/fantasy-pixel-component-plan.md`.
 
 ## Scope
 
 - Landscape-only pixel-art fantasy fitness app in the existing Unity project.
-  Render targets first. Batch eight independent room sprites per PR/MR
-  (user direction, 2026-09-30), reusing the room-object component. Other reusable
-  UI components retain component-sized PRs with art, interaction states,
-  integration fixtures and focused verification.
+  Latest delivery workflow (2026-09-30): ONE COMPLETE WINDOW per PR/MR, after
+  its full-screen render. Produce the background with PixelLab first, then
+  render the complete window against it, implement the reviewed design with
+  separate assets/live controls, and verify the working assembled window.
+  This supersedes component-only PRs and four/eight-sprite delivery batches.
+  Reuse existing components within the window; do not generate new artwork
+  for controls that already match the accepted style.
+- Next window: Workouts/Rutinas, with current/completed/missed sessions,
+  routine review/editing, and a readiness entry before training. The proposed
+  visual is a fantasy guild training journal. Its reference pack is
+  `design/fantasy-workouts-r1/`; the render is pending user review, not an
+  approved implementation or proof of connected live workout data.
 - The current approved Home is the straight-on fantasy training hall in
   `design/fantasy-home-training-hall-r1/`. The user approved it with "love this,
   do it." It supersedes the boxing/bedroom and rejected isometric/orthographic
   experiments. Deliver room, props and live Home UI together in this integration.
-- PixelLab MCP is authorized for the current Home room/props. The eight static
+- PixelLab MCP is the first choice for new window backgrounds, and is authorized
+  for the scoped Home/Workouts artwork. The eight static
   PixelLab Barbarians are approved in `design/pixellab-barbarian-eight-256-r1/`.
   Keep every character's TOTAL source canvas at most 256x256, including margins.
   Use the original Downloads references, not AutoSprite recolorings. Do not
