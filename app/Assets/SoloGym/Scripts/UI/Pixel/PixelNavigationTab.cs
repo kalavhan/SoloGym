@@ -43,6 +43,8 @@ namespace SoloGym.UI
             tab.Label.alignment = TextAnchor.MiddleCenter; tab.Label.supportRichText = false; tab.Label.raycastTarget = false;
             tab.onClick.AddListener(() => tab.TryNavigate()); tab.SetLabel(label); return tab;
         }
+        bool compactLabel;
+        public void SetCompactLabel(bool value) { compactLabel = value; RefreshVisual(); }
         public bool TryNavigate() => IsActive() && IsInteractable() && owner.Request(this);
         public override void OnSubmit(BaseEventData eventData) => TryNavigate();
         public override void OnMove(AxisEventData eventData)
@@ -63,9 +65,10 @@ namespace SoloGym.UI
             Background.sprite = IsCurrent ? currentSkin : normalSkin;
             Background.color = disabled ? new Color32(110, 116, 118, 255) : pressed ? new Color32(166, 168, 160, 255) : Color.white;
             Label.color = disabled ? new Color32(151, 153, 151, 255) : new Color32(255, 240, 202, 255);
-            CurrentMarker.enabled = IsCurrent; CurrentMarker.color = Label.color;
+            Background.enabled = !compactLabel || IsCurrent || focused || pressed;
+            CurrentMarker.enabled = IsCurrent && !compactLabel; CurrentMarker.color = Label.color;
             CurrentMarker.rectTransform.anchoredPosition = new Vector2(30, pressed ? -2 : 0);
-            Stretch(Label.rectTransform, new Vector2(46, pressed ? 10 : 12), new Vector2(-12, pressed ? -14 : -12));
+            Stretch(Label.rectTransform, new Vector2(compactLabel ? 10 : 46, pressed ? 10 : 12), new Vector2(-12, pressed ? -14 : -12));
             focus.enabled = focused && !pressed; SyncAccessibility();
         }
         internal void BindAccessibility(AccessibilityHierarchy ownerHierarchy, AccessibilityNode parent)

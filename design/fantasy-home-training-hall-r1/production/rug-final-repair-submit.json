@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 68d67a81-39c3-4687-a3f9-4a5e4aeea1d8\njob_id: 68d67a81-39c3-4687-a3f9-4a5e4aeea1d8\nmode: text\nframes: 1\nsize: 384x112px\ntransparent: True\nedit: Keep this rug outer silhouette, flat floor perspective and transparent exterior unchanged. Its center must remain fully OPAQUE. Change the bright scarlet fabric to muted DARK BURGUNDY / wine-red woven wool, matte subtle pixel texture with no noisy speckles. Restore one thin restrained gold woven border running around ALL FOUR inner edges, following the exact trapezoidal floor perspective. This is a cozy exercise rug on the floor of a medieval gym, not a neon red frame or platform. No holes in the center, no scene, no extra objects, no character, no UI.\nseed: 9303421\nasset_id: a5f556ce-5938-56ee-be47-6135ecf34a9d\nasset_status: pending (saved when generation completes)\ncost: ~40 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"68d67a81-39c3-4687-a3f9-4a5e4aeea1d8\")"
+      }
+    ],
+    "isError": false
+  }
+}

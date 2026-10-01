@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: aa92570a-22f9-4962-9202-34604b02b9c3\njob_id: aa92570a-22f9-4962-9202-34604b02b9c3\nsize: 384x112px\nmask: custom mask\nfill: Fill the entire masked INTERIOR of this exercise rug with SOLID OPAQUE CRIMSON RED woven wool fabric, subtle dark red pixel texture. This is a real filled rug, not an empty outlined frame. The red fabric must be fully opaque, alpha 255, throughout its center. Keep the existing gold border and exact floor perspective, outer silhouette, all pixels outside the mask unchanged. No symbols, floor tiles, holes, UI, shadows or character. The exterior surrounding the rug remains transparent.\ntransparent: True \u2014 auto (input has transparency)\nseed: 9303410\nasset_id: d8ea3f18-5e28-527b-b1d9-130a9cc1622a\nasset_status: pending (saved when generation completes)\ncost: ~40 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"aa92570a-22f9-4962-9202-34604b02b9c3\")"
+      }
+    ],
+    "isError": false
+  }
+}

@@ -1,0 +1,26 @@
+Use case: compositing / ui-mockup.
+Create ONE polished, realistic-to-implement landscape 16:9 Home screen reference for SoloGym, a native pixel-art fantasy fitness game. Output target 1920x1080, presenting a crisp 640x360 logical pixel-art composition enlarged without painterly smoothing.
+
+INPUT ROLES:
+Image 1 is the EXISTING PIXELLAB ROOM and the authoritative edit target. Preserve its room geometry, framing, pixel texture, cool stone colors, oak beams, flat back wall and right-of-center arched castle window. Do not redesign, widen or zoom the room.
+Image 2 is the APPROVED PIXELLAB MALE MEDIUM character to place in the room. Preserve his exact medium soft build/small belly, face, curly hair, skin complexion, outfit, bare legs, front pose and pixel-art style. No added muscles, no long pants. This is an existing 256x256 sprite; use it as the full-body selected avatar, not a freshly redesigned hero.
+Image 3 is the EXISTING separate PIXELLAB BED. Reuse its recognizable silhouette, red blanket, cream pillow and oak frame on the right.
+
+CAMERA — HIGHEST PRIORITY:
+We look STRAIGHT INTO THE ROOM facing a flat back wall, with the modest one-point floor depth already visible in image 1. Back-wall horizontal courses stay horizontal, verticals stay vertical, and the wall/floor junction remains at the same position (~75% down). Not isometric, not an overhead dollhouse, not a rotated corner room. Do not add a second expansive side wall or huge foreground floor. Every added prop must fit THIS eye level, floor convergence and modest visible top surfaces. Bed and ring are placed plausibly against this camera, never separate floating isometric icons.
+
+COMPOSITION in the original 640x360 room coordinates (these describe the concept, do not draw guides):
+Keep the room architecture as the foundation. Selected male medium stands prominently around x=315 with feet near y=308 and visible height ~185px, on a small crimson rug. Leave clear air around his silhouette. His scale feels like a person inhabiting a cozy room.
+On the left, a compact rectangular fantasy wooden training ring with red mat and FOUR complete corner posts, complete rope connections, coherent shallow perspective, front rail horizontal, occupies roughly x=75..238, y=209..299. No floating posts. A separate hanging red punching bag attached by a complete chain to a ceiling beam at the far left, beside rather than above the ring.
+Small oak weight rack at lower-left with only TWO clearly separated complete dumbbells, and one low simple training bench. Avoid clutter or merged handles.
+Use the supplied bed on the right, feet grounded on the same floor. A small oak storage chest near the bed, one narrow wall shelf with a few books, a restrained wall banner, a warm lamp and one plant may give the room personality. Every prop has a complete readable silhouette and follows the same camera. No piles of weapons, no random equipment. Keep the existing window/castle readable.
+Match the room's actual crisp pixel density; practical game sprites, not highly detailed painted art or a fantastical render we cannot recreate. Warm amber lamps accent existing cool masonry, but do not repaint or change the room.
+
+LIVE-UI VISUAL TARGET:
+Sparse game HUD, framed dark teal/charcoal surfaces with a restrained aged-gold pixel border, readable cream pixel lettering. Art, icons, controls and text must look like separable game elements. No website cards/grid, browser chrome, phone frame, floating dialog collage, glassmorphism or modern web dashboard.
+Small top-left title plaque: "MI REFUGIO". Small top-right profile plaque with portrait of the SAME character: "Aventurero", "Bárbaro", and an independent gear icon. Do not invent currencies, fitness stats or progress values.
+Compact lower-right routine panel, without obscuring the hero: "RUTINA DE HOY", "Cuerpo completo · 25 min" and a teal main button labeled "ENTRENAR". This routine is representative concept copy only.
+A slim bottom-center navigation dock reads "Hogar", "Rutinas", "Mazmorra", "Ayuno" with simple legible pixel icons; Hogar selected. This depicts the optional enabled-adult fasting state. Small bottom-left "Decorar" action.
+Keep labels legible at landscape-phone size and leave room as the focus. One complete screen only, no variations, inset screenshots, sprite sheets, grid lines, callouts, swatches, watermark or annotations.
+
+Invariants: actual PixelLab room and avatar are the source of truth. STRAIGHT-ON ROOM VIEW. Preserve the current window, wall courses and floor horizon. Add a restrained, coherent game composition achievable with independent static sprites and native UI.

@@ -1,0 +1,42 @@
+{
+  "id": "home.exercise-rug",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "exercise-rug.anchor"
+  ],
+  "drawOrder": -30,
+  "sourceSize": {
+    "x": 384,
+    "y": 112
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.851063829787234,
+  "footprint": [
+    {
+      "x": 9,
+      "y": 100
+    },
+    {
+      "x": 375,
+      "y": 100
+    },
+    {
+      "x": 375,
+      "y": 103
+    },
+    {
+      "x": 9,
+      "y": 103
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/exercise-rug"
+    }
+  ]
+}

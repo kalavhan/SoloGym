@@ -1,0 +1,42 @@
+{
+  "id": "home.bench",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "bench.anchor"
+  ],
+  "drawOrder": 20,
+  "sourceSize": {
+    "x": 192,
+    "y": 128
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.8260869565217391,
+  "footprint": [
+    {
+      "x": 27,
+      "y": 107
+    },
+    {
+      "x": 167,
+      "y": 107
+    },
+    {
+      "x": 167,
+      "y": 110
+    },
+    {
+      "x": 27,
+      "y": 110
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/bench"
+    }
+  ]
+}

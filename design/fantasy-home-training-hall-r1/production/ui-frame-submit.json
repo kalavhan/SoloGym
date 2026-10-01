@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 0014ed7b-346d-49bd-8e4f-a0b5cd07103e\njob_id: 0014ed7b-346d-49bd-8e4f-a0b5cd07103e\nmodel: pro\ndescription: One EMPTY reusable fantasy game UI frame. Entire 320x160 image is the control: full rectangular solid near-black dark teal interior, complete very thin aged GOLD pixel border on all four edges, small stepped reinforced gold corners. Border stays within outer 8 pixels; vast blank flat dark teal center, fully opaque. Match the dark teal and thin gold control frames in the reference. No gradients, textures in the center, text, letters, symbols, icons, numbers, buttons, objects, background scene or transparent holes. A nine-slice-compatible blank frame; opposite edge middle segments are straight and repeatable. Crisp pixel artwork. FILL THE WHOLE CANVAS edge to edge with the frame, no margins or surrounding white background. The gold outermost border sits at the image edges.\nsize: 320x160px\ntransparent: False\ncandidates: 1\nreferences: 1\nseed: 9303460\nasset_id: aa27dcfa-6440-5e75-b3fa-e5c9f2a0f186\nasset_status: pending (saved when generation completes)\ncost: 25 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"0014ed7b-346d-49bd-8e4f-a0b5cd07103e\")"
+      }
+    ],
+    "isError": false
+  }
+}

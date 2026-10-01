@@ -1,0 +1,42 @@
+{
+  "id": "home.lantern-left",
+  "roomId": "home.training-hall.r1",
+  "layer": "behind-character",
+  "supportedSlots": [
+    "lantern-left.anchor"
+  ],
+  "drawOrder": 0,
+  "sourceSize": {
+    "x": 128,
+    "y": 160
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0
+  },
+  "sourceScale": 0.5486725663716814,
+  "footprint": [
+    {
+      "x": 39,
+      "y": 126
+    },
+    {
+      "x": 108,
+      "y": 126
+    },
+    {
+      "x": 108,
+      "y": 129
+    },
+    {
+      "x": 39,
+      "y": 129
+    }
+  ],
+  "variants": [
+    {
+      "id": "base",
+      "resource": "Rooms/TrainingHallR1/lantern-left"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: fd3c9b1b-794e-485b-849b-7fbd58d6fa50\njob_id: fd3c9b1b-794e-485b-849b-7fbd58d6fa50\nmodel: pro\ndescription: ONE isolated game prop on TRUE TRANSPARENT background. ONE dark iron reusable training water flask, round cap and small pale gym emblem, upright, complete flat base; match reference. No shelf, wall, hands or other objects. The supplied full gym image is the camera, color, lighting and pixel-density authority; the crop is the specific object design. Looking STRAIGHT into a room with modest one-point floor depth, NOT isometric or top-down. Re-create this object at its pictured camera angle, not a generic inventory icon. Crisp 16-bit-inspired pixel art, intentional pixel clusters and restrained outlines. Entire complete prop inside canvas with at least 8 empty transparent pixels around all edges. Reconstruct occluded edges. Exclude ALL neighboring props, character, floor, wall, UI, text, border, cast shadow and scenery. Exactly one isolated object, never a sheet.\nsize: 64x96px\ntransparent: True\ncandidates: 4\nreferences: 2\nseed: 9303112\nasset_id: fa1d393c-6915-5604-8a7b-058d282b23ee\nasset_status: pending (saved when generation completes)\ncost: 20 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"fd3c9b1b-794e-485b-849b-7fbd58d6fa50\")"
+      }
+    ],
+    "isError": false
+  }
+}

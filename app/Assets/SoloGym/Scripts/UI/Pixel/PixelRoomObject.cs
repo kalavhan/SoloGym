@@ -31,6 +31,7 @@ namespace SoloGym.UI
             public int drawOrder;
         }
         public Image Artwork { get; private set; }
+        public Image Overlay { get; private set; }
         public string ObjectId => definition.id;
         public string SlotId => current.slotId;
         public string VariantId => current.variantId;
@@ -133,6 +134,7 @@ namespace SoloGym.UI
         void Apply(State state, Sprite sprite)
         {
             current = state; Artwork.sprite = sprite; Artwork.enabled = state.visible;
+            if (Overlay != null) Overlay.enabled = state.visible;
             transform.SetParent(Layer == "behind-character" ? room.BackObjects : room.Foreground, false);
             PixelHomeRoom.Place((RectTransform)transform, Position, DisplaySize, definition.pivot);
             SortSiblings();
@@ -153,7 +155,22 @@ namespace SoloGym.UI
             state.version = 2; state.position = Position; state.scale = PlacementScale;
             state.layer = Layer; state.drawOrder = DrawOrder; return state;
         }
-        public void SetVisible(bool visible) { current.visible = visible; Artwork.enabled = visible; }
+        public void SetVisible(bool visible)
+        { current.visible = visible; Artwork.enabled = visible; if (Overlay != null) Overlay.enabled = visible; }
+        /// <summary>An authored trim/seasonal layer shares the object's canvas, placement and visibility.</summary>
+        public void SetOverlay(Sprite sprite)
+        {
+            if (sprite == null || sprite.rect.size != definition.sourceSize)
+                throw new ArgumentException("Overlay must preserve this object's source canvas.");
+            if (Overlay == null)
+            {
+                var go = new GameObject("Independent authored trim", typeof(RectTransform), typeof(Image));
+                go.transform.SetParent(transform, false); Overlay = go.GetComponent<Image>();
+                var rect = Overlay.rectTransform; rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one;
+                rect.offsetMin = rect.offsetMax = Vector2.zero; Overlay.raycastTarget = false;
+            }
+            Overlay.sprite = sprite; Overlay.enabled = Visible;
+        }
         public void SetVariant(string id)
         {
             var next = ParseState(SaveState()); next.variantId = id;

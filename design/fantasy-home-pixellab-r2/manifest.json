@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "status": "awaiting-user-review",
+  "recordedDate": "2026-09-30",
+  "tool": "Built-in image_gen via imagegen skill",
+  "scope": "One revised landscape Home concept using the current PixelLab room and approved character, viewed straight into the room. Requested before continuing implementation.",
+  "output": "home-frontal-concept.png",
+  "outputSize": [
+    1672,
+    941
+  ],
+  "sha256": "ea4aaff6b18eaf4ad10eabbae49c9ab820788f494eebcdaffc3da4fd723b0c4c",
+  "prompt": "prompt.txt",
+  "promptSha256": "6e0cb2928dfa420796e1f83578aa3c5029f90ee4af73dc2c35d482408531ac14",
+  "references": [
+    {
+      "role": "room",
+      "path": "assets/sprites/pixellab/home-proof-r1/room.png",
+      "sha256": "50bc611808793bc8377543422cfe6a24dae40ffdcc2cd59b378735331e101c26"
+    },
+    {
+      "role": "character",
+      "path": "assets/sprites/pixellab/barbarian-256-r1/sprites/male-medium.png",
+      "sha256": "59c46eb13ea5b68fbb363b5c65450f621ca6f9556c5bf89fa02f7c5f4ca904a9"
+    },
+    {
+      "role": "bed",
+      "path": "assets/sprites/pixellab/home-proof-r1/bed.png",
+      "sha256": "654ffcf7fc70e5e1cba70bae20a7556935169ff3dbd5ccef921a76cd4236e924"
+    }
+  ],
+  "constraints": [
+    "Straight-on back wall and shallow floor depth; retain PixelLab visual direction.",
+    "Native Unity UI, room architecture, furniture and character remain separate in later implementation.",
+    "The generated composite is a visual proposal, not production sprite extraction or byte-identical source compositing."
+  ],
+  "review": {
+    "frontFacingRoom": true,
+    "fullCharacterVisible": true,
+    "majorPropSilhouettesReadable": true,
+    "notes": "The render uses the supplied PixelLab art as references; it reinterprets some room proportions and pixel details. Existing approved source exports are unchanged."
+  },
+  "runtimeChanges": false
+}

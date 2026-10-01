@@ -1,0 +1,15 @@
+{
+  "status": "awaiting-user-review",
+  "tool": "built-in image_gen",
+  "editTarget": "home-frontal-concept.png",
+  "prompt": "ring-scale-prompt.txt",
+  "output": "home-frontal-ring-scale-r2.png",
+  "size": [
+    1672,
+    941
+  ],
+  "sha256": "36655ffae92b3db3550d7e5e289de6cd7554f8ec830d105be5e95addf9d736e8",
+  "userCorrection": "The original ring was too small for the character to fit.",
+  "change": "Expanded the ring into the left foreground and beyond the left screen boundary. Maintained the straight-on room, full-sized central character and readable HUD. Reduced foreground equipment clutter.",
+  "runtimeChanges": false
+}
