@@ -32,8 +32,7 @@ namespace SoloGym.UI
         public void Initialize(WorkoutJournal source,string locale,string appearance,Action exited,bool restored,Func<double> clock=null)
         {
             journal=source;Language=locale;character=appearance;Exited=exited;
-            var catalog=JsonUtility.FromJson<BossCatalog>(Resources.Load<TextAsset>("Training/BossOptions").text);
-            try { Controller=new BossController(journal.ActiveSession,catalog,journal.SaveBoss,restored,clock); }
+            try { Controller=new BossController(journal.ActiveSession,journal.Plans,journal.SaveBoss,restored,clock); }
             catch(Exception e) { error=e.Message; View="error"; }
             var root=Rect("Dungeon canvas",transform,new Rect());var canvas=root.gameObject.AddComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=60;canvas.pixelPerfect=true;
             root.gameObject.AddComponent<GraphicRaycaster>();root.gameObject.AddComponent<CanvasScaler>().uiScaleMode=CanvasScaler.ScaleMode.ConstantPixelSize;
@@ -98,7 +97,7 @@ namespace SoloGym.UI
             for(int i=0;i<3;i++){string value=ids[i];Button(page,"difficulty-"+value,new Rect(430+i*143,628,135,46),labels[i],()=>{if(Perform(()=>Controller.SetDifficulty(value))) {notice=Controller.Data.difficulty!=value?L("Readiness and experience limit this choice.","Tu estado y experiencia limitan esta opción."):L("Remaining work updated; records kept.","Trabajo pendiente ajustado; registros conservados.");Render();}},Controller?.Data.difficulty==value).interactable=Controller!=null&&!Controller.Closed&&!Controller.NeedsReadiness;}
             Button(page,"overview",new Rect(899,622,232,58),View=="overview"?L("BACK","VOLVER"):L("View routine","Ver rutina"),()=>{View=View=="overview"?"session":"overview";Render();}).interactable=Controller!=null;
             string footer=error!=null?L("Could not save or apply this change. Records kept; retry or lower the difficulty.","No se pudo guardar o aplicar el cambio. Registros conservados; reintenta o reduce la dificultad."):notice??L("Recorded sets advance the encounter. Rest at your own pace.","Cada serie registrada hace avanzar el combate. Descansa a tu ritmo.");
-            Text(page,new Rect(294,687,958,27),footer,17,false,TextAnchor.MiddleCenter);Text(page,new Rect(14,685,275,28),L("Sample data · manual log","Datos de ejemplo · registro manual"),16,false);
+            Text(page,new Rect(294,687,958,27),footer,17,false,TextAnchor.MiddleCenter);Text(page,new Rect(14,685,275,28),journal.IsLive?L("Your session · manual log","Tu sesión · registro manual"):L("Sample data · manual log","Datos de ejemplo · registro manual"),16,false);
             for(int i=0;i<traversal.Count;i++){var prev=traversal[(i+traversal.Count-1)%traversal.Count];var next=traversal[(i+1)%traversal.Count];var tab=traversal[i].GetComponent<PixelFieldTabNavigation>()??traversal[i].gameObject.AddComponent<PixelFieldTabNavigation>();tab.Previous=prev;tab.Next=next;traversal[i].navigation=new Navigation{mode=Navigation.Mode.Explicit,selectOnUp=prev,selectOnDown=next,selectOnLeft=prev,selectOnRight=next};}
             if(focus!=null&&Controls.TryGetValue(focus,out var control)&&control.IsInteractable())control.Select();
         }
@@ -154,7 +153,7 @@ namespace SoloGym.UI
         void BuildRecheck(Transform p)
         {
             Title(p,L("WELCOME BACK","ANTES DE CONTINUAR"));Text(p,new Rect(24,78,328,77),L("How do you feel now? Saved sessions reopen paused.","¿Cómo te sientes ahora? Tu sesión se recuperó en pausa."),23);
-            bool teen=Controller.Data.profile=="teen_home_supervised";
+            bool teen=Controller.IsTeen;
             if(teen)Button(p,"resume-supervision",new Rect(24,160,328,57),(supervised?"[x] ":"[ ] ")+L("Supervision available","Tengo supervisión"),()=>{supervised=!supervised;Render();},supervised,20);
             Button(p,"resume-ready",new Rect(24,230,328,55),L("Ready","Me siento bien"),()=>Perform(()=>Controller.Recheck("ready",!teen||supervised)),true).interactable=!teen||supervised;
             Button(p,"resume-light",new Rect(24,297,328,55),L("Low energy","Poca energía / fatiga"),()=>Perform(()=>Controller.Recheck("low_energy",!teen||supervised))).interactable=!teen||supervised;
@@ -164,7 +163,7 @@ namespace SoloGym.UI
         {
             bool completed=Controller.Data.state=="completed";Title(p,completed?L("SESSION FINISHED","SESIÓN FINALIZADA"):L("SESSION STOPPED","SESIÓN INTERRUMPIDA"));
             Text(p,new Rect(25,85,326,72),Controller.Data.logs.Length+L(" sets recorded"," series registradas")+"\n"+Controller.Damage+" / 1000 "+L("progress","avance"),25,true,TextAnchor.MiddleCenter);
-            Text(p,new Rect(25,182,326,159),completed?L("Warm-up, working sets and recovery recorded. No extra exercise is required to empty the bar. These local examples do not issue rewards.","Calentamiento, series y recuperación registrados. No necesitas ejercicio extra para vaciar la barra. Estos ejemplos locales no otorgan recompensas."):L("Your work is saved, even when you stop early. Rest and take care of yourself. No extra exercise is owed.","Tu trabajo está guardado, aunque hayas terminado antes. Descansa y cuídate. No debes recuperar el ejercicio."),22);
+            Text(p,new Rect(25,182,326,159),completed?(journal.IsLive?L("Warm-up, working sets and recovery recorded in your journal. The guardian falls. No extra exercise is ever required.","Calentamiento, series y recuperación registrados en tu diario. El guardián cae. Nunca se requiere ejercicio extra."):L("Warm-up, working sets and recovery recorded. No extra exercise is required to empty the bar. These local examples do not issue rewards.","Calentamiento, series y recuperación registrados. No necesitas ejercicio extra para vaciar la barra. Estos ejemplos locales no otorgan recompensas.")):L("Your work is saved, even when you stop early. Rest and take care of yourself. No extra exercise is owed.","Tu trabajo está guardado, aunque hayas terminado antes. Descansa y cuídate. No debes recuperar el ejercicio."),22);
             Button(p,"archive",new Rect(24,397,328,65),L("BACK TO WORKOUTS","VOLVER A RUTINAS"),Archive,true,21);
         }
         void BuildOverview()

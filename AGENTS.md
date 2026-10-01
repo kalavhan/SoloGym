@@ -7,6 +7,17 @@ clothing pipeline. Current requirements are in
 
 ## Scope
 
+- MVP fitness test build (2026-10-01, branch `mvp/fitness-core`): the user asked to
+  take the fitness MVP to completion for APK testing before the Hades-like game.
+  A signed-in Firebase account now completes setup (equipment, schedule, plan
+  review reuse the approved guild-panel controls; no new art) and reaches Home,
+  journal, dungeon and history with its own on-device data. Eligibility/consent
+  are recorded on the device for this test build only; a trusted server check,
+  final documents and cloud sync are still release prerequisites. Keep the
+  fixture/review paths (Connected=false in smoke/capture runs) working. Keep
+  `Resources/Training/Rules/*.json` identical to `data/training/` and the C#
+  engine identical to `tools/training_reference.py` (`tests/csharp/run.sh`).
+
 - Goals & Experience (WIN-010) follows merged PR #36. The user approved all three
   landscape renders in `design/fantasy-goals-r1/` with “good, do it.” The native
   goal, experience and summary/edit states now connect from the profile checkpoint

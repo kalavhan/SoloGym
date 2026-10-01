@@ -22,6 +22,8 @@ namespace SoloGym.UI
         public Text Status { get; private set; }
         public bool EquipmentPending { get; private set; }
         public event Action StateChanged;
+        /// <summary>Raised when the reviewed choices continue to the connected equipment window.</summary>
+        public event Action EquipmentRequested;
         public Selectable LastControl => Continue.IsInteractable() ? (Selectable)Continue : Controller.Model.Step==GoalsExperienceStep.Goal ? Goals[Goals.Length-1] : Unsure;
         RectTransform content, viewport, goalGroup, experienceGroup, summaryGroup;
         Text title, progress, review, helper, uncertaintyHint, detail, goalValue, experienceValue, goalLabel, experienceLabel;
@@ -71,7 +73,11 @@ namespace SoloGym.UI
             Controller=new GoalsExperienceController(true,teen);
             RebuildOptions();
             Controller.Changed+=Render;
-            Controller.CheckpointRequested+=id=> { if(id=="REVIEW:WIN-011" && canProceed()) { EquipmentPending=true; Render(Controller.Model); } };
+            Controller.CheckpointRequested+=id=> {
+                if(id!="REVIEW:WIN-011" || !canProceed()) return;
+                if(EquipmentRequested!=null) EquipmentRequested.Invoke();
+                else { EquipmentPending=true; Render(Controller.Model); }
+            };
             Render(Controller.Model);
         }
         void RebuildOptions()
@@ -104,6 +110,13 @@ namespace SoloGym.UI
             SetLocale(language); Render(Controller.Model);
         }
         public void SetLocale(string language) { if(Controller.Model.Language!=language) Controller.SetLanguage(language); }
+        /// <summary>Editing a saved setup: start at the review step with the person's current choices.</summary>
+        public void Prefill(string goal,string experience)
+        {
+            if(string.IsNullOrEmpty(goal)||string.IsNullOrEmpty(experience)||Controller.Model.Step!=GoalsExperienceStep.Goal||!string.IsNullOrEmpty(Controller.Model.GoalId)) return;
+            Controller.SelectGoal(goal); Controller.ContinueGoal();
+            if(Controller.Model.Step==GoalsExperienceStep.Experience) { Controller.SelectExperience(experience); Controller.ContinueExperience(); }
+        }
         public void Reset() { EquipmentPending=false; lastView=null; Controller.Reset(); }
         public void GoBack()
         {
@@ -134,7 +147,7 @@ namespace SoloGym.UI
                 bool experience=m.Step==GoalsExperienceStep.Experience && !modal && !EquipmentPending, summary=m.Step==GoalsExperienceStep.Review && !EquipmentPending;
                 title.text=EquipmentPending ? L("NEXT: YOUR EQUIPMENT","SIGUE: TU EQUIPO") : goal ? L("CHOOSE YOUR FOCUS","ELIGE TU ENFOQUE") : summary ? L("REVIEW YOUR PATH","REVISA TU RUTA") : L("YOUR STARTING POINT","TU PUNTO DE PARTIDA");
                 progress.text=EquipmentPending ? L("TRAINING SETUP","CONFIGURACIÓN DE ENTRENAMIENTO") : goal ? L("1 OF 3 · GOAL","1 DE 3 · OBJETIVO") : summary ? L("3 OF 3 · REVIEW","3 DE 3 · RESUMEN") : L("2 OF 3 · EXPERIENCE","2 DE 3 · EXPERIENCIA");
-                review.text=L("Preview","Vista previa"); Back.SetLabel(L("Back","Volver"));
+                review.text=EquipmentRequested!=null ? L("Training setup","Configuración de entrenamiento") : L("Preview","Vista previa"); Back.SetLabel(L("Back","Volver"));
                 goalGroup.gameObject.SetActive(goal); experienceGroup.gameObject.SetActive(experience); summaryGroup.gameObject.SetActive(summary);
                 for(int i=0;i<Goals.Length;i++) { Goals[i].SetLabel(m.VisibleGoals[i].Label(m.Language)); Goals[i].SetIsOnWithoutNotify(m.GoalId==Goals[i].Id); Goals[i].RefreshVisual(); }
                 for(int i=0;i<Experiences.Length;i++) { Experiences[i].SetLabel(ExperienceText(Experiences[i].Id)); Experiences[i].SetIsOnWithoutNotify(m.ExperienceId==Experiences[i].Id); Experiences[i].RefreshVisual(); }
@@ -145,7 +158,7 @@ namespace SoloGym.UI
                 detail.gameObject.SetActive(modal||EquipmentPending||summary);
                 detail.text=modal ? m.Copy("uncertainty_title")+"\n\n"+m.Copy("uncertainty_body") : EquipmentPending ? L("Available equipment is the next window. Schedule and session length will follow.\n\nThis preview has not saved a profile or prepared a workout.","El equipo disponible es la siguiente ventana. Después elegirás horario y duración.\n\nEsta vista previa no guardó un perfil ni preparó una rutina.") : L("Next: equipment and schedule.\nDifficulty can change during battle.","Después: equipo y horario.\nLa dificultad podrá cambiar en la batalla.");
                 detail.alignment=summary ? TextAnchor.MiddleCenter : TextAnchor.UpperLeft;
-                helper.text=goal ? (m.IsTeenAudience ? m.Copy("teen_helper")+"\n" : "")+L("You can change it later.","Podrás cambiarlo más adelante.") : experience ? L("Difficulty adjusts during your routine.","La dificultad se ajusta durante la rutina.") : summary ? L("This preview does not save a plan.","Esta vista previa no guarda un plan.") : "";
+                helper.text=goal ? (m.IsTeenAudience ? m.Copy("teen_helper")+"\n" : "")+L("You can change it later.","Podrás cambiarlo más adelante.") : experience ? L("Difficulty adjusts during your routine.","La dificultad se ajusta durante la rutina.") : summary ? (EquipmentRequested!=null ? L("Next you'll choose equipment and days.","Después elegirás equipo y días.") : L("This preview does not save a plan.","Esta vista previa no guarda un plan.")) : "";
                 Status.text=m.Error; Status.gameObject.SetActive(Status.text.Length>0);
                 Cancel.gameObject.SetActive(modal||EquipmentPending); Cancel.SetLabel(EquipmentPending ? L("Leave preview","Salir de vista previa") : L("Keep my choice","Conservar mi elección"));
                 Continue.SetLabel(EquipmentPending ? L("REVIEW MY CHOICES","REVISAR MIS ELECCIONES") : modal ? L("USE BEGINNER BASE","USAR BASE PRINCIPIANTE") : L("CONTINUE","CONTINUAR"));

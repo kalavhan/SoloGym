@@ -18,6 +18,10 @@ namespace SoloGym.UI
         public PixelSecondaryAction Cancel { get; private set; }
         public PixelSecondaryAction PreviewProfile { get; private set; }
         public event Action ProfilePreviewRequested;
+        /// <summary>Raised once when a live registration created the account.</summary>
+        public event Action AccountCreated;
+        public bool LiveRegistration { get; private set; }
+        bool createdRaised;
         public ScrollRect Scroll { get; private set; }
         public Text Status { get; private set; }
         public event Action StateChanged;
@@ -37,6 +41,7 @@ namespace SoloGym.UI
             PixelJournalUI.Stretch(root);
             exit = exitAction; back = backAction ?? exitAction; footerControl = privacy;
             Controller = new AccountRegistrationController(service);
+            LiveRegistration = service is FirebaseAccountRegistrationService;
             Back = LinkButton(root, "", GoBack); Place(Back, new Rect(20, 10, 112, 52));
             title = PixelJournalUI.Text(root, new Rect(28, 48, 514, 48), "", 38, false, TextAnchor.MiddleCenter);
             PixelJournalUI.Rule(root, 62, 94, 446);
@@ -91,7 +96,7 @@ namespace SoloGym.UI
         }
         public void Open(string email, string locale, bool review = false)
         {
-            language = locale; previewOnly = review;
+            language = locale; previewOnly = review && !LiveRegistration; createdRaised = false;
             Email.SetValueWithoutNotify(email);
             Controller.Reset(); Render();
             Scroll.StopMovement(); content.anchoredPosition = Vector2.zero;
@@ -139,8 +144,9 @@ namespace SoloGym.UI
             foreach (var f in new[] { Email, Password, Confirmation })
             { f.gameObject.SetActive(!created); f.SetInteractable(!busy); }
             Status.text = created
-                ? L("Your account was created. Profile setup is still required before opening your gym.\n\nConnected profile setup is not available in this build yet.",
-                    "Tu cuenta fue creada. Antes de abrir tu gimnasio aún debes configurar tu perfil.\n\nLa configuración de perfil conectada aún no está disponible en esta versión.")
+                ? (LiveRegistration ? L("Your account was created. Next: your private fitness profile.", "Tu cuenta fue creada. Sigue: tu perfil físico privado.")
+                    : L("Your account was created. Profile setup is still required before opening your gym.\n\nConnected profile setup is not available in this build yet.",
+                    "Tu cuenta fue creada. Antes de abrir tu gimnasio aún debes configurar tu perfil.\n\nLa configuración de perfil conectada aún no está disponible en esta versión."))
                 : Email.Error.Length + Password.Error.Length + Confirmation.Error.Length > 0 ? "" : error;
             Status.gameObject.SetActive(Status.text.Length > 0);
             Submit.gameObject.SetActive(!created);
@@ -161,6 +167,7 @@ namespace SoloGym.UI
             Layout();
             if (lastError != key) { lastError = key; Scroll.verticalNormalizedPosition = 1; }
             StateChanged?.Invoke();
+            if (created && LiveRegistration && !createdRaised) { createdRaised = true; AccountCreated?.Invoke(); }
         }
 
         string Error(string key)
@@ -174,7 +181,9 @@ namespace SoloGym.UI
                 case "mismatch": return L("The passwords do not match.", "Las contraseñas no coinciden.");
                 case "policy": return L("This password does not meet the account policy.", "Esta contraseña no cumple la política de la cuenta.");
                 case "provisional": return L("These documents are placeholders. Live registration is not available yet. No account was created.", "Los textos son provisionales. El registro real aún no está disponible. No se creó ninguna cuenta.");
-                case "setup": return L("Age and consent setup is not available yet. No account was created.", "La configuración de edad y consentimiento aún no está disponible. No se creó ninguna cuenta.");
+                case "setup": return LiveRegistration ? L("Complete age, country and both document choices first. No account was created.", "Completa primero edad, país y ambas decisiones de documentos. No se creó ninguna cuenta.")
+                    : L("Age and consent setup is not available yet. No account was created.", "La configuración de edad y consentimiento aún no está disponible. No se creó ninguna cuenta.");
+                case "unavailable" when LiveRegistration: return L("Account creation is unavailable in this build (Firebase is not configured).", "La creación de cuenta no está disponible en esta versión (Firebase no está configurado).");
                 case "offline": return L("No connection. Reconnect to try again.", "Sin conexión. Reconéctate para volver a intentar.");
                 case "rate": return L("Please wait before trying again.", "Espera antes de volver a intentar.") + " (" + Controller.RetrySeconds + " s)";
                 case "rejected": return L("Unable to create an account with these details. Try signing in or try again.", "No se pudo crear una cuenta con estos datos. Intenta iniciar sesión o vuelve a intentar.");

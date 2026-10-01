@@ -10,7 +10,7 @@ namespace SoloGym
     [Serializable] public sealed class JournalSwap { public string slot, exercise; }
     [Serializable] public sealed class JournalEntry
     {
-        public string id, date, title = "", status = "planned";
+        public string id, date, title = "", status = "planned", profile;
         public int minutes = 25;
         public JournalSwap[] swaps = Array.Empty<JournalSwap>();
         public TrainingPlan completedPlan;
@@ -54,17 +54,23 @@ namespace SoloGym
         }
     }
 
-    /// <summary>Local, explicitly fictional journal. Never starts a workout or issues rewards.</summary>
+    /// <summary>
+    /// Local workout journal. With <see cref="FixtureTrainingPlans"/> it is the explicitly fictional
+    /// review journal; with <see cref="LiveTrainingPlans"/> it holds the signed-in person's own plan
+    /// and history. Missed days never create catch-up work; extra reps never add rewards.
+    /// </summary>
     public sealed class WorkoutJournal
     {
-        readonly TrainingCatalog catalog;
-        readonly JournalOptions options;
+        readonly ITrainingPlans plans;
         readonly IJournalStorage storage;
         JournalDocument document;
         string preparedKey, preparedEntryId;
         TrainingPlan reviewedGatePlan;
         public string ProfileId { get; }
-        public bool IsTeen => catalog.profiles.First(p => p.id == ProfileId).teen;
+        public ITrainingPlans Plans => plans;
+        public bool IsLive => plans.Context == LiveTrainingPlans.AccountContext;
+        public bool IsTeen => plans.Profile(ProfileId).teen;
+        public int[] Durations => (int[])plans.Durations.Clone();
         public DateTime Today { get; }
         public DateTime WeekStart { get; private set; }
         public DateTime SelectedDay { get; private set; }
@@ -104,14 +110,20 @@ namespace SoloGym
         public static string Date(DateTime date) => date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
         public static DateTime ParseDate(string value) => DateTime.ParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture);
         public static DateTime Monday(DateTime day) => day.Date.AddDays(-(((int)day.DayOfWeek + 6) % 7));
-        public string Key(int minutes, string readiness = "ready", bool supervised = true) => ProfileId + ":" + minutes + ":" + readiness + ":" + (IsTeen && supervised ? "1" : "0");
+        public string Key(int minutes, string readiness = "ready", bool supervised = true) => Key(ProfileId, minutes, readiness, supervised);
+        public string Key(JournalEntry entry, int minutes, string readiness = "ready", bool supervised = true) => Key(EntryProfile(entry), minutes, readiness, supervised);
+        string Key(string profile, int minutes, string readiness, bool supervised) => TrainingKeys.Make(profile, minutes, readiness, IsTeen && supervised);
+        /// <summary>The catalog profile (session type) an entry resolves against.</summary>
+        public string EntryProfile(JournalEntry entry) => string.IsNullOrEmpty(entry?.profile) ? ProfileId : entry.profile;
 
         public WorkoutJournal(TrainingCatalog source, JournalOptions edits, IJournalStorage target, string profile, DateTime today)
+            : this(new FixtureTrainingPlans(source ?? throw new ArgumentNullException(nameof(source)), edits ?? throw new ArgumentNullException(nameof(edits))), target, profile, today) { }
+
+        public WorkoutJournal(ITrainingPlans source, IJournalStorage target, string profile, DateTime today)
         {
-            catalog = source ?? throw new ArgumentNullException(nameof(source));
-            options = edits ?? throw new ArgumentNullException(nameof(edits));
+            plans = source ?? throw new ArgumentNullException(nameof(source));
             storage = target ?? throw new ArgumentNullException(nameof(target));
-            if (!catalog.profiles.Any(p => p.id == profile)) throw new ArgumentException("Unknown journal profile.");
+            if (plans.Profile(profile) == null) throw new ArgumentException("Unknown journal profile.");
             ProfileId = profile; Today = today.Date; SelectedDay = Today; WeekStart = Monday(Today);
         }
         public void Load(bool empty = false)
@@ -120,16 +132,44 @@ namespace SoloGym
             {
                 string text = storage.Read();
                 var next = text == null ? Seed(empty) : Deserialize(text);
-                Validate(next); document = next; Error = null; SelectDay(Today);
+                bool pruned = IsLive && PruneUnresolvable(next);
+                Validate(next); document = next; Error = null;
+                if (pruned) storage.Write(JsonUtility.ToJson(next, true));
+                SelectDay(Today);
             }
             catch (Exception e) when (e is ArgumentException || e is IOException || e is UnauthorizedAccessException || e is FormatException)
             { document = null; Error = e.Message; }
         }
+        /// <summary>
+        /// Live setup can change (equipment, age group). Planned entries whose saved edits no longer
+        /// resolve are dropped; completed/stopped history and an active session are never touched.
+        /// </summary>
+        bool PruneUnresolvable(JournalDocument data)
+        {
+            if (data?.entries == null) return false;
+            var keep = new List<JournalEntry>(); bool changed = false;
+            foreach (var entry in data.entries)
+            {
+                bool planned = entry != null && entry.status == "planned" && entry.completedPlan == null;
+                bool active = data.activeSession != null && entry != null && data.activeSession.entryId == entry.id;
+                if (planned && !active)
+                {
+                    try { Resolve(entry, Key(entry, entry.minutes)); }
+                    catch (ArgumentException) { changed = true; continue; }
+                }
+                keep.Add(entry);
+            }
+            if (!changed) return false;
+            data.entries = keep.ToArray();
+            if (data.lastReview != null && !keep.Any(e => e.id == data.lastReview.entryId)) data.lastReview = null;
+            return true;
+        }
         JournalDocument Seed(bool empty)
         {
             var entries = new List<JournalEntry>();
-            if (!empty)
+            if (!empty && plans is FixtureTrainingPlans fixtures)
             {
+                var options = fixtures.JournalOptions;
                 var monday = Monday(Today);
                 var completedDate = monday < Today ? monday : Today.AddDays(-2);
                 var missedDate = Today.AddDays(-1);
@@ -138,7 +178,7 @@ namespace SoloGym
                     completedPlan = Clone(options.mobility.First(x => x.profileId == ProfileId).plan) });
                 entries.Add(new JournalEntry { id = "sample-missed", date = Date(missedDate) });
             }
-            return new JournalDocument { profileId = ProfileId, entries = entries.ToArray() };
+            return new JournalDocument { profileId = ProfileId, context = plans.Context, entries = entries.ToArray() };
         }
         public string Status(JournalEntry entry) => entry.status == "completed" ? "completed" : entry.status == "stopped" ? "stopped" : ParseDate(entry.date) < Today ? "missed" : "planned";
         public bool CanEdit(JournalEntry entry) => entry != null && Status(entry) == "planned" && document?.activeSession?.entryId != entry.id;
@@ -168,10 +208,10 @@ namespace SoloGym
                 .OrderBy(e => e.id == SelectedId ? 0 : 1).ThenBy(e => e.date);
             return query.ToArray();
         }
-        public TrainingPlan Plan(JournalEntry entry) => (entry.status == "completed" || entry.status == "stopped") ? Clone(entry.completedPlan) : Resolve(entry, Key(entry.minutes));
+        public TrainingPlan Plan(JournalEntry entry) => (entry.status == "completed" || entry.status == "stopped") ? Clone(entry.completedPlan) : Resolve(entry, Key(entry, entry.minutes));
         TrainingPlan Resolve(JournalEntry entry, string key)
         {
-            var basePlan = catalog.entries.FirstOrDefault(x => x.key == key)?.session;
+            var basePlan = plans.Session(key);
             if (basePlan == null) throw new ArgumentException("Unknown plan context.");
             var result = Clone(basePlan);
             if (result.status != "draft_ready") return result;
@@ -179,7 +219,7 @@ namespace SoloGym
             foreach (var swap in entry.swaps ?? Array.Empty<JournalSwap>())
             {
                 if (swap == null || !used.Add(swap.slot)) throw new ArgumentException("Duplicate exercise slot.");
-                var option = options.options.FirstOrDefault(x => x.key == key && x.block.id == swap.slot && x.block.exercise_id == swap.exercise);
+                var option = plans.Options(key).FirstOrDefault(x => x.block.id == swap.slot && x.block.exercise_id == swap.exercise);
                 int i = Array.FindIndex(result.blocks, b => b.id == swap.slot && b.role == "main");
                 if (option == null || i < 0) throw new ArgumentException("Exercise is not eligible for this plan context.");
                 result.blocks[i] = Clone(option.block); result.estimated_seconds += option.secondsDelta;
@@ -188,7 +228,7 @@ namespace SoloGym
                 throw new ArgumentException("Combined edits duplicate an exercise or exceed the time budget.");
             return result;
         }
-        public JournalOption[] Choices(string slot) => options.options.Where(x => x.key == Key(Draft.minutes) && x.block.id == slot).ToArray();
+        public JournalOption[] Choices(string slot) => plans.Options(Key(Draft, Draft.minutes)).Where(x => x.block.id == slot).ToArray();
         public void BeginEdit()
         {
             if (!CanEdit(Selected)) throw new InvalidOperationException("Closed history is immutable; copy it to a new draft.");
@@ -200,18 +240,32 @@ namespace SoloGym
             var selected = Selected;
             Draft = copySelected && selected != null && selected.status != "completed" ? selected : new JournalEntry();
             Draft.id = Guid.NewGuid().ToString("N"); Draft.status = "planned"; Draft.completedPlan = null; Draft.session = null; Draft.date = Date(day);
+            bool fresh = !(copySelected && selected != null && selected.status != "completed");
+            if (fresh && DefaultMinutes > 0 && plans.Durations.Contains(DefaultMinutes)) Draft.minutes = DefaultMinutes;
+            if (!plans.Durations.Contains(Draft.minutes)) Draft.minutes = plans.Durations[0];
+            if (DefaultProfile != null && (fresh || string.IsNullOrEmpty(Draft.profile))) Draft.profile = DefaultProfile(day);
             ClearGate();
         }
+        /// <summary>Live mode: session type and length for a routine created on a given day.</summary>
+        public Func<DateTime, string> DefaultProfile;
+        public int DefaultMinutes;
         public void SetDuration(int minutes)
         {
-            if (Draft == null || !new[] { 15, 25, 40 }.Contains(minutes)) throw new ArgumentException("Invalid duration.");
+            if (Draft == null || !plans.Durations.Contains(minutes)) throw new ArgumentException("Invalid duration.");
             Draft.minutes = minutes; Draft.swaps = Array.Empty<JournalSwap>();
+        }
+        /// <summary>Change the draft's session type (live journals offer every template).</summary>
+        public void SetDraftProfile(string profile)
+        {
+            if (Draft == null || plans.Profile(profile) == null || profile == LiveTrainingPlans.AccountProfile && IsLive) throw new ArgumentException("Unknown session type.");
+            var candidate = Clone(Draft); candidate.profile = profile; candidate.swaps = Array.Empty<JournalSwap>();
+            Resolve(candidate, Key(candidate, candidate.minutes)); Draft = candidate;
         }
         public void SetSwap(string slot, string exercise)
         {
             var candidate = Clone(Draft); if (candidate == null) throw new InvalidOperationException("No edit draft.");
             candidate.swaps = candidate.swaps.Where(x => x.slot != slot).Concat(new[] { new JournalSwap { slot = slot, exercise = exercise } }).ToArray();
-            Resolve(candidate, Key(candidate.minutes)); Draft = candidate;
+            Resolve(candidate, Key(candidate, candidate.minutes)); Draft = candidate;
         }
         public void CancelEdit() { Draft = null; }
         public bool SaveEdit(out string error)
@@ -234,7 +288,7 @@ namespace SoloGym
         public void BeginPrepare()
         {
             if (!CanPrepare) throw new InvalidOperationException("Prepare only today's pending routine.");
-            Gate = new TrainingController(catalog); Gate.SelectProfile(Array.FindIndex(catalog.profiles, x => x.id == ProfileId));
+            Gate = new TrainingController(plans); Gate.SelectProfile(Array.FindIndex(plans.Profiles, x => x.id == EntryProfile(Selected)));
             Gate.SetMinutes(Selected.minutes); Gate.BeginReadiness(); PreparedPlan = null; Reviewed = false; ReadinessAdjusted = false;
         }
         public bool ReviewReadiness()
@@ -267,7 +321,8 @@ namespace SoloGym
         public void ClearGate() { Gate = null; PreparedPlan = null; preparedKey = preparedEntryId = null; reviewedGatePlan = null; Reviewed = false; ReadinessAdjusted = false; }
         public void SaveBoss(BossSession session)
         {
-            if (!Loaded || session == null || session.profile != ProfileId) throw new ArgumentException("Invalid session profile.");
+            var owner = document?.entries.FirstOrDefault(x => x.id == session?.entryId);
+            if (!Loaded || session == null || owner == null || session.profile != EntryProfile(owner) || session.context != plans.Context) throw new ArgumentException("Invalid session profile.");
             if (document.activeSession == null)
             {
                 if (!CanSaveReview || session.entryId != SelectedId || session.date != Date(Today)) throw new InvalidOperationException("A fresh acknowledged review is required.");
@@ -285,6 +340,62 @@ namespace SoloGym
             next.activeSession = null; next.lastReview = null; Validate(next); Persist(next); Select(entry.id);
         }
         public string Export() => JsonUtility.ToJson(document, true);
+
+        /// <summary>
+        /// Live mode: add planned entries for scheduled days that have none. Existing entries,
+        /// history and edits are never changed; past days are never back-filled.
+        /// </summary>
+        public bool EnsureScheduled(IEnumerable<KeyValuePair<DateTime, string>> plannedDays, int minutes, DateTime notBefore)
+        {
+            if (!Loaded || plannedDays == null) return false;
+            if (!plans.Durations.Contains(minutes)) throw new ArgumentException("Invalid duration.");
+            var next = Clone(document); var rows = next.entries.ToList(); bool changed = false;
+            foreach (var pair in plannedDays)
+            {
+                if (pair.Key.Date < notBefore.Date || pair.Key.Date < Today) continue;
+                string day = Date(pair.Key);
+                if (rows.Any(e => e.date == day) || plans.Profile(pair.Value) == null) continue;
+                rows.Add(new JournalEntry { id = "plan-" + day, date = day, minutes = minutes, profile = pair.Value });
+                changed = true;
+            }
+            if (!changed) return false;
+            next.entries = rows.OrderBy(e => e.date, StringComparer.Ordinal).ToArray();
+            Validate(next); Persist(next); SelectDay(SelectedDay); return true;
+        }
+
+        /// <summary>Live mode: replace future, untouched planned entries after the user changes setup.</summary>
+        public void ReplaceFuturePlan(IEnumerable<KeyValuePair<DateTime, string>> plannedDays, int minutes)
+        {
+            if (!Loaded) return;
+            if (!plans.Durations.Contains(minutes)) throw new ArgumentException("Invalid duration.");
+            var next = Clone(document);
+            // Keep history, today's entry if a session is active, and anything the user edited or titled.
+            next.entries = next.entries.Where(e => e.status != "planned" || ParseDate(e.date) < Today
+                || (next.activeSession != null && next.activeSession.entryId == e.id)
+                || !e.id.StartsWith("plan-", StringComparison.Ordinal) || (e.swaps?.Length ?? 0) > 0 || !string.IsNullOrEmpty(e.title)).ToArray();
+            next.lastReview = null; Validate(next); Persist(next);
+            EnsureScheduled(plannedDays, minutes, Today);
+        }
+
+        public int CompletedCount => document?.entries.Count(e => e.status == "completed") ?? 0;
+        /// <summary>Consecutive scheduled sessions completed or stopped (rest days and stops never break it).</summary>
+        public int ConsistencyStreak
+        {
+            get
+            {
+                if (document == null) return 0;
+                int streak = 0;
+                foreach (var e in document.entries.Where(x => ParseDate(x.date) < Today || x.status != "planned").OrderByDescending(x => x.date, StringComparer.Ordinal))
+                {
+                    if (e.status == "completed" || e.status == "stopped") streak++;
+                    else break;
+                }
+                return streak;
+            }
+        }
+        public JournalEntry TodayEntry => Clone(document?.entries.FirstOrDefault(x => x.date == Date(Today) && x.status == "planned"))
+            ?? Clone(document?.entries.FirstOrDefault(x => x.date == Date(Today)));
+        public JournalEntry NextPlanned => Clone(document?.entries.Where(x => x.status == "planned" && ParseDate(x.date) >= Today).OrderBy(x => x.date, StringComparer.Ordinal).FirstOrDefault());
         void Persist(JournalDocument next) { storage.Write(JsonUtility.ToJson(next, true)); document = next; }
         JournalDocument Deserialize(string text)
         {
@@ -304,14 +415,15 @@ namespace SoloGym
         }
         void Validate(JournalDocument data)
         {
-            if (data == null || data.version != 1 || data.context != "review-fixtures-only" || data.profileId != ProfileId || data.entries == null || data.entries.Length > 500)
+            if (data == null || data.version != 1 || data.context != plans.Context || data.profileId != ProfileId || data.entries == null || data.entries.Length > 1500)
                 throw new ArgumentException("Unsupported journal version or profile.");
             var ids = new HashSet<string>();
             foreach (var entry in data.entries)
             {
                 if (entry == null || string.IsNullOrEmpty(entry.id) || entry.id.Length > 80 || !ids.Add(entry.id)
                     || entry.title == null || entry.title.Length > 24 || entry.title.Any(char.IsControl)
-                    || !new[] { 15, 25, 40 }.Contains(entry.minutes) || entry.swaps == null || entry.swaps.Length > 12)
+                    || !plans.Durations.Contains(entry.minutes) || entry.swaps == null || entry.swaps.Length > 12
+                    || (!string.IsNullOrEmpty(entry.profile) && (plans.Profile(entry.profile) == null || entry.profile == ProfileId)))
                     throw new ArgumentException("Invalid journal entry.");
                 var day = ParseDate(entry.date); if (day.Year < 2000 || day.Year > 2100) throw new ArgumentException("Date outside supported calendar.");
                 if (entry.status == "completed" || entry.status == "stopped")
@@ -319,13 +431,13 @@ namespace SoloGym
                     ValidateSnapshot(entry.completedPlan);
                     if (entry.session != null) BossSession.Validate(entry.session);
                 }
-                else if (entry.status == "planned" && entry.completedPlan == null) Resolve(entry, Key(entry.minutes));
+                else if (entry.status == "planned" && entry.completedPlan == null) Resolve(entry, Key(entry, entry.minutes));
                 else throw new ArgumentException("Unknown journal status.");
             }
             if (data.activeSession != null)
             {
                 BossSession.Validate(data.activeSession);
-                if (data.activeSession.profile != ProfileId || !data.entries.Any(e => e.id == data.activeSession.entryId && e.status == "planned")) throw new ArgumentException("Orphaned active session.");
+                if (data.activeSession.context != plans.Context || !data.entries.Any(e => e.id == data.activeSession.entryId && e.status == "planned" && EntryProfile(e) == data.activeSession.profile)) throw new ArgumentException("Orphaned active session.");
             }
             if (data.lastReview != null && (!ids.Contains(data.lastReview.entryId) || data.lastReview.plan?.status != "draft_ready"))
                 throw new ArgumentException("Invalid saved review.");

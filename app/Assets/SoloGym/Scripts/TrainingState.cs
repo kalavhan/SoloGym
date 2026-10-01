@@ -23,13 +23,16 @@ namespace SoloGym
         public int sets, quantity_min, quantity_max, rest_seconds, boss_share, estimated_seconds, additional_set_seconds;
         public string category, load_entry;
         public int[] aerobic_effort_0_to_10;
+        public string[] allowed_patterns;
         public bool per_side;
+        public object CloneShallow() => MemberwiseClone();
     }
     [Serializable] public sealed class TrainingMessage { public string code; public TrainingText text; }
     [Serializable] public sealed class TrainingPlan
     {
-        public string status, kind, difficulty_effective;
+        public string status, kind, difficulty_effective, template_id, date;
         public TrainingText name;
+        public string[] coverage_gaps;
         public int estimated_seconds, budget_seconds;
         public TrainingBlock[] blocks;
         public TrainingMessage[] messages;
@@ -45,7 +48,7 @@ namespace SoloGym
     /// <summary>Review-only fixture selection. Never starts exercise or issues rewards.</summary>
     public sealed class TrainingController
     {
-        readonly TrainingCatalog catalog;
+        readonly ITrainingPlans catalog;
         public TrainingStep Step { get; private set; }
         public int ProfileIndex { get; private set; }
         public int Minutes { get; private set; } = 25;
@@ -53,26 +56,27 @@ namespace SoloGym
         public bool? Supervised { get; private set; }
         public bool Acknowledged { get; private set; }
         public string AcceptedKey { get; private set; }
-        public TrainingProfile Profile => catalog.profiles[ProfileIndex];
-        public TrainingProfile[] Profiles => catalog.profiles;
+        public TrainingProfile Profile => catalog.Profiles[ProfileIndex];
+        public TrainingProfile[] Profiles => catalog.Profiles;
         public TrainingPlan Plan { get; private set; }
-        public string Key => Profile.id + ":" + Minutes + ":" + Readiness + ":" + (Profile.teen && Supervised == true ? "1" : "0");
+        public string Key => TrainingKeys.Make(Profile.id, Minutes, Readiness, Profile.teen && Supervised == true);
         public bool CanReview => Readiness != null && (!Profile.teen || Supervised.HasValue);
         public bool CanAccept => Step == TrainingStep.Plan && Plan != null && Plan.status == "draft_ready" && Acknowledged;
-        public TrainingController(TrainingCatalog source)
+        public TrainingController(TrainingCatalog source) : this(new FixtureTrainingPlans(source ?? throw new ArgumentNullException(nameof(source)), null)) { }
+        public TrainingController(ITrainingPlans source)
         {
             catalog = source ?? throw new ArgumentNullException(nameof(source));
-            if (catalog.profiles == null || catalog.profiles.Length == 0 || catalog.entries == null)
-                throw new ArgumentException("Training review catalog is incomplete.");
+            if (catalog.Profiles == null || catalog.Profiles.Length == 0) throw new ArgumentException("Training catalog is incomplete.");
+            Minutes = catalog.Durations.Contains(25) ? 25 : catalog.Durations[0];
         }
         public void SelectProfile(int index)
         {
-            if (index < 0 || index >= catalog.profiles.Length) throw new ArgumentOutOfRangeException(nameof(index));
+            if (index < 0 || index >= catalog.Profiles.Length) throw new ArgumentOutOfRangeException(nameof(index));
             ProfileIndex = index; ResetReadiness();
         }
         public void SetMinutes(int value)
         {
-            if (value != 15 && value != 25 && value != 40) throw new ArgumentOutOfRangeException(nameof(value));
+            if (!catalog.Durations.Contains(value)) throw new ArgumentOutOfRangeException(nameof(value));
             Minutes = value; Invalidate();
         }
         public void BeginReadiness() { ResetReadiness(); Step = TrainingStep.Readiness; }
@@ -88,7 +92,7 @@ namespace SoloGym
         public bool Review()
         {
             if (!CanReview) return false;
-            Plan = catalog.entries.FirstOrDefault(e => e.key == Key)?.session;
+            Plan = catalog.Session(Key);
             Acknowledged = false;
             if (Plan == null) throw new InvalidOperationException("No training review fixture for " + Key);
             Step = Plan.status == "recovery" ? TrainingStep.Rest : TrainingStep.Plan;

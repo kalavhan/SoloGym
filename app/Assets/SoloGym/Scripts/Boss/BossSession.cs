@@ -25,7 +25,7 @@ namespace SoloGym
         public bool paused;
         public static void Validate(BossSession s)
         {
-            if (s == null || s.version != 1 || s.context != "review-fixtures-only" || string.IsNullOrEmpty(s.id) || string.IsNullOrEmpty(s.entryId)
+            if (s == null || s.version != 1 || (s.context != FixtureTrainingPlans.FixtureContext && s.context != LiveTrainingPlans.AccountContext) || string.IsNullOrEmpty(s.id) || string.IsNullOrEmpty(s.entryId)
                 || !new[] { "active", "completed", "stopped" }.Contains(s.state) || !new[] { "ready", "low_energy" }.Contains(s.readiness)
                 || !new[] { "light", "medium", "hard" }.Contains(s.difficulty) || s.plan?.blocks == null || s.original?.blocks == null
                 || s.plan.blocks.Length != s.original.blocks.Length || s.plan.blocks.Length < 2 || s.plan.blocks.Length > 30
@@ -60,7 +60,7 @@ namespace SoloGym
     /// <summary>Local manual exercise ledger. No trusted rewards or automatic exercise detection.</summary>
     public sealed class BossController
     {
-        readonly BossCatalog catalog;
+        readonly ITrainingPlans catalog;
         readonly Action<BossSession> persist;
         readonly Func<double> now;
         public BossSession Data { get; private set; }
@@ -74,17 +74,27 @@ namespace SoloGym
         public string NextId => Current==null ? "" : Data.id+":"+Current.id+":"+BossSession.Count(Data,Current.id);
         public static double UtcNow() => (DateTime.UtcNow-new DateTime(1970,1,1,0,0,0,DateTimeKind.Utc)).TotalSeconds;
         public BossController(BossSession data, BossCatalog source, Action<BossSession> save, bool restored, Func<double> clock=null)
+            : this(data, Fixture(source), save, restored, clock) { }
+        static ITrainingPlans Fixture(BossCatalog source)
         {
-            BossSession.Validate(data); catalog=source; persist=save; now=clock??UtcNow; Data=WorkoutJournal.Clone(data);
+            var training=JsonUtility.FromJson<TrainingCatalog>(Resources.Load<TextAsset>("Training/Preview").text);
+            var options=JsonUtility.FromJson<JournalOptions>(Resources.Load<TextAsset>("Training/JournalOptions").text);
+            return new FixtureTrainingPlans(training,options,source);
+        }
+        public BossController(BossSession data, ITrainingPlans source, Action<BossSession> save, bool restored, Func<double> clock=null)
+        {
+            BossSession.Validate(data); catalog=source??throw new ArgumentNullException(nameof(source)); persist=save; now=clock??UtcNow; Data=WorkoutJournal.Clone(data);
             NeedsReadiness=restored&&!Closed;
             if (NeedsReadiness) { Data.pausedRest=Data.paused ? Data.pausedRest : Math.Max(0,Data.restUntil-now()); Data.paused=true; }
             // Reject stale/unsupported exercise identities before a saved prescription can be resumed.
             Resolve(Data,Data.difficulty,Data.readiness);
         }
-        static string Key(BossSession s,string difficulty,string readiness) => s.profile+":"+(s.original.budget_seconds/60)+":"+readiness+":"+(s.profile=="teen_home_supervised"?"1":"0")+":"+difficulty;
+        bool Teen(BossSession s) => catalog.Profile(s.profile)?.teen==true;
+        string Key(BossSession s,string difficulty,string readiness) => TrainingKeys.Make(s.profile,s.original.budget_seconds/60,readiness,Teen(s))+":"+difficulty;
+        public bool IsTeen => Teen(Data);
         TrainingPlan Resolve(BossSession s,string difficulty,string readiness)
         {
-            var variant=catalog.entries.FirstOrDefault(v=>v.key==Key(s,difficulty,readiness));
+            var variant=catalog.Variant(Key(s,difficulty,readiness));
             if (variant?.plan.status!="draft_ready") throw new ArgumentException("Unsupported training context.");
             var result=WorkoutJournal.Clone(variant.plan);
             foreach (var original in s.original.blocks.Where(b=>b.role=="main"))
@@ -99,10 +109,15 @@ namespace SoloGym
         }
         public static BossSession Create(WorkoutJournal journal, BossCatalog catalog)
         {
+            if(journal.Plans is FixtureTrainingPlans fixture) fixture.UseBosses(catalog);
+            return Create(journal);
+        }
+        public static BossSession Create(WorkoutJournal journal)
+        {
             if(!journal.CanSaveReview) throw new InvalidOperationException("Review and acknowledge today's routine first.");
-            var s=new BossSession {id=Guid.NewGuid().ToString("N"),entryId=journal.SelectedId,profile=journal.ProfileId,date=WorkoutJournal.Date(journal.Today),readiness=journal.Gate.Readiness,
+            var s=new BossSession {id=Guid.NewGuid().ToString("N"),entryId=journal.SelectedId,profile=journal.EntryProfile(journal.Selected),context=journal.Plans.Context,date=WorkoutJournal.Date(journal.Today),readiness=journal.Gate.Readiness,
                 difficulty=journal.PreparedPlan.difficulty_effective,original=WorkoutJournal.Clone(journal.PreparedPlan),plan=WorkoutJournal.Clone(journal.PreparedPlan)};
-            var controller=new BossController(s,catalog,_=>{},false);
+            var controller=new BossController(s,journal.Plans,_=>{},false);
             s.plan=controller.Resolve(s,s.difficulty,s.readiness); s.original=WorkoutJournal.Clone(s.plan);
             if(s.plan.estimated_seconds>s.plan.budget_seconds) throw new ArgumentException("Plan exceeds the reviewed time budget.");
             BossSession.Validate(s); return s;
@@ -161,7 +176,7 @@ namespace SoloGym
         public bool Recheck(string readiness,bool supervised)
         {
             if(!NeedsReadiness) return false;
-            if(new[]{"pain","injury","ill"}.Contains(readiness)|| (Data.profile=="teen_home_supervised"&&!supervised))
+            if(new[]{"pain","injury","ill"}.Contains(readiness)|| (Teen(Data)&&!supervised))
             { bool stopped=Stop(readiness=="ready"?"supervision":readiness);if(stopped)NeedsReadiness=false;return stopped; }
             bool saved=Change(s=> {Adjust(s,s.difficulty,readiness);s.paused=true;});
             if(saved) NeedsReadiness=false; return saved;

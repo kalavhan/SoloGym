@@ -41,9 +41,12 @@ namespace SoloGym.UI
         string L(string en, string es) => Language == "es" ? es : en;
         public static string Arg(string key, string fallback = "") => PixelButtonGallery.Argument(key, fallback);
         public static bool Has(string key) => PixelButtonGallery.HasArgument(key);
-        public void Initialize(string locale, string appearance, bool teen, Action onExit, IJournalStorage testStorage = null, bool openReadiness = false)
+        /// <summary>The signed-in person's account; null keeps the explicitly fictional review journal.</summary>
+        public AccountSession Account { get; private set; }
+        public bool Live => Account != null;
+        public void Initialize(string locale, string appearance, bool teen, Action onExit, IJournalStorage testStorage = null, bool openReadiness = false, AccountSession account = null)
         {
-            if (initialized) return; initialized = true; prepareOnLoad = openReadiness;
+            if (initialized) return; initialized = true; prepareOnLoad = openReadiness; Account = account;
             Language = locale == "es" ? "es" : "en"; character = appearance; Exited = onExit;
             profile = teen ? "teen_home_supervised" : Arg("-sologym-workout-profile", "adult_gym_intermediate");
             if (!teen && profile != "adult_gym_intermediate" && profile != "adult_home_beginner") profile = "adult_gym_intermediate";
@@ -79,9 +82,13 @@ namespace SoloGym.UI
             View = "loading"; failure = null; Render(); yield return null;
             try
             {
-                catalog = JsonUtility.FromJson<TrainingCatalog>(Resources.Load<TextAsset>("Training/Preview").text);
-                options = JsonUtility.FromJson<JournalOptions>(Resources.Load<TextAsset>("Training/JournalOptions").text);
-                Journal = new WorkoutJournal(catalog, options, storage, profile, today); Journal.Load(empty);
+                if (Live) { Journal = Account.OpenJournal(today); }
+                else
+                {
+                    catalog = JsonUtility.FromJson<TrainingCatalog>(Resources.Load<TextAsset>("Training/Preview").text);
+                    options = JsonUtility.FromJson<JournalOptions>(Resources.Load<TextAsset>("Training/JournalOptions").text);
+                    Journal = new WorkoutJournal(catalog, options, storage, profile, today); Journal.Load(empty);
+                }
                 failure = Journal.Error; View = failure == null ? "hub" : "error";
             }
             catch (Exception e) { Debug.LogWarning("Workout journal could not load: " + e.Message); failure = e.Message; View = "error"; }
@@ -120,7 +127,7 @@ namespace SoloGym.UI
             var plaque = Frame(page, new Rect(24, 18, 306, 64), "Window title"); Text(plaque, new Rect(12, 8, 282, 48), L("WORKOUTS", "RUTINAS"), 32, false, TextAnchor.MiddleCenter);
             var player = Frame(page, new Rect(976, 16, 280, 78), "Player profile");
             var portrait = Art(player, new Rect(14, 12, 48, 54), "Characters/PixelLabR1/" + character + "-portrait"); portrait.preserveAspect = true;
-            Text(player, new Rect(72, 8, 143, 34), "Aventurero", 22, false); Text(player, new Rect(72, 40, 143, 30), L("Barbarian", character.StartsWith("female") ? "Bárbara" : "Bárbaro"), 20, false);
+            Text(player, new Rect(72, 8, 143, 34), Live ? Account.Profile.PreferredName : "Aventurero", 22, false); Text(player, new Rect(72, 40, 143, 30), L("Barbarian", character.StartsWith("female") ? "Bárbara" : "Bárbaro"), 20, false);
             var settings = Button(player, "settings", new Rect(218, 11, 52, 56), "", ShowSettings, true, true);
             Art(settings.transform, new Rect(12, 13, 28, 28), "UI/Pixel/IconSettings").sprite = Resources.LoadAll<Sprite>("UI/Pixel/IconSettings")[0];
             settings.interactable = Journal?.Loaded == true && View != "edit" && View != "readiness" && View != "review";
@@ -134,7 +141,7 @@ namespace SoloGym.UI
             else if (View == "settings") BuildSettings();
             else { BuildLeftPage(); BuildRightPage(); }
             Text(page, new Rect(150, 607, 980, 29), L("You can adjust difficulty during the session.", "Puedes ajustar la dificultad durante la sesión."), 21, false, TextAnchor.MiddleCenter);
-            Text(page, new Rect(16, 686, 322, 24), L("Sample data · local changes", "Datos de ejemplo · cambios locales"), 16, false);
+            Text(page, new Rect(16, 686, 322, 24), Live ? L("Your journal · saved on this device", "Tu diario · guardado en este dispositivo") : L("Sample data · local changes", "Datos de ejemplo · cambios locales"), 16, false);
             Frame(page, new Rect(373, 645, 534, 70), "Navigation dock");
             Navigation = PixelNavigationBar.Create(page, new[] { "home", "workouts", "dungeon" }, new[] { L("Home", "Hogar"), L("Workouts", "Rutinas"), L("Dungeon", "Mazmorra") }, new[] { "home", "workouts", "dungeon" }, "workouts");
             Place((RectTransform)Navigation.transform, new Rect(380, 648, 520, 64)); Navigation.SetLayoutMetrics(125, 0);
@@ -148,7 +155,8 @@ namespace SoloGym.UI
             Heading(170, L("YOUR JOURNAL", "TU DIARIO"));
             Text(page, new Rect(165, 240, 410, 170), View == "loading" ? L("Opening your journal…", "Abriendo tu diario…") : L("The saved journal could not be read. Your file has been kept unchanged.", "No se pudo leer el diario guardado. Tu archivo se conservó sin cambios."), 26);
             if (View == "error") Button(page, "retry", new Rect(175, 453, 375, 60), L("Retry", "Reintentar"), () => StartCoroutine(Reload()));
-            Text(page, new Rect(687, 243, 410, 190), L("The journal uses local examples. It is separate from a live personal training account.", "El diario usa ejemplos locales. Es independiente de una cuenta de entrenamiento personal."), 25);
+            Text(page, new Rect(687, 243, 410, 190), Live ? L("Your training records stay on this device. Retry, or contact support if this continues.", "Tus registros de entrenamiento se guardan en este dispositivo. Reintenta o contacta soporte si continúa.")
+                : L("The journal uses local examples. It is separate from a live personal training account.", "El diario usa ejemplos locales. Es independiente de una cuenta de entrenamiento personal."), 25);
         }
         void BuildLeftPage()
         {
@@ -214,7 +222,7 @@ namespace SoloGym.UI
         void BuildEditor()
         {
             Heading(170, L("EDIT ROUTINE", "EDITAR RUTINA"));
-            var field = PixelFormField.Create(page, PixelFormField.Kind.Text, L("Name (optional)", "Nombre (opcional)"), L("Foundation A", "Base A"));
+            var field = PixelFormField.Create(page, PixelFormField.Kind.Text, L("Name (optional)", "Nombre (opcional)"), Journal.Plan(Journal.Draft).name.Get(Language));
             Place((RectTransform)field.transform, new Rect(165, 222, 429, 104)); field.SetLabelColor(Ink); field.Background.pixelsPerUnitMultiplier = 2; field.Input.characterLimit = 24;
             field.SetValueWithoutNotify(Journal.Draft.title); field.Input.onValueChanged.AddListener(value => Journal.Draft.title = value); Register("edit-name", field.Input);
             Text(page, new Rect(168, 334, 426, 27), L("Planned date", "Fecha prevista"), 22);
@@ -222,11 +230,18 @@ namespace SoloGym.UI
             Text(page, new Rect(224, 369, 307, 52), Journal.Draft.date, 23, true, TextAnchor.MiddleCenter);
             Button(page, "date-next", new Rect(541, 369, 51, 52), ">", () => ChangeDraftDate(1));
             Text(page, new Rect(168, 432, 425, 29), L("Time budget", "Tiempo disponible"), 22);
-            var times = new[] { 15, 25, 40 };
-            for (int i = 0; i < times.Length; i++) { int minutes = times[i]; Button(page, "duration-" + minutes, new Rect(166 + i * 145, 468, 134, 48), minutes + " min", () => { Journal.SetDuration(minutes); editError = null; Render(); }, true, minutes == Journal.Draft.minutes); }
+            var times = Journal.Durations; float width = (435f - (times.Length - 1) * 8) / times.Length;
+            for (int i = 0; i < times.Length; i++) { int minutes = times[i]; Button(page, "duration-" + minutes, new Rect(166 + i * (width + 8), 468, width, 48), minutes + " min", () => { Journal.SetDuration(minutes); editError = null; Render(); }, true, minutes == Journal.Draft.minutes, times.Length > 3 ? 20 : 22); }
             Heading(692, L("EXERCISES", "EJERCICIOS"));
             var plan = Journal.Plan(Journal.Draft); var blocks = plan.blocks.Where(b => b.role == "main").ToArray();
-            var scroll = Scroll(page, new Rect(673, 224, 461, 246), blocks.Length * 85);
+            float listTop = 224;
+            if (Live)
+            {
+                // Session type: strength foundations, aerobic base or movement practice.
+                Button(page, "session-type", new Rect(675, 222, 455, 44), L("Type: ", "Tipo: ") + plan.name.Get(Language) + "  >", CycleType, true, false, 19);
+                listTop = 272;
+            }
+            var scroll = Scroll(page, new Rect(673, listTop, 461, 470 - listTop), blocks.Length * 85);
             for (int i = 0; i < blocks.Length; i++)
             {
                 var block = blocks[i]; Text(scroll, new Rect(5, i * 85, 316, 56), block.name.Get(Language), 21);
@@ -239,6 +254,16 @@ namespace SoloGym.UI
             Text(page, new Rect(165, 523, 435, 60), editError ?? L("Changing time resets exercise swaps.", "Cambiar el tiempo restablece los ejercicios."), 18);
             Button(page, "cancel-edit", new Rect(680, 531, 213, 53), L("CANCEL", "CANCELAR"), () => TryLeave(() => { Journal.CancelEdit(); View = "hub"; Render(); }));
             Button(page, "save-edit", new Rect(906, 531, 224, 53), L("SAVE", "GUARDAR"), SaveEdit, true, true);
+        }
+        void CycleType()
+        {
+            var types = Journal.Plans.Profiles.Select(p => p.id).ToArray(); int start = Array.IndexOf(types, Journal.EntryProfile(Journal.Draft));
+            for (int i = 1; i <= types.Length; i++)
+            {
+                try { Journal.SetDraftProfile(types[(start + i) % types.Length]); editError = null; Render(); return; }
+                catch (ArgumentException) { }
+            }
+            editError = L("No other session type fits your equipment.", "Ningún otro tipo de sesión es posible con tu equipo."); Render();
         }
         void ChangeDraftDate(int delta)
         { var next = WorkoutJournal.ParseDate(Journal.Draft.date).AddDays(delta); if (next < Journal.Today) return; Journal.Draft.date = WorkoutJournal.Date(next); Render(); }
@@ -282,7 +307,7 @@ namespace SoloGym.UI
         {
             var plan = Journal.PreparedPlan; bool ready = plan?.status == "draft_ready";
             Heading(170, ready ? L("REVIEW YOUR PLAN", "REVISA TU RUTINA") : L("TAKE CARE", "CUIDA TU SALUD"));
-            string copy = Journal.Reviewed ? L("Review saved locally. No workout was started and no completion or reward was recorded.", "Revisión guardada localmente. No se inició un entrenamiento ni se registraron finalización o recompensas.") : ready ? L("Review the full routine and any equipment limits before entering the dungeon. Training starts only when you choose ENTER.", "Revisa la rutina completa y las limitaciones de equipo antes de entrar a la mazmorra. Solo inicias al elegir ENTRAR.") : L("This result does not prescribe a training session. Rest or address the review requirements before trying again.", "Este resultado no indica una sesión de entrenamiento. Descansa o atiende los requisitos de revisión antes de volver a intentarlo.");
+            string copy = Journal.Reviewed ? (Live ? L("Review saved. Enter the dungeon when you're ready to start.", "Revisión guardada. Entra a la mazmorra cuando quieras empezar.") : L("Review saved locally. No workout was started and no completion or reward was recorded.", "Revisión guardada localmente. No se inició un entrenamiento ni se registraron finalización o recompensas.")) : ready ? L("Review the full routine and any equipment limits before entering the dungeon. Training starts only when you choose ENTER.", "Revisa la rutina completa y las limitaciones de equipo antes de entrar a la mazmorra. Solo inicias al elegir ENTRAR.") : L("This result does not prescribe a training session. Rest or address the review requirements before trying again.", "Este resultado no indica una sesión de entrenamiento. Descansa o atiende los requisitos de revisión antes de volver a intentarlo.");
             Text(page, new Rect(166, 226, 430, 154), copy, 23);
             if (Journal.ReadinessAdjusted) Text(page, new Rect(166, 386, 430, 90), L("Your readiness changed the eligible exercises. Review this updated plan.", "Tu estado cambió los ejercicios disponibles. Revisa esta propuesta actualizada."), 21);
             if (ready && !Journal.Reviewed)
@@ -303,8 +328,7 @@ namespace SoloGym.UI
             {
                 if (!restored)
                 {
-                    var rules = JsonUtility.FromJson<BossCatalog>(Resources.Load<TextAsset>("Training/BossOptions").text);
-                    Journal.SaveBoss(BossController.Create(Journal, rules));
+                    Journal.SaveBoss(BossController.Create(Journal));
                 }
                 Journal.ClearGate(); Composition.gameObject.SetActive(false);
                 BossWindow = new GameObject("Routine dungeon").AddComponent<PixelBossWindow>();
@@ -320,9 +344,20 @@ namespace SoloGym.UI
             Heading(170, L("SETTINGS", "AJUSTES")); Text(page, new Rect(168, 222, 425, 91), L("Language", "Idioma"), 24);
             Button(page, "locale-es", new Rect(168, 321, 429, 60), "Español", () => SetLanguage("es"), true, Language == "es");
             Button(page, "locale-en", new Rect(168, 397, 429, 60), "English", () => SetLanguage("en"), true, Language == "en");
-            Heading(692, L("LOCAL EXAMPLES", "EJEMPLOS LOCALES"));
-            var p = catalog.profiles.First(x => x.id == profile);
-            Text(page, new Rect(681, 228, 427, 128), p.name.Get(Language), 25); Text(page, new Rect(681, 365, 427, 125), L("Edits are saved on this device in an example journal, separately from personal training records.", "Los cambios se guardan en este dispositivo en un diario de ejemplo, separado de registros personales de entrenamiento."), 22);
+            if (Live)
+            {
+                var pr = Account.Profile;
+                Heading(692, L("YOUR PLAN", "TU PLAN"));
+                string days = string.Join(" · ", pr.weekdays.Select(d => PixelScheduleWindow.Day(d, Language)));
+                Text(page, new Rect(681, 228, 427, 128), days + "\n" + pr.sessionMinutes + L(" min per session", " min por sesión"), 24);
+                Text(page, new Rect(681, 365, 427, 125), L("Change goals, equipment or days from Home → Settings → Edit training plan. Your history is kept.", "Cambia objetivos, equipo o días desde Hogar → Ajustes → Editar plan. Tu historial se conserva."), 21);
+            }
+            else
+            {
+                Heading(692, L("LOCAL EXAMPLES", "EJEMPLOS LOCALES"));
+                var p = catalog.profiles.First(x => x.id == profile);
+                Text(page, new Rect(681, 228, 427, 128), p.name.Get(Language), 25); Text(page, new Rect(681, 365, 427, 125), L("Edits are saved on this device in an example journal, separately from personal training records.", "Los cambios se guardan en este dispositivo en un diario de ejemplo, separado de registros personales de entrenamiento."), 22);
+            }
             Button(page, "done-settings", new Rect(682, 526, 443, 57), L("DONE", "LISTO"), () => { View = "hub"; Render(); }, true, true);
         }
         public void SetLanguage(string language) { Language = language == "es" ? "es" : "en"; PlayerPrefs.SetString("SoloGym.Home.Language.v1", Language); PlayerPrefs.Save(); Render(); }

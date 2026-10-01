@@ -25,6 +25,12 @@ namespace SoloGym
 
         readonly Settings settings;
         readonly SemaphoreSlim requests = new SemaphoreSlim(1, 1);
+        /// <summary>The identity from the most recent successful sign-in or registration.</summary>
+        public IdentityUser LastUser { get; private set; }
+        static FirebaseWelcomeAuthService shared;
+        /// <summary>One service per process so Firebase initializes once and session state is shared.</summary>
+        public static FirebaseWelcomeAuthService Shared => shared ?? (shared = new FirebaseWelcomeAuthService());
+        public bool Configured => settings != null && settings.enabled && !string.IsNullOrWhiteSpace(settings.projectId) && !string.IsNullOrWhiteSpace(settings.apiKey);
 #if SOLOGYM_FIREBASE_AUTH
         Task<FirebaseAuth> initialization;
 #endif
@@ -52,7 +58,7 @@ namespace SoloGym
                 // Firebase owns secure session persistence; never copy credentials into PlayerPrefs.
                 AuthResult result = await auth.SignInWithEmailAndPasswordAsync(email, password);
                 if (token.IsCancellationRequested) { auth.SignOut(); return new AuthOutcome(AuthStatus.Cancelled); }
-                return Outcome(result.User);
+                return Remember(Outcome(result.User));
             }
             catch (OperationCanceledException) { return new AuthOutcome(AuthStatus.Cancelled); }
             catch (Exception error) { return ErrorOutcome(error); }
@@ -82,7 +88,7 @@ namespace SoloGym
                 {
                     AuthResult result = await auth.SignInAndRetrieveDataWithCredentialAsync(credential);
                     if (token.IsCancellationRequested) { auth.SignOut(); return new AuthOutcome(AuthStatus.Cancelled); }
-                    return Outcome(result.User);
+                    return Remember(Outcome(result.User));
                 }
             }
             catch (OperationCanceledException) { return new AuthOutcome(AuthStatus.Cancelled); }
@@ -94,7 +100,153 @@ namespace SoloGym
 #endif
         }
 
+        AuthOutcome Remember(AuthOutcome outcome) { if (outcome.User != null) LastUser = outcome.User; return outcome; }
+
+        /// <summary>Returns the persisted Firebase session (works offline), or null.</summary>
+        public async Task<IdentityUser> RestoreAsync()
+        {
 #if SOLOGYM_FIREBASE_AUTH
+            try
+            {
+                var auth = await GetAuthAsync();
+                if (auth == null) return null;
+                var user = auth.CurrentUser;
+                if (user == null)
+                {
+                    // The persisted session can be loaded after initialization; wait briefly for it.
+                    var loaded = new TaskCompletionSource<bool>();
+                    EventHandler handler = (_, __) => loaded.TrySetResult(true);
+                    auth.StateChanged += handler;
+                    try { await Task.WhenAny(loaded.Task, Task.Delay(1500)); }
+                    finally { auth.StateChanged -= handler; }
+                    user = auth.CurrentUser;
+                }
+                if (user == null || user.IsAnonymous) return null;
+                return LastUser = Identity(user);
+            }
+            catch (Exception) { return null; }
+#else
+            await Task.CompletedTask;
+            return null;
+#endif
+        }
+
+        /// <summary>Creates an email/password identity. Credentials are never stored by SoloGym.</summary>
+        public async Task<RegistrationResult> CreateUserAsync(string email, string password, CancellationToken token)
+        {
+            token.ThrowIfCancellationRequested();
+#if SOLOGYM_FIREBASE_AUTH
+            await requests.WaitAsync(token);
+            try
+            {
+                var auth = await GetAuthAsync();
+                token.ThrowIfCancellationRequested();
+                if (auth == null) return new RegistrationResult(RegistrationStatus.Unavailable);
+                AuthResult result = await auth.CreateUserWithEmailAndPasswordAsync(email, password);
+                if (result?.User == null) return new RegistrationResult(RegistrationStatus.Unknown);
+                LastUser = Identity(result.User);
+                return new RegistrationResult(RegistrationStatus.Created);
+            }
+            catch (OperationCanceledException) { return new RegistrationResult(RegistrationStatus.Unknown); }
+            catch (Exception error)
+            {
+                var firebase = error.GetBaseException() as FirebaseException;
+                if (firebase == null) return new RegistrationResult(RegistrationStatus.Unknown);
+                var code = (AuthError)firebase.ErrorCode;
+                if (code == AuthError.NetworkRequestFailed) return new RegistrationResult(RegistrationStatus.Offline);
+                if (code == AuthError.TooManyRequests) return new RegistrationResult(RegistrationStatus.RateLimited, retryAfterSeconds: 60);
+                if (code == AuthError.WeakPassword) return new RegistrationResult(RegistrationStatus.PasswordPolicy);
+                if (code == AuthError.EmailAlreadyInUse || code == AuthError.InvalidEmail || code == AuthError.AccountExistsWithDifferentCredentials)
+                    return new RegistrationResult(RegistrationStatus.Rejected);
+                if (code == AuthError.OperationNotAllowed || code == AuthError.InvalidApiKey) return new RegistrationResult(RegistrationStatus.Unavailable);
+                return new RegistrationResult(RegistrationStatus.Unknown);
+            }
+            finally { requests.Release(); }
+#else
+            await Task.CompletedTask;
+            return new RegistrationResult(RegistrationStatus.Unavailable);
+#endif
+        }
+
+        public enum ResetResult { Sent, Unavailable, Offline, RateLimited, Failed }
+
+        /// <summary>Sends a reset link. Unknown addresses report Sent (no account enumeration).</summary>
+        public async Task<ResetResult> SendPasswordResetAsync(string email, CancellationToken token)
+        {
+            token.ThrowIfCancellationRequested();
+#if SOLOGYM_FIREBASE_AUTH
+            try
+            {
+                var auth = await GetAuthAsync();
+                if (auth == null) return ResetResult.Unavailable;
+                await auth.SendPasswordResetEmailAsync(email);
+                return ResetResult.Sent;
+            }
+            catch (Exception error)
+            {
+                var firebase = error.GetBaseException() as FirebaseException;
+                if (firebase == null) return ResetResult.Failed;
+                var code = (AuthError)firebase.ErrorCode;
+                if (code == AuthError.UserNotFound) return ResetResult.Sent;
+                if (code == AuthError.NetworkRequestFailed) return ResetResult.Offline;
+                if (code == AuthError.TooManyRequests) return ResetResult.RateLimited;
+                if (code == AuthError.OperationNotAllowed || code == AuthError.InvalidApiKey) return ResetResult.Unavailable;
+                return ResetResult.Failed;
+            }
+#else
+            await Task.CompletedTask;
+            return ResetResult.Unavailable;
+#endif
+        }
+
+        public enum DeleteResult { Deleted, RequiresRecentLogin, Offline, Unavailable, Failed }
+
+        /// <summary>Deletes the signed-in Firebase identity (Firebase may require a recent sign-in).</summary>
+        public async Task<DeleteResult> DeleteCurrentUserAsync()
+        {
+#if SOLOGYM_FIREBASE_AUTH
+            try
+            {
+                var auth = await GetAuthAsync();
+                var user = auth?.CurrentUser;
+                if (user == null) return DeleteResult.Unavailable;
+                await user.DeleteAsync();
+                LastUser = null;
+                return DeleteResult.Deleted;
+            }
+            catch (Exception error)
+            {
+                var firebase = error.GetBaseException() as FirebaseException;
+                if (firebase == null) return DeleteResult.Failed;
+                var code = (AuthError)firebase.ErrorCode;
+                if (code == AuthError.RequiresRecentLogin) return DeleteResult.RequiresRecentLogin;
+                if (code == AuthError.NetworkRequestFailed) return DeleteResult.Offline;
+                return DeleteResult.Failed;
+            }
+#else
+            await Task.CompletedTask;
+            return DeleteResult.Unavailable;
+#endif
+        }
+
+        public void SignOut()
+        {
+            LastUser = null;
+#if SOLOGYM_FIREBASE_AUTH
+            try
+            {
+                if (initialization != null && initialization.Status == TaskStatus.RanToCompletion) initialization.Result?.SignOut();
+            }
+            catch (Exception) { /* Signing out locally must never crash the app. */ }
+#endif
+        }
+
+#if SOLOGYM_FIREBASE_AUTH
+        static IdentityUser Identity(FirebaseUser user) => new IdentityUser
+        {
+            UserId = user.UserId, Email = user.Email, DisplayName = user.DisplayName, EmailVerified = user.IsEmailVerified
+        };
+
         Task<FirebaseAuth> GetAuthAsync()
         {
             // No guessed project, anonymous account, emulator or production fallback.
@@ -135,8 +287,9 @@ namespace SoloGym
         static AuthOutcome Outcome(FirebaseUser user)
         {
             if (user == null || user.IsAnonymous) return new AuthOutcome(AuthStatus.ProviderError);
-            // A Firebase identity is not proof that SoloGym consent/profile setup is complete.
-            return new AuthOutcome(AuthStatus.Success, "WIN-006", "firebase_identity_requires_onboarding");
+            // A Firebase identity is not proof that SoloGym consent/profile setup is complete;
+            // the app routes to setup unless this account's saved profile is complete.
+            return new AuthOutcome(AuthStatus.Success, "WIN-006", "firebase_identity_requires_onboarding", 0, Identity(user));
         }
 
         static AuthOutcome ErrorOutcome(Exception error)
