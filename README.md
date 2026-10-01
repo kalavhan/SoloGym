@@ -1,5 +1,13 @@
 # SoloGym
 
+**Active direction:** a landscape pixel-art fantasy fitness app. Follow the
+[current product direction](docs/product/fantasy-mvp-direction.md) and
+[complete-window delivery plan](docs/design/fantasy-pixel-component-plan.md).
+The [native guild login](design/fantasy-login-r1/README.md) joins the redesigned
+Home, Workouts, Boss and optional Fasting windows. Connected registration,
+recovery and trusted personal profiles remain unfinished; the workout examples
+are not live personal plans. Earlier checkpoints below are preserved history.
+
 Mobile fitness RPG for Android and iOS, ages 15+, in English and Spanish. This repository contains native Unity Welcome, age/region, privacy/consent and Home interfaces, approved manhua System references, research, training data, an offline generation reference and the window milestone plan.
 
 **Current character checkpoint: static modular MVP in customization and Home.** [Integration and checks](docs/design/character-modular-mvp.md). Four builds per gender, separate hair and garments, and local appearance saving. Obese is retired from selection; art polish is deferred so work can return to the fitness app.

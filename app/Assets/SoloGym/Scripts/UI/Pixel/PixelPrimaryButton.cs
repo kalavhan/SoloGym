@@ -19,6 +19,7 @@ namespace SoloGym.UI
         [SerializeField] string busyLabel = "Loading…";
         [SerializeField] bool loading;
         int requestedFontSize = 28;
+        float horizontalPadding = 24;
         SelectionState lastState;
 
         public bool IsLoading => loading;
@@ -96,6 +97,9 @@ namespace SoloGym.UI
             RefreshContent();
         }
 
+        public void SetHorizontalPadding(float value)
+        { horizontalPadding = Mathf.Clamp(value, 8, 48); RefreshContent(); }
+
         public void SetIcon(Sprite sprite)
         {
             if (icon == null) return;
@@ -142,8 +146,8 @@ namespace SoloGym.UI
             if (focusOutline != null) focusOutline.enabled = focused;
             if (content != null)
             {
-                content.offsetMin = new Vector2(24, pressed ? 6 : 8);
-                content.offsetMax = new Vector2(-24, pressed ? -10 : -8);
+                content.offsetMin = new Vector2(horizontalPadding, pressed ? 6 : 8);
+                content.offsetMax = new Vector2(-horizontalPadding, pressed ? -10 : -8);
             }
         }
 

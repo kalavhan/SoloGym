@@ -1,0 +1,67 @@
+{
+  "id": "fantasy-login-r1",
+  "status": "concept_approved_native_window_implemented",
+  "created": "2026-10-01",
+  "base_commit": "f74a811",
+  "window": "login",
+  "runtime_implemented": true,
+  "providers": {
+    "background": "PixelLab MCP create_image_pro",
+    "screen_concept": "built-in imagegen, not CLI"
+  },
+  "scope": "One landscape login concept using a separate PixelLab architecture asset and existing UI visual language. No character generation, no auth service changes.",
+  "quoted_pixellab_generations": 40,
+  "references": [
+    {
+      "file": "assets/sprites/pixellab/training-hall-r1/native/room-0.png",
+      "role": "PixelLab architecture palette and pixel density"
+    },
+    {
+      "file": "artifacts/visual/TrainingHall/home-es-1280.png",
+      "role": "Existing native UI style only; no characters, furniture, profile or navigation copied"
+    }
+  ],
+  "files": [
+    {
+      "file": "design/fantasy-login-r1/login-concept.png",
+      "sha256": "1f1ccdcc2a89393a2a6e0802c31d6448bd47e8e5829061ec50cbc27eca39e92e",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "design/fantasy-login-r1/screen-prompt.txt",
+      "sha256": "1b12094a10dec0f56bcfda2c72ece223d0d47bd5741243b4e4e16c93ddac1fca"
+    },
+    {
+      "file": "design/fantasy-login-r1/production/background-prompt.txt",
+      "sha256": "3c1a4a669c55d029e5423977ac57f2510fc3078e99ffd0a49fb44f37f5623bbf"
+    },
+    {
+      "file": "assets/sprites/pixellab/guild-entrance-r1/native/entrance.png",
+      "sha256": "a9b079c146380121777e1af59005a0ad30ac7c45827be1f7ddac77333f31c790",
+      "size": [
+        640,
+        360
+      ]
+    },
+    {
+      "file": "assets/sprites/pixellab/training-hall-r1/native/room-0.png",
+      "sha256": "89d2c34f583a8701083f24ea2119925661cce47d2e572e2bd187de650455c6e9",
+      "size": [
+        640,
+        360
+      ]
+    },
+    {
+      "file": "artifacts/visual/TrainingHall/home-es-1280.png",
+      "sha256": "e847eebaeeede2b132c15b5bed6eebb5ef331ab32a2fa172a86a8ad2232ca50a",
+      "size": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "approval": "User: go"
+}

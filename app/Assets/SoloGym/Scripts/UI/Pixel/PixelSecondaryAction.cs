@@ -20,6 +20,7 @@ namespace SoloGym.UI
         [SerializeField] string normalLabel = "";
         [SerializeField] string pendingLabel = "";
         [SerializeField] bool pending;
+        float horizontalPadding = 20;
         public Text Label => label;
         public Image Background => background;
         public Image Underline => underline;
@@ -67,6 +68,9 @@ namespace SoloGym.UI
 
         public void SetLabel(string text) { normalLabel = text ?? ""; RefreshContent(); }
 
+        public void SetHorizontalPadding(float value)
+        { horizontalPadding = Mathf.Clamp(value, 8, 48); RefreshContent(); }
+
         /// <summary>Set synchronously before an async operation to block repeat pointer/keyboard activation.</summary>
         public void SetPending(bool value, string localizedCaption = "")
         {
@@ -102,7 +106,7 @@ namespace SoloGym.UI
             label.color = disabled ? new Color32(151, 153, 151, 255)
                 : pending ? new Color32(210, 204, 185, 255) : new Color32(244, 223, 177, 255);
             focusOutline.enabled = focused;
-            Stretch(label.rectTransform, 20, 12);
+            Stretch(label.rectTransform, horizontalPadding, 12);
             if (pressed) label.rectTransform.anchoredPosition = new Vector2(0, -2);
             UpdateUnderline(pressed, disabled);
         }

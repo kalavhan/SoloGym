@@ -1,0 +1,20 @@
+{
+  "id": "guild-entrance-r1",
+  "status": "approved_login_background_native_integration",
+  "provider": "PixelLab MCP",
+  "tool": "create_image_pro",
+  "job_id": "f194e5ea-fc44-42f6-a743-519611cca920",
+  "asset_id": "4d127c42-c090-524e-82f3-d3219d9d3774",
+  "quoted_generations": 40,
+  "source": {
+    "file": "native/entrance.png",
+    "size": [
+      640,
+      360
+    ],
+    "sha256": "a9b079c146380121777e1af59005a0ad30ac7c45827be1f7ddac77333f31c790",
+    "opaque": true
+  },
+  "prompt": "design/fantasy-login-r1/production/background-prompt.txt",
+  "intended_use": "Architecture-only login background; interface, text and controls remain separate."
+}
