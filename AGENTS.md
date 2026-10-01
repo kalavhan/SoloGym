@@ -21,12 +21,14 @@ clothing pipeline. Current requirements are in
   pause/resume and completed/stopped history. One static PixelLab stone guardian
   is in scope; existing Barbarians stay unchanged. No animation batch.
 - PR #30 is merged. The next complete window is optional adult fasting, with
-  its review proposal in `design/fantasy-fasting-r1/`. The user explicitly
+  its approved render in `design/fantasy-fasting-r1/` ("i like it. do it."). The user explicitly
   requested a fantasy magic clock with restrained animation and a time-stage
   indication. PixelLab room/clock art and one clock animation proof are in scope;
   character animation remains out of scope. Show elapsed-time ranges without
   claiming to measure ketosis, autophagy, hormones or immune regeneration.
-  Render review precedes Unity implementation and the complete-window PR.
+  The complete native window includes adult opt-in, local persistence, correction,
+  history/deletion, Home navigation and reduced motion. Preserve the original
+  static clock and restrict animated frames to the dim rune annulus.
 - Workouts/Rutinas is the approved complete journal window, with current/completed/missed sessions,
   routine review/editing, and a readiness entry before training. The proposed
   visual is a fantasy guild training journal. Its reference and implementation pack is

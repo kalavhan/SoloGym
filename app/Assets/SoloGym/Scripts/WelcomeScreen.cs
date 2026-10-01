@@ -52,6 +52,8 @@ namespace SoloGym
 
         void Awake()
         {
+            if (Argument("-sologym-window") == "fasting")
+            { new GameObject("Optional fasting").AddComponent<SoloGym.UI.PixelFastingReview>(); Destroy(gameObject); return; }
             if (Argument("-sologym-window") == "workouts" || Argument("-sologym-window") == "boss")
             { new GameObject("Workout journal").AddComponent<SoloGym.UI.PixelWorkoutWindow>(); Destroy(gameObject); return; }
             var trainingWindow = Argument("-sologym-window");

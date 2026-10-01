@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "status": "concept and restricted motion proof; awaiting visual review",
+  "status": "implemented; native verification complete; PR review pending",
   "window": "Optional adult fasting / C\u00e1mara del tiempo",
   "mergedBase": {
     "pr": 30,
     "commit": "ec002bf77ae23c0488818cfa19449aaede5c30d3"
   },
-  "runtimeCodeChanged": false,
-  "implementationApproved": false,
+  "runtimeCodeChanged": true,
+  "implementationApproved": true,
   "art": [
     {
       "file": "assets/sprites/pixellab/quiet-chamber-r1/native/chamber.png",
@@ -69,6 +69,16 @@
     "clock": "256x256 transparent canvas, centered readable empty dial.",
     "render": "Landscape with readable elapsed time, current interval, start/chosen end, prominent End and familiar navigation.",
     "rawMotion": "Rejected for whole-frame playback: excess brightness and transparent centers in frames 1 and 2.",
-    "restrictedMotion": "Live annular mask over immutable clock; desaturation, dimming, 0.32 maximum opacity. Browser verification pending origin-access approval."
+    "restrictedMotion": "Implemented as dimmed native UI shader annulus over original clock; frame progression and reduced-motion behavior pass native checks."
+  },
+  "approvalQuote": "i like it. do it.",
+  "verification": "verification.json",
+  "runtime": {
+    "room": "app/Assets/SoloGym/Resources/Rooms/FastingR1/background.png",
+    "clock": "app/Assets/SoloGym/Resources/Rooms/FastingR1/clock.png",
+    "motionAtlas": "app/Assets/SoloGym/Resources/Rooms/FastingR1/motion-atlas.json",
+    "ui": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelFastingWindow.cs",
+    "localData": "app/Assets/SoloGym/Scripts/Fasting/FastingTracker.cs",
+    "nativeCapture": "artifacts/visual/Fasting/window-es-1280.png"
   }
 }

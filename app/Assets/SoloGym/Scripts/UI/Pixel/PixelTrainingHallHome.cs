@@ -44,6 +44,8 @@ namespace SoloGym.UI
         int editIndex, previousWidth, previousHeight;
         Rect previousSafe;
         bool fastingEnabled, review;
+        public bool FastingEligible => Controller != null && !Controller.Model.IsPrivateProfile && !Has("-sologym-age-unknown");
+        string fastingPath;
         float safeInset;
         Font font;
         string L(string en, string es) => language == "es" ? es : en;
@@ -57,8 +59,8 @@ namespace SoloGym.UI
             float.TryParse(Arg("-sologym-safe-inset", "0"), System.Globalization.NumberStyles.Float,
                 System.Globalization.CultureInfo.InvariantCulture, out safeInset);
             safeInset = Mathf.Clamp(safeInset, 0, 150);
-            // Fasting is absent by default. This explicit review flag demonstrates the enabled adult state only.
-            fastingEnabled = review && Has("-sologym-adult-fasting");
+            // Smoke builds use isolated persistence, never the user's optional local records.
+            fastingPath = SmokeMode ? Path.Combine(Application.temporaryCachePath,"fasting-home-smoke-"+Guid.NewGuid().ToString("N")+".json") : PixelFastingWindow.DefaultPath;
             font = Resources.Load<Font>("Fonts/PixelifySans");
             if (FindFirstObjectByType<Camera>() == null)
             { var cam = new GameObject("Home camera").AddComponent<Camera>(); cam.clearFlags = CameraClearFlags.SolidColor; cam.backgroundColor = new Color32(13,18,27,255); cam.cullingMask = 0; }
@@ -120,7 +122,7 @@ namespace SoloGym.UI
             Navigation=PixelNavigationBar.Create(controls,new[]{"home","workouts","dungeon","fasting"},new[]{"Hogar","Rutinas","Mazmorra","Ayuno"},new[]{"home","workouts","dungeon"},"home");
             Place((RectTransform)Navigation.transform,new Rect(328,646,620,64));Navigation.SetLayoutMetrics(125,0);
             Navigation.onNavigate.AddListener(id=>{
-                if(id=="fasting") { if(FastingVisible) Notice(L("The optional fasting area will be connected in its own iteration.","El área opcional de ayuno se conectará en su propia iteración.")); return; }
+                if(id=="fasting") { if(FastingVisible) OpenFasting(); return; }
                 Controller.OpenWindow(id=="workouts"?"WIN-015":"WIN-016");
             });
             fixture=Text(controls,new Rect(450,619,380,23),"",16,TextAnchor.MiddleCenter);
@@ -138,7 +140,9 @@ namespace SoloGym.UI
             decorate.SetLabel(L("Decorate","Decorar"));
             Navigation.SetLabel("home",L("Home","Hogar"));Navigation.SetLabel("workouts",L("Workouts","Rutinas"));
             Navigation.SetLabel("dungeon",L("Dungeon","Mazmorra"));Navigation.SetLabel("fasting",L("Fasting","Ayuno"));
-            Navigation.BindVisibleRoutes(fastingEnabled&&!model.IsPrivateProfile?new[]{"home","workouts","dungeon","fasting"}:new[]{"home","workouts","dungeon"},"home");
+            var fasting = new FastingTracker(new JournalFileStorage(fastingPath), FastingEligible); fasting.Load();
+            fastingEnabled = FastingEligible && ((fasting.Loaded && fasting.Data.enabled) || (review && Has("-sologym-adult-fasting")));
+            Navigation.BindVisibleRoutes(fastingEnabled?new[]{"home","workouts","dungeon","fasting"}:new[]{"home","workouts","dungeon"},"home");
             fixture.text=model.FixtureNotice; // Existing data is fictional: do not present it as a live accepted plan.
             settings.gameObject.name=model.SettingsLabel;
         }
@@ -176,6 +180,18 @@ namespace SoloGym.UI
             }, openReadiness: prepare);
             return journal;
         }
+        public PixelFastingWindow OpenFasting()
+        {
+            if(!FastingEligible)return null;
+            CloseModal();Composition.gameObject.SetActive(false);
+            var window=new GameObject("Optional adult fasting").AddComponent<PixelFastingWindow>();
+            window.Initialize(language,true,route=>{
+                window.gameObject.SetActive(false);Destroy(window.gameObject);Composition.gameObject.SetActive(true);
+                Bind(Controller.Model);Relayout();
+                if(route=="workouts"||route=="dungeon")OpenWorkouts(route=="dungeon");else Navigation.Tab("home").Select();
+            },new JournalFileStorage(fastingPath));
+            return window;
+        }
         void RetryNotice()=>Notice(L("No live account service is connected in this local build.","Esta versión local aún no está conectada a un servicio de cuentas."));
         public void Notice(string message)
         {
@@ -185,12 +201,13 @@ namespace SoloGym.UI
         }
         public void ShowSettings()
         {
-            OpenModal(L("Settings","Ajustes"),560,460);
+            OpenModal(L("Settings","Ajustes"),560,FastingEligible?528:460);
             Action(Modal,new Rect(28,68,245,56),"Español",()=>{Controller.SetLanguage("es");ShowSettings();});
             Action(Modal,new Rect(286,68,245,56),"English",()=>{Controller.SetLanguage("en");ShowSettings();});
             Text(Modal,new Rect(30,135,500,30),L("Appearance · cosmetic only","Apariencia · solo cosmética"),23,TextAnchor.MiddleCenter);
             for(int i=0;i<appearances.Length;i++) {var c=appearances[i];Action(Modal,new Rect(28+(i%2)*258,178+(i/2)*52,245,46),language=="es"?c.es:c.en,()=>SelectCharacter(c.id),20);}
-            Action(Modal,new Rect(165,394,230,52),L("Done","Listo"),CloseModal,24);
+            if(FastingEligible)Action(Modal,new Rect(28,394,504,52),L("Optional adult fasting","Ayuno opcional para adultos"),()=>OpenFasting(),23);
+            Action(Modal,new Rect(165,FastingEligible?460:394,230,52),L("Done","Listo"),CloseModal,24);
         }
         public void BeginDecorate()
         {

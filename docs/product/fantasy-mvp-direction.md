@@ -65,7 +65,9 @@ The [research brief](../research/2026-09-25-fitness-game-research.md), [training
 - Fasting remains adult-only, optional and off by default, with no XP, combat buffs, streak rewards or rankings. Ending early loses no progress. The existing 20-hour supported-plan cap is not a safety claim or progression target; actual records may be corrected without encouraging longer fasting.
 - Fasting visual direction (2026-10-01): a restrained animated pixel-art magic
   clock, elapsed time and an approximate time-range indication. The render and
-  motion proof in `design/fantasy-fasting-r1/` await visual approval. Decorative
+  motion proof in `design/fantasy-fasting-r1/` were accepted for implementation
+  ("i like it. do it."). The complete native window implements local tracking,
+  corrections, history/deletion, adult Home entry and reduced motion. Decorative
   stage changes do not certify ketosis, autophagy, hormone boosts or immune
   regeneration, and do not unlock rewards or extended plans.
 - Keep English/Spanish with a persistent language choice, readable text, and existing teen privacy/moderation principles. The Spanish concepts are not a decision to remove English.

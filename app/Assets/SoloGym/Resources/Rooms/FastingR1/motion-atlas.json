@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "source": "PixelLab animate_image get_image; input followed by eight generated frames",
+  "providerJobId": "1eced333-8ebb-49c1-b56d-01858197fb06",
+  "layout": "separate equal-size PNG frames; no atlas cropping",
+  "providerTimingSupplied": false,
+  "previewTimingAuthored": true,
+  "loop": true,
+  "frames": [
+    {
+      "index": 0,
+      "file": "motion/frame-00.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "e4317a18cd948dcae093dfbe74776d22ed6f636550b243d974825739215ec378",
+      "durationMs": 650
+    },
+    {
+      "index": 1,
+      "file": "motion/frame-01.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "f5ba842d20a7839775d7105a27c74fcf5b1f153b8fb6bce4c9e070afc4ccaefb",
+      "durationMs": 650
+    },
+    {
+      "index": 2,
+      "file": "motion/frame-02.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "87de80c5e5d63dd028b112df2cdae49a35216dfde4b044b2402e782c0bc501e7",
+      "durationMs": 650
+    },
+    {
+      "index": 3,
+      "file": "motion/frame-03.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "f76db09ea0be0346aa685f224cc4c009e6faa81aaa4efb2321c43d17d89d43a5",
+      "durationMs": 650
+    },
+    {
+      "index": 4,
+      "file": "motion/frame-04.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "dcf627d4d426b1053766026bc1dfda90a110e1a4ae41d1ed4088fcab9e10e6ab",
+      "durationMs": 650
+    },
+    {
+      "index": 5,
+      "file": "motion/frame-05.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "35e5aff2ba515c6f40c8aadcb5c00c427f17196512543267435981b656fb66b4",
+      "durationMs": 650
+    },
+    {
+      "index": 6,
+      "file": "motion/frame-06.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "825a166531a653355656264e23ab3f82aeba38f8813143ff0bc8970600242089",
+      "durationMs": 650
+    },
+    {
+      "index": 7,
+      "file": "motion/frame-07.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "475129fcb84e50de2b13c58b8bec85aa1af92de325a0bf04ce37b1fb6f2182db",
+      "durationMs": 650
+    },
+    {
+      "index": 8,
+      "file": "motion/frame-08.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "3a04f60540ef844b60e51e78b57a28da715c43f79eb374bfcd290610cb2d0c32",
+      "durationMs": 650
+    }
+  ],
+  "presentation": {
+    "base": "native/clock.png",
+    "baseAlwaysVisible": true,
+    "overlayOnly": true,
+    "ringCenterSourcePixels": [
+      128,
+      124
+    ],
+    "ringInnerRadiusSourcePixels": 61,
+    "ringOuterRadiusSourcePixels": 82,
+    "maximumOverlayOpacity": 0.32,
+    "cssFilter": "saturate(0.22) brightness(0.78)",
+    "reason": "Raw animation has bright green/white accents and two frames with a transparent center. Keep original center/casing/pedestal; clip effect to rune annulus. This is a live display mask, not an edited source."
+  },
+  "approval": "Unapproved motion proof; raw whole-frame playback rejected"
+}

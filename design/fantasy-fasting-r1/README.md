@@ -1,78 +1,94 @@
-# Fasting — arcane clock window concept
+# Fasting — complete native clock window
 
-Follows merged PR #30. The user requested a complete fasting window with a
-pixel-art fantasy magic clock, elapsed time, an indication of the current
-stage and restrained animation. This pack is a **visual proposal**, not an
-approved Unity implementation or a working health tracker.
+The user approved `fasting-clock-concept.png` with **“i like it. do it.”**
+This complete window follows merged PR #30. It preserves the frontal PixelLab
+room and independent arcane clock, with live native uGUI text, parchment and
+controls. No new character generation or character animation is included.
 
-The room is generated first with PixelLab, then the clock as an independent
-transparent sprite. A complete screen reference uses these assets and the
-existing native UI style. The final window will keep the room, clock, animation,
-text and controls separate. No character generation is included.
+Open **Home → Settings → Optional adult fasting**. The feature starts off.
+Read the suitability information and explicitly acknowledge adult eligibility
+before enabling. Teen and unknown-age review profiles have no entry; direct
+excluded routes do not load fasting data or artwork. Enabled adults gain an
+Ayuno/Fasting navigation tab. Disabling removes it and preserves history.
 
-## Art direction
+The timer stores actual UTC timestamps and a separately chosen duration. It
+continues across backgrounding and app restarts. Supported durations never
+exceed 20 hours; that cap is not medical clearance or a target. Passing the
+chosen end displays a neutral notice while preserving actual elapsed time:
+no automatic end, extension or rewards. **End now** remains available in the
+active clock, guide, history, correction and settings views. An immediate end
+is valid. No XP, training effects, rankings or fasting streaks are connected.
 
-- Frontal guild alcove, slate stone, quiet window light and aged brass.
-- A large astrolabe is the focal point; its center remains clear for a live timer.
-- Slow rune motion, a small change of accent/pattern by time range and steady
-  overall brightness. Longer fasting does not make the clock more powerful.
-- Timer, stage label and buttons remain still and readable. No bloom, flashing,
-  screen shake, reward reveal or dense particles. Respect reduced motion.
-- Reuse the existing pixel frames, teal actions and parchment surface. The
-  primary action while running is always **Finalizar ahora**.
+Users can backdate/correct the start, finish immediately, correct both ends of
+a saved record, delete individual entries, discard an active entry or separately
+delete all history. Destructive actions have explicit confirmations. Reversed,
+future and overlapping actual intervals are rejected. Corrections can truthfully
+exceed the supported-plan duration. Inputs include a UTC offset so repeated DST
+hours can be distinguished; offset-free local input is also accepted when the
+local time is unambiguous. Device time earlier than the start is shown for
+correction, without producing negative durations or invalid history.
 
-## Time ranges, not measured metabolic states
+Data is stored atomically in `fasting-local-v1.json` under Unity's local app data
+directory. Failed writes preserve the prior saved state and unsaved form input
+for retry. Corrupt, oversized and unsupported saves are preserved, never reset.
+History is paged in groups of 20. This is a single local profile, with no account
+synchronization or encrypted/cloud health-record service. Home's workouts remain
+fictional fixtures; fasting records are user-entered local data except in the
+explicit isolated smoke mode. Suitability/health copy remains subject to clinical
+review before release. [Evidence and copy limits](evidence-notes.md) are preserved.
 
-The proposed display uses five continuous elapsed-time bands: 0–4, 4–16,
-16–24, 24–48 and 48+ hours. The last band closes the 48–72-hour gap in the
-submitted list. These are interface groupings, not clinical thresholds or
-recommended durations. Use neutral labels and a clear “Etapa orientativa”
-caption; do not display ketosis, autophagy, hormone boosts or immune repair as
-unlocked or detected states. See [evidence notes](evidence-notes.md).
+## Visual and motion behavior
 
-The existing MVP supported-plan cap remains 20 hours. It is not a safety claim
-or a target. Later bands only describe an actual/corrected elapsed record;
-they do not add selectable extended plans. Passing a chosen end keeps an
-honest elapsed time, offers ending/correction, and never extends the plan or
-invents a finish automatically.
+The room, clock and original animation frames are copied byte-for-byte into
+`app/Assets/SoloGym/Resources/Rooms/FastingR1/`. The frame JSON was read before
+implementation. Original source assets, hashes, prompts and jobs remain under
+`assets/sprites/pixellab/` and `production/`. Source canvases are 640×360 for
+the room and 256×256 for the clock/frames. No flattened screen is used in Unity.
 
-The example in the concept is 08:24:16 elapsed, starting yesterday at 22:00,
-with a user-selected end today at 10:00. It is fictional, not a recommendation.
+Raw whole-frame animation is intentionally rejected: two provider frames make
+the center transparent, and some highlights are too bright. A native UI shader
+clips a dim, desaturated overlay to the rune annulus specified in the atlas
+(center 128,124; radii 61–82); its maximum alpha is 0.32. The original center,
+casing and pedestal stay fixed. Nine source frames use authored 650 ms timings.
+Reduced motion in Settings disables the decorative overlay and is persisted;
+`-sologym-reduced-motion` also forces the static view. Timer text stays live.
 
-## Complete-window implementation after visual approval
+Five neutral time bands change the label and restrained accent: 0–4, 4–16,
+16–24, 24–48 and 48+ hours. These are not measured metabolic states or goals;
+no ketosis, autophagy, hormone or immune-regeneration detection is claimed.
+Brightness never escalates with duration. The later bands describe actual or
+corrected records, not selectable extended plans.
 
-Keep adult suitability/enablement, optional/off-by-default behavior and teen
-exclusion. Implement start, elapsed timer, correction, ending, private history,
-deletion and disabling together in one window PR. No XP, buffs, rankings,
-streaks or training effects. Stopping early carries no penalty.
+The original `review/` browser utility and imagegen screen prompt/render remain
+as design evidence. The final native captures and reports are in
+`artifacts/visual/Fasting/`. Quoted PixelLab cost for the art pass was 68
+generations (40 room + 20 clock + 8 motion); implementation generated no new art.
 
-No new app code is part of this concept pass. Source requests, provider job IDs,
-quoted costs and asset hashes are retained with the art for the subsequent PR.
-
-## Review pack
-
-`fasting-clock-concept.png` is the complete landscape reference, rendered with
-built-in imagegen using the actual PixelLab room and clock plus the existing
-native workout UI. `review/index.html` shows the render and a separate motion
-proof with live labels and five selectable fictional time examples. It is a
-review utility, not the app or a working fasting tracker.
-
-The original clock stays visible in the motion proof. The PixelLab animation
-returned nine 256×256 frames; its whole-frame playback is rejected because two
-frames make the center transparent and some rune/gem highlights become too
-bright. The proof clips playback to the rune ring, reduces saturation/brightness
-and caps its overlay opacity at 0.32. No source PNG is modified. The center,
-casing and pedestal remain the original static art. Reduced motion removes the
-decorative overlay. `motion-atlas.json` records the frame order, original hashes,
-authored timing and presentation mask; PixelLab did not supply frame durations.
-
-Quoted PixelLab cost for this pass: **68 generations** (40 room + 20 static
-clock + 8 motion). The imagegen render uses its separate tool allowance.
-
-To reopen the isolated review:
+## Build and verification
 
 ```sh
-python3 -m http.server 8907 --bind 127.0.0.1 --directory design/fantasy-fasting-r1/review
+/home/josue/Unity/Hub/Editor/6000.3.24f1/Editor/Unity -batchmode -nographics -quit \
+  -projectPath "$PWD/app" -executeMethod SoloGym.Editor.PixelFastingBuild.BuildLinux \
+  -logFile /tmp/fasting-build.log
+app/Builds/Fasting/SoloGymFasting.x86_64 \
+  -screen-fullscreen 0 -screen-width 1280 -screen-height 720 -sologym-locale es
 ```
 
-Then open `http://127.0.0.1:8907/`. The server exposes only this review folder.
+The normal build opens suitability setup or the saved local clock; it does not
+seed or start a fast. The main app also accepts `-sologym-window fasting`.
+Add `-sologym-review -sologym-smoke -sologym-capture "$PWD/artifacts/visual/Fasting/window-es-1280.png"`
+for isolated example data, domain/interaction checks and screenshots. Add
+`-sologym-teen` or `-sologym-age-unknown` for excluded profiles; `-sologym-locale en`
+and `-sologym-safe-inset 24` exercise other display contexts. Failed checks exit
+with a nonzero status. `-sologym-stay-open` keeps a capture build open.
+
+```sh
+python3 tools/check_fasting_assets.py
+python3 -m unittest discover -s tests -v
+```
+
+The focused native suite verifies opt-in, timestamp/offset handling, actual
+elapsed time beyond the chosen end, reloads, clock rollback, correction,
+overlap rejection, deletion, disable/retain behavior, save-failure retries,
+corrupt-file preservation, native pointer/keyboard submission, text fit,
+reduced motion and Home integration. `verification.json` records final results.
