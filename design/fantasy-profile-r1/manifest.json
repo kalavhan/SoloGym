@@ -2,8 +2,8 @@
   "id": "fantasy-profile-r1",
   "date": "2026-10-01",
   "base_commit": "73b01469aba925b020d57f9420331ed839673e2a",
-  "status": "awaiting_visual_review",
-  "runtime_implemented": false,
+  "status": "approved_and_implemented",
+  "runtime_implemented": true,
   "scope": "One complete private-profile window with notice, optional measurements and readiness, following merged PR #35.",
   "provider": "built-in imagegen, not CLI",
   "pixellab_generations_added": 0,
@@ -81,7 +81,7 @@
     "Runtime must display the same compact review marker on all three states; the readiness concept omitted it."
   ],
   "implementation_constraints": [
-    "No profile runtime code changed in this concept stage.",
+    "Approved concepts are implemented by PixelPrivateProfileWindow; review drafts remain memory-only.",
     "Keep preview drafts in memory with explicit review context, separate from production auth, eligibility and health-data authorization.",
     "The previous PR provisional registration does not create an identity; do not bypass that boundary to collect live profile data.",
     "Production measurement entry remains gated by its existing authorization requirements; final legal copy does not block the concept or review flow.",
@@ -90,5 +90,11 @@
     "Metric/imperial conversion preserves canonical values; blank optional values remain absent.",
     "Goals/experience, equipment and schedule are subsequent windows; appearance never prescribes exercise.",
     "No BMI, calorie, weight target, new character art, animation or art credit batch."
-  ]
+  ],
+  "approval": {
+    "date": "2026-10-01",
+    "user_quote": "do it",
+    "scope": "All three private-profile steps together in one complete native window."
+  },
+  "native_verification": "design/fantasy-profile-r1/verification.json"
 }

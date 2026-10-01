@@ -4,10 +4,13 @@ This is the implementation approach for the [confirmed product direction](../pro
 
 ## Window delivery workflow
 
-**Next window, after merged PR #35:** Private Fitness Profile (WIN-009).
+**Current approved window, after merged PR #35:** Private Fitness Profile (WIN-009).
 Three connected landscape references cover the notice, optional measurements and
-current readiness in `design/fantasy-profile-r1/`. They await visual review before
-the complete-window implementation PR. Reuse the existing PixelLab guild entrance
+current readiness in `design/fantasy-profile-r1/`. The user approved with “do it”;
+the native implementation now covers all three, pause and next-setup states.
+Signed-in consent enters the explicit profile review; the provisional account
+form also offers a separate preview link that clears secrets. Reports and native
+captures record 1,068 passing checks. Reuse the existing PixelLab guild entrance
 and controls; no new character or animation batch. Keep measurement/appearance
 independence, metric/imperial conversion and pause routes. Provisional account
 review does not establish an identity or authorize live private-data collection.
@@ -16,7 +19,7 @@ review does not establish an identity or authorize live private-data collection.
 The user authorized Lorem ipsum in both documents for now; the provisional copy
 is in `design/fantasy-consent-r1/document-placeholders.json`. The user approved both renders with “implement.” The native screens now reuse
 the guild entrance, with replaceable text, independent choices, a shared reader
-and registration preview. Signed-in users continue to pending profile setup. Final document
+and registration preview. Signed-in users continue to the profile review above. Final document
 copy does not block UI/review-flow work. Any preview continuation must remain
 separate from production receipts, eligibility and account-creation permits.
 

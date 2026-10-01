@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-01",
+  "unity": "6000.3.24f1",
+  "platform": "Linux standalone, isolated Xvfb displays",
+  "passed": true,
+  "total_reported_checks": 1068,
+  "reports": [
+    {
+      "file": "artifacts/visual/Profile/window-es-1280.smoke.json",
+      "result": {
+        "passed": true,
+        "checks": 182,
+        "width": 1280,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "artifacts/visual/Profile/window-es-1600.smoke.json",
+      "result": {
+        "passed": true,
+        "checks": 182,
+        "width": 1600,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "artifacts/visual/Profile/window-en-854.smoke.json",
+      "result": {
+        "passed": true,
+        "checks": 182,
+        "width": 854,
+        "height": 480,
+        "locale": "en",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-profile-r1/checks/consent-regression.json",
+      "result": {
+        "passed": true,
+        "checks": 101,
+        "width": 1280,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-profile-r1/checks/account-regression.json",
+      "result": {
+        "passed": true,
+        "checks": 91,
+        "locale": "en",
+        "width": 854,
+        "height": 480,
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-profile-r1/checks/login-regression.json",
+      "result": {
+        "passed": true,
+        "checks": 122,
+        "locale": "es",
+        "width": 1280,
+        "height": 720,
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-profile-r1/checks/onboarding-regression.json",
+      "result": {
+        "passed": true,
+        "checks": 204,
+        "width": 1280,
+        "height": 720,
+        "locale": "es",
+        "failures": []
+      }
+    },
+    {
+      "file": "design/fantasy-profile-r1/checks/keyboard.json",
+      "result": {
+        "passed": true,
+        "checks": 4,
+        "width": 1280,
+        "height": 720,
+        "locale": "en",
+        "failures": []
+      }
+    }
+  ],
+  "art_integrity": {
+    "eight_original_characters_unchanged": true,
+    "concepts_prompts_and_native_background_hashes_unchanged": true,
+    "new_art_generations": 0
+  },
+  "screens": [
+    {
+      "file": "artifacts/visual/Profile/window-en-854-imperial.png",
+      "sha256": "36a2db474b10390ac5666bd9c6450ecd9667e5aea8d42161986a84a81dd16604"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-en-854-invalid.png",
+      "sha256": "ad0ff2c9726a2e65fb9b1c0ad969924dc0ad7bd4aac8e1d4f2674cad94b9a1c8"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-en-854-readiness.png",
+      "sha256": "8757493e228053e01c22989a9dfe26ebe2cdf13fdc2c6b11b9d6a2468dc246a2"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-en-854.png",
+      "sha256": "2434d44f139ecb763c180696aa3814665c2b33fcc3dcbb632f2bee90a5863592"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-es-1280-checkpoint.png",
+      "sha256": "c4d765aec9aee17eb6ea328d699fbf657ff5f0ec040ff7ca2fc6e536d8967ac7"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-es-1280-imperial.png",
+      "sha256": "760bc300c363d3fc08e21f20234c3fae748e5013a0df18d98dd7dbb65a369eb5"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-es-1280-invalid.png",
+      "sha256": "dd8683f0e7de25b9ddf3c5eceef6679e530b17cd20fc78b6378ac1d85f1ebc64"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-es-1280-notice.png",
+      "sha256": "27ad46ee9839e6a44171e9ad39037b307c54ab786462757607f18b4eff4b677e"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-es-1280-paused.png",
+      "sha256": "fdf79cde62b0d7f9682ab53622247165e28cdf5d50de44daf9ae4fe7e9e9cbec"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-es-1280-readiness.png",
+      "sha256": "6c1025abe547db23e996f4358c66aad4657cc703204bbfaf9b20130de6447f0b"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-es-1280.png",
+      "sha256": "b0edd5cb72bcbd26307a06d680e73a6bda64523fb7848d40349ca4a988bcccad"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-es-1600-readiness.png",
+      "sha256": "82066a23a6a6ecc04da572beebfdead4e05d67b42797d1e4928927169f1ad14f"
+    },
+    {
+      "file": "artifacts/visual/Profile/window-es-1600.png",
+      "sha256": "a57b6e68f1691cce014837f82a1479d0952078d1704024bc2712afe646922ae8"
+    }
+  ],
+  "limits": [
+    "Profile review remains memory-only and distinct from real authentication, eligibility and legal receipts.",
+    "No profile persistence, new workout generation, Home entry or readiness approval for future exercise.",
+    "Android/iOS touch and software keyboard still require device testing."
+  ]
+}
