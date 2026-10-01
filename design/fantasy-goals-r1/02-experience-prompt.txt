@@ -1,0 +1,21 @@
+Use case: ui-mockup
+Asset type: one complete SoloGym native Unity landscape Goals & Experience screen proposal, 16:9, 1672x941.
+Input images: Image 1 is the approved native private-profile window, the edit target for composition and UI. Image 2 is the original PixelLab guild entrance, an invariant background reference.
+Preserve everything outside the right-hand form panel of Image 1: exact straight-on guild doorway composition, wood beams, stone floor, warm muted lighting, SOLOGYM wordmark, GREMIO DE ENTRENAMIENTO subtitle, footer links "Privacidad", "Términos" and "ES / EN". No new camera, room, character or props.
+Inside the existing panel keep the dark slate fill, thin aged-brass pixel border, ivory pixel type, subdued teal selected controls and primary action. Same crisp restrained 16-bit fantasy pixel game style. This is a real game menu visual, not a web dashboard.
+Panel header: small underlined "Volver" at top left, centered large title supplied below, fine divider, then a text-only step label and a compact subdued "Vista previa". No extra progress circles or decorative badges.
+Keep generous readable text, aligned edges and realistic phone-landscape touch targets. At the very bottom of the panel, the same large teal primary button "CONTINUAR". Do not clip the button or overflow the panel.
+Only one complete screen per image, not a contact sheet. No extra cards outside the existing panel, charts, XP, body diagrams, weights, extra fantasy illustrations, browser chrome, white cards, glows or gradients from another design system.
+This is a flattened reference only. Runtime will use unchanged independent PixelLab background and native sprite-skinned controls with live text. Selections shown are fictional examples; no saved account or generated training is claimed.
+Title: "TU PUNTO DE PARTIDA".
+Step label: "2 DE 3 · EXPERIENCIA".
+The central panel contains two large, spacious, full-width single-choice controls with two-line left-aligned labels:
+First row selected in subdued teal with one small gold checkmark. Label exactly "Estoy empezando" on line one and "o retomando" on line two.
+Second row unselected dark stone. Label exactly "Entreno con regularidad" on line one and "y conozco los movimientos básicos" on line two. Give this row enough height and do not shrink its font.
+Below the choices, a clear underlined action "No estoy seguro/a".
+Below that, restrained support text on two lines:
+"Te propondremos una base"
+"para que la confirmes."
+Near the bottom, the note "La dificultad se ajusta durante la rutina."
+Then the bottom "CONTINUAR" button.
+This is experience, not difficulty: do not show Easy, Medium or Hard controls. The uncertainty link asks for confirmation in the real flow; it never silently selects a level.

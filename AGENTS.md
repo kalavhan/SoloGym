@@ -7,6 +7,14 @@ clothing pipeline. Current requirements are in
 
 ## Scope
 
+- Next window after merged PR #36: Goals & Experience (WIN-010). Three landscape
+  proposals in `design/fantasy-goals-r1/` await visual review: goal, experience
+  and summary/edit. Reuse the original PixelLab guild entrance and native controls.
+  Keep the existing catalog IDs, empty initial selections, explicit uncertainty
+  confirmation, teen goal filtering and upstream readiness/authorization gates.
+  Experience is separate from battle difficulty; appearance never determines it.
+  After review, deliver all connected states in one complete-window PR.
+
 - Next window after merged PR #35: private fitness profile (WIN-009), with notice,
   optional measurements and readiness in one complete window. Landscape concepts
   and exact prompts are in `design/fantasy-profile-r1/`; the user approved with

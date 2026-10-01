@@ -4,6 +4,13 @@ This is the implementation approach for the [confirmed product direction](../pro
 
 ## Window delivery workflow
 
+**Next window, after merged PR #36:** Goals & Experience (WIN-010).
+The three landscape proposals in `design/fantasy-goals-r1/` cover goal selection,
+experience and summary/edit. They await visual review before the complete-window
+implementation PR. Reuse the guild entrance and existing catalog/controller.
+Preserve explicit beginner confirmation for uncertainty, teen goal filtering,
+upstream readiness pauses and adjustable battle difficulty. No new character art.
+
 **Current approved window, after merged PR #35:** Private Fitness Profile (WIN-009).
 Three connected landscape references cover the notice, optional measurements and
 current readiness in `design/fantasy-profile-r1/`. The user approved with “do it”;
