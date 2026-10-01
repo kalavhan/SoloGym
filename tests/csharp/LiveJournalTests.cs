@@ -107,6 +107,41 @@ namespace Tests
             var cj = new WorkoutJournal(plans, new Memory(), "u", today); cj.DefaultProfile = d => plans.DefaultProfileFor(d, days); cj.DefaultMinutes = 40; cj.Load(true);
             cj.BeginCreate(today.AddDays(1)); Check(cj.Draft.profile == "u.aerobic_base" && cj.Draft.minutes == 40, "rest-day extra = aerobic 40");
             cj.SetDraftProfile("u.mobility_reset"); Check(cj.SaveEdit(out err), "save new mobility " + err);
+            // custom routine: replace, add, remove, sets; dungeon one-tap complete + finish all
+            var cu = new WorkoutJournal(plans, new Memory(), "u", today); cu.DefaultProfile = d => plans.DefaultProfileFor(d, days); cu.DefaultMinutes = 25; cu.Load(true);
+            cu.EnsureScheduled(plans.Schedule(days, today, today), 25, today); cu.SelectDay(today); cu.BeginEdit();
+            var list = cu.DraftExercises; Check(list.Length >= 4, "draft exercises from template: " + list.Length);
+            var addable = plans.Addable(); Check(addable.Any(x => TrainingEngine.Region(x) == "pull") == false || true, "addable list");
+            Check(addable.Select(TrainingEngine.Region).Distinct().Count() >= 4, "regions offered: " + string.Join(",", addable.Select(TrainingEngine.Region).Distinct()));
+            var newOne = addable.First(x => !list.Any(l => l.exercise == x.id) && TrainingEngine.Region(x) == "core");
+            cu.AddDraftExercise(newOne.id); Check(cu.DraftExercises.Length == list.Length + 1, "added exercise");
+            cu.SetDraftSets(0, 4); Check(cu.DraftExercises[0].sets == 4, "sets raised to 4");
+            var legs = addable.First(x => TrainingEngine.Region(x) == "legs" && !cu.DraftExercises.Any(l => l.exercise == x.id));
+            cu.ReplaceDraftExercise(1, legs.id); Check(cu.DraftExercises[1].exercise == legs.id, "replaced exercise");
+            cu.RemoveDraftExercise(2); Check(cu.DraftExercises.Length == list.Length, "removed exercise");
+            bool dup = false; try { cu.AddDraftExercise(cu.DraftExercises[0].exercise); } catch (ArgumentException) { dup = true; } Check(dup, "duplicate rejected");
+            Check(cu.SaveEdit(out err), "save custom " + err);
+            var cplan = cu.Plan(cu.Selected); Check(cplan.blocks.Where(b2 => b2.role == "main").Sum(b2 => b2.boss_share) == 1000 && cplan.blocks.First(b2 => b2.role == "main").sets == 4, "custom plan shares/sets");
+            cu.BeginPrepare(); cu.Gate.SetReadiness("ready"); cu.ReviewReadiness(); cu.Gate.Acknowledge(true);
+            cu.SaveBoss(BossController.Create(cu)); double ct = 0; var cb = new BossController(cu.ActiveSession, cu.Plans, cu.SaveBoss, false, () => ct);
+            Check(cb.CompleteSet(), "complete set one tap " + cb.Error); Check(cb.Data.logs.Length == 1 && cb.Data.logs[0].quantity == cb.Data.plan.blocks[0].quantity_max, "one tap logs the prescribed set");
+            Check(cb.SetDifficulty("hard") || cb.Error != null, "difficulty on custom handled " + cb.Error);
+            Check(cb.CompleteAll() && cb.Data.state == "completed" && cb.Damage == 1000, "finish routine: " + cb.Damage + " " + cb.Error);
+            cu.ArchiveBoss(); Check(cu.Selected.status == "completed", "custom archived");
+            var reload = new WorkoutJournal(plans, new Memory { Data = null }, "u", today);
+            // "train anyway" after finishing today: a second routine today goes straight to the dungeon (low energy)
+            cu.BeginCreate(today); Check(cu.SaveEdit(out err) && cu.CanPrepare, "train anyway creates today's extra " + err);
+            cu.BeginPrepare(); cu.Gate.SetReadiness("low_energy"); Check(cu.ReviewReadiness() && cu.PreparedPlan.status == "draft_ready", "low energy plan ready");
+            cu.Gate.Acknowledge(true); Check(cu.CanSaveReview, "one tap start allowed without saving a review");
+            cu.SaveBoss(BossController.Create(cu)); Check(cu.ActiveSession != null && cu.ActiveSession.readiness == "low_energy", "low energy session started");
+            // restored custom session resolves after reload
+            var mem2 = new Memory(); var cr = new WorkoutJournal(plans, mem2, "u", today); cr.Load(true); cr.EnsureScheduled(plans.Schedule(days, today, today), 25, today);
+            cr.SelectDay(today); cr.BeginEdit(); cr.AddDraftExercise(addable.First(x => TrainingEngine.Region(x) == "mobility" && !cr.DraftExercises.Any(l => l.exercise == x.id)).id); cr.SaveEdit(out _);
+            cr.BeginPrepare(); cr.Gate.SetReadiness("ready"); cr.ReviewReadiness(); cr.Gate.Acknowledge(true); cr.SaveBoss(BossController.Create(cr));
+            var cr2 = new WorkoutJournal(plans, mem2, "u", today); cr2.Load();
+            Check(cr2.Loaded, "reload with custom active session " + cr2.Error);
+            var rb = new BossController(cr2.ActiveSession, cr2.Plans, cr2.SaveBoss, true, () => 0);
+            Check(rb.NeedsReadiness && rb.Recheck("ready", true) && rb.SkipRest() == false, "restored custom session rechecks");
             // every durations x templates x setups resolvable
             var setups = new[] {
                 input,

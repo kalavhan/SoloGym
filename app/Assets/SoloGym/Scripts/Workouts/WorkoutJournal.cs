@@ -13,6 +13,8 @@ namespace SoloGym
         public string id, date, title = "", status = "planned", profile;
         public int minutes = 25;
         public JournalSwap[] swaps = Array.Empty<JournalSwap>();
+        /// <summary>Live: the person's own exercise list (replaces the template's main work).</summary>
+        public SoloGym.Training.CustomExercise[] custom = Array.Empty<SoloGym.Training.CustomExercise>();
         public TrainingPlan completedPlan;
         public BossSession session;
     }
@@ -215,6 +217,12 @@ namespace SoloGym
             if (basePlan == null) throw new ArgumentException("Unknown plan context.");
             var result = Clone(basePlan);
             if (result.status != "draft_ready") return result;
+            if ((entry.custom?.Length ?? 0) > 0)
+            {
+                var custom = plans.Custom(key, entry.custom) ?? throw new ArgumentException("Custom routines are not available here.");
+                if (custom.blocks.Select(b => b.exercise_id).Distinct().Count() != custom.blocks.Length) throw new ArgumentException("Duplicate exercise.");
+                return Clone(custom);
+            }
             var used = new HashSet<string>();
             foreach (var swap in entry.swaps ?? Array.Empty<JournalSwap>())
             {
@@ -258,7 +266,7 @@ namespace SoloGym
         public void SetDraftProfile(string profile)
         {
             if (Draft == null || plans.Profile(profile) == null || profile == LiveTrainingPlans.AccountProfile && IsLive) throw new ArgumentException("Unknown session type.");
-            var candidate = Clone(Draft); candidate.profile = profile; candidate.swaps = Array.Empty<JournalSwap>();
+            var candidate = Clone(Draft); candidate.profile = profile; candidate.swaps = Array.Empty<JournalSwap>(); candidate.custom = Array.Empty<SoloGym.Training.CustomExercise>();
             Resolve(candidate, Key(candidate, candidate.minutes)); Draft = candidate;
         }
         public void SetSwap(string slot, string exercise)
@@ -268,6 +276,33 @@ namespace SoloGym
             Resolve(candidate, Key(candidate, candidate.minutes)); Draft = candidate;
         }
         public void CancelEdit() { Draft = null; }
+
+        /// <summary>The draft's main exercises as an editable list (live journals).</summary>
+        public SoloGym.Training.CustomExercise[] DraftExercises
+        {
+            get
+            {
+                if (Draft == null) return Array.Empty<SoloGym.Training.CustomExercise>();
+                if ((Draft.custom?.Length ?? 0) > 0) return Draft.custom.Select(c => new SoloGym.Training.CustomExercise { exercise = c.exercise, sets = c.sets }).ToArray();
+                var plan = Plan(Draft);
+                return plan.status != "draft_ready" ? Array.Empty<SoloGym.Training.CustomExercise>()
+                    : plan.blocks.Where(b => b.role == "main").Select(b => new SoloGym.Training.CustomExercise { exercise = b.exercise_id, sets = b.sets }).ToArray();
+            }
+        }
+        /// <summary>Replace the draft's exercise list; throws ArgumentException if it cannot be prescribed.</summary>
+        public void SetDraftExercises(SoloGym.Training.CustomExercise[] list)
+        {
+            if (Draft == null) throw new InvalidOperationException("No edit draft.");
+            if (!IsLive) throw new ArgumentException("Custom routines need a signed-in plan.");
+            var candidate = Clone(Draft);
+            candidate.custom = (list ?? Array.Empty<SoloGym.Training.CustomExercise>()).Select(c => new SoloGym.Training.CustomExercise { exercise = c.exercise, sets = c.sets }).ToArray();
+            candidate.swaps = Array.Empty<JournalSwap>();
+            Resolve(candidate, Key(candidate, candidate.minutes)); Draft = candidate;
+        }
+        public void AddDraftExercise(string exercise) { var l = DraftExercises.ToList(); l.Add(new SoloGym.Training.CustomExercise { exercise = exercise, sets = 2 }); SetDraftExercises(l.ToArray()); }
+        public void RemoveDraftExercise(int index) { var l = DraftExercises.ToList(); if (index < 0 || index >= l.Count || l.Count <= 1) throw new ArgumentException("A routine keeps at least one exercise."); l.RemoveAt(index); SetDraftExercises(l.ToArray()); }
+        public void ReplaceDraftExercise(int index, string exercise) { var l = DraftExercises; if (index < 0 || index >= l.Length) throw new ArgumentException("Unknown exercise."); l[index].exercise = exercise; SetDraftExercises(l); }
+        public void SetDraftSets(int index, int sets) { var l = DraftExercises; if (index < 0 || index >= l.Length) throw new ArgumentException("Unknown exercise."); l[index].sets = Math.Max(1, Math.Min(SoloGym.Training.TrainingEngine.MaxCustomSets, sets)); SetDraftExercises(l); }
         public bool SaveEdit(out string error)
         {
             error = null;
@@ -372,7 +407,7 @@ namespace SoloGym
             // Keep history, today's entry if a session is active, and anything the user edited or titled.
             next.entries = next.entries.Where(e => e.status != "planned" || ParseDate(e.date) < Today
                 || (next.activeSession != null && next.activeSession.entryId == e.id)
-                || !e.id.StartsWith("plan-", StringComparison.Ordinal) || (e.swaps?.Length ?? 0) > 0 || !string.IsNullOrEmpty(e.title)).ToArray();
+                || !e.id.StartsWith("plan-", StringComparison.Ordinal) || (e.swaps?.Length ?? 0) > 0 || (e.custom?.Length ?? 0) > 0 || !string.IsNullOrEmpty(e.title)).ToArray();
             next.lastReview = null; Validate(next); Persist(next);
             EnsureScheduled(plannedDays, minutes, Today);
         }
@@ -423,6 +458,8 @@ namespace SoloGym
                 if (entry == null || string.IsNullOrEmpty(entry.id) || entry.id.Length > 80 || !ids.Add(entry.id)
                     || entry.title == null || entry.title.Length > 24 || entry.title.Any(char.IsControl)
                     || !plans.Durations.Contains(entry.minutes) || entry.swaps == null || entry.swaps.Length > 12
+                    || (entry.custom?.Length ?? 0) > SoloGym.Training.TrainingEngine.MaxCustomExercises
+                    || (entry.custom ?? Array.Empty<SoloGym.Training.CustomExercise>()).Any(c => c == null || string.IsNullOrEmpty(c.exercise) || c.sets < 1 || c.sets > SoloGym.Training.TrainingEngine.MaxCustomSets)
                     || (!string.IsNullOrEmpty(entry.profile) && (plans.Profile(entry.profile) == null || entry.profile == ProfileId)))
                     throw new ArgumentException("Invalid journal entry.");
                 var day = ParseDate(entry.date); if (day.Year < 2000 || day.Year > 2100) throw new ArgumentException("Date outside supported calendar.");

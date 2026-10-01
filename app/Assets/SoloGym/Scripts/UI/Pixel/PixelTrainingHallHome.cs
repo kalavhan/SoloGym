@@ -77,6 +77,7 @@ namespace SoloGym.UI
             var canvas = canvasRoot.gameObject.AddComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.pixelPerfect = true;
             canvasRoot.gameObject.AddComponent<GraphicRaycaster>();
             canvasRoot.gameObject.AddComponent<CanvasScaler>().uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
+            PixelJournalUI.CoverBackdrop(canvasRoot, ArtRoot + "architecture", .45f);
             safe = Rect("Safe area", canvasRoot); Composition = Rect("1280 x 720 composition", safe);
             Composition.anchorMin = Composition.anchorMax = Composition.pivot = new Vector2(.5f,.5f); Composition.sizeDelta = new Vector2(1280,720);
             var area = Rect("Room", Composition); Stretch(area);

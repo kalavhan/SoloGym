@@ -21,6 +21,8 @@ namespace SoloGym
         TrainingPlan Session(string key);
         JournalOption[] Options(string key);
         BossVariant Variant(string key);
+        /// <summary>The person's customized routine for a key; null when unsupported (fixtures).</summary>
+        TrainingPlan Custom(string key, CustomExercise[] items);
     }
 
     public static class TrainingKeys
@@ -69,6 +71,7 @@ namespace SoloGym
             return bosses.entries?.FirstOrDefault(v => v.key == key);
         }
         public void UseBosses(BossCatalog dungeon) { if (dungeon != null) bosses = dungeon; }
+        public TrainingPlan Custom(string key, CustomExercise[] items) => null;
     }
 
     /// <summary>
@@ -156,6 +159,22 @@ namespace SoloGym
             var plan = engine.GenerateSession(p, template);
             var variant = new BossVariant { key = key, plan = plan, options = engine.SwapOptions(p, plan, key) };
             variants[key] = variant; return variant;
+        }
+
+        public TrainingPlan Custom(string key, CustomExercise[] items)
+        {
+            var p = Contextual(key, out var template);
+            if (p == null) return null;
+            TrainingKeys.TryParse(key, out _, out _, out _, out _, out var difficulty);
+            var basePlan = difficulty == null ? Session(key) : Variant(key)?.plan;
+            return basePlan == null ? null : engine.BuildCustom(p, basePlan, items);
+        }
+
+        /// <summary>Exercises the person can add (supervised teens see strength options; the gate still asks).</summary>
+        public ExerciseDef[] Addable()
+        {
+            var p = input.Copy(); p.teen_supervision_available = input.IsTeen;
+            return engine.Addable(p);
         }
 
         /// <summary>Planned journal days (date → catalog profile) for the user's chosen weekdays.</summary>

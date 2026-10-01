@@ -63,7 +63,6 @@ namespace SoloGym
             if (age < 15 || age > 120) return "age";
             if (string.IsNullOrEmpty(countryCode)) return "country";
             if (string.IsNullOrEmpty(consentUtc)) return "consent";
-            if (setupReadiness != "ready" && setupReadiness != "low_energy") return "readiness";
             if (string.IsNullOrEmpty(goal)) return "goal";
             if (IsTeen && goal != "general_fitness" && goal != "mobility") return "goal";
             if (experience != "beginner" && experience != "intermediate") return "experience";

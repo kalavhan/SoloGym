@@ -128,7 +128,7 @@ namespace SoloGym.Editor
             PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.kalavhan.sologym");
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
             PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevelAuto;
-            PlayerSettings.Android.bundleVersionCode = 4;
+            PlayerSettings.Android.bundleVersionCode = 5;
             PlayerSettings.Android.useCustomKeystore = false;
             EditorUserBuildSettings.buildAppBundle = false;
             EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
@@ -178,7 +178,7 @@ namespace SoloGym.Editor
         {
             PlayerSettings.companyName = "kalavhan";
             PlayerSettings.productName = "SoloGym";
-            PlayerSettings.bundleVersion = "0.6.0";
+            PlayerSettings.bundleVersion = "0.6.1";
             EnsureTheme();
             PlayerSettings.colorSpace = ColorSpace.Gamma;
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;

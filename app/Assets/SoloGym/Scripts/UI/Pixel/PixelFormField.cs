@@ -75,6 +75,8 @@ namespace SoloGym.UI
             field.Input.caretColor = new Color32(251, 224, 166, 255);
             field.Input.selectionColor = new Color32(69, 107, 115, 210);
             field.Input.caretWidth = 2;
+            // The keyboard echo banner shows the text; avoid a second, often hidden, native box.
+            field.Input.shouldHideMobileInput = true;
             field.Message = Text(root, "Helper or error", 18);
             Place(field.Message.rectTransform, 0, 0, 102, 28);
             field.traversal = inputRect.gameObject.AddComponent<PixelFieldTabNavigation>();

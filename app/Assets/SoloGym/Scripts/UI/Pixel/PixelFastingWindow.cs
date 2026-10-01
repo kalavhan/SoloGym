@@ -45,6 +45,7 @@ namespace SoloGym.UI
             // An ineligible route never constructs or loads the fasting artwork or private data.
             if(eligible)
             {
+                CoverBackdrop(canvasRoot,"Rooms/FastingR1/background",.45f);
                 Art(Composition,new Rect(0,0,1280,720),"Rooms/FastingR1/background");
                 clockRoot=Rect("Independent arcane clock",Composition,new Rect(190,40,560,560));ClockArt=clockRoot.gameObject.AddComponent<PixelFastingClock>();ClockArt.Initialize();
             }

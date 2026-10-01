@@ -10,8 +10,8 @@ using UnityEngine.UI;
 namespace SoloGym.UI
 {
     /// <summary>
-    /// Shared shell for the guild-panel setup steps after Goals: header, scrollable content and a
-    /// primary action, using the same native controls and metrics as <see cref="PixelGoalsWindow"/>.
+    /// Shared shell for the guild-panel setup steps: header, one scrollable content list rebuilt on
+    /// every render, and a primary action. Kept short on purpose: training time matters more than forms.
     /// </summary>
     public abstract class PixelSetupStep : MonoBehaviour
     {
@@ -22,12 +22,13 @@ namespace SoloGym.UI
         public event Action StateChanged;
         public string Language { get; private set; } = "es";
         public Selectable LastControl => Continue.IsInteractable() ? (Selectable)Continue : Back;
-        protected RectTransform content, viewport;
+        protected RectTransform content, viewport, list;
         protected Text title, progress;
         protected Selectable footer, locale;
         protected Action back;
         protected readonly List<Selectable> path = new List<Selectable>();
         protected bool binding;
+        protected static readonly Color Muted = new Color32(183, 185, 175, 255);
 
         protected void Shell(Transform panel, Action backAction, Selectable privacy, Selectable language)
         {
@@ -37,8 +38,10 @@ namespace SoloGym.UI
             title = PixelJournalUI.Text(transform, new Rect(28, 48, 514, 48), "", 32, false, TextAnchor.MiddleCenter);
             PixelJournalUI.Rule(transform, 62, 94, 446);
             progress = PixelJournalUI.Text(transform, new Rect(28, 98, 514, 30), "", 22, false, TextAnchor.MiddleCenter);
+            progress.color = Muted;
             content = PixelJournalUI.Scroll(transform, new Rect(28, 136, 514, 482), 486);
             viewport = (RectTransform)content.parent; Scroll = viewport.GetComponent<ScrollRect>();
+            list = PixelJournalUI.Rect("Step controls", content, new Rect(0, 0, 502, 10));
             Status = PixelJournalUI.Text(content, new Rect(), "", 21, false); Status.color = new Color32(255, 194, 158, 255);
             Continue = PixelPrimaryButton.Create(content, "", Advance); Continue.SetFontSize(28); Continue.Background.pixelsPerUnitMultiplier = 2;
         }
@@ -47,40 +50,50 @@ namespace SoloGym.UI
         public abstract void Advance();
         public abstract void Render();
         public void Relayout(float panelHeight) { viewport.sizeDelta = new Vector2(514, Mathf.Max(70, panelHeight - 150)); Render(); }
+        /// <summary>Clear every control from the previous render (labels included).</summary>
+        protected void Begin()
+        {
+            foreach (Transform child in list) { child.gameObject.SetActive(false); Destroy(child.gameObject); }
+            path.Clear(); Back.SetLabel(L("Back", "Volver"));
+        }
         protected void Finish(float y)
         {
-            if (Status.text.Length > 0) { Place(Status, new Rect(0, y, 502, 40)); float h = Mathf.Max(30, Status.preferredHeight + 8); Place(Status, new Rect(0, y, 502, h)); y += h + 6; }
+            list.sizeDelta = new Vector2(502, y);
+            y += 8;
+            if (Status.text.Length > 0) { Place(Status, new Rect(0, y, 502, 52)); y += 58; }
             Status.gameObject.SetActive(Status.text.Length > 0);
-            Place(Continue, new Rect(0, y + 4, 502, 64));
-            content.sizeDelta = new Vector2(502, Mathf.Max(viewport.rect.height, y + 74));
-            var chain = new List<Selectable> { Back }; chain.AddRange(path.Where(s => s != null && s.gameObject.activeInHierarchy));
+            Place(Continue, new Rect(0, y, 502, 64));
+            content.sizeDelta = new Vector2(502, Mathf.Max(viewport.rect.height, y + 72));
+            var chain = new List<Selectable> { Back }; chain.AddRange(path.Where(s => s != null));
             if (Continue.IsInteractable()) chain.Add(Continue);
             for (int i = 0; i < chain.Count; i++) Link(chain[i], i == 0 ? locale : chain[i - 1], i + 1 == chain.Count ? footer : chain[i + 1]);
             StateChanged?.Invoke();
         }
-        protected void ResetScroll() { Scroll.StopMovement(); content.anchoredPosition = Vector2.zero; if (gameObject.activeInHierarchy) Back.Select(); }
+        protected void ResetScroll() { Scroll.StopMovement(); content.anchoredPosition = Vector2.zero; }
         protected string L(string en, string es) => Language == "es" ? es : en;
-        protected Text Paragraph(string text, ref float y, int size = 21, Color? color = null)
+        protected Text Label(string text, float y, int size = 22, Color? color = null, TextAnchor align = TextAnchor.MiddleLeft, float height = 34)
         {
-            var t = PixelJournalUI.Text(content, new Rect(0, y, 502, 30), text, size, false, TextAnchor.UpperLeft);
+            var t = PixelJournalUI.Text(list, new Rect(0, y, 502, height), text, size, false, align);
             if (color.HasValue) t.color = color.Value;
-            float h = Mathf.Max(30, t.preferredHeight + 6); Place(t, new Rect(0, y, 502, h)); y += h + 6; return t;
+            return t;
         }
-        protected PixelChoiceOption Option(Transform parent, string id, string label, Rect bounds, Action<bool> changed, bool chip = false)
+        protected PixelChoiceOption Chip(string id, string label, Rect bounds, bool on, Action<bool> changed, int size = 21)
         {
-            var option = PixelChoiceOption.Create(parent, id, label, null, null);
+            var option = PixelChoiceOption.Create(list, id, label, null, null);
             option.Background.pixelsPerUnitMultiplier = 2;
-            if (chip)
-            {
-                option.graphic = null; option.Checkmark.gameObject.SetActive(false);
-                option.Label.alignment = TextAnchor.MiddleCenter; option.SetLabelInsets(4, 4); option.Label.fontSize = 21;
-            }
-            else { option.Label.alignment = TextAnchor.MiddleLeft; option.SetLabelInsets(66, 14); option.Label.fontSize = 22; }
+            option.graphic = null; option.Checkmark.gameObject.SetActive(false);
+            option.Label.alignment = TextAnchor.MiddleCenter; option.SetLabelInsets(6, 6); option.Label.fontSize = size;
+            option.SetIsOnWithoutNotify(on); option.RefreshVisual();
             option.onValueChanged.AddListener(value => { if (!binding) changed(value); });
             Place(option, bounds); path.Add(option); return option;
         }
-        protected void Set(PixelChoiceOption option, bool on) { option.SetIsOnWithoutNotify(on); option.RefreshVisual(); }
-        protected static void Clear(Transform parent) { foreach (Transform child in parent) { child.gameObject.SetActive(false); Destroy(child.gameObject); } }
+        protected PixelPrimaryButton Stepper(string label, Rect bounds, Action step)
+        {
+            var b = PixelPrimaryButton.Create(list, label, () => { }); b.SetFontSize(30); b.Background.pixelsPerUnitMultiplier = 2;
+            Place(b, bounds); var hold = b.gameObject.AddComponent<PixelHoldRepeat>(); hold.Step = step;
+            b.onClick.AddListener(() => { if (!hold.ConsumePointer()) step(); });
+            path.Add(b); return b;
+        }
         protected static void Place(Component c, Rect r) => PixelJournalUI.Place((RectTransform)c.transform, r);
         protected static PixelSecondaryAction SecondaryButton(Transform parent, UnityEngine.Events.UnityAction action)
         {
@@ -91,291 +104,219 @@ namespace SoloGym.UI
             var tab = current.GetComponent<PixelFieldTabNavigation>() ?? current.gameObject.AddComponent<PixelFieldTabNavigation>(); tab.Previous = previous; tab.Next = next;
             current.navigation = new Navigation { mode = Navigation.Mode.Explicit, selectOnUp = previous, selectOnDown = next };
         }
-        void Update()
-        {
-            if (!Input.GetKeyDown(KeyCode.Tab)) return;
-            var selected = EventSystem.current?.currentSelectedGameObject;
-            if (selected == null || !selected.transform.IsChildOf(content)) return;
-            Canvas.ForceUpdateCanvases(); var b = RectTransformUtility.CalculateRelativeRectTransformBounds(viewport, selected.transform);
-            float delta = b.min.y < viewport.rect.yMin ? viewport.rect.yMin - b.min.y : b.max.y > viewport.rect.yMax ? viewport.rect.yMax - b.max.y : 0;
-            var p = content.anchoredPosition; p.y = Mathf.Clamp(p.y + delta, 0, Mathf.Max(0, content.rect.height - viewport.rect.height)); content.anchoredPosition = p;
-        }
     }
 
-    /// <summary>WIN-011: where you train and which real equipment is available (not avatar gear).</summary>
-    public sealed class PixelEquipmentWindow : PixelSetupStep
+    /// <summary>Press-and-hold repeat for steppers: one step on press, then faster steps while held.</summary>
+    public sealed class PixelHoldRepeat : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
     {
-        public EquipmentController Controller { get; private set; }
+        public Action Step;
+        bool down, usedPointer;
+        float next, heldFor;
+        public void OnPointerDown(PointerEventData e) { down = usedPointer = true; heldFor = 0; next = .4f; Step?.Invoke(); }
+        public void OnPointerUp(PointerEventData e) => down = false;
+        public void OnPointerExit(PointerEventData e) => down = false;
+        /// <summary>True once after a pointer press, so the button's click does not step twice.</summary>
+        public bool ConsumePointer() { bool used = usedPointer; usedPointer = false; return used; }
+        void Update()
+        {
+            if (!down) return;
+            heldFor += Time.unscaledDeltaTime;
+            if (heldFor < next) return;
+            Step?.Invoke(); next = heldFor + (heldFor > 1.6f ? .04f : .09f);
+        }
+        void OnDisable() => down = false;
+    }
+
+    /// <summary>Optional height and bodyweight with steppers (no typing). Private; never sets difficulty.</summary>
+    public sealed class PixelBodyWindow : PixelSetupStep
+    {
         public event Action Completed;
-        RectTransform list;
-        readonly Dictionary<string, PixelChoiceOption> options = new Dictionary<string, PixelChoiceOption>();
-        PixelChoiceOption bodyweight;
-        string lastStep;
+        public double HeightCm { get; private set; } = 170;
+        public double WeightKg { get; private set; } = 70;
+        public bool Provided { get; private set; }
+        public bool Imperial { get; private set; }
+        Text heightValue, weightValue;
 
         public void Initialize(Transform panel, Action backAction, Selectable privacy, Selectable language)
         {
             Shell(panel, backAction, privacy, language);
-            list = PixelJournalUI.Rect("Equipment choices", content, new Rect(0, 0, 502, 10));
-            Controller = new EquipmentController(true);
-            Controller.Changed += _ => Render();
-            Controller.CheckpointRequested += _ => Completed?.Invoke();
         }
-        public void Open(string language, string environment = null, string[] equipment = null, bool bodyweightOnly = false)
+        public void Open(string language, bool hasHeight = false, double heightCm = 0, bool hasWeight = false, double weightKg = 0, string units = null)
         {
-            SetLocale(language);
-            if (!string.IsNullOrEmpty(environment) && string.IsNullOrEmpty(Controller.Model.EnvironmentId))
-            {
-                Controller.SelectEnvironment(environment); Controller.ContinueEnvironment();
-                if (bodyweightOnly || environment == "outdoor") Controller.SetBodyweightOnly(true);
-                else foreach (var id in equipment ?? Array.Empty<string>()) if (Controller.Model.VisibleEquipment.Any(e => e.id == id)) Controller.ToggleEquipment(id);
-            }
-            lastStep = null; Render();
+            if (hasHeight && heightCm >= 100 && heightCm <= 230) HeightCm = heightCm;
+            if (hasWeight && weightKg >= 30 && weightKg <= 250) WeightKg = weightKg;
+            if (units == "imperial") Imperial = true;
+            SetLocale(language); Render(); ResetScroll();
         }
-        public void ResetDraft() { Controller.Decline(); lastStep = null; }
-        public string EnvironmentId => Controller.Model.EnvironmentId;
-        public string[] EquipmentIds => Controller.Model.BodyweightOnly ? Array.Empty<string>() : Controller.Model.SelectedEquipmentIds;
-        public bool BodyweightOnly => Controller.Model.BodyweightOnly;
-        public override void SetLocale(string language) { if (Controller != null && Controller.Model.Language != language) Controller.SetLanguage(language); base.SetLocale(language); }
-        public override void GoBack()
-        {
-            var step = Controller.Model.Step;
-            if (step == EquipmentStep.Environment) back?.Invoke(); else Controller.Back();
-        }
-        public override void Advance()
-        {
-            if (!gameObject.activeInHierarchy) return;
-            switch (Controller.Model.Step)
-            {
-                case EquipmentStep.Environment: Controller.ContinueEnvironment(); break;
-                case EquipmentStep.Equipment:
-                    // Outdoor training uses bodyweight-only explicitly.
-                    if (Controller.Model.VisibleEquipment.Length == 0 && !Controller.Model.BodyweightOnly) Controller.SetBodyweightOnly(true);
-                    Controller.ContinueEquipment(); break;
-                case EquipmentStep.Review: Controller.ContinueReview(); break;
-            }
-        }
+        public void ResetDraft() { HeightCm = 170; WeightKg = 70; Provided = false; }
+        public override void GoBack() => back?.Invoke();
+        public override void Advance() { if (!gameObject.activeInHierarchy) return; Provided = true; Completed?.Invoke(); }
+        public void Skip() { Provided = false; Completed?.Invoke(); }
+        string Height() { if (!Imperial) return Mathf.RoundToInt((float)HeightCm) + " cm"; int inches = Mathf.RoundToInt((float)(HeightCm / 2.54)); return inches / 12 + " ft " + inches % 12 + " in"; }
+        string Weight() => Imperial ? Mathf.RoundToInt((float)(WeightKg * 2.20462)) + " lb" : Mathf.RoundToInt((float)WeightKg) + " kg";
+        void StepHeight(int dir) { HeightCm = Math.Max(100, Math.Min(230, Imperial ? Math.Round(HeightCm / 2.54 + dir) * 2.54 : Math.Round(HeightCm) + dir)); heightValue.text = Height(); }
+        void StepWeight(int dir) { WeightKg = Math.Max(30, Math.Min(250, Imperial ? Math.Round(WeightKg * 2.20462 + dir) / 2.20462 : Math.Round(WeightKg) + dir)); weightValue.text = Weight(); }
         public override void Render()
         {
-            if (Controller == null || binding) return;
+            if (list == null || binding) return;
             binding = true;
             try
             {
-                var m = Controller.Model; Clear(list); options.Clear(); path.Clear(); bodyweight = null;
-                Back.SetLabel(L("Back", "Volver"));
-                float y = 0;
-                if (m.Step == EquipmentStep.Environment)
-                {
-                    title.text = L("WHERE DO YOU TRAIN?", "¿DÓNDE ENTRENAS?"); progress.text = L("1 OF 3 · PLACE", "1 DE 3 · LUGAR");
-                    foreach (var env in m.Environments)
-                    {
-                        string id = env.id;
-                        var o = Option(list, id, env.Label(m.Language), new Rect(0, y, 502, 60), on => { if (on) Controller.SelectEnvironment(id); else Render(); });
-                        Set(o, m.EnvironmentId == id); options[id] = o; y += 68;
-                    }
-                    y += 4;
-                    Paragraph(L("This is the real equipment you can use for training, not your character's gear.", "Es el equipo real que puedes usar para entrenar, no el equipo de tu personaje."), ref y, 20, new Color32(183, 185, 175, 255));
-                }
-                else if (m.Step == EquipmentStep.Equipment)
-                {
-                    title.text = L("YOUR EQUIPMENT", "TU EQUIPO"); progress.text = L("2 OF 3 · ", "2 DE 3 · ") + m.EnvironmentLabel.ToUpperInvariant();
-                    bodyweight = Option(list, "bodyweight", L("Bodyweight only", "Solo peso corporal"), new Rect(0, y, 502, 60), on => Controller.SetBodyweightOnly(on));
-                    Set(bodyweight, m.BodyweightOnly); y += 72;
-                    if (m.VisibleEquipment.Length == 0)
-                        Paragraph(L("Outdoor sessions use walking-based cardio with no equipment.", "Las sesiones al aire libre usan cardio caminando, sin equipo."), ref y);
-                    else
-                    {
-                        Paragraph(L("Or choose everything you have:", "O elige todo lo que tienes:"), ref y, 21);
-                        foreach (var item in m.VisibleEquipment)
-                        {
-                            string id = item.id;
-                            var o = Option(list, id, item.Label(m.Language), new Rect(0, y, 502, 56), _ => Controller.ToggleEquipment(id));
-                            Set(o, !m.BodyweightOnly && m.SelectedEquipmentIds.Contains(id)); options[id] = o; y += 62;
-                        }
-                    }
-                }
-                else
-                {
-                    title.text = L("REVIEW YOUR EQUIPMENT", "REVISA TU EQUIPO"); progress.text = L("3 OF 3 · REVIEW", "3 DE 3 · RESUMEN");
-                    Paragraph(L("Place", "Lugar"), ref y, 21, new Color32(183, 185, 175, 255));
-                    Paragraph(m.EnvironmentLabel, ref y, 26);
-                    var edit = SecondaryButton(list, () => Controller.EditEnvironment()); edit.SetLabel(L("Change place", "Cambiar lugar")); Place(edit, new Rect(0, y, 502, 52)); path.Add(edit); y += 62;
-                    Paragraph(L("Equipment", "Equipo"), ref y, 21, new Color32(183, 185, 175, 255));
-                    Paragraph(m.EquipmentSummary, ref y, 23);
-                    var editGear = SecondaryButton(list, () => Controller.EditEquipment()); editGear.SetLabel(L("Change equipment", "Cambiar equipo")); Place(editGear, new Rect(0, y, 502, 52)); path.Add(editGear); y += 62;
-                    Paragraph(L("Exercises are chosen only from what you selected. You can update this later in Settings.", "Los ejercicios se eligen solo con lo que seleccionaste. Puedes cambiarlo después en Ajustes."), ref y, 20, new Color32(183, 185, 175, 255));
-                }
-                list.sizeDelta = new Vector2(502, y);
-                Status.text = m.Error ?? "";
-                Continue.SetLabel(m.Step == EquipmentStep.Review ? L("NEXT: SCHEDULE", "SIGUE: HORARIO") : L("CONTINUE", "CONTINUAR"));
-                Continue.interactable = m.CanContinue || (m.Step == EquipmentStep.Equipment && m.VisibleEquipment.Length == 0);
-                Finish(y + 8);
-                string view = m.Step.ToString(); if (lastStep != view) { lastStep = view; ResetScroll(); }
+                Begin();
+                title.text = L("YOUR BODY", "TU CUERPO"); progress.text = L("Private · optional", "Privado · opcional");
+                float y = 4;
+                Chip("metric", "cm · kg", new Rect(0, y, 247, 52), !Imperial, on => { Imperial = !on; Render(); });
+                Chip("imperial", "ft · lb", new Rect(255, y, 247, 52), Imperial, on => { Imperial = on; Render(); });
+                y += 72;
+                Label(L("Height", "Estatura"), y, 22, Muted); y += 34;
+                Stepper("−", new Rect(0, y, 96, 72), () => StepHeight(-1));
+                heightValue = Label(Height(), y, 40, null, TextAnchor.MiddleCenter, 72);
+                Stepper("+", new Rect(406, y, 96, 72), () => StepHeight(1));
+                y += 96;
+                Label(L("Bodyweight", "Peso corporal"), y, 22, Muted); y += 34;
+                Stepper("−", new Rect(0, y, 96, 72), () => StepWeight(-1));
+                weightValue = Label(Weight(), y, 40, null, TextAnchor.MiddleCenter, 72);
+                Stepper("+", new Rect(406, y, 96, 72), () => StepWeight(1));
+                y += 92;
+                var skip = SecondaryButton(list, Skip); skip.SetLabel(L("Skip for now", "Omitir por ahora")); Place(skip, new Rect(0, y, 502, 52)); path.Add(skip); y += 56;
+                Status.text = "";
+                Continue.SetLabel(L("CONTINUE", "CONTINUAR")); Continue.interactable = true;
+                Finish(y);
             }
             finally { binding = false; }
         }
-        void OnDestroy() { Controller?.Dispose(); }
     }
 
-    /// <summary>WIN-012: training weekdays (2–5) and session length.</summary>
+    /// <summary>WIN-011 on one screen: where you train and the real equipment you have.</summary>
+    public sealed class PixelEquipmentWindow : PixelSetupStep
+    {
+        public event Action Completed;
+        EquipmentCatalogFile catalog;
+        readonly Dictionary<string, EquipmentCatalogEntry> byId = new Dictionary<string, EquipmentCatalogEntry>();
+        readonly HashSet<string> selected = new HashSet<string>();
+        string environment = "";
+        bool bodyweight, opened;
+        public string EnvironmentId => environment;
+        public bool BodyweightOnly => bodyweight || environment == "outdoor";
+        public string[] EquipmentIds => BodyweightOnly ? Array.Empty<string>() : selected.Where(Visible).OrderBy(x => x, StringComparer.Ordinal).ToArray();
+
+        public void Initialize(Transform panel, Action backAction, Selectable privacy, Selectable language)
+        {
+            Shell(panel, backAction, privacy, language);
+            var asset = Resources.Load<TextAsset>("Equipment/Catalog");
+            catalog = asset == null ? new EquipmentCatalogFile() : JsonUtility.FromJson<EquipmentCatalogFile>(asset.text);
+            foreach (var e in catalog.equipment ?? Array.Empty<EquipmentCatalogEntry>()) byId[e.id] = e;
+        }
+        public void Open(string language, string env = null, string[] equipment = null, bool bodyweightOnly = false)
+        {
+            if (!opened && !string.IsNullOrEmpty(env))
+            {
+                environment = env; bodyweight = bodyweightOnly; selected.Clear();
+                foreach (var id in equipment ?? Array.Empty<string>()) selected.Add(id);
+            }
+            opened = true; SetLocale(language); Render(); ResetScroll();
+        }
+        public void ResetDraft() { environment = ""; bodyweight = false; selected.Clear(); opened = false; }
+        string[] VisibleIds() => environment == "home" ? catalog.visible_home : environment == "gym" ? catalog.visible_gym : catalog.visible_outdoor ?? Array.Empty<string>();
+        bool Visible(string id) => (VisibleIds() ?? Array.Empty<string>()).Contains(id);
+        public bool Valid => environment.Length > 0 && (BodyweightOnly || selected.Any(Visible));
+        public override void GoBack() => back?.Invoke();
+        public override void Advance() { if (gameObject.activeInHierarchy && Valid) Completed?.Invoke(); }
+        public override void Render()
+        {
+            if (list == null || binding) return;
+            binding = true;
+            try
+            {
+                Begin();
+                title.text = L("WHERE DO YOU TRAIN?", "¿DÓNDE ENTRENAS?"); progress.text = L("Real equipment you can use", "Equipo real que puedes usar");
+                float y = 4;
+                var envs = catalog.environments ?? Array.Empty<EnvironmentCatalogEntry>();
+                for (int i = 0; i < envs.Length; i++)
+                {
+                    string id = envs[i].id; float w = (502 - (envs.Length - 1) * 8f) / envs.Length;
+                    Chip("env-" + id, envs[i].Label(Language), new Rect(i * (w + 8), y, w, 60), environment == id, on => { if (on && environment != id) { environment = id; bodyweight = false; } Render(); }, 22);
+                }
+                y += 76;
+                if (environment == "outdoor")
+                {
+                    Label(L("Outdoor sessions use walking-based cardio, no equipment.", "Al aire libre: cardio caminando, sin equipo."), y, 20, Muted, TextAnchor.MiddleLeft, 56); y += 60;
+                }
+                else if (environment.Length > 0)
+                {
+                    Chip("bodyweight", L("Bodyweight only", "Solo peso corporal"), new Rect(0, y, 502, 56), bodyweight, on => { bodyweight = on; Render(); });
+                    y += 68;
+                    var ids = VisibleIds() ?? Array.Empty<string>();
+                    for (int i = 0; i < ids.Length; i++)
+                    {
+                        string id = ids[i]; if (!byId.TryGetValue(id, out var item)) continue;
+                        Chip("eq-" + id, item.Label(Language), new Rect((i % 2) * 255, y + (i / 2) * 60, 247, 52), !bodyweight && selected.Contains(id),
+                            on => { bodyweight = false; if (on) selected.Add(id); else selected.Remove(id); Render(); }, 19);
+                    }
+                    y += ((ids.Length + 1) / 2) * 60 + 4;
+                }
+                Status.text = "";
+                Continue.SetLabel(L("CONTINUE", "CONTINUAR")); Continue.interactable = Valid;
+                Finish(y);
+            }
+            finally { binding = false; }
+        }
+    }
+
+    /// <summary>WIN-012: training weekdays (2–5) and session length. Continuing starts training.</summary>
     public sealed class PixelScheduleWindow : PixelSetupStep
     {
         public event Action Completed;
         readonly HashSet<int> days = new HashSet<int>();
         public int Minutes { get; private set; } = 25;
         public int[] Weekdays => days.OrderBy(d => d).ToArray();
-        RectTransform list;
+        public string Error { get; set; }
         bool opened;
+        string notice;
         static readonly string[] En = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }, Es = { "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom" };
-        static readonly string[] LongEn = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }, LongEs = { "lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo" };
-        public static string Day(int index, string language, bool longName = false) => language == "es" ? (longName ? LongEs : Es)[index] : (longName ? LongEn : En)[index];
+        public static string Day(int index, string language) => language == "es" ? Es[index] : En[index];
 
-        public void Initialize(Transform panel, Action backAction, Selectable privacy, Selectable language)
-        {
-            Shell(panel, backAction, privacy, language);
-            list = PixelJournalUI.Rect("Schedule choices", content, new Rect(0, 0, 502, 10));
-        }
+        public void Initialize(Transform panel, Action backAction, Selectable privacy, Selectable language) => Shell(panel, backAction, privacy, language);
         public void Open(string language, int[] weekdays = null, int minutes = 0)
         {
-            SetLocale(language);
             if (!opened && weekdays != null && weekdays.Length > 0) { days.Clear(); foreach (var d in weekdays) if (d >= 0 && d <= 6) days.Add(d); }
             if (!opened && LiveTrainingPlans.SessionDurations.Contains(minutes)) Minutes = minutes;
-            opened = true; Render(); ResetScroll();
+            opened = true; Error = null; SetLocale(language); Render(); ResetScroll();
         }
         public void ResetDraft() { days.Clear(); Minutes = 25; opened = false; }
         public bool Valid => days.Count >= 2 && days.Count <= 5;
         public override void GoBack() => back?.Invoke();
         public override void Advance() { if (gameObject.activeInHierarchy && Valid) Completed?.Invoke(); }
-        string notice;
         public void Toggle(int day, bool on)
         {
-            notice = null;
-            if (on && days.Count >= 5 && !days.Contains(day)) notice = L("Choose up to 5 days. Rest days are part of the plan.", "Elige hasta 5 días. Los días de descanso son parte del plan.");
+            notice = null; Error = null;
+            if (on && days.Count >= 5 && !days.Contains(day)) notice = L("Up to 5 days. Rest days matter too.", "Hasta 5 días. El descanso también cuenta.");
             else if (on) days.Add(day); else days.Remove(day);
             Render();
         }
-        public void SetMinutes(int value) { notice = null; if (LiveTrainingPlans.SessionDurations.Contains(value)) Minutes = value; Render(); }
         public override void Render()
         {
             if (list == null || binding) return;
             binding = true;
             try
             {
-                Clear(list); path.Clear();
-                Back.SetLabel(L("Back", "Volver"));
-                title.text = L("YOUR TRAINING WEEK", "TU SEMANA DE ENTRENAMIENTO"); progress.text = L("SCHEDULE · 2 TO 5 DAYS", "HORARIO · 2 A 5 DÍAS");
-                float y = 0;
-                var head = PixelJournalUI.Text(list, new Rect(0, y, 502, 30), L("Training days", "Días de entrenamiento"), 22, false); y += 36;
-                for (int i = 0; i < 7; i++)
-                {
-                    int day = i;
-                    var o = Option(list, "day-" + i, Day(i, Language), new Rect(i * 72, y, 66, 60), on => Toggle(day, on), true);
-                    Set(o, days.Contains(i));
-                }
-                y += 72;
-                PixelJournalUI.Text(list, new Rect(0, y, 502, 30), L("Session length", "Duración de cada sesión"), 22, false); y += 36;
+                Begin();
+                title.text = L("YOUR TRAINING WEEK", "TU SEMANA"); progress.text = L("Pick 2 to 5 days", "Elige de 2 a 5 días");
+                float y = 4;
+                for (int i = 0; i < 7; i++) { int day = i; Chip("day-" + i, Day(i, Language), new Rect(i * 72, y, 66, 64), days.Contains(i), on => Toggle(day, on)); }
+                y += 84;
+                Label(L("Minutes per session", "Minutos por sesión"), y, 22, Muted); y += 38;
                 var durations = LiveTrainingPlans.SessionDurations;
                 for (int i = 0; i < durations.Length; i++)
                 {
                     int value = durations[i];
-                    var o = Option(list, "minutes-" + value, value + " min", new Rect(i * 127, y, 121, 60), on => { if (on) SetMinutes(value); else Render(); }, true);
-                    Set(o, Minutes == value);
+                    Chip("minutes-" + value, value.ToString(CultureInfo.InvariantCulture), new Rect(i * 127, y, 121, 64), Minutes == value, on => { notice = null; Error = null; if (on) Minutes = value; Render(); }, 26);
                 }
-                y += 76;
-                string summary = days.Count == 0 ? L("No days selected yet.", "Aún no eliges días.")
-                    : string.Join(" · ", Weekdays.Select(d => Day(d, Language))) + "  —  " + Minutes + L(" min each", " min cada una");
-                Paragraph(summary, ref y, 23);
-                Paragraph(L("Rest days are part of the plan. Missed days never add extra work.", "Los días de descanso son parte del plan. Los días sin entrenar nunca suman trabajo extra."), ref y, 20, new Color32(183, 185, 175, 255));
-                list.sizeDelta = new Vector2(502, y);
-                Status.text = notice ?? (days.Count == 1 ? L("Choose at least 2 days.", "Elige al menos 2 días.") : "");
-                Continue.SetLabel(L("SEE MY PLAN", "VER MI PLAN")); Continue.interactable = Valid;
-                Finish(y + 8);
-            }
-            finally { binding = false; }
-        }
-    }
-
-    /// <summary>Plan review and acceptance: the generated week from the person's own setup.</summary>
-    public sealed class PixelPlanReviewWindow : PixelSetupStep
-    {
-        public event Action Accepted;
-        RectTransform list;
-        PixelChoiceOption acknowledge;
-        bool acknowledged, blocked;
-        TrainingInput input;
-        int[] weekdays = Array.Empty<int>();
-        public bool Acknowledged => acknowledged;
-        public bool Blocked => blocked;
-        public string Error { get; set; }
-
-        public void Initialize(Transform panel, Action backAction, Selectable privacy, Selectable language)
-        {
-            Shell(panel, backAction, privacy, language);
-            list = PixelJournalUI.Rect("Plan summary", content, new Rect(0, 0, 502, 10));
-        }
-        public void Open(string language, TrainingInput setup, int[] days)
-        {
-            input = setup?.Copy(); weekdays = (days ?? Array.Empty<int>()).OrderBy(d => d).ToArray(); acknowledged = false; Error = null;
-            SetLocale(language); Render(); ResetScroll();
-        }
-        public override void GoBack() => back?.Invoke();
-        public override void Advance() { if (gameObject.activeInHierarchy && acknowledged && !blocked && input != null) Accepted?.Invoke(); }
-        string Goal(string id) => id == "strength" ? L("Strength", "Fuerza") : id == "muscle_growth" ? L("Muscle growth", "Masa muscular") : id == "endurance" ? L("Endurance", "Resistencia")
-            : id == "mobility" ? L("Mobility", "Movilidad") : L("General fitness", "Condición general");
-        public override void Render()
-        {
-            if (list == null || binding) return;
-            binding = true;
-            try
-            {
-                Clear(list); path.Clear(); acknowledge = null; blocked = false;
-                Back.SetLabel(L("Back", "Volver"));
-                title.text = L("YOUR TRAINING PLAN", "TU PLAN DE ENTRENAMIENTO"); progress.text = L("REVIEW AND START", "REVISA Y COMIENZA");
-                float y = 0; var muted = new Color32(183, 185, 175, 255);
-                if (input == null) { Paragraph(L("Setup is incomplete.", "La configuración está incompleta."), ref y); list.sizeDelta = new Vector2(502, y); Continue.interactable = false; Finish(y); return; }
-                var engine = TrainingContent.Engine;
-                var effectiveGoal = TrainingEngine.EffectiveGoal(input);
-                Paragraph(Goal(effectiveGoal) + " · " + (input.experience == "intermediate" ? L("Intermediate", "Intermedio") : L("Beginner", "Principiante"))
-                    + " · " + (input.environment == "gym" ? L("Gym", "Gimnasio") : input.environment == "outdoor" ? L("Outdoor", "Aire libre") : L("Home", "Casa")), ref y, 22);
-                if (effectiveGoal != input.goal) Paragraph(L("Under 18: we start with general fitness foundations.", "Menores de 18: comenzamos con bases de condición general."), ref y, 19, muted);
-                var templates = engine.WeekTemplates(input, weekdays);
-                var seen = new HashSet<string>(); var messages = new List<string>();
-                TrainingPlan first = null;
-                for (int i = 0; i < weekdays.Length; i++)
-                {
-                    var p = input.Copy(); p.teen_supervision_available = input.IsTeen; p.readiness = "ready";
-                    var plan = engine.GenerateSession(p, templates[i]);
-                    if (plan.status != "draft_ready") blocked |= plan.status == "needs_changes";
-                    if (first == null && plan.status == "draft_ready") first = plan;
-                    string minutes = plan.status == "draft_ready" ? Mathf.CeilToInt(plan.estimated_seconds / 60f) + " min" : L("needs changes", "requiere cambios");
-                    var row = PixelJournalUI.Text(list, new Rect(0, y, 502, 34), PixelScheduleWindow.Day(weekdays[i], Language) + "  ·  " + plan.name.Get(Language) + "  ·  " + minutes, 22, false); y += 38;
-                    foreach (var m in plan.messages ?? Array.Empty<TrainingMessage>())
-                        if (seen.Add(m.code) && m.code != "difficulty_adjusted") messages.Add(m.text.Get(Language));
-                }
-                PixelJournalUI.Rule(list, 4, y + 2, 494); y += 12;
-                if (first != null)
-                {
-                    Paragraph(L("First session: ", "Primera sesión: ") + first.name.Get(Language), ref y, 22);
-                    foreach (var b in first.blocks)
-                    {
-                        string dose = b.unit == "minutes" ? b.quantity_min + " min" : b.sets + " × " + b.quantity_min + (b.quantity_max != b.quantity_min ? "–" + b.quantity_max : "") + (b.unit == "seconds" ? " s" : "") + (b.per_side ? L(" / side", " / lado") : "");
-                        Paragraph("• " + b.name.Get(Language) + "  " + dose, ref y, 20);
-                    }
-                }
-                if (input.IsTeen && templates.Any(t => engine.Template(t).kind == "strength"))
-                    messages.Add(L("Strength days need appropriate supervision; you'll confirm it before each session.", "Los días de fuerza requieren supervisión adecuada; la confirmarás antes de cada sesión."));
-                foreach (var m in messages) Paragraph(m, ref y, 19, new Color32(255, 214, 160, 255));
-                Paragraph(L("Readiness is checked before every session. Difficulty can change during the dungeon. Exercise content is a draft pending professional review.",
-                    "Antes de cada sesión revisamos cómo estás. La dificultad puede cambiar en la mazmorra. El contenido de ejercicios es un borrador pendiente de revisión profesional."), ref y, 19, muted);
-                if (blocked) Paragraph(L("Some sessions don't fit the time you chose. Go back and choose more time.", "Algunas sesiones no caben en el tiempo elegido. Vuelve y elige más tiempo."), ref y, 21, new Color32(255, 194, 158, 255));
-                else
-                {
-                    acknowledge = Option(list, "acknowledge", L("I reviewed my plan", "Revisé mi plan"), new Rect(0, y, 502, 60), on => { acknowledged = on; Render(); });
-                    Set(acknowledge, acknowledged); y += 70;
-                }
-                list.sizeDelta = new Vector2(502, y);
-                Status.text = Error ?? "";
-                Continue.SetLabel(L("START TRAINING", "COMENZAR")); Continue.interactable = acknowledged && !blocked;
-                Finish(y + 8);
+                y += 82;
+                if (days.Count > 0) { Label(string.Join(" · ", Weekdays.Select(d => Day(d, Language))) + "  —  " + Minutes + " min", y, 23, null, TextAnchor.MiddleCenter, 40); y += 44; }
+                Status.text = Error ?? notice ?? (days.Count == 1 ? L("Choose at least 2 days.", "Elige al menos 2 días.") : "");
+                Continue.SetLabel(L("START TRAINING", "¡A ENTRENAR!")); Continue.interactable = Valid;
+                Finish(y);
             }
             finally { binding = false; }
         }

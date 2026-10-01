@@ -65,6 +65,9 @@ namespace SoloGym.Training
         public RewardRule rewards;
     }
 
+    /// <summary>One exercise of a person's customized routine (main work only).</summary>
+    [Serializable] public sealed class CustomExercise { public string exercise; public int sets = 2; }
+
     /// <summary>The user's training inputs. Appearance/body never enters this object.</summary>
     [Serializable] public sealed class TrainingInput
     {
@@ -331,6 +334,88 @@ namespace SoloGym.Training
                 for (int i = 0; i < main.Count; i++) main[i].boss_share = per + (i < remainder ? 1 : 0);
             }
             return Done();
+        }
+
+        public const int MaxCustomExercises = 12, MaxCustomSets = 5;
+        /// <summary>Training region for the exercise picker: legs, push, pull, core, cardio or mobility.</summary>
+        public static string Region(ExerciseDef e)
+        {
+            if (e.category == "cardio") return "cardio";
+            if (e.category == "mobility") return "mobility";
+            switch (e.movement_pattern)
+            {
+                case "horizontal_push": case "vertical_push": return "push";
+                case "horizontal_pull": case "vertical_pull": return "pull";
+                case "core": return "core";
+                default: return "legs";
+            }
+        }
+        /// <summary>Exercises a person may add to their routine (eligibility rules unchanged).</summary>
+        public ExerciseDef[] Addable(TrainingInput profile) => catalog.Values
+            .Where(e => e.id != IntervalExercise && !Templates.warmup_exercise_ids.Contains(e.id) && !Templates.cooldown_exercise_ids.Contains(e.id) && Eligible(e, profile))
+            .OrderBy(e => Region(e)).ThenBy(e => e.id, StringComparer.Ordinal).ToArray();
+
+        /// <summary>
+        /// A person's own routine: the template's warm-up/cool-down around their chosen exercises.
+        /// Doses still come from the rules (goal, experience, age, difficulty, readiness); the time
+        /// budget grows to fit what they chose. Boss shares stay equal and total 1000.
+        /// </summary>
+        public TrainingPlan BuildCustom(TrainingInput profile, TrainingPlan basePlan, CustomExercise[] items)
+        {
+            if (basePlan == null) throw new ArgumentException("Missing base plan.");
+            if (basePlan.status != "draft_ready") return basePlan;
+            if (items == null || items.Length == 0 || items.Length > MaxCustomExercises) throw new ArgumentException("A routine needs 1-12 exercises.");
+            string group = AgeGroup(profile), goal = EffectiveGoal(profile), difficulty = basePlan.difficulty_effective ?? "medium";
+            var ageRule = group == "teen" ? Rules.age_specific.teen : Rules.age_specific.adult;
+            var result = new TrainingPlan
+            {
+                template_id = basePlan.template_id, name = basePlan.name, kind = basePlan.kind, status = "draft_ready",
+                difficulty_effective = difficulty, date = basePlan.date, coverage_gaps = Array.Empty<string>(),
+                messages = (basePlan.messages ?? Array.Empty<TrainingMessage>()).Where(m => m.code != "pull_coverage_gap" && m.code != "time_adjustment").ToArray()
+            };
+            var blocks = new List<TrainingBlock>(); var main = new List<TrainingBlock>(); var seen = new HashSet<string>();
+            var warm = basePlan.blocks.FirstOrDefault(b => b.role == "warmup"); var cool = basePlan.blocks.FirstOrDefault(b => b.role == "cooldown");
+            if (warm != null) { blocks.Add(Clone(warm)); seen.Add(warm.exercise_id); }
+            bool firstStrength = true;
+            for (int i = 0; i < items.Length; i++)
+            {
+                var item = items[i];
+                if (item == null || string.IsNullOrEmpty(item.exercise) || !catalog.TryGetValue(item.exercise, out var e) || e.id == IntervalExercise || !Eligible(e, profile) || !seen.Add(e.id))
+                    throw new ArgumentException("Exercise is not available for this routine.");
+                int sets, lo, hi, rest; int[] effort = null;
+                if (e.category == "strength")
+                {
+                    var dose = Rules.strength_doses.Get(goal);
+                    sets = Math.Max(1, Math.Min(MaxCustomSets, item.sets));
+                    if (difficulty == "light") sets = Math.Max(1, sets - 1);
+                    else if (difficulty == "hard" && firstStrength) sets += 1;
+                    if (group == "teen") sets = Math.Min(sets, ageRule.max_sets);
+                    firstStrength = false;
+                    lo = dose.reps_min; hi = dose.reps_max; rest = dose.rest_seconds;
+                    if (e.prescription_unit == "seconds") lo = hi = Rules.timing.timed_core_seconds;
+                }
+                else if (e.category == "cardio")
+                {
+                    sets = 1; rest = 0;
+                    int minutes = (profile.experience == "intermediate" ? Rules.cardio.intermediate_minutes : Rules.cardio.beginner_minutes) + Rules.difficulty.Get(difficulty).cardio_minutes_delta;
+                    lo = hi = Math.Min(Rules.cardio.maximum_minutes, Math.Max(Rules.cardio.minimum_minutes, minutes));
+                    effort = difficulty == "light" ? Rules.cardio.aerobic_effort_light : Rules.cardio.aerobic_effort_medium;
+                }
+                else
+                {
+                    sets = Math.Max(1, Math.Min(3, item.sets)); rest = 0;
+                    lo = hi = e.prescription_unit == "reps" ? 6 : Rules.timing.mobility_seconds;
+                }
+                main.Add(MakeBlock(e, "c" + i, new[] { e.movement_pattern }, "main", sets, lo, hi, rest, effort));
+            }
+            if (cool != null && seen.Add(cool.exercise_id)) { blocks.AddRange(main); blocks.Add(Clone(cool)); }
+            else { if (cool != null) throw new ArgumentException("Exercise duplicates the cool-down."); blocks.AddRange(main); }
+            result.blocks = blocks.ToArray();
+            result.estimated_seconds = blocks.Sum(b => b.estimated_seconds);
+            result.budget_seconds = Math.Max(basePlan.budget_seconds, result.estimated_seconds);
+            int per = 1000 / main.Count, remainder = 1000 % main.Count;
+            for (int i = 0; i < main.Count; i++) main[i].boss_share = per + (i < remainder ? 1 : 0);
+            return result;
         }
 
         /// <summary>

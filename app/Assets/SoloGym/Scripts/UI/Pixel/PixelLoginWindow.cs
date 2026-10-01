@@ -37,7 +37,7 @@ namespace SoloGym.UI
         public PixelGoalsWindow Goals { get; private set; }
         public PixelEquipmentWindow Equipment { get; private set; }
         public PixelScheduleWindow Schedule { get; private set; }
-        public PixelPlanReviewWindow PlanReview { get; private set; }
+        public PixelBodyWindow Body { get; private set; }
         /// <summary>True while a returning user edits their saved training setup from Home.</summary>
         public bool EditingSetup { get; private set; }
         /// <summary>False only in smoke/capture runs, which keep the provider-free review behavior.</summary>
@@ -188,12 +188,12 @@ namespace SoloGym.UI
             Equipment.Initialize(Panel,ShowGoals,Privacy,Language); Equipment.StateChanged += SetupStepChanged; Equipment.Completed += ShowSchedule;
             Equipment.gameObject.SetActive(false);
             Schedule = new GameObject("Schedule and session length",typeof(RectTransform)).AddComponent<PixelScheduleWindow>();
-            Schedule.Initialize(Panel,ShowEquipment,Privacy,Language); Schedule.StateChanged += SetupStepChanged; Schedule.Completed += ShowPlanReview;
+            Schedule.Initialize(Panel,ShowEquipment,Privacy,Language); Schedule.StateChanged += SetupStepChanged; Schedule.Completed += FinishSetup;
             Schedule.gameObject.SetActive(false);
-            PlanReview = new GameObject("Plan review",typeof(RectTransform)).AddComponent<PixelPlanReviewWindow>();
-            PlanReview.Initialize(Panel,ShowSchedule,Privacy,Language); PlanReview.StateChanged += SetupStepChanged; PlanReview.Accepted += FinishSetup;
-            PlanReview.gameObject.SetActive(false);
-            Onboarding.Controller.EligibilityChanged += () => { Equipment.ResetDraft(); Schedule.ResetDraft(); };
+            Body = new GameObject("Body measurements",typeof(RectTransform)).AddComponent<PixelBodyWindow>();
+            Body.Initialize(Panel,BackFromBody,Privacy,Language); Body.StateChanged += SetupStepChanged; Body.Completed += ShowGoals;
+            Body.gameObject.SetActive(false);
+            Onboarding.Controller.EligibilityChanged += () => { Equipment.ResetDraft(); Schedule.ResetDraft(); Body.ResetDraft(); };
             if (Connected)
             {
                 Consent.Live = true; Profile.Live = true;
@@ -245,17 +245,17 @@ namespace SoloGym.UI
         }
         void SetupStepChanged()
         {
-            PixelSetupStep step = Page == "equipment" ? Equipment : Page == "schedule" ? Schedule : Page == "plan" ? (PixelSetupStep)PlanReview : null;
+            PixelSetupStep step = Page == "equipment" ? Equipment : Page == "schedule" ? Schedule : Page == "body" ? (PixelSetupStep)Body : null;
             if (step == null) return;
             Link(Privacy, step.LastControl, Terms); Link(Language, Terms, step.Back);
         }
-        void HideSetupSteps() { Equipment?.gameObject.SetActive(false); Schedule?.gameObject.SetActive(false); PlanReview?.gameObject.SetActive(false); }
+        void HideSetupSteps() { Equipment?.gameObject.SetActive(false); Schedule?.gameObject.SetActive(false); Body?.gameObject.SetActive(false); }
         void GoalsStateChanged()
         {
             if(Page != "goals" || Goals == null) return;
             Link(Privacy,Goals.LastControl,Terms); Link(Language,Terms,Goals.Back);
         }
-        string DocumentReturnLabel => documentReturnPage == "equipment" || documentReturnPage == "schedule" || documentReturnPage == "plan" ? L("BACK TO SETUP", "VOLVER A LA CONFIGURACIÓN")
+        string DocumentReturnLabel => documentReturnPage == "equipment" || documentReturnPage == "schedule" || documentReturnPage == "body" ? L("BACK TO SETUP", "VOLVER A LA CONFIGURACIÓN")
             : documentReturnPage == "goals" ? L("BACK TO MY CHOICES","VOLVER A MIS ELECCIONES") : documentReturnPage == "profile" ? L("BACK TO MY PROFILE", "VOLVER A MI PERFIL")
             : documentReturnPage == "consent" ? L("BACK TO MY CHOICES", "VOLVER A MIS DECISIONES")
             : documentReturnPage == "account" ? L("BACK TO REGISTRATION", "VOLVER AL REGISTRO")
@@ -291,7 +291,7 @@ namespace SoloGym.UI
             if (!model.IsBusy && wasBusy && Page == "login") Submit.Select();
             wasBusy = model.IsBusy;
             if (Page == "login") title.text = model.Copy("email_title");
-            else if (Page != "account" && Page != "onboarding" && Page != "consent" && Page != "privacy" && Page != "terms" && Page != "profile" && Page != "goals" && Page != "equipment" && Page != "schedule" && Page != "plan" && languageChanged) PopulateNotice();
+            else if (Page != "account" && Page != "onboarding" && Page != "consent" && Page != "privacy" && Page != "terms" && Page != "profile" && Page != "goals" && Page != "equipment" && Page != "schedule" && Page != "body" && languageChanged) PopulateNotice();
             if (Account != null)
             {
                 Account.SetLocale(model.Language); Account.Controller.SetOnline(!model.IsOffline);
@@ -301,7 +301,7 @@ namespace SoloGym.UI
             if (Consent != null) { Consent.SetLocale(model.Language, DocumentReturnLabel); ConsentStateChanged(); }
             if (Profile != null) { Profile.SetLocale(model.Language); ProfileStateChanged(); }
             if (Goals != null) { Goals.SetLocale(model.Language); GoalsStateChanged(); }
-            foreach (var step in new PixelSetupStep[] { Equipment, Schedule, PlanReview }) step?.SetLocale(model.Language);
+            foreach (var step in new PixelSetupStep[] { Equipment, Schedule, Body }) step?.SetLocale(model.Language);
             SetupStepChanged();
             if (restoring) { Status.text = L("Restoring your session…", "Recuperando tu sesión…"); Status.gameObject.SetActive(true); }
             LayoutForm();
@@ -397,7 +397,8 @@ namespace SoloGym.UI
         void ContinueFromConsent()
         {
             if (Page != "consent" || !Consent.Controller.CanContinue) return;
-            if (identitySetup) OpenProfileReview(); else OpenAccount(true);
+            if (identitySetup) { if (Connected) { profileReturnPage = "consent"; ShowBody(); } else OpenProfileReview(); }
+            else OpenAccount(true);
         }
         public void OpenProfileReview()
         {
@@ -418,7 +419,7 @@ namespace SoloGym.UI
         }
         bool HasReviewedSetup() => Onboarding.Controller.Step==GuildSetupStep.Consent && Onboarding.Controller.TryGetReviewAudience(out _)
             && Consent.Controller.CanContinue && (identitySetup || accountFromConsent);
-        bool CanReviewGoals() => HasReviewedSetup() && Profile.Controller.Model.ReviewMode
+        bool CanReviewGoals() => Connected ? HasReviewedSetup() : HasReviewedSetup() && Profile.Controller.Model.ReviewMode
             && Profile.Controller.Model.Step==ProfileStep.Checkpoint
             && (Profile.Controller.Model.Readiness=="ready" || Profile.Controller.Model.Readiness=="low_energy");
         public void OpenGoalsReview() { if(Page=="profile") ShowGoals(); }
@@ -431,12 +432,15 @@ namespace SoloGym.UI
             Account.gameObject.SetActive(false); Onboarding.gameObject.SetActive(false); Consent.gameObject.SetActive(false); Profile.gameObject.SetActive(false);
             viewport.gameObject.SetActive(false); notice.gameObject.SetActive(false); title.gameObject.SetActive(false); loginRule.gameObject.SetActive(false);
             Page="goals"; Goals.gameObject.SetActive(true); Goals.Open(Controller.Model.Language,teen);
+            // Connected setup has no separate review step: returning from equipment edits experience.
+            if(Connected && Goals.Controller.Model.Step==GoalsExperienceStep.Review) Goals.Controller.Back();
             Privacy.interactable=Terms.interactable=Language.interactable=true;
             GoalsStateChanged(); Relayout(); Goals.Back.Select();
         }
         void BackFromGoals()
         {
             if(EditingSetup) { OpenHome(); return; }
+            if(Connected) { ShowBody(); return; }
             Profile.Controller.Back(); ShowProfile();
         }
         void BackFromProfile()
@@ -504,7 +508,7 @@ namespace SoloGym.UI
             if (document && documentReturnPage == "goals" && (EditingSetup || CanReviewGoals())) { ShowGoals(); return; }
             if (document && documentReturnPage == "equipment") { Consent.gameObject.SetActive(false); ShowSetupStep("equipment", Equipment); Equipment.Render(); SetupStepChanged(); Relayout(); Equipment.Back.Select(); return; }
             if (document && documentReturnPage == "schedule") { Consent.gameObject.SetActive(false); ShowSetupStep("schedule", Schedule); Schedule.Render(); SetupStepChanged(); Relayout(); Schedule.Back.Select(); return; }
-            if (document && documentReturnPage == "plan") { Consent.gameObject.SetActive(false); ShowSetupStep("plan", PlanReview); PlanReview.Render(); SetupStepChanged(); Relayout(); PlanReview.Back.Select(); return; }
+            if (document && documentReturnPage == "body") { Consent.gameObject.SetActive(false); ShowSetupStep("body", Body); Body.Render(); SetupStepChanged(); Relayout(); return; }
             if (document && documentReturnPage == "profile") { ShowProfile(); return; }
             Consent.gameObject.SetActive(false);
             if ((Page == "privacy" || Page == "terms") && documentReturnPage == "onboarding")
@@ -547,7 +551,7 @@ namespace SoloGym.UI
                 else if (Page == "goals") Goals.GoBack();
                 else if (Page == "equipment") Equipment.GoBack();
                 else if (Page == "schedule") Schedule.GoBack();
-                else if (Page == "plan") PlanReview.GoBack();
+                else if (Page == "body") Body.GoBack();
                 else if (Page == "profile") Profile.GoBack();
                 else if (Page == "consent") BackFromConsent();
                 else if (Page == "onboarding") Onboarding.GoBack();
@@ -581,7 +585,7 @@ namespace SoloGym.UI
             ((RectTransform)noticeContent.parent).sizeDelta = new Vector2(514, Mathf.Max(70, notice.rect.height - 82));
             Place(Return, new Rect(0, notice.rect.height - 70, 502, 64));
             Privacy.gameObject.SetActive(previousKeyboard <= 0); Terms.gameObject.SetActive(previousKeyboard <= 0); Language.gameObject.SetActive(previousKeyboard <= 0);
-            LayoutForm(); Account.Relayout(Panel.rect.height, previousKeyboard > 0); Onboarding.Relayout(Panel.rect.height, previousKeyboard > 0); Consent.Relayout(Panel.rect.height); Profile.Relayout(Panel.rect.height,previousKeyboard>0); Goals.Relayout(Panel.rect.height); Equipment.Relayout(Panel.rect.height); Schedule.Relayout(Panel.rect.height); PlanReview.Relayout(Panel.rect.height); Canvas.ForceUpdateCanvases();
+            LayoutForm(); Account.Relayout(Panel.rect.height, previousKeyboard > 0); Onboarding.Relayout(Panel.rect.height, previousKeyboard > 0); Consent.Relayout(Panel.rect.height); Profile.Relayout(Panel.rect.height,previousKeyboard>0); Goals.Relayout(Panel.rect.height); Equipment.Relayout(Panel.rect.height); Schedule.Relayout(Panel.rect.height); Body.Relayout(Panel.rect.height); Canvas.ForceUpdateCanvases();
             if (previousKeyboard > 0)
             {
                 var selected = EventSystem.current?.currentSelectedGameObject;
@@ -678,7 +682,7 @@ namespace SoloGym.UI
             SaveOnboardingToProfile();
             // The identity now exists: continue setup as a signed-in person.
             identitySetup = true; accountFromConsent = false; profileReturnPage = "consent";
-            ShowProfile();
+            ShowBody();
         }
 
         void SaveOnboardingToProfile()
@@ -761,38 +765,42 @@ namespace SoloGym.UI
             environment = Equipment.EnvironmentId, equipment = Equipment.EquipmentIds, session_minutes = Schedule.Minutes, difficulty = "medium", readiness = "ready"
         };
 
-        public void ShowPlanReview()
+        /// <summary>Connected setup: optional height/weight steppers replace the measurement form.</summary>
+        public void ShowBody()
         {
-            ShowSetupStep("plan", PlanReview);
-            SoloGym.Training.TrainingInput input = null;
-            try { input = SetupInput(); TrainingContent.Engine.Validate(input); }
-            catch (Exception e) { Debug.LogWarning("Plan input incomplete: " + e.Message); input = null; }
-            PlanReview.Open(Controller.Model.Language, input, Schedule.Weekdays);
-            SetupStepChanged(); Relayout(); PlanReview.Back.Select();
+            var saved = AccountSession.Current?.Profile;
+            ShowSetupStep("body", Body);
+            Body.Open(Controller.Model.Language, saved?.hasHeight ?? false, saved?.heightCm ?? 0, saved?.hasWeight ?? false, saved?.weightKg ?? 0, saved?.unitSystem);
+            SetupStepChanged(); Relayout();
         }
+        void BackFromBody()
+        {
+            if (profileReturnPage == "account") RestoreAccount(); else OpenConsent();
+        }
+
+        void ScheduleError(string message) { Schedule.Error = message; Schedule.Render(); }
 
         void FinishSetup()
         {
             var session = AccountSession.Current;
-            if (session == null) { PlanReview.Error = L("Sign in again to save your plan.", "Vuelve a iniciar sesión para guardar tu plan."); PlanReview.Render(); return; }
+            if (session == null) { ScheduleError(L("Sign in again to save your plan.", "Vuelve a iniciar sesión para guardar tu plan.")); return; }
             var p = session.Profile;
             if (!EditingSetup)
             {
                 SaveOnboardingToProfile();
-                var pm = Profile.Controller.Model;
-                p.hasHeight = pm.HeightCm.HasValue; p.heightCm = pm.HeightCm.HasValue ? (double)pm.HeightCm.Value : 0;
-                p.hasWeight = pm.BodyweightKg.HasValue; p.weightKg = pm.BodyweightKg.HasValue ? (double)pm.BodyweightKg.Value : 0;
-                p.unitSystem = pm.UnitSystem ?? "metric"; p.setupReadiness = pm.Readiness ?? "";
+                p.hasHeight = p.hasWeight = Body.Provided;
+                p.heightCm = Body.Provided ? Body.HeightCm : 0; p.weightKg = Body.Provided ? Body.WeightKg : 0;
+                p.unitSystem = Body.Imperial ? "imperial" : "metric";
             }
             p.goal = Goals.Controller.Model.GoalId; p.experience = Goals.Controller.Model.ExperienceId;
             p.environment = Equipment.EnvironmentId; p.equipment = Equipment.EquipmentIds; p.bodyweightOnly = Equipment.BodyweightOnly;
             p.weekdays = Schedule.Weekdays; p.sessionMinutes = Schedule.Minutes;
             string missing = p.MissingSetup();
-            if (missing.Length > 0) { PlanReview.Error = L("Setup is incomplete: ", "Falta completar: ") + missing; PlanReview.Render(); return; }
+            if (missing.Length > 0) { ScheduleError(L("Setup is incomplete: ", "Falta completar: ") + missing); return; }
             if (!session.AcceptPlan(DateTime.Today, out var error))
             {
                 Debug.LogWarning("Plan not saved: " + error);
-                PlanReview.Error = L("Your plan couldn't be saved on this device. Please try again.", "No se pudo guardar tu plan en este dispositivo. Inténtalo de nuevo."); PlanReview.Render(); return;
+                ScheduleError(L("Your plan couldn't be saved on this device. Please try again.", "No se pudo guardar tu plan en este dispositivo. Inténtalo de nuevo.")); return;
             }
             OpenHome();
         }

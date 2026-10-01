@@ -1,6 +1,6 @@
 # SoloGym native Welcome, onboarding and Home
 
-## MVP fitness test build (0.6.0, version code 4)
+## MVP fitness test build (0.6.1, version code 5)
 
 The default launch now runs the connected fitness loop for a real Firebase account: session restore → sign-in/registration → age/country → character → consent → private profile → goals → **equipment → schedule → plan review** → Home → journal → readiness → workout dungeon → history. Plans are generated on the device by `Scripts/Training/TrainingEngine.cs` (a parity-tested port of `tools/training_reference.py`) from `Resources/Training/Rules`; each account's profile, journal, fasting and room layout are stored under `persistentDataPath/accounts/<hash>/`. Build with `tools/build_android_test.sh` or **SoloGym → Build → Android Test APK (MVP)** (no `SOLOGYM_REVIEW` define). Smoke/capture routes keep the fictional review fixtures. Testing steps and limits: [MVP test build](../docs/product/mvp-test-build.md). Logic suites without Unity: `tests/csharp/run.sh`.
 

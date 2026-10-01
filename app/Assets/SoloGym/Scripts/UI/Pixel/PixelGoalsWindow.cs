@@ -111,11 +111,12 @@ namespace SoloGym.UI
         }
         public void SetLocale(string language) { if(Controller.Model.Language!=language) Controller.SetLanguage(language); }
         /// <summary>Editing a saved setup: start at the review step with the person's current choices.</summary>
+        string pendingExperience;
+        /// <summary>Editing a saved setup: preselect the person's current goal and experience.</summary>
         public void Prefill(string goal,string experience)
         {
-            if(string.IsNullOrEmpty(goal)||string.IsNullOrEmpty(experience)||Controller.Model.Step!=GoalsExperienceStep.Goal||!string.IsNullOrEmpty(Controller.Model.GoalId)) return;
-            Controller.SelectGoal(goal); Controller.ContinueGoal();
-            if(Controller.Model.Step==GoalsExperienceStep.Experience) { Controller.SelectExperience(experience); Controller.ContinueExperience(); }
+            if(string.IsNullOrEmpty(goal)||Controller.Model.Step!=GoalsExperienceStep.Goal||!string.IsNullOrEmpty(Controller.Model.GoalId)) return;
+            Controller.SelectGoal(goal); pendingExperience=experience;
         }
         public void Reset() { EquipmentPending=false; lastView=null; Controller.Reset(); }
         public void GoBack()
@@ -129,13 +130,15 @@ namespace SoloGym.UI
         {
             if(!gameObject.activeInHierarchy || !canProceed()) return;
             if(EquipmentPending) { EquipmentPending=false; Render(Controller.Model); return; }
-            if(Controller.Model.UncertaintyDialogOpen) { Controller.ConfirmUncertaintyBeginner(); return; }
-            switch(Controller.Model.Step)
+            if(Controller.Model.UncertaintyDialogOpen) Controller.ConfirmUncertaintyBeginner();
+            else switch(Controller.Model.Step)
             {
-                case GoalsExperienceStep.Goal: Controller.ContinueGoal(); break;
+                case GoalsExperienceStep.Goal: Controller.ContinueGoal(); if(pendingExperience!=null&&Controller.Model.Step==GoalsExperienceStep.Experience&&string.IsNullOrEmpty(Controller.Model.ExperienceId)) Controller.SelectExperience(pendingExperience); break;
                 case GoalsExperienceStep.Experience: Controller.ContinueExperience(); break;
                 case GoalsExperienceStep.Review: Controller.ContinueReview(); break;
             }
+            // Connected setup: no "review your path" step; choices continue straight to equipment.
+            if(EquipmentRequested!=null && Controller.Model.Step==GoalsExperienceStep.Review) Controller.ContinueReview();
         }
         void Render(GoalsExperienceViewModel m)
         {

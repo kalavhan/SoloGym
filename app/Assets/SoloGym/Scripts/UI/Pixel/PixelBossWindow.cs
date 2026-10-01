@@ -39,6 +39,7 @@ namespace SoloGym.UI
             safe=Rect("Dungeon safe area",root,new Rect());Composition=Rect("1280x720 boss composition",safe,new Rect(0,0,1280,720));
             Composition.anchorMin=Composition.anchorMax=Composition.pivot=new Vector2(.5f,.5f);Composition.anchoredPosition=Vector2.zero;
             float.TryParse(PixelWorkoutWindow.Arg("-sologym-safe-inset","0"),NumberStyles.Float,CultureInfo.InvariantCulture,out inset);inset=Mathf.Clamp(inset,0,150);
+            CoverBackdrop(root,"Rooms/BossR1/background",.45f);
             Art(Composition,new Rect(0,0,1280,720),"Rooms/BossR1/background");
             // Full source canvases, no stretching; both actors share a floor anchor.
             var hero=Art(Composition,new Rect(82,305,320,320),"Characters/PixelLabR1/"+character);hero.preserveAspect=true;
@@ -86,18 +87,20 @@ namespace SoloGym.UI
                 var paper=Paper(new Rect(880,106,376,485));
                 if(Controller==null) {Title(paper,L("SAVE UNAVAILABLE","ARCHIVO NO DISPONIBLE"));Text(paper,new Rect(22,100,332,223),L("This saved session cannot be resumed safely. The original file has been kept. Return to the journal and recover the file before trying again.","No se puede reanudar esta sesión. El archivo original se conservó. Vuelve al diario y recupera el archivo antes de reintentar."),23);Button(paper,"exit-error",new Rect(22,398,332,62),L("BACK","VOLVER"),()=>Exited?.Invoke());}
                 else if(View=="stop")BuildStop(paper);
+                else if(View=="finish")BuildFinish(paper);
                 else if(Controller.NeedsReadiness)BuildRecheck(paper);
                 else if(Controller.Closed)BuildSummary(paper);
                 else if(Controller.Data.paused)BuildPaused(paper);
                 else if(Controller.RestLeft>0)BuildRest(paper);
+                else if(View=="adjust")BuildManual(paper);
                 else BuildSet(paper);
             }
             Frame(page,new Rect(247,621,626,60),"Persistent difficulty");Text(page,new Rect(260,630,163,40),L("DIFFICULTY","DIFICULTAD"),22,false,TextAnchor.MiddleCenter);
             var ids=new[]{"light","medium","hard"};var labels=new[]{L("Easy","Fácil"),L("Medium","Media"),L("Hard","Difícil")};
             for(int i=0;i<3;i++){string value=ids[i];Button(page,"difficulty-"+value,new Rect(430+i*143,628,135,46),labels[i],()=>{if(Perform(()=>Controller.SetDifficulty(value))) {notice=Controller.Data.difficulty!=value?L("Readiness and experience limit this choice.","Tu estado y experiencia limitan esta opción."):L("Remaining work updated; records kept.","Trabajo pendiente ajustado; registros conservados.");Render();}},Controller?.Data.difficulty==value).interactable=Controller!=null&&!Controller.Closed&&!Controller.NeedsReadiness;}
             Button(page,"overview",new Rect(899,622,232,58),View=="overview"?L("BACK","VOLVER"):L("View routine","Ver rutina"),()=>{View=View=="overview"?"session":"overview";Render();}).interactable=Controller!=null;
-            string footer=error!=null?L("Could not save or apply this change. Records kept; retry or lower the difficulty.","No se pudo guardar o aplicar el cambio. Registros conservados; reintenta o reduce la dificultad."):notice??L("Recorded sets advance the encounter. Rest at your own pace.","Cada serie registrada hace avanzar el combate. Descansa a tu ritmo.");
-            Text(page,new Rect(294,687,958,27),footer,17,false,TextAnchor.MiddleCenter);Text(page,new Rect(14,685,275,28),journal.IsLive?L("Your session · manual log","Tu sesión · registro manual"):L("Sample data · manual log","Datos de ejemplo · registro manual"),16,false);
+            string footer=error!=null?L("Could not save or apply this change. Records kept; retry or lower the difficulty.","No se pudo guardar o aplicar el cambio. Registros conservados; reintenta o reduce la dificultad."):notice??L("Tap COMPLETE after each set. Rest as long as you need.","Toca COMPLETAR tras cada serie. Descansa lo que necesites.");
+            Text(page,new Rect(294,687,958,27),footer,17,false,TextAnchor.MiddleCenter);Text(page,new Rect(14,685,275,28),journal.IsLive?L("Your session","Tu sesión"):L("Sample data · manual log","Datos de ejemplo · registro manual"),16,false);
             for(int i=0;i<traversal.Count;i++){var prev=traversal[(i+traversal.Count-1)%traversal.Count];var next=traversal[(i+1)%traversal.Count];var tab=traversal[i].GetComponent<PixelFieldTabNavigation>()??traversal[i].gameObject.AddComponent<PixelFieldTabNavigation>();tab.Previous=prev;tab.Next=next;traversal[i].navigation=new Navigation{mode=Navigation.Mode.Explicit,selectOnUp=prev,selectOnDown=next,selectOnLeft=prev,selectOnRight=next};}
             if(focus!=null&&Controls.TryGetValue(focus,out var control)&&control.IsInteractable())control.Select();
         }
@@ -109,10 +112,29 @@ namespace SoloGym.UI
             var edge=Art(r,new Rect(0,0,bounds.width,bounds.height),"UI/Pixel/ContentPanel");edge.sprite=Resources.LoadAll<Sprite>("UI/Pixel/ContentPanel")[0];edge.type=Image.Type.Sliced;edge.fillCenter=false;edge.pixelsPerUnitMultiplier=3;return r;
         }
         void Title(Transform p,string value)=>Text(p,new Rect(18,20,340,40),value,30,true,TextAnchor.MiddleCenter);
+        /// <summary>Default: one big COMPLETE per set, recorded exactly as prescribed.</summary>
         void BuildSet(Transform p)
         {
-            var b=Controller.Current;if(b==null)return;string id=Controller.NextId;
-            if(inputSet!=id){inputSet=id;quantity="";load="";}
+            var b=Controller.Current;if(b==null)return;
+            Title(p,b.role=="warmup"?L("WARM-UP","CALENTAMIENTO"):b.role=="cooldown"?L("RECOVERY","RECUPERACIÓN"):L("ATTACK!","¡ATACA!"));
+            Text(p,new Rect(23,66,330,78),b.name.Get(Language),27,true,TextAnchor.MiddleCenter);
+            Text(p,new Rect(22,146,332,58),(b.sets>1?L("Set ","Serie ")+(BossSession.Count(Controller.Data,b.id)+1)+" / "+b.sets+"\n":"")+Dose(b),24,true,TextAnchor.MiddleCenter);
+            Button(p,"complete",new Rect(23,214,330,96),L("COMPLETE","COMPLETAR"),()=>{notice=null;Perform(()=>Controller.CompleteSet());},true,34);
+            Button(p,"adjust",new Rect(23,322,330,52),L("Did a different amount","Hice otra cantidad"),()=>{View="adjust";Render();},false,19);
+            Button(p,"finish",new Rect(23,386,330,52),L("Finish whole routine","Terminar toda la rutina"),()=>{View="finish";Render();},false,19);
+        }
+        void BuildFinish(Transform p)
+        {
+            Title(p,L("FINISH ROUTINE?","¿TERMINAR RUTINA?"));
+            Text(p,new Rect(26,80,324,150),L("Records every remaining set as done and defeats the guardian. Use it when you trained without tapping each set.","Registra como hechas todas las series restantes y derrota al guardián. Úsalo si entrenaste sin marcar cada serie."),22);
+            Button(p,"confirm-finish",new Rect(24,250,328,72),L("YES, ALL DONE","SÍ, TODO HECHO"),()=>{View="session";Perform(()=>Controller.CompleteAll());},true,24);
+            Button(p,"cancel-finish",new Rect(24,340,328,58),L("BACK","VOLVER"),()=>{View="session";Render();});
+        }
+        /// <summary>Optional: record a different quantity or a load.</summary>
+        void BuildManual(Transform p)
+        {
+            var b=Controller.Current;if(b==null){View="session";return;}string id=Controller.NextId;
+            if(inputSet!=id){inputSet=id;quantity=b.quantity_max.ToString(CultureInfo.InvariantCulture);load="";}
             Title(p,b.role=="warmup"?L("WARM-UP","CALENTAMIENTO"):b.role=="cooldown"?L("RECOVERY","RECUPERACIÓN"):L("YOUR SET","TU SERIE"));
             Text(p,new Rect(23,69,330,74),b.name.Get(Language),25,true,TextAnchor.MiddleCenter);
             Text(p,new Rect(22,148,332,50),L("Set ","Serie ")+(BossSession.Count(Controller.Data,b.id)+1)+" / "+b.sets+" · "+Dose(b),21,true,TextAnchor.MiddleCenter);
@@ -127,14 +149,16 @@ namespace SoloGym.UI
                 Text(p,new Rect(24,389,328,28),L("Rest between sets: ","Descanso entre series: ")+Clock(b.rest_seconds),19,true,TextAnchor.MiddleCenter);
             }
             else Text(p,new Rect(24,325,328,83),L("Move gently. This illustration is not an exercise demonstration.","Muévete suavemente. Esta ilustración no demuestra el ejercicio."),22);
-            Button(p,"log",new Rect(23,418,330,53),L("RECORD SET","REGISTRAR SERIE"),()=>{if(ParseInputs(out var q,out var kg))Perform(()=>Controller.Log(id,q,kg));},true,22);
+            Button(p,"log",new Rect(23,418,212,53),L("RECORD","REGISTRAR"),()=>{if(ParseInputs(out var q,out var kg)){View="session";Perform(()=>Controller.Log(id,q,kg));}},true,22);
+            Button(p,"cancel-adjust",new Rect(243,418,110,53),L("BACK","VOLVER"),()=>{View="session";Render();},false,19);
         }
         void BuildRest(Transform p)
         {
             Title(p,L("REST","DESCANSO"));Text(p,new Rect(25,89,326,72),Controller.Current.name.Get(Language),24,true,TextAnchor.MiddleCenter);
             restLabel=Text(p,new Rect(28,174,320,102),Clock((int)Math.Ceiling(Controller.RestLeft)),66,true,TextAnchor.MiddleCenter);
-            Text(p,new Rect(28,293,320,113),L("Rest before the next set. Pause or take longer whenever you need. The guardian does not attack.","La siguiente serie estará disponible tras la pausa. Puedes descansar más; el guardián no ataca."),22);
-            Button(p,"rest-pause",new Rect(24,415,328,54),L("PAUSE","PAUSAR"),()=>Perform(()=>Controller.Pause()));
+            var nextBlock=Controller.Current;Text(p,new Rect(28,280,320,66),L("Next: ","Sigue: ")+(nextBlock==null?"":Dose(nextBlock)),22,true,TextAnchor.MiddleCenter);
+            Button(p,"skip-rest",new Rect(24,356,328,58),L("I'M READY","ESTOY LISTO"),()=>Perform(()=>Controller.SkipRest()),true,22);
+            Button(p,"rest-pause",new Rect(24,422,328,48),L("PAUSE","PAUSAR"),()=>Perform(()=>Controller.Pause()),false,19);
         }
         void BuildPaused(Transform p)
         {
@@ -164,7 +188,7 @@ namespace SoloGym.UI
             bool completed=Controller.Data.state=="completed";Title(p,completed?L("SESSION FINISHED","SESIÓN FINALIZADA"):L("SESSION STOPPED","SESIÓN INTERRUMPIDA"));
             Text(p,new Rect(25,85,326,72),Controller.Data.logs.Length+L(" sets recorded"," series registradas")+"\n"+Controller.Damage+" / 1000 "+L("progress","avance"),25,true,TextAnchor.MiddleCenter);
             Text(p,new Rect(25,182,326,159),completed?(journal.IsLive?L("Warm-up, working sets and recovery recorded in your journal. The guardian falls. No extra exercise is ever required.","Calentamiento, series y recuperación registrados en tu diario. El guardián cae. Nunca se requiere ejercicio extra."):L("Warm-up, working sets and recovery recorded. No extra exercise is required to empty the bar. These local examples do not issue rewards.","Calentamiento, series y recuperación registrados. No necesitas ejercicio extra para vaciar la barra. Estos ejemplos locales no otorgan recompensas.")):L("Your work is saved, even when you stop early. Rest and take care of yourself. No extra exercise is owed.","Tu trabajo está guardado, aunque hayas terminado antes. Descansa y cuídate. No debes recuperar el ejercicio."),22);
-            Button(p,"archive",new Rect(24,397,328,65),L("BACK TO WORKOUTS","VOLVER A RUTINAS"),Archive,true,21);
+            Button(p,"archive",new Rect(24,397,328,65),journal.IsLive?L("CONTINUE","CONTINUAR"):L("BACK TO WORKOUTS","VOLVER A RUTINAS"),Archive,true,21);
         }
         void BuildOverview()
         {

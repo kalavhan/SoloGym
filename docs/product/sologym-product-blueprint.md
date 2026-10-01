@@ -111,7 +111,7 @@ The Goals and Experience delivery passed **1,403 reported checks** across its na
 
 ### Finish the connected training setup
 
-**Implemented in the 0.6.0 test build:** available equipment, schedule/session length and plan review/acceptance connect Goals to Home. Phone testing and visual review of these steps remain.
+**Implemented in the 0.6.0 test build:** available equipment and schedule/session length connect Goals to Home (0.6.1 drops the setup-time plan review and readiness question after the first phone test; readiness is asked once on the pre-session briefing). Phone testing and visual review of these steps remain.
 
 The connected journey is:
 
