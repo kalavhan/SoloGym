@@ -11,8 +11,37 @@
   "sha256": "3a147e88c6455f4a83f784d8f18559c8f996cfbbf781881b07d9300b0843111c",
   "quotedGenerations": 40,
   "productionRecords": "design/fantasy-workouts-r1/production/",
-  "status": "background-for-screen-concept-review",
-  "runtimeIntegrated": false,
+  "status": "runtime-integrated",
+  "runtimeIntegrated": true,
   "separateLayers": "Architecture only. Journal, labels, buttons, icons, navigation and any movable decoration must remain separate in the final Unity window.",
-  "reference": "assets/sprites/pixellab/training-hall-r1/native/room-0.png"
+  "reference": "assets/sprites/pixellab/training-hall-r1/native/room-0.png",
+  "journalLayers": [
+    {
+      "source": "native/journal.png",
+      "size": [
+        640,
+        300
+      ],
+      "sha256": "b52c0d213853f89c072daaf787ed3963a0a761b2a54998d82109afd7e3326899",
+      "jobId": "60e5b01a-7ec7-4f27-a554-ff3ce2c22fe1",
+      "galleryAssetId": "edbfb57e-e881-5826-9870-3af5be4a9833",
+      "role": "Opaque blank parchment",
+      "quotedGenerations": 40
+    },
+    {
+      "source": "native/journal-rejected-transparent-pages.png",
+      "size": [
+        640,
+        300
+      ],
+      "sha256": "d651a74e10338a52c3768564c02f87018ae83e3ca080c8778cca4b01501d8132",
+      "jobId": "8a1f8957-dc07-4e7a-9392-55564995ecfd",
+      "galleryAssetId": "719b2881-0f00-5e81-b99a-532fe3c2eed8",
+      "role": "First export rejected as complete book because background removal erased pages; exact original reused only as leather/spine border overlay",
+      "quotedGenerations": 40
+    }
+  ],
+  "runtime": "app/Assets/SoloGym/Resources/Rooms/WorkoutsR1/",
+  "quotedTotalGenerations": 120,
+  "note": "All native source images are unchanged. Runtime layers opaque paper beneath the transparent border; existing reusable ContentPanel sprites provide the outer brass frame. No baked labels or buttons. Total includes background job from concept stage and both journal jobs."
 }

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "awaiting-user-visual-review",
+  "status": "implemented-and-verified-awaiting-pr-review",
   "window": "Workouts / Rutinas",
   "delivery": "One full window PR after render review, implementation and functional/visual verification",
   "sourceInstruction": "perfect. PR merged. now let's go with the next and let's do it like this, a full window after a render and then we make sure it works, for bg use first pixel lab, just as we did here.",
@@ -48,13 +48,20 @@
     ],
     "caveat": "The built-in render is an illustrated composition reference, not a pixel-exact overlay or a functional Unity capture. Runtime must use the preserved native PixelLab background and separate journal/control layers."
   },
-  "runtimeCodeChanged": false,
-  "implementationApproved": false,
+  "runtimeCodeChanged": true,
+  "implementationApproved": true,
   "uiData": "Illustrative history; routine preview values taken from existing adult_gym_intermediate:25:ready:0 fixture, not a new personal training prescription.",
   "preservedMainIntegration": {
     "mainAtStart": "32ddc8d8f559d87054bfc15376ca524482e8e380",
     "mergedHomeOnDependencyBranch": "9c20c1a147236981dae2fb0889c3ae5347016df4",
     "workingBranch": "codex/fantasy-workouts-window",
     "note": "PR #28 merged into its dependency branch after #27 reached main. This branch merges both histories; the eventual window PR will target main."
-  }
+  },
+  "approval": {
+    "quote": "this looks good, build it.",
+    "scope": "Complete Rutinas window in one PR after implementation and verification"
+  },
+  "runtimeArtManifest": "assets/sprites/pixellab/workouts-room-r1/manifest.json",
+  "verification": "verification.json",
+  "runtimeCapture": "artifacts/visual/Workouts/window-es-1280.png"
 }

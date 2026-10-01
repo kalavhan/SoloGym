@@ -30,6 +30,7 @@ namespace SoloGym.UI
         public RectTransform Modal { get; private set; }
         public bool FastingVisible => Navigation.Tab("fasting").gameObject.activeSelf;
         public bool SmokeMode { get; private set; }
+        public bool AutomaticReview = true;
         RectTransform canvasRoot, safe, hud, modalShield;
         Image portrait;
         CanvasGroup homeGate;
@@ -158,11 +159,22 @@ namespace SoloGym.UI
             LastRoute=route;if(SmokeMode)return;
             if((route.WindowId=="WIN-015"||route.WindowId=="WIN-016")&&string.IsNullOrEmpty(route.SessionId))
             {
-                CloseModal();Composition.gameObject.SetActive(false);
-                var training=new GameObject("Existing training flow").AddComponent<TrainingScreen>();
-                training.Initialize(language,()=>{Controller.SetLanguage(training.Language);Destroy(training.gameObject);Composition.gameObject.SetActive(true);Screen.orientation=ScreenOrientation.LandscapeLeft;Relayout();},route.WindowId=="WIN-016"?"readiness":"training");return;
+                OpenWorkouts(route.WindowId=="WIN-016"); return;
             }
             Notice(Controller.FutureWindowNotice(route.WindowId));
+        }
+        public PixelWorkoutWindow OpenWorkouts(bool prepare = false)
+        {
+            CloseModal(); Composition.gameObject.SetActive(false);
+            var journal = new GameObject("Landscape workout journal").AddComponent<PixelWorkoutWindow>();
+            journal.AutomaticReview = false;
+            journal.Initialize(language, CharacterId, Controller.Model.IsPrivateProfile, () =>
+            {
+                Controller.SetLanguage(journal.Language); journal.gameObject.SetActive(false); Destroy(journal.gameObject);
+                Composition.gameObject.SetActive(true); Screen.orientation = ScreenOrientation.LandscapeLeft; Relayout();
+                Navigation.Tab("home").Select();
+            }, openReadiness: prepare);
+            return journal;
         }
         void RetryNotice()=>Notice(L("No live account service is connected in this local build.","Esta versión local aún no está conectada a un servicio de cuentas."));
         public void Notice(string message)
@@ -250,6 +262,7 @@ namespace SoloGym.UI
         }
         IEnumerator Start()
         {
+            if (!AutomaticReview) yield break;
             for(int i=0;i<8;i++)yield return null;
             if(SmokeMode) yield return gameObject.AddComponent<PixelTrainingHallSmoke>().Run(this);
             string path=Arg("-sologym-capture");if(!string.IsNullOrEmpty(path))

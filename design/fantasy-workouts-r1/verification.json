@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "unity": "6000.3.24f1",
+  "build": "SoloGym.Editor.PixelWorkoutBuild.BuildLinux",
+  "nativeRuns": [
+    {
+      "file": "artifacts/visual/Workouts/window-en-854.smoke.json",
+      "passed": true,
+      "checks": 505,
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Workouts/window-es-1280.smoke.json",
+      "passed": true,
+      "checks": 512,
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Workouts/window-teen-es-1600.smoke.json",
+      "passed": true,
+      "checks": 517,
+      "size": [
+        1600,
+        720
+      ]
+    }
+  ],
+  "pythonTrainingTests": 22,
+  "trainingPreviewFixtures": 60,
+  "eligibleExportedSubstitutions": 162,
+  "assetChecks": "runtime-art-checks.json",
+  "visualInspection": [
+    "Approved two-page journal composition retained with live uGUI text and controls.",
+    "Room, parchment and border are independent unmodified PixelLab exports; existing button and brass skins are reused.",
+    "Inspected overview at all three sizes plus editor, readiness, full routine, history, review, recovery, error and empty states.",
+    "Spanish/English labels fit their assigned native text rectangles. Small landscape preserves the complete composition; wide safe-area view letterboxes instead of stretching art."
+  ],
+  "coverage": [
+    "Pointer raycasts on rendered controls; keyboard submit, traversal, scroll focus and discard-modal blocking.",
+    "Persistence roundtrip, save failure rollback, invalid combined substitutions, immutable history and corrupt-file retry.",
+    "Fresh readiness, pain/injury/illness recovery, teen supervision and explicit review acknowledgment.",
+    "Home route, appearance transfer, return navigation and language transfer."
+  ],
+  "limits": [
+    "Fictional local journal; no real workout completion, battle execution, account synchronization or rewards.",
+    "Snapshots are editor/Linux player checks, not device testing on Android/iOS.",
+    "Body appearance remains cosmetic; no new character or animation generation."
+  ]
+}

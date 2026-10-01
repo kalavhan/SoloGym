@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: 8a1f8957-dc07-4e7a-9392-55564995ecfd\njob_id: 8a1f8957-dc07-4e7a-9392-55564995ecfd\nmodel: pro\ndescription: ONE isolated EMPTY open medieval training journal UI frame, copied from the large two-page journal in the reference screen. Straight-on, flat and symmetric: two wide ivory parchment pages, dark brown leather outer border, small aged-gold clasps at four corners, thin central brown spine and two tiny gold clasps at spine top/bottom. Very subtle light parchment mottling, delicate edge wear ONLY around margins. The two page interiors are completely blank and uniformly pale, ready for live dark text. Wide rectangular silhouette, aspect 640:300. At least 8 pixels transparent margin around the entire complete book. Match the reference's exact pixel-art leather, brass corners, parchment shade and geometry; deliberately crisp 16-bit game art with pixel clusters. No diagonal perspective, no tilt, no curved pages obscuring reading area. THE ONLY OBJECT IS THE BLANK OPEN JOURNAL. REMOVE ALL LETTERS, NUMBERS, TITLES, WORDS, EXERCISE ROWS, CHECKMARKS, ARROWS, BUTTONS, TABS, SEPARATORS, PORTRAITS, ROOM, STONE, WINDOW, FLOOR AND ALL OTHER UI. No bookmark tabs. Both page centers must stay opaque cream paper, never transparent. Background outside book fully transparent. This is a separate reusable blank UI artwork asset, never a flattened screen.\nsize: 640x300px\ntransparent: True\ncandidates: 1\nreferences: 1\nseed: 9303601\nasset_id: 719b2881-0f00-5e81-b99a-532fe3c2eed8\nasset_status: pending (saved when generation completes)\ncost: 40 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"8a1f8957-dc07-4e7a-9392-55564995ecfd\")"
+      }
+    ],
+    "isError": false
+  }
+}

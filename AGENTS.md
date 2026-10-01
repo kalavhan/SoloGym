@@ -15,11 +15,12 @@ clothing pipeline. Current requirements are in
   This supersedes component-only PRs and four/eight-sprite delivery batches.
   Reuse existing components within the window; do not generate new artwork
   for controls that already match the accepted style.
-- Next window: Workouts/Rutinas, with current/completed/missed sessions,
+- Workouts/Rutinas is the approved complete journal window, with current/completed/missed sessions,
   routine review/editing, and a readiness entry before training. The proposed
-  visual is a fantasy guild training journal. Its reference pack is
-  `design/fantasy-workouts-r1/`; the render is pending user review, not an
-  approved implementation or proof of connected live workout data.
+  visual is a fantasy guild training journal. Its reference and implementation pack is
+  `design/fantasy-workouts-r1/`; the render is approved ("this looks good, build it.").
+  Local example edits/history and fresh readiness checks are implemented together. Sample data remains clearly labelled; visual
+  approval is not proof of connected live workout data.
 - The current approved Home is the straight-on fantasy training hall in
   `design/fantasy-home-training-hall-r1/`. The user approved it with "love this,
   do it." It supersedes the boxing/bedroom and rejected isometric/orthographic

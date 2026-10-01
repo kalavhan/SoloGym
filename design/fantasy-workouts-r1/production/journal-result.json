@@ -1,0 +1,31 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: 8a1f8957-dc07-4e7a-9392-55564995ecfd\njob_id: 8a1f8957-dc07-4e7a-9392-55564995ecfd\nframes: 1\ntransparent: yes\nasset_id: 719b2881-0f00-5e81-b99a-532fe3c2eed8\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ndownload: https://api.pixellab.ai/mcp/images/8a1f8957-dc07-4e7a-9392-55564995ecfd/download"
+      },
+      {
+        "type": "image",
+        "saved": "assets/sprites/pixellab/workouts-room-r1/native/journal.png"
+      }
+    ],
+    "structuredContent": {
+      "job_id": "8a1f8957-dc07-4e7a-9392-55564995ecfd",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/8a1f8957-dc07-4e7a-9392-55564995ecfd/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/8a1f8957-dc07-4e7a-9392-55564995ecfd/download"
+      ],
+      "asset": {
+        "id": "719b2881-0f00-5e81-b99a-532fe3c2eed8",
+        "type": "image",
+        "status": "saved"
+      }
+    },
+    "isError": false
+  }
+}
