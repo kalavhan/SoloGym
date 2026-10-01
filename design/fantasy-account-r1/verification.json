@@ -1,0 +1,447 @@
+{
+  "date_utc": "2026-10-01T16:06:56.828466+00:00",
+  "unity": "6000.3.24f1",
+  "platform": "Linux Standalone / isolated Xvfb",
+  "build_passed": true,
+  "native_checks_passed": 513,
+  "reports": [
+    {
+      "file": "artifacts/visual/Account/account-keyboard.report.json",
+      "passed": true,
+      "checks": 6,
+      "locale": "en",
+      "width": 1280,
+      "height": 720,
+      "failures": []
+    },
+    {
+      "file": "artifacts/visual/Account/login-keyboard.report.json",
+      "passed": true,
+      "checks": 7,
+      "locale": "en",
+      "width": 1280,
+      "height": 720,
+      "failures": []
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-en-854.smoke.json",
+      "passed": true,
+      "checks": 115,
+      "locale": "en",
+      "width": 854,
+      "height": 480,
+      "failures": []
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-es-1280.smoke.json",
+      "passed": true,
+      "checks": 115,
+      "locale": "es",
+      "width": 1280,
+      "height": 720,
+      "failures": []
+    },
+    {
+      "file": "artifacts/visual/Account/window-en-854.smoke.json",
+      "passed": true,
+      "checks": 90,
+      "locale": "en",
+      "width": 854,
+      "height": 480,
+      "failures": []
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1280.smoke.json",
+      "passed": true,
+      "checks": 90,
+      "locale": "es",
+      "width": 1280,
+      "height": 720,
+      "failures": []
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1600.smoke.json",
+      "passed": true,
+      "checks": 90,
+      "locale": "es",
+      "width": 1600,
+      "height": 720,
+      "failures": []
+    }
+  ],
+  "implementation_files": [
+    {
+      "file": "app/Assets/SoloGym/Scripts/AccountRegistrationState.cs",
+      "sha256": "daf8170434bcc81f84c52dc577cb62698424524ca3c418092486b4c428d612f6"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelAccountForm.cs",
+      "sha256": "841357895b8ff7968b82cf787d778aae498d8179c40ae70c03c68c119d1968b0"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelAccountSmoke.cs",
+      "sha256": "b8c033d5b17211fb6f0eda6d307170be492c7d803169caa1942a6c731c194727"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelLoginWindow.cs",
+      "sha256": "5c547f484558aee591aa03f0f3d8f232fe5fef14b5920c0714a4ceea55708374"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelLoginSmoke.cs",
+      "sha256": "fdfa996e978ad9e69e7f971df8a0f3cf69de830599adf2f43e30f74339e27d36"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelJournalUI.cs",
+      "sha256": "9fff0b1a13a2101cc3fcbea629867897d1040d4f125fde05fe32776d07b65b3a"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/WelcomeScreen.cs",
+      "sha256": "757bac0713442eccc95299a1618a7103b995b6fae640c61e201e0821764f6b3b"
+    },
+    {
+      "file": "tools/check_pixel_field_keyboard.py",
+      "sha256": "69f2144ac7730e5a3ab04c6a99a7029bf4b7cc98c9f88aba3b521ecc20162167"
+    }
+  ],
+  "background": {
+    "source": "assets/sprites/pixellab/guild-entrance-r1/native/entrance.png",
+    "runtime": "app/Assets/SoloGym/Resources/Rooms/LoginR1/entrance.png",
+    "sha256": "a9b079c146380121777e1af59005a0ad30ac7c45827be1f7ddac77333f31c790",
+    "bytes_identical": true,
+    "pixellab_generations_added": 0
+  },
+  "captures": [
+    {
+      "file": "artifacts/visual/Account/login-regression/window-en-854-create-account.png",
+      "sha256": "ee8648890b793df44084720daf90bd9732bbc99a5015cf81db3ee8d0fc540559",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-en-854-identity-checkpoint.png",
+      "sha256": "9e35ea44ffc51f6543c013b68771ccad498271f354738884c75881631373d6b6",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-en-854-invalid-credentials.png",
+      "sha256": "e3b43f7a30bc8a0da7900357cff5a6ba6366ef8861ac7ef1e2a5927dc082821a",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-en-854-keyboard-layout.png",
+      "sha256": "214f908c36259f6835083b8f07b8155cbea1af1b1f97edd8040a6209c36aabf5",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-en-854-offline.png",
+      "sha256": "349abe6e21d9bc56be40bd7dc860471dfc8bf53d2967858418c80b367caf26f3",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-en-854-pending.png",
+      "sha256": "bd2bd82cd5fe8bf805c4a829833dc0c04476369772dbf697ede16de331db92d6",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-en-854-recovery.png",
+      "sha256": "346c0b1bf078604289b0bb283475f553a15362ecb2295e4e916d37c3f5ee1dfe",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-en-854.png",
+      "sha256": "7a7344e6792000280c99a30c87d080ee99cf629ae1aff76b3ed863226264988a",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-es-1280-create-account.png",
+      "sha256": "d06104b71945a6a0a73d38a4bcc545ee1a3c852048560a4ad4ad792c1e8d6817",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-es-1280-identity-checkpoint.png",
+      "sha256": "858a687fce1034e354d944f89c7a98e95ea32e4062bc165a49cdebc3fe90c68a",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-es-1280-invalid-credentials.png",
+      "sha256": "2f844832f2f2f7c47f7b802cb0f734885ea7000227861034f6cb6681d5371789",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-es-1280-keyboard-layout.png",
+      "sha256": "d2bc64dd1bd586c5e7314a840fa1f3c455301351e3c4ca26e7066b084bfc332f",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-es-1280-offline.png",
+      "sha256": "b484af48ce3449d5750774d67b8d5f2c815e59222e568fb7de91a5ced27bdb01",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-es-1280-pending.png",
+      "sha256": "0c5984f29f05146800765a4bd6fc36d4fb2c85b4449fcc5cbe3b16f37cbd3f07",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-es-1280-recovery.png",
+      "sha256": "d676a9d69fd64c87ef6a472f3803a52cf36cea15a845edc80742db8df09a7a98",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/login-regression/window-es-1280.png",
+      "sha256": "48e02c0e8aa9a23db34617920d07bff4821ecac2a1b17f2c123d40f1f7875423",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-en-854-created-fixture.png",
+      "sha256": "26a053f717c5152bf1868d34464feac71b61facac49bba79bec1ec1d8443258d",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-en-854-interrupted.png",
+      "sha256": "526ca87cf96b4a0827aa100cba98daa6880927e8bc1be93ecdd987365c9222ce",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-en-854-keyboard.png",
+      "sha256": "864bf042db7679b724b3ca7dec4f1bcdf2a13b59bbf19942207f964426424079",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-en-854-mismatch.png",
+      "sha256": "20ad043ea256cfba7f7904817917b395a30e805f60d36f8b84160fd62960ef75",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-en-854-offline.png",
+      "sha256": "418b9e9351be4450bd305630113446b83d39d83082c06eb8bc50a7fd89feff23",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-en-854-pending.png",
+      "sha256": "99389947d8e6cf62e9e1dea6f8985c61ad94e441f6e66a6df26ee42d05264ed1",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-en-854-setup-required.png",
+      "sha256": "59443aa9a1a4fa9dbe9484983115ee8012d673f9931300c225c09716efc65921",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-en-854.png",
+      "sha256": "89b6af14ad334cc55497f80af115607740e1bb467962ef55d3084cc19db420ca",
+      "size": [
+        854,
+        480
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1280-created-fixture.png",
+      "sha256": "c24840d9719ec13d9cdd8a3376bc9a529705c00d2230245fc21f8bfb6d8ac76a",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1280-interrupted.png",
+      "sha256": "72c55159bcdccfe7d58a4d4fab00213341eaadb04161c13e2700caa59d487b81",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1280-keyboard.png",
+      "sha256": "8fb1942657a15e138f4c4a3fe3dd4302902661f6c4a46122113af63221cdd449",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1280-mismatch.png",
+      "sha256": "29f1852c6723ada13351eb010f49fcb4f58acd9c685680c5193b0c8df0ceab8a",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1280-offline.png",
+      "sha256": "bff8d014441969b615d1d0052a7ce9ab9f7ae5e51e441b56fd7ff5cf02b275f3",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1280-pending.png",
+      "sha256": "aee4d400ce63f38c01d85c9c1d6e1e82a2ef71741a1ab41d263490d98b847087",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1280-setup-required.png",
+      "sha256": "28a30c898704b585ca17eefa6e7c7cc205967b7f9a2179d9611c9aef12e46bc7",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1280.png",
+      "sha256": "0708787e3987876245a0d59053ccd9546cfab5a310c52b1d5986656f78e84838",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1600-created-fixture.png",
+      "sha256": "93b837580d9e62be6b63603ba0f4336bd90f1f2e320f42792c65b58e61e08681",
+      "size": [
+        1600,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1600-interrupted.png",
+      "sha256": "f5222452073092723ea60243171070b4f81f672466efbd61c0b36b0c01b71189",
+      "size": [
+        1600,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1600-keyboard.png",
+      "sha256": "ae7f97cd158d1975a6d5278a050f89b77e9d27e0ae9518224831c16b14ba5d2d",
+      "size": [
+        1600,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1600-mismatch.png",
+      "sha256": "c6762e143510f097b77e51210322d8ee3d03f9bec1355b2abbb3fd4c273df47e",
+      "size": [
+        1600,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1600-offline.png",
+      "sha256": "7d5b4c6cdfcfb78ca84e5c5a11b6e14f83aca53b10f34abe0c06b9ea5e7c8083",
+      "size": [
+        1600,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1600-pending.png",
+      "sha256": "56486def5b3ef1b5de5238983653577f164d2f4d5d35d07673fb45633c8b61fa",
+      "size": [
+        1600,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1600-setup-required.png",
+      "sha256": "4583ae5851b5373ed4c3989f5fb5e640c32357c5cb215f5de3430fe624a217c7",
+      "size": [
+        1600,
+        720
+      ]
+    },
+    {
+      "file": "artifacts/visual/Account/window-es-1600.png",
+      "sha256": "216d012182cb2a54023c2f36a15b91c9356c853e159d6a0ccb21e886be11a9cc",
+      "size": [
+        1600,
+        720
+      ]
+    }
+  ],
+  "visual_review": [
+    "Inspected native normal account form at 1280x720 ES, 854x480 EN with 12px inset and 1600x720 ES with 24px inset.",
+    "Fixed short text-action bounds that clipped Back and Sign in; final renders show both labels.",
+    "Inspected inline mismatch, unavailable prerequisites, keyboard layout and fixture-only account confirmation.",
+    "Background remains original separate art; no flattened concept imported into Resources."
+  ],
+  "limitations": [
+    "Default registration service reports missing trusted setup and creates no account.",
+    "Success/failure provider scenarios use explicit injected fixtures, not live account creation.",
+    "Android/iOS keyboard and connected registration need device/service verification.",
+    "Eligibility, guardian rules, versioned legal documents, receipts, registration backend and personal profile remain unfinished."
+  ]
+}

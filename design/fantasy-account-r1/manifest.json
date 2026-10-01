@@ -1,0 +1,65 @@
+{
+  "id": "fantasy-account-r1",
+  "created": "2026-10-01",
+  "status": "concept_approved_native_form_implemented",
+  "base_commit": "434c1628d94823a21ad83108d5a9555a637a605c",
+  "window": "email_account_creation",
+  "runtime_implemented": true,
+  "provider": "built-in imagegen, not CLI",
+  "pixellab_generations_used": 0,
+  "background_reused_from": "guild-entrance-r1",
+  "original_generated_image": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-f88921c7-2232-40ff-8313-eb6580ac4968.png",
+  "files": [
+    {
+      "file": "design/fantasy-account-r1/account-concept.png",
+      "role": "generated concept for visual approval",
+      "sha256": "9fa3b38d17fa89d50de6801ef7c6dae46453a3d3a3c8ca8074b3b1ed13ec3058",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "design/fantasy-account-r1/screen-prompt.txt",
+      "role": "exact built-in imagegen prompt",
+      "sha256": "dd7c481a19fb76fd95dfb848e1d56004071a0fb85b6fa2590945abea2e715976"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-1280.png",
+      "role": "image 1: native login edit target, existing controls and composition",
+      "sha256": "632d8e18adde1e23698c68ded180a025bc90e917bcdf7ca4053e1a5c0993107f",
+      "size": [
+        1280,
+        720
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "assets/sprites/pixellab/guild-entrance-r1/native/entrance.png",
+      "role": "image 2: existing PixelLab architecture reference",
+      "sha256": "a9b079c146380121777e1af59005a0ad30ac7c45827be1f7ddac77333f31c790",
+      "size": [
+        640,
+        360
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "visual_review": {
+    "result": "concept_approved",
+    "checks": [
+      "One landscape screen; source room and left-logo composition retained.",
+      "Three readable credential fields and separate visibility controls.",
+      "Primary action, return routes, legal links and language control fit inside their bounds.",
+      "No additional character, prop, provider, consent checkbox or password-policy claims."
+    ],
+    "limitations": [
+      "Generated reference is not runtime art; implementation reuses original PixelLab background bytes.",
+      "Readability at small landscape sizes and mobile keyboard behavior require native verification.",
+      "Visual review does not approve connected registration, eligibility, legal documents or trusted profiles."
+    ]
+  },
+  "approval": "User: good, do it",
+  "production_registration_connected": false
+}
