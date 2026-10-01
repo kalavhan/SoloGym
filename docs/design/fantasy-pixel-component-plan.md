@@ -12,7 +12,7 @@ This is the implementation approach for the [confirmed product direction](../pro
 
 The approved **Rutinas / Workouts** window is implemented as a complete landscape journal. The render pack is `design/fantasy-workouts-r1/`. It uses a guild training journal: weekly context and current/completed/missed entries on the left, selected routine and review/edit/preparation actions on the right, with the same live HUD/navigation language as Home. Empty/loading/error states, local routine edits, immutable example history and readiness routing ship together; see `design/fantasy-workouts-r1/README.md`. These remain labelled fictional fixtures, not live personal plans. Difficulty remains adjustable in the boss session; this screen must not lock it or start exercise before readiness review. Missed sessions never create punitive catch-up debt.
 
-The new render remains a proposal until reviewed. Existing `TrainingScreen` and `TrainingController` use local fixtures; showing sample history in a render does not establish a live workout-history service.
+PR #29 merged the Workouts window and the accepted Home into main. The next complete window is the routine-driven boss dungeon: `design/fantasy-boss-r1/`. Its full render must be reviewed before implementation. Existing training data still uses local fixtures; sample history is not a live workout-history service.
 
 ## Current Home priority
 
@@ -26,7 +26,7 @@ Decorar adjusts each prop's position, scale and visibility. Cancel restores the 
 
 The room and props are authored sprites; text, actions, routing and layout remain live controls. The compact HUD reuses the existing button/navigation skins and nine-slice gold panel border over a separate dark teal fill. It does not display a flattened mockup. Source prompts, candidates, rejected repairs, selected hashes and available cost quotes are in `design/fantasy-home-training-hall-r1/production/` and the source asset manifests.
 
-Home retains readiness rechecks, saved-session gating, illness/recovery routing, teen supervision and loading behavior. **Its plan summary remains a fictional review fixture.** Workout/readiness destinations still open the existing earlier interface; those screens need their own landscape visual integration. Fasting is omitted by default and always absent for teens. `-sologym-adult-fasting` demonstrates only a review navigation entry and an honest unconnected-area notice; it is not a fasting tracker.
+Home retains readiness rechecks, saved-session gating, illness/recovery routing, teen supervision and loading behavior. **Its plan summary remains a fictional review fixture.** Workout/readiness destinations now open the landscape journal delivered in PR #29; active boss-session execution remains the next window. Fasting is omitted by default and always absent for teens. `-sologym-adult-fasting` demonstrates only a review navigation entry and an honest unconnected-area notice; it is not a fasting tracker.
 
 ### Build and review
 
@@ -43,7 +43,7 @@ app/Builds/TrainingHall/SoloGymTrainingHall.x86_64 \
 
 Use `-sologym-character female-fat` (or another catalog ID) to inspect an appearance. Add `-sologym-smoke -sologym-capture "$PWD/artifacts/visual/TrainingHall/home.png"` for the focused Unity checks and an actual player capture; the player exits after capture. `-sologym-safe-inset 24` tests safe-area fitting. Run `python3 tools/check_training_hall_assets.py` for source/alpha/canvas/room-decomposition checks (Pillow required).
 
-The [alignment editor](pixel-home-alignment-editor.md) was merged in PR #27. Home PR #28 was subsequently merged into its dependency branch after #27 reached main. The next-window branch carries that accepted Home merge together with current main history, so its eventual PR also brings the approved Home into main. Earlier room/furniture assets remain preserved. Next migrate the workout area within the established landscape visual language; do not add more Home props or character animation as a prerequisite.
+The [alignment editor](pixel-home-alignment-editor.md) merged in PR #27. Home PR #28 first merged into its dependency branch; PR #29 subsequently brought that accepted Home and the Workouts journal into main. Earlier room/furniture assets remain preserved. Continue with the boss dungeon in the established landscape visual language; more Home props and character animation are not prerequisites.
 
 ## Screen references before component production
 

@@ -1,0 +1,36 @@
+Use case: ui-mockup.
+Asset type: one polished, complete landscape 16:9 SoloGym boss-workout screen, a visual target for a native Unity pixel-art fantasy fitness app. Spanish UI. Render one screen only, no device frame, no collage or annotations.
+
+INPUT IMAGES AND ROLES:
+1. PixelLab chamber.png is the actual newly generated background. Preserve its room geometry, floor grid, vanishing point, door, palette and frontal camera. Extend it across the full screen behind the interface; do not invent a different arena or an isometric view.
+2. Existing native Workouts capture is the exact UI style reference: restrained aged-brass frame edges, dark teal primary buttons, charcoal/stone secondary buttons, warm ivory labels, Pixelify-like readable pixel typography. Reuse that visual family, not the two-page book layout.
+3. Existing 256x256 male-medium Barbarian PNG is the player appearance reference. Preserve his face, curly brown hair, tan skin, soft average torso and small belly, red short layered fantasy clothes, fur shoulder and boots. No six-pack or extra musculature, no new costume. Keep his relaxed frontal stance; this is his game avatar, not an exercise demonstration.
+
+COMPOSITION:
+The environment occupies the entire frame. Make the left approximately two thirds an open, appealing RPG encounter stage. Place the existing Barbarian at roughly 24% screen width with feet near 78% screen height, at a substantial readable character scale. Place ONE proposed stone guardian boss near 51% width on the same continuous level floor, about 1.3 times the player's height. Both characters must have believable contact shadows, separate silhouettes, no overlaps, and feet aligned with the actual room perspective. The boss is an original ancient stone construct: sturdy weathered slate blocks, carved angular face, restrained bronze joints and a small cyan chest rune. Friendly-adventure fantasy, visually powerful, no gore, no weapons, no humanoid player redesign. The guardian is concept art for this screen, not a sheet of new production sprites. Crisp 16-bit-inspired pixel clusters throughout, controlled detail, no painterly blur or glossy 3D.
+
+TOP HUD:
+Top-left, the established dark teal/brass title plaque: "MAZMORRA". Directly beneath in small readable ivory text: "Base A · En curso".
+Top-center over the encounter stage: boss name "GUARDIÁN DE PIEDRA", with a clearly legible crimson boss-progress bar approximately 90 percent full and the exact number "900 / 1000". This is the boss bar only; no player health, stamina, mana, damage numbers or urgency countdown.
+Top-right: separate usable buttons "PAUSAR" and "TERMINAR". Their size and material match the existing UI.
+A quiet narrow progress strip over the left playfield reads "Calentar  >  Entrenar  >  Recuperar", with Entrenar emphasized. No extra dashboard cards.
+
+RIGHT WORKOUT PANEL:
+One single generous parchment panel with a narrow dark leather/brass border at the right, about 30 percent of screen width, from roughly 20 to 81 percent screen height. Strong spacing and mobile readability, not many stacked dialogs. Keep every line and control comfortably inside the panel. Exact content, in this visual order:
+"TU SERIE"
+"Sentadilla con mancuerna"
+"Serie 2 de 2 · 6–10 reps"
+"Repeticiones realizadas"
+A native-looking horizontal quantity control with three separate elements: "−" button, large central value "8", "+" button.
+"Peso opcional (kg)" with a separate empty value field showing "—". Never prescribe a load.
+"Descanso después: 2:00"
+One broad forest-teal primary action at the bottom: "REGISTRAR SERIE".
+No charts, XP or coin promises, gear slots, attack controls, exercise animation, tutorial illustration or arbitrary extra fields.
+
+BOTTOM CONTROLS:
+Under the encounter stage, anchored independently from the right logging panel, show a clear persistent difficulty strip: label "DIFICULTAD" and separate controls "Fácil", "Media", "Difícil". Media is selected in teal/gold. A compact separate "Ver rutina" action remains visible nearby. These controls are always accessible during exercise, rest and pause in the eventual application.
+Small bottom-left footer: "Datos de ejemplo".
+A calm short line below the difficulty controls: "Cada serie registrada hace avanzar el combate." No suggestion that resting causes damage or that speed/heavier weights earn more rewards.
+
+FINISH AND CONSTRAINTS:
+Match the existing native game's practical asset quality and readable type, not a fantasy illustration that cannot be built. Room background, player, boss, decorative frames, buttons and live text must LOOK like distinct composable elements. Only the rendered proposal is flattened; do not imply the screen is a finished runtime asset. Keep the existing room's frontal perspective and consistent scale. Strong hierarchy: encounter first, current set second, large recording action and persistent difficulty choice. Avoid web dashboard styling, tiles of unrelated dialog boxes, tiny ornamental writing, overlapping text, extra characters, isometric rooms, boxing equipment, new coins/XP values and logos.
