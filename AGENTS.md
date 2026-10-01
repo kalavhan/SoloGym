@@ -29,14 +29,15 @@ clothing pipeline. Current requirements are in
   The complete native window includes adult opt-in, local persistence, correction,
   history/deletion, Home navigation and reduced motion. Preserve the original
   static clock and restrict animated frames to the dim rune annulus.
-- Next is the login/account-entry window. The user authorized its render-first
-  workflow with "do it". `design/fantasy-login-r1/` contains the new PixelLab
-  guild-entrance background and complete landscape concept awaiting visual
-  review. Reuse existing form/button components, keep background and controls
-  separate, and preserve identity/onboarding gates. No new characters or
-  animations; no claim that account creation/recovery/profile services are
-  connected by a visual redesign. Implement after the user's render review,
-  then deliver one complete window PR.
+- The login/account-entry render in `design/fantasy-login-r1/` was approved with
+  "go". Its complete native landscape window follows PR #31: separate PixelLab
+  guild entrance, existing form/button controls, email/Google service adapter,
+  cancellation/retry, localization and keyboard handling. The default Welcome
+  route now opens it. Identity success still requires connected onboarding;
+  account creation/recovery and final legal documents remain explicitly
+  unavailable. Never route successful identity to fictional Home or imply that
+  a screen redesign establishes trusted profiles. No new character art or
+  animations were generated. Deliver this complete window in one PR.
 - Workouts/Rutinas is the approved complete journal window, with current/completed/missed sessions,
   routine review/editing, and a readiness entry before training. The proposed
   visual is a fantasy guild training journal. Its reference and implementation pack is

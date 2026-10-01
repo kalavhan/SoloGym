@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-01",
+  "unity": "6000.3.24f1 Linux",
+  "build": "Passed, PixelLoginBuild.BuildLinux through WelcomeScreen default entry",
+  "passed": true,
+  "native_checks": 565,
+  "reports": [
+    {
+      "file": "artifacts/visual/Login/keyboard.report.json",
+      "checks": 7,
+      "passed": true,
+      "sha256": "93ae4527c5f076327d92bd6dd9a69bd3470f0f495facdeaaa565e932514c961b"
+    },
+    {
+      "file": "artifacts/visual/Login/regression-action.smoke.json",
+      "checks": 119,
+      "passed": true,
+      "sha256": "cf71a9ebea1961281d6067aca471f5e2aa8dd8b6fbe7677a5b7e5268f8a0c681"
+    },
+    {
+      "file": "artifacts/visual/Login/regression-button.smoke.json",
+      "checks": 118,
+      "passed": true,
+      "sha256": "15690b32b4eab0963b38569380c8ca951cef538ca5c1dcd31d4fbe236f987f11"
+    },
+    {
+      "file": "artifacts/visual/Login/window-en-854.smoke.json",
+      "checks": 107,
+      "passed": true,
+      "sha256": "55cd088ea184deaa51d600b4f24ba34de9fb0684a1f2b7ede977bc9b0c5456f0"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-1280.smoke.json",
+      "checks": 107,
+      "passed": true,
+      "sha256": "345cc80ea94f1bb7f93d0e5d911d9291677be32d1cde369e76fb7ef3bfc2d72d"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-wide.smoke.json",
+      "checks": 107,
+      "passed": true,
+      "sha256": "c5c24f484bb6008ab68ef34142c5f836dafaed19852d454db79f495ac9520f90"
+    }
+  ],
+  "existing_python_training_tests": {
+    "passed": true,
+    "checks": 22
+  },
+  "assets": {
+    "source_matches_runtime": true,
+    "source_canvas": [
+      640,
+      360
+    ],
+    "opaque": true,
+    "no_flattened_concept_in_resources": true,
+    "new_generation_calls_during_implementation": 0
+  },
+  "source_hashes": [
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelLoginWindow.cs",
+      "sha256": "91033e67d1f9a487652f0a55f0e2d25a4821a4d4e1bfd5293396617176222350"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelLoginSmoke.cs",
+      "sha256": "50f322532750685481689e8d3b1df3017baff8912e753a55ec98fe29898f956c"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelPrimaryButton.cs",
+      "sha256": "ac9a8d2c86602bb665e4e107f8e62a09063787e5c9c01bca27e73f680879be13"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/UI/Pixel/PixelSecondaryAction.cs",
+      "sha256": "a76fc7bb29574bbda33d4251682e2c6f218a29d819f8a009f2ae3d1cac65114a"
+    },
+    {
+      "file": "app/Assets/SoloGym/Resources/Rooms/LoginR1/entrance.png",
+      "sha256": "a9b079c146380121777e1af59005a0ad30ac7c45827be1f7ddac77333f31c790"
+    },
+    {
+      "file": "app/Assets/SoloGym/Scripts/WelcomeScreen.cs",
+      "sha256": "6038340b416e185da8d481d096d4ad8969aa0d7882140b06617aa2e423074eab"
+    },
+    {
+      "file": "app/Assets/SoloGym/Editor/SoloGymBuild.cs",
+      "sha256": "74d236d191e577cdc7c23ddd63317571c4d94d50d301038d638e749f651e8a4b"
+    }
+  ],
+  "capture_hashes": [
+    {
+      "file": "artifacts/visual/Login/regression-action.png",
+      "sha256": "379d13f8f4450b434bca7a231bebb28d9a074f96e0463ad2e9ae97efb85ff38c"
+    },
+    {
+      "file": "artifacts/visual/Login/regression-button.png",
+      "sha256": "5b99440081d286efd8e66df080cbf7e3208ce4d05c2f0159e8e7f11c1f4baf5a"
+    },
+    {
+      "file": "artifacts/visual/Login/window-en-854-create-account.png",
+      "sha256": "ce288cb14e98a61c083c762411a704ab7a1eb7214ac71a322f2a50a7ce9ec68f"
+    },
+    {
+      "file": "artifacts/visual/Login/window-en-854-identity-checkpoint.png",
+      "sha256": "9fb67553e8631577c50e2e6b4dbcabc2d14d79e1a60bc44fad22d81eb7c6dfd3"
+    },
+    {
+      "file": "artifacts/visual/Login/window-en-854-invalid-credentials.png",
+      "sha256": "cf89182b6a9d56114a6b16a04daa58dc6cde4f3283bb00089767c8242da5261c"
+    },
+    {
+      "file": "artifacts/visual/Login/window-en-854-keyboard-layout.png",
+      "sha256": "6fe662caeba74901437d4d1512f49dd5d7963c65ac755337fd99e76fd4b51f64"
+    },
+    {
+      "file": "artifacts/visual/Login/window-en-854-offline.png",
+      "sha256": "392cb4d4bafeec86ef49c43e4eb577851c836afaed8a8124fa8659bfbcdc7f5a"
+    },
+    {
+      "file": "artifacts/visual/Login/window-en-854-pending.png",
+      "sha256": "cdcd508eb995a410c1903da0619e0185cca6b9e707f580a38462d90ba625a22a"
+    },
+    {
+      "file": "artifacts/visual/Login/window-en-854-recovery.png",
+      "sha256": "556e1476121f38368f61284fc06502337ff53f2ea038db06672d407150dbb75d"
+    },
+    {
+      "file": "artifacts/visual/Login/window-en-854.png",
+      "sha256": "15936bd6b271d0b6b16f2f3d3a436608404f37594ee9700167277e47cc54386a"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-1280-create-account.png",
+      "sha256": "654edf049cd8e3337351aac88df94483d468d167b82d983a53520b5cd967b052"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-1280-identity-checkpoint.png",
+      "sha256": "fb7aaec8cafe9b40d3fe8cf76e3cdfdefad44bc5cc4b3adef54b7fb4cd71bba6"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-1280-invalid-credentials.png",
+      "sha256": "75284acbb7648ba4465b60aed00b59da4021a9a74b9bd0da273b2a94f8b2d715"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-1280-keyboard-layout.png",
+      "sha256": "62285de64dc77072b90d440c591195ceb46de2c52bd3340383e256f7cd658ff4"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-1280-offline.png",
+      "sha256": "3ef95105e7325341128f3e81b96b9cbc4f430836c46ca1a78e37de34d7f697a4"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-1280-pending.png",
+      "sha256": "9670dd4dfae67bc7ddd347f8c47d8fa1f2ad1ea38b3baeb3b15f1018de736e21"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-1280-recovery.png",
+      "sha256": "af27fcb4617a931f3e888cf8ef271f9a44f1fb52d1eaf2beadb085fa2a781c52"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-1280.png",
+      "sha256": "632d8e18adde1e23698c68ded180a025bc90e917bcdf7ca4053e1a5c0993107f"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-wide-create-account.png",
+      "sha256": "3fc29d6a4ac05ca9651dbb11c4ed73343aba8dc75074afe7d68c4d72b6113040"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-wide-identity-checkpoint.png",
+      "sha256": "711b8a653db02e84003fd4da3a99fff7d4b8d179c14c75265c0b963e8cabb6aa"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-wide-invalid-credentials.png",
+      "sha256": "e828c1c74f749b41c8bac2d92f1d12dcfba29ed345116b22886d348c9ce0afcc"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-wide-keyboard-layout.png",
+      "sha256": "e1c3275caf0677d398496d8c2cf4dfea011dfb0de87d3c5d455adbcc71dacde3"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-wide-offline.png",
+      "sha256": "87635dde33a9e397f6c1216faa480aeb1237c15a58f0cb63fc2b6165821df943"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-wide-pending.png",
+      "sha256": "974337db9152d989d0788d4c9ddbd3313445145224fad72a1d1a173c6af6232b"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-wide-recovery.png",
+      "sha256": "c3ed690a0a31b71e8ec29670352d334cf35b1f430d59586a6891f80e891e650d"
+    },
+    {
+      "file": "artifacts/visual/Login/window-es-wide.png",
+      "sha256": "3c5bd4ff53e599ffd604ca008a0e678a1f99ce304485725ca4eb099ce2ddfa5a"
+    }
+  ],
+  "limits": [
+    "Desktop native UI validation with injected/no-network services; no live identity-provider sign-in performed.",
+    "Native Android/iOS soft keyboard and configured Google provider require device testing.",
+    "Registration, recovery, final legal documents and trusted account/profile setup are unfinished and reported as unavailable.",
+    "No automatic route to fictional Home/workout fixtures after identity verification."
+  ]
+}

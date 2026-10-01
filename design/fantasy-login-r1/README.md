@@ -1,62 +1,97 @@
-# Login — visual target for review
+# Login — native guild entrance
 
-Next complete window after merged PR #31. The user accepted the proposed login
-workflow with “do it”: PixelLab background first, complete landscape concept,
-visual review, then a complete Unity window PR. This pack is a proposal; it is
-not an approved implementation or a functioning authentication screen.
+The user approved `login-concept.png` with **“go”** after merged PR #31. The
+complete landscape entry now uses the independent PixelLab architecture and
+live native uGUI controls. The main Welcome scene routes to this window by
+default and with `-sologym-window login`. Legacy explicitly named review routes
+remain available; no character art or animations were regenerated.
 
-The guild entrance uses the accepted Home palette and a frontal camera. Its
-open doorway remains visible on the left; a single readable login panel occupies
-the right. There is no new character generation or animation in this scope.
+## Behavior and integration boundaries
 
-## Separate production pieces
+- Email/password and Google entry reuse `WelcomeController` and
+  `FirebaseWelcomeAuthService`. Capture, smoke and keyboard-probe modes never
+  contact an identity provider. Ordinary launches use the existing configured
+  service, which reports unavailable when its SDK/configuration/platform is
+  missing. Google identity currently requires the configured Android bridge.
+- Local input validation, password visibility, keyboard Tab/Shift+Tab, email
+  Return-to-password and password Return-to-submit. Losing focus does not send
+  credentials. Only the language preference is persisted by this window.
+- Pending requests disable duplicate/provider submissions and keep Cancel
+  available. Cancellation/backgrounding clears the password. A cancelled late
+  result cannot replace a newer request. Google may temporarily background the
+  app for its native provider flow. Offline, invalid, provider-error, unavailable
+  and rate-limited states use the existing controller copy and retry rules.
+- Successful identity reaches an explicit pending-onboarding notice. It never
+  enters fictional Home or claims age, consent or a completed profile. The
+  connected account/profile pipeline is still unfinished.
+- Account creation and password recovery links show their actual unavailable
+  status and provide a return action. They do not create an account or claim an
+  email was sent. Their complete connected windows are following work.
+- Privacy and Terms read the existing `OnboardingController` document source in
+  read-only mode. The supplied catalog currently marks final documents as
+  unavailable. Nothing fabricates policy content or records legal acceptance.
+- Spanish/English, safe-area fitting and a scrollable form. A software keyboard
+  shortens the viewport while keeping normal type scale. Longer errors expose a
+  scrollbar instead of overlapping the next field. Native phone IME/provider
+  integration still needs device verification; desktop geometry tests are not
+  proof of mobile keyboard behavior.
 
-| Piece | Source / intended implementation |
-| --- | --- |
-| Entrance architecture | New PixelLab 640×360 opaque background, preserved under `assets/sprites/pixellab/guild-entrance-r1/` |
-| Login panel | Existing thin gold frame with separate dark fill; native uGUI layout |
-| Email/password inputs | Existing `PixelFormField`, native focus, keyboard and validation |
-| Primary action | Existing `PixelPrimaryButton`, independent live label and state |
-| Password visibility/recovery/account links | Existing native secondary/text actions |
-| Google entry | Existing `Welcome/GoogleG` source and provider-compatible live button, not a generated rune/logo |
-| Brand, headings, labels, footer and locale | Live localized text; use established licensed fonts |
+## Separate art and controls
 
-The reference contains no signed-in HUD, character portrait, app navigation,
-stats or arbitrary guest entry. The background contains no controls or text.
-The complete rendered concept is never the shipped background.
+The 640×360 background in `assets/sprites/pixellab/guild-entrance-r1/` is copied
+byte-for-byte into `Resources/Rooms/LoginR1/`, imported with point filtering and
+no compression. The concept is not included in Unity Resources.
 
-## Implementation after visual review
+The panel uses the existing gold border and separate dark fill. Email/password
+use `PixelFormField`, the primary action uses `PixelPrimaryButton`, and links use
+`PixelSecondaryAction`. Labels remain localized native text. The Google mark is
+the existing original `Welcome/GoogleG` export with a native light provider
+surface and licensed Google Sans label. Its provider branding intentionally
+remains recognizable. Existing Pixelify Sans supplies the other live labels.
 
-- Landscape native uGUI using the existing auth controller/service contracts.
-  Preserve configured email/Google identity behavior and explicit unavailable
-  states. A visual approval does not configure a provider or verify a backend.
-- Email/password validation, show/hide, keyboard traversal/submission,
-  submitting/cancel/retry behavior, duplicate-submit prevention, provider
-  cancellation and generic credential/offline errors.
-- Recovery and account-creation entry points with honest destination status.
-  Complete new fantasy account/recovery/onboarding windows are following work;
-  do not claim account creation, recovery or trusted profile storage is already
-  connected just because their links appear in the render.
-- Preserve age/consent/onboarding checkpoints. Signing in is not proof of a
-  completed fitness profile or eligibility for any workout.
-- Spanish/English, readable compact landscape layout, safe areas and keyboard
-  behavior. Reuse current controls rather than generating replacement skins.
-- Verify a real Unity capture against the approved target before opening one
-  window PR. Do not upload credentials or contact identity services from smoke
-  fixtures; never save passwords in local review files.
+Small shared-control additions allow callers to choose horizontal padding;
+existing callers retain their original defaults. No replacement control art
+was made.
 
-## Evidence
+## Build and review
 
-`production/background-prompt.txt` and `background-request.json` preserve the
-PixelLab instruction and style-reference hash. Provider submission/result,
-source hashes and quoted cost are recorded alongside the export. The accepted
-native Home screenshot supplies UI style only. `screen-prompt.txt` is the exact
-built-in imagegen prompt for the composed concept.
+From this worktree:
 
-Status: `login-concept.png` is ready for visual review. No runtime/auth code has
-changed. The original render is preserved at 1672×941; it is a visual reference
-for the native 1280×720 landscape layout, not a pixel-perfect exported UI.
+```sh
+/home/josue/Unity/Hub/Editor/6000.3.24f1/Editor/Unity -batchmode -nographics -quit \
+  -projectPath "$PWD/app" -executeMethod SoloGym.Editor.PixelLoginBuild.BuildLinux \
+  -logFile /tmp/sologym-login-build.log
+app/Builds/Login/SoloGymLogin.x86_64 \
+  -screen-fullscreen 0 -screen-width 1280 -screen-height 720 -sologym-locale es
+```
 
-PixelLab quoted 40 generations for the single 640×360 background. The concept
-was generated with built-in imagegen (not the CLI/API fallback). `manifest.json`
-records the exact source and reference hashes.
+The focused build starts through the real Welcome router. The main app builder
+also now sets landscape defaults instead of the superseded portrait layout.
+Normal entry contains no sample credentials. Use explicit capture/smoke mode
+for visual evidence, with an isolated local preference directory:
+
+```sh
+XDG_CONFIG_HOME="$PWD/artifacts/local/login-es-prefs" xvfb-run -a \
+  -s '-screen 0 1280x720x24' app/Builds/Login/SoloGymLogin.x86_64 \
+  -screen-fullscreen 0 -screen-width 1280 -screen-height 720 \
+  -sologym-review -sologym-smoke -sologym-locale es \
+  -sologym-capture "$PWD/artifacts/visual/Login/window-es-1280.png" \
+  -logFile /tmp/sologym-login-es.log
+python3 tools/check_pixel_field_keyboard.py --login
+```
+
+Failed smoke/probe checks return a nonzero exit status. The OS keyboard tool
+creates its own Xvfb display and isolated preferences and uses only fictional
+input. It never injects input into the user's desktop. Add `-sologym-stay-open`
+when manually reviewing a capture build. Evidence and source hashes are recorded
+in `verification.json`; native captures live under `artifacts/visual/Login/`.
+
+## Provenance
+
+`production/` preserves the original PixelLab prompt, request, job result,
+style-reference hash and before/after balances. The single background cost 40
+PixelLab generations. `screen-prompt.txt` and `login-concept.png` preserve the
+built-in imagegen concept (not CLI). Implementation used no new generations.
+The original 1672×941 concept is a reference for the native landscape layout;
+the actual player uses the 640×360 architectural source, not pixels cropped
+from the flattened mockup. `manifest.json` records the original references.

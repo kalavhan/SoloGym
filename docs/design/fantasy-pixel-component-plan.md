@@ -4,12 +4,14 @@ This is the implementation approach for the [confirmed product direction](../pro
 
 ## Window delivery workflow
 
-**Current delivery:** PR #31 (Fasting) is merged. The next window is login /
-account entry. Its PixelLab-first background and full render are preserved in
-`design/fantasy-login-r1/` for visual review before implementation. Reuse the
-existing native input/button components and preserve auth/onboarding gates.
-Following windows cover account creation/recovery and character/fitness setup;
-their backend completion is not established by these screen references.
+**Current delivery:** PR #31 (Fasting) is merged. The login render was approved
+with “go” and its complete native window is implemented in
+`design/fantasy-login-r1/`. It uses the separate PixelLab entrance and existing
+native inputs/buttons, with real controller/service integration and explicit
+unavailable states. Successful identity does not bypass onboarding or enter
+sample Home data. Following work covers connected account creation/recovery
+and character/fitness setup; their backend completion is not established by a
+visual redesign. See the window README for captures, checks and remaining limits.
 
 1. Read the window's actual product states and preserve existing safety/domain behavior.
 2. Generate its background with **PixelLab first**, referencing accepted native art. Preserve originals, prompts, source hashes and available cost quotes.
