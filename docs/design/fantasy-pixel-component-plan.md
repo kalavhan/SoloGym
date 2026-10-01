@@ -4,7 +4,15 @@ This is the implementation approach for the [confirmed product direction](../pro
 
 ## Window delivery workflow
 
-**Next window, after merged PR #34:** Privacy & Consent and its document reader.
+**Next window, after merged PR #35:** Private Fitness Profile (WIN-009).
+Three connected landscape references cover the notice, optional measurements and
+current readiness in `design/fantasy-profile-r1/`. They await visual review before
+the complete-window implementation PR. Reuse the existing PixelLab guild entrance
+and controls; no new character or animation batch. Keep measurement/appearance
+independence, metric/imperial conversion and pause routes. Provisional account
+review does not establish an identity or authorize live private-data collection.
+
+**Merged PR #35:** Privacy & Consent and its document reader.
 The user authorized Lorem ipsum in both documents for now; the provisional copy
 is in `design/fantasy-consent-r1/document-placeholders.json`. The user approved both renders with “implement.” The native screens now reuse
 the guild entrance, with replaceable text, independent choices, a shared reader

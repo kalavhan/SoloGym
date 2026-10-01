@@ -1,0 +1,20 @@
+Use case: ui-mockup
+Asset type: one complete SoloGym native Unity landscape screen proposal, 16:9, 1672x941.
+Input images: Image 1 is the current native consent window, the edit target for composition and UI. Image 2 is the original PixelLab guild entrance, an invariant background reference.
+Preserve Image 1 outside its right-hand form panel: same straight-on doorway on the left, stone floor, wood beams, SOLOGYM wordmark, GREMIO DE ENTRENAMIENTO subtitle, footer links Privacidad, Términos, ES / EN. Preserve camera perspective, geometry and colors. Do not add a character, props, badges or new decorations.
+Inside the right-hand panel keep the existing dark slate fill, thin aged-brass pixel border, ivory pixel lettering, generous margins, large native-style touch targets and teal primary button. Crisp restrained 16-bit fantasy pixel game interface, not a website. Keep all labels readable at phone landscape size. No dense tiny text, white cards, rounded web cards, photorealism, browser chrome, neon, floating dialogs, ornamental scroll art or contact sheet. Render one single complete window.
+Small underlined "Volver" at the upper left of the panel. Center the title "PERFIL PRIVADO". A compact, subdued "Vista previa" under the progress indicator marks this concept as a review.
+This is only a flattened visual target. Runtime will use the unchanged independent PixelLab background and live native controls; this image is not a production asset. No saved-profile, diagnosis, consent or real-registration claims.
+Panel content:
+Progress label "3 DE 3 · CÓMO TE SIENTES".
+Prominent subtitle "¿Cómo llegas hoy?".
+Short helper "Elige una opción; podrás cambiarla."
+A tidy 2-column by 3-row group of large pixel selection controls with generous spacing, ivory labels and an empty small square selection indicator at the left of every control. NONE is selected. This group belongs within the one screen, it is not multiple mockups.
+Row 1: "Con ganas" | "Poca energía"
+Row 2: "Me siento mal" | "Tengo dolor"
+Row 3: "Tengo una lesión" | "No estoy seguro/a"
+Give each label enough room, wrapping only the last row if necessary. Same flat dark slate and thin brass pixel frame style as existing choice controls; no emoji or new icons.
+Below, a two-line supportive message "Si tienes molestias o dudas," then "puedes pausar aquí."
+At the bottom a full-width teal button "CONTINUAR", muted because no choice is selected; directly above it an underlined "Pausar por ahora" action.
+Do not show game difficulty, XP, rewards, diagnosis or emergency claims. This step only records a temporary self-report; choosing pain, injury, feeling unwell or uncertainty leads to a paused state, not an exercise launch.
+All text exact Spanish. Keep a calm, supportive game tone.

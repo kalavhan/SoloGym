@@ -7,6 +7,14 @@ clothing pipeline. Current requirements are in
 
 ## Scope
 
+- Next window after merged PR #35: private fitness profile (WIN-009), with notice,
+  optional measurements and readiness in one complete window. Landscape concepts
+  and exact prompts are in `design/fantasy-profile-r1/`, awaiting visual review.
+  Reuse the existing PixelLab guild entrance and native controls. Preserve optional
+  measurements, unit conversion, appearance independence, pause routes and current
+  policy gates. A provisional registration preview cannot create a live profile.
+  No new character/background generation or animation batch is part of this work.
+
 - Next consent window (2026-10-01): the user explicitly authorized Lorem ipsum
   for terms and privacy until the final text is supplied. Use clearly identified,
   replaceable review documents; do not make final copy a prerequisite for the

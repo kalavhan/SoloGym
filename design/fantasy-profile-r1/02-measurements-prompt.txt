@@ -1,0 +1,19 @@
+Use case: ui-mockup
+Asset type: one complete SoloGym native Unity landscape screen proposal, 16:9, 1672x941.
+Input images: Image 1 is the current native consent window, the edit target for composition and UI. Image 2 is the original PixelLab guild entrance, an invariant background reference.
+Preserve Image 1 outside its right-hand form panel: same straight-on doorway on the left, stone floor, wood beams, SOLOGYM wordmark, GREMIO DE ENTRENAMIENTO subtitle, footer links Privacidad, Términos, ES / EN. Preserve camera perspective, geometry and colors. Do not add a character, props, badges or new decorations.
+Inside the right-hand panel keep the existing dark slate fill, thin aged-brass pixel border, ivory pixel lettering, generous margins, large native-style touch targets and teal primary button. Crisp restrained 16-bit fantasy pixel game interface, not a website. Keep all labels readable at phone landscape size. No dense tiny text, white cards, rounded web cards, photorealism, browser chrome, neon, floating dialogs, ornamental scroll art or contact sheet. Render one single complete window.
+Small underlined "Volver" at the upper left of the panel. Center the title "PERFIL PRIVADO". A compact, subdued "Vista previa" under the progress indicator marks this concept as a review.
+This is only a flattened visual target. Runtime will use the unchanged independent PixelLab background and live native controls; this image is not a production asset. No saved-profile, diagnosis, consent or real-registration claims.
+Panel content:
+Progress label "2 DE 3 · MEDIDAS OPCIONALES".
+Prominent subtitle "Tus medidas, a tu ritmo".
+Below, a wide two-part unit selector, "Métrico" selected with subdued teal and gold outline, "Imperial" unselected in dark slate. No dropdown.
+Two large stacked real-input-looking pixel fields with labels above:
+"Altura (opcional)" then a wide dark inset field with value "170" and right-aligned suffix "cm".
+"Peso corporal (opcional)" then a wide dark inset field with value "70" and right-aligned suffix "kg".
+Below the fields use two short support lines:
+"Puedes dejar ambos campos vacíos."
+"Valores de ejemplo · No se guardan."
+At the bottom a full-width active teal button "CONTINUAR".
+No BMI, health classification, weight goal, calorie display, character, body silhouette, extra chart or scale illustration. Clear consistent field widths and hierarchy. Do not make the optional fields look required.
