@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "provider": "PixelLab MCP",
+  "tool": "create_image_pro",
+  "jobId": "4f99afbe-1a0d-46b4-8392-45ae3cde27d1",
+  "quotedGenerations": 20,
+  "approval": "pending user visual review",
+  "original": {
+    "file": "assets/sprites/pixellab/arcane-clock-r1/native/clock.png",
+    "sha256": "c523b53648b8bf0be1d3e3a96bd8ffe4c7af50c197387f1c303b5e038649fe67",
+    "role": "PixelLab static clock, original bytes",
+    "size": [
+      256,
+      256
+    ]
+  },
+  "productionRecords": "design/fantasy-fasting-r1/production/",
+  "animation": {
+    "tool": "animate_image",
+    "jobId": "1eced333-8ebb-49c1-b56d-01858197fb06",
+    "quotedGenerations": 8,
+    "atlas": "motion-atlas.json",
+    "rawWholeFramePlaybackApproved": false,
+    "overlayProofApproved": false
+  }
+}

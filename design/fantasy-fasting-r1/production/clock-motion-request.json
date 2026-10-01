@@ -1,0 +1,9 @@
+{
+  "action": "A seamless very restrained magical idle loop. The clock casing, pedestal, silhouette and empty center remain ABSOLUTELY FIXED at exactly the same pixel positions. No deformation, no wobble, no camera motion, no zoom, no rotating casing. Only the small sea-green rune accents on the INNER dial gently shimmer in a slow clockwise sequence, returning to exactly their original brightness and locations. Keep the same muted palette and low luminosity; no blooming glow, no particles, no spark bursts, no new objects. The center stays empty and still for live timer text. First and last frames identical. Preserve transparency.",
+  "frame_count": 8,
+  "no_background": true,
+  "seed": 642091,
+  "first_frame_file": "assets/sprites/pixellab/arcane-clock-r1/native/clock.png",
+  "last_frame_file": "assets/sprites/pixellab/arcane-clock-r1/native/clock.png",
+  "sourceSha256": "c523b53648b8bf0be1d3e3a96bd8ffe4c7af50c197387f1c303b5e038649fe67"
+}

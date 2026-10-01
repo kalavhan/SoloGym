@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SoloGym · Cámara del tiempo · Revisión</title>
+<style>
+@font-face{font-family:Pixel;src:url('media/PixelifySans.ttf')}
+:root{color-scheme:dark;font-family:system-ui,sans-serif;color:#ece7d9;background:#121a22}
+*{box-sizing:border-box}body{margin:0 auto;max-width:1440px;padding:24px}
+h1{margin:0;font-size:26px;font-weight:600}p{line-height:1.55;color:#c0c5c5;max-width:900px}
+a{color:#beddd5}header{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.render{display:block;width:100%;height:auto;margin:24px 0 36px;border:1px solid #675638}
+h2{font-size:23px;font-weight:600;margin-bottom:8px}
+.proof{display:grid;grid-template-columns:minmax(350px,560px) 1fr;gap:36px;align-items:center;border-top:1px solid #34414c;padding:24px 0}
+.clock{position:relative;width:100%;max-width:512px;aspect-ratio:1;justify-self:center}
+.clock img{position:absolute;width:100%;height:100%;inset:0;image-rendering:pixelated}
+.clock .effect{opacity:.32;filter:saturate(.22) brightness(.78);mask-image:radial-gradient(circle closest-side at 50% 48.4375%,transparent 0 49.1935%,#000 49.1935% 66.129%,transparent 66.129%);-webkit-mask-image:radial-gradient(circle closest-side at 50% 48.4375%,transparent 0 49.1935%,#000 49.1935% 66.129%,transparent 66.129%)}
+.clock .readout{position:absolute;top:48.4375%;left:50%;transform:translate(-50%,-50%);width:33%;text-align:center;font-family:Pixel,monospace;color:#f7e9bf}
+.readout small{font-size:clamp(10px,1vw,13px);display:block}.readout strong{display:block;white-space:nowrap;font-size:clamp(22px,2.7vw,34px);font-weight:400;margin:7px 0;font-variant-numeric:tabular-nums}
+.caption{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#b4c6c2}
+.stage{font:34px Pixel,monospace;color:#f3e6bf;margin:6px 0 12px}.range{font:22px Pixel,monospace;color:#adcebf}
+label{display:block;margin:24px 0 8px}select,button{font:inherit;padding:12px 16px;background:#24343d;color:#f3e6bf;border:1px solid #a58a54;border-radius:0;min-height:44px}
+select{width:100%;max-width:460px}button{cursor:pointer;margin-top:18px}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #d8c283;outline-offset:4px}
+.fine{font-size:13px}.notice{padding:12px 0;border-top:1px solid #34414c}footer{border-top:1px solid #34414c;padding-top:16px;color:#b0b9ba;font-size:13px}
+@media(max-width:760px){body{padding:16px}.proof{grid-template-columns:1fr;gap:0}.clock{max-width:480px}.readout strong{font-size:clamp(23px,6vw,34px)}.readout small{font-size:12px}}
+</style>
+<header><h1>Cámara del tiempo</h1><a href="#motion">Ver la animación ↓</a></header>
+<p>Propuesta de pantalla para aprobar antes de construir la ventana en Unity. El fondo, el reloj y los controles se mantendrán separados.</p>
+<a href="media/fasting-clock-concept.png"><img class="render" src="media/fasting-clock-concept.png" alt="Concepto de ayuno: reloj arcano grande a la izquierda y panel de etapa orientativa con botón Finalizar ahora a la derecha."></a>
+<h2 id="motion">Prueba de movimiento</h2>
+<p>Runas tenues; carcasa y números estables. Los ejemplos solo cambian la presentación, no registran un ayuno.</p>
+<section class="proof" aria-label="Vista del reloj con animación decorativa">
+ <div class="clock">
+  <img src="media/clock.png" alt="Reloj arcano de piedra y latón">
+  <img id="effect" class="effect" src="media/frame-00.png" alt="" aria-hidden="true">
+  <div class="readout"><small>TIEMPO</small><strong id="elapsed">08:24:16</strong><small>TRANSCURRIDO</small></div>
+ </div>
+ <div>
+  <div class="caption">Etapa orientativa por tiempo</div>
+  <div id="stage" class="stage">Entre comidas</div>
+  <div id="range" class="range">4–16 h desde la última comida</div>
+  <p>Los cambios varían entre personas. El reloj no mide tu metabolismo.</p>
+  <label for="example">Ejemplo para revisar</label>
+  <select id="example">
+   <option value="0">0–4 h · Tras la comida</option>
+   <option value="1" selected>4–16 h · Entre comidas</option>
+   <option value="2">16–24 h · Intervalo de tiempo</option>
+   <option value="3">24–48 h · Registro fuera del plan admitido</option>
+   <option value="4">48+ h · Registro fuera del plan admitido</option>
+  </select>
+  <p id="context" class="fine">Ejemplo ficticio de 08:24:16. Los intervalos no son metas ni mediciones clínicas.</p>
+  <button id="motion-toggle" type="button" aria-pressed="true">Pausar movimiento</button>
+  <p class="fine">Respeta la preferencia del sistema de movimiento reducido. El reloj sigue siendo legible sin animación.</p>
+ </div>
+</section>
+<footer>Arte: PixelLab · Render completo: imagegen · Sin cambios en el código de la app. Los ejemplos prolongados no añaden planes ni recompensas.</footer>
+<script type="module">
+const atlas=await fetch('motion-atlas.json').then(r=>{if(!r.ok)throw new Error('No se pudo cargar el atlas');return r.json()});
+const effect=document.getElementById('effect'),toggle=document.getElementById('motion-toggle');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+const frames=atlas.frames.map(frame=>({url:'media/'+frame.file.split('/').pop(),duration:frame.durationMs}));
+await Promise.all(frames.map(f=>new Promise((resolve,reject)=>{const image=new Image();image.onload=resolve;image.onerror=reject;image.src=f.url})));
+let enabled=!reduced.matches,index=0,stage=1,handle;
+const examples=[
+ {time:'02:15:00',title:'Tras la comida',range:'0–4 h desde la última comida',hue:-35},
+ {time:'08:24:16',title:'Entre comidas',range:'4–16 h desde la última comida',hue:0},
+ {time:'18:10:00',title:'Intervalo de 16–24 h',range:'16–24 h desde la última comida',hue:25},
+ {time:'28:00:00',title:'Intervalo de 24–48 h',range:'24–48 h desde la última comida',hue:65},
+ {time:'50:00:00',title:'Más de 48 h',range:'48+ h desde la última comida',hue:85}
+];
+function schedule(){clearTimeout(handle);if(enabled&&!document.hidden){handle=setTimeout(()=>{index=(index+1)%frames.length;effect.src=frames[(index+stage)%frames.length].url;schedule()},frames[index].duration)}}
+function paint(){toggle.setAttribute('aria-pressed',String(enabled));toggle.textContent=enabled?'Pausar movimiento':'Activar movimiento';effect.hidden=!enabled;schedule()}
+toggle.addEventListener('click',()=>{enabled=!enabled;paint()});
+reduced.addEventListener('change',e=>{enabled=!e.matches;paint()});document.addEventListener('visibilitychange',schedule);
+document.getElementById('example').addEventListener('change',e=>{
+ stage=Number(e.target.value);const item=examples[stage];
+ document.getElementById('elapsed').textContent=item.time;document.getElementById('stage').textContent=item.title;document.getElementById('range').textContent=item.range;
+ effect.style.filter=`saturate(.22) hue-rotate(${item.hue}deg) brightness(.78)`;
+ document.getElementById('context').textContent=stage>=3?'Ejemplo de un registro real o corregido fuera de los planes admitidos. No es una meta ni una recomendación.':`Ejemplo ficticio de ${item.time}. Los intervalos no son metas ni mediciones clínicas.`;
+});paint();
+</script>
+</html>

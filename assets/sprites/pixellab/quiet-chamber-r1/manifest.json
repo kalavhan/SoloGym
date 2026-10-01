@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "provider": "PixelLab MCP",
+  "tool": "create_image_pro",
+  "jobId": "b92e803e-9b94-44a3-a448-f0fa6a40908b",
+  "quotedGenerations": 40,
+  "approval": "pending user visual review",
+  "original": {
+    "file": "assets/sprites/pixellab/quiet-chamber-r1/native/chamber.png",
+    "sha256": "61cbc8267188cad78bed8db1f754e0b67dbd2990795f3b6d8079a2572a73bf31",
+    "role": "PixelLab room, original bytes",
+    "size": [
+      640,
+      360
+    ]
+  },
+  "productionRecords": "design/fantasy-fasting-r1/production/"
+}

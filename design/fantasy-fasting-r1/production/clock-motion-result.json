@@ -1,0 +1,83 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: 1eced333-8ebb-49c1-b56d-01858197fb06\njob_id: 1eced333-8ebb-49c1-b56d-01858197fb06\nframes: 9\ntransparent: yes\nasset_id: 42bb512b-9cb5-5fb8-a347-8dd242fe4ba6\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ndownload: https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=0 ... ?index=8"
+      },
+      {
+        "type": "image",
+        "mimeType": "image/png",
+        "frame_index": 0,
+        "saved_path": "assets/sprites/pixellab/arcane-clock-r1/motion/frame-00.png",
+        "sha256": "e4317a18cd948dcae093dfbe74776d22ed6f636550b243d974825739215ec378",
+        "dimensions": [
+          256,
+          256
+        ]
+      },
+      {
+        "type": "image",
+        "mimeType": "image/png",
+        "frame_index": 1,
+        "saved_path": "assets/sprites/pixellab/arcane-clock-r1/motion/frame-01.png",
+        "sha256": "f5ba842d20a7839775d7105a27c74fcf5b1f153b8fb6bce4c9e070afc4ccaefb",
+        "dimensions": [
+          256,
+          256
+        ]
+      },
+      {
+        "type": "image",
+        "mimeType": "image/png",
+        "frame_index": 2,
+        "saved_path": "assets/sprites/pixellab/arcane-clock-r1/motion/frame-02.png",
+        "sha256": "87de80c5e5d63dd028b112df2cdae49a35216dfde4b044b2402e782c0bc501e7",
+        "dimensions": [
+          256,
+          256
+        ]
+      },
+      {
+        "type": "image",
+        "mimeType": "image/png",
+        "frame_index": 3,
+        "saved_path": "assets/sprites/pixellab/arcane-clock-r1/motion/frame-03.png",
+        "sha256": "f76db09ea0be0346aa685f224cc4c009e6faa81aaa4efb2321c43d17d89d43a5",
+        "dimensions": [
+          256,
+          256
+        ]
+      },
+      {
+        "type": "text",
+        "text": "(5 more frames not shown \u2014 fetch them from the download URLs above)"
+      }
+    ],
+    "structuredContent": {
+      "job_id": "1eced333-8ebb-49c1-b56d-01858197fb06",
+      "status": "completed",
+      "frames": 9,
+      "download_url": "https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=0",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=0",
+        "https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=1",
+        "https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=2",
+        "https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=3",
+        "https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=4",
+        "https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=5",
+        "https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=6",
+        "https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=7",
+        "https://api.pixellab.ai/mcp/images/1eced333-8ebb-49c1-b56d-01858197fb06/download?index=8"
+      ],
+      "asset": {
+        "id": "42bb512b-9cb5-5fb8-a347-8dd242fe4ba6",
+        "type": "image",
+        "status": "saved"
+      }
+    },
+    "isError": false
+  }
+}

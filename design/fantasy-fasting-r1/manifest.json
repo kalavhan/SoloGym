@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "status": "concept and restricted motion proof; awaiting visual review",
+  "window": "Optional adult fasting / C\u00e1mara del tiempo",
+  "mergedBase": {
+    "pr": 30,
+    "commit": "ec002bf77ae23c0488818cfa19449aaede5c30d3"
+  },
+  "runtimeCodeChanged": false,
+  "implementationApproved": false,
+  "art": [
+    {
+      "file": "assets/sprites/pixellab/quiet-chamber-r1/native/chamber.png",
+      "sha256": "61cbc8267188cad78bed8db1f754e0b67dbd2990795f3b6d8079a2572a73bf31",
+      "role": "PixelLab room, original bytes",
+      "size": [
+        640,
+        360
+      ]
+    },
+    {
+      "file": "assets/sprites/pixellab/arcane-clock-r1/native/clock.png",
+      "sha256": "c523b53648b8bf0be1d3e3a96bd8ffe4c7af50c197387f1c303b5e038649fe67",
+      "role": "PixelLab static clock, original bytes",
+      "size": [
+        256,
+        256
+      ]
+    }
+  ],
+  "render": {
+    "file": "design/fantasy-fasting-r1/fasting-clock-concept.png",
+    "sha256": "1adb3a8f10e0828f0604d25b913dae1ae0e7c68e032fd17145254a73841eab00",
+    "role": "Full-screen imagegen reference, not a flattened production screen",
+    "size": [
+      1672,
+      941
+    ]
+  },
+  "renderMethod": "built-in image_gen with local room, clock and native workout screenshot references",
+  "renderPrompt": {
+    "file": "design/fantasy-fasting-r1/screen-prompt.txt",
+    "sha256": "67d0de94668b6c72c43663cdd56d1f2d465a2379f350fe85d676e5f2491499bb",
+    "role": "Exact saved imagegen prompt"
+  },
+  "references": [
+    {
+      "file": "artifacts/visual/Workouts/window-es-1280.png",
+      "sha256": "8779bf289b78e9f2d35054d725b5aac1f4c49f6a34f1532c6d39cadf5a68d4ff",
+      "role": "Existing native UI style",
+      "size": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "newCharacterJobs": 0,
+  "newBackgroundJobs": 1,
+  "newStaticClockJobs": 1,
+  "newClockMotionJobs": 1,
+  "quotedPixelLabGenerations": 68,
+  "frameCountReturned": 9,
+  "motionAtlas": "assets/sprites/pixellab/arcane-clock-r1/motion-atlas.json",
+  "review": "review/index.html",
+  "evidenceNotes": "evidence-notes.md",
+  "medicalStateInference": false,
+  "visualInspection": {
+    "background": "Frontal stone alcove, coherent floor, quiet open space.",
+    "clock": "256x256 transparent canvas, centered readable empty dial.",
+    "render": "Landscape with readable elapsed time, current interval, start/chosen end, prominent End and familiar navigation.",
+    "rawMotion": "Rejected for whole-frame playback: excess brightness and transparent centers in frames 1 and 2.",
+    "restrictedMotion": "Live annular mask over immutable clock; desaturation, dimming, 0.32 maximum opacity. Browser verification pending origin-access approval."
+  }
+}

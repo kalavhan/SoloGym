@@ -63,6 +63,11 @@ The [research brief](../research/2026-09-25-fitness-game-research.md), [training
 - Keep routine edits available while validating replacements and dose. Manual logs are user reports, not proof of exercise or technique. Corrections replace prior entries; retries must not double-count rewards.
 - Preserve capped progress from planned work. Existing `boss_progress` already limits damage by prescribed set and prevents extra reps/load from increasing its budget. Map completion to the new dungeon presentation without adding real-time combat controls during exercise.
 - Fasting remains adult-only, optional and off by default, with no XP, combat buffs, streak rewards or rankings. Ending early loses no progress. The existing 20-hour supported-plan cap is not a safety claim or progression target; actual records may be corrected without encouraging longer fasting.
+- Fasting visual direction (2026-10-01): a restrained animated pixel-art magic
+  clock, elapsed time and an approximate time-range indication. The render and
+  motion proof in `design/fantasy-fasting-r1/` await visual approval. Decorative
+  stage changes do not certify ketosis, autophagy, hormone boosts or immune
+  regeneration, and do not unlock rewards or extended plans.
 - Keep English/Spanish with a persistent language choice, readable text, and existing teen privacy/moderation principles. The Spanish concepts are not a decision to remove English.
 
 ## Activity integrations: investigate before committing
