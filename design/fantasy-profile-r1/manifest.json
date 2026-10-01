@@ -1,0 +1,100 @@
+{
+  "id": "fantasy-profile-r1",
+  "date": "2026-10-01",
+  "base_commit": "73b01469aba925b020d57f9420331ed839673e2a",
+  "status": "approved_and_implemented",
+  "runtime_implemented": true,
+  "scope": "One complete private-profile window with notice, optional measurements and readiness, following merged PR #35.",
+  "provider": "built-in imagegen, not CLI",
+  "pixellab_generations_added": 0,
+  "new_character_assets_generated": false,
+  "background_strategy": "Reuse the exact existing PixelLab guild entrance; no new background generation required.",
+  "originals": {
+    "01-notice-concept.png": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-2af8eaf2-dbb6-4b9a-8f79-ce138c6e2847.png",
+    "02-measurements-concept.png": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-2a0009e0-1816-44a5-b41d-2daeae3e7909.png",
+    "03-readiness-concept.png": "/home/josue/.codex/generated_images/01a0df8d-9d07-72b0-bfdd-f0dbfc6e8869/exec-63a9280e-f0c6-4df8-938d-716cd617927a.png"
+  },
+  "files": [
+    {
+      "file": "design/fantasy-profile-r1/01-notice-concept.png",
+      "sha256": "fa747e702a2f79190905ca1a4315feb3b3de969d185a3e09faf3b0dcf42cbdcb",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "design/fantasy-profile-r1/01-notice-prompt.txt",
+      "sha256": "cadfea8213bd625fae18cd4a70b2354ad6ce9e222ad92de294caee4fc7df48c6"
+    },
+    {
+      "file": "design/fantasy-profile-r1/02-measurements-concept.png",
+      "sha256": "5ed025cf5448ee24bbf5fefdd3eba6628b8d4109003164d8f4e7c6d3d1f31539",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "design/fantasy-profile-r1/02-measurements-prompt.txt",
+      "sha256": "ee06f45b91f24ce9c3eae46b639a868b2c906b35a9ba6cf8841f7f7d214d6b03"
+    },
+    {
+      "file": "design/fantasy-profile-r1/03-readiness-concept.png",
+      "sha256": "95464a5b5a235f35cf8a08b923c12e0ce2a6b53474dd42228da0c5cdc24f4006",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "design/fantasy-profile-r1/03-readiness-prompt.txt",
+      "sha256": "97d176cec5fd4d495ecfa09925eb9438d8d2cb288b26e2c3c0bb2b0053d26521"
+    }
+  ],
+  "references": [
+    {
+      "file": "artifacts/visual/Consent/window-es-1280.png",
+      "sha256": "13c0759f15fa115c942cfdfe1ba1e843d1726c3651859cbad5c68e6c54497ee0",
+      "size": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "assets/sprites/pixellab/guild-entrance-r1/native/entrance.png",
+      "sha256": "a9b079c146380121777e1af59005a0ad30ac7c45827be1f7ddac77333f31c790",
+      "size": [
+        640,
+        360
+      ]
+    }
+  ],
+  "visual_review": [
+    "Three separate landscape images, each one a complete screen; no contact sheet.",
+    "Spanish content legible without visible overlapping or cropped controls.",
+    "170 cm and 70 kg are fictional review values, never inferred user measurements.",
+    "Unit selection is independent of optional height/weight; appearance is unchanged.",
+    "Readiness begins unselected and includes a pause action. Selection must be mutually exclusive.",
+    "Generated art is only a reference: runtime keeps original native background and existing sprite controls unchanged.",
+    "Normalize the header to the text-only step indicator in the measurements reference; the notice-only decorative circles are not required.",
+    "Runtime must display the same compact review marker on all three states; the readiness concept omitted it."
+  ],
+  "implementation_constraints": [
+    "Approved concepts are implemented by PixelPrivateProfileWindow; review drafts remain memory-only.",
+    "Keep preview drafts in memory with explicit review context, separate from production auth, eligibility and health-data authorization.",
+    "The previous PR provisional registration does not create an identity; do not bypass that boundary to collect live profile data.",
+    "Production measurement entry remains gated by its existing authorization requirements; final legal copy does not block the concept or review flow.",
+    "Ready or low-energy selection continues only to reviewed setup, not automatic training or approval of Hard difficulty.",
+    "Pain, injury, illness or uncertainty leads to a pause; daily readiness is checked again before a routine.",
+    "Metric/imperial conversion preserves canonical values; blank optional values remain absent.",
+    "Goals/experience, equipment and schedule are subsequent windows; appearance never prescribes exercise.",
+    "No BMI, calorie, weight target, new character art, animation or art credit batch."
+  ],
+  "approval": {
+    "date": "2026-10-01",
+    "user_quote": "do it",
+    "scope": "All three private-profile steps together in one complete native window."
+  },
+  "native_verification": "design/fantasy-profile-r1/verification.json"
+}

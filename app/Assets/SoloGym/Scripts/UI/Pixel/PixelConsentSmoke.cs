@@ -102,9 +102,9 @@ namespace SoloGym.UI
             Check(!c.CanContinue && !c.PrivacyChecked && !c.TermsChecked,"Country changes clear decisions");
             w.Onboarding.GoBack(); yield return Ready(); Check(w.Page=="login" && w.Onboarding.Controller.Origin.AgeText=="" && !c.CanContinue,"Exit clears the full review draft");
             Enter(w,true); yield return Ready(); c.ChoosePrivacy(true); c.ChooseTerms(true); f.Advance(); yield return Ready();
-            Check(w.Page=="profile-pending" && !w.Account.gameObject.activeInHierarchy,"Signed-in identity is never sent to duplicate registration");
+            Check(w.Page=="profile" && !w.Account.gameObject.activeInHierarchy,"Signed-in identity is never sent to duplicate registration");
             Check(FindFirstObjectByType<PixelTrainingHallHome>()==null && !w.Onboarding.Controller.Origin.PrivacyAcknowledged,"Review choices create no trusted consent or Home access");
-            yield return Shot(w,"signed-in-checkpoint"); Click(w.Return); yield return Ready(); Check(w.Page=="consent" && c.CanContinue,"Signed-in checkpoint returns to decisions");
+            yield return Shot(w,"signed-in-checkpoint"); Click(w.Profile.Back); yield return Ready(); Check(w.Page=="consent" && c.CanContinue,"Signed-in checkpoint returns to decisions");
             // Exercise long future copy in the same reader without regenerating artwork.
             Click(f.ReadTerms); yield return Ready(); f.DocumentBody.text=body+"\n\n"+body+"\n\n"+body; f.Relayout(w.Panel.rect.height); yield return Ready();
             Check(f.DocumentScroll.content.rect.height>f.DocumentScroll.viewport.rect.height,"Long replacement text scrolls");

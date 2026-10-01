@@ -7,14 +7,26 @@ clothing pipeline. Current requirements are in
 
 ## Scope
 
-- Next consent window (2026-10-01): the user explicitly authorized Lorem ipsum
+- Next window after merged PR #35: private fitness profile (WIN-009), with notice,
+  optional measurements and readiness in one complete window. Landscape concepts
+  and exact prompts are in `design/fantasy-profile-r1/`; the user approved with
+  “do it”. The native window is implemented with a memory-only review draft.
+  Signed-in review enters from consent; provisional email registration provides
+  an explicit profile-preview link that clears secrets and creates no account.
+  Preserve reader returns, draft resets and the next-setup checkpoint.
+  Reuse the existing PixelLab guild entrance and native controls. Preserve optional
+  measurements, unit conversion, appearance independence, pause routes and current
+  policy gates. A provisional registration preview cannot create a live profile.
+  No new character/background generation or animation batch is part of this work.
+
+- Merged consent window (2026-10-01): the user explicitly authorized Lorem ipsum
   for terms and privacy until the final text is supplied. Use clearly identified,
   replaceable review documents; do not make final copy a prerequisite for the
   render or review-flow implementation. Concepts and ES/EN placeholder fixtures
   are in `design/fantasy-consent-r1/`; the user approved them with “implement.”
   The native consent/reader now replaces the pending message. Both review choices
   enable a registration preview; its valid submission makes no service calls and
-  clears secrets. Signed-in users reach the pending profile step instead. Keep
+  clears secrets. Signed-in users reach the profile review described above. Keep
   missing-document states, draft/reader returns and age/country decision resets.
   Review checkbox
   decisions are not production legal receipts or registration permits. Reuse

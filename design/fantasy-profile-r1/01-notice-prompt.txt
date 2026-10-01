@@ -1,0 +1,20 @@
+Use case: ui-mockup
+Asset type: one complete SoloGym native Unity landscape screen proposal, 16:9, 1672x941.
+Input images: Image 1 is the current native consent window, the edit target for composition and UI. Image 2 is the original PixelLab guild entrance, an invariant background reference.
+Preserve Image 1 outside its right-hand form panel: same straight-on doorway on the left, stone floor, wood beams, SOLOGYM wordmark, GREMIO DE ENTRENAMIENTO subtitle, footer links Privacidad, Términos, ES / EN. Preserve camera perspective, geometry and colors. Do not add a character, props, badges or new decorations.
+Inside the right-hand panel keep the existing dark slate fill, thin aged-brass pixel border, ivory pixel lettering, generous margins, large native-style touch targets and teal primary button. Crisp restrained 16-bit fantasy pixel game interface, not a website. Keep all labels readable at phone landscape size. No dense tiny text, white cards, rounded web cards, photorealism, browser chrome, neon, floating dialogs, ornamental scroll art or contact sheet. Render one single complete window.
+Small underlined "Volver" at the upper left of the panel. Center the title "PERFIL PRIVADO". A compact, subdued "Vista previa" under the progress indicator marks this concept as a review.
+This is only a flattened visual target. Runtime will use the unchanged independent PixelLab background and live native controls; this image is not a production asset. No saved-profile, diagnosis, consent or real-registration claims.
+Panel content:
+Progress label "1 DE 3 · ANTES DE TUS DATOS".
+Prominent subtitle "Tu entrenamiento, a tu ritmo".
+Below, three well-spaced plain text paragraphs, aligned left (NOT individual cards):
+"Altura y peso son opcionales."
+"No cambian tu personaje ni aparecen en rankings."
+"Podrás continuar sin añadir medidas."
+Then a small separating line and the two-line supporting note:
+"Revisión con datos de ejemplo."
+"No se guarda un perfil."
+Keep the word "Vista previa" only once near the top as specified. Do not include health or legal consent checkboxes or a mandatory personal-data acceptance.
+At the bottom a large full-width active teal button "CONTINUAR", with a smaller underlined "Ahora no" above it, visually separate and easy to reach.
+All text exact Spanish. Balanced breathing room and polished hierarchy.

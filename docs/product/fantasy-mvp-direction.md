@@ -114,3 +114,13 @@ regional/guardian policy, create real receipts or save a personal profile. See
 4. Initial Home decoration inventory/placement scope and cloud-versus-local persistence for the first shippable version.
 5. Running-provider compatibility, leaderboard permissions, verification policy and eventual balanced activity-to-stat formulas.
 6. Backend completion and reviewed exercise content before public release; exercise-demo animation coverage is a later, separately sized project.
+
+## Private profile window (2026-10-01)
+
+The approved landscape private-profile review follows consent and provisional
+registration. It reuses the guild entrance and native controls for optional
+measurements, metric/imperial units, current readiness and pause. Appearance stays
+independent. Profile drafts remain memory-only; this window establishes neither
+production health-data authorization nor a saved profile or live workout.
+See `design/fantasy-profile-r1/` for the approved renders, native captures and
+checks. Goals/experience, equipment and schedule remain subsequent setup windows.

@@ -16,6 +16,8 @@ namespace SoloGym.UI
         public PixelSecondaryAction Back { get; private set; }
         public PixelSecondaryAction SignIn { get; private set; }
         public PixelSecondaryAction Cancel { get; private set; }
+        public PixelSecondaryAction PreviewProfile { get; private set; }
+        public event Action ProfilePreviewRequested;
         public ScrollRect Scroll { get; private set; }
         public Text Status { get; private set; }
         public event Action StateChanged;
@@ -24,6 +26,7 @@ namespace SoloGym.UI
         string language = "es", lastError;
         bool wasBusy;
         Action exit, back;
+        Selectable footerControl;
         bool previewOnly;
 
         public void Initialize(Transform panel, IAccountRegistrationService service, Action exitAction,
@@ -32,7 +35,7 @@ namespace SoloGym.UI
             transform.SetParent(panel, false);
             var root = gameObject.GetComponent<RectTransform>();
             PixelJournalUI.Stretch(root);
-            exit = exitAction; back = backAction ?? exitAction;
+            exit = exitAction; back = backAction ?? exitAction; footerControl = privacy;
             Controller = new AccountRegistrationController(service);
             Back = LinkButton(root, "", GoBack); Place(Back, new Rect(20, 10, 112, 52));
             title = PixelJournalUI.Text(root, new Rect(28, 48, 514, 48), "", 38, false, TextAnchor.MiddleCenter);
@@ -57,6 +60,7 @@ namespace SoloGym.UI
             hint = PixelJournalUI.Text(content, new Rect(), "", 23, false, TextAnchor.MiddleCenter);
             SignIn = LinkButton(content, "", Leave);
             Cancel = LinkButton(content, "", () => Controller.Cancel());
+            PreviewProfile = LinkButton(content, "", () => { if(previewOnly && !Controller.Busy) { ClearSecrets(); ReleaseKeyboard(); ProfilePreviewRequested?.Invoke(); } });
             Navigate(Back, languageControl, Email.Input);
             Email.SetTraversal(Back, Password.Input);
             Password.SetTraversal(Email.Input, Confirmation.Input);
@@ -147,6 +151,10 @@ namespace SoloGym.UI
             hint.gameObject.SetActive(!created && !busy);
             SignIn.SetLabel(L("Sign in", "Iniciar sesión")); SignIn.gameObject.SetActive(!busy);
             Cancel.SetLabel(L("Cancel", "Cancelar")); Cancel.gameObject.SetActive(busy);
+            PreviewProfile.SetLabel(L("Preview private profile", "Vista previa del perfil"));
+            PreviewProfile.gameObject.SetActive(previewOnly && !busy && !created);
+            Navigate(SignIn, Submit, PreviewProfile.gameObject.activeSelf ? PreviewProfile : footerControl);
+            Navigate(PreviewProfile, SignIn, footerControl);
             if (busy && !wasBusy) { ReleaseKeyboard(); Cancel.Select(); }
             if (!busy && wasBusy && gameObject.activeInHierarchy) { if (created) SignIn.Select(); else Submit.Select(); }
             wasBusy = busy;
@@ -193,6 +201,7 @@ namespace SoloGym.UI
                 Place(hint, new Rect(0, y, 502, 30)); y += 28;
             }
             Place(SignIn, new Rect(0, y, 502, 52)); Place(Cancel, new Rect(0, y, 502, 52)); y += 52;
+            if(PreviewProfile.gameObject.activeSelf) { Place(PreviewProfile,new Rect(0,y,502,52)); y+=52; }
             content.sizeDelta = new Vector2(502, Mathf.Max(viewport.rect.height, y));
         }
 

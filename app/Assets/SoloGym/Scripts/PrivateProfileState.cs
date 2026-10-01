@@ -199,6 +199,22 @@ namespace SoloGym
             ExitRequested?.Invoke();
         }
 
+        public void Reset()
+        {
+            if (disposed) return;
+            ResetDraft();
+            Refresh();
+        }
+
+        public void Pause()
+        {
+            if (disposed || !reviewMode || step != ProfileStep.Readiness) return;
+            readiness = "unsure";
+            step = ProfileStep.Paused;
+            errorKey = "";
+            Refresh();
+        }
+
         bool CanEditMeasurements => !disposed && reviewMode && step == ProfileStep.Measurements;
         void RefreshEditedHeight()
         {
