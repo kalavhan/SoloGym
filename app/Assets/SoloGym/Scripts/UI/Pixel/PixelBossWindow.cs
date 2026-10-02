@@ -28,6 +28,11 @@ namespace SoloGym.UI
         Rect lastSafe;
         float inset;
         bool supervised;
+        BossContent content;
+        BossEntry boss;
+        PixelSpriteLoop heroLoop,bossLoop;
+        string BossName=>boss==null?L("BOSS","JEFE"):boss.name.Get(Language);
+        string Line(string key)=>content==null?"":content.Line(key,Language);
         string L(string en,string es)=>Language=="es"?es:en;
         public void Initialize(WorkoutJournal source,string locale,string appearance,Action exited,bool restored,Func<double> clock=null)
         {
@@ -41,10 +46,39 @@ namespace SoloGym.UI
             float.TryParse(PixelWorkoutWindow.Arg("-sologym-safe-inset","0"),NumberStyles.Float,CultureInfo.InvariantCulture,out inset);inset=Mathf.Clamp(inset,0,150);
             CoverBackdrop(root,"Rooms/BossR1/background",.45f);
             Art(Composition,new Rect(0,0,1280,720),"Rooms/BossR1/background");
-            // Full source canvases, no stretching; both actors share a floor anchor.
-            var hero=Art(Composition,new Rect(82,305,320,320),"Characters/PixelLabR1/"+character);hero.preserveAspect=true;
-            var boss=Art(Composition,new Rect(339,104,528,528),"Rooms/BossR1/guardian");boss.preserveAspect=true;
+            try{content=BossContent.Load();boss=content?.Pick(Controller?.Data.id);}catch(ArgumentException e){Debug.LogWarning(e.Message);}
+            // Three depth rows: the boss stands behind and above, your hero in front. Full source canvases, no stretching.
+            var bossStill=boss==null?null:Resources.Load<Sprite>("Game/Bosses/"+boss.id+"/idle");
+            var bossImage=Art(Composition,new Rect(470,185,290,290),bossStill!=null?"Game/Bosses/"+boss.id+"/idle":"Rooms/BossR1/guardian");bossImage.preserveAspect=true;
+            var heroImage=Art(Composition,new Rect(100,262,360,360),"Characters/PixelLabR1/"+character);heroImage.preserveAspect=true;
+            bossLoop=PixelSpriteLoop.Attach(bossImage,bossImage.sprite);heroLoop=PixelSpriteLoop.Attach(heroImage,heroImage.sprite);
             Render();Relayout();
+            if(!restored)StartCoroutine(FlashIn(root));
+        }
+        /// <summary>Summoning flash: a white screen that fades to reveal the stand-off room.</summary>
+        System.Collections.IEnumerator FlashIn(Transform canvasRoot)
+        {
+            var layer=Rect("Summon flash",canvasRoot,new Rect());Stretch(layer);var white=layer.gameObject.AddComponent<Image>();white.color=Color.white;white.raycastTarget=false;layer.SetAsLastSibling();
+            for(float t=0;t<.8f;t+=Time.unscaledDeltaTime){white.color=new Color(1,1,1,1-t/.8f);yield return null;}
+            Destroy(layer.gameObject);
+        }
+        /// <summary>The hero performs the current exercise and the boss mimics it, until the boss gives out on the last working set.</summary>
+        void UpdateStage()
+        {
+            if(heroLoop==null||bossLoop==null)return;
+            bool active=Controller!=null&&View=="session"&&Controller.CanLog;
+            string key=active?content?.Animation(Controller.Current.exercise_id):null;
+            var hero=key==null?null:PixelSpriteLoop.Load("Game/Animations/"+character+"/"+key);
+            var rival=key==null||boss==null||Controller.IsFinalMainSet?null:PixelSpriteLoop.Load("Game/Animations/"+boss.id+"/"+key);
+            heroLoop.Play(hero);bossLoop.Play(rival);
+        }
+        /// <summary>The line the boss speaks now, or empty. Lines come from the boss content data.</summary>
+        string BossSpeech()
+        {
+            if(Controller==null||Controller.NeedsReadiness)return "";
+            if(Controller.Closed)return Line(Controller.Data.state=="completed"?BossContent.DefeatedLine:BossContent.WonLine);
+            if(Controller.CanLog&&Controller.IsFinalMainSet)return Line(BossContent.LastRepLine);
+            return Controller.Data.logs.Length==0&&!Controller.Data.paused?Line(BossContent.ChallengeLine):"";
         }
         public void Relayout()
         {
@@ -68,12 +102,13 @@ namespace SoloGym.UI
             var selected=EventSystem.current.currentSelectedGameObject;string focus=selected!=null?selected.name:null;EventSystem.current.SetSelectedGameObject(null);
             if(page!=null){page.gameObject.SetActive(false);Destroy(page.gameObject);}Controls.Clear();traversal.Clear();restLabel=null;
             page=Rect("Dungeon live controls",Composition,new Rect(0,0,1280,720));
-            var title=Frame(page,new Rect(24,18,302,76),"Dungeon title");Text(title,new Rect(12,5,278,39),L("DUNGEON","MAZMORRA"),30,false,TextAnchor.MiddleCenter);
+            var title=Frame(page,new Rect(24,18,302,76),"Stand-off title");Text(title,new Rect(12,5,278,39),L("STAND-OFF","DUELO"),30,false,TextAnchor.MiddleCenter);
             Text(title,new Rect(12,43,278,25),(Controller?.Data.plan.name.Get(Language)??"")+" · "+StateName(),19,false,TextAnchor.MiddleCenter);
-            Frame(page,new Rect(422,18,426,78),"Guardian health");Text(page,new Rect(426,19,418,32),L("STONE GUARDIAN","GUARDIÁN DE PIEDRA"),26,false,TextAnchor.MiddleCenter);
-            var hp=Rect("Boss progress track",page,new Rect(439,55,392,32)).gameObject.AddComponent<Image>();hp.color=new Color32(26,24,35,255);hp.raycastTarget=false;
-            var fill=Rect("Bounded boss HP",hp.transform,new Rect(0,0,392*(1000-(Controller?.Damage??0))/1000f,32)).gameObject.AddComponent<Image>();fill.color=new Color32(164,36,48,255);fill.raycastTarget=false;
-            Text(hp.transform,new Rect(0,0,392,32),(1000-(Controller?.Damage??0))+" / 1000",20,false,TextAnchor.MiddleCenter);
+            Frame(page,new Rect(422,18,426,78),"Boss name");Text(page,new Rect(426,19,418,38),BossName.ToUpperInvariant(),30,false,TextAnchor.MiddleCenter);
+            if(boss!=null)Text(page,new Rect(426,57,418,32),boss.stands_for.Get(Language),22,false,TextAnchor.MiddleCenter);
+            string speech=BossSpeech();
+            if(speech!=""){Frame(page,new Rect(480,104,390,84),"Boss speech");Text(page,new Rect(492,108,366,76),speech,21,false,TextAnchor.MiddleCenter);}
+            UpdateStage();
             bool returning=Controller?.NeedsReadiness==true;
             Button(page,"pause",new Rect(933,24,144,58),returning?L("BACK","VOLVER"):L("PAUSE","PAUSAR"),()=>{if(returning)Exited?.Invoke();else Perform(()=>Controller.Pause());},false).interactable=Controller!=null&&!Controller.Closed&&(returning||!Controller.Data.paused);
             Button(page,"stop",new Rect(1090,24,168,58),L("STOP","TERMINAR"),()=>{View="stop";Render();},true).interactable=Controller!=null&&!Controller.Closed;
@@ -116,7 +151,7 @@ namespace SoloGym.UI
         void BuildSet(Transform p)
         {
             var b=Controller.Current;if(b==null)return;
-            Title(p,b.role=="warmup"?L("WARM-UP","CALENTAMIENTO"):b.role=="cooldown"?L("RECOVERY","RECUPERACIÓN"):L("ATTACK!","¡ATACA!"));
+            Title(p,b.role=="warmup"?L("WARM-UP","CALENTAMIENTO"):b.role=="cooldown"?L("RECOVERY","RECUPERACIÓN"):L("YOUR TURN","TU TURNO"));
             Text(p,new Rect(23,66,330,78),b.name.Get(Language),27,true,TextAnchor.MiddleCenter);
             Text(p,new Rect(22,146,332,58),(b.sets>1?L("Set ","Serie ")+(BossSession.Count(Controller.Data,b.id)+1)+" / "+b.sets+"\n":"")+Dose(b),24,true,TextAnchor.MiddleCenter);
             Button(p,"complete",new Rect(23,214,330,96),L("COMPLETE","COMPLETAR"),()=>{notice=null;Perform(()=>Controller.CompleteSet());},true,34);
@@ -126,7 +161,7 @@ namespace SoloGym.UI
         void BuildFinish(Transform p)
         {
             Title(p,L("FINISH ROUTINE?","¿TERMINAR RUTINA?"));
-            Text(p,new Rect(26,80,324,150),L("Records every remaining set as done and defeats the guardian. Use it when you trained without tapping each set.","Registra como hechas todas las series restantes y derrota al guardián. Úsalo si entrenaste sin marcar cada serie."),22);
+            Text(p,new Rect(26,80,324,150),L("Records every remaining set as done and wins the stand-off. Use it when you trained without tapping each set.","Registra como hechas todas las series restantes y ganas el duelo. Úsalo si entrenaste sin marcar cada serie."),22);
             Button(p,"confirm-finish",new Rect(24,250,328,72),L("YES, ALL DONE","SÍ, TODO HECHO"),()=>{View="session";Perform(()=>Controller.CompleteAll());},true,24);
             Button(p,"cancel-finish",new Rect(24,340,328,58),L("BACK","VOLVER"),()=>{View="session";Render();});
         }
@@ -186,8 +221,8 @@ namespace SoloGym.UI
         void BuildSummary(Transform p)
         {
             bool completed=Controller.Data.state=="completed";Title(p,completed?L("SESSION FINISHED","SESIÓN FINALIZADA"):L("SESSION STOPPED","SESIÓN INTERRUMPIDA"));
-            Text(p,new Rect(25,85,326,72),Controller.Data.logs.Length+L(" sets recorded"," series registradas")+"\n"+Controller.Damage+" / 1000 "+L("progress","avance"),25,true,TextAnchor.MiddleCenter);
-            Text(p,new Rect(25,182,326,159),completed?(journal.IsLive?L("Warm-up, working sets and recovery recorded in your journal. The guardian falls. No extra exercise is ever required.","Calentamiento, series y recuperación registrados en tu diario. El guardián cae. Nunca se requiere ejercicio extra."):L("Warm-up, working sets and recovery recorded. No extra exercise is required to empty the bar. These local examples do not issue rewards.","Calentamiento, series y recuperación registrados. No necesitas ejercicio extra para vaciar la barra. Estos ejemplos locales no otorgan recompensas.")):L("Your work is saved, even when you stop early. Rest and take care of yourself. No extra exercise is owed.","Tu trabajo está guardado, aunque hayas terminado antes. Descansa y cuídate. No debes recuperar el ejercicio."),22);
+            Text(p,new Rect(25,85,326,72),Controller.Data.logs.Length+L(" sets recorded"," series registradas"),25,true,TextAnchor.MiddleCenter);
+            Text(p,new Rect(25,182,326,159),completed?(journal.IsLive?L("Warm-up, working sets and recovery recorded in your journal. No extra exercise is ever required.","Calentamiento, series y recuperación registrados en tu diario. Nunca se requiere ejercicio extra."):L("Warm-up, working sets and recovery recorded. No extra exercise is required. These local examples do not issue rewards.","Calentamiento, series y recuperación registrados. No necesitas ejercicio extra. Estos ejemplos locales no otorgan recompensas.")):L("Your work is saved, even when you stop early. Rest and take care of yourself. No extra exercise is owed.","Tu trabajo está guardado, aunque hayas terminado antes. Descansa y cuídate. No debes recuperar el ejercicio."),22);
             Button(p,"archive",new Rect(24,397,328,65),journal.IsLive?L("CONTINUE","CONTINUAR"):L("BACK TO WORKOUTS","VOLVER A RUTINAS"),Archive,true,21);
         }
         void BuildOverview()

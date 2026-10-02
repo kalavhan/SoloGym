@@ -56,3 +56,27 @@ Firebase prerequisites (already enabled for this project per `app/README.md`): E
 - The height/weight, equipment and schedule steps reuse the approved guild-panel controls; they did not receive separate full-screen renders. The full plan review is still reachable from the journal, just not during setup.
 - The guardian is still the existing boss panel; the animated character-vs-boss showdown (PixelLab sprites) is a later milestone.
 - Unity smoke/capture routes still exercise the fictional review fixtures; the connected flow was verified by compilation against Unity 6000.3.24f1 assemblies (runtime, Firebase and editor) and by the pure-logic suites in `tests/csharp` (engine parity, 806 journal/dungeon checks, account storage), not yet on a phone.
+
+## Stand-off screen (boss challenge)
+
+The routine screen is now the summoning stand-off, replacing the old stone-guardian health bar:
+
+- A white flash fades in when a new session starts.
+- Your hero stands in front and the boss behind. Both play the current exercise's animation during a set and hold still during rest and pause.
+- On the last working set of the routine the boss stops and says it cannot go on. Finishing wins; stopping early shows the boss's "I won" line.
+- Boss names, lines and the exercise-to-animation map are data: `data/game/content/bosses.json` (keep `app/Assets/SoloGym/Resources/Game/Bosses.json` identical; `tests/csharp/run.sh` checks it). Lines are drafts.
+- Only bosses with `"art_ready": true` are summoned. Today that is Slugvex.
+
+### Art drop-in (not in the repo yet)
+
+The approved PixelLab frames could not be downloaded from the build environment. Download the spritesheets or frame PNGs from PixelLab and place them like this (frames named `0.png` ... `8.png`; the importer in `Editor/PixelGameSpriteImporter.cs` sets them up as crisp sprites):
+
+| Folder under `app/Assets/SoloGym/Resources/Game/` | Source animation (PixelLab) |
+|---|---|
+| `Animations/male-medium/squat/` | male-medium Barbarian, `squat-side-clasped` |
+| `Animations/male-medium/lunge/` | male-medium Barbarian, `lunge-side-clasped` |
+| `Animations/slugvex/squat/` | Slugvex, `boss-squat-west` |
+| `Animations/slugvex/lunge/` | Slugvex, `boss-lunge-west` |
+| `Bosses/slugvex/idle.png` | Slugvex, west rotation (or south) |
+
+Until the files exist the screen falls back to the static Barbarian and the old guardian image as a stand-in, so nothing breaks. The jumping-jack animations are approved but no jumping-jack exercise exists in the training data yet, so they are not mapped.

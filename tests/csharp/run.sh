@@ -7,7 +7,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"; export SOLOGYM_ROOT="$(cd "$HERE/../.." &
 PWSH="${PWSH:-pwsh}"; S="$SOLOGYM_ROOT/app/Assets/SoloGym/Scripts"
 export SOLOGYM_PARITY_JSON="${TMPDIR:-/tmp}/sologym-python-sessions.json"
 python3 "$HERE/generate_parity.py" "$SOLOGYM_PARITY_JSON"
-CORE="$HERE/UnityShim.cs,$S/TrainingState.cs,$S/Training/TrainingEngine.cs,$S/Training/TrainingPlans.cs,$S/Workouts/WorkoutJournal.cs,$S/Boss/BossSession.cs"
+CORE="$HERE/UnityShim.cs,$S/TrainingState.cs,$S/Training/TrainingEngine.cs,$S/Training/TrainingPlans.cs,$S/Workouts/WorkoutJournal.cs,$S/Boss/BossSession.cs,$S/Boss/BossContent.cs"
 "$PWSH" -NoProfile -File "$HERE/run-tests.ps1" -SourceList "$CORE,$HERE/EngineParityTests.cs"
 "$PWSH" -NoProfile -File "$HERE/run-tests.ps1" -SourceList "$CORE,$HERE/LiveJournalTests.cs" | grep -v "^  setup"
 "$PWSH" -NoProfile -File "$HERE/run-tests.ps1" -SourceList "$CORE,$S/Account/UserProfile.cs,$S/Account/AccountSession.cs,$S/FirebaseWelcomeAuthService.cs,$S/WelcomeState.cs,$S/AccountRegistrationState.cs,$HERE/AccountTests.cs"

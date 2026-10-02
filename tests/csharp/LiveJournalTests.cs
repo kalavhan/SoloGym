@@ -170,6 +170,29 @@ namespace Tests
                     Console.WriteLine($"  setup age{s.age}/{s.goal}/{s.environment}/{s.session_minutes}m days[{string.Join(",", w)}] => {string.Join(",", tpl)} ready {readyCount}/{tpl.Length}");
                 }
             }
+            // Stand-off: the boss gives out on the last working set, and its lines are data.
+            var so = new Memory(); var sj = new WorkoutJournal(plans, so, LiveTrainingPlans.AccountProfile, today); sj.DefaultProfile = d => plans.DefaultProfileFor(d, days); sj.DefaultMinutes = 25; sj.Load(true);
+            sj.EnsureScheduled(plans.Schedule(days, today, today.AddDays(13)), 25, today); sj.SelectDay(today);
+            sj.BeginPrepare(); sj.Gate.SetReadiness("ready"); sj.ReviewReadiness(); sj.Gate.Acknowledge(true); sj.SaveBoss(BossController.Create(sj));
+            var sb = new BossController(sj.ActiveSession, sj.Plans, sj.SaveBoss, false, () => 0);
+            int finalSets = 0, safety = 0, mainSets = 0; bool finalOnlyLastMain = true;
+            while (!sb.Closed && safety++ < 200)
+            {
+                if (sb.IsFinalMainSet) { finalSets++; var lastMain = sb.Data.plan.blocks.Last(b => b.role == "main"); finalOnlyLastMain &= sb.Current.id == lastMain.id && BossSession.Count(sb.Data, sb.Current.id) == lastMain.sets - 1; }
+                if (sb.Current.role == "main") mainSets++;
+                if (!sb.CompleteSet()) { sb.SkipRest(); Check(sb.CompleteSet() || sb.Closed, "stand-off set completes " + sb.Error); }
+                sb.SkipRest();
+            }
+            Check(sb.Closed && sb.Data.state == "completed", "stand-off routine completes");
+            Check(finalSets == 1 && finalOnlyLastMain, "exactly one final working set, the last set of the last main block: " + finalSets);
+            Check(!sb.IsFinalMainSet, "no final-set flag once the routine is closed");
+            string rules = System.IO.Path.Combine(System.Environment.GetEnvironmentVariable("SOLOGYM_ROOT"), "app/Assets/SoloGym/Resources/Game/Bosses.json");
+            string canonical = System.IO.Path.Combine(System.Environment.GetEnvironmentVariable("SOLOGYM_ROOT"), "data/game/content/bosses.json");
+            Check(File.ReadAllText(rules) == File.ReadAllText(canonical), "Resources copy of bosses.json matches data/game/content");
+            var content = BossContent.Parse(File.ReadAllText(canonical));
+            Check(content.Pick("any-session").id == "slugvex" && content.Pick(null).art_ready, "only bosses with finished art are summoned");
+            Check(content.Line(BossContent.LastRepLine, "en").Contains("I can't go anymore") && content.Line(BossContent.WonLine, "es") != "", "boss lines are bilingual data");
+            Check(content.Animation("bodyweight_squat") == "squat" && content.Animation("reverse_lunge") == "lunge" && content.Animation("pushup") == null, "exercise to animation map; push-up has none yet");
             Console.WriteLine($"live journal tests: {passes} passed, {fails} failed");
             return fails == 0 ? 0 : 1;
         }
