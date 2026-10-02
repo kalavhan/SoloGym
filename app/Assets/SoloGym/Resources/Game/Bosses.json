@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "note": "Boss content is data. Edit names, lines and animation keys here; keep Resources/Game/Bosses.json identical (tests/csharp checks it). Lines are drafts and can change freely. The jumping jack animation exists but no jumping-jack exercise is in the training data yet; add a mapping when one is.",
+  "bosses": [
+    {
+      "id": "slugvex",
+      "art_ready": true,
+      "name": {
+        "en": "Slugvex",
+        "es": "Slugvex"
+      },
+      "stands_for": {
+        "en": "Laziness",
+        "es": "Pereza"
+      }
+    },
+    {
+      "id": "maybmor",
+      "art_ready": false,
+      "name": {
+        "en": "Maybmor",
+        "es": "Maybmor"
+      },
+      "stands_for": {
+        "en": "Excuses",
+        "es": "Excusas"
+      }
+    },
+    {
+      "id": "snoozmoth",
+      "art_ready": false,
+      "name": {
+        "en": "Snoozmoth",
+        "es": "Snoozmoth"
+      },
+      "stands_for": {
+        "en": "Sleeping in",
+        "es": "Quedarse dormido"
+      }
+    },
+    {
+      "id": "glutgrub",
+      "art_ready": false,
+      "name": {
+        "en": "Glutgrub",
+        "es": "Glutgrub"
+      },
+      "stands_for": {
+        "en": "Junk food",
+        "es": "Comida chatarra"
+      }
+    },
+    {
+      "id": "velshade",
+      "art_ready": false,
+      "name": {
+        "en": "Velshade",
+        "es": "Velshade"
+      },
+      "stands_for": {
+        "en": "Doubt",
+        "es": "Duda"
+      }
+    }
+  ],
+  "lines": [
+    {
+      "key": "challenge",
+      "text": {
+        "en": "Think you can out-train me? Show me.",
+        "es": "¿Crees que puedes entrenar mejor que yo? Demuéstralo."
+      }
+    },
+    {
+      "key": "last_rep",
+      "text": {
+        "en": "I can't go anymore. Let's see if you can finish this.",
+        "es": "Ya no puedo más. A ver si tú puedes terminar esto."
+      }
+    },
+    {
+      "key": "defeated",
+      "text": {
+        "en": "Impossible... you finished it. I yield.",
+        "es": "Imposible... lo terminaste. Me rindo."
+      }
+    },
+    {
+      "key": "won",
+      "text": {
+        "en": "You couldn't do it either. I won.",
+        "es": "Tú tampoco pudiste. Gané yo."
+      }
+    }
+  ],
+  "animations": [
+    {
+      "exercise_id": "bodyweight_squat",
+      "animation": "squat"
+    },
+    {
+      "exercise_id": "chair_squat",
+      "animation": "squat"
+    },
+    {
+      "exercise_id": "reverse_lunge",
+      "animation": "lunge"
+    },
+    {
+      "exercise_id": "split_squat",
+      "animation": "lunge"
+    },
+    {
+      "exercise_id": "supported_split_squat",
+      "animation": "lunge"
+    }
+  ]
+}

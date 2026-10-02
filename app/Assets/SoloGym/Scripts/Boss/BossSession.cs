@@ -74,6 +74,10 @@ namespace SoloGym
         public int Damage => Math.Min(1000,(int)Math.Floor(Data.logs.Sum(l=>l.share*Math.Min(1,l.quantity/l.prescription.quantity_min))+.000001));
         public double RestLeft => Data.paused ? Data.pausedRest : Math.Max(0, Data.restUntil-now());
         public bool CanLog => !Closed && !NeedsReadiness && !Data.paused && RestLeft<=0 && Current!=null;
+        /// <summary>True during the last working set of the routine: the moment the boss stops and challenges you to finish.</summary>
+        public bool IsFinalMainSet => !Closed && Current!=null && Current.role=="main"
+            && !Data.plan.blocks.Skip(Data.cursor+1).Any(b=>b.role=="main")
+            && BossSession.Count(Data,Current.id)==Current.sets-1;
         public string NextId => Current==null ? "" : Data.id+":"+Current.id+":"+BossSession.Count(Data,Current.id);
         public static double UtcNow() => (DateTime.UtcNow-new DateTime(1970,1,1,0,0,0,DateTimeKind.Utc)).TotalSeconds;
         public BossController(BossSession data, BossCatalog source, Action<BossSession> save, bool restored, Func<double> clock=null)

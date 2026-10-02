@@ -361,7 +361,7 @@ namespace SoloGym.UI
             if (!pending)
             {
                 bool doneToday = Journal.Entries.Any(e => e.date == WorkoutJournal.Date(Journal.Today) && e.status == "completed");
-                Text(page, new Rect(166, 230, 430, 150), doneToday ? L("Guardian defeated today. Rest is part of getting stronger.", "Guardián derrotado hoy. Descansar también te hace más fuerte.")
+                Text(page, new Rect(166, 230, 430, 150), doneToday ? L("Boss defeated today. Rest is part of getting stronger.", "Jefe derrotado hoy. Descansar también te hace más fuerte.")
                     : L("Rest day. Want to train anyway?", "Día de descanso. ¿Quieres entrenar de todos modos?"), 26);
                 Button(page, "brief-back", new Rect(166, 512, 430, 52), L("BACK", "VOLVER"), () => { View = "hub"; Render(); });
                 Heading(692, L("EXTRA SESSION", "SESIÓN EXTRA"));
