@@ -1,0 +1,57 @@
+# Optional cloud build of the MVP test APK with GameCI.
+# Repository secrets required:
+#   UNITY_LICENSE (contents of Unity_lic.ulf), UNITY_EMAIL, UNITY_PASSWORD
+#   FIREBASE_CONFIG_JSON (app/Assets/SoloGym/Resources/Auth/FirebaseConfig.json contents)
+#   GOOGLE_SERVICES_JSON (app/Assets/google-services.json contents)
+# Without the Firebase secrets the APK still builds, but sign-in reports "unavailable".
+name: Android test APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, "mvp/**"]
+    paths: ["app/**", ".github/workflows/android-test-apk.yml"]
+concurrency:
+  group: android-apk-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with: { tool-cache: false, android: false }
+      - uses: actions/checkout@v4
+      - name: Install pinned Firebase Auth SDK
+        run: python3 tools/install_firebase_unity.py
+      - name: Write Firebase client configuration
+        env:
+          FIREBASE_CONFIG_JSON: ${{ secrets.FIREBASE_CONFIG_JSON }}
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          mkdir -p app/Assets/SoloGym/Resources/Auth
+          if [ -n "$FIREBASE_CONFIG_JSON" ]; then printf '%s' "$FIREBASE_CONFIG_JSON" > app/Assets/SoloGym/Resources/Auth/FirebaseConfig.json; fi
+          if [ -n "$GOOGLE_SERVICES_JSON" ]; then printf '%s' "$GOOGLE_SERVICES_JSON" > app/Assets/google-services.json; fi
+      - uses: actions/cache@v4
+        with:
+          path: app/Library
+          key: library-android-${{ hashFiles('app/Packages/packages-lock.json', 'app/ProjectSettings/ProjectVersion.txt') }}
+          restore-keys: library-android-
+      - name: Build APK
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          SOLOGYM_APK_PATH: /github/workspace/app/Builds/Android/SoloGym-mvp-test.apk
+        with:
+          projectPath: app
+          targetPlatform: Android
+          unityVersion: 6000.3.24f1
+          buildMethod: SoloGym.Editor.SoloGymBuild.BuildAndroidTest
+          allowDirtyBuild: true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SoloGym-mvp-test-apk
+          path: app/Builds/Android/*.apk
+          if-no-files-found: error

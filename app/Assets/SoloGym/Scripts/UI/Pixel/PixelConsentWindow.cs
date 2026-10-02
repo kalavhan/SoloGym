@@ -28,6 +28,8 @@ namespace SoloGym.UI
         public event Action StateChanged;
         RectTransform decisions, decisionsViewport, reader, readerFrame;
         Text title, subtitle, provisional, helper, sample, privacyTitle, termsTitle;
+        /// <summary>Connected setup: choices are stored with the account (test build, draft documents).</summary>
+        public bool Live;
         readonly Dictionary<string,float> scrollPositions = new Dictionary<string,float>();
         string documentId = "", returnLabel = "";
         Action back, forward, closeReader;
@@ -123,14 +125,14 @@ namespace SoloGym.UI
                 title.text=reading ? Controller.Document(documentId)?.title.ToUpperInvariant() ?? (documentId=="privacy" ? L("PRIVACY POLICY","POLÍTICA DE PRIVACIDAD") : L("TERMS OF USE","TÉRMINOS DE USO")) : L("YOUR CHOICES","TUS DECISIONES");
                 title.fontSize=reading?30:34;
                 subtitle.text=reading ? L("Placeholder text · Lorem ipsum","Texto provisional · Lorem ipsum") : BeforeAccount ? L("Before creating your account","Antes de crear tu cuenta") : L("Before setting up your profile","Antes de configurar tu perfil");
-                provisional.text=L("Provisional texts · Preview","Textos provisionales · Vista previa");
+                provisional.text=Live ? L("Draft documents · test version","Documentos borrador · versión de prueba") : L("Provisional texts · Preview","Textos provisionales · Vista previa");
                 privacyTitle.text=L("Privacy policy","Política de privacidad"); termsTitle.text=L("Terms of use","Términos de uso");
                 ReadPrivacy.SetLabel(L("READ","LEER")); ReadTerms.SetLabel(L("READ","LEER"));
                 PrivacyChoice.SetLabel(L("I have read the privacy policy.","He leído la política de privacidad."));
                 TermsChoice.SetLabel(L("I accept the terms of use.","Acepto los términos de uso."));
                 PrivacyChoice.interactable=Controller.Document("privacy")!=null; TermsChoice.interactable=Controller.Document("terms")!=null;
                 PrivacyChoice.SetIsOnWithoutNotify(Controller.PrivacyChecked); TermsChoice.SetIsOnWithoutNotify(Controller.TermsChecked);
-                helper.text=Controller.DocumentsAvailable ? L("This preview does not record acceptance.","Esta vista previa no registra aceptación.") : L("A preview document is unavailable. You can return or read the available text.","Falta un documento de muestra. Puedes volver o leer el texto disponible.");
+                helper.text=Controller.DocumentsAvailable ? (Live ? L("Your choices are saved with your account.","Tus decisiones se guardan con tu cuenta.") : L("This preview does not record acceptance.","Esta vista previa no registra aceptación.")) : L("A preview document is unavailable. You can return or read the available text.","Falta un documento de muestra. Puedes volver o leer el texto disponible.");
                 Continue.SetLabel(L("CONTINUE","CONTINUAR")); Continue.interactable=Controller.CanContinue;
                 if(reading) DocumentBody.text=Controller.Document(documentId)?.body ?? L("This preview document is unavailable. No acceptance has been recorded.","Este documento de muestra no está disponible. No se registró ninguna aceptación.");
                 sample.text=L("Sample document, not a legal policy.","Documento de muestra, sin validez legal.");

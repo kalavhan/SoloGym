@@ -128,7 +128,7 @@ namespace SoloGym.Editor
             PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.kalavhan.sologym");
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
             PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevelAuto;
-            PlayerSettings.Android.bundleVersionCode = 3;
+            PlayerSettings.Android.bundleVersionCode = 5;
             PlayerSettings.Android.useCustomKeystore = false;
             EditorUserBuildSettings.buildAppBundle = false;
             EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
@@ -144,6 +144,19 @@ namespace SoloGym.Editor
             ConfigureScenes();
             ConfigureAndroid();
             Build(BuildTarget.Android, "Builds/Android/SoloGym-debug.apk");
+        }
+
+        /// <summary>
+        /// MVP test APK: the connected fitness flow without review-only sample routes
+        /// (no SOLOGYM_REVIEW define). Output path can be overridden with SOLOGYM_APK_PATH.
+        /// </summary>
+        [MenuItem("SoloGym/Build/Android Test APK (MVP)")]
+        public static void BuildAndroidTest()
+        {
+            ConfigureScenes();
+            ConfigureAndroid();
+            string output = Environment.GetEnvironmentVariable("SOLOGYM_APK_PATH");
+            Build(BuildTarget.Android, string.IsNullOrWhiteSpace(output) ? "Builds/Android/SoloGym-mvp-test.apk" : output, false);
         }
 
         static string ProjectRoot => Directory.GetParent(Application.dataPath).FullName;
@@ -165,7 +178,7 @@ namespace SoloGym.Editor
         {
             PlayerSettings.companyName = "kalavhan";
             PlayerSettings.productName = "SoloGym";
-            PlayerSettings.bundleVersion = "0.5.0";
+            PlayerSettings.bundleVersion = "0.6.1";
             EnsureTheme();
             PlayerSettings.colorSpace = ColorSpace.Gamma;
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
@@ -181,16 +194,18 @@ namespace SoloGym.Editor
             QualitySettings.vSyncCount = 0;
         }
 
-        static void Build(BuildTarget target, string relativeOutput)
+        static void Build(BuildTarget target, string relativeOutput, bool review = true)
         {
-            string output = Path.Combine(ProjectRoot, relativeOutput);
+            string output = Path.IsPathRooted(relativeOutput) ? relativeOutput : Path.Combine(ProjectRoot, relativeOutput);
             Directory.CreateDirectory(Path.GetDirectoryName(output));
             string[] authDefines = FirebaseIntegrationSetup.ScriptingDefinesForBuild;
-            var localBuildDefines = new string[authDefines.Length + 1];
+            if (Array.IndexOf(authDefines, "SOLOGYM_FIREBASE_AUTH") < 0)
+                Debug.LogWarning("SoloGym: Firebase SDK is not installed; sign-in and account creation will report unavailable in this build.");
+            var localBuildDefines = new string[authDefines.Length + (review ? 1 : 0)];
             Array.Copy(authDefines, localBuildDefines, authDefines.Length);
-            // These commands produce local review builds. The explicitly labelled
-            // sample Home remains accessible independently of authentication.
-            localBuildDefines[authDefines.Length] = "SOLOGYM_REVIEW";
+            // Review builds keep the explicitly labelled sample Home accessible
+            // independently of authentication; the MVP test APK omits them.
+            if (review) localBuildDefines[authDefines.Length] = "SOLOGYM_REVIEW";
             var options = new BuildPlayerOptions
             {
                 scenes = new[] { WelcomeScenePath, ScenePath },

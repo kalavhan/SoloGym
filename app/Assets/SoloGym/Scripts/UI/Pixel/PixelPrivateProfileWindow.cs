@@ -23,6 +23,8 @@ namespace SoloGym.UI
         public Text Status { get; private set; }
         public event Action StateChanged;
         public event Action GoalsRequested;
+        /// <summary>Connected setup: measurements and readiness are saved privately with the plan.</summary>
+        public bool Live;
         bool goalsAvailable;
         public void SetGoalsAvailable(bool value) { goalsAvailable=value; Render(Controller.Model); }
         public Selectable LastControl => Continue.gameObject.activeSelf && Continue.IsInteractable() ? (Selectable)Continue : Secondary;
@@ -133,7 +135,7 @@ namespace SoloGym.UI
                 bool paused=m.Step==ProfileStep.Paused, checkpoint=m.Step==ProfileStep.Checkpoint, metric=m.UnitSystem=="metric";
                 title.text=L("PRIVATE PROFILE","PERFIL PRIVADO");
                 progress.text=notice ? L("1 OF 3 · BEFORE YOUR DATA","1 DE 3 · ANTES DE TUS DATOS") : measurements ? L("2 OF 3 · OPTIONAL MEASUREMENTS","2 DE 3 · MEDIDAS OPCIONALES") : L("3 OF 3 · HOW YOU FEEL","3 DE 3 · CÓMO TE SIENTES");
-                review.text=m.ReviewMode ? L("Preview","Vista previa") : L("Private-data setup unavailable","Datos privados no disponibles");
+                review.text=Live ? L("Private · only you see this","Privado · solo tú lo ves") : m.ReviewMode ? L("Preview","Vista previa") : L("Private-data setup unavailable","Datos privados no disponibles");
                 Back.SetLabel(L("Back","Volver"));
                 heading.text=notice ? L("Your training, your pace","Tu entrenamiento, a tu ritmo") : measurements ? L("Your measurements, your pace","Tus medidas, a tu ritmo") : readiness ? L("How do you feel today?","¿Cómo llegas hoy?") : paused ? L("LET'S PAUSE","HAGAMOS UNA PAUSA") : L("NEXT: YOUR TRAINING","SIGUE: TU ENTRENAMIENTO");
                 noticeCopy.text=L("Height and bodyweight are optional.\n\nThey do not change your character or appear in rankings.\n\nYou can continue without measurements.","Altura y peso son opcionales.\n\nNo cambian tu personaje ni aparecen en rankings.\n\nPodrás continuar sin añadir medidas.");
@@ -153,12 +155,13 @@ namespace SoloGym.UI
                 }
                 detail.gameObject.SetActive(paused||checkpoint);
                 detail.text=paused ? L("Training stays paused for now. You can change your response or leave.\n\nThis screen does not assess or diagnose your condition.","Por ahora dejamos el entrenamiento en pausa. Puedes cambiar tu respuesta o salir.\n\nEsta pantalla no evalúa ni diagnostica tu condición.")
+                    : Live ? L("Next: goals and training experience.\n\nChoose your focus and starting experience next.","Siguiente: objetivos y experiencia.\n\nAhora elegirás tu enfoque y experiencia inicial.")
                     : L("Next: goals and training experience.\n\nChoose your focus and starting experience next. This preview has not saved a profile or generated a workout.","Siguiente: objetivos y experiencia.\n\nAhora elegirás tu enfoque y experiencia inicial. Esta vista previa no guardó un perfil ni generó una rutina.");
                 if(checkpoint && !goalsAvailable) detail.text=L("Return to setup to enter age and country before reviewing training choices. Nothing has been saved.","Vuelve a la configuración para indicar edad y país antes de revisar las opciones de entrenamiento. No se guardaron datos.");
                 helper.text=notice ? L("Review with example data.\nNo profile is saved.","Revisión con datos de ejemplo.\nNo se guarda un perfil.") : measurements ? L("You can leave both fields empty.\nExample values · Not saved.","Puedes dejar ambos campos vacíos.\nValores de ejemplo · No se guardan.") : readiness ? L("If you feel unwell or unsure,\nyou can pause here.","Si tienes molestias o dudas,\npuedes pausar aquí.") : "";
                 Status.text=m.Error.Length>0 ? m.Error : measurements && !m.CanContinue ? L("Check the numbers or leave the fields empty.","Revisa los números o deja los campos vacíos.") : "";
                 Status.gameObject.SetActive(Status.text.Length>0);
-                Secondary.SetLabel(readiness ? L("Pause for now","Pausar por ahora") : notice ? L("Not now","Ahora no") : L("Leave preview","Salir de vista previa"));
+                Secondary.SetLabel(readiness ? L("Pause for now","Pausar por ahora") : notice ? L("Not now","Ahora no") : (Live ? L("Leave setup","Salir de la configuración") : L("Leave preview","Salir de vista previa")));
                 Secondary.gameObject.SetActive(!measurements);
                 Continue.SetLabel(paused ? L("CHANGE RESPONSE","CAMBIAR RESPUESTA") : L("CONTINUE","CONTINUAR"));
                 Continue.interactable=checkpoint ? goalsAvailable : m.CanContinue||paused;

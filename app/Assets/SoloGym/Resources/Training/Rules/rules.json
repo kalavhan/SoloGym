@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "content_status": "draft_requires_professional_review",
+  "minimum_age": 15,
+  "teen_upper_age": 17,
+  "supported_goals": ["general_fitness", "strength", "muscle_growth", "endurance", "mobility"],
+  "supported_experience": ["beginner", "intermediate"],
+  "supported_readiness": ["ready", "low_energy", "ill", "pain", "injury"],
+  "session_minutes": {"min":15,"max":60},
+  "sessions_per_week": {"min":2,"max":5},
+  "stop_readiness": ["ill", "pain", "injury"],
+  "age_specific": {
+    "teen": {"max_sets":2,"hard_enabled":false,"strength_supervision_required":true,"goal_mode":"general_fitness_foundation","note":{"en":"Build skills with appropriate supervision. Sports, play and everyday activity also count toward activity guidance.","es":"Desarrolla habilidades con supervisión adecuada. Los deportes, el juego y el movimiento diario también cuentan."}},
+    "adult": {"max_sets":3,"hard_enabled":true,"strength_supervision_required":false,"goal_mode":"selected_goal"}
+  },
+  "strength_doses": {
+    "general_fitness": {"beginner_sets":2,"intermediate_sets":2,"reps_min":8,"reps_max":12,"rest_seconds":90},
+    "strength": {"beginner_sets":2,"intermediate_sets":3,"reps_min":6,"reps_max":10,"rest_seconds":120},
+    "muscle_growth": {"beginner_sets":2,"intermediate_sets":3,"reps_min":8,"reps_max":12,"rest_seconds":90},
+    "endurance": {"beginner_sets":2,"intermediate_sets":2,"reps_min":8,"reps_max":12,"rest_seconds":90},
+    "mobility": {"beginner_sets":1,"intermediate_sets":1,"reps_min":6,"reps_max":10,"rest_seconds":90}
+  },
+  "timing": {"warmup_minutes":3,"cooldown_minutes":2,"seconds_per_rep_budget":4,"transition_seconds":30,"timed_core_seconds":20,"mobility_seconds":30},
+  "cardio": {"beginner_minutes":10,"intermediate_minutes":20,"minimum_minutes":5,"maximum_minutes":25,"aerobic_effort_medium":[5,6],"aerobic_effort_light":[3,4]},
+  "difficulty": {
+    "light": {"strength_sets_delta":-1,"cardio_minutes_delta":-3,"increase_load":false},
+    "medium": {"strength_sets_delta":0,"cardio_minutes_delta":0,"increase_load":false},
+    "hard": {"extra_sets_first_strength_slot":1,"cardio_minutes_delta":2,"requires_ready":true,"requires_intermediate_adult":true,"increase_load":false}
+  },
+  "recovery": {"strength_calendar_day_gap":2,"meaning":"Scheduling heuristic: avoid strength sessions on consecutive dates; not a guarantee of individual recovery.","reduce_after_low_readiness":true,"make_up_missed_volume":false},
+  "progression": {"successful_exposures_required":2,"automatic_load_increase":false,"failure_required":false,"one_variable_at_a_time":true,"body_size_affects_power":false},
+  "rewards": {"fitness_xp_per_completed_session":100,"coins_per_completed_session":60,"difficulty_multiplier":1,"load_multiplier":1,"fasting_multiplier":0,"no_negative_rewards_for_stopping":true,"recovery_preserves_consistency":true,"scope":"Draft economy placeholders for UI data; no reward ledger is implemented."},
+  "release_gate": {"professional_review_required":true,"youth_review_required":true,"clinically_validated":false},
+  "source_ids": ["who2020", "acsm2026", "aap2020", "cdc_intensity2025", "aap_overtraining2024"]
+}

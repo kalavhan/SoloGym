@@ -31,7 +31,7 @@ namespace SoloGym.UI
             box.color = enabled ? Color.white : new Color32(130,132,126,255);
             Label.color = enabled ? PixelJournalUI.Ivory : new Color32(151,153,151,255);
             mark.color = Label.color;
-            focus.enabled = enabled && (state == SelectionState.Selected || state == SelectionState.Highlighted);
+            focus.enabled = enabled && (!PixelTouch.HideFocus && (state == SelectionState.Selected || state == SelectionState.Highlighted));
         }
     }
 }

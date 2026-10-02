@@ -42,6 +42,19 @@ namespace SoloGym.UI
             var r = Rect(label, parent, b); var hit = r.gameObject.AddComponent<Image>(); hit.color = Color.clear; hit.canvasRenderer.cullTransparentMesh = false;
             var action = r.gameObject.AddComponent<PixelJournalAction>(); action.Initialize(label, callback, framed, selected, size); return action;
         }
+        /// <summary>
+        /// Fills the whole screen behind the 1280x720 composition (no black side bars on wide phones).
+        /// dim &lt; 1 darkens the fill when the composition draws its own copy of the art.
+        /// </summary>
+        public static Image CoverBackdrop(Transform canvasRoot, string resource, float dim = 1f)
+        {
+            var r = new GameObject("Full-bleed backdrop: " + resource, typeof(RectTransform)).GetComponent<RectTransform>();
+            r.SetParent(canvasRoot, false); r.anchorMin = r.anchorMax = r.pivot = new Vector2(.5f, .5f); r.SetAsFirstSibling();
+            var image = r.gameObject.AddComponent<Image>(); image.sprite = Resources.Load<Sprite>(resource); image.raycastTarget = false; image.color = new Color(dim, dim, dim, 1);
+            var fit = r.gameObject.AddComponent<AspectRatioFitter>(); fit.aspectMode = AspectRatioFitter.AspectMode.EnvelopeParent;
+            fit.aspectRatio = image.sprite != null ? image.sprite.rect.width / image.sprite.rect.height : 16f / 9f;
+            return image;
+        }
         public static Image Rule(Transform p, float x, float y, float width)
         { var i = Rect("Live separator", p, new Rect(x, y, width, 1)).gameObject.AddComponent<Image>(); i.color = new Color32(129, 91, 50, 125); i.raycastTarget = false; return i; }
         public static RectTransform Scroll(Transform p, Rect bounds, float contentHeight)
@@ -85,7 +98,7 @@ namespace SoloGym.UI
         protected override void DoStateTransition(SelectionState state, bool instant)
         {
             if (skin == null || Label == null) return;
-            bool focus = IsInteractable() && (state == SelectionState.Selected || state == SelectionState.Highlighted || state == SelectionState.Pressed);
+            bool focus = IsInteractable() && ((!PixelTouch.HideFocus && (state == SelectionState.Selected || state == SelectionState.Highlighted)) || state == SelectionState.Pressed);
             skin.enabled = framed || selected || focus;
             skin.color = !IsInteractable() ? new Color32(145, 143, 132, 255) : state == SelectionState.Pressed ? new Color32(178, 182, 164, 255) : Color.white;
             Label.color = !IsInteractable() ? new Color32(133, 122, 99, 255) : skin.enabled ? PixelJournalUI.Ivory : PixelJournalUI.Ink;

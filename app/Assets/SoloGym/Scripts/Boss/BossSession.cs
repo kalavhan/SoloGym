@@ -19,13 +19,16 @@ namespace SoloGym
         public int version = 1;
         public string id, entryId, profile, date, context = "review-fixtures-only", readiness, difficulty, state = "active", stopReason = "";
         public TrainingPlan original, plan;
+        public SoloGym.Training.CustomExercise[] custom = Array.Empty<SoloGym.Training.CustomExercise>();
+        /// <summary>Planned session length; custom routines may extend the time budget beyond it.</summary>
+        public int minutes;
         public BossLog[] logs = Array.Empty<BossLog>();
         public int cursor;
         public double restUntil, pausedRest;
         public bool paused;
         public static void Validate(BossSession s)
         {
-            if (s == null || s.version != 1 || s.context != "review-fixtures-only" || string.IsNullOrEmpty(s.id) || string.IsNullOrEmpty(s.entryId)
+            if (s == null || s.version != 1 || (s.context != FixtureTrainingPlans.FixtureContext && s.context != LiveTrainingPlans.AccountContext) || string.IsNullOrEmpty(s.id) || string.IsNullOrEmpty(s.entryId)
                 || !new[] { "active", "completed", "stopped" }.Contains(s.state) || !new[] { "ready", "low_energy" }.Contains(s.readiness)
                 || !new[] { "light", "medium", "hard" }.Contains(s.difficulty) || s.plan?.blocks == null || s.original?.blocks == null
                 || s.plan.blocks.Length != s.original.blocks.Length || s.plan.blocks.Length < 2 || s.plan.blocks.Length > 30
@@ -34,7 +37,7 @@ namespace SoloGym
                 throw new ArgumentException("Invalid saved dungeon session.");
             var ids = s.plan.blocks.Select(b => b?.id).ToArray();
             if (ids.Any(string.IsNullOrEmpty) || ids.Distinct().Count()!=ids.Length || s.original.blocks.Sum(b=>b.boss_share)!=1000
-                || s.plan.blocks.Any(b => b.name == null || string.IsNullOrEmpty(b.name.en) || string.IsNullOrEmpty(b.name.es) || b.quantity_min<1 || b.quantity_max<b.quantity_min || b.sets<1 || b.sets>3 || b.rest_seconds<0 || b.rest_seconds>600
+                || s.plan.blocks.Any(b => b.name == null || string.IsNullOrEmpty(b.name.en) || string.IsNullOrEmpty(b.name.es) || b.quantity_min<1 || b.quantity_max<b.quantity_min || b.sets<1 || b.sets>6 || b.rest_seconds<0 || b.rest_seconds>600
                     || !new[]{"reps","seconds","minutes"}.Contains(b.unit) || !new[]{"warmup","main","cooldown"}.Contains(b.role))
                 || s.logs.Select(l=>l?.id).Distinct().Count()!=s.logs.Length)
                 throw new ArgumentException("Invalid dungeon prescription.");
@@ -60,7 +63,7 @@ namespace SoloGym
     /// <summary>Local manual exercise ledger. No trusted rewards or automatic exercise detection.</summary>
     public sealed class BossController
     {
-        readonly BossCatalog catalog;
+        readonly ITrainingPlans catalog;
         readonly Action<BossSession> persist;
         readonly Func<double> now;
         public BossSession Data { get; private set; }
@@ -71,20 +74,40 @@ namespace SoloGym
         public int Damage => Math.Min(1000,(int)Math.Floor(Data.logs.Sum(l=>l.share*Math.Min(1,l.quantity/l.prescription.quantity_min))+.000001));
         public double RestLeft => Data.paused ? Data.pausedRest : Math.Max(0, Data.restUntil-now());
         public bool CanLog => !Closed && !NeedsReadiness && !Data.paused && RestLeft<=0 && Current!=null;
+        /// <summary>True during the last working set of the routine: the moment the boss stops and challenges you to finish.</summary>
+        public bool IsFinalMainSet => !Closed && Current!=null && Current.role=="main"
+            && !Data.plan.blocks.Skip(Data.cursor+1).Any(b=>b.role=="main")
+            && BossSession.Count(Data,Current.id)==Current.sets-1;
         public string NextId => Current==null ? "" : Data.id+":"+Current.id+":"+BossSession.Count(Data,Current.id);
         public static double UtcNow() => (DateTime.UtcNow-new DateTime(1970,1,1,0,0,0,DateTimeKind.Utc)).TotalSeconds;
         public BossController(BossSession data, BossCatalog source, Action<BossSession> save, bool restored, Func<double> clock=null)
+            : this(data, Fixture(source), save, restored, clock) { }
+        static ITrainingPlans Fixture(BossCatalog source)
         {
-            BossSession.Validate(data); catalog=source; persist=save; now=clock??UtcNow; Data=WorkoutJournal.Clone(data);
+            var training=JsonUtility.FromJson<TrainingCatalog>(Resources.Load<TextAsset>("Training/Preview").text);
+            var options=JsonUtility.FromJson<JournalOptions>(Resources.Load<TextAsset>("Training/JournalOptions").text);
+            return new FixtureTrainingPlans(training,options,source);
+        }
+        public BossController(BossSession data, ITrainingPlans source, Action<BossSession> save, bool restored, Func<double> clock=null)
+        {
+            BossSession.Validate(data); catalog=source??throw new ArgumentNullException(nameof(source)); persist=save; now=clock??UtcNow; Data=WorkoutJournal.Clone(data);
             NeedsReadiness=restored&&!Closed;
             if (NeedsReadiness) { Data.pausedRest=Data.paused ? Data.pausedRest : Math.Max(0,Data.restUntil-now()); Data.paused=true; }
             // Reject stale/unsupported exercise identities before a saved prescription can be resumed.
             Resolve(Data,Data.difficulty,Data.readiness);
         }
-        static string Key(BossSession s,string difficulty,string readiness) => s.profile+":"+(s.original.budget_seconds/60)+":"+readiness+":"+(s.profile=="teen_home_supervised"?"1":"0")+":"+difficulty;
+        bool Teen(BossSession s) => catalog.Profile(s.profile)?.teen==true;
+        string Key(BossSession s,string difficulty,string readiness) => TrainingKeys.Make(s.profile,s.minutes>0?s.minutes:s.original.budget_seconds/60,readiness,Teen(s))+":"+difficulty;
+        public bool IsTeen => Teen(Data);
         TrainingPlan Resolve(BossSession s,string difficulty,string readiness)
         {
-            var variant=catalog.entries.FirstOrDefault(v=>v.key==Key(s,difficulty,readiness));
+            if((s.custom?.Length??0)>0)
+            {
+                var own=catalog.Custom(Key(s,difficulty,readiness),s.custom);
+                if(own?.status!="draft_ready") throw new ArgumentException("Unsupported training context.");
+                return WorkoutJournal.Clone(own);
+            }
+            var variant=catalog.Variant(Key(s,difficulty,readiness));
             if (variant?.plan.status!="draft_ready") throw new ArgumentException("Unsupported training context.");
             var result=WorkoutJournal.Clone(variant.plan);
             foreach (var original in s.original.blocks.Where(b=>b.role=="main"))
@@ -99,10 +122,17 @@ namespace SoloGym
         }
         public static BossSession Create(WorkoutJournal journal, BossCatalog catalog)
         {
+            if(journal.Plans is FixtureTrainingPlans fixture) fixture.UseBosses(catalog);
+            return Create(journal);
+        }
+        public static BossSession Create(WorkoutJournal journal)
+        {
             if(!journal.CanSaveReview) throw new InvalidOperationException("Review and acknowledge today's routine first.");
-            var s=new BossSession {id=Guid.NewGuid().ToString("N"),entryId=journal.SelectedId,profile=journal.ProfileId,date=WorkoutJournal.Date(journal.Today),readiness=journal.Gate.Readiness,
-                difficulty=journal.PreparedPlan.difficulty_effective,original=WorkoutJournal.Clone(journal.PreparedPlan),plan=WorkoutJournal.Clone(journal.PreparedPlan)};
-            var controller=new BossController(s,catalog,_=>{},false);
+            var s=new BossSession {id=Guid.NewGuid().ToString("N"),entryId=journal.SelectedId,profile=journal.EntryProfile(journal.Selected),context=journal.Plans.Context,date=WorkoutJournal.Date(journal.Today),readiness=journal.Gate.Readiness,
+                difficulty=journal.PreparedPlan.difficulty_effective,original=WorkoutJournal.Clone(journal.PreparedPlan),plan=WorkoutJournal.Clone(journal.PreparedPlan),
+                minutes=journal.Selected.minutes,
+                custom=(journal.Selected.custom??Array.Empty<SoloGym.Training.CustomExercise>()).Select(c=>new SoloGym.Training.CustomExercise{exercise=c.exercise,sets=c.sets}).ToArray()};
+            var controller=new BossController(s,journal.Plans,_=>{},false);
             s.plan=controller.Resolve(s,s.difficulty,s.readiness); s.original=WorkoutJournal.Clone(s.plan);
             if(s.plan.estimated_seconds>s.plan.budget_seconds) throw new ArgumentException("Plan exceeds the reviewed time budget.");
             BossSession.Validate(s); return s;
@@ -130,6 +160,27 @@ namespace SoloGym
                 s.restUntil=anotherSet ? now()+b.rest_seconds : 0;
                 if(!anotherSet) s.cursor++;
                 if(s.cursor==s.plan.blocks.Length) s.state="completed";
+            });
+        }
+        /// <summary>One tap: record the current set exactly as prescribed.</summary>
+        public bool CompleteSet() => Current!=null && Log(NextId,Current.quantity_max,null);
+        /// <summary>Skip the remaining rest; resting longer is always allowed too.</summary>
+        public bool SkipRest() => Closed||NeedsReadiness||Data.paused||RestLeft<=0 ? false : Change(s=>{s.restUntil=0;});
+        /// <summary>Record every remaining set as prescribed and finish the routine.</summary>
+        public bool CompleteAll()
+        {
+            if(Closed||NeedsReadiness) return false;
+            return Change(s=>{
+                s.paused=false;s.pausedRest=0;s.restUntil=0;
+                while(s.cursor<s.plan.blocks.Length)
+                {
+                    var b=s.plan.blocks[s.cursor];int count=BossSession.Count(s,b.id);
+                    if(count>=b.sets){s.cursor++;continue;}
+                    double used=s.logs.Where(l=>l.blockId==b.id).Sum(l=>l.share);double budget=s.original.blocks.First(x=>x.id==b.id).boss_share;
+                    var log=new BossLog{id=s.id+":"+b.id+":"+count,blockId=b.id,index=count,quantity=b.quantity_max,share=Math.Max(0,budget-used)/(b.sets-count),prescription=WorkoutJournal.Clone(b),recordedUtc=DateTime.UtcNow.ToString("O")};
+                    s.logs=s.logs.Concat(new[]{log}).ToArray();
+                }
+                s.state="completed";
             });
         }
         static void ValidateQuantity(double quantity,double? load)
@@ -161,7 +212,7 @@ namespace SoloGym
         public bool Recheck(string readiness,bool supervised)
         {
             if(!NeedsReadiness) return false;
-            if(new[]{"pain","injury","ill"}.Contains(readiness)|| (Data.profile=="teen_home_supervised"&&!supervised))
+            if(new[]{"pain","injury","ill"}.Contains(readiness)|| (Teen(Data)&&!supervised))
             { bool stopped=Stop(readiness=="ready"?"supervision":readiness);if(stopped)NeedsReadiness=false;return stopped; }
             bool saved=Change(s=> {Adjust(s,s.difficulty,readiness);s.paused=true;});
             if(saved) NeedsReadiness=false; return saved;

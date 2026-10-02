@@ -86,7 +86,7 @@ namespace SoloGym.UI
         {
             if (Background == null || Label == null) return;
             bool unavailable = !IsInteractable(), pressed = !unavailable && state == SelectionState.Pressed;
-            bool focused = !unavailable && (readerFocus || state == SelectionState.Selected || state == SelectionState.Highlighted);
+            bool focused = !unavailable && (readerFocus || (!PixelTouch.HideFocus && (state == SelectionState.Selected || state == SelectionState.Highlighted)));
             VisualState = unavailable ? "disabled" : pressed ? "pressed" : focused ? "focused" : isOn ? "selected" : "normal";
             Background.sprite = isOn ? selectedSkin : normalSkin;
             Background.color = unavailable ? new Color32(110, 116, 118, 255) : pressed ? new Color32(166, 168, 160, 255) : Color.white;

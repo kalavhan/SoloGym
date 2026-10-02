@@ -146,7 +146,7 @@ namespace SoloGym.UI
             if (background == null || icon == null) return;
             bool disabled = !IsInteractable();
             bool pressed = !disabled && state == SelectionState.Pressed;
-            bool focused = !disabled && (accessibilityFocused || state == SelectionState.Selected || state == SelectionState.Highlighted);
+            bool focused = !disabled && (accessibilityFocused || (!PixelTouch.HideFocus && (state == SelectionState.Selected || state == SelectionState.Highlighted)));
             VisualState = disabled ? "disabled" : pressed ? "pressed" : focused ? "focused" : "normal";
             background.color = disabled ? new Color32(110, 116, 118, 255) : pressed ? new Color32(166, 168, 160, 255) : Color.white;
             icon.color = disabled ? new Color32(132, 138, 138, 255) : Color.white;

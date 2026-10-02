@@ -14,20 +14,29 @@ namespace SoloGym
     /// A trusted service adapter supplies the server-authorized checkpoint after identity,
     /// session and account checks. UI input must never supply this destination.
     /// </summary>
+    /// <summary>A signed-in identity (never credentials or tokens).</summary>
+    public sealed class IdentityUser
+    {
+        public string UserId, Email, DisplayName;
+        public bool EmailVerified;
+    }
+
     public sealed class AuthOutcome
     {
         public AuthStatus Status { get; }
         public string AuthorizedDestination { get; }
         public string Context { get; }
         public int RetryAfterSeconds { get; }
+        public IdentityUser User { get; }
 
         public AuthOutcome(AuthStatus status, string authorizedDestination = null,
-            string context = null, int retryAfterSeconds = 0)
+            string context = null, int retryAfterSeconds = 0, IdentityUser user = null)
         {
             Status = status;
             AuthorizedDestination = authorizedDestination;
             Context = context;
             RetryAfterSeconds = Math.Max(0, retryAfterSeconds);
+            User = user;
         }
     }
 
@@ -59,14 +68,16 @@ namespace SoloGym
         public string Context { get; }
         public bool ReadOnly { get; }
         public bool AuthorizedByBackend { get; }
+        public IdentityUser User { get; }
 
         public WelcomeNavigation(string windowId, string context = null, bool readOnly = false,
-            bool authorizedByBackend = false)
+            bool authorizedByBackend = false, IdentityUser user = null)
         {
             WindowId = windowId;
             Context = context;
             ReadOnly = readOnly;
             AuthorizedByBackend = authorizedByBackend;
+            User = user;
         }
     }
 
@@ -282,7 +293,7 @@ namespace SoloGym
                     }
                     Refresh();
                     NavigationRequested?.Invoke(new WelcomeNavigation(outcome.AuthorizedDestination,
-                        outcome.Context, false, true));
+                        outcome.Context, false, true, outcome.User));
                     return;
                 case AuthStatus.Cancelled:
                     view = WelcomeView.Welcome;

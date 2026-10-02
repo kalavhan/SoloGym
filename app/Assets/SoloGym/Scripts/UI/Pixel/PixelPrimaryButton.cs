@@ -136,7 +136,7 @@ namespace SoloGym.UI
             bool unavailable = !base.IsInteractable();
             bool pressed = !loading && !unavailable && state == SelectionState.Pressed;
             bool focused = !loading && !unavailable &&
-                (state == SelectionState.Selected || state == SelectionState.Highlighted);
+                (!PixelTouch.HideFocus && (state == SelectionState.Selected || state == SelectionState.Highlighted));
             VisualState = loading ? "loading" : unavailable ? "disabled" : state.ToString().ToLowerInvariant();
             background.color = unavailable ? new Color32(119, 130, 130, 255)
                 : loading ? new Color32(151, 185, 182, 255)

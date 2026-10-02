@@ -96,7 +96,7 @@ namespace SoloGym.UI
             if (background == null || label == null) return;
             bool disabled = !base.IsInteractable();
             bool pressed = !disabled && !pending && state == SelectionState.Pressed;
-            bool focused = !disabled && !pending && (state == SelectionState.Selected || state == SelectionState.Highlighted);
+            bool focused = !disabled && !pending && (!PixelTouch.HideFocus && (state == SelectionState.Selected || state == SelectionState.Highlighted));
             VisualState = disabled ? "disabled" : pending ? "pending" : state.ToString().ToLowerInvariant();
             // Text actions acquire the same quiet frame on focus/press; their full hit area is always present.
             background.enabled = appearance == Appearance.Framed || focused || pressed;

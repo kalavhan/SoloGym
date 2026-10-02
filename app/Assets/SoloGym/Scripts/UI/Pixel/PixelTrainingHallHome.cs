@@ -44,7 +44,13 @@ namespace SoloGym.UI
         int editIndex, previousWidth, previousHeight;
         Rect previousSafe;
         bool fastingEnabled, review;
-        public bool FastingEligible => Controller != null && !Controller.Model.IsPrivateProfile && !Has("-sologym-age-unknown");
+        /// <summary>The signed-in person's Home (their profile, journal and private files).</summary>
+        public AccountSession Account { get; private set; }
+        public bool Live => Account != null;
+        public bool FastingEligible => Live ? Account.Profile.IsAdult : Controller != null && !Controller.Model.IsPrivateProfile && !Has("-sologym-age-unknown");
+        JournalEntry liveToday, liveNext;
+        bool liveActive;
+        int liveStreak, liveCompleted;
         string fastingPath;
         float safeInset;
         Font font;
@@ -56,11 +62,13 @@ namespace SoloGym.UI
         {
             Application.targetFrameRate = 60; Screen.orientation = ScreenOrientation.LandscapeLeft;
             SmokeMode = Has("-sologym-smoke"); review = Has("-sologym-review") || Has("-sologym-capture") || Application.isEditor;
+            var session = AccountSession.Current;
+            if (!SmokeMode && !Has("-sologym-capture") && session != null && session.SetupComplete) { Account = session; review = false; }
             float.TryParse(Arg("-sologym-safe-inset", "0"), System.Globalization.NumberStyles.Float,
                 System.Globalization.CultureInfo.InvariantCulture, out safeInset);
             safeInset = Mathf.Clamp(safeInset, 0, 150);
             // Smoke builds use isolated persistence, never the user's optional local records.
-            fastingPath = SmokeMode ? Path.Combine(Application.temporaryCachePath,"fasting-home-smoke-"+Guid.NewGuid().ToString("N")+".json") : PixelFastingWindow.DefaultPath;
+            fastingPath = SmokeMode ? Path.Combine(Application.temporaryCachePath,"fasting-home-smoke-"+Guid.NewGuid().ToString("N")+".json") : Live ? Account.FastingPath : PixelFastingWindow.DefaultPath;
             font = Resources.Load<Font>("Fonts/PixelifySans");
             if (FindFirstObjectByType<Camera>() == null)
             { var cam = new GameObject("Home camera").AddComponent<Camera>(); cam.clearFlags = CameraClearFlags.SolidColor; cam.backgroundColor = new Color32(13,18,27,255); cam.cullingMask = 0; }
@@ -69,6 +77,7 @@ namespace SoloGym.UI
             var canvas = canvasRoot.gameObject.AddComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.pixelPerfect = true;
             canvasRoot.gameObject.AddComponent<GraphicRaycaster>();
             canvasRoot.gameObject.AddComponent<CanvasScaler>().uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
+            PixelJournalUI.CoverBackdrop(canvasRoot, ArtRoot + "architecture", .45f);
             safe = Rect("Safe area", canvasRoot); Composition = Rect("1280 x 720 composition", safe);
             Composition.anchorMin = Composition.anchorMax = Composition.pivot = new Vector2(.5f,.5f); Composition.sizeDelta = new Vector2(1280,720);
             var area = Rect("Room", Composition); Stretch(area);
@@ -88,13 +97,15 @@ namespace SoloGym.UI
             Hero = Rect("Selected Barbarian — exact 256px export", Room.Objects).gameObject.AddComponent<Image>(); Hero.raycastTarget = false;
             hud = Rect("Live Home interface", Composition); Stretch(hud);
             BuildInterface();
-            var seed = review ? new HomeSnapshot { UserName = "Aventurero" } : null;
+            var seed = Live ? new HomeSnapshot { UserName = Account.Profile.PreferredName, IsTeen = Account.Profile.IsTeen, FemalePresentation = Account.Profile.characterId.StartsWith("female") }
+                : review ? new HomeSnapshot { UserName = "Aventurero" } : null;
             Controller = new HomeController(seed); Controller.Changed += Bind; Controller.NavigationRequested += Route;
             Controller.NoticeRequested += Notice; Controller.RetryRequested += RetryNotice;
             Controller.SetLanguage(Arg("-sologym-locale", Controller.Model.LanguagePreference));
             if (Has("-sologym-teen")) Controller.SetTeenProfile(true, false);
-            SelectCharacter(Arg("-sologym-character", PlayerPrefs.GetString(CharacterKey, "male-medium")), false);
-            layoutPath = Has("-sologym-layout-file") ? Arg("-sologym-layout-file") : Path.Combine(Application.persistentDataPath,"training-hall-layout-v1.json");
+            SelectCharacter(Live ? Account.Profile.characterId : Arg("-sologym-character", PlayerPrefs.GetString(CharacterKey, "male-medium")), false);
+            layoutPath = Has("-sologym-layout-file") ? Arg("-sologym-layout-file") : Live ? Account.LayoutPath : Path.Combine(Application.persistentDataPath,"training-hall-layout-v1.json");
+            RefreshLive();
             if (!SmokeMode && !Has("-sologym-capture") && File.Exists(layoutPath))
             { try { ApplyLayout(File.ReadAllText(layoutPath)); } catch (Exception e) { Debug.LogWarning("Hall layout kept at defaults: " + e.Message); } }
             Bind(Controller.Model); Relayout();
@@ -116,7 +127,7 @@ namespace SoloGym.UI
             var card = Frame(controls,"Today's routine",new Rect(963,480,297,180));
             todayTitle=Text(card,new Rect(18,12,260,30),"",25,TextAnchor.MiddleCenter);
             routine=Text(card,new Rect(20,45,258,56),"",20,TextAnchor.MiddleCenter);
-            TrainButton=Action(card,new Rect(18,110,261,58),"",()=>Controller.ActivatePrimary(),27);
+            TrainButton=Action(card,new Rect(18,110,261,58),"",ActivatePrimary,27);
             decorate=Action(controls,new Rect(20,652,166,56),"",BeginDecorate,23);
             Frame(controls,"Navigation dock",new Rect(323,640,631,80));
             Navigation=PixelNavigationBar.Create(controls,new[]{"home","workouts","dungeon","fasting"},new[]{"Hogar","Rutinas","Mazmorra","Ayuno"},new[]{"home","workouts","dungeon"},"home");
@@ -145,6 +156,56 @@ namespace SoloGym.UI
             Navigation.BindVisibleRoutes(fastingEnabled?new[]{"home","workouts","dungeon","fasting"}:new[]{"home","workouts","dungeon"},"home");
             fixture.text=model.FixtureNotice; // Existing data is fictional: do not present it as a live accepted plan.
             settings.gameObject.name=model.SettingsLabel;
+            if(Live) BindLive();
+        }
+        /// <summary>Reads the person's journal: today's routine, an active session, streak and next session.</summary>
+        public void RefreshLive()
+        {
+            if(!Live) return;
+            try
+            {
+                var journal=Account.OpenJournal(DateTime.Today);
+                if(!journal.Loaded){liveToday=liveNext=null;liveActive=false;}
+                else
+                {
+                    liveToday=journal.TodayEntry; liveNext=journal.NextPlanned; liveActive=journal.ActiveSession!=null;
+                    liveStreak=journal.ConsistencyStreak; liveCompleted=journal.CompletedCount;
+                    if(liveToday!=null) todayPlan=journal.Plan(liveToday);
+                    if(liveNext!=null&&liveNext.date!=WorkoutJournal.Date(DateTime.Today)) nextPlan=journal.Plan(liveNext);
+                }
+            }
+            catch(Exception e){Debug.LogWarning("Home journal summary unavailable: "+e.Message);liveToday=liveNext=null;liveActive=false;}
+            if(Controller!=null) Bind(Controller.Model);
+        }
+        TrainingPlan todayPlan,nextPlan;
+        void BindLive()
+        {
+            string Name(JournalEntry e,TrainingPlan p)=>e==null?"":!string.IsNullOrWhiteSpace(e.title)?e.title:p?.name?.Get(language)??"";
+            string today=WorkoutJournal.Date(DateTime.Today);
+            if(liveActive){routine.text=L("Session in progress","Sesión en curso")+"\n"+Name(liveToday,todayPlan);TrainButton.SetLabel(L("RESUME","RETOMAR"));}
+            else if(liveToday!=null&&liveToday.status=="completed"){routine.text=L("Boss defeated today!","¡Jefe derrotado hoy!")+"\n"+NextLine();TrainButton.SetLabel(L("JOURNAL","DIARIO"));}
+            else if(liveToday!=null&&liveToday.status=="stopped"){routine.text=L("Today's work is saved.","El trabajo de hoy está guardado.")+"\n"+NextLine();TrainButton.SetLabel(L("JOURNAL","DIARIO"));}
+            else if(liveToday!=null&&todayPlan!=null)
+            {
+                string detail=todayPlan.status=="draft_ready"?L("About ","Aprox. ")+Mathf.CeilToInt(todayPlan.estimated_seconds/60f)+" min":todayPlan.status=="recovery"?L("Recovery","Recuperación"):L("Needs review","Requiere revisión");
+                routine.text=Name(liveToday,todayPlan)+"\n"+detail;TrainButton.SetLabel(L("TRAIN","ENTRENAR"));
+            }
+            else{routine.text=L("Rest day","Día de descanso")+"\n"+NextLine();TrainButton.SetLabel(L("JOURNAL","DIARIO"));}
+            TrainButton.interactable=true;TrainButton.SetLoading(false,"");
+            fixture.text=L("Streak ","Racha ")+liveStreak+"  ·  "+L("Bosses defeated ","Jefes derrotados ")+liveCompleted;
+            userName.text=Account.Profile.PreferredName;
+        }
+        string NextLine()
+        {
+            if(liveNext==null||liveNext.date==WorkoutJournal.Date(DateTime.Today)) return L("Plan your next routine","Programa tu próxima rutina");
+            var day=WorkoutJournal.ParseDate(liveNext.date);
+            return L("Next: ","Sigue: ")+day.ToString("ddd",System.Globalization.CultureInfo.GetCultureInfo(language))+" · "+(nextPlan?.name?.Get(language)??"");
+        }
+        void ActivatePrimary()
+        {
+            if(!Live){Controller.ActivatePrimary();return;}
+            bool canTrain=liveActive||(liveToday!=null&&liveToday.status=="planned"&&todayPlan!=null);
+            OpenWorkouts(canTrain);
         }
         public bool SelectCharacter(string id,bool persist=true)
         {
@@ -155,7 +216,7 @@ namespace SoloGym.UI
             PixelHomeRoom.Place(Hero.rectTransform,new Vector2(328,288),size*scale,new Vector2(c.feet.x/size.x,c.feet.y/size.y));
             // Crop metadata is applied to a separate portrait sprite; never regenerate the avatar.
             portrait.sprite=Resources.Load<Sprite>(CharacterRoot+id+"-portrait");
-            if(persist&&!SmokeMode) {PlayerPrefs.SetString(CharacterKey,id);PlayerPrefs.Save();}
+            if(persist&&!SmokeMode) {PlayerPrefs.SetString(CharacterKey,id);PlayerPrefs.Save();if(Live)Account.ApplyCharacter(id);}
             return true;
         }
         void Route(HomeNavigation route)
@@ -176,8 +237,8 @@ namespace SoloGym.UI
             {
                 Controller.SetLanguage(journal.Language); journal.gameObject.SetActive(false); Destroy(journal.gameObject);
                 Composition.gameObject.SetActive(true); Screen.orientation = ScreenOrientation.LandscapeLeft; Relayout();
-                Navigation.Tab("home").Select();
-            }, openReadiness: prepare);
+                RefreshLive(); Navigation.Tab("home").Select();
+            }, openReadiness: prepare, account: Account);
             return journal;
         }
         public PixelFastingWindow OpenFasting()
@@ -201,6 +262,7 @@ namespace SoloGym.UI
         }
         public void ShowSettings()
         {
+            if(Live){ShowLiveSettings();return;}
             OpenModal(L("Settings","Ajustes"),560,FastingEligible?528:460);
             Action(Modal,new Rect(28,68,245,56),"Español",()=>{Controller.SetLanguage("es");ShowSettings();});
             Action(Modal,new Rect(286,68,245,56),"English",()=>{Controller.SetLanguage("en");ShowSettings();});
@@ -208,6 +270,57 @@ namespace SoloGym.UI
             for(int i=0;i<appearances.Length;i++) {var c=appearances[i];Action(Modal,new Rect(28+(i%2)*258,178+(i/2)*52,245,46),language=="es"?c.es:c.en,()=>SelectCharacter(c.id),20);}
             if(FastingEligible)Action(Modal,new Rect(28,394,504,52),L("Optional adult fasting","Ayuno opcional para adultos"),()=>OpenFasting(),23);
             Action(Modal,new Rect(165,FastingEligible?460:394,230,52),L("Done","Listo"),CloseModal,24);
+        }
+        void ShowLiveSettings()
+        {
+            float h=FastingEligible?686:626;
+            OpenModal(L("Settings","Ajustes"),560,h);
+            Action(Modal,new Rect(28,62,245,50),"Español",()=>{Controller.SetLanguage("es");ShowSettings();});
+            Action(Modal,new Rect(286,62,245,50),"English",()=>{Controller.SetLanguage("en");ShowSettings();});
+            Text(Modal,new Rect(30,118,500,28),L("Appearance · cosmetic only","Apariencia · solo cosmética"),22,TextAnchor.MiddleCenter);
+            for(int i=0;i<appearances.Length;i++) {var c=appearances[i];Action(Modal,new Rect(28+(i%2)*258,150+(i/2)*48,245,42),language=="es"?c.es:c.en,()=>SelectCharacter(c.id),19);}
+            float y=352;
+            Action(Modal,new Rect(28,y,504,50),L("Edit training plan","Editar plan de entrenamiento"),EditTrainingSetup,22);y+=58;
+            if(FastingEligible){Action(Modal,new Rect(28,y,504,50),L("Optional adult fasting","Ayuno opcional para adultos"),()=>OpenFasting(),22);y+=58;}
+            Action(Modal,new Rect(28,y,245,50),L("Sign out","Cerrar sesión"),SignOut,22);
+            Action(Modal,new Rect(286,y,245,50),L("Done","Listo"),CloseModal,22);y+=58;
+            Action(Modal,new Rect(150,y,260,40),L("Delete account","Eliminar cuenta"),ConfirmDelete,18);y+=46;
+            Text(Modal,new Rect(24,y,512,h-y-8),(Account.Profile.email??"")+"  ·  "+L("Saved on this device","Guardado en este dispositivo"),17,TextAnchor.MiddleCenter);
+        }
+        void EditTrainingSetup()
+        {
+            CloseModal();
+            PixelLoginWindow.OpenSetupEditor(language);
+            gameObject.SetActive(false); Destroy(gameObject);
+        }
+        void ConfirmDelete()
+        {
+            OpenModal(L("Delete account","Eliminar cuenta"),600,330);
+            Text(Modal,new Rect(28,58,544,150),L("This permanently deletes your SoloGym account, plan, workout history and fasting records on this device. This cannot be undone.",
+                "Esto elimina para siempre tu cuenta de SoloGym, tu plan, tu historial y tus registros de ayuno en este dispositivo. No se puede deshacer."),22,TextAnchor.MiddleCenter);
+            Action(Modal,new Rect(28,236,260,58),L("Keep my account","Conservar mi cuenta"),ShowSettings,21);
+            Action(Modal,new Rect(312,236,260,58),L("Delete","Eliminar"),()=>StartCoroutine(DeleteAccount()),21);
+        }
+        System.Collections.IEnumerator DeleteAccount()
+        {
+            OpenModal(L("Delete account","Eliminar cuenta"),560,220);
+            Text(Modal,new Rect(28,70,504,80),L("Deleting…","Eliminando…"),24,TextAnchor.MiddleCenter);
+            var task=FirebaseWelcomeAuthService.Shared.DeleteCurrentUserAsync();
+            while(!task.IsCompleted) yield return null;
+            var result=task.IsFaulted||task.IsCanceled?FirebaseWelcomeAuthService.DeleteResult.Failed:task.Result;
+            if(result==FirebaseWelcomeAuthService.DeleteResult.RequiresRecentLogin){Notice(L("For your security, sign out, sign in again and then delete your account.","Por seguridad, cierra sesión, vuelve a entrar y después elimina tu cuenta."));yield break;}
+            if(result==FirebaseWelcomeAuthService.DeleteResult.Offline){Notice(L("Connect to the internet to delete your account.","Conéctate a internet para eliminar tu cuenta."));yield break;}
+            if(result==FirebaseWelcomeAuthService.DeleteResult.Failed){Notice(L("Your account couldn't be deleted. Try again later.","No se pudo eliminar tu cuenta. Inténtalo más tarde."));yield break;}
+            Account.DeleteLocalData(out var error);
+            if(error!=null) Debug.LogWarning("Local data not fully removed: "+error);
+            SignOut();
+        }
+        public void SignOut()
+        {
+            CloseModal();
+            AccountSession.End();
+            new GameObject("Guild login").AddComponent<PixelLoginWindow>();
+            gameObject.SetActive(false); Destroy(gameObject);
         }
         public void BeginDecorate()
         {
