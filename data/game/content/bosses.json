@@ -117,6 +117,22 @@
     {
       "exercise_id": "pushup",
       "animation": "pushup"
+    },
+    {
+      "exercise_id": "walking_lunge",
+      "animation": "lunge"
+    },
+    {
+      "exercise_id": "sumo_squat",
+      "animation": "squat"
+    },
+    {
+      "exercise_id": "jumping_jack",
+      "animation": "jumpingjack"
+    },
+    {
+      "exercise_id": "high_plank",
+      "animation": "plank"
     }
   ]
 }

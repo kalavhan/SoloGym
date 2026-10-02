@@ -56,6 +56,30 @@
         {"id":"calves","category":"mobility","patterns":["mobility"],"optional":false,"exercise_ids":["standing_calf_stretch"]},
         {"id":"balance","category":"mobility","patterns":["mobility"],"optional":true,"exercise_ids":["supported_tandem_stance"]}
       ]
+    },
+    {
+      "id":"calisthenics_a","name":{"en":"Calisthenics A","es":"Calistenia A"},"kind":"strength",
+      "slots":[
+        {"id":"squat","category":"strength","patterns":["squat"],"optional":false,"exercise_ids":["jump_squat","bodyweight_squat","wall_sit","chair_squat"]},
+        {"id":"single_leg","category":"strength","patterns":["single_leg"],"optional":false,"exercise_ids":["reverse_lunge","walking_lunge","supported_split_squat"]},
+        {"id":"hinge","category":"strength","patterns":["hinge"],"optional":false,"exercise_ids":["single_leg_rdl_bodyweight","good_morning_bodyweight","glute_bridge"]},
+        {"id":"push","category":"strength","patterns":["horizontal_push"],"optional":false,"exercise_ids":["pushup","incline_pushup","knee_pushup","wall_pushup"]},
+        {"id":"pull","category":"strength","patterns":["horizontal_pull"],"optional":true,"exercise_ids":["dumbbell_row","resistance_band_row"]},
+        {"id":"core","category":"strength","patterns":["core"],"optional":false,"exercise_ids":["high_plank","forearm_plank","dead_bug","bird_dog"]},
+        {"id":"conditioning","category":"cardio","patterns":["cardio"],"optional":false,"exercise_ids":["jumping_jack","mountain_climber","high_knees"]}
+      ]
+    },
+    {
+      "id":"calisthenics_b","name":{"en":"Calisthenics B","es":"Calistenia B"},"kind":"strength",
+      "slots":[
+        {"id":"squat","category":"strength","patterns":["squat"],"optional":false,"exercise_ids":["sumo_squat","bodyweight_squat","chair_squat"]},
+        {"id":"single_leg","category":"strength","patterns":["single_leg"],"optional":false,"exercise_ids":["lateral_lunge","curtsy_lunge","walking_lunge","supported_split_squat"]},
+        {"id":"hinge","category":"strength","patterns":["hinge"],"optional":false,"exercise_ids":["superman","good_morning_bodyweight","glute_bridge"]},
+        {"id":"push","category":"strength","patterns":["horizontal_push","vertical_push"],"optional":false,"exercise_ids":["pike_pushup","wide_pushup","diamond_pushup","knee_pushup","incline_pushup","wall_pushup"]},
+        {"id":"pull","category":"strength","patterns":["horizontal_pull"],"optional":true,"exercise_ids":["resistance_band_row","dumbbell_row"]},
+        {"id":"core","category":"strength","patterns":["core"],"optional":false,"exercise_ids":["bicycle_crunch","crunch","reverse_crunch","dead_bug"]},
+        {"id":"conditioning","category":"cardio","patterns":["cardio"],"optional":false,"exercise_ids":["mountain_climber","high_knees","butt_kicks"]}
+      ]
     }
   ]
 }
