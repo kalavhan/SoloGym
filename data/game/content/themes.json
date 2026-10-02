@@ -1,0 +1,7 @@
+{
+  "laziness":  {"start": ["slo", "slug", "lax", "idl", "dro", "mor", "lull", "sluth"], "mid": ["u", "a", "o", "ar"], "end": ["thar", "gorn", "moth", "vex", "zul", "rok", "doth", "mund"]},
+  "excuses":   {"start": ["mayb", "tomor", "lat", "lie", "fib", "pre", "del", "evad"], "mid": ["i", "e", "a", "or"], "end": ["thrix", "zane", "kul", "var", "mor", "lex", "dris", "ton"]},
+  "sleep_in":  {"start": ["snooz", "drow", "yaw", "slum", "dor", "nap", "som", "pill"], "mid": ["a", "u", "o", "el"], "end": ["moth", "bran", "lur", "keth", "dun", "ros", "orm", "wyn"]},
+  "junk_food": {"start": ["gor", "glut", "grim", "crum", "gree", "fat", "bur", "chom"], "mid": ["a", "u", "ro", "ol"], "end": ["gul", "bok", "mash", "grub", "tok", "zog", "mawr", "thul"]},
+  "doubt":     {"start": ["whis", "mur", "hes", "vel", "sha", "fal", "umb", "wan"], "mid": ["i", "e", "ae", "ul"], "end": ["peth", "wraith", "mere", "shade", "wyl", "nox", "veil", "sorn"]}
+}
