@@ -298,8 +298,11 @@ def generate_week(profile, week_start="2026-09-28", data=None):
         elif offset in strength_days:
             if profile["environment"] == "gym" and "leg_press_machine" in profile["equipment"]:
                 template_id = "machine_foundation"
-            else:
+            elif "dumbbells" in profile["equipment"]:
                 template_id = "foundation_a" if strength_index % 2 == 0 else "foundation_b"
+            else:
+                # No weights: a full no-equipment calisthenics week.
+                template_id = "calisthenics_a" if strength_index % 2 == 0 else "calisthenics_b"
             strength_index += 1
         else:
             template_id = "mobility_reset" if len(days) == 5 and offset == 2 else "aerobic_base"

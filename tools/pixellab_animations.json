@@ -1,0 +1,19 @@
+{
+  "note": "Every animation the game uses, by PixelLab character and animation id. Run tools/import_pixellab_animations.py on a computer that can reach PixelLab. Add a line here for each new animation, then run the script again.",
+  "base_url": "https://backblaze.pixellab.ai/file/pixellab-characters/259c2a0d-9764-48af-92b5-4bf8da4127f6",
+  "frames": 9,
+  "animations": [
+    {"target": "Animations/male-medium/squat",       "character": "e0731c62-8758-43c9-b5a7-40c30cfe2653", "animation": "44d75ffa-ea09-43b5-96cb-dccfac0c28c2", "direction": "east",      "label": "Barbarian squat-side-clasped"},
+    {"target": "Animations/male-medium/lunge",       "character": "e0731c62-8758-43c9-b5a7-40c30cfe2653", "animation": "acfb6cc7-31f7-4a3e-85ba-3d862851a24f", "direction": "east",      "label": "Barbarian lunge-side-clasped"},
+    {"target": "Animations/male-medium/jumpingjack", "character": "e0731c62-8758-43c9-b5a7-40c30cfe2653", "animation": "75af9472-d58f-4c11-afc7-0d3e3938ce1a", "direction": "south",     "label": "Barbarian jumping-jack-front"},
+    {"target": "Animations/male-medium/pushup",      "character": "ed6a7323-c361-4667-b869-83727dbbb7cf", "animation": "b7a914b6-9acf-4143-a864-a3bbd54d17d3", "direction": "south-east", "label": "Barbarian push up (facing the boss side)"},
+    {"target": "Animations/slugvex/squat",           "character": "eaa514dc-1dc3-4077-bb7a-e7e0c48a54c9", "animation": "4d540129-e957-42ec-a31e-1e20f88ba018", "direction": "west",      "label": "Slugvex boss-squat-west"},
+    {"target": "Animations/slugvex/lunge",           "character": "eaa514dc-1dc3-4077-bb7a-e7e0c48a54c9", "animation": "b3bc815a-26e3-44b1-9767-8fe6dc5f6d37", "direction": "west",      "label": "Slugvex boss-lunge-west"},
+    {"target": "Animations/slugvex/jumpingjack",     "character": "eaa514dc-1dc3-4077-bb7a-e7e0c48a54c9", "animation": "143f66d1-8833-49b0-9fc8-69e816ac31ba", "direction": "south",     "label": "Slugvex boss-jumping-jack-front"},
+    {"target": "Animations/slugvex/pushup",          "character": "81781a74-5852-4431-8394-96975ca8096c", "animation": "bca678df-099e-4c38-8662-3d01ecef1908", "direction": "west",      "label": "Slugvex boss-pushup-west"},
+    {"target": "Animations/slugvex/plank",           "character": "81781a74-5852-4431-8394-96975ca8096c", "animation": "7478b6c7-0f14-4cb2-9854-41fb065a530c", "direction": "west",      "label": "Slugvex boss-plank-west"}
+  ],
+  "stills": [
+    {"target": "Bosses/slugvex/idle.png", "character": "eaa514dc-1dc3-4077-bb7a-e7e0c48a54c9", "rotation": "west", "label": "Slugvex idle (west rotation)"}
+  ]
+}

@@ -28,7 +28,12 @@ namespace Tests
             var input = new TrainingInput { age = 30, experience = "beginner", goal = "general_fitness", environment = "home", equipment = new[] { "wall", "chair", "stable_surface" }, session_minutes = 25 };
             var plans = new LiveTrainingPlans(engine, input);
             Check(plans.Profiles.Length == engine.Templates.templates.Length, "one profile per template");
-            Check(string.Join(",", engine.WeekTemplates(input, days)) == "foundation_a,aerobic_base,foundation_b", "3-day week: strength/cardio/strength: " + string.Join(",", engine.WeekTemplates(input, days)));
+            Check(string.Join(",", engine.WeekTemplates(input, days)) == "calisthenics_a,aerobic_base,calisthenics_b", "3-day week: no weights means calisthenics: " + string.Join(",", engine.WeekTemplates(input, days)));
+            var weighted = new TrainingInput { age = 30, experience = "beginner", goal = "general_fitness", environment = "home", equipment = new[] { "wall", "chair", "stable_surface", "dumbbells" }, session_minutes = 25 };
+            Check(string.Join(",", engine.WeekTemplates(weighted, days)) == "foundation_a,aerobic_base,foundation_b", "dumbbells keep the weighted foundation week");
+            var noEquip = engine.GenerateSession(input, "calisthenics_a", today);
+            var ids = noEquip.blocks.Select(b => b.exercise_id).ToArray();
+            Check(ids.Contains("bodyweight_squat") && ids.Contains("high_plank") && ids.Contains("jumping_jack"), "calisthenics A beginner: squat, plank, jumping jack: " + string.Join(",", ids));
             var mem = new Memory();
             var j = new WorkoutJournal(plans, mem, LiveTrainingPlans.AccountProfile, today);
             j.DefaultProfile = d => plans.DefaultProfileFor(d, days); j.DefaultMinutes = 25;
@@ -39,7 +44,7 @@ namespace Tests
             Check(!j.EnsureScheduled(plans.Schedule(days, today, today.AddDays(13)), 25, today), "schedule idempotent");
             j.SelectDay(today);
             var e = j.Selected;
-            Check(e != null && e.profile == "u.foundation_a", "today is Foundation A");
+            Check(e != null && e.profile == "u.calisthenics_a", "today is Calisthenics A");
             var plan = j.Plan(e);
             Check(plan.status == "draft_ready" && plan.blocks.Length >= 4 && plan.blocks.Where(b => b.role == "main").Sum(b => b.boss_share) == 1000, "plan ready with 1000 boss shares");
             // edit: swap squat, change type
@@ -192,7 +197,7 @@ namespace Tests
             var content = BossContent.Parse(File.ReadAllText(canonical));
             Check(content.Pick("any-session").id == "slugvex" && content.Pick(null).art_ready, "only bosses with finished art are summoned");
             Check(content.Line(BossContent.LastRepLine, "en").Contains("I can't go anymore") && content.Line(BossContent.WonLine, "es") != "", "boss lines are bilingual data");
-            Check(content.Animation("bodyweight_squat") == "squat" && content.Animation("reverse_lunge") == "lunge" && content.Animation("pushup") == null, "exercise to animation map; push-up has none yet");
+            Check(content.Animation("bodyweight_squat") == "squat" && content.Animation("reverse_lunge") == "lunge" && content.Animation("pushup") == "pushup" && content.Animation("wall_pushup") == null && content.Animation("forearm_plank") == null, "exercise to animation map; only the exact push-up is mapped");
             Console.WriteLine($"live journal tests: {passes} passed, {fails} failed");
             return fails == 0 ? 0 : 1;
         }

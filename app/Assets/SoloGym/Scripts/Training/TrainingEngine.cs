@@ -478,11 +478,14 @@ namespace SoloGym.Training
             else { strength.Add(0); if (focus) { strength.Add(2); strength.Add(4); } else strength.Add(3); }
             int gap = Rules.recovery.strength_calendar_day_gap, last = int.MinValue / 2, strengthIndex = 0;
             bool machines = profile.environment == "gym" && (profile.equipment ?? Array.Empty<string>()).Contains("leg_press_machine");
+            bool weights = (profile.equipment ?? Array.Empty<string>()).Contains("dumbbells");
             for (int i = 0; i < n; i++)
             {
                 if (strength.Contains(i) && days[i] - last >= gap)
                 {
-                    result[i] = machines ? "machine_foundation" : strengthIndex % 2 == 0 ? "foundation_a" : "foundation_b";
+                    result[i] = machines ? "machine_foundation"
+                        : weights ? (strengthIndex % 2 == 0 ? "foundation_a" : "foundation_b")
+                        : strengthIndex % 2 == 0 ? "calisthenics_a" : "calisthenics_b";
                     strengthIndex++; last = days[i];
                 }
                 else result[i] = n == 5 && i == 2 ? "mobility_reset" : "aerobic_base";
