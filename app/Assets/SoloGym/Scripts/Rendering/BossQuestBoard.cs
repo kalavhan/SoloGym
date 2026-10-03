@@ -21,6 +21,8 @@ namespace SoloGym.Rendering
         public int maxRows = 5;
         public Material glowMaterial, fireMaterial;
         public int sortingOrder = -5;
+        [Tooltip("Warm point light that follows the current row and lights the 3D frame.")]
+        public bool rowLight = true;
 
         static readonly Color Done = new Color32(120, 140, 160, 255);
         static readonly Color Pending = new Color32(226, 220, 205, 255);
@@ -67,6 +69,12 @@ namespace SoloGym.Rendering
                 mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off; mr.receiveShadows = false;
             }
             if (fireMaterial != null) fire = Fire(highlight);
+            if (rowLight)
+            {
+                var lamp = new GameObject("Row light").AddComponent<Light>(); lamp.transform.SetParent(highlight, false);
+                lamp.transform.localPosition = new Vector3(0, 0, -0.6f);
+                lamp.type = LightType.Point; lamp.color = new Color(1f, 0.62f, 0.25f); lamp.range = 3.2f; lamp.intensity = 1.8f; lamp.shadows = LightShadows.None;
+            }
         }
 
         ParticleSystem Fire(Transform parent)

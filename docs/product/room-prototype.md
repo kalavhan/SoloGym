@@ -78,3 +78,15 @@ Target: `docs/product/reference/boss_standoff_target.png` (user reference). Curr
   "Other amount" and "Finish all" beside it. Rest swaps the cards for a timer and I'M READY.
 - Edges only: duel plate top left; difficulty, pause and stop top right; "View routine" bottom right.
 - Pause, stop, finish, other amount, readiness recheck, summary, routine and corrections open as one centred card over a dimmed hall.
+
+## 3D props with pixel textures
+
+- `Shaders/PixelTriplanar.shader`: lit (Lambert, shadows) world-space projection along each face's main axis, point
+  filtered, so any scaled primitive keeps the same chunky pixel density (`_TileSize` world units per repeat, 0.8 = 40 px/unit
+  like the walls).
+- Textures: PixelLab `create_tiles_pro` (16 variations, 4 picked: stone, slate, gold, wood) in `Hall/Props/`, archived in
+  `assets/sprites/pixellab/hall-room-r1/textures/`. Materials `PropStone`, `PropSlate`, `PropGold`, `PropWood`.
+- Quest board is now a real 3D frame built from boxes (posts, beams, slate, gold trim, crest), turned 28 degrees towards the
+  fighters; it casts and receives shadows and a warm light follows the current row. Text sits on the slate in perspective.
+- Foreground stone railings at the bottom corners (z -6.6) frame the scene for depth.
+- Rounded or detailed props (statues, plants, weight rack) are the candidates for Blender later.
