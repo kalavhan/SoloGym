@@ -49,7 +49,8 @@ def size(png):
 def jobs(manifest):
     base, n = manifest["base_url"].rstrip("/"), manifest["frames"]
     for a in manifest["animations"]:
-        urls = [f"{base}/{a['character']}/animations/{a['animation']}/{a['direction']}/{i}.png" for i in range(n)]
+        count = a.get("frames", n)
+        urls = [f"{base}/{a['character']}/animations/{a['animation']}/{a['direction']}/{i}.png" for i in range(count)]
         yield a["target"], a["label"], [(f"{i}.png", u) for i, u in enumerate(urls)]
     for s in manifest.get("stills", []):
         yield s["target"], s["label"], [(Path(s["target"]).name, f"{base}/{s['character']}/rotations/{s['rotation']}.png")]

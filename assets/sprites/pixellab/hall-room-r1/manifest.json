@@ -1,0 +1,84 @@
+{
+  "created": "2026-10-03",
+  "purpose": "Room prototype (Octopath-style hall) art, generated with PixelLab MCP at the user's request",
+  "sources": {
+    "portal_arch.png": {
+      "tool": "create_image_pixflux",
+      "job": "1dc5f42e-1606-41fe-86fd-1fef566c41e0",
+      "size": "224x320",
+      "post": "grey background removed by edge flood fill"
+    },
+    "banner_red.png": {
+      "tool": "create_image_pixflux",
+      "job": "286b5b95-6034-4287-9c06-3013d260c8c2",
+      "size": "96x256"
+    },
+    "banner_navy.png": {
+      "tool": "create_image_pixflux",
+      "job": "55fcbcd0-c567-4750-8857-29d3ab339ac0",
+      "size": "64x192"
+    },
+    "brazier.png": {
+      "tool": "create_image_pixflux",
+      "job": "5261480b-bdcc-4928-b697-363748a6c8ad",
+      "size": "96x160"
+    },
+    "pilaster.png": {
+      "tool": "create_image_pixflux",
+      "job": "b3de2ece-2d4a-4b80-9b14-81980c0e4288",
+      "size": "80x320"
+    },
+    "rug.png": {
+      "tool": "create_image_pixflux",
+      "job": "8023be57-2426-4417-a6cc-b1b8ab5b060c",
+      "size": "256x144",
+      "post": "transparent centre filled with a red weave"
+    },
+    "brazier_anim/": {
+      "tool": "animate_image",
+      "job": "abe76120-cff2-4d5d-92b7-824542fc95ca",
+      "frames": 8,
+      "note": "generated frames 1-8 (frame 0 is the input)"
+    },
+    "barbarian_idle_east/": {
+      "tool": "animate_character template breathing-idle",
+      "character": "e0731c62-8758-43c9-b5a7-40c30cfe2653",
+      "animation": "ebb07ae4-cec2-4888-b90d-6bb777dfe8fe",
+      "frames": 4
+    }
+  },
+  "sha256": {
+    "banner_navy.png": "183baaa0b31a5a0794b6359fa1b8f7a6e5d75ed4de8a5d04a711283b88fb1af1",
+    "banner_red.png": "d5d29576530ad6c286fc6bad059a20e5e7f9aea873c5dccae0207579ff19d6e5",
+    "barbarian_idle_east/0.png": "fbddfbbd827b6ad94851891fdea327f625b8e2fce75320591ef95959fa03539c",
+    "barbarian_idle_east/1.png": "c735ac426a9fa7a4b316233982e26da8680b2cd407f46587c96a09065ed07ef5",
+    "barbarian_idle_east/2.png": "369754ffd310798af53e117e0efcd55b6964f2130915f94d1693bf73e0c7ac17",
+    "barbarian_idle_east/3.png": "1e46b765a315d9ad22ce566f1eabaed0dda658e7c44606211c4b100190be76d3",
+    "brazier.png": "0dce77d4bfecd65dbff61acc78d8b7229434481628dae9828d7a180ba1629c6a",
+    "brazier_anim/0.png": "27b6f7c0689d224ef2e9f15482c5481ef6a8d10f5aacc478e7859c50e9372b6a",
+    "brazier_anim/1.png": "ab990cd3b28c7641a454ea7acde2c3a4900c0125c159f15257b6b5894a7c5997",
+    "brazier_anim/2.png": "d1c51daaabbabc18939013d04529cf817c4268d3ba77c8ed649874c69d058a10",
+    "brazier_anim/3.png": "c1ed1737a12203b06446ba032bad1c666c8c5bbba4a2de2189eec1c137ebcbe8",
+    "brazier_anim/4.png": "13a2b39e4982fe3c5b7230018c83cfdfc9cdb28dfce142d8a9fe0ef1f4d4cea0",
+    "brazier_anim/5.png": "e8e5052673b477045849308c8983b66e4210fa457eafe4a2e6cf49bf5cae36ca",
+    "brazier_anim/6.png": "01b574a3f28fa22cfdeddc8bc7149c3cfa1927b12ee1da45a237c774fc6c156e",
+    "brazier_anim/7.png": "2f2cf5a255739728ae5e9635d639800677464b773ce99a15c57416bf2a7a24a7",
+    "pilaster.png": "044742e04c7a3297d9463de8b9fd8fb938c81eb45639b9e0fce74c42399e9e2d",
+    "portal_arch.png": "442911483bdcc52ce53aa05324fe05e755ba32ed8bd2d4b16631ffedc3180884",
+    "rug.png": "15fa67ab12ecf96ef921f0cb8bf55035faf53587718b3ca0ea88e4755e913183"
+  },
+  "rejected": [
+    {
+      "what": "red banner sway (animate_image a41123e2-bbdc-4343-917f-0d5f80e4dd59)",
+      "why": "cloth fill vanished in several frames; banners sway with SwayRotation instead"
+    },
+    {
+      "what": "navy banner sway (animate_image 37587c32-715e-4b5c-8d87-0b1a2248ba8c)",
+      "why": "not used for the same reason"
+    },
+    {
+      "what": "Slugvex breathing-idle west (template, group b8a39c40-9c9a-44f8-a4e9-303b26ae1b70)",
+      "why": "humanoid template turned him into a hooded bent figure; BreathingBob used instead"
+    }
+  ]
+}

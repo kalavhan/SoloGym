@@ -2,7 +2,7 @@
 
 Scene: `app/Assets/SoloGym/Scenes/Prototypes/RoomOctopath.unity`
 Target look: `docs/product/reference/room_hall_target.png`
-Current render: `docs/product/reference/room_hall_pixel.png`
+Current render: `docs/product/reference/room_hall_alive.png`
 
 Approach (HD-2D): a real 3D room (floor, walls, pillars, torch lights) seen by a fixed,
 tilted, narrow-FOV perspective camera. Characters stay 2D sprites, upright, facing the camera,
@@ -18,8 +18,8 @@ with a flat blob shadow under their feet.
 Hades-style camera for the future game: same idea with a steeper pitch (about 50-60 degrees),
 wider room and a follow target; not built yet.
 
-Note: the scene references the actor sprites by GUID. The animation frame `.meta` files are not
-committed, so after a fresh clone reassign the two sprites (Barbarian squat frame 0, Slugvex idle).
+Note: the actor sprite .meta files the scene uses (Barbarian idle frames, Slugvex idle) are committed, so a fresh
+clone opens the scene with both fighters in place.
 
 ## Hall art (pixel style)
 
@@ -32,3 +32,16 @@ so the hall reads a little chunkier than the characters (like the target image).
 - `floor_streak` plus the `Streak*` additive materials fake the polished-floor reflections under the portal,
   braziers and pilasters.
 - Sorting order: wall pieces -10, reflections -8, braziers -6, rug -5, shadows 1, actors 5.
+
+## Life in the room
+
+- Camera is closer (`fitWidth` 20, focus y 3.6) and the fighters stand further forward (z -3 / -2) so they read bigger
+  while the portal stays in frame. Wall pieces sit at z 5.45, in front of the stone ledge, so their bases touch the floor.
+- `SpriteFlipbook`: brazier flames (PixelLab `animate_image`, 8 frames, 10 fps) and the Barbarian breathing idle
+  (PixelLab template, 4 frames, 5 fps, in `Resources/Game/Animations/male-medium/idle`, listed in `tools/pixellab_animations.json`).
+- `BreathingBob`: subtle squash and stretch for Slugvex (the PixelLab humanoid idle template distorted him).
+- `SwayRotation`: banners swing from a pivot at their rod (PixelLab's banner animation lost the cloth fill).
+- `LightFlicker`: torch and portal lights.
+- Particle systems (needs `com.unity.modules.particlesystem`): brazier embers, portal sparkles, floating dust,
+  all using a 4x4 white pixel with an additive material.
+- Source art and provenance: `assets/sprites/pixellab/hall-room-r1/manifest.json`.
