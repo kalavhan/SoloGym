@@ -77,6 +77,8 @@ The approved PixelLab frames could not be downloaded from the build environment.
 | `Animations/male-medium/lunge/` | male-medium Barbarian, `lunge-side-clasped` |
 | `Animations/slugvex/squat/` | Slugvex, `boss-squat-west` |
 | `Animations/slugvex/lunge/` | Slugvex, `boss-lunge-west` |
+| `Animations/male-medium/pushup/` | male-medium Barbarian, your push-up animation |
+| `Animations/slugvex/pushup/` | Slugvex, `boss-pushup-west` |
 | `Bosses/slugvex/idle.png` | Slugvex, west rotation (or south) |
 
-Until the files exist the screen falls back to the static Barbarian and the old guardian image as a stand-in, so nothing breaks. The jumping-jack animations are approved but no jumping-jack exercise exists in the training data yet, so they are not mapped.
+Until the files exist the screen falls back to the static Barbarian and the old guardian image as a stand-in, so nothing breaks. The jumping-jack animations are approved but no jumping-jack exercise exists in the training data yet, so they are not mapped. The plank hold (Slugvex `boss-plank-west`) is approved too but not mapped: the training data only has the forearm plank, and the animation shows a high plank. Only the exact `pushup` exercise uses the push-up animation; wall, incline and knee variants have none.

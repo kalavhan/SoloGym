@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Boss content is data. Edit names, lines and animation keys here; keep Resources/Game/Bosses.json identical (tests/csharp checks it). Lines are drafts and can change freely. The jumping jack animation exists but no jumping-jack exercise is in the training data yet; add a mapping when one is.",
+  "note": "Boss content is data. Edit names, lines and animation keys here; keep Resources/Game/Bosses.json identical (tests/csharp checks it). Lines are drafts and can change freely. The jumping jack animation exists but no jumping-jack exercise is in the training data yet; add a mapping when one is. Push-up variants (wall, incline, knee) and the forearm plank are not mapped because the animations show the full push-up and the high plank.",
   "bosses": [
     {
       "id": "slugvex",
@@ -113,6 +113,10 @@
     {
       "exercise_id": "supported_split_squat",
       "animation": "lunge"
+    },
+    {
+      "exercise_id": "pushup",
+      "animation": "pushup"
     }
   ]
 }
