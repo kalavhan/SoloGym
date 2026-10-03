@@ -12,6 +12,7 @@ Shader "SoloGym/PixelSpriteLit"
         _Color ("Tint", Color) = (1,1,1,1)
         _Steps ("Light steps (0 = smooth)", Range(0,8)) = 4
         _Wrap ("Light wrap", Range(0,1)) = 0.5
+        _Gain ("Light gain (tames strong torch light on skin)", Range(0,2)) = 1
         _Rim ("Back-light rim strength", Range(0,4)) = 0
         _EmitThreshold ("Self-lit above brightness", Range(0,1.1)) = 1.1
         [HideInInspector] _RendererColor ("RendererColor", Color) = (1,1,1,1)
@@ -34,7 +35,7 @@ Shader "SoloGym/PixelSpriteLit"
         #include "UnitySprites.cginc"
 
         float4 _MainTex_TexelSize;
-        float _Steps, _Wrap, _Rim, _EmitThreshold;
+        float _Steps, _Wrap, _Rim, _EmitThreshold, _Gain;
 
         struct Input
         {
@@ -57,7 +58,7 @@ Shader "SoloGym/PixelSpriteLit"
             half l = front * atten;
             if (_Steps >= 1) l = floor(l * _Steps + 0.5) / _Steps;
             half4 c;
-            c.rgb = s.Albedo * _LightColor0.rgb * l;
+            c.rgb = s.Albedo * _LightColor0.rgb * l * _Gain;
             // Rim: light coming from behind (away from the camera) on edge pixels only.
             half3 toCam = normalize(UNITY_MATRIX_V[2].xyz);
             half back = saturate(-dot(lightDir, toCam)) * atten;

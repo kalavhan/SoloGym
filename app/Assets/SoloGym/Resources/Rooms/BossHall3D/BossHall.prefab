@@ -11173,7 +11173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988dd061c2e22b131bee02e1ad7b96f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoloGym.Rendering.RoomCameraRig
-  focus: {x: 0.6, y: 2.3, z: 0}
+  focus: {x: 0.6, y: 1.5, z: 0}
   pitch: 33
   yaw: 0
   fieldOfView: 40
@@ -16781,7 +16781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4510473537018626467
 Transform:
   m_ObjectHideFlags: 0
@@ -19443,7 +19443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7704905843069268380
 Transform:
   m_ObjectHideFlags: 0
@@ -34900,7 +34900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5155298973059338680
 Transform:
   m_ObjectHideFlags: 0
@@ -41586,7 +41586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6651947995724641411
 Transform:
   m_ObjectHideFlags: 0

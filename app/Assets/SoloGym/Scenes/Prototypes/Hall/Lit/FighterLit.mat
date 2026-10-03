@@ -35,6 +35,7 @@ Material:
     m_Floats:
     - _EmitThreshold: 1.1
     - _EnableExternalAlpha: 0
+    - _Gain: 1
     - _Rim: 0.9
     - _Steps: 5
     - _Wrap: 0.7

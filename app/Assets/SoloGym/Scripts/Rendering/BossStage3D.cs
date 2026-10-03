@@ -62,6 +62,18 @@ namespace SoloGym.Rendering
             boss.target = bossSprite; boss.footPixels = bossFootPixels;
         }
 
+        /// <summary>Screen position (pixels) just above the boss's head, or null when there is no camera.</summary>
+        public Vector2? BossHeadScreen()
+        {
+            var cam = GetComponentInChildren<Camera>(true);
+            if (cam == null || boss.target == null || boss.target.sprite == null) return null;
+            var b = boss.target.bounds;
+            var top = new Vector3(b.center.x, b.max.y, b.center.z);
+            // The head sits a little below the sprite's top edge only in canvas margin; the art starts at the bounds top.
+            var sp = cam.WorldToScreenPoint(top);
+            return sp.z <= 0f ? (Vector2?)null : new Vector2(sp.x, sp.y);
+        }
+
         /// <summary>Resting pose: an idle loop when there is one, otherwise a still frame.</summary>
         public void SetHero(Sprite still, Sprite[] idle) => SetRest(hero, still, idle);
         public void SetBoss(Sprite still, Sprite[] idle) => SetRest(boss, still, idle);

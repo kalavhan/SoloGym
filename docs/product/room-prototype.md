@@ -112,3 +112,16 @@ Target: `docs/product/reference/boss_standoff_target.png`. Current: `docs/produc
   flat sprites (banners, portal, rug, fighters) which used to ignore lights; fighters get a thin back-light rim.
 - `CameraVignette`: coarse banded corner darkening as one transparent quad.
 - Camera: pitch 33, FOV 40, fit width 21, focus raised to see more floor and wall; quest board scaled to 0.85 at (7.7, 0, -0.4).
+
+## Boss screen over the lit hall (checked in play mode)
+
+Renders: `docs/product/reference/boss_standoff_lit_{warmup,rest,final,paused,overview}.png`.
+
+- The speech bubble now follows Slugvex: `BossStage3D.BossHeadScreen()` projects his head to the screen and `PixelBossWindow` centres the
+  bubble over it, clamped to the composition.
+- The opaque Home backdrop of the workout canvas is hidden while the dungeon window is open (and restored on exit); it used to
+  paint over the 3D hall in the real app (the offscreen captures had hidden it).
+- Rest card widened so the timer is not clipped; long exercise names and doses shrink to fit the VS card.
+- `PixelSpriteLit` has `_Gain` (fighters 0.7) so the strong torch light no longer turns Slugvex beige.
+- Camera focus lowered (y 1.5) so both fighters' feet clear the VS cards; the extra front brazier was switched off because it sat under
+  the "View routine" button.
