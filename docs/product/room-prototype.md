@@ -36,7 +36,7 @@ so the hall reads a little chunkier than the characters (like the target image).
 ## Life in the room
 
 - Camera is closer (`fitWidth` 20, focus y 3.6) and the fighters stand further forward (z -3 / -2) so they read bigger
-  while the portal stays in frame. Wall pieces sit at z 5.45, in front of the stone ledge, so their bases touch the floor.
+  while the portal stays in frame.
 - `SpriteFlipbook`: brazier flames (PixelLab `animate_image`, 8 frames, 10 fps) and the Barbarian breathing idle
   (PixelLab template, 4 frames, 5 fps, in `Resources/Game/Animations/male-medium/idle`, listed in `tools/pixellab_animations.json`).
 - `BreathingBob`: subtle squash and stretch for Slugvex (the PixelLab humanoid idle template distorted him).
@@ -46,6 +46,8 @@ so the hall reads a little chunkier than the characters (like the target image).
   all using a 4x4 white pixel with an additive material.
 - Source art and provenance: `assets/sprites/pixellab/hall-room-r1/manifest.json`.
 - Grounding: PixelLab canvases have transparent margins under the art (portal 13 px, pilaster 9 px, brazier 7 px), so each
-  wall piece is lowered by margin / 40 ppu x scale. `contact_shadow` bands sit at the base of the portal, pilasters and braziers.
+  wall piece is lowered by margin / 40 ppu x scale. Portal and pilasters stand flush against the wall (z 5.97, the stone
+  ledge is disabled) so their bases meet the wall-floor seam like the target image; only the free-standing braziers get a
+  `contact_shadow`, centred under the base and drawn beneath it so no gap shows.
 - Braziers stand forward at z 2.2; each torch light sits just in front of its flame with an additive `glow_halo` quad.
 - Dust only floats in a band behind the fighters (z about 2.7 to 5.3) so nothing drifts across the characters.
