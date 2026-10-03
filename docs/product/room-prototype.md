@@ -99,3 +99,16 @@ Target: `docs/product/reference/boss_standoff_target.png` (user reference). Curr
   512 px, point-filtered, palette-reduced copy of the base colour (`BaseColor_pixel.png`).
 - The model replaces the box frame under `QuestBoard/Model`; it sits so the slate surface is just behind the world-space text.
   Slate rect (-1.35, 1.3, 2.7, 4.15) local, 4 rows.
+
+## Light and camera pass (review)
+
+Target: `docs/product/reference/boss_standoff_target.png`. Current: `docs/product/reference/boss_hall_lit.png`.
+
+- Textures: wall and floor repainted in neutral warm stone (`tools/generate_hall_textures.py`); floor is 2x2 polished slabs per 3.2 unit repeat.
+  Colour now comes from the lights, not the textures.
+- Ambient is dark and neutral; warm flickering torch lights on every brazier (two new ones flank the portal, one on the front right),
+  a cool portal light spilling blue onto the steps and floor.
+- `PixelTriplanar` lights in hard bands (`_Steps`), so torch pools read as pixel-art shading. `PixelSpriteLit` does the same for the
+  flat sprites (banners, portal, rug, fighters) which used to ignore lights; fighters get a thin back-light rim.
+- `CameraVignette`: coarse banded corner darkening as one transparent quad.
+- Camera: pitch 33, FOV 40, fit width 21, focus raised to see more floor and wall; quest board scaled to 0.85 at (7.7, 0, -0.4).
