@@ -45,3 +45,7 @@ so the hall reads a little chunkier than the characters (like the target image).
 - Particle systems (needs `com.unity.modules.particlesystem`): brazier embers, portal sparkles, floating dust,
   all using a 4x4 white pixel with an additive material.
 - Source art and provenance: `assets/sprites/pixellab/hall-room-r1/manifest.json`.
+- Grounding: PixelLab canvases have transparent margins under the art (portal 13 px, pilaster 9 px, brazier 7 px), so each
+  wall piece is lowered by margin / 40 ppu x scale. `contact_shadow` bands sit at the base of the portal, pilasters and braziers.
+- Braziers stand forward at z 2.2; each torch light sits just in front of its flame with an additive `glow_halo` quad.
+- Dust only floats in a band behind the fighters (z about 2.7 to 5.3) so nothing drifts across the characters.
