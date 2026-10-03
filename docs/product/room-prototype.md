@@ -1,7 +1,8 @@
 # Room prototype (Octopath-style camera)
 
 Scene: `app/Assets/SoloGym/Scenes/Prototypes/RoomOctopath.unity`
-Reference render: `docs/product/reference/room_octopath_landscape.png`
+Target look: `docs/product/reference/room_hall_target.png`
+Current render: `docs/product/reference/room_hall_pixel.png`
 
 Approach (HD-2D): a real 3D room (floor, walls, pillars, torch lights) seen by a fixed,
 tilted, narrow-FOV perspective camera. Characters stay 2D sprites, upright, facing the camera,
@@ -19,3 +20,15 @@ wider room and a follow target; not built yet.
 
 Note: the scene references the actor sprites by GUID. The animation frame `.meta` files are not
 committed, so after a fresh clone reassign the two sprites (Barbarian squat frame 0, Slugvex idle).
+
+## Hall art (pixel style)
+
+Art lives in `Scenes/Prototypes/Hall/`. Sprites import at 40 px per unit, point filter, bottom-centre pivot,
+so the hall reads a little chunkier than the characters (like the target image).
+
+- PixelLab (create_image_pixflux, transparent): `portal_arch`, `banner_red`, `banner_navy`, `brazier`, `pilaster`, `rug`.
+  The rug's empty centre was filled red and the portal's grey background removed after download.
+- Drawn by `tools/generate_hall_textures.py`: `wall_brick` and `floor_slab` (tiling, gold diamond inlays).
+- `floor_streak` plus the `Streak*` additive materials fake the polished-floor reflections under the portal,
+  braziers and pilasters.
+- Sorting order: wall pieces -10, reflections -8, braziers -6, rug -5, shadows 1, actors 5.
