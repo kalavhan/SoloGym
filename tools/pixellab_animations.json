@@ -3,6 +3,7 @@
   "base_url": "https://backblaze.pixellab.ai/file/pixellab-characters/259c2a0d-9764-48af-92b5-4bf8da4127f6",
   "frames": 9,
   "animations": [
+    {"target": "Animations/male-medium/idle",        "character": "e0731c62-8758-43c9-b5a7-40c30cfe2653", "animation": "ebb07ae4-cec2-4888-b90d-6bb777dfe8fe", "direction": "east",      "label": "Barbarian breathing-idle", "frames": 4},
     {"target": "Animations/male-medium/squat",       "character": "e0731c62-8758-43c9-b5a7-40c30cfe2653", "animation": "44d75ffa-ea09-43b5-96cb-dccfac0c28c2", "direction": "east",      "label": "Barbarian squat-side-clasped"},
     {"target": "Animations/male-medium/lunge",       "character": "e0731c62-8758-43c9-b5a7-40c30cfe2653", "animation": "acfb6cc7-31f7-4a3e-85ba-3d862851a24f", "direction": "east",      "label": "Barbarian lunge-side-clasped"},
     {"target": "Animations/male-medium/jumpingjack", "character": "e0731c62-8758-43c9-b5a7-40c30cfe2653", "animation": "75af9472-d58f-4c11-afc7-0d3e3938ce1a", "direction": "south",     "label": "Barbarian jumping-jack-front"},
