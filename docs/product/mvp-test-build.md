@@ -71,6 +71,8 @@ The routine screen is now the summoning stand-off, replacing the old stone-guard
 
 The approved PixelLab frames could not be downloaded from the build environment. Download the spritesheets or frame PNGs from PixelLab and place them like this (frames named `0.png` ... `8.png`; the importer in `Editor/PixelGameSpriteImporter.cs` sets them up as crisp sprites):
 
+To fill every folder below in one go, run `python3 tools/import_pixellab_animations.py` on a computer that can reach PixelLab (needs only Python 3). It reads `tools/pixellab_animations.json`, downloads frames `0.png`..`8.png` into the right folders and skips files that already exist (`--force` re-downloads, `--only slugvex` limits it, `--dry-run` lists the URLs). New animation: add a line to the manifest and run it again. The Barbarian push-up uses the south-east direction (facing the boss); change `direction` in the manifest if you prefer another.
+
 | Folder under `app/Assets/SoloGym/Resources/Game/` | Source animation (PixelLab) |
 |---|---|
 | `Animations/male-medium/squat/` | male-medium Barbarian, `squat-side-clasped` |
