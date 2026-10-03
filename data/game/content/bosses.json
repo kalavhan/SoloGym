@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "note": "Boss content is data. Edit names, lines and animation keys here; keep Resources/Game/Bosses.json identical (tests/csharp checks it). Lines are drafts and can change freely. The jumping jack animation exists but no jumping-jack exercise is in the training data yet; add a mapping when one is. Push-up variants (wall, incline, knee) and the forearm plank are not mapped because the animations show the full push-up and the high plank.",
+  "note": "Boss content is data. Edit names, lines and animation keys here; keep Resources/Game/Bosses.json identical (tests/csharp checks it). Lines are drafts and can change freely. The jumping jack animation exists but no jumping-jack exercise is in the training data yet; add a mapping when one is. Push-up variants (wall, incline, knee) and the forearm plank are not mapped because the animations show the full push-up and the high plank. mockery: the boss's lazy version of each exercise in the VS card, by animation key; '*' is the fallback. {dose} and {exercise} are filled in by the game.",
   "bosses": [
     {
       "id": "slugvex",
@@ -133,6 +133,50 @@
     {
       "exercise_id": "high_plank",
       "animation": "plank"
+    }
+  ],
+  "mockery": [
+    {
+      "animation": "squat",
+      "text": {
+        "en": "{dose} almost squats",
+        "es": "{dose} casi sentadillas"
+      }
+    },
+    {
+      "animation": "lunge",
+      "text": {
+        "en": "{dose} lunges that tripped",
+        "es": "{dose} zancadas con tropiezo"
+      }
+    },
+    {
+      "animation": "jumpingjack",
+      "text": {
+        "en": "{dose} jacks that forgot to jump",
+        "es": "{dose} jacks que olvidaron saltar"
+      }
+    },
+    {
+      "animation": "pushup",
+      "text": {
+        "en": "{dose} almost push-ups",
+        "es": "{dose} casi flexiones"
+      }
+    },
+    {
+      "animation": "plank",
+      "text": {
+        "en": "{dose} plank, mostly napping",
+        "es": "{dose} de plancha, casi dormido"
+      }
+    },
+    {
+      "animation": "*",
+      "text": {
+        "en": "{dose} almost {exercise}",
+        "es": "{dose} casi {exercise}"
+      }
     }
   ]
 }

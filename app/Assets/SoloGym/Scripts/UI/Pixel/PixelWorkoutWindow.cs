@@ -24,6 +24,7 @@ namespace SoloGym.UI
         public bool HasModal => modal != null;
         public Action Exited;
         public PixelBossWindow BossWindow { get; private set; }
+        Image backdrop; // opaque overlay art: hidden while the 3D boss hall renders behind the boss window
         RectTransform canvasRoot, safe, page, modal;
         CanvasGroup pageGate;
         GameObject beforeModal;
@@ -62,7 +63,7 @@ namespace SoloGym.UI
             canvasRoot.gameObject.AddComponent<GraphicRaycaster>(); canvasRoot.gameObject.AddComponent<CanvasScaler>().uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
             safe = Rect("Safe area", canvasRoot, new Rect()); Composition = Rect("1280x720 workout composition", safe, new Rect(0, 0, 1280, 720));
             Composition.anchorMin = Composition.anchorMax = Composition.pivot = new Vector2(.5f, .5f); Composition.anchoredPosition = Vector2.zero;
-            CoverBackdrop(canvasRoot, ArtRoot + "background");
+            backdrop = CoverBackdrop(canvasRoot, ArtRoot + "background");
             Render(); Relayout(); StartCoroutine(Reload());
         }
         IEnumerator Start()
@@ -340,11 +341,11 @@ namespace SoloGym.UI
                 {
                     Journal.SaveBoss(BossController.Create(Journal));
                 }
-                Journal.ClearGate(); Composition.gameObject.SetActive(false);
+                Journal.ClearGate(); Composition.gameObject.SetActive(false); if (backdrop != null) backdrop.gameObject.SetActive(false);
                 BossWindow = new GameObject("Routine dungeon").AddComponent<PixelBossWindow>();
                 BossWindow.Initialize(Journal, Language, character, () => {
                     var old = BossWindow; BossWindow = null; old.gameObject.SetActive(false); Destroy(old.gameObject);
-                    Composition.gameObject.SetActive(true); View = "hub";
+                    Composition.gameObject.SetActive(true); if (backdrop != null) backdrop.gameObject.SetActive(true); View = "hub";
                     if (Live) { Exited?.Invoke(); return; } // straight back to the training hall
                     Render();
                 }, restored);

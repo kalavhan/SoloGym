@@ -198,6 +198,8 @@ namespace Tests
             Check(content.Pick("any-session").id == "slugvex" && content.Pick(null).art_ready, "only bosses with finished art are summoned");
             Check(content.Line(BossContent.LastRepLine, "en").Contains("I can't go anymore") && content.Line(BossContent.WonLine, "es") != "", "boss lines are bilingual data");
             Check(content.Animation("bodyweight_squat") == "squat" && content.Animation("reverse_lunge") == "lunge" && content.Animation("pushup") == "pushup" && content.Animation("wall_pushup") == null && content.Animation("forearm_plank") == null, "exercise to animation map; only the exact push-up is mapped");
+            Check(content.Mockery("jumping_jack", "3x10", "Jumping jack", "en") == "3x10 jacks that forgot to jump" && content.Mockery("pushup", "3x10", "Push-up", "es") == "3x10 casi flexiones", "boss mockery by animation key");
+            Check(content.Mockery("wall_pushup", "2x8", "Wall push-up", "en") == "2x8 almost wall push-up", "boss mockery falls back to the generic line");
             Console.WriteLine($"live journal tests: {passes} passed, {fails} failed");
             return fails == 0 ? 0 : 1;
         }

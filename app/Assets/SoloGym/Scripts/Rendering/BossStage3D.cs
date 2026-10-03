@@ -20,6 +20,10 @@ namespace SoloGym.Rendering
         public float canvasHeight = 3.4f, canvasPixels = 256f;
         public float framesPerSecond = 8f, idleFramesPerSecond = 5f;
 
+        [Header("Room props")]
+        [Tooltip("Stone board on the right that lists today's exercises.")]
+        public BossQuestBoard board;
+
         [Header("Room lighting (applied while the stage is shown)")]
         public Color ambientLight = new Color(0.50f, 0.54f, 0.78f);
         public bool fog = true;
@@ -56,6 +60,18 @@ namespace SoloGym.Rendering
         {
             hero.target = heroSprite; hero.footPixels = heroFootPixels;
             boss.target = bossSprite; boss.footPixels = bossFootPixels;
+        }
+
+        /// <summary>Screen position (pixels) just above the boss's head, or null when there is no camera.</summary>
+        public Vector2? BossHeadScreen()
+        {
+            var cam = GetComponentInChildren<Camera>(true);
+            if (cam == null || boss.target == null || boss.target.sprite == null) return null;
+            var b = boss.target.bounds;
+            var top = new Vector3(b.center.x, b.max.y, b.center.z);
+            // The head sits a little below the sprite's top edge only in canvas margin; the art starts at the bounds top.
+            var sp = cam.WorldToScreenPoint(top);
+            return sp.z <= 0f ? (Vector2?)null : new Vector2(sp.x, sp.y);
         }
 
         /// <summary>Resting pose: an idle loop when there is one, otherwise a still frame.</summary>

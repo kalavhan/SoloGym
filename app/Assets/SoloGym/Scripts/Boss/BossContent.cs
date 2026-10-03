@@ -7,7 +7,8 @@ namespace SoloGym
     [Serializable] public sealed class BossEntry { public string id; public bool art_ready; public TrainingText name, stands_for; }
     [Serializable] public sealed class BossLine { public string key; public TrainingText text; }
     [Serializable] public sealed class BossAnimationMap { public string exercise_id, animation; }
-    [Serializable] public sealed class BossContentData { public int version; public BossEntry[] bosses; public BossLine[] lines; public BossAnimationMap[] animations; }
+    [Serializable] public sealed class BossMockery { public string animation; public TrainingText text; }
+    [Serializable] public sealed class BossContentData { public int version; public BossEntry[] bosses; public BossLine[] lines; public BossAnimationMap[] animations; public BossMockery[] mockery; }
 
     /// <summary>Boss names, lines and exercise-to-animation keys. All of it lives in data/game/content/bosses.json.</summary>
     public sealed class BossContent
@@ -42,6 +43,15 @@ namespace SoloGym
         }
         public BossEntry Find(string id) => data.bosses.FirstOrDefault(b => b.id == id);
         public string Line(string key, string language) => data.lines.FirstOrDefault(l => l.key == key)?.text.Get(language) ?? "";
+        /// <summary>The boss's lazy take on the current exercise for the VS card, e.g. "3x10 jacks that forgot to jump".</summary>
+        public string Mockery(string exerciseId, string dose, string exerciseName, string language)
+        {
+            if (data.mockery == null || data.mockery.Length == 0) return "";
+            string key = Animation(exerciseId);
+            var entry = data.mockery.FirstOrDefault(m => key != null && m.animation == key) ?? data.mockery.FirstOrDefault(m => m.animation == "*");
+            string name = string.IsNullOrEmpty(exerciseName) ? "" : char.ToLowerInvariant(exerciseName[0]) + exerciseName.Substring(1);
+            return entry?.text == null ? "" : entry.text.Get(language).Replace("{dose}", dose ?? "").Replace("{exercise}", name).Trim();
+        }
         /// <summary>Animation key for an exercise, or null when it has no animation yet.</summary>
         public string Animation(string exerciseId) => data.animations.FirstOrDefault(a => a.exercise_id == exerciseId)?.animation;
     }

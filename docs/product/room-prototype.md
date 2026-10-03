@@ -65,3 +65,63 @@ is missing, or with `-sologym-flat-boss`, it falls back to the painted 2D room.
   fighters sit in the open area left of the workout card and above the difficulty bar.
 - The stage applies the room's ambient light and fog while shown and restores the previous values when hidden.
 - Renders: `docs/product/reference/boss_standoff_3d.png`, `docs/product/reference/boss_standoff_3d_squat.png`.
+
+## Stand-off redesign (review)
+
+Target: `docs/product/reference/boss_standoff_target.png` (user reference). Current: `docs/product/reference/boss_standoff_redesign.png`.
+
+- Fighters stand side by side in the centre of the rug; the camera is centred on them.
+- The routine moved off the overlay onto a PixelLab stone quest board in the room (`BossQuestBoard`, world-space text on the
+  slate): today's exercises, the current one in glowing gold inside a ring of fire particles, done ones dimmed, stage name below.
+- One action area at the bottom: VS cards (you: the exercise and set; the boss: its lazy version from `mockery` in
+  `bosses.json`, e.g. "3x10 jacks that forgot to jump"; on the final set "Gave up. All yours.") and one big COMPLETE, with
+  "Other amount" and "Finish all" beside it. Rest swaps the cards for a timer and I'M READY.
+- Edges only: duel plate top left; difficulty, pause and stop top right; "View routine" bottom right.
+- Pause, stop, finish, other amount, readiness recheck, summary, routine and corrections open as one centred card over a dimmed hall.
+
+## 3D props with pixel textures
+
+- `Shaders/PixelTriplanar.shader`: lit (Lambert, shadows) world-space projection along each face's main axis, point
+  filtered, so any scaled primitive keeps the same chunky pixel density (`_TileSize` world units per repeat, 0.8 = 40 px/unit
+  like the walls).
+- Textures: PixelLab `create_tiles_pro` (16 variations, 4 picked: stone, slate, gold, wood) in `Hall/Props/`, archived in
+  `assets/sprites/pixellab/hall-room-r1/textures/`. Materials `PropStone`, `PropSlate`, `PropGold`, `PropWood`.
+- Quest board is now a real 3D frame built from boxes (posts, beams, slate, gold trim, crest), turned 28 degrees towards the
+  fighters; it casts and receives shadows and a warm light follows the current row. Text sits on the slate in perspective.
+- Foreground stone railings at the bottom corners (z -6.6) frame the scene for depth.
+- Rounded or detailed props (statues, plants, weight rack) are the candidates for Blender later.
+
+## Tripo quest board
+
+- Made in Tripo from the PixelLab sprite (`/mnt` handoff: quest_board_front), exported low poly (9,398 triangles), FBX, 1K,
+  sent into Unity with the Tripo Bridge (local dev tool, not in the repo). Lives in `Hall/Props/QuestBoard/`.
+- `Shaders/PixelToon.shader`: lighting in 3 hard steps plus an inverted-hull dark outline. `Board_PixelToon.mat` uses a
+  512 px, point-filtered, palette-reduced copy of the base colour (`BaseColor_pixel.png`).
+- The model replaces the box frame under `QuestBoard/Model`; it sits so the slate surface is just behind the world-space text.
+  Slate rect (-1.35, 1.3, 2.7, 4.15) local, 4 rows.
+
+## Light and camera pass (review)
+
+Target: `docs/product/reference/boss_standoff_target.png`. Current: `docs/product/reference/boss_hall_lit.png`.
+
+- Textures: wall and floor repainted in neutral warm stone (`tools/generate_hall_textures.py`); floor is 2x2 polished slabs per 3.2 unit repeat.
+  Colour now comes from the lights, not the textures.
+- Ambient is dark and neutral; warm flickering torch lights on every brazier (two new ones flank the portal, one on the front right),
+  a cool portal light spilling blue onto the steps and floor.
+- `PixelTriplanar` lights in hard bands (`_Steps`), so torch pools read as pixel-art shading. `PixelSpriteLit` does the same for the
+  flat sprites (banners, portal, rug, fighters) which used to ignore lights; fighters get a thin back-light rim.
+- `CameraVignette`: coarse banded corner darkening as one transparent quad.
+- Camera: pitch 33, FOV 40, fit width 21, focus raised to see more floor and wall; quest board scaled to 0.85 at (7.7, 0, -0.4).
+
+## Boss screen over the lit hall (checked in play mode)
+
+Renders: `docs/product/reference/boss_standoff_lit_{warmup,rest,final,paused,overview}.png`.
+
+- The speech bubble now follows Slugvex: `BossStage3D.BossHeadScreen()` projects his head to the screen and `PixelBossWindow` centres the
+  bubble over it, clamped to the composition.
+- The opaque Home backdrop of the workout canvas is hidden while the dungeon window is open (and restored on exit); it used to
+  paint over the 3D hall in the real app (the offscreen captures had hidden it).
+- Rest card widened so the timer is not clipped; long exercise names and doses shrink to fit the VS card.
+- `PixelSpriteLit` has `_Gain` (fighters 0.7) so the strong torch light no longer turns Slugvex beige.
+- Camera focus lowered (y 1.5) so both fighters' feet clear the VS cards; the extra front brazier was switched off because it sat under
+  the "View routine" button.
