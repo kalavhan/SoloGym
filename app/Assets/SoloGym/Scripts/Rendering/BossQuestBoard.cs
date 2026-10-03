@@ -137,7 +137,8 @@ namespace SoloGym.Rendering
                 int i = lines.Count;
                 var name = Label(rows, new Rect(18, i * rowHeight + 4, rows.sizeDelta.x - 36, rowHeight * 0.55f), 28, Pending, TextAnchor.LowerLeft, false);
                 name.resizeTextForBestFit = true; name.resizeTextMinSize = 18; name.resizeTextMaxSize = 28; name.horizontalOverflow = HorizontalWrapMode.Wrap;
-                var dose = Label(rows, new Rect(18, i * rowHeight + rowHeight * 0.55f + 2, rows.sizeDelta.x - 36, rowHeight * 0.42f), 22, Pending, TextAnchor.UpperLeft, false);
+                var dose = Label(rows, new Rect(18, i * rowHeight + rowHeight * 0.55f + 2, rows.sizeDelta.x - 36, rowHeight * 0.42f), 19, Pending, TextAnchor.UpperLeft, false);
+                dose.verticalOverflow = VerticalWrapMode.Overflow;
                 lines.Add(new[] { name, dose });
             }
             for (int i = 0; i < lines.Count; i++)

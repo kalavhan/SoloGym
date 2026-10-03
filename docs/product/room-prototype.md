@@ -90,3 +90,12 @@ Target: `docs/product/reference/boss_standoff_target.png` (user reference). Curr
   fighters; it casts and receives shadows and a warm light follows the current row. Text sits on the slate in perspective.
 - Foreground stone railings at the bottom corners (z -6.6) frame the scene for depth.
 - Rounded or detailed props (statues, plants, weight rack) are the candidates for Blender later.
+
+## Tripo quest board
+
+- Made in Tripo from the PixelLab sprite (`/mnt` handoff: quest_board_front), exported low poly (9,398 triangles), FBX, 1K,
+  sent into Unity with the Tripo Bridge (local dev tool, not in the repo). Lives in `Hall/Props/QuestBoard/`.
+- `Shaders/PixelToon.shader`: lighting in 3 hard steps plus an inverted-hull dark outline. `Board_PixelToon.mat` uses a
+  512 px, point-filtered, palette-reduced copy of the base colour (`BaseColor_pixel.png`).
+- The model replaces the box frame under `QuestBoard/Model`; it sits so the slate surface is just behind the world-space text.
+  Slate rect (-1.35, 1.3, 2.7, 4.15) local, 4 rows.
