@@ -125,3 +125,8 @@ Renders: `docs/product/reference/boss_standoff_lit_{warmup,rest,final,paused,ove
 - `PixelSpriteLit` has `_Gain` (fighters 0.7) so the strong torch light no longer turns Slugvex beige.
 - Camera focus lowered (y 1.5) so both fighters' feet clear the VS cards; the extra front brazier was switched off because it sat under
   the "View routine" button.
+
+## Tripo arch and braziers, per-boss portal (review)
+- The sprite portal and braziers are replaced by the Tripo arch (`Hall/Props/Portal`) and pedestal braziers (`Hall/Props/Brazier`), textures reduced to 512 / 256 px, 28 / 20 colours, point filtered, drawn with `PixelToon`.
+- `PortalTheme` fills the arch opening with a banded glow and floats the boss sigil (`Resources/Rooms/Sigils/<bossId>.png`); glow, portal light and sparkles take the boss colour (slugvex green, maybmor violet, snoozmoth indigo, glutgrub orange, velshade pink). `BossStage3D.SetBossTheme(id)` is called from `PixelBossWindow`.
+- `PixelFlame` draws the brazier flames at runtime (4 banded frames).
