@@ -51,3 +51,17 @@ so the hall reads a little chunkier than the characters (like the target image).
   `contact_shadow`, centred under the base and drawn beneath it so no gap shows.
 - Braziers stand forward at z 2.2; each torch light sits just in front of its flame with an additive `glow_halo` quad.
 - Dust only floats in a band behind the fighters (z about 2.7 to 5.3) so nothing drifts across the characters.
+
+## In the app: boss stand-off
+
+The hall is a prefab, `Resources/Rooms/BossHall3D/BossHall.prefab`, made from the prototype scene (which now holds an
+instance of it). `PixelBossWindow` spawns it with `BossStage3D.Spawn()` and draws its uGUI overlay on top; when the prefab
+is missing, or with `-sologym-flat-boss`, it falls back to the painted 2D room.
+
+- `BossStage3D` drives the two fighters: resting pose (Barbarian breathing idle when the appearance has one, otherwise the
+  still export; the boss idle still) and the exercise clips the window already picks. Every PixelLab canvas is scaled to the
+  same 3.4-unit height and stood on the floor by its foot margin, so idle and exercise frames line up.
+- Composition: hero in front on the left (z -3.4), boss one row back (z 0.2), camera focus shifted right (x 2.8) so both
+  fighters sit in the open area left of the workout card and above the difficulty bar.
+- The stage applies the room's ambient light and fog while shown and restores the previous values when hidden.
+- Renders: `docs/product/reference/boss_standoff_3d.png`, `docs/product/reference/boss_standoff_3d_squat.png`.

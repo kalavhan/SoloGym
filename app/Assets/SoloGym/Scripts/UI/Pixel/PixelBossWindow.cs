@@ -6,11 +6,12 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using SoloGym.Rendering;
 using static SoloGym.UI.PixelJournalUI;
 
 namespace SoloGym.UI
 {
-    /// <summary>Static dungeon art with live, local manual workout controls.</summary>
+    /// <summary>Boss stand-off: the 3D summoning hall (or the painted fallback) with live, local manual workout controls.</summary>
     public sealed class PixelBossWindow : MonoBehaviour
     {
         public BossController Controller { get; private set; }
@@ -31,6 +32,8 @@ namespace SoloGym.UI
         BossContent content;
         BossEntry boss;
         PixelSpriteLoop heroLoop,bossLoop;
+        BossStage3D stage;
+        public BossStage3D Stage=>stage;
         string BossName=>boss==null?L("BOSS","JEFE"):boss.name.Get(Language);
         string Line(string key)=>content==null?"":content.Line(key,Language);
         string L(string en,string es)=>Language=="es"?es:en;
@@ -44,14 +47,24 @@ namespace SoloGym.UI
             safe=Rect("Dungeon safe area",root,new Rect());Composition=Rect("1280x720 boss composition",safe,new Rect(0,0,1280,720));
             Composition.anchorMin=Composition.anchorMax=Composition.pivot=new Vector2(.5f,.5f);Composition.anchoredPosition=Vector2.zero;
             float.TryParse(PixelWorkoutWindow.Arg("-sologym-safe-inset","0"),NumberStyles.Float,CultureInfo.InvariantCulture,out inset);inset=Mathf.Clamp(inset,0,150);
-            CoverBackdrop(root,"Rooms/BossR1/background",.45f);
-            Art(Composition,new Rect(0,0,1280,720),"Rooms/BossR1/background");
             try{content=BossContent.Load();boss=content?.Pick(Controller?.Data.id);}catch(ArgumentException e){Debug.LogWarning(e.Message);}
-            // Three depth rows: the boss stands behind and above, your hero in front. Full source canvases, no stretching.
             var bossStill=boss==null?null:Resources.Load<Sprite>("Game/Bosses/"+boss.id+"/idle");
-            var bossImage=Art(Composition,new Rect(470,185,290,290),bossStill!=null?"Game/Bosses/"+boss.id+"/idle":"Rooms/BossR1/guardian");bossImage.preserveAspect=true;
-            var heroImage=Art(Composition,new Rect(100,262,360,360),"Characters/PixelLabR1/"+character);heroImage.preserveAspect=true;
-            bossLoop=PixelSpriteLoop.Attach(bossImage,bossImage.sprite);heroLoop=PixelSpriteLoop.Attach(heroImage,heroImage.sprite);
+            // The 3D summoning hall renders behind this overlay; the painted room is the fallback when it is missing.
+            stage=PixelWorkoutWindow.Has("-sologym-flat-boss")?null:BossStage3D.Spawn();
+            if(stage!=null)
+            {
+                stage.SetHero(Resources.Load<Sprite>("Characters/PixelLabR1/"+character),PixelSpriteLoop.Load("Game/Animations/"+character+"/idle"));
+                stage.SetBoss(bossStill!=null?bossStill:Resources.Load<Sprite>("Rooms/BossR1/guardian"),null);
+            }
+            else
+            {
+                CoverBackdrop(root,"Rooms/BossR1/background",.45f);
+                Art(Composition,new Rect(0,0,1280,720),"Rooms/BossR1/background");
+                // Three depth rows: the boss stands behind and above, your hero in front. Full source canvases, no stretching.
+                var bossImage=Art(Composition,new Rect(470,185,290,290),bossStill!=null?"Game/Bosses/"+boss.id+"/idle":"Rooms/BossR1/guardian");bossImage.preserveAspect=true;
+                var heroImage=Art(Composition,new Rect(100,262,360,360),"Characters/PixelLabR1/"+character);heroImage.preserveAspect=true;
+                bossLoop=PixelSpriteLoop.Attach(bossImage,bossImage.sprite);heroLoop=PixelSpriteLoop.Attach(heroImage,heroImage.sprite);
+            }
             Render();Relayout();
             if(!restored)StartCoroutine(FlashIn(root));
         }
@@ -65,12 +78,13 @@ namespace SoloGym.UI
         /// <summary>The hero performs the current exercise and the boss mimics it, until the boss gives out on the last working set.</summary>
         void UpdateStage()
         {
-            if(heroLoop==null||bossLoop==null)return;
+            if(stage==null&&(heroLoop==null||bossLoop==null))return;
             bool active=Controller!=null&&View=="session"&&Controller.CanLog;
             string key=active?content?.Animation(Controller.Current.exercise_id):null;
             var hero=key==null?null:PixelSpriteLoop.Load("Game/Animations/"+character+"/"+key);
             var rival=key==null||boss==null||Controller.IsFinalMainSet?null:PixelSpriteLoop.Load("Game/Animations/"+boss.id+"/"+key);
-            heroLoop.Play(hero);bossLoop.Play(rival);
+            if(stage!=null){stage.PlayHero(hero);stage.PlayBoss(rival);}
+            else{heroLoop.Play(hero);bossLoop.Play(rival);}
         }
         /// <summary>The line the boss speaks now, or empty. Lines come from the boss content data.</summary>
         string BossSpeech()
@@ -96,6 +110,9 @@ namespace SoloGym.UI
             if(Input.GetKeyDown(KeyCode.Tab)&&EventSystem.current.currentSelectedGameObject==null)traversal.FirstOrDefault(s=>s.IsInteractable())?.Select();
             if(Input.GetKeyDown(KeyCode.Escape)){if(View!="session"){View="session";Render();}else if(Controller?.NeedsReadiness==true)Exited?.Invoke();else if(Controller!=null&&!Controller.Closed)Perform(()=>Controller.Pause());}
         }
+        void OnEnable(){if(stage!=null)stage.gameObject.SetActive(true);}
+        void OnDisable(){if(stage!=null)stage.gameObject.SetActive(false);}
+        void OnDestroy(){if(stage!=null)Destroy(stage.gameObject);}
         void OnApplicationPause(bool paused){if(paused&&Controller!=null&&!Controller.Closed&&!Controller.Data.paused&&!Controller.NeedsReadiness)Perform(()=>Controller.Pause());}
         public void Render()
         {
