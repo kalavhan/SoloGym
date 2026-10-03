@@ -20,6 +20,10 @@ namespace SoloGym.Rendering
         public float canvasHeight = 3.4f, canvasPixels = 256f;
         public float framesPerSecond = 8f, idleFramesPerSecond = 5f;
 
+        [Header("Room props")]
+        [Tooltip("Stone board on the right that lists today's exercises.")]
+        public BossQuestBoard board;
+
         [Header("Room lighting (applied while the stage is shown)")]
         public Color ambientLight = new Color(0.50f, 0.54f, 0.78f);
         public bool fog = true;

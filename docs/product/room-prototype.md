@@ -65,3 +65,16 @@ is missing, or with `-sologym-flat-boss`, it falls back to the painted 2D room.
   fighters sit in the open area left of the workout card and above the difficulty bar.
 - The stage applies the room's ambient light and fog while shown and restores the previous values when hidden.
 - Renders: `docs/product/reference/boss_standoff_3d.png`, `docs/product/reference/boss_standoff_3d_squat.png`.
+
+## Stand-off redesign (review)
+
+Target: `docs/product/reference/boss_standoff_target.png` (user reference). Current: `docs/product/reference/boss_standoff_redesign.png`.
+
+- Fighters stand side by side in the centre of the rug; the camera is centred on them.
+- The routine moved off the overlay onto a PixelLab stone quest board in the room (`BossQuestBoard`, world-space text on the
+  slate): today's exercises, the current one in glowing gold inside a ring of fire particles, done ones dimmed, stage name below.
+- One action area at the bottom: VS cards (you: the exercise and set; the boss: its lazy version from `mockery` in
+  `bosses.json`, e.g. "3x10 jacks that forgot to jump"; on the final set "Gave up. All yours.") and one big COMPLETE, with
+  "Other amount" and "Finish all" beside it. Rest swaps the cards for a timer and I'M READY.
+- Edges only: duel plate top left; difficulty, pause and stop top right; "View routine" bottom right.
+- Pause, stop, finish, other amount, readiness recheck, summary, routine and corrections open as one centred card over a dimmed hall.

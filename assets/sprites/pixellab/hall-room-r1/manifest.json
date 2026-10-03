@@ -45,6 +45,12 @@
       "character": "e0731c62-8758-43c9-b5a7-40c30cfe2653",
       "animation": "ebb07ae4-cec2-4888-b90d-6bb777dfe8fe",
       "frames": 4
+    },
+    "quest_board.png": {
+      "tool": "create_image_pixflux",
+      "job": "fd230c5d-63c6-469a-afe6-29b834a9eaa4",
+      "size": "192x256",
+      "post": "grey background removed by edge flood fill"
     }
   },
   "sha256": {
@@ -65,7 +71,8 @@
     "brazier_anim/7.png": "2f2cf5a255739728ae5e9635d639800677464b773ce99a15c57416bf2a7a24a7",
     "pilaster.png": "044742e04c7a3297d9463de8b9fd8fb938c81eb45639b9e0fce74c42399e9e2d",
     "portal_arch.png": "442911483bdcc52ce53aa05324fe05e755ba32ed8bd2d4b16631ffedc3180884",
-    "rug.png": "15fa67ab12ecf96ef921f0cb8bf55035faf53587718b3ca0ea88e4755e913183"
+    "rug.png": "15fa67ab12ecf96ef921f0cb8bf55035faf53587718b3ca0ea88e4755e913183",
+    "quest_board.png": "b0261ee00f0a2a6d8f4a79d16b369afa13f55c9b71adce314ff5c07d0d126e03"
   },
   "rejected": [
     {
