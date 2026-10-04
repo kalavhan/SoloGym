@@ -23,6 +23,8 @@ namespace SoloGym.Rendering
         [Header("Room props")]
         [Tooltip("Stone board on the right that lists today's exercises.")]
         public BossQuestBoard board;
+        [Tooltip("The summoning arch: shows the incoming boss's sigil and colour.")]
+        public PortalTheme portal;
 
         [Header("Room lighting (applied while the stage is shown)")]
         public Color ambientLight = new Color(0.50f, 0.54f, 0.78f);
@@ -73,6 +75,9 @@ namespace SoloGym.Rendering
             var sp = cam.WorldToScreenPoint(top);
             return sp.z <= 0f ? (Vector2?)null : new Vector2(sp.x, sp.y);
         }
+
+        /// <summary>Tells the summoning arch which boss is coming (sigil and glow colour). Null = plain portal.</summary>
+        public void SetBossTheme(string bossId) { if (portal != null) portal.Apply(bossId); }
 
         /// <summary>Resting pose: an idle loop when there is one, otherwise a still frame.</summary>
         public void SetHero(Sprite still, Sprite[] idle) => SetRest(hero, still, idle);

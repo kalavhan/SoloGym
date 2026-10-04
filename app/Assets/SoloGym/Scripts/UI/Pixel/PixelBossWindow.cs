@@ -55,6 +55,7 @@ namespace SoloGym.UI
             {
                 stage.SetHero(Resources.Load<Sprite>("Characters/PixelLabR1/"+character),PixelSpriteLoop.Load("Game/Animations/"+character+"/idle"));
                 stage.SetBoss(bossStill!=null?bossStill:Resources.Load<Sprite>("Rooms/BossR1/guardian"),null);
+                stage.SetBossTheme(boss?.id);
             }
             else
             {
